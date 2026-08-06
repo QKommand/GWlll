@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-950">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Guild Wars Living Lore Library, an interactive historical archive covering the ancient past of Tyria through the present day."
+  />
+
+  <meta name="theme-color" content="#020617" />
+
+  <title>GWlll // Guild Wars Living Lore Library</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Text",
+        "SF Pro Display",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
+
+    button,
+    a,
+    input {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    .archive-grid {
+      background-image:
+        linear-gradient(rgba(56, 189, 248, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.025) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      opacity: 0.035;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.03) 0,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+    }
+
+    .panel-shadow {
+      box-shadow:
+        0 0 0 1px rgba(56, 189, 248, 0.035),
+        0 22px 65px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-backdrop {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity 260ms ease,
+        visibility 260ms ease;
+    }
+
+    .modal-backdrop.is-visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-window {
+      opacity: 0;
+      transform: translateY(18px) scale(0.985);
+      transition:
+        opacity 300ms ease,
+        transform 300ms ease;
+    }
+
+    .modal-backdrop.is-visible .modal-window {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition:
+        opacity 650ms ease,
+        transform 650ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-marker {
+      transition:
+        transform 240ms ease,
+        border-color 240ms ease,
+        background-color 240ms ease,
+        box-shadow 240ms ease;
+    }
+
+    .timeline-record:hover .timeline-marker,
+    .timeline-record:focus-within .timeline-marker {
+      transform: scale(1.08);
+      border-color: rgba(125, 211, 252, 0.65);
+      background-color: rgba(14, 165, 233, 0.14);
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.12);
+    }
+
+    .folder-card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .folder-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: 0;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(56, 189, 248, 0.11),
+          transparent 46%
+        );
+      transition: opacity 280ms ease;
+    }
+
+    .folder-card:hover::before,
+    .folder-card:focus-visible::before {
+      opacity: 1;
+    }
+
+    .floating-orb {
+      animation: floatingOrb 10s ease-in-out infinite;
+    }
+
+    .status-pulse {
+      animation: statusPulse 2.4s ease-in-out infinite;
+    }
+
+    .hide-scrollbar {
+      scrollbar-width: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .timeline-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(56, 189, 248, 0.35) rgba(15, 23, 42, 0.5);
+    }
+
+    .timeline-scroll::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .timeline-scroll::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 999px;
+    }
+
+    .timeline-scroll::-webkit-scrollbar-thumb {
+      background: rgba(56, 189, 248, 0.28);
+      border-radius: 999px;
+    }
+
+    .timeline-scroll::-webkit-scrollbar-thumb:hover {
+      background: rgba(56, 189, 248, 0.45);
+    }
+
+    @keyframes floatingOrb {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      50% {
+        transform: translate3d(0, -12px, 0);
+      }
+    }
+
+    @keyframes statusPulse {
+      0%,
+      100% {
+        opacity: 0.45;
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+      }
+
+      50% {
+        opacity: 1;
+        box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.08);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .archive-grid {
+        background-size: 26px 26px;
+      }
+
+      .folder-card::before {
+        display: none;
+      }
+
+      .timeline-scroll {
+        max-height: none !important;
+        overflow: visible !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="archive-grid min-h-full overflow-x-hidden bg-slate-950 text-slate-100 antialiased"
+>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- Ambient background -->
+  <div
+    class="pointer-events-none fixed inset-0 overflow-hidden"
+    aria-hidden="true"
+  >
+    <div
+      class="floating-orb absolute left-1/2 top-[-24rem] h-[46rem] w-[70rem] -translate-x-1/2 rounded-full bg-sky-500/[0.055] blur-3xl"
+    ></div>
+
+    <div
+      class="absolute bottom-[-22rem] right-[-16rem] h-[42rem] w-[42rem] rounded-full bg-indigo-500/[0.035] blur-3xl"
+    ></div>
+  </div>
+
+  <!-- Header -->
+  <header
+    class="sticky top-0 z-50 border-b border-slate-800/90 bg-slate-950/88 backdrop-blur-xl"
+  >
+    <div
+      class="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
+    >
+      <a
+        href="./"
+        class="min-w-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+      >
+        <p
+          class="truncate font-mono text-[9px] uppercase tracking-[0.25em] text-sky-400 sm:text-[10px]"
+        >
+          QKommand Archive Project
+        </p>
+
+        <div class="mt-1 flex items-baseline gap-2">
+          <h1 class="truncate text-base font-semibold text-white sm:text-lg">
+            GWlll
+          </h1>
+
+          <span class="hidden text-xs text-slate-500 sm:inline">
+            Guild Wars Living Lore Library
+          </span>
+        </div>
+      </a>
+
+      <nav
+        class="hidden items-center gap-2 md:flex"
+        aria-label="Primary navigation"
+      >
+        <a
+          href="#timeline"
+          class="rounded-lg px-4 py-2 text-sm text-slate-400 transition hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+        >
+          Timeline
+        </a>
+
+        <a
+          href="#archive-folders"
+          class="rounded-lg px-4 py-2 text-sm text-slate-400 transition hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+        >
+          Archive Folders
+        </a>
+
+        <a
+          href="#about"
+          class="rounded-lg px-4 py-2 text-sm text-slate-400 transition hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+        >
+          About
+        </a>
+      </nav>
+
+      <button
+        id="mobile-menu-button"
+        type="button"
+        class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-slate-300 transition hover:border-slate-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400/40 md:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+        aria-label="Open navigation"
+      >
+        <svg
+          id="mobile-menu-open-icon"
+          class="h-5 w-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 7h16M4 12h16M4 17h16"
+          />
+        </svg>
+
+        <svg
+          id="mobile-menu-close-icon"
+          class="hidden h-5 w-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m6 6 12 12M18 6 6 18"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div
+      id="mobile-navigation"
+      class="hidden border-t border-slate-800 bg-slate-950/98 px-4 py-4 md:hidden"
+    >
+      <nav class="mx-auto grid max-w-3xl gap-2">
+        <a
+          href="#timeline"
+          class="rounded-lg border border-slate-800 bg-slate-900/70 px-4 py-3 text-sm text-slate-300"
+        >
+          Main Timeline
+        </a>
+
+        <a
+          href="#archive-folders"
+          class="rounded-lg border border-slate-800 bg-slate-900/70 px-4 py-3 text-sm text-slate-300"
+        >
+          Archive Folders
+        </a>
+
+        <a
+          href="#about"
+          class="rounded-lg border border-slate-800 bg-slate-900/70 px-4 py-3 text-sm text-slate-300"
+        >
+          About the Library
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- Hero -->
+    <section class="border-b border-slate-800/80">
+      <div
+        class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:px-8 lg:py-24"
+      >
+        <div class="reveal">
+          <p
+            class="font-mono text-[10px] uppercase tracking-[0.25em] text-sky-400 sm:text-xs"
+          >
+            /// Historical Archive Online
+          </p>
+
+          <h2
+            class="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl"
+          >
+            The living history of Tyria
+          </h2>
+
+          <p
+            class="mt-6 max-w-3xl text-base leading-8 text-slate-400 sm:text-lg"
+          >
+            Explore the recorded history of Guild Wars from the earliest
+            Dragonrises through the present day. Follow the main chronology,
+            then branch into the people, conflicts, regions, organizations,
+            beliefs, and hidden stories that shaped the world.
+          </p>
+
+          <div
+            class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
+          >
+            <a
+              href="#timeline"
+              class="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-sky-400/30 bg-sky-400/10 px-6 text-sm font-semibold text-sky-200 transition hover:-translate-y-0.5 hover:border-sky-300/50 hover:bg-sky-400/15 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+            >
+              Enter the Timeline
+
+              <span aria-hidden="true">↓</span>
+            </a>
+
+            <a
+              href="#archive-folders"
+              class="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-700 bg-slate-900/75 px-6 text-sm font-medium text-slate-300 transition hover:-translate-y-0.5 hover:border-slate-600 hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+            >
+              Browse Archive Folders
+            </a>
+          </div>
+        </div>
+
+        <!-- Server time -->
+        <aside
+          class="panel-shadow reveal rounded-2xl border border-sky-400/20 bg-slate-900/75 p-6 text-center backdrop-blur sm:p-8"
+          aria-labelledby="server-time-heading"
+        >
+          <div
+            class="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-sky-400/20 bg-sky-400/[0.08]"
+            aria-hidden="true"
+          >
+            <svg
+              class="h-6 w-6 text-sky-300"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 7v5l3 2"
+              />
+            </svg>
+          </div>
+
+          <p
+            id="server-time-heading"
+            class="mt-5 font-mono text-[10px] uppercase tracking-[0.24em] text-slate-500"
+          >
+            Guild Wars 2 Server Time
+          </p>
+
+          <p
+            id="server-time"
+            class="mt-4 font-mono text-4xl font-semibold tracking-tight text-white sm:text-5xl"
+          >
+            00:00:00
+          </p>
+
+          <p
+            id="server-date"
+            class="mt-3 text-sm text-slate-400"
+          >
+            Loading UTC date...
+          </p>
+
+          <div
+            class="mt-6 flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-widest text-emerald-400"
+          >
+            <span
+              class="status-pulse h-2 w-2 rounded-full bg-emerald-400"
+              aria-hidden="true"
+            ></span>
+
+            UTC synchronization active
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section
+      id="timeline"
+      class="scroll-mt-24 border-b border-slate-800/80"
+    >
+      <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <div
+          class="reveal flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div>
+            <p
+              class="font-mono text-[10px] uppercase tracking-[0.23em] text-sky-400"
+            >
+              /// Master Chronology
+            </p>
+
+            <h2
+              class="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+            >
+              The history of Tyria
+            </h2>
+
+            <p class="mt-4 max-w-3xl leading-7 text-slate-400">
+              Scroll through the main historical spine. Each record can later
+              open into its own folder containing causes, consequences,
+              characters, places, primary accounts, and related side stories.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 sm:flex">
+            <div
+              class="rounded-lg border border-slate-800 bg-slate-900/70 px-4 py-3"
+            >
+              <p
+                class="font-mono text-[9px] uppercase tracking-widest text-slate-600"
+              >
+                Oldest Estimate
+              </p>
+
+              <p class="mt-1 text-sm text-slate-300">
+                20,000 BE
+              </p>
+            </div>
+
+            <div
+              class="rounded-lg border border-slate-800 bg-slate-900/70 px-4 py-3"
+            >
+              <p
+                class="font-mono text-[9px] uppercase tracking-widest text-slate-600"
+              >
+                Present Record
+              </p>
+
+              <p class="mt-1 text-sm text-slate-300">
+                1339 AE
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="panel-shadow reveal mt-8 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/65"
+        >
+          <div
+            class="flex flex-col gap-3 border-b border-slate-800 bg-slate-950/45 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7"
+          >
+            <div>
+              <p
+                class="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500"
+              >
+                Timeline Interface
+              </p>
+
+              <p class="mt-1 text-sm text-slate-300">
+                Select any era to begin following its historical branches.
+              </p>
+            </div>
+
+            <span
+              class="rounded-full border border-sky-400/15 bg-sky-400/[0.05] px-3 py-1 font-mono text-[9px] uppercase tracking-widest text-sky-300"
+            >
+              Scroll Enabled
+            </span>
+          </div>
+
+          <div
+            class="timeline-scroll max-h-[780px] overflow-y-auto p-5 sm:p-7"
+          >
+            <div class="relative">
+              <div
+                class="absolute bottom-5 left-[1.12rem] top-5 w-px bg-gradient-to-b from-sky-400/10 via-sky-400/45 to-sky-400/10 sm:left-[1.37rem]"
+                aria-hidden="true"
+              ></div>
+
+              <div class="space-y-3">
+
+                <!-- Record -->
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-sky-400/30 bg-slate-950 font-mono text-[9px] text-sky-300 sm:h-11 sm:w-11"
+                  >
+                    01
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-slate-800 bg-slate-950/35 p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        Creation and the First Dragonrises
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-slate-500"
+                      >
+                        Unknown – 10,000 BE
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      The oldest traditions describe Tyria’s creation, the
+                      earliest Elder Dragon cycles, and the disappearance of
+                      the Giganticus Lupicus.
+                    </p>
+
+                    <a
+                      href="timeline/ancient-dragonrises/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-sky-300 transition hover:text-sky-200"
+                    >
+                      Open era record
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-sky-400/30 bg-slate-950 font-mono text-[9px] text-sky-300 sm:h-11 sm:w-11"
+                  >
+                    02
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-slate-800 bg-slate-950/35 p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        The Elder Races
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-slate-500"
+                      >
+                        Ancient Era
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      Dwarves, Forgotten, jotun, mursaat, and Seers resist the
+                      Elder Dragons. Their alliance collapses, leaving only
+                      fragments of their former civilizations.
+                    </p>
+
+                    <a
+                      href="timeline/elder-races/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-sky-300 transition hover:text-sky-200"
+                    >
+                      Open era record
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-sky-400/30 bg-slate-950 font-mono text-[9px] text-sky-300 sm:h-11 sm:w-11"
+                  >
+                    03
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-slate-800 bg-slate-950/35 p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        Arrival of the Gods and Humanity
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-slate-500"
+                      >
+                        Before 786 BE
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      The Six Gods enter Tyria from the Mists and humanity
+                      begins settling Cantha, Orr, Elona, Kryta, and Ascalon.
+                    </p>
+
+                    <a
+                      href="timeline/gods-and-humanity/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-sky-300 transition hover:text-sky-200"
+                    >
+                      Open era record
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-amber-400/30 bg-slate-950 font-mono text-[9px] text-amber-300 sm:h-11 sm:w-11"
+                  >
+                    04
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-amber-400/15 bg-amber-400/[0.025] p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        Magic, Abaddon, and the Exodus
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-amber-300/70"
+                      >
+                        1 BE – 0 AE
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      Abaddon spreads powerful magic, King Doric pleads for
+                      intervention, the Bloodstone is divided, and the gods
+                      depart after Abaddon’s defeat.
+                    </p>
+
+                    <a
+                      href="timeline/exodus/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-amber-300 transition hover:text-amber-200"
+                    >
+                      Open era record
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-sky-400/30 bg-slate-950 font-mono text-[9px] text-sky-300 sm:h-11 sm:w-11"
+                  >
+                    05
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-slate-800 bg-slate-950/35 p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        Human Kingdoms and Guild Wars
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-slate-500"
+                      >
+                        1 AE – 1070 AE
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      Human nations rise across three continents. Guilds become
+                      military powers, wars spread, and the human kingdoms are
+                      weakened before the charr invasion.
+                    </p>
+
+                    <a
+                      href="timeline/human-kingdoms/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-sky-300 transition hover:text-sky-200"
+                    >
+                      Open era record
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-rose-400/30 bg-slate-950 font-mono text-[9px] text-rose-300 sm:h-11 sm:w-11"
+                  >
+                    06
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-rose-400/15 bg-rose-400/[0.025] p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        Guild Wars Campaign Era
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-rose-300/70"
+                      >
+                        1070 – 1080 AE
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      The Searing, Cataclysm, Flameseeker Prophecies, Jade Wind,
+                      Nightfall, the Destroyers, and the political struggles
+                      that follow the original campaigns.
+                    </p>
+
+                    <a
+                      href="timeline/guild-wars-era/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-rose-300 transition hover:text-rose-200"
+                    >
+                      Open era record
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-sky-400/30 bg-slate-950 font-mono text-[9px] text-sky-300 sm:h-11 sm:w-11"
+                  >
+                    07
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-slate-800 bg-slate-950/35 p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        The Lost Two Centuries
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-slate-500"
+                      >
+                        1080 – 1325 AE
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      The Foefire, Elder Dragon awakenings, Canthan isolation,
+                      Joko’s conquest, the sylvari awakening, and the formation
+                      of modern Tyria.
+                    </p>
+
+                    <a
+                      href="timeline/lost-centuries/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-sky-300 transition hover:text-sky-200"
+                    >
+                      Open era record
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-violet-400/30 bg-slate-950 font-mono text-[9px] text-violet-300 sm:h-11 sm:w-11"
+                  >
+                    08
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-violet-400/15 bg-violet-400/[0.025] p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        The Modern Dragon Cycle
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-violet-300/70"
+                      >
+                        1325 – 1335 AE
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      The Pact rises, six Elder Dragons fall, Aurene ascends,
+                      and the traditional Dragon Cycle ends in Cantha.
+                    </p>
+
+                    <a
+                      href="timeline/modern-dragon-cycle/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-violet-300 transition hover:text-violet-200"
+                    >
+                      Open era record
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-sky-400/30 bg-slate-950 font-mono text-[9px] text-sky-300 sm:h-11 sm:w-11"
+                  >
+                    09
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-slate-800 bg-slate-950/35 p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        The Age of Aurene
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-slate-500"
+                      >
+                        1335 – 1336 AE
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      Aurene becomes the world’s magical conduit while Tyria
+                      begins adjusting to life after the Elder Dragon cycle.
+                    </p>
+
+                    <a
+                      href="timeline/age-of-aurene/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-sky-300 transition hover:text-sky-200"
+                    >
+                      Open era record
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-sky-400/30 bg-slate-950 font-mono text-[9px] text-sky-300 sm:h-11 sm:w-11"
+                  >
+                    10
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-slate-800 bg-slate-950/35 p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        Threats Beyond the Dragon Cycle
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-slate-500"
+                      >
+                        1336 – 1338 AE
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      Kryptis invade, Eparch falls, the Tyrian Alliance forms,
+                      and ancient Titan, mursaat, and Seer conflicts return.
+                    </p>
+
+                    <a
+                      href="timeline/post-dragon-threats/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-sky-300 transition hover:text-sky-200"
+                    >
+                      Open era record
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="timeline-record relative grid grid-cols-[2.25rem_1fr] gap-4 rounded-xl p-2 transition hover:bg-slate-800/35 sm:grid-cols-[2.75rem_1fr] sm:gap-5 sm:p-3"
+                >
+                  <div
+                    class="timeline-marker relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-emerald-400/30 bg-slate-950 font-mono text-[9px] text-emerald-300 sm:h-11 sm:w-11"
+                  >
+                    11
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-emerald-400/15 bg-emerald-400/[0.025] p-4 sm:p-5"
+                  >
+                    <div
+                      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <h3 class="font-semibold text-white">
+                        Present Day
+                      </h3>
+
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-emerald-300/70"
+                      >
+                        1338 – 1339 AE
+                      </span>
+                    </div>
+
+                    <p class="mt-3 text-sm leading-6 text-slate-400">
+                      The Inquest expedition to Castora searches for Ancora and
+                      uncovers ancient Seer ruins, rituals, and technologies.
+                    </p>
+
+                    <a
+                      href="timeline/present-day/"
+                      class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-300 transition hover:text-emerald-200"
+                    >
+                      Open current records
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Archive folders -->
+    <section
+      id="archive-folders"
+      class="scroll-mt-24 border-b border-slate-800/80"
+    >
+      <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <div class="reveal">
+          <p
+            class="font-mono text-[10px] uppercase tracking-[0.23em] text-sky-400"
+          >
+            /// Branching Records
+          </p>
+
+          <h2
+            class="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+          >
+            Archive folders
+          </h2>
+
+          <p class="mt-4 max-w-3xl leading-7 text-slate-400">
+            These folders will explain the events beside the main timeline.
+            Think of the timeline as Tyria’s main road and these folders as the
+            trails leading to the stories hidden beyond it.
+          </p>
+        </div>
+
+        <div
+          class="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+        >
+          <a
+            href="events/"
+            class="folder-card reveal group rounded-xl border border-slate-800 bg-slate-900/65 p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-400/30 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+          >
+            <p
+              class="font-mono text-[9px] uppercase tracking-widest text-sky-400"
+            >
+              Folder 01
+            </p>
+
+            <h3 class="mt-3 text-xl font-semibold text-white">
+              Historical Events
+            </h3>
+
+            <p class="mt-3 text-sm leading-6 text-slate-400">
+              Wars, disasters, migrations, political changes, magical
+              catastrophes, and turning points.
+            </p>
+
+            <span
+              class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-sky-300"
+            >
+              Browse events
+              <span
+                class="transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </span>
+          </a>
+
+          <a
+            href="people/"
+            class="folder-card reveal group rounded-xl border border-slate-800 bg-slate-900/65 p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-400/30 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+          >
+            <p
+              class="font-mono text-[9px] uppercase tracking-widest text-sky-400"
+            >
+              Folder 02
+            </p>
+
+            <h3 class="mt-3 text-xl font-semibold text-white">
+              People and Beings
+            </h3>
+
+            <p class="mt-3 text-sm leading-6 text-slate-400">
+              Heroes, rulers, gods, Elder Dragons, scholars, commanders,
+              villains, and historical witnesses.
+            </p>
+
+            <span
+              class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-sky-300"
+            >
+              Browse people
+              <span
+                class="transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </span>
+          </a>
+
+          <a
+            href="regions/"
+            class="folder-card reveal group rounded-xl border border-slate-800 bg-slate-900/65 p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-400/30 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+          >
+            <p
+              class="font-mono text-[9px] uppercase tracking-widest text-sky-400"
+            >
+              Folder 03
+            </p>
+
+            <h3 class="mt-3 text-xl font-semibold text-white">
+              Regions and Settlements
+            </h3>
+
+            <p class="mt-3 text-sm leading-6 text-slate-400">
+              Continents, kingdoms, cities, ruins, wildernesses, realms, and
+              geographic changes.
+            </p>
+
+            <span
+              class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-sky-300"
+            >
+              Browse regions
+              <span
+                class="transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </span>
+          </a>
+
+          <a
+            href="organizations/"
+            class="folder-card reveal group rounded-xl border border-slate-800 bg-slate-900/65 p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-400/30 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+          >
+            <p
+              class="font-mono text-[9px] uppercase tracking-widest text-sky-400"
+            >
+              Folder 04
+            </p>
+
+            <h3 class="mt-3 text-xl font-semibold text-white">
+              Organizations
+            </h3>
+
+            <p class="mt-3 text-sm leading-6 text-slate-400">
+              Orders, guilds, ministries, legions, governments, alliances, and
+              hidden societies.
+            </p>
+
+            <span
+              class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-sky-300"
+            >
+              Browse organizations
+              <span
+                class="transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </span>
+          </a>
+
+          <a
+            href="magic/"
+            class="folder-card reveal group rounded-xl border border-slate-800 bg-slate-900/65 p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-400/30 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+          >
+            <p
+              class="font-mono text-[9px] uppercase tracking-widest text-sky-400"
+            >
+              Folder 05
+            </p>
+
+            <h3 class="mt-3 text-xl font-semibold text-white">
+              Magic and Cosmology
+            </h3>
+
+            <p class="mt-3 text-sm leading-6 text-slate-400">
+              Bloodstones, ley lines, divine magic, spirits, the Mists,
+              artifacts, and magical theory.
+            </p>
+
+            <span
+              class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-sky-300"
+            >
+              Browse magic
+              <span
+                class="transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </span>
+          </a>
+
+          <a
+            href="side-stories/"
+            class="folder-card reveal group rounded-xl border border-slate-800 bg-slate-900/65 p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-400/30 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+          >
+            <p
+              class="font-mono text-[9px] uppercase tracking-widest text-sky-400"
+            >
+              Folder 06
+            </p>
+
+            <h3 class="mt-3 text-xl font-semibold text-white">
+              Side Stories
+            </h3>
+
+            <p class="mt-3 text-sm leading-6 text-slate-400">
+              Smaller narratives, regional disputes, personal histories,
+              mysteries, cultural legends, and overlooked events.
+            </p>
+
+            <span
+              class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-sky-300"
+            >
+              Browse side stories
+              <span
+                class="transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section
+      id="about"
+      class="scroll-mt-24"
+    >
+      <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <div
+          class="panel-shadow reveal grid gap-8 rounded-2xl border border-slate-800 bg-slate-900/65 p-6 sm:p-8 lg:grid-cols-[1fr_0.75fr]"
+        >
+          <div>
+            <p
+              class="font-mono text-[10px] uppercase tracking-[0.23em] text-sky-400"
+            >
+              /// Project Record
+            </p>
+
+            <h2 class="mt-2 text-2xl font-semibold text-white sm:text-3xl">
+              Bringing the past forward
+            </h2>
+
+            <p class="mt-5 leading-7 text-slate-400">
+              GWlll is a personal archive project dedicated to organizing the
+              history of the Guild Wars universe into a clear, connected, and
+              easy-to-navigate library.
+            </p>
+
+            <p class="mt-4 leading-7 text-slate-400">
+              The project begins with a main chronology, then opens branching
+              records that explain why major events happened, what they changed,
+              and how they connect to later stories.
+            </p>
+          </div>
+
+          <dl class="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+            <div
+              class="rounded-xl border border-slate-800 bg-slate-950/40 p-4"
+            >
+              <dt
+                class="font-mono text-[9px] uppercase tracking-widest text-slate-600"
+              >
+                Project Name
+              </dt>
+
+              <dd class="mt-2 text-sm text-slate-300">
+                Guild Wars Living Lore Library
+              </dd>
+            </div>
+
+            <div
+              class="rounded-xl border border-slate-800 bg-slate-950/40 p-4"
+            >
+              <dt
+                class="font-mono text-[9px] uppercase tracking-widest text-slate-600"
+              >
+                Current Historical Year
+              </dt>
+
+              <dd class="mt-2 text-sm text-slate-300">
+                1339 AE
+              </dd>
+            </div>
+
+            <div
+              class="rounded-xl border border-slate-800 bg-slate-950/40 p-4"
+            >
+              <dt
+                class="font-mono text-[9px] uppercase tracking-widest text-slate-600"
+              >
+                Archive Status
+              </dt>
+
+              <dd class="mt-2 text-sm text-emerald-300">
+                Actively expanding
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-slate-800">
+    <div
+      class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-center sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8 lg:text-left"
+    >
+      <div>
+        <p
+          class="font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600"
+        >
+          GWlll // Guild Wars Living Lore Library
+        </p>
+
+        <p class="mt-2 text-xs leading-5 text-slate-700">
+          An unofficial community archive project.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3 lg:justify-end">
+        <button
+          id="show-disclaimer-button"
+          type="button"
+          class="rounded-lg border border-slate-800 px-4 py-2 text-xs text-slate-500 transition hover:border-slate-700 hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+        >
+          View Spoiler Disclaimer
+        </button>
+
+        <button
+          id="reset-disclaimer-button"
+          type="button"
+          class="rounded-lg border border-slate-800 px-4 py-2 text-xs text-slate-500 transition hover:border-slate-700 hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+        >
+          Reset Acknowledgement
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="border-t border-slate-900 px-4 py-5 text-center text-[10px] leading-5 text-slate-700"
+    >
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties belong
+      to their respective owners.
+    </div>
+  </footer>
+
+  <!-- Spoiler disclaimer modal -->
+  <div
+    id="spoiler-modal"
+    class="modal-backdrop fixed inset-0 z-[120] flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-md sm:p-6"
+    aria-hidden="true"
+  >
+    <section
+      class="modal-window panel-shadow max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-amber-400/25 bg-slate-900"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="spoiler-modal-title"
+      aria-describedby="spoiler-modal-description"
+    >
+      <div
+        class="border-b border-amber-400/15 bg-amber-400/[0.045] px-5 py-5 sm:px-7"
+      >
+        <div class="flex items-start gap-4">
+          <div
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-amber-400/25 bg-amber-400/10"
+            aria-hidden="true"
+          >
+            <svg
+              class="h-5 w-5 text-amber-300"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v4m0 4h.01M10.3 3.8 2.4 17.5A2 2 0 0 0 4.1 20.5h15.8a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0Z"
+              />
+            </svg>
+          </div>
+
+          <div>
+            <p
+              class="font-mono text-[10px] uppercase tracking-[0.22em] text-amber-400"
+            >
+              Archive Access Warning
+            </p>
+
+            <h2
+              id="spoiler-modal-title"
+              class="mt-1 text-xl font-semibold text-white sm:text-2xl"
+            >
+              This library contains major story spoilers
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-5 py-6 sm:px-7 sm:py-8">
+        <p
+          id="spoiler-modal-description"
+          class="leading-7 text-slate-300"
+        >
+          The Guild Wars Living Lore Library contains historical records from
+          across the Guild Wars universe. These records may reveal major
+          characters, identities, deaths, alliances, locations, conflicts,
+          mysteries, and story outcomes.
+        </p>
+
+        <p class="mt-4 leading-7 text-slate-400">
+          The library is intended to be a complete historical archive rather
+          than a spoiler-free gameplay guide.
+        </p>
+
+        <div
+          class="mt-6 rounded-xl border border-slate-700/70 bg-slate-950/50 p-5"
+        >
+          <p
+            class="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500"
+          >
+            Spoiler coverage includes
+          </p>
+
+          <div
+            class="mt-4 grid gap-3 text-sm text-slate-300 sm:grid-cols-2"
+          >
+            <div>› Guild Wars campaigns</div>
+            <div>› Eye of the North</div>
+            <div>› Guild Wars Beyond</div>
+            <div>› Guild Wars 2 Personal Story</div>
+            <div>› Living World</div>
+            <div>› All expansions</div>
+            <div>› Raids and side stories</div>
+            <div>› Current historical records</div>
+          </div>
+        </div>
+
+        <div
+          class="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-end"
+        >
+          <button
+            id="leave-site-button"
+            type="button"
+            class="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-700 bg-slate-950/50 px-5 text-sm font-medium text-slate-400 transition hover:border-slate-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-500/40"
+          >
+            Leave Archive
+          </button>
+
+          <button
+            id="acknowledge-spoilers-button"
+            type="button"
+            class="inline-flex min-h-11 items-center justify-center gap-3 rounded-lg border border-sky-400/30 bg-sky-400/10 px-6 text-sm font-semibold text-sky-200 transition hover:border-sky-300/50 hover:bg-sky-400/15 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400/40"
+          >
+            I Acknowledge
+
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <p class="mt-4 text-center text-xs leading-5 text-slate-600">
+          Your acknowledgement will be stored locally on this device.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      /*
+       * STORAGE
+       */
+
+      const DISCLAIMER_STORAGE_KEY =
+        "gwlll-spoiler-disclaimer-acknowledged";
+
+      const getAcknowledgement = () => {
+        try {
+          return localStorage.getItem(DISCLAIMER_STORAGE_KEY) === "true";
+        } catch (error) {
+          console.warn("Local storage is unavailable.", error);
+          return false;
+        }
+      };
+
+      const saveAcknowledgement = () => {
+        try {
+          localStorage.setItem(DISCLAIMER_STORAGE_KEY, "true");
+        } catch (error) {
+          console.warn("Could not save spoiler acknowledgement.", error);
+        }
+      };
+
+      const clearAcknowledgement = () => {
+        try {
+          localStorage.removeItem(DISCLAIMER_STORAGE_KEY);
+        } catch (error) {
+          console.warn("Could not clear spoiler acknowledgement.", error);
+        }
+      };
+
+      /*
+       * SPOILER MODAL
+       */
+
+      const spoilerModal = document.getElementById("spoiler-modal");
+
+      const acknowledgeButton = document.getElementById(
+        "acknowledge-spoilers-button"
+      );
+
+      const leaveSiteButton = document.getElementById(
+        "leave-site-button"
+      );
+
+      const showDisclaimerButton = document.getElementById(
+        "show-disclaimer-button"
+      );
+
+      const resetDisclaimerButton = document.getElementById(
+        "reset-disclaimer-button"
+      );
+
+      let previousFocusedElement = null;
+
+      const openSpoilerModal = () => {
+        if (!spoilerModal) {
+          return;
+        }
+
+        previousFocusedElement =
+          document.activeElement instanceof HTMLElement
+            ? document.activeElement
+            : null;
+
+        document.body.classList.add("modal-open");
+        spoilerModal.classList.add("is-visible");
+        spoilerModal.setAttribute("aria-hidden", "false");
+
+        window.setTimeout(() => {
+          acknowledgeButton?.focus();
+        }, 80);
+      };
+
+      const closeSpoilerModal = () => {
+        if (!spoilerModal) {
+          return;
+        }
+
+        document.body.classList.remove("modal-open");
+        spoilerModal.classList.remove("is-visible");
+        spoilerModal.setAttribute("aria-hidden", "true");
+
+        if (previousFocusedElement) {
+          previousFocusedElement.focus();
+        }
+      };
+
+      acknowledgeButton?.addEventListener("click", () => {
+        saveAcknowledgement();
+        closeSpoilerModal();
+      });
+
+      leaveSiteButton?.addEventListener("click", () => {
+        if (window.history.length > 1) {
+          window.history.back();
+          return;
+        }
+
+        window.location.href = "https://www.guildwars2.com/";
+      });
+
+      showDisclaimerButton?.addEventListener("click", () => {
+        openSpoilerModal();
+      });
+
+      resetDisclaimerButton?.addEventListener("click", () => {
+        clearAcknowledgement();
+        openSpoilerModal();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          spoilerModal?.classList.contains("is-visible") &&
+          getAcknowledgement()
+        ) {
+          closeSpoilerModal();
+        }
+      });
+
+      /*
+       * SERVER TIME
+       */
+
+      const serverTimeElement = document.getElementById("server-time");
+      const serverDateElement = document.getElementById("server-date");
+
+      const updateServerTime = () => {
+        const now = new Date();
+
+        const timeFormatter = new Intl.DateTimeFormat("en-US", {
+          timeZone: "UTC",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false
+        });
+
+        const dateFormatter = new Intl.DateTimeFormat("en-US", {
+          timeZone: "UTC",
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+          year: "numeric"
+        });
+
+        if (serverTimeElement) {
+          serverTimeElement.textContent = timeFormatter.format(now);
+        }
+
+        if (serverDateElement) {
+          serverDateElement.textContent =
+            `${dateFormatter.format(now)} · UTC`;
+        }
+      };
+
+      updateServerTime();
+      window.setInterval(updateServerTime, 1000);
+
+      /*
+       * MOBILE NAVIGATION
+       */
+
+      const mobileMenuButton = document.getElementById(
+        "mobile-menu-button"
+      );
+
+      const mobileNavigation = document.getElementById(
+        "mobile-navigation"
+      );
+
+      const mobileMenuOpenIcon = document.getElementById(
+        "mobile-menu-open-icon"
+      );
+
+      const mobileMenuCloseIcon = document.getElementById(
+        "mobile-menu-close-icon"
+      );
+
+      const closeMobileNavigation = () => {
+        if (
+          !mobileMenuButton ||
+          !mobileNavigation ||
+          !mobileMenuOpenIcon ||
+          !mobileMenuCloseIcon
+        ) {
+          return;
+        }
+
+        mobileNavigation.classList.add("hidden");
+        mobileMenuOpenIcon.classList.remove("hidden");
+        mobileMenuCloseIcon.classList.add("hidden");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenuButton.setAttribute("aria-label", "Open navigation");
+      };
+
+      mobileMenuButton?.addEventListener("click", () => {
+        if (
+          !mobileNavigation ||
+          !mobileMenuOpenIcon ||
+          !mobileMenuCloseIcon
+        ) {
+          return;
+        }
+
+        const isExpanded =
+          mobileMenuButton.getAttribute("aria-expanded") === "true";
+
+        mobileNavigation.classList.toggle("hidden", isExpanded);
+        mobileMenuOpenIcon.classList.toggle("hidden", !isExpanded);
+        mobileMenuCloseIcon.classList.toggle("hidden", isExpanded);
+
+        mobileMenuButton.setAttribute(
+          "aria-expanded",
+          String(!isExpanded)
+        );
+
+        mobileMenuButton.setAttribute(
+          "aria-label",
+          isExpanded ? "Open navigation" : "Close navigation"
+        );
+      });
+
+      mobileNavigation
+        ?.querySelectorAll("a")
+        .forEach((link) => {
+          link.addEventListener("click", closeMobileNavigation);
+        });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMobileNavigation();
+        }
+      });
+
+      /*
+       * REVEAL ANIMATIONS
+       */
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (
+        prefersReducedMotion ||
+        !("IntersectionObserver" in window)
+      ) {
+        revealElements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+      } else {
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.08,
+            rootMargin: "0px 0px -28px 0px"
+          }
+        );
+
+        revealElements.forEach((element, index) => {
+          element.style.transitionDelay =
+            `${Math.min(index * 30, 180)}ms`;
+
+          revealObserver.observe(element);
+        });
+      }
+
+      /*
+       * INITIALIZATION
+       */
+
+      if (!getAcknowledgement()) {
+        window.setTimeout(openSpoilerModal, 180);
+      }
+    })();
+  </script>
+</body>
+</html>
