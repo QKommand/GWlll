@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Ancient Dragonrises - Guild Wars Living Lore Library."
+  />
+
+  <meta name="theme-color" content="#020617" />
+
+  <title>Ancient Dragonrises // GWlll</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #020617;
+      --panel: #0f172a;
+      --border: #253247;
+
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --dim: #64748b;
+
+      --accent: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(56, 189, 248, 0.07),
+          transparent 32rem
+        ),
+        var(--background);
+
+      color: var(--text);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      min-height: 66px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-label {
+      margin: 0;
+
+      color: var(--accent);
+
+      font-family: monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: white;
+
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .server-clock {
+      text-align: right;
+    }
+
+    .server-clock-label {
+      margin: 0;
+
+      color: var(--dim);
+
+      font-family: monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .server-time {
+      margin: 2px 0 0;
+
+      color: white;
+
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+
+    /* BACK LINK */
+
+    .back-link {
+      display: inline-flex;
+
+      margin-top: 28px;
+
+      color: var(--muted);
+
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 46px 0 50px;
+    }
+
+    .eyebrow {
+      margin: 0;
+
+      color: var(--accent);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 12px 0 0;
+
+      color: white;
+
+      font-size: clamp(2.5rem, 8vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-text {
+      max-width: 760px;
+
+      margin: 22px 0 0;
+
+      color: var(--muted);
+
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .meta-row {
+      margin-top: 24px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .meta {
+      padding: 8px 11px;
+
+      border: 1px solid var(--border);
+      border-radius: 8px;
+
+      background: rgba(15, 23, 42, 0.7);
+
+      color: var(--muted);
+
+      font-family: monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+    }
+
+    /* STORY */
+
+    .story-section {
+      padding: 32px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .story-section h2 {
+      margin: 7px 0 0;
+
+      color: white;
+
+      font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .section-label {
+      margin: 0;
+
+      color: var(--accent);
+
+      font-family: monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .story-section p {
+      margin: 16px 0 0;
+
+      color: var(--muted);
+    }
+
+    .story-section strong {
+      color: var(--text);
+    }
+
+    .record-box {
+      margin-top: 22px;
+      padding: 18px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.72);
+    }
+
+    .record-box h3 {
+      margin: 0;
+
+      color: white;
+
+      font-size: 1rem;
+    }
+
+    .record-box ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+
+      color: var(--muted);
+    }
+
+    .record-box li + li {
+      margin-top: 7px;
+    }
+
+    /* NEXT ERA */
+
+    .navigation {
+      padding: 38px 0 60px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .navigation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+    }
+
+    .nav-card {
+      min-height: 60px;
+
+      display: flex;
+      align-items: center;
+
+      padding: 16px 18px;
+
+      border: 1px solid var(--border);
+      border-radius: 9px;
+
+      background: var(--panel);
+
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .nav-card:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+
+    .nav-card.next {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .nav-label {
+      display: block;
+
+      color: var(--dim);
+
+      font-family: monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .nav-title {
+      display: block;
+
+      margin-top: 2px;
+
+      color: white;
+
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--dim);
+
+      text-align: center;
+
+      font-size: 0.74rem;
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 24px, 900px);
+      }
+
+      .header-inner {
+        min-height: 60px;
+      }
+
+      .brand-name {
+        font-size: 0.82rem;
+      }
+
+      .server-time {
+        font-size: 0.8rem;
+      }
+
+      .hero {
+        padding: 36px 0 42px;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      .navigation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-card.next {
+        justify-content: flex-start;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="../../index.html" class="brand">
+        <p class="brand-label">
+          QKommand Archive
+        </p>
+
+        <p class="brand-name">
+          Guild Wars Living Lore Library
+        </p>
+      </a>
+
+      <div class="server-clock">
+        <p class="server-clock-label">
+          GW2 Server Time
+        </p>
+
+        <p id="server-time" class="server-time">
+          00:00 UTC
+        </p>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container">
+      <a
+        href="../../index.html#timeline"
+        class="back-link"
+      >
+        ← Back to Main Timeline
+      </a>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+
+        <p class="eyebrow">
+          Era 01 // The Oldest Echoes
+        </p>
+
+        <h1>
+          Ancient Dragonrises
+        </h1>
+
+        <p class="hero-text">
+          Tyria's story begins long before humanity, before the Six Gods,
+          and before the kingdoms whose ruins still cover the world.
+          In the oldest surviving records, Elder Dragons already moved
+          across Tyria in search of magic, leaving entire civilizations
+          struggling simply to survive.
+        </p>
+
+        <div class="meta-row">
+
+          <span class="meta">
+            Approx. 20,000 BE – 10,000 BE
+          </span>
+
+          <span class="meta">
+            Ancient Tyria
+          </span>
+
+          <span class="meta">
+            Record Status: Fragmentary
+          </span>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="container">
+
+      <section class="story-section">
+
+        <p class="section-label">
+          01 // The Earliest Known Dragonrise
+        </p>
+
+        <h2>
+          Tyria before recorded memory
+        </h2>
+
+        <p>
+          The earliest known Dragonrise is estimated to have occurred around
+          <strong>20,000 BE</strong>. Few records survive from this distant
+          age, but the cycle itself appears to have already been ancient.
+        </p>
+
+        <p>
+          Elder Dragons rose when the world's ambient magical energy became
+          abundant. They consumed enormous quantities of that magic and
+          devastated the civilizations around them before eventually
+          returning to hibernation.
+        </p>
+
+      </section>
+
+      <section class="story-section">
+
+        <p class="section-label">
+          02 // The Great Giants
+        </p>
+
+        <h2>
+          A civilization disappears
+        </h2>
+
+        <p>
+          Around <strong>10,000 BE</strong>, the last known
+          <strong>Giganticus Lupicus</strong>, commonly called the Great
+          Giants, disappeared from the Tyrian continent.
+        </p>
+
+        <p>
+          Their enormous remains can still be found across Tyria and Elona.
+          Later records associate their disappearance with the previous
+          awakening of the Elder Dragons.
+        </p>
+
+      </section>
+
+      <section class="story-section">
+
+        <p class="section-label">
+          03 // The Elder Alliance
+        </p>
+
+        <h2>
+          Five peoples stand against the dragons
+        </h2>
+
+        <p>
+          Five ancient civilizations survived long enough to form an alliance
+          against the Elder Dragons:
+        </p>
+
+        <div class="record-box">
+
+          <h3>
+            Known Elder Races
+          </h3>
+
+          <ul>
+            <li>Dwarves</li>
+            <li>Forgotten</li>
+            <li>Jotun</li>
+            <li>Mursaat</li>
+            <li>Seers</li>
+          </ul>
+
+        </div>
+
+        <p>
+          Their efforts included attempts to fight the dragons directly.
+          One campaign involving the mursaat and Forgotten attempted to
+          destroy Zhaitan but ended disastrously.
+        </p>
+
+      </section>
+
+      <section class="story-section">
+
+        <p class="section-label">
+          04 // The Seers' Plan
+        </p>
+
+        <h2>
+          If the dragons hunger for magic, hide it
+        </h2>
+
+        <p>
+          The Seers developed another answer to the Dragonrise.
+        </p>
+
+        <p>
+          They first created the <strong>Shadowstone</strong> and later the
+          original <strong>Bloodstone</strong>. The elder races could place
+          their magic within the Bloodstone, concealing that magical energy
+          from the Elder Dragons.
+        </p>
+
+        <p>
+          Most of the alliance accepted the plan.
+        </p>
+
+        <p>
+          The mursaat refused.
+        </p>
+
+      </section>
+
+      <section class="story-section">
+
+        <p class="section-label">
+          05 // The Mursaat Betrayal
+        </p>
+
+        <h2>
+          The alliance breaks apart
+        </h2>
+
+        <p>
+          Rather than surrender their magic, the mursaat withdrew from the
+          alliance and phased themselves into the Mists.
+        </p>
+
+        <p>
+          Their departure allowed them to avoid much of the destruction that
+          followed.
+        </p>
+
+        <p>
+          Later evidence suggests the mursaat believed the other elder races
+          had betrayed them during the failed attempt against Zhaitan.
+          The exact sequence of events remains uncertain.
+        </p>
+
+      </section>
+
+      <section class="story-section">
+
+        <p class="section-label">
+          06 // Seers and Mursaat
+        </p>
+
+        <h2>
+          One war becomes another
+        </h2>
+
+        <p>
+          The dispute between the Seers and mursaat became a centuries-long
+          war.
+        </p>
+
+        <p>
+          The mursaat used devastating magical abilities, including
+          <strong>Spectral Agony</strong>. By the end of the conflict,
+          the Seers had been brought close to extinction.
+        </p>
+
+      </section>
+
+      <section class="story-section">
+
+        <p class="section-label">
+          07 // Glint
+        </p>
+
+        <h2>
+          A champion is freed
+        </h2>
+
+        <p>
+          Glint was originally a champion of the Elder Dragon
+          <strong>Kralkatorrik</strong>.
+        </p>
+
+        <p>
+          In approximately <strong>1680 BE</strong>, the Forgotten performed
+          a ritual that freed Glint from Kralkatorrik's control while costing
+          her much of her earlier memory.
+        </p>
+
+        <p>
+          Glint then helped conceal surviving peoples from the Elder Dragons
+          while the dragons continued consuming the world's remaining magic.
+        </p>
+
+      </section>
+
+      <section class="story-section">
+
+        <p class="section-label">
+          08 // The Long Sleep
+        </p>
+
+        <h2>
+          The survivors return to the world
+        </h2>
+
+        <p>
+          Eventually the available magical energy became too scarce to
+          sustain the Elder Dragons.
+        </p>
+
+        <p>
+          One after another, they entered hibernation.
+        </p>
+
+        <p>
+          The civilizations that emerged were diminished. Some had nearly
+          disappeared. Others, such as the jotun, had fallen far from the
+          power and knowledge they once possessed.
+        </p>
+
+        <p>
+          Younger peoples including the charr, kodan, and tengu began to
+          become increasingly prominent in the world left behind.
+        </p>
+
+      </section>
+
+    </div>
+
+    <section class="navigation">
+      <div class="container navigation-grid">
+
+        <a
+          href="../../index.html#timeline"
+          class="nav-card"
+        >
+          <span>
+
+            <span class="nav-label">
+              Return
+            </span>
+
+            <span class="nav-title">
+              ← Main Timeline
+            </span>
+
+          </span>
+        </a>
+
+        <a
+          href="../elder-races/"
+          class="nav-card next"
+        >
+          <span>
+
+            <span class="nav-label">
+              Continue History
+            </span>
+
+            <span class="nav-title">
+              The Elder Races →
+            </span>
+
+          </span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      GWlll is an unofficial Guild Wars lore project.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
+      belong to their respective owners.
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const serverTime =
+        document.getElementById("server-time");
+
+      const updateServerTime = () => {
+        const formatter =
+          new Intl.DateTimeFormat(
+            "en-US",
+            {
+              timeZone: "UTC",
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+              hour12: false
+            }
+          );
+
+        serverTime.textContent =
+          `${formatter.format(new Date())} UTC`;
+      };
+
+      updateServerTime();
+
+      window.setInterval(updateServerTime, 1000);
+    })();
+  </script>
+
+</body>
+</html>
