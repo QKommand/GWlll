@@ -23,7 +23,6 @@
 
       --background: #020617;
       --panel: #0f172a;
-      --panel-hover: #162033;
       --border: #374151;
 
       --gold: #f4c76b;
@@ -77,7 +76,9 @@
       margin-inline: auto;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     .site-header {
       position: sticky;
@@ -144,7 +145,9 @@
       transform: translateX(-3px);
     }
 
-    /* HISTORY POSITION */
+    /* =========================
+       HISTORICAL POSITION
+    ========================= */
 
     .history-position {
       position: sticky;
@@ -209,12 +212,13 @@
 
       height: 1px;
 
-      background: linear-gradient(
-        to right,
-        rgba(244, 199, 107, 0.25),
-        rgba(244, 199, 107, 0.9),
-        rgba(244, 199, 107, 0.25)
-      );
+      background:
+        linear-gradient(
+          to right,
+          rgba(244, 199, 107, 0.25),
+          rgba(244, 199, 107, 0.9),
+          rgba(244, 199, 107, 0.25)
+        );
     }
 
     .history-point {
@@ -288,10 +292,13 @@
       text-align: center;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       padding: 72px 0 56px;
+
       text-align: center;
     }
 
@@ -343,7 +350,9 @@
       line-height: 1.9;
     }
 
-    /* ARCHIVE NOTE */
+    /* =========================
+       ARCHIVE NOTE
+    ========================= */
 
     .archive-note {
       margin-bottom: 55px;
@@ -369,10 +378,11 @@
 
     .archive-note p:last-child {
       margin: 12px 0 0;
-      color: var(--white);
     }
 
-    /* HISTORY */
+    /* =========================
+       HISTORY
+    ========================= */
 
     .history-section {
       padding: 36px 0;
@@ -403,6 +413,7 @@
 
     .history-section p {
       margin: 16px 0 0;
+
       color: var(--white);
     }
 
@@ -435,9 +446,11 @@
       margin: 8px 0 0;
     }
 
-    /* ERA GRID */
+    /* =========================
+       STORY GRID
+    ========================= */
 
-    .era-grid {
+    .story-grid {
       margin-top: 24px;
 
       display: grid;
@@ -446,16 +459,16 @@
       gap: 14px;
     }
 
-    .era-card {
+    .story-card {
       padding: 20px;
 
       border: 1px solid var(--border);
       border-radius: 10px;
 
-      background: rgba(15, 23, 42, 0.78);
+      background: rgba(15, 23, 42, 0.76);
     }
 
-    .era-card-label {
+    .story-card-label {
       margin: 0;
 
       color: var(--white);
@@ -467,7 +480,7 @@
       text-transform: uppercase;
     }
 
-    .era-card h3 {
+    .story-card h3 {
       margin: 7px 0 0;
 
       color: var(--gold);
@@ -475,77 +488,15 @@
       font-size: 1.05rem;
     }
 
-    .era-card p:last-child {
+    .story-card p:last-child {
       margin: 8px 0 0;
-
-      color: var(--white);
 
       font-size: 0.9rem;
     }
 
-    /* KEY RECORDS */
-
-    .key-records {
-      padding: 42px 0;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .key-records h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.8rem;
-    }
-
-    .key-grid {
-      margin-top: 24px;
-
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-
-      gap: 14px;
-    }
-
-    .key-card {
-      padding: 20px;
-
-      border: 1px solid var(--border);
-      border-radius: 10px;
-
-      background: rgba(15, 23, 42, 0.76);
-    }
-
-    .key-card-label {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.63rem;
-
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .key-card h3 {
-      margin: 7px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1rem;
-    }
-
-    .key-card p:last-child {
-      margin: 8px 0 0;
-
-      color: var(--white);
-
-      font-size: 0.9rem;
-    }
-
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .page-navigation {
       padding: 45px 0 80px;
@@ -575,8 +526,6 @@
 
     .page-navigation p {
       margin: 13px 0 0;
-
-      color: var(--white);
     }
 
     .navigation-actions {
@@ -615,28 +564,23 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color: rgba(244, 199, 107, 0.6);
+      border-color:
+        rgba(244, 199, 107, 0.6);
+
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
+      border-color:
+        rgba(244, 199, 107, 0.45);
 
-      background: rgba(244, 199, 107, 0.1);
+      background:
+        rgba(244, 199, 107, 0.1);
     }
 
-    .pending {
-      opacity: 0.65;
-      cursor: default;
-    }
-
-    .pending:hover {
-      transform: none;
-      border-color: var(--border);
-      color: var(--gold);
-    }
-
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 30px 0;
@@ -649,7 +593,9 @@
       font-size: 0.75rem;
     }
 
-    /* ANIMATION */
+    /* =========================
+       ANIMATION
+    ========================= */
 
     @keyframes goldPulse {
       0%,
@@ -669,7 +615,9 @@
       }
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 650px) {
       html {
@@ -724,8 +672,7 @@
         font-size: 1rem;
       }
 
-      .era-grid,
-      .key-grid {
+      .story-grid {
         grid-template-columns: 1fr;
       }
 
@@ -755,7 +702,9 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="site-header">
 
@@ -780,7 +729,7 @@
         href="../index.html"
         class="home-link"
       >
-        ← Main Homepage
+        ← Road Through Time
       </a>
 
     </div>
@@ -788,7 +737,9 @@
   </header>
 
 
-  <!-- YOU ARE HERE -->
+  <!-- =========================
+       HISTORICAL POSITION
+  ========================== -->
 
   <aside class="history-position">
 
@@ -809,6 +760,7 @@
 
       </div>
 
+
       <div class="history-rail">
 
         <div class="history-line"></div>
@@ -824,19 +776,23 @@
 
       </div>
 
+
       <div class="rail-labels">
 
         <span>1336 AE</span>
+
         <span>1337 AE</span>
+
         <span>1338 AE</span>
 
       </div>
+
 
       <p
         class="position-context"
         id="positionContext"
       >
-        YOU ARE HERE // Aurene Withdraws
+        YOU ARE HERE // The Dragon Cycle Is Over
       </p>
 
     </div>
@@ -846,7 +802,9 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero">
 
@@ -865,18 +823,18 @@
         </p>
 
         <p class="hero-text">
-          For tens of thousands of years, the Elder Dragons had defined
-          the rhythm of Tyria's history.
+          For thousands of years, the Elder Dragons were the great rhythm
+          beneath Tyrian history.
         </p>
 
         <p class="hero-text">
-          Their cycle was over.
+          By 1335 AE, that rhythm had ended.
         </p>
 
         <p class="hero-text">
-          What came next was not peace, but discovery. Old barriers weakened,
-          hidden powers stepped into view, and Tyria learned that the dragons
-          had never been the only danger beyond the edges of the known world.
+          What came next was not peace so much as a wider view of the world.
+          With the Dragon Cycle gone, hidden powers, distant realms, and
+          forgotten histories could finally move into the foreground.
         </p>
 
       </div>
@@ -886,7 +844,9 @@
 
     <div class="container">
 
-      <!-- ARCHIVE NOTE -->
+      <!-- =========================
+           ARCHIVE NOTE
+      ========================== -->
 
       <div class="archive-note">
 
@@ -895,204 +855,140 @@
         </p>
 
         <p>
-          This era begins after the death of Soo-Won and the end of the
-          ancient Elder Dragon cycle. The focus shifts away from dragons
-          and toward the Mists, the Wizard's Court, Kryptis society,
-          ancient secrets around Janthir, and threats that had remained
-          hidden while Tyria was occupied with the Dragon Cycle.
+          This archive covers the period following End of Dragons:
+          Aurene's departure from ordinary affairs, Secrets of the Obscure,
+          the Kryptis conflict, the rise of Peitha, the formation of the
+          Tyrian Alliance, Janthir, and the renewed Titan threat.
+          Earlier Elder Dragon history is not repeated here.
         </p>
 
       </div>
 
 
-      <!-- 01 -->
+      <!-- =========================
+           RECORD 01
+      ========================== -->
 
       <section
         class="history-section"
         data-position="5"
         data-date="1336 AE"
-        data-context="YOU ARE HERE // Aurene Becomes the World's Conduit"
+        data-context="YOU ARE HERE // The Age of Aurene Begins"
       >
 
         <p class="history-label">
-          Record 01 // After Soo-Won
+          Record 01 // A Different World
         </p>
 
         <h2>
-          Aurene takes responsibility for the balance
+          Tyria enters an age without the old cycle
         </h2>
 
         <p>
-          With Soo-Won gone, the ancient Elder Dragon cycle had ended.
+          The death of Soo-Won brought the ancient Elder Dragon cycle
+          to an end.
         </p>
 
         <p>
-          <strong>Aurene</strong> remained as the great magical stabilizing
-          force left behind.
+          <strong>Aurene</strong> remained as the great conduit through
+          which the world's magical balance could be maintained.
         </p>
 
         <p>
-          In <strong>1336 AE</strong>, she withdrew from ordinary affairs
-          and took her place as a conduit for the world's magical balance.
+          Yet her role was not to rule Tyria.
         </p>
 
         <p>
-          Tyria entered an age where mortals could no longer measure every
-          great threat against the Elder Dragons.
+          The peoples of the world were increasingly left to decide
+          their own future.
         </p>
 
       </section>
 
 
-      <!-- 02 -->
+      <!-- =========================
+           RECORD 02
+      ========================== -->
 
       <section
         class="history-section"
         data-position="14"
         data-date="1336 AE"
-        data-context="YOU ARE HERE // A Hidden War Comes Into View"
+        data-context="YOU ARE HERE // Aurene Withdraws"
       >
 
         <p class="history-label">
-          Record 02 // Secrets of the Obscure
+          Record 02 // Aurene's Departure
         </p>
 
         <h2>
-          The world above Tyria reveals itself
+          The Elder Dragon of Crystal and Light steps away
         </h2>
 
         <p>
-          A hidden struggle involving the
-          <strong>Wizard's Court</strong> and the
-          <strong>Astral Ward</strong> became impossible to ignore.
+          In <strong>1336 AE</strong>, Aurene departed from ordinary
+          Tyrian affairs.
         </p>
 
         <p>
-          For centuries, these groups had defended Tyria from threats
-          beyond the ordinary awareness of its nations.
+          Her purpose shifted toward serving as a conduit for the
+          magical balance of the world.
         </p>
 
         <p>
-          Their work centered on the Wizard's Tower, the skies above
-          Tyria, and dangers moving through the Mists.
+          The Commander and the nations of Tyria could no longer rely
+          upon an Elder Dragon to stand at the center of every new crisis.
         </p>
 
       </section>
 
 
-      <!-- 03 -->
+      <!-- =========================
+           RECORD 03
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="23"
+        data-position="24"
         data-date="1336 AE"
-        data-context="YOU ARE HERE // Kryptis Breach Tyria"
+        data-context="YOU ARE HERE // The Astral Ward Is Revealed"
       >
 
         <p class="history-label">
-          Record 03 // The Kryptis Invasion
+          Record 03 // Secrets of the Obscure
         </p>
 
         <h2>
-          Creatures from the Mists cross into Tyria
+          Another layer of Tyria steps into view
         </h2>
 
         <p>
-          <strong>Kryptis</strong> forces managed to breach into Tyria
-          from the Mists.
+          The Commander encountered an organization unknown to most
+          of the world:
+          the <strong>Astral Ward</strong>.
         </p>
 
         <p>
-          The invasion destabilized the Wizard's Court and allowed
-          Kryptis forces to take control of important locations,
-          including parts of <strong>Amnytas</strong> and the
+          The Ward had spent centuries defending Tyria against threats
+          that ordinary nations rarely knew existed.
+        </p>
+
+        <p>
+          Their history was connected to the
+          <strong>Wizard's Court</strong> and the mysterious
           <strong>Wizard's Tower</strong>.
-        </p>
-
-        <p>
-          Tyria was suddenly facing an enemy whose homeland did not lie
-          across an ocean or beneath the earth.
-        </p>
-
-        <p>
-          It lay in another realm.
-        </p>
-
-      </section>
-
-
-      <!-- 04 -->
-
-      <section
-        class="history-section"
-        data-position="32"
-        data-date="1336 AE"
-        data-context="YOU ARE HERE // Mabon Falls"
-      >
-
-        <p class="history-label">
-          Record 04 // Mabon
-        </p>
-
-        <h2>
-          An ancient guardian is lost
-        </h2>
-
-        <p>
-          During the Kryptis crisis,
-          <strong>Mabon</strong> died.
-        </p>
-
-        <p>
-          His death weakened an organization already struggling against
-          a threat that had breached defenses built over centuries.
-        </p>
-
-        <p>
-          It also marked the loss of another figure tied to ancient
-          histories that much of Tyria had never known existed.
-        </p>
-
-      </section>
-
-
-      <!-- 05 -->
-
-      <section
-        class="history-section"
-        data-position="40"
-        data-date="1336 AE"
-        data-context="YOU ARE HERE // The Wards Around Bava Nisos Weaken"
-      >
-
-        <p class="history-label">
-          Record 05 // Janthir Stirs
-        </p>
-
-        <h2>
-          Old protections begin to fail
-        </h2>
-
-        <p>
-          As the conflict unfolded, the wards around
-          <strong>Bava Nisos</strong> weakened.
-        </p>
-
-        <p>
-          The ancient mursaat city lay in Janthir, a region already tied
-          to the mursaat, Seers, Titans, Bloodstones, and some of Tyria's
-          oldest unresolved mysteries.
         </p>
 
         <div class="record-box">
 
           <p class="record-box-label">
-            Ancient Connection
+            A Change in Perspective
           </p>
 
           <p>
-            Janthir reconnects the modern story to the same elder
-            civilizations introduced near the beginning of the Road Through Time.
+            The Commander had spent years fighting dangers everyone
+            could see. The Astral Ward revealed how many threats had
+            been kept outside ordinary history entirely.
           </p>
 
         </div>
@@ -1100,13 +996,98 @@
       </section>
 
 
-      <!-- 06 -->
+      <!-- =========================
+           RECORD 04
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="48"
+        data-position="34"
         data-date="1336 AE"
-        data-context="YOU ARE HERE // Peitha Joins the Fight"
+        data-context="YOU ARE HERE // Amnytas Is Attacked"
+      >
+
+        <p class="history-label">
+          Record 04 // The Kryptis
+        </p>
+
+        <h2>
+          Invaders cross from the Mists
+        </h2>
+
+        <p>
+          Creatures known as the
+          <strong>Kryptis</strong> breached Tyria from the Mists.
+        </p>
+
+        <p>
+          Their invasion struck the Wizard's Tower and
+          <strong>Amnytas</strong>.
+        </p>
+
+        <p>
+          The Wizard's Court lost control of important positions,
+          forcing the Astral Ward into open conflict.
+        </p>
+
+        <p>
+          Tyria was now facing an enemy whose homeland lay beyond
+          the physical world.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 05
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="43"
+        data-date="1336 AE"
+        data-context="YOU ARE HERE // Mabon Falls"
+      >
+
+        <p class="history-label">
+          Record 05 // Mabon
+        </p>
+
+        <h2>
+          One of the Wizard's Court is lost
+        </h2>
+
+        <p>
+          During the Kryptis invasion,
+          <strong>Mabon</strong> died.
+        </p>
+
+        <p>
+          His death weakened an already strained defense against
+          the creatures pressing through the Mists.
+        </p>
+
+        <p>
+          At the same time, old protections around
+          <strong>Bava Nisos</strong> began to weaken.
+        </p>
+
+        <p>
+          Ancient history and the new crisis were starting to overlap.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 06
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="53"
+        data-date="1336 AE"
+        data-context="YOU ARE HERE // Peitha Offers an Alliance"
       >
 
         <p class="history-label">
@@ -1114,39 +1095,36 @@
         </p>
 
         <h2>
-          The Kryptis are not united
+          Not every Kryptis serves the same master
         </h2>
 
         <p>
-          The Kryptis threat was not a simple invasion by a single
-          unified people.
+          The Kryptis were not a single united enemy.
         </p>
 
         <p>
-          <strong>Peitha</strong> allied with the Wizard's Court
-          and began organizing resistance against
+          <strong>Peitha</strong> opposed the rule of
           <strong>Eparch</strong>.
         </p>
 
         <p>
-          The conflict became a rebellion within Kryptis society itself.
-        </p>
-
-        <p>
-          The road forward would lead into their homeland:
-          <strong>Inner Nayos</strong>.
+          She allied with the Wizard's Court and the Commander's forces,
+          turning the conflict from a defense of Tyria into a rebellion
+          within Kryptis society itself.
         </p>
 
       </section>
 
 
-      <!-- 07 -->
+      <!-- =========================
+           RECORD 07
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="58"
-        data-date="1337 AE"
-        data-context="YOU ARE HERE // The Rebellion Enters Nayos"
+        data-position="63"
+        data-date="1336–1337 AE"
+        data-context="YOU ARE HERE // The War Enters Nayos"
       >
 
         <p class="history-label">
@@ -1154,81 +1132,89 @@
         </p>
 
         <h2>
-          The war crosses fully into another realm
+          The conflict crosses completely into another realm
         </h2>
 
         <p>
-          In <strong>1337 AE</strong>, Peitha's rebellion pushed deeper
-          into Kryptis territory.
+          Peitha's rebellion carried the war into
+          <strong>Inner Nayos</strong>.
         </p>
 
         <p>
-          The alliance breached Eparch's defenses and carried the conflict
-          into the structure of Kryptis society itself.
+          Instead of waiting for the Kryptis to breach Tyria again,
+          the alliance moved against Eparch within his own domain.
         </p>
 
         <p>
-          Rather than simply defending Tyria, the Commander and allies
-          were now helping determine who would rule another realm.
+          The Commander was no longer simply defending a continent.
+        </p>
+
+        <p>
+          Tyrian conflicts had become directly entangled with
+          civilizations of the Mists.
         </p>
 
       </section>
 
 
-      <!-- 08 -->
+      <!-- =========================
+           RECORD 08
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="66"
+        data-position="72"
         data-date="1337 AE"
-        data-context="YOU ARE HERE // Eparch Is Defeated"
+        data-context="YOU ARE HERE // Eparch Falls"
       >
 
         <p class="history-label">
-          Record 08 // The Fall of Eparch
+          Record 08 // The Midnight King
         </p>
 
         <h2>
-          The Midnight King rises
+          Peitha takes the throne of Nayos
         </h2>
 
         <p>
-          Peitha and her allies eventually defeated
-          <strong>Eparch</strong>.
+          In <strong>1337 AE</strong>, Peitha's rebellion breached
+          Eparch's defenses.
         </p>
 
         <p>
-          With his fall, the old rule over Nayos ended.
+          <strong>Eparch was defeated</strong>.
         </p>
 
         <p>
-          <strong>Peitha became the Midnight King</strong>.
+          Peitha became the
+          <strong>Midnight King of Nayos</strong>.
         </p>
 
         <p>
-          The immediate Kryptis crisis was resolved, but Tyria had now
-          established direct relationships with powers and societies
-          beyond its own world.
+          The Kryptis crisis ended not through destruction of their people,
+          but through a change in who ruled them.
         </p>
 
       </section>
 
 
-      <!-- 09 -->
+      <!-- =========================
+           RECORD 09
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="74"
+        data-position="79"
         data-date="1337 AE"
         data-context="YOU ARE HERE // The Tyrian Alliance Forms"
       >
 
         <p class="history-label">
-          Record 09 // Janthir Wilds
+          Record 09 // The Tyrian Alliance
         </p>
 
         <h2>
-          Tyria begins acting as a wider alliance
+          Tyria begins organizing for a wider world
         </h2>
 
         <p>
@@ -1237,136 +1223,104 @@
         </p>
 
         <p>
-          The great Dragon campaigns had already forced nations and peoples
-          to cooperate repeatedly.
+          The alliance reflected how much the political landscape
+          had changed.
         </p>
 
         <p>
-          Now that cooperation began taking a more permanent political form.
+          Nations that once acted primarily through their own borders
+          were increasingly facing problems that required permanent
+          cooperation.
         </p>
 
         <p>
-          The world was moving from emergency coalitions toward a broader
-          international structure.
+          The future of Tyria was becoming more interconnected.
         </p>
 
       </section>
 
 
-      <!-- 10 -->
+      <!-- =========================
+           RECORD 10
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="82"
+        data-position="86"
+        data-date="1337 AE"
+        data-context="YOU ARE HERE // Janthir Opens"
+      >
+
+        <p class="history-label">
+          Record 10 // Janthir Wilds
+        </p>
+
+        <h2>
+          The road turns toward an old mystery
+        </h2>
+
+        <p>
+          Attention shifted toward
+          <strong>Janthir</strong>.
+        </p>
+
+        <p>
+          The region carried connections to some of the oldest threads
+          in Tyrian history, including the mursaat and Seers.
+        </p>
+
+        <p>
+          What had once seemed like distant ancient history was now
+          becoming part of the present again.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 11
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="92"
         data-date="1337 AE"
         data-context="YOU ARE HERE // The Titans Return"
       >
 
         <p class="history-label">
-          Record 10 // The Titans
+          Record 11 // An Ancient Threat Returns
         </p>
 
         <h2>
-          An enemy from the Guild Wars era returns
+          The Titans reappear
         </h2>
 
         <p>
-          The <strong>Titans resurfaced</strong>.
+          <strong>Titans</strong> resurfaced during the events
+          surrounding Janthir.
         </p>
 
         <p>
-          These creatures had once served Abaddon and had poured through
-          the Door of Komalie during the events surrounding the
-          Flameseeker Prophecies.
-        </p>
-
-        <p>
-          Their return tied the modern age directly back to the conflicts
+          These beings had once been tied to some of the great crises
           of the original Guild Wars era.
         </p>
 
         <p>
-          Once again, history that seemed finished had found a way back
-          into the present.
-        </p>
-
-      </section>
-
-
-      <!-- 11 -->
-
-      <section
-        class="history-section"
-        data-position="90"
-        data-date="1338 AE"
-        data-context="YOU ARE HERE // The Titans Are Defeated"
-      >
-
-        <p class="history-label">
-          Record 11 // The Foundry Connection
-        </p>
-
-        <h2>
-          The Titan threat is cut off
-        </h2>
-
-        <p>
-          In <strong>1338 AE</strong>, the Titans were defeated.
-        </p>
-
-        <p>
-          The portal leading to the
-          <strong>Foundry of Failed Creations</strong> was closed.
-        </p>
-
-        <p>
-          A threat linked to Abaddon, the Mists, and events more than
-          two centuries earlier was once again contained.
-        </p>
-
-      </section>
-
-
-      <!-- 12 -->
-
-      <section
-        class="history-section"
-        data-position="96"
-        data-date="1338 AE"
-        data-context="YOU ARE HERE // The Scepter of Orr Is Lost"
-      >
-
-        <p class="history-label">
-          Record 12 // The Scepter of Orr
-        </p>
-
-        <h2>
-          An ancient artifact disappears into the Mists
-        </h2>
-
-        <p>
-          During the events surrounding the Titan crisis,
-          the <strong>Scepter of Orr</strong> was lost to the Mists.
-        </p>
-
-        <p>
-          The artifact had already passed through some of the most important
-          conflicts in Tyrian history.
-        </p>
-
-        <p>
-          Now its trail extended beyond the physical world.
+          Their return showed how easily unresolved pieces of the past
+          could survive long enough to become modern threats.
         </p>
 
         <div class="record-box">
 
           <p class="record-box-label">
-            Unresolved Thread
+            The Road Loops Back
           </p>
 
           <p>
-            The Scepter's disappearance leaves one of Tyria's ancient
-            magical artifacts connected directly to whatever may come next.
+            The Dragon Cycle may have ended, but ancient history did not.
+            The post-dragon era increasingly uncovers problems whose roots
+            reach back hundreds or thousands of years.
           </p>
 
         </div>
@@ -1374,171 +1328,127 @@
       </section>
 
 
-      <!-- 13 -->
+      <!-- =========================
+           RECORD 12
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="97"
+        data-date="1338 AE"
+        data-context="YOU ARE HERE // The Titan Crisis Ends"
+      >
+
+        <p class="history-label">
+          Record 12 // The Foundry
+        </p>
+
+        <h2>
+          The Titans are defeated
+        </h2>
+
+        <p>
+          In <strong>1338 AE</strong>, the renewed Titan threat
+          was defeated.
+        </p>
+
+        <p>
+          The portal to the
+          <strong>Foundry of Failed Creations</strong> was closed.
+        </p>
+
+        <p>
+          Another ancient danger had reached the modern world
+          and been contained.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 13
+      ========================== -->
 
       <section
         class="history-section"
         data-position="100"
         data-date="1338 AE"
-        data-context="YOU ARE HERE // Tyria Looks Beyond Its Old Borders"
+        data-context="YOU ARE HERE // The Scepter of Orr Is Lost"
       >
 
         <p class="history-label">
-          Record 13 // The New Frontier
+          Record 13 // An Open Thread
         </p>
 
         <h2>
-          The map has become larger than Tyria
+          The Scepter of Orr disappears into the Mists
         </h2>
 
         <p>
-          The Elder Dragons had once made the world feel impossibly large.
+          During the closing events of this era, the
+          <strong>Scepter of Orr</strong> was lost to the Mists.
         </p>
 
         <p>
-          Now the scale had changed.
+          The artifact had already passed through several major chapters
+          of Tyrian history.
         </p>
 
         <p>
-          Tyria knew of hidden magical orders above its skies, societies
-          within the Mists, ancient powers in Janthir, and pathways
-          connecting realms that had once been treated as legends.
+          Its disappearance leaves another road open between the past
+          and whatever comes next.
         </p>
 
         <p>
-          The Dragon Cycle was over.
+          By 1338 AE, Tyria had moved beyond the Elder Dragon cycle.
         </p>
 
         <p>
-          The age of the unknown had begun.
+          It had not moved beyond its history.
         </p>
 
       </section>
 
 
-      <!-- STORY INDEX -->
+      <!-- =========================
+           STORY INDEX
+      ========================== -->
 
-      <section class="key-records">
+      <section class="history-section">
 
         <p class="history-label">
-          Story Index
+          Post-Dragon Index
         </p>
 
         <h2>
-          Major Chapters Beyond the Dragon Cycle
+          The New Shape of the World
         </h2>
 
-        <div class="era-grid">
 
-          <div class="era-card">
+        <div class="story-grid">
 
-            <p class="era-card-label">
-              1336 AE
+          <div class="story-card">
+
+            <p class="story-card-label">
+              Magical Balance
             </p>
 
             <h3>
-              Secrets of the Obscure
+              Aurene
             </h3>
 
             <p>
-              The Wizard's Court, Astral Ward, and Kryptis conflict
-              become known to Tyria.
+              Withdraws from ordinary affairs to serve as a conduit
+              for Tyria's magical balance.
             </p>
 
           </div>
 
 
-          <div class="era-card">
+          <div class="story-card">
 
-            <p class="era-card-label">
-              1336–1337 AE
-            </p>
-
-            <h3>
-              The Kryptis Rebellion
-            </h3>
-
-            <p>
-              Peitha leads resistance against Eparch in Inner Nayos.
-            </p>
-
-          </div>
-
-
-          <div class="era-card">
-
-            <p class="era-card-label">
-              1337 AE
-            </p>
-
-            <h3>
-              Tyrian Alliance
-            </h3>
-
-            <p>
-              Tyria's major powers begin forming a broader international alliance.
-            </p>
-
-          </div>
-
-
-          <div class="era-card">
-
-            <p class="era-card-label">
-              1337–1338 AE
-            </p>
-
-            <h3>
-              Janthir Wilds
-            </h3>
-
-            <p>
-              Ancient Janthir mysteries and the return of the Titans
-              reconnect the present to deep Tyrian history.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- KEY RECORDS -->
-
-      <section class="key-records">
-
-        <p class="history-label">
-          Archive Index
-        </p>
-
-        <h2>
-          Key Records From This Era
-        </h2>
-
-        <div class="key-grid">
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Hidden Order
-            </p>
-
-            <h3>
-              Wizard's Court
-            </h3>
-
-            <p>
-              Ancient magic-users who have secretly protected Tyria.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Defense Organization
+            <p class="story-card-label">
+              Hidden Defenders
             </p>
 
             <h3>
@@ -1546,50 +1456,71 @@
             </h3>
 
             <p>
-              The force defending Tyria from threats beyond ordinary borders.
+              A secretive order protecting Tyria from dangers
+              beyond ordinary mortal awareness.
             </p>
 
           </div>
 
 
-          <div class="key-card">
+          <div class="story-card">
 
-            <p class="key-card-label">
-              The Mists
+            <p class="story-card-label">
+              Ancient Authority
             </p>
 
             <h3>
-              Kryptis
+              Wizard's Court
             </h3>
 
             <p>
-              Beings from Nayos whose internal conflict spills into Tyria.
+              Powerful figures tied to the Wizard's Tower and
+              centuries of hidden history.
             </p>
 
           </div>
 
 
-          <div class="key-card">
+          <div class="story-card">
 
-            <p class="key-card-label">
-              Kryptis
+            <p class="story-card-label">
+              Realm of the Mists
             </p>
 
             <h3>
-              Peitha
+              Nayos
             </h3>
 
             <p>
-              Rebel leader who defeats Eparch and becomes Midnight King.
+              Homeland of the Kryptis and the site of Peitha's
+              rebellion against Eparch.
             </p>
 
           </div>
 
 
-          <div class="key-card">
+          <div class="story-card">
 
-            <p class="key-card-label">
-              Ancient Region
+            <p class="story-card-label">
+              New Politics
+            </p>
+
+            <h3>
+              Tyrian Alliance
+            </h3>
+
+            <p>
+              A growing effort to coordinate nations in a world
+              whose threats no longer respect borders.
+            </p>
+
+          </div>
+
+
+          <div class="story-card">
+
+            <p class="story-card-label">
+              Ancient Threads
             </p>
 
             <h3>
@@ -1597,25 +1528,8 @@
             </h3>
 
             <p>
-              A region tied to mursaat, Seers, Titans, Bloodstones,
-              and older magical mysteries.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Ancient Artifact
-            </p>
-
-            <h3>
-              Scepter of Orr
-            </h3>
-
-            <p>
-              Lost into the Mists after the renewed Titan conflict.
+              A region reconnecting modern Tyria with the histories
+              of the mursaat, Seers, Titans, and older magical conflicts.
             </p>
 
           </div>
@@ -1625,7 +1539,9 @@
       </section>
 
 
-      <!-- NAVIGATION -->
+      <!-- =========================
+           NEXT ERA
+      ========================== -->
 
       <section class="page-navigation">
 
@@ -1634,15 +1550,23 @@
         </p>
 
         <h2>
-          Visions of Eternity
+          Tyria: Then to Now
         </h2>
 
         <p>
-          The Titan threat has been defeated and the road through Janthir
-          has reopened questions about some of Tyria's oldest history.
-          The next chapter turns toward Castora, the Inquest, Director Vloxx,
-          and the search for Ancora.
+          The Dragon Cycle is finished, hidden defenders have stepped
+          into the light, and old histories continue finding their way
+          into the present.
         </p>
+
+        <p>
+          The next record reaches the end of the Road Through Time.
+          Rather than introducing another isolated age, it looks back
+          across the entire historical journey from ancient Tyria
+          to the current era and the opening events of
+          Visions of Eternity.
+        </p>
+
 
         <div class="navigation-actions">
 
@@ -1657,14 +1581,15 @@
             href="../index.html"
             class="button"
           >
-            Main Homepage
+            Road Through Time
           </a>
 
-          <span
-            class="button button-primary pending"
+          <a
+            href="../current-era/index.html"
+            class="button button-primary"
           >
-            Visions of Eternity Coming Next →
-          </span>
+            Tyria: Then to Now →
+          </a>
 
         </div>
 
@@ -1675,7 +1600,9 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
@@ -1690,14 +1617,18 @@
   </footer>
 
 
-  <!-- HISTORY POSITION SCRIPT -->
+  <!-- =========================
+       HISTORY POSITION SCRIPT
+  ========================== -->
 
   <script>
     (() => {
       "use strict";
 
       const sections =
-        document.querySelectorAll(".history-section");
+        document.querySelectorAll(
+          ".history-section[data-position]"
+        );
 
       const marker =
         document.getElementById("historyMarker");
@@ -1748,9 +1679,11 @@
                 );
 
             if (visible.length > 0) {
+
               updatePosition(
                 visible[0].target
               );
+
             }
 
           },
@@ -1767,6 +1700,7 @@
             ]
           }
         );
+
 
       sections.forEach(
         (section) => {
