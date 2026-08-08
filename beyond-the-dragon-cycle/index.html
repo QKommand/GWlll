@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Beyond the Dragon Cycle archive entry in the Guild Wars Living Lore Library."
+  >
+
+  <meta name="theme-color" content="#020617">
+
+  <title>Beyond the Dragon Cycle // GWlll</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #020617;
+      --panel: #0f172a;
+      --panel-hover: #162033;
+      --border: #374151;
+
+      --gold: #f4c76b;
+      --gold-bright: #ffe3a3;
+      --gold-muted: #c99b45;
+
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 170px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(244, 199, 107, 0.08),
+          transparent 34rem
+        ),
+        var(--background);
+
+      color: var(--white);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-small {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .home-link:hover {
+      color: var(--gold-bright);
+      transform: translateX(-3px);
+    }
+
+    /* HISTORY POSITION */
+
+    .history-position {
+      position: sticky;
+      top: 68px;
+      z-index: 40;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .history-position-inner {
+      padding: 13px 0 15px;
+    }
+
+    .position-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      margin-bottom: 10px;
+    }
+
+    .position-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.62rem;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .current-date {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+    }
+
+    .history-rail {
+      position: relative;
+      height: 26px;
+    }
+
+    .history-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background: linear-gradient(
+        to right,
+        rgba(244, 199, 107, 0.25),
+        rgba(244, 199, 107, 0.9),
+        rgba(244, 199, 107, 0.25)
+      );
+    }
+
+    .history-point {
+      position: absolute;
+
+      top: 2px;
+
+      width: 11px;
+      height: 11px;
+
+      border: 1px solid var(--gold-muted);
+      border-radius: 50%;
+
+      background: var(--background);
+
+      transform: translateX(-50%);
+    }
+
+    .history-point.start {
+      left: 5%;
+    }
+
+    .history-point.middle {
+      left: 50%;
+    }
+
+    .history-point.end {
+      left: 95%;
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: -1px;
+      left: 5%;
+
+      width: 17px;
+      height: 17px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 15px rgba(244, 199, 107, 0.5);
+
+      transform: translateX(-50%);
+
+      transition: left 450ms ease;
+    }
+
+    .rail-labels {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 2px;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.58rem;
+    }
+
+    .position-context {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 72px 0 56px;
+      text-align: center;
+    }
+
+    .hero-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 16px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(2.7rem, 8vw, 5.2rem);
+      line-height: 1.03;
+
+      letter-spacing: -0.045em;
+
+      animation: goldPulse 4s ease-in-out infinite;
+    }
+
+    .hero-date {
+      margin: 16px 0 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.8rem;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      max-width: 760px;
+
+      margin: 24px auto 0;
+
+      color: var(--white);
+
+      font-size: 1.06rem;
+      line-height: 1.9;
+    }
+
+    /* ARCHIVE NOTE */
+
+    .archive-note {
+      margin-bottom: 55px;
+      padding: 24px;
+
+      border: 1px solid rgba(244, 199, 107, 0.35);
+      border-radius: 12px;
+
+      background: rgba(244, 199, 107, 0.045);
+    }
+
+    .archive-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.68rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .archive-note p:last-child {
+      margin: 12px 0 0;
+      color: var(--white);
+    }
+
+    /* HISTORY */
+
+    .history-section {
+      padding: 36px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .history-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.66rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .history-section h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(1.6rem, 5vw, 2.35rem);
+      line-height: 1.2;
+    }
+
+    .history-section p {
+      margin: 16px 0 0;
+      color: var(--white);
+    }
+
+    .history-section strong {
+      color: var(--gold-bright);
+    }
+
+    .record-box {
+      margin-top: 22px;
+      padding: 20px;
+
+      border-left: 2px solid var(--gold);
+
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .record-box-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .record-box p:last-child {
+      margin: 8px 0 0;
+    }
+
+    /* ERA GRID */
+
+    .era-grid {
+      margin-top: 24px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .era-card {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.78);
+    }
+
+    .era-card-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.62rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .era-card h3 {
+      margin: 7px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.05rem;
+    }
+
+    .era-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.9rem;
+    }
+
+    /* KEY RECORDS */
+
+    .key-records {
+      padding: 42px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .key-records h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.8rem;
+    }
+
+    .key-grid {
+      margin-top: 24px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .key-card {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.76);
+    }
+
+    .key-card-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.63rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .key-card h3 {
+      margin: 7px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+    }
+
+    .key-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.9rem;
+    }
+
+    /* NAVIGATION */
+
+    .page-navigation {
+      padding: 45px 0 80px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .navigation-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.67rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .page-navigation h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.7rem;
+    }
+
+    .page-navigation p {
+      margin: 13px 0 0;
+
+      color: var(--white);
+    }
+
+    .navigation-actions {
+      margin-top: 24px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 9px;
+
+      background: var(--panel);
+      color: var(--gold);
+
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(244, 199, 107, 0.6);
+      color: var(--gold-bright);
+    }
+
+    .button-primary {
+      border-color: rgba(244, 199, 107, 0.45);
+
+      background: rgba(244, 199, 107, 0.1);
+    }
+
+    .pending {
+      opacity: 0.65;
+      cursor: default;
+    }
+
+    .pending:hover {
+      transform: none;
+      border-color: var(--border);
+      color: var(--gold);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--white);
+
+      text-align: center;
+      font-size: 0.75rem;
+    }
+
+    /* ANIMATION */
+
+    @keyframes goldPulse {
+      0%,
+      100% {
+        color: var(--gold);
+
+        text-shadow:
+          0 0 0 rgba(244, 199, 107, 0);
+      }
+
+      50% {
+        color: var(--gold-bright);
+
+        text-shadow:
+          0 0 16px rgba(244, 199, 107, 0.28),
+          0 0 34px rgba(244, 199, 107, 0.1);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      html {
+        scroll-padding-top: 155px;
+      }
+
+      .container {
+        width: min(100% - 22px, 900px);
+      }
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .brand-small {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 0.84rem;
+      }
+
+      .home-link {
+        font-size: 0.67rem;
+      }
+
+      .history-position {
+        top: 62px;
+      }
+
+      .position-label {
+        font-size: 0.55rem;
+      }
+
+      .current-date {
+        font-size: 0.62rem;
+      }
+
+      .rail-labels {
+        font-size: 0.52rem;
+      }
+
+      .position-context {
+        font-size: 0.65rem;
+      }
+
+      .hero {
+        padding: 52px 0 44px;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      .era-grid,
+      .key-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="../index.html"
+        class="brand"
+      >
+
+        <p class="brand-small">
+          QKommand Archive
+        </p>
+
+        <p class="brand-name">
+          GWlll
+        </p>
+
+      </a>
+
+      <a
+        href="../index.html"
+        class="home-link"
+      >
+        ← Main Homepage
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- YOU ARE HERE -->
+
+  <aside class="history-position">
+
+    <div class="container history-position-inner">
+
+      <div class="position-top">
+
+        <p class="position-label">
+          Tyrian Historical Position
+        </p>
+
+        <p
+          class="current-date"
+          id="currentDate"
+        >
+          1336 AE
+        </p>
+
+      </div>
+
+      <div class="history-rail">
+
+        <div class="history-line"></div>
+
+        <span class="history-point start"></span>
+        <span class="history-point middle"></span>
+        <span class="history-point end"></span>
+
+        <span
+          class="history-marker"
+          id="historyMarker"
+        ></span>
+
+      </div>
+
+      <div class="rail-labels">
+
+        <span>1336 AE</span>
+        <span>1337 AE</span>
+        <span>1338 AE</span>
+
+      </div>
+
+      <p
+        class="position-context"
+        id="positionContext"
+      >
+        YOU ARE HERE // Aurene Withdraws
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <p class="hero-label">
+          Historical Archive // Record 10
+        </p>
+
+        <h1>
+          Beyond the Dragon Cycle
+        </h1>
+
+        <p class="hero-date">
+          1336 AE – 1338 AE
+        </p>
+
+        <p class="hero-text">
+          For tens of thousands of years, the Elder Dragons had defined
+          the rhythm of Tyria's history.
+        </p>
+
+        <p class="hero-text">
+          Their cycle was over.
+        </p>
+
+        <p class="hero-text">
+          What came next was not peace, but discovery. Old barriers weakened,
+          hidden powers stepped into view, and Tyria learned that the dragons
+          had never been the only danger beyond the edges of the known world.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="container">
+
+      <!-- ARCHIVE NOTE -->
+
+      <div class="archive-note">
+
+        <p class="archive-note-label">
+          Archive Context
+        </p>
+
+        <p>
+          This era begins after the death of Soo-Won and the end of the
+          ancient Elder Dragon cycle. The focus shifts away from dragons
+          and toward the Mists, the Wizard's Court, Kryptis society,
+          ancient secrets around Janthir, and threats that had remained
+          hidden while Tyria was occupied with the Dragon Cycle.
+        </p>
+
+      </div>
+
+
+      <!-- 01 -->
+
+      <section
+        class="history-section"
+        data-position="5"
+        data-date="1336 AE"
+        data-context="YOU ARE HERE // Aurene Becomes the World's Conduit"
+      >
+
+        <p class="history-label">
+          Record 01 // After Soo-Won
+        </p>
+
+        <h2>
+          Aurene takes responsibility for the balance
+        </h2>
+
+        <p>
+          With Soo-Won gone, the ancient Elder Dragon cycle had ended.
+        </p>
+
+        <p>
+          <strong>Aurene</strong> remained as the great magical stabilizing
+          force left behind.
+        </p>
+
+        <p>
+          In <strong>1336 AE</strong>, she withdrew from ordinary affairs
+          and took her place as a conduit for the world's magical balance.
+        </p>
+
+        <p>
+          Tyria entered an age where mortals could no longer measure every
+          great threat against the Elder Dragons.
+        </p>
+
+      </section>
+
+
+      <!-- 02 -->
+
+      <section
+        class="history-section"
+        data-position="14"
+        data-date="1336 AE"
+        data-context="YOU ARE HERE // A Hidden War Comes Into View"
+      >
+
+        <p class="history-label">
+          Record 02 // Secrets of the Obscure
+        </p>
+
+        <h2>
+          The world above Tyria reveals itself
+        </h2>
+
+        <p>
+          A hidden struggle involving the
+          <strong>Wizard's Court</strong> and the
+          <strong>Astral Ward</strong> became impossible to ignore.
+        </p>
+
+        <p>
+          For centuries, these groups had defended Tyria from threats
+          beyond the ordinary awareness of its nations.
+        </p>
+
+        <p>
+          Their work centered on the Wizard's Tower, the skies above
+          Tyria, and dangers moving through the Mists.
+        </p>
+
+      </section>
+
+
+      <!-- 03 -->
+
+      <section
+        class="history-section"
+        data-position="23"
+        data-date="1336 AE"
+        data-context="YOU ARE HERE // Kryptis Breach Tyria"
+      >
+
+        <p class="history-label">
+          Record 03 // The Kryptis Invasion
+        </p>
+
+        <h2>
+          Creatures from the Mists cross into Tyria
+        </h2>
+
+        <p>
+          <strong>Kryptis</strong> forces managed to breach into Tyria
+          from the Mists.
+        </p>
+
+        <p>
+          The invasion destabilized the Wizard's Court and allowed
+          Kryptis forces to take control of important locations,
+          including parts of <strong>Amnytas</strong> and the
+          <strong>Wizard's Tower</strong>.
+        </p>
+
+        <p>
+          Tyria was suddenly facing an enemy whose homeland did not lie
+          across an ocean or beneath the earth.
+        </p>
+
+        <p>
+          It lay in another realm.
+        </p>
+
+      </section>
+
+
+      <!-- 04 -->
+
+      <section
+        class="history-section"
+        data-position="32"
+        data-date="1336 AE"
+        data-context="YOU ARE HERE // Mabon Falls"
+      >
+
+        <p class="history-label">
+          Record 04 // Mabon
+        </p>
+
+        <h2>
+          An ancient guardian is lost
+        </h2>
+
+        <p>
+          During the Kryptis crisis,
+          <strong>Mabon</strong> died.
+        </p>
+
+        <p>
+          His death weakened an organization already struggling against
+          a threat that had breached defenses built over centuries.
+        </p>
+
+        <p>
+          It also marked the loss of another figure tied to ancient
+          histories that much of Tyria had never known existed.
+        </p>
+
+      </section>
+
+
+      <!-- 05 -->
+
+      <section
+        class="history-section"
+        data-position="40"
+        data-date="1336 AE"
+        data-context="YOU ARE HERE // The Wards Around Bava Nisos Weaken"
+      >
+
+        <p class="history-label">
+          Record 05 // Janthir Stirs
+        </p>
+
+        <h2>
+          Old protections begin to fail
+        </h2>
+
+        <p>
+          As the conflict unfolded, the wards around
+          <strong>Bava Nisos</strong> weakened.
+        </p>
+
+        <p>
+          The ancient mursaat city lay in Janthir, a region already tied
+          to the mursaat, Seers, Titans, Bloodstones, and some of Tyria's
+          oldest unresolved mysteries.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Ancient Connection
+          </p>
+
+          <p>
+            Janthir reconnects the modern story to the same elder
+            civilizations introduced near the beginning of the Road Through Time.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 06 -->
+
+      <section
+        class="history-section"
+        data-position="48"
+        data-date="1336 AE"
+        data-context="YOU ARE HERE // Peitha Joins the Fight"
+      >
+
+        <p class="history-label">
+          Record 06 // Peitha
+        </p>
+
+        <h2>
+          The Kryptis are not united
+        </h2>
+
+        <p>
+          The Kryptis threat was not a simple invasion by a single
+          unified people.
+        </p>
+
+        <p>
+          <strong>Peitha</strong> allied with the Wizard's Court
+          and began organizing resistance against
+          <strong>Eparch</strong>.
+        </p>
+
+        <p>
+          The conflict became a rebellion within Kryptis society itself.
+        </p>
+
+        <p>
+          The road forward would lead into their homeland:
+          <strong>Inner Nayos</strong>.
+        </p>
+
+      </section>
+
+
+      <!-- 07 -->
+
+      <section
+        class="history-section"
+        data-position="58"
+        data-date="1337 AE"
+        data-context="YOU ARE HERE // The Rebellion Enters Nayos"
+      >
+
+        <p class="history-label">
+          Record 07 // Inner Nayos
+        </p>
+
+        <h2>
+          The war crosses fully into another realm
+        </h2>
+
+        <p>
+          In <strong>1337 AE</strong>, Peitha's rebellion pushed deeper
+          into Kryptis territory.
+        </p>
+
+        <p>
+          The alliance breached Eparch's defenses and carried the conflict
+          into the structure of Kryptis society itself.
+        </p>
+
+        <p>
+          Rather than simply defending Tyria, the Commander and allies
+          were now helping determine who would rule another realm.
+        </p>
+
+      </section>
+
+
+      <!-- 08 -->
+
+      <section
+        class="history-section"
+        data-position="66"
+        data-date="1337 AE"
+        data-context="YOU ARE HERE // Eparch Is Defeated"
+      >
+
+        <p class="history-label">
+          Record 08 // The Fall of Eparch
+        </p>
+
+        <h2>
+          The Midnight King rises
+        </h2>
+
+        <p>
+          Peitha and her allies eventually defeated
+          <strong>Eparch</strong>.
+        </p>
+
+        <p>
+          With his fall, the old rule over Nayos ended.
+        </p>
+
+        <p>
+          <strong>Peitha became the Midnight King</strong>.
+        </p>
+
+        <p>
+          The immediate Kryptis crisis was resolved, but Tyria had now
+          established direct relationships with powers and societies
+          beyond its own world.
+        </p>
+
+      </section>
+
+
+      <!-- 09 -->
+
+      <section
+        class="history-section"
+        data-position="74"
+        data-date="1337 AE"
+        data-context="YOU ARE HERE // The Tyrian Alliance Forms"
+      >
+
+        <p class="history-label">
+          Record 09 // Janthir Wilds
+        </p>
+
+        <h2>
+          Tyria begins acting as a wider alliance
+        </h2>
+
+        <p>
+          In <strong>1337 AE</strong>, the
+          <strong>Tyrian Alliance</strong> was formed.
+        </p>
+
+        <p>
+          The great Dragon campaigns had already forced nations and peoples
+          to cooperate repeatedly.
+        </p>
+
+        <p>
+          Now that cooperation began taking a more permanent political form.
+        </p>
+
+        <p>
+          The world was moving from emergency coalitions toward a broader
+          international structure.
+        </p>
+
+      </section>
+
+
+      <!-- 10 -->
+
+      <section
+        class="history-section"
+        data-position="82"
+        data-date="1337 AE"
+        data-context="YOU ARE HERE // The Titans Return"
+      >
+
+        <p class="history-label">
+          Record 10 // The Titans
+        </p>
+
+        <h2>
+          An enemy from the Guild Wars era returns
+        </h2>
+
+        <p>
+          The <strong>Titans resurfaced</strong>.
+        </p>
+
+        <p>
+          These creatures had once served Abaddon and had poured through
+          the Door of Komalie during the events surrounding the
+          Flameseeker Prophecies.
+        </p>
+
+        <p>
+          Their return tied the modern age directly back to the conflicts
+          of the original Guild Wars era.
+        </p>
+
+        <p>
+          Once again, history that seemed finished had found a way back
+          into the present.
+        </p>
+
+      </section>
+
+
+      <!-- 11 -->
+
+      <section
+        class="history-section"
+        data-position="90"
+        data-date="1338 AE"
+        data-context="YOU ARE HERE // The Titans Are Defeated"
+      >
+
+        <p class="history-label">
+          Record 11 // The Foundry Connection
+        </p>
+
+        <h2>
+          The Titan threat is cut off
+        </h2>
+
+        <p>
+          In <strong>1338 AE</strong>, the Titans were defeated.
+        </p>
+
+        <p>
+          The portal leading to the
+          <strong>Foundry of Failed Creations</strong> was closed.
+        </p>
+
+        <p>
+          A threat linked to Abaddon, the Mists, and events more than
+          two centuries earlier was once again contained.
+        </p>
+
+      </section>
+
+
+      <!-- 12 -->
+
+      <section
+        class="history-section"
+        data-position="96"
+        data-date="1338 AE"
+        data-context="YOU ARE HERE // The Scepter of Orr Is Lost"
+      >
+
+        <p class="history-label">
+          Record 12 // The Scepter of Orr
+        </p>
+
+        <h2>
+          An ancient artifact disappears into the Mists
+        </h2>
+
+        <p>
+          During the events surrounding the Titan crisis,
+          the <strong>Scepter of Orr</strong> was lost to the Mists.
+        </p>
+
+        <p>
+          The artifact had already passed through some of the most important
+          conflicts in Tyrian history.
+        </p>
+
+        <p>
+          Now its trail extended beyond the physical world.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Unresolved Thread
+          </p>
+
+          <p>
+            The Scepter's disappearance leaves one of Tyria's ancient
+            magical artifacts connected directly to whatever may come next.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 13 -->
+
+      <section
+        class="history-section"
+        data-position="100"
+        data-date="1338 AE"
+        data-context="YOU ARE HERE // Tyria Looks Beyond Its Old Borders"
+      >
+
+        <p class="history-label">
+          Record 13 // The New Frontier
+        </p>
+
+        <h2>
+          The map has become larger than Tyria
+        </h2>
+
+        <p>
+          The Elder Dragons had once made the world feel impossibly large.
+        </p>
+
+        <p>
+          Now the scale had changed.
+        </p>
+
+        <p>
+          Tyria knew of hidden magical orders above its skies, societies
+          within the Mists, ancient powers in Janthir, and pathways
+          connecting realms that had once been treated as legends.
+        </p>
+
+        <p>
+          The Dragon Cycle was over.
+        </p>
+
+        <p>
+          The age of the unknown had begun.
+        </p>
+
+      </section>
+
+
+      <!-- STORY INDEX -->
+
+      <section class="key-records">
+
+        <p class="history-label">
+          Story Index
+        </p>
+
+        <h2>
+          Major Chapters Beyond the Dragon Cycle
+        </h2>
+
+        <div class="era-grid">
+
+          <div class="era-card">
+
+            <p class="era-card-label">
+              1336 AE
+            </p>
+
+            <h3>
+              Secrets of the Obscure
+            </h3>
+
+            <p>
+              The Wizard's Court, Astral Ward, and Kryptis conflict
+              become known to Tyria.
+            </p>
+
+          </div>
+
+
+          <div class="era-card">
+
+            <p class="era-card-label">
+              1336–1337 AE
+            </p>
+
+            <h3>
+              The Kryptis Rebellion
+            </h3>
+
+            <p>
+              Peitha leads resistance against Eparch in Inner Nayos.
+            </p>
+
+          </div>
+
+
+          <div class="era-card">
+
+            <p class="era-card-label">
+              1337 AE
+            </p>
+
+            <h3>
+              Tyrian Alliance
+            </h3>
+
+            <p>
+              Tyria's major powers begin forming a broader international alliance.
+            </p>
+
+          </div>
+
+
+          <div class="era-card">
+
+            <p class="era-card-label">
+              1337–1338 AE
+            </p>
+
+            <h3>
+              Janthir Wilds
+            </h3>
+
+            <p>
+              Ancient Janthir mysteries and the return of the Titans
+              reconnect the present to deep Tyrian history.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- KEY RECORDS -->
+
+      <section class="key-records">
+
+        <p class="history-label">
+          Archive Index
+        </p>
+
+        <h2>
+          Key Records From This Era
+        </h2>
+
+        <div class="key-grid">
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Hidden Order
+            </p>
+
+            <h3>
+              Wizard's Court
+            </h3>
+
+            <p>
+              Ancient magic-users who have secretly protected Tyria.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Defense Organization
+            </p>
+
+            <h3>
+              Astral Ward
+            </h3>
+
+            <p>
+              The force defending Tyria from threats beyond ordinary borders.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              The Mists
+            </p>
+
+            <h3>
+              Kryptis
+            </h3>
+
+            <p>
+              Beings from Nayos whose internal conflict spills into Tyria.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Kryptis
+            </p>
+
+            <h3>
+              Peitha
+            </h3>
+
+            <p>
+              Rebel leader who defeats Eparch and becomes Midnight King.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Ancient Region
+            </p>
+
+            <h3>
+              Janthir
+            </h3>
+
+            <p>
+              A region tied to mursaat, Seers, Titans, Bloodstones,
+              and older magical mysteries.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Ancient Artifact
+            </p>
+
+            <h3>
+              Scepter of Orr
+            </h3>
+
+            <p>
+              Lost into the Mists after the renewed Titan conflict.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- NAVIGATION -->
+
+      <section class="page-navigation">
+
+        <p class="navigation-label">
+          Continue the Road Through Time
+        </p>
+
+        <h2>
+          Visions of Eternity
+        </h2>
+
+        <p>
+          The Titan threat has been defeated and the road through Janthir
+          has reopened questions about some of Tyria's oldest history.
+          The next chapter turns toward Castora, the Inquest, Director Vloxx,
+          and the search for Ancora.
+        </p>
+
+        <div class="navigation-actions">
+
+          <a
+            href="../age-of-the-commander/index.html"
+            class="button"
+          >
+            ← The Age of the Commander
+          </a>
+
+          <a
+            href="../index.html"
+            class="button"
+          >
+            Main Homepage
+          </a>
+
+          <span
+            class="button button-primary pending"
+          >
+            Visions of Eternity Coming Next →
+          </span>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      Guild Wars Living Lore Library is an unofficial fan lore project.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
+      belong to their respective owners.
+
+    </div>
+
+  </footer>
+
+
+  <!-- HISTORY POSITION SCRIPT -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      const sections =
+        document.querySelectorAll(".history-section");
+
+      const marker =
+        document.getElementById("historyMarker");
+
+      const currentDate =
+        document.getElementById("currentDate");
+
+      const positionContext =
+        document.getElementById("positionContext");
+
+
+      const updatePosition = (section) => {
+
+        const position =
+          section.dataset.position || "5";
+
+        const date =
+          section.dataset.date || "1336 AE";
+
+        const context =
+          section.dataset.context || "YOU ARE HERE";
+
+        marker.style.left =
+          `${position}%`;
+
+        currentDate.textContent =
+          date;
+
+        positionContext.textContent =
+          context;
+      };
+
+
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+
+            const visible =
+              entries
+                .filter(
+                  (entry) =>
+                    entry.isIntersecting
+                )
+                .sort(
+                  (a, b) =>
+                    b.intersectionRatio -
+                    a.intersectionRatio
+                );
+
+            if (visible.length > 0) {
+              updatePosition(
+                visible[0].target
+              );
+            }
+
+          },
+          {
+            rootMargin:
+              "-35% 0px -45% 0px",
+
+            threshold: [
+              0,
+              0.15,
+              0.3,
+              0.5,
+              0.75
+            ]
+          }
+        );
+
+      sections.forEach(
+        (section) => {
+          observer.observe(section);
+        }
+      );
+
+    })();
+  </script>
+
+</body>
+</html>
