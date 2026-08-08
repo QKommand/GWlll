@@ -10,12 +10,12 @@
 
   <meta
     name="description"
-    content="The Exodus of the Gods archive entry in the Guild Wars Living Lore Library."
+    content="Kingdoms and Guild Wars archive entry in the Guild Wars Living Lore Library."
   >
 
   <meta name="theme-color" content="#020617">
 
-  <title>The Exodus of the Gods // GWlll</title>
+  <title>Kingdoms and Guild Wars // GWlll</title>
 
   <style>
     :root {
@@ -111,6 +111,7 @@
 
       font-family: monospace;
       font-size: 0.65rem;
+
       letter-spacing: 0.17em;
       text-transform: uppercase;
     }
@@ -143,7 +144,7 @@
       transform: translateX(-3px);
     }
 
-    /* HISTORY POSITION */
+    /* HISTORICAL POSITION */
 
     .history-position {
       position: sticky;
@@ -248,7 +249,7 @@
       position: absolute;
 
       top: -1px;
-      left: 10%;
+      left: 8%;
 
       width: 17px;
       height: 17px;
@@ -342,7 +343,7 @@
       line-height: 1.9;
     }
 
-    /* NOTE */
+    /* ARCHIVE NOTE */
 
     .archive-note {
       margin-bottom: 55px;
@@ -432,6 +433,42 @@
 
     .record-box p:last-child {
       margin: 8px 0 0;
+    }
+
+    /* REGION GRID */
+
+    .region-grid {
+      margin-top: 24px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .region-card {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.78);
+    }
+
+    .region-card h3 {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-size: 1.05rem;
+    }
+
+    .region-card p {
+      margin: 8px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.9rem;
     }
 
     /* KEY RECORDS */
@@ -675,6 +712,7 @@
         font-size: 1rem;
       }
 
+      .region-grid,
       .key-grid {
         grid-template-columns: 1fr;
       }
@@ -754,7 +792,7 @@
           class="current-date"
           id="currentDate"
         >
-          0 AE
+          1 AE
         </p>
 
       </div>
@@ -776,9 +814,9 @@
 
       <div class="rail-labels">
 
-        <span>1 BE</span>
-        <span>Divine War</span>
-        <span>0 AE</span>
+        <span>1 AE</span>
+        <span>500 AE</span>
+        <span>1069 AE</span>
 
       </div>
 
@@ -786,7 +824,7 @@
         class="position-context"
         id="positionContext"
       >
-        YOU ARE HERE // Abaddon's Rebellion
+        YOU ARE HERE // The Mortal Age Begins
       </p>
 
     </div>
@@ -803,25 +841,27 @@
       <div class="container">
 
         <p class="hero-label">
-          Historical Archive // Record 05
+          Historical Archive // Record 06
         </p>
 
         <h1>
-          The Exodus of the Gods
+          Kingdoms and Guild Wars
         </h1>
 
         <p class="hero-date">
-          0 AE
+          1 AE – 1069 AE
         </p>
 
         <p class="hero-text">
-          The crisis over magic had already changed Tyria.
-          The Bloodstone was divided. Mortal power was restrained.
-          The wars that followed Abaddon's gift were beginning to end.
+          The gods had left the world, but the civilizations they helped
+          shape remained behind.
         </p>
 
         <p class="hero-text">
-          But among the gods themselves, the conflict had only begun.
+          Human kingdoms expanded. Trade crossed oceans. Dynasties rose
+          and collapsed. Guilds became powerful enough to challenge kings.
+          And by the end of the age, the nations of continental Tyria
+          were exhausting themselves in war.
         </p>
 
       </div>
@@ -840,10 +880,10 @@
         </p>
 
         <p>
-          The Exodus marks one of the great dividing lines in Tyrian
-          history. The Mouvelian Calendar uses this event as its center:
-          years before it are recorded as BE, Before the Exodus, and years
-          after it as AE, After the Exodus.
+          This era covers more than a thousand years. Rather than treating
+          every event as equal, this archive follows the major political
+          changes that created the world encountered at the beginning of
+          the original Guild Wars campaigns.
         </p>
 
       </div>
@@ -853,34 +893,36 @@
 
       <section
         class="history-section"
-        data-position="10"
-        data-date="1 BE"
-        data-context="YOU ARE HERE // Abaddon Rejects the Limitation of Magic"
+        data-position="6"
+        data-date="1–2 AE"
+        data-context="YOU ARE HERE // Human Kingdoms Enter the New Age"
       >
 
         <p class="history-label">
-          Record 01 // The Dispute
+          Record 01 // After the Exodus
         </p>
 
         <h2>
-          Abaddon refuses the new order
+          Mortals inherit the world
         </h2>
 
         <p>
-          Abaddon had given greater magical power to the peoples of Tyria.
+          The departure of the gods did not end human civilization.
         </p>
 
         <p>
-          When the other gods chose to limit that gift using the
-          <strong>Bloodstone</strong>, Abaddon opposed them.
+          Instead, human nations entered an age where their kingdoms,
+          rulers, guilds, and institutions would increasingly determine
+          the course of history.
         </p>
 
         <p>
-          The disagreement was no longer about mortals alone.
+          In <strong>1 AE</strong>, Prince Chang Hai became the first
+          Ascendant emperor of Cantha.
         </p>
 
         <p>
-          It became a conflict among gods.
+          In <strong>2 AE</strong>, Orr became an independent nation.
         </p>
 
       </section>
@@ -890,50 +932,38 @@
 
       <section
         class="history-section"
-        data-position="22"
-        data-date="1 BE – 0 AE"
-        data-context="YOU ARE HERE // The Margonites Are Transformed"
+        data-position="14"
+        data-date="29–221 AE"
+        data-context="YOU ARE HERE // Human Civilizations Expand"
       >
 
         <p class="history-label">
-          Record 02 // The Margonites
+          Record 02 // Expanding Kingdoms
         </p>
 
         <h2>
-          A civilization follows Abaddon
+          Humanity spreads across the known world
         </h2>
 
         <p>
-          The <strong>Margonites</strong> were already one of the great
-          maritime peoples of the age.
+          Human civilizations continued expanding throughout Tyria,
+          Elona, and Cantha.
         </p>
 
         <p>
-          Their settlements stretched along the coastlines north and west
-          of Elona, and their ships once dominated the Unending Ocean.
+          The <strong>Primeval Kings</strong> extended their influence
+          into Vabbi and the Desolation.
         </p>
 
         <p>
-          During Abaddon's rebellion, he began transforming his followers
-          into powerful ethereal and demonic beings.
+          Cantha developed deeper trade relationships with Tyria and Elona.
         </p>
 
         <p>
-          One of the earliest known was <strong>Jadoth</strong>.
+          The Forgotten withdrew from the human world and settled within
+          the Crystal Desert, where they became caretakers of
+          <strong>Glint</strong> and guardians of Ascension.
         </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Collapse
-          </p>
-
-          <p>
-            The divine war would ultimately destroy Margonite civilization
-            as it had previously existed.
-          </p>
-
-        </div>
 
       </section>
 
@@ -942,36 +972,50 @@
 
       <section
         class="history-section"
-        data-position="34"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // Abaddon Assaults the Gates of Heaven"
+        data-position="22"
+        data-date="100 AE"
+        data-context="YOU ARE HERE // The Bloodstones Scatter"
       >
 
         <p class="history-label">
-          Record 03 // The Divine War
+          Record 03 // The Volcano Erupts
         </p>
 
         <h2>
-          Abaddon turns against the gods
+          The Bloodstones return to the world
         </h2>
 
         <p>
-          Abaddon openly declared war on the other members of the pantheon.
+          Roughly a century after the Exodus,
+          <strong>Abaddon's Mouth erupted</strong>.
         </p>
 
         <p>
-          His forces assaulted the <strong>Gates of Heaven</strong>.
+          The five major Bloodstones were thrown from the volcano
+          and scattered across Tyria.
         </p>
 
         <p>
-          Abaddon was powerful enough to fight multiple gods, but he could
-          not defeat the combined strength of the other five.
+          Magical energy seeped into the surrounding lands.
         </p>
 
         <p>
-          The fighting spilled across the world and left permanent scars
-          upon Tyria.
+          The stones that had once been created to limit magical power
+          became objects of desire.
         </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Historical Connection
+          </p>
+
+          <p>
+            The struggle over the Bloodstones helped give rise to the
+            conflicts later remembered as the Guild Wars.
+          </p>
+
+        </div>
 
       </section>
 
@@ -980,51 +1024,41 @@
 
       <section
         class="history-section"
-        data-position="48"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // The Crystal Sea Is Destroyed"
+        data-position="30"
+        data-date="After 100 AE"
+        data-context="YOU ARE HERE // The First Guild Wars Begin"
       >
 
         <p class="history-label">
-          Record 04 // The Crystal Sea
+          Record 04 // The Rise of the Guilds
         </p>
 
         <h2>
-          A sea becomes a desert
+          Power moves beyond the throne
         </h2>
 
         <p>
-          The battle that defeated Abaddon caused catastrophic changes
-          across southern Tyria.
+          Guilds had originally grown as influential organizations within
+          human society.
         </p>
 
         <p>
-          The floor of the <strong>Crystal Sea</strong> rose.
+          Over time, they became powerful military and political forces.
         </p>
 
         <p>
-          Waters vanished, exposing vast stretches of land that became
-          the <strong>Crystal Desert</strong>.
+          In some regions, guild armies became strong enough that kings
+          could no longer fully control them.
         </p>
 
         <p>
-          Farther south, once-fertile regions were transformed into the
-          sulfurous wasteland later known as the
-          <strong>Desolation</strong>.
+          Their competing interests eventually turned into open conflict.
         </p>
 
-        <div class="record-box">
-
-          <p class="record-box-label">
-            World Changed
-          </p>
-
-          <p>
-            The Crystal Desert was not always a desert. Its landscape is
-            one of the physical scars left behind by the war between gods.
-          </p>
-
-        </div>
+        <p>
+          The first of the <strong>three Guild Wars</strong> began during
+          this broad period.
+        </p>
 
       </section>
 
@@ -1033,39 +1067,37 @@
 
       <section
         class="history-section"
-        data-position="60"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // Abaddon Is Defeated"
+        data-position="38"
+        data-date="221–358 AE"
+        data-context="YOU ARE HERE // Trade, Colonies, and New Borders"
       >
 
         <p class="history-label">
-          Record 05 // The Fall of Abaddon
+          Record 05 // A Connected World
         </p>
 
         <h2>
-          The god of knowledge is cast down
+          Trade grows while borders harden
         </h2>
 
         <p>
-          Abaddon was eventually defeated by the other five gods.
+          In <strong>221 AE</strong>, Cantha formally expanded trade
+          with Tyria, Elona, and northern lands.
         </p>
 
         <p>
-          He and his followers were imprisoned within the
-          <strong>Realm of Torment</strong>.
+          In <strong>300 AE</strong>, Kryta became an official colony
+          of Elona.
         </p>
 
         <p>
-          The Mouth of Torment became the place where the fallen god's
-          realm touched the world.
+          Human expansion also intensified conflicts with older peoples,
+          including the centaurs whose lands were increasingly occupied.
         </p>
 
         <p>
-          His defeat did not destroy him.
-        </p>
-
-        <p>
-          It only imprisoned him.
+          In <strong>358 AE</strong>, Kryta gained independence and became
+          a kingdom in its own right.
         </p>
 
       </section>
@@ -1075,52 +1107,42 @@
 
       <section
         class="history-section"
-        data-position="70"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // Abaddon's Memory Is Erased"
+        data-position="46"
+        data-date="452–640 AE"
+        data-context="YOU ARE HERE // Elona's Dynasties Collapse"
       >
 
         <p class="history-label">
-          Record 06 // The Forgotten God
+          Record 06 // Elona in Crisis
         </p>
 
         <h2>
-          History is deliberately erased
+          Plague ends a royal line
         </h2>
 
         <p>
-          After Abaddon's defeat, the remaining gods attempted to remove
-          knowledge of him from Tyria.
+          In <strong>452 AE</strong>, the
+          <strong>Scarab Plague</strong> swept through Elona.
         </p>
 
         <p>
-          Records were destroyed.
+          Istan was abandoned and the royal family of the Primeval Kings
+          was wiped out.
         </p>
 
         <p>
-          His Orrian temple was sunk, and the
-          <strong>Temple of the Six</strong> was pulled into the Realm
-          of Torment with him.
+          The Great Dynasty eventually replaced them, only to collapse
+          centuries later.
         </p>
 
         <p>
-          Later generations would remember the pantheon as though Abaddon
-          had never belonged to it.
+          The Pretender Wars and Shattered Dynasty Era followed.
         </p>
 
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Historical Irony
-          </p>
-
-          <p>
-            Abaddon became a forgotten god not because no one had once
-            known him, but because powerful beings deliberately tried
-            to erase him from history.
-          </p>
-
-        </div>
+        <p>
+          By <strong>640 AE</strong>, Elona had emerged as three allied
+          provinces: <strong>Istan, Kourna, and Vabbi</strong>.
+        </p>
 
       </section>
 
@@ -1129,37 +1151,51 @@
 
       <section
         class="history-section"
-        data-position="80"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // The Gods Withdraw"
+        data-position="54"
+        data-date="694–872 AE"
+        data-context="YOU ARE HERE // Cantha Enters a New Age"
       >
 
         <p class="history-label">
-          Record 07 // The Exodus
+          Record 07 // Cantha Changes
         </p>
 
         <h2>
-          The gods leave Tyria
+          Emperors rise, and Shiro changes everything
         </h2>
 
         <p>
-          The divine war had demonstrated the damage that could occur
-          when gods fought directly within the mortal world.
+          Cantha passed through generations of emperors, internal conflicts,
+          and changing political eras.
         </p>
 
         <p>
-          After Abaddon's imprisonment, the remaining Five Gods withdrew
-          from Tyria and departed into the <strong>Mists</strong>.
+          In <strong>872 AE</strong>, the imperial bodyguard
+          <strong>Shiro Tagachi</strong> assassinated Emperor Angsiyan
+          during the Harvest Ceremony.
         </p>
 
         <p>
-          Legends later claimed that they went to create new worlds.
+          Shiro was killed by Saint Viktor, Archemorus, and Vizu.
         </p>
 
         <p>
-          Whatever their destination, the age of gods openly walking
-          alongside mortals was over.
+          His death released the <strong>Jade Wind</strong>, petrifying
+          the Echovald Forest and turning the Jade Sea solid.
         </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            A Land Frozen in a Moment
+          </p>
+
+          <p>
+            Cantha would live with the physical consequences of Shiro's
+            death for centuries.
+          </p>
+
+        </div>
 
       </section>
 
@@ -1168,41 +1204,34 @@
 
       <section
         class="history-section"
-        data-position="90"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // The Mouvelian Calendar Begins"
+        data-position="62"
+        data-date="851–868 AE"
+        data-context="YOU ARE HERE // Odran Opens the Mists"
       >
 
         <p class="history-label">
-          Record 08 // Year Zero
+          Record 08 // Lord Odran
         </p>
 
         <h2>
-          History gains a dividing line
+          A mortal opens the Rift
         </h2>
 
         <p>
-          The Exodus became important enough that Tyrian historians used
-          it to divide their calendar.
+          In <strong>851 AE</strong>, the arcanist
+          <strong>Lord Odran</strong> became the first recorded living
+          mortal to enter the Rift.
         </p>
 
         <p>
-          Events before the gods' departure became
-          <strong>BE, Before the Exodus</strong>.
+          Through sacrifices and powerful rituals, he opened permanent
+          portals into the Mists.
         </p>
 
         <p>
-          Events after it became
-          <strong>AE, After the Exodus</strong>.
-        </p>
-
-        <p>
-          The old divine age had ended.
-        </p>
-
-        <p>
-          The age of mortal kingdoms continued without the gods standing
-          beside them.
+          After his death, the protections hiding those portals failed,
+          giving mortals greater access to places such as the
+          <strong>Hall of Heroes</strong>.
         </p>
 
       </section>
@@ -1212,44 +1241,201 @@
 
       <section
         class="history-section"
-        data-position="96"
-        data-date="After 0 AE"
-        data-context="YOU ARE HERE // Abaddon Continues to Scheme"
+        data-position="70"
+        data-date="860–868 AE"
+        data-context="YOU ARE HERE // Palawa Joko Invades Elona"
       >
 
         <p class="history-label">
-          Record 09 // The Prisoner Still Watches
+          Record 09 // The Scourge of Vabbi
         </p>
 
         <h2>
-          The rebellion was not truly over
+          Palawa Joko rises from the Desolation
         </h2>
 
         <p>
-          Abaddon remained trapped within the Realm of Torment.
+          In <strong>860 AE</strong>, the undead lich
+          <strong>Palawa Joko</strong> invaded Elona.
         </p>
 
         <p>
-          But imprisonment did not end his influence.
+          His Awakened army conquered much of Vabbi before facing
+          resistance led by <strong>Turai Ossa</strong>.
         </p>
 
         <p>
-          Over the centuries that followed, his servants and agents would
-          influence events throughout Tyria.
+          In <strong>862 AE</strong>, Turai defeated Joko in single combat
+          during the Battle of Jahai.
         </p>
 
         <p>
-          The Searing of Ascalon, the Cataclysm of Orr, Shiro Tagachi's
-          fall, and eventually Nightfall would all become connected to the
-          fallen god's efforts to return.
+          Joko could not be killed, so he was imprisoned.
         </p>
 
         <p>
-          His war had ended.
+          The <strong>Order of Whispers</strong> was formed to ensure
+          that imprisonment endured.
+        </p>
+
+      </section>
+
+
+      <!-- 10 -->
+
+      <section
+        class="history-section"
+        data-position="77"
+        data-date="898–940 AE"
+        data-context="YOU ARE HERE // Nations Fortify and Trade Declines"
+      >
+
+        <p class="history-label">
+          Record 10 // Walls and Isolation
+        </p>
+
+        <h2>
+          The kingdoms prepare for threats they can see
+        </h2>
+
+        <p>
+          In <strong>898 AE</strong>, the
+          <strong>Great Northern Wall</strong> was constructed in Ascalon.
         </p>
 
         <p>
-          His plan had not.
+          Cantha increasingly withdrew from foreign contact.
+        </p>
+
+        <p>
+          Long-standing trade agreements with the Tyrian kingdoms were
+          dissolved in <strong>902 AE</strong>, and Canthan embassies
+          were later closed.
+        </p>
+
+        <p>
+          The known world was becoming less connected just as larger
+          dangers were beginning to gather.
+        </p>
+
+      </section>
+
+
+      <!-- 11 -->
+
+      <section
+        class="history-section"
+        data-position="86"
+        data-date="1013 AE"
+        data-context="YOU ARE HERE // The Third Guild War Begins"
+      >
+
+        <p class="history-label">
+          Record 11 // The Third Guild War
+        </p>
+
+        <h2>
+          Human kingdoms turn on one another again
+        </h2>
+
+        <p>
+          In <strong>1013 AE</strong>, the
+          <strong>Third Guild War</strong> began.
+        </p>
+
+        <p>
+          Ascalon, Kryta, and Orr became consumed by another struggle
+          between powerful guilds and national interests.
+        </p>
+
+        <p>
+          Unlike earlier wars, Orr eventually became directly involved.
+        </p>
+
+        <p>
+          The conflict was costly enough to weaken the three kingdoms
+          at exactly the wrong moment.
+        </p>
+
+      </section>
+
+
+      <!-- 12 -->
+
+      <section
+        class="history-section"
+        data-position="92"
+        data-date="1067 AE"
+        data-context="YOU ARE HERE // Saul D'Alessio Finds the Mursaat"
+      >
+
+        <p class="history-label">
+          Record 12 // The Unseen Ones
+        </p>
+
+        <h2>
+          A forgotten people enters human politics
+        </h2>
+
+        <p>
+          In <strong>1067 AE</strong>, the Krytan exile
+          <strong>Saul D'Alessio</strong> encountered the
+          <strong>mursaat</strong>.
+        </p>
+
+        <p>
+          Believing them to be divine beings, he founded the
+          <strong>White Mantle</strong> and taught followers to worship
+          the mursaat as the <strong>Unseen Ones</strong>.
+        </p>
+
+        <p>
+          Within only a few years, this new faith would become one of the
+          most powerful political forces in Kryta.
+        </p>
+
+      </section>
+
+
+      <!-- 13 -->
+
+      <section
+        class="history-section"
+        data-position="97"
+        data-date="1069 AE"
+        data-context="YOU ARE HERE // The Old Order Is About to Collapse"
+      >
+
+        <p class="history-label">
+          Record 13 // The Edge of Disaster
+        </p>
+
+        <h2>
+          The kingdoms do not see what is coming
+        </h2>
+
+        <p>
+          By <strong>1069 AE</strong>, the human nations of continental
+          Tyria remained locked in conflict.
+        </p>
+
+        <p>
+          Ascalon had fortified itself against northern threats.
+          Kryta was increasingly influenced by the White Mantle.
+          Orr remained powerful but would soon be dragged directly into war.
+        </p>
+
+        <p>
+          The Third Guild War continued.
+        </p>
+
+        <p>
+          Then the charr moved south.
+        </p>
+
+        <p>
+          The age of kingdoms fighting one another was about to end
+          because all three would face something worse.
         </p>
 
       </section>
@@ -1272,15 +1458,15 @@
           <div class="key-card">
 
             <p class="key-card-label">
-              Fallen God
+              Human Nations
             </p>
 
             <h3>
-              Abaddon
+              Ascalon, Kryta & Orr
             </h3>
 
             <p>
-              Defeated and imprisoned within the Realm of Torment.
+              The three great human kingdoms of continental Tyria.
             </p>
 
           </div>
@@ -1288,15 +1474,15 @@
           <div class="key-card">
 
             <p class="key-card-label">
-              Civilization
+              Human Conflict
             </p>
 
             <h3>
-              The Margonites
+              The Guild Wars
             </h3>
 
             <p>
-              A maritime people transformed into followers of Abaddon.
+              Generations of warfare driven by guild power and rivalry.
             </p>
 
           </div>
@@ -1304,15 +1490,15 @@
           <div class="key-card">
 
             <p class="key-card-label">
-              Geographic Change
+              Elona
             </p>
 
             <h3>
-              Crystal Desert
+              Palawa Joko
             </h3>
 
             <p>
-              Formed from the destruction and transformation of the Crystal Sea.
+              The undead conqueror defeated and imprisoned by Turai Ossa.
             </p>
 
           </div>
@@ -1320,15 +1506,47 @@
           <div class="key-card">
 
             <p class="key-card-label">
-              Cosmology
+              Cantha
             </p>
 
             <h3>
-              Realm of Torment
+              The Jade Wind
             </h3>
 
             <p>
-              The prison realm of Abaddon and his followers.
+              Shiro Tagachi's death permanently transforms the land.
+            </p>
+
+          </div>
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              The Mists
+            </p>
+
+            <h3>
+              Lord Odran
+            </h3>
+
+            <p>
+              The first recorded mortal to open permanent paths into the Rift.
+            </p>
+
+          </div>
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Kryta
+            </p>
+
+            <h3>
+              The White Mantle
+            </h3>
+
+            <p>
+              Saul D'Alessio's faith built around the hidden mursaat.
             </p>
 
           </div>
@@ -1347,22 +1565,23 @@
         </p>
 
         <h2>
-          Kingdoms and Guild Wars
+          The Guild Wars Campaign Era
         </h2>
 
         <p>
-          The gods were gone, but the nations they had helped shape remained.
-          Human kingdoms expanded, guilds grew into great powers, and the
-          struggle for influence slowly moved from divine hands into mortal ones.
+          The Third Guild War had weakened the human kingdoms.
+          Then the charr invasion, the Searing, the Cataclysm of Orr,
+          the rise of the White Mantle, Shiro's return, and Nightfall
+          transformed every major human civilization within only a few years.
         </p>
 
         <div class="navigation-actions">
 
           <a
-            href="../gift-of-magic/index.html"
+            href="../exodus-of-gods/index.html"
             class="button"
           >
-            ← The Gift of Magic
+            ← The Exodus of the Gods
           </a>
 
           <a
@@ -1375,7 +1594,7 @@
           <span
             class="button button-primary pending"
           >
-            Kingdoms Archive Coming Next →
+            Guild Wars Era Coming Next →
           </span>
 
         </div>
@@ -1424,10 +1643,10 @@
       const updatePosition = (section) => {
 
         const position =
-          section.dataset.position || "10";
+          section.dataset.position || "6";
 
         const date =
-          section.dataset.date || "0 AE";
+          section.dataset.date || "1 AE";
 
         const context =
           section.dataset.context || "YOU ARE HERE";
