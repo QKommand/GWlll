@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="The Gift of Magic archive entry in the Guild Wars Living Lore Library."
+  >
+
+  <meta name="theme-color" content="#020617">
+
+  <title>The Gift of Magic // GWlll</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #020617;
+      --panel: #0f172a;
+      --panel-hover: #162033;
+      --border: #374151;
+
+      --gold: #f4c76b;
+      --gold-bright: #ffe3a3;
+      --gold-muted: #c99b45;
+
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 170px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(244, 199, 107, 0.08),
+          transparent 34rem
+        ),
+        var(--background);
+
+      color: var(--white);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-small {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .home-link:hover {
+      color: var(--gold-bright);
+      transform: translateX(-3px);
+    }
+
+    /* =========================
+       HISTORICAL POSITION
+    ========================= */
+
+    .history-position {
+      position: sticky;
+      top: 68px;
+      z-index: 40;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .history-position-inner {
+      padding: 13px 0 15px;
+    }
+
+    .position-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      margin-bottom: 10px;
+    }
+
+    .position-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.62rem;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .current-date {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+    }
+
+    .history-rail {
+      position: relative;
+      height: 26px;
+    }
+
+    .history-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background: linear-gradient(
+        to right,
+        rgba(244, 199, 107, 0.25),
+        rgba(244, 199, 107, 0.9),
+        rgba(244, 199, 107, 0.25)
+      );
+    }
+
+    .history-point {
+      position: absolute;
+
+      top: 2px;
+
+      width: 11px;
+      height: 11px;
+
+      border: 1px solid var(--gold-muted);
+      border-radius: 50%;
+
+      background: var(--background);
+
+      transform: translateX(-50%);
+    }
+
+    .history-point.start {
+      left: 5%;
+    }
+
+    .history-point.middle {
+      left: 50%;
+    }
+
+    .history-point.end {
+      left: 95%;
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: -1px;
+      left: 8%;
+
+      width: 17px;
+      height: 17px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 15px rgba(244, 199, 107, 0.5);
+
+      transform: translateX(-50%);
+
+      transition: left 450ms ease;
+    }
+
+    .rail-labels {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 2px;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.58rem;
+    }
+
+    .position-context {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 72px 0 56px;
+      text-align: center;
+    }
+
+    .hero-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 16px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(2.7rem, 8vw, 5.2rem);
+      line-height: 1.03;
+
+      letter-spacing: -0.045em;
+
+      animation: goldPulse 4s ease-in-out infinite;
+    }
+
+    .hero-date {
+      margin: 16px 0 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.8rem;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      max-width: 760px;
+
+      margin: 24px auto 0;
+
+      color: var(--white);
+
+      font-size: 1.06rem;
+      line-height: 1.9;
+    }
+
+    /* =========================
+       ARCHIVE NOTE
+    ========================= */
+
+    .archive-note {
+      margin-bottom: 55px;
+      padding: 24px;
+
+      border: 1px solid rgba(244, 199, 107, 0.35);
+      border-radius: 12px;
+
+      background: rgba(244, 199, 107, 0.045);
+    }
+
+    .archive-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.68rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .archive-note p:last-child {
+      margin: 12px 0 0;
+      color: var(--white);
+    }
+
+    /* =========================
+       HISTORY
+    ========================= */
+
+    .history-section {
+      padding: 36px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .history-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.66rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .history-section h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(1.6rem, 5vw, 2.35rem);
+      line-height: 1.2;
+    }
+
+    .history-section p {
+      margin: 16px 0 0;
+      color: var(--white);
+    }
+
+    .history-section strong {
+      color: var(--gold-bright);
+    }
+
+    /* =========================
+       RECORD BOX
+    ========================= */
+
+    .record-box {
+      margin-top: 22px;
+      padding: 20px;
+
+      border-left: 2px solid var(--gold);
+
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .record-box-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .record-box p:last-child {
+      margin: 8px 0 0;
+    }
+
+    /* =========================
+       MAGIC SCHOOLS
+    ========================= */
+
+    .school-grid {
+      margin-top: 24px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .school-card {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.78);
+    }
+
+    .school-card h3 {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-size: 1.05rem;
+    }
+
+    .school-card p {
+      margin: 8px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       KEY RECORDS
+    ========================= */
+
+    .key-records {
+      padding: 42px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .key-records h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.8rem;
+    }
+
+    .key-grid {
+      margin-top: 24px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .key-card {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.76);
+    }
+
+    .key-card-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.63rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .key-card h3 {
+      margin: 7px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+    }
+
+    .key-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .page-navigation {
+      padding: 45px 0 80px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .navigation-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.67rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .page-navigation h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.7rem;
+    }
+
+    .page-navigation p {
+      margin: 13px 0 0;
+
+      color: var(--white);
+    }
+
+    .navigation-actions {
+      margin-top: 24px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 9px;
+
+      background: var(--panel);
+      color: var(--gold);
+
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(244, 199, 107, 0.6);
+      color: var(--gold-bright);
+    }
+
+    .button-primary {
+      border-color: rgba(244, 199, 107, 0.45);
+
+      background: rgba(244, 199, 107, 0.1);
+    }
+
+    .pending {
+      opacity: 0.65;
+      cursor: default;
+    }
+
+    .pending:hover {
+      transform: none;
+      border-color: var(--border);
+      color: var(--gold);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--white);
+
+      text-align: center;
+      font-size: 0.75rem;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes goldPulse {
+      0%,
+      100% {
+        color: var(--gold);
+
+        text-shadow:
+          0 0 0 rgba(244, 199, 107, 0);
+      }
+
+      50% {
+        color: var(--gold-bright);
+
+        text-shadow:
+          0 0 16px rgba(244, 199, 107, 0.28),
+          0 0 34px rgba(244, 199, 107, 0.1);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 650px) {
+      html {
+        scroll-padding-top: 155px;
+      }
+
+      .container {
+        width: min(100% - 22px, 900px);
+      }
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .brand-small {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 0.84rem;
+      }
+
+      .home-link {
+        font-size: 0.67rem;
+      }
+
+      .history-position {
+        top: 62px;
+      }
+
+      .position-label {
+        font-size: 0.55rem;
+      }
+
+      .current-date {
+        font-size: 0.62rem;
+      }
+
+      .rail-labels {
+        font-size: 0.52rem;
+      }
+
+      .position-context {
+        font-size: 0.65rem;
+      }
+
+      .hero {
+        padding: 52px 0 44px;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      .school-grid,
+      .key-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="../index.html"
+        class="brand"
+      >
+
+        <p class="brand-small">
+          QKommand Archive
+        </p>
+
+        <p class="brand-name">
+          GWlll
+        </p>
+
+      </a>
+
+      <a
+        href="../index.html"
+        class="home-link"
+      >
+        ← Main Homepage
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       YOU ARE HERE
+  ========================== -->
+
+  <aside class="history-position">
+
+    <div class="container history-position-inner">
+
+      <div class="position-top">
+
+        <p class="position-label">
+          Tyrian Historical Position
+        </p>
+
+        <p
+          class="current-date"
+          id="currentDate"
+        >
+          1 BE
+        </p>
+
+      </div>
+
+      <div class="history-rail">
+
+        <div class="history-line"></div>
+
+        <span class="history-point start"></span>
+        <span class="history-point middle"></span>
+        <span class="history-point end"></span>
+
+        <span
+          class="history-marker"
+          id="historyMarker"
+        ></span>
+
+      </div>
+
+      <div class="rail-labels">
+
+        <span>1 BE</span>
+        <span>The Bloodstone</span>
+        <span>0 AE</span>
+
+      </div>
+
+      <p
+        class="position-context"
+        id="positionContext"
+      >
+        YOU ARE HERE // Abaddon Gives Magic
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <p class="hero-label">
+          Historical Archive // Record 04
+        </p>
+
+        <h1>
+          The Gift of Magic
+        </h1>
+
+        <p class="hero-date">
+          1 BE
+        </p>
+
+        <p class="hero-text">
+          For generations, humanity had expanded beneath the watch
+          of the gods. Kingdoms formed, cultures spread, and civilizations
+          learned to shape the world around them.
+        </p>
+
+        <p class="hero-text">
+          Then Abaddon gave mortals something powerful enough to change
+          the balance of Tyria itself.
+        </p>
+
+        <p class="hero-text">
+          Magic.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="container">
+
+      <!-- =========================
+           ARCHIVE NOTE
+      ========================== -->
+
+      <div class="archive-note">
+
+        <p class="archive-note-label">
+          Archive Context
+        </p>
+
+        <p>
+          Magic existed in Tyria long before 1 BE. The mursaat,
+          Seers, Forgotten, Ritualists, and other ancient peoples
+          possessed supernatural abilities before humanity received
+          Abaddon's gift. What changed in 1 BE was the amount and
+          accessibility of magical power available to the peoples
+          of Tyria.
+        </p>
+
+      </div>
+
+
+      <!-- =========================
+           RECORD 01
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="8"
+        data-date="1 BE"
+        data-context="YOU ARE HERE // Abaddon Gives Magic"
+      >
+
+        <p class="history-label">
+          Record 01 // The Gift
+        </p>
+
+        <h2>
+          Magic enters a new age
+        </h2>
+
+        <p>
+          In <strong>1 BE</strong>, the god
+          <strong>Abaddon</strong> gave the knowledge and power
+          to use magic to the sentient races of Tyria.
+        </p>
+
+        <p>
+          The gift was intended to empower the peoples of the world.
+        </p>
+
+        <p>
+          Instead, civilizations immediately discovered how effectively
+          magic could be used against one another.
+        </p>
+
+        <p>
+          Conflict spread rapidly.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 02
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="20"
+        data-date="1 BE"
+        data-context="YOU ARE HERE // Magical Wars Begin"
+      >
+
+        <p class="history-label">
+          Record 02 // The Wars of Magic
+        </p>
+
+        <h2>
+          The gift becomes a weapon
+        </h2>
+
+        <p>
+          The races of Tyria used their new magical strength in struggles
+          for dominance.
+        </p>
+
+        <p>
+          The resulting wars brought enormous destruction.
+        </p>
+
+        <p>
+          The gift that had been intended to make life easier instead
+          threatened to destroy the societies that had received it.
+        </p>
+
+        <p>
+          Humanity itself stood near catastrophe.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Historical Pattern
+          </p>
+
+          <p>
+            Magic did not create greed or conflict. It magnified the
+            ability of civilizations to act on them.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 03
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="32"
+        data-date="1 BE"
+        data-context="YOU ARE HERE // King Doric Travels to Arah"
+      >
+
+        <p class="history-label">
+          Record 03 // King Doric
+        </p>
+
+        <h2>
+          A king asks the gods to intervene
+        </h2>
+
+        <p>
+          With magical warfare spreading across Tyria,
+          <strong>King Doric</strong> traveled to
+          <strong>Arah</strong>, the City of the Gods.
+        </p>
+
+        <p>
+          Doric was the ruler of the united human lands of continental
+          Tyria.
+        </p>
+
+        <p>
+          He pleaded with the gods to stop the destruction and take back
+          the power that had been unleashed.
+        </p>
+
+        <p>
+          The gods listened.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 04
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="44"
+        data-date="1 BE"
+        data-context="YOU ARE HERE // Magic Is Sealed"
+      >
+
+        <p class="history-label">
+          Record 04 // The Bloodstone
+        </p>
+
+        <h2>
+          An ancient artifact is used again
+        </h2>
+
+        <p>
+          The gods turned to an artifact that was already ancient:
+          the <strong>Bloodstone</strong> created by the Seers.
+        </p>
+
+        <p>
+          During the previous Dragonrise, the Seers had used the
+          Bloodstone to hide magical energy from the Elder Dragons.
+        </p>
+
+        <p>
+          Now the gods used it for another purpose.
+        </p>
+
+        <p>
+          They gathered much of the world's magic and sealed it
+          within the Bloodstone.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Connection to the Ancient Era
+          </p>
+
+          <p>
+            The solution to humanity's magical crisis came from a
+            civilization that had fought the Elder Dragons thousands
+            of years earlier.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 05
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="56"
+        data-date="1 BE"
+        data-context="YOU ARE HERE // The Bloodstone Is Divided"
+      >
+
+        <p class="history-label">
+          Record 05 // Five Stones
+        </p>
+
+        <h2>
+          Magic is divided
+        </h2>
+
+        <p>
+          The Bloodstone was divided into
+          <strong>five major pieces</strong>.
+        </p>
+
+        <p>
+          Four represented separate schools of magic.
+          The fifth served as a keystone required to reunite them.
+        </p>
+
+        <div class="school-grid">
+
+          <div class="school-card">
+
+            <h3>
+              Preservation
+            </h3>
+
+            <p>
+              Magic associated with healing and protection.
+            </p>
+
+          </div>
+
+
+          <div class="school-card">
+
+            <h3>
+              Destruction
+            </h3>
+
+            <p>
+              Magic associated with overwhelming destructive force.
+            </p>
+
+          </div>
+
+
+          <div class="school-card">
+
+            <h3>
+              Aggression
+            </h3>
+
+            <p>
+              Magic associated with pressure and punishment.
+            </p>
+
+          </div>
+
+
+          <div class="school-card">
+
+            <h3>
+              Denial
+            </h3>
+
+            <p>
+              Magic associated with shutdown, control, and restriction.
+            </p>
+
+          </div>
+
+        </div>
+
+        <p>
+          The arrangement prevented any single individual from easily
+          wielding the full power of all four schools at once.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 06
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="68"
+        data-date="1 BE"
+        data-context="YOU ARE HERE // Doric's Blood Seals the Stones"
+      >
+
+        <p class="history-label">
+          Record 06 // The Blood of Doric
+        </p>
+
+        <h2>
+          The king becomes part of the seal
+        </h2>
+
+        <p>
+          King Doric had asked the gods to restore balance.
+        </p>
+
+        <p>
+          The burden of protecting that balance was placed upon him
+          and his descendants.
+        </p>
+
+        <p>
+          The gods used <strong>Doric's blood</strong> to seal the
+          Bloodstones.
+        </p>
+
+        <p>
+          His bloodline would remain tied to the stones long after
+          his death.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 07
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="78"
+        data-date="1 BE"
+        data-context="YOU ARE HERE // Bloodstones Placed in Abaddon's Mouth"
+      >
+
+        <p class="history-label">
+          Record 07 // Abaddon's Mouth
+        </p>
+
+        <h2>
+          The stones are hidden within a volcano
+        </h2>
+
+        <p>
+          The five major Bloodstones were taken to the
+          <strong>Ring of Fire Island Chain</strong>.
+        </p>
+
+        <p>
+          There they were placed within the great volcano known as
+          <strong>Abaddon's Mouth</strong>.
+        </p>
+
+        <p>
+          The gods had limited the power available to mortals.
+        </p>
+
+        <p>
+          But one of their own refused to accept that decision.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 08
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="88"
+        data-date="1 BE – 0 AE"
+        data-context="YOU ARE HERE // Abaddon Rejects the Limitation"
+      >
+
+        <p class="history-label">
+          Record 08 // Abaddon's Objection
+        </p>
+
+        <h2>
+          The giver of magic refuses the new order
+        </h2>
+
+        <p>
+          Abaddon opposed the decision to restrict magic.
+        </p>
+
+        <p>
+          The same god who had given mortals access to greater magical
+          power now stood against the other gods who sought to limit it.
+        </p>
+
+        <p>
+          He began transforming his followers, the
+          <strong>Margonites</strong>, into powerful demonic beings.
+        </p>
+
+        <p>
+          The dispute over magic was becoming something far larger.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 09
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="96"
+        data-date="0 AE"
+        data-context="YOU ARE HERE // The Divine War Begins"
+      >
+
+        <p class="history-label">
+          Record 09 // The Edge of Exodus
+        </p>
+
+        <h2>
+          The gods go to war
+        </h2>
+
+        <p>
+          Abaddon declared war upon the other gods and assaulted
+          the <strong>Gates of Heaven</strong>.
+        </p>
+
+        <p>
+          What began as a dispute over how much magic mortals should
+          possess became a war between divine beings.
+        </p>
+
+        <p>
+          The consequences would reshape continents.
+        </p>
+
+        <p>
+          And when the war ended, the gods would no longer walk
+          openly among mortals.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           KEY RECORDS
+      ========================== -->
+
+      <section class="key-records">
+
+        <p class="history-label">
+          Archive Index
+        </p>
+
+        <h2>
+          Key Records From This Era
+        </h2>
+
+        <div class="key-grid">
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Divine History
+            </p>
+
+            <h3>
+              Abaddon
+            </h3>
+
+            <p>
+              The god who gave mortals greater access to magic.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Human History
+            </p>
+
+            <h3>
+              King Doric
+            </h3>
+
+            <p>
+              The king whose plea led the gods to restrict magic.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Magical Artifact
+            </p>
+
+            <h3>
+              The Bloodstone
+            </h3>
+
+            <p>
+              A Seer artifact repurposed to limit mortal magic.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Turning Point
+            </p>
+
+            <h3>
+              Abaddon's Rebellion
+            </h3>
+
+            <p>
+              The dispute over magic becomes a war between gods.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           NAVIGATION
+      ========================== -->
+
+      <section class="page-navigation">
+
+        <p class="navigation-label">
+          Continue the Road Through Time
+        </p>
+
+        <h2>
+          The Exodus of the Gods
+        </h2>
+
+        <p>
+          The Bloodstone had limited mortal magic, but the conflict
+          was no longer between mortal civilizations. Abaddon's rebellion
+          would transform the Crystal Sea, destroy the Margonite
+          civilization, and force the gods to reconsider their place
+          in Tyria.
+        </p>
+
+        <div class="navigation-actions">
+
+          <a
+            href="../gods-and-humanity/index.html"
+            class="button"
+          >
+            ← The Gods and Humanity
+          </a>
+
+          <a
+            href="../index.html"
+            class="button"
+          >
+            Main Homepage
+          </a>
+
+          <span
+            class="button button-primary pending"
+          >
+            Exodus Archive Coming Next →
+          </span>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      Guild Wars Living Lore Library is an unofficial fan lore project.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
+      belong to their respective owners.
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       HISTORY POSITION SCRIPT
+  ========================== -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      const sections =
+        document.querySelectorAll(".history-section");
+
+      const marker =
+        document.getElementById("historyMarker");
+
+      const currentDate =
+        document.getElementById("currentDate");
+
+      const positionContext =
+        document.getElementById("positionContext");
+
+
+      const updatePosition = (section) => {
+
+        const position =
+          section.dataset.position || "8";
+
+        const date =
+          section.dataset.date || "1 BE";
+
+        const context =
+          section.dataset.context || "YOU ARE HERE";
+
+
+        marker.style.left =
+          `${position}%`;
+
+        currentDate.textContent =
+          date;
+
+        positionContext.textContent =
+          context;
+      };
+
+
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+
+            const visible =
+              entries
+                .filter(
+                  (entry) =>
+                    entry.isIntersecting
+                )
+                .sort(
+                  (a, b) =>
+                    b.intersectionRatio -
+                    a.intersectionRatio
+                );
+
+
+            if (visible.length > 0) {
+
+              updatePosition(
+                visible[0].target
+              );
+
+            }
+
+          },
+          {
+            rootMargin:
+              "-35% 0px -45% 0px",
+
+            threshold: [
+              0,
+              0.15,
+              0.3,
+              0.5,
+              0.75
+            ]
+          }
+        );
+
+
+      sections.forEach(
+        (section) => {
+          observer.observe(section);
+        }
+      );
+
+    })();
+  </script>
+
+</body>
+</html>
