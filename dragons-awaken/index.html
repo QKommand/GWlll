@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="The Dragons Awaken archive entry in the Guild Wars Living Lore Library."
+  >
+
+  <meta name="theme-color" content="#020617">
+
+  <title>The Dragons Awaken // GWlll</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #020617;
+      --panel: #0f172a;
+      --panel-hover: #162033;
+      --border: #374151;
+
+      --gold: #f4c76b;
+      --gold-bright: #ffe3a3;
+      --gold-muted: #c99b45;
+
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 170px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(244, 199, 107, 0.08),
+          transparent 34rem
+        ),
+        var(--background);
+
+      color: var(--white);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-small {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .home-link:hover {
+      color: var(--gold-bright);
+      transform: translateX(-3px);
+    }
+
+    /* HISTORY POSITION */
+
+    .history-position {
+      position: sticky;
+      top: 68px;
+      z-index: 40;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .history-position-inner {
+      padding: 13px 0 15px;
+    }
+
+    .position-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      margin-bottom: 10px;
+    }
+
+    .position-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.62rem;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .current-date {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+    }
+
+    .history-rail {
+      position: relative;
+      height: 26px;
+    }
+
+    .history-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background: linear-gradient(
+        to right,
+        rgba(244, 199, 107, 0.25),
+        rgba(244, 199, 107, 0.9),
+        rgba(244, 199, 107, 0.25)
+      );
+    }
+
+    .history-point {
+      position: absolute;
+
+      top: 2px;
+
+      width: 11px;
+      height: 11px;
+
+      border: 1px solid var(--gold-muted);
+      border-radius: 50%;
+
+      background: var(--background);
+
+      transform: translateX(-50%);
+    }
+
+    .history-point.start {
+      left: 5%;
+    }
+
+    .history-point.middle {
+      left: 50%;
+    }
+
+    .history-point.end {
+      left: 95%;
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: -1px;
+      left: 6%;
+
+      width: 17px;
+      height: 17px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 15px rgba(244, 199, 107, 0.5);
+
+      transform: translateX(-50%);
+
+      transition: left 450ms ease;
+    }
+
+    .rail-labels {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 2px;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.58rem;
+    }
+
+    .position-context {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 72px 0 56px;
+      text-align: center;
+    }
+
+    .hero-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 16px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(2.7rem, 8vw, 5.2rem);
+      line-height: 1.03;
+
+      letter-spacing: -0.045em;
+
+      animation: goldPulse 4s ease-in-out infinite;
+    }
+
+    .hero-date {
+      margin: 16px 0 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.8rem;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      max-width: 760px;
+
+      margin: 24px auto 0;
+
+      color: var(--white);
+
+      font-size: 1.06rem;
+      line-height: 1.9;
+    }
+
+    /* ARCHIVE NOTE */
+
+    .archive-note {
+      margin-bottom: 55px;
+      padding: 24px;
+
+      border: 1px solid rgba(244, 199, 107, 0.35);
+      border-radius: 12px;
+
+      background: rgba(244, 199, 107, 0.045);
+    }
+
+    .archive-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.68rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .archive-note p:last-child {
+      margin: 12px 0 0;
+      color: var(--white);
+    }
+
+    /* HISTORY */
+
+    .history-section {
+      padding: 36px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .history-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.66rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .history-section h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(1.6rem, 5vw, 2.35rem);
+      line-height: 1.2;
+    }
+
+    .history-section p {
+      margin: 16px 0 0;
+      color: var(--white);
+    }
+
+    .history-section strong {
+      color: var(--gold-bright);
+    }
+
+    .record-box {
+      margin-top: 22px;
+      padding: 20px;
+
+      border-left: 2px solid var(--gold);
+
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .record-box-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .record-box p:last-child {
+      margin: 8px 0 0;
+    }
+
+    /* DRAGON GRID */
+
+    .dragon-grid {
+      margin-top: 24px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .dragon-card {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.78);
+    }
+
+    .dragon-card-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.62rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .dragon-card h3 {
+      margin: 7px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.05rem;
+    }
+
+    .dragon-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.9rem;
+    }
+
+    /* KEY RECORDS */
+
+    .key-records {
+      padding: 42px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .key-records h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.8rem;
+    }
+
+    .key-grid {
+      margin-top: 24px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .key-card {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.76);
+    }
+
+    .key-card-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.63rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .key-card h3 {
+      margin: 7px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+    }
+
+    .key-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.9rem;
+    }
+
+    /* NAVIGATION */
+
+    .page-navigation {
+      padding: 45px 0 80px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .navigation-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.67rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .page-navigation h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.7rem;
+    }
+
+    .page-navigation p {
+      margin: 13px 0 0;
+
+      color: var(--white);
+    }
+
+    .navigation-actions {
+      margin-top: 24px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 9px;
+
+      background: var(--panel);
+      color: var(--gold);
+
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(244, 199, 107, 0.6);
+      color: var(--gold-bright);
+    }
+
+    .button-primary {
+      border-color: rgba(244, 199, 107, 0.45);
+
+      background: rgba(244, 199, 107, 0.1);
+    }
+
+    .pending {
+      opacity: 0.65;
+      cursor: default;
+    }
+
+    .pending:hover {
+      transform: none;
+      border-color: var(--border);
+      color: var(--gold);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--white);
+
+      text-align: center;
+      font-size: 0.75rem;
+    }
+
+    /* ANIMATION */
+
+    @keyframes goldPulse {
+      0%,
+      100% {
+        color: var(--gold);
+
+        text-shadow:
+          0 0 0 rgba(244, 199, 107, 0);
+      }
+
+      50% {
+        color: var(--gold-bright);
+
+        text-shadow:
+          0 0 16px rgba(244, 199, 107, 0.28),
+          0 0 34px rgba(244, 199, 107, 0.1);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      html {
+        scroll-padding-top: 155px;
+      }
+
+      .container {
+        width: min(100% - 22px, 900px);
+      }
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .brand-small {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 0.84rem;
+      }
+
+      .home-link {
+        font-size: 0.67rem;
+      }
+
+      .history-position {
+        top: 62px;
+      }
+
+      .position-label {
+        font-size: 0.55rem;
+      }
+
+      .current-date {
+        font-size: 0.62rem;
+      }
+
+      .rail-labels {
+        font-size: 0.52rem;
+      }
+
+      .position-context {
+        font-size: 0.65rem;
+      }
+
+      .hero {
+        padding: 52px 0 44px;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      .dragon-grid,
+      .key-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="../index.html"
+        class="brand"
+      >
+
+        <p class="brand-small">
+          QKommand Archive
+        </p>
+
+        <p class="brand-name">
+          GWlll
+        </p>
+
+      </a>
+
+      <a
+        href="../index.html"
+        class="home-link"
+      >
+        ← Main Homepage
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- YOU ARE HERE -->
+
+  <aside class="history-position">
+
+    <div class="container history-position-inner">
+
+      <div class="position-top">
+
+        <p class="position-label">
+          Tyrian Historical Position
+        </p>
+
+        <p
+          class="current-date"
+          id="currentDate"
+        >
+          1078 AE
+        </p>
+
+      </div>
+
+      <div class="history-rail">
+
+        <div class="history-line"></div>
+
+        <span class="history-point start"></span>
+        <span class="history-point middle"></span>
+        <span class="history-point end"></span>
+
+        <span
+          class="history-marker"
+          id="historyMarker"
+        ></span>
+
+      </div>
+
+      <div class="rail-labels">
+
+        <span>1078 AE</span>
+        <span>1219 AE</span>
+        <span>1320 AE</span>
+
+      </div>
+
+      <p
+        class="position-context"
+        id="positionContext"
+      >
+        YOU ARE HERE // Primordus Stirs
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <p class="hero-label">
+          Historical Archive // Record 08
+        </p>
+
+        <h1>
+          The Dragons Awaken
+        </h1>
+
+        <p class="hero-date">
+          1078 AE – 1320 AE
+        </p>
+
+        <p class="hero-text">
+          For thousands of years, the Elder Dragons had existed mostly
+          as ruins, legends, and warnings from peoples whose civilizations
+          had already faded.
+        </p>
+
+        <p class="hero-text">
+          Then the earth shook.
+        </p>
+
+        <p class="hero-text">
+          Over the next two centuries, the ancient cycle returned and
+          reshaped nearly every corner of Tyria.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="container">
+
+      <!-- ARCHIVE NOTE -->
+
+      <div class="archive-note">
+
+        <p class="archive-note-label">
+          Archive Context
+        </p>
+
+        <p>
+          This era bridges Guild Wars and Guild Wars 2. The world encountered
+          in Guild Wars 2 exists because these awakenings displaced entire
+          peoples, destroyed cities, changed coastlines, and forced old enemies
+          into new relationships.
+        </p>
+
+      </div>
+
+
+      <!-- 01 -->
+
+      <section
+        class="history-section"
+        data-position="5"
+        data-date="1078 AE"
+        data-context="YOU ARE HERE // Primordus Stirs Beneath Tyria"
+      >
+
+        <p class="history-label">
+          Record 01 // The First Warning
+        </p>
+
+        <h2>
+          Primordus begins to stir
+        </h2>
+
+        <p>
+          During the events surrounding the Great Destroyer in
+          <strong>1078 AE</strong>, the Elder Dragon
+          <strong>Primordus</strong> began stirring beneath Tyria.
+        </p>
+
+        <p>
+          The Great Destroyer was defeated before Primordus could fully
+          awaken.
+        </p>
+
+        <p>
+          The victory bought Tyria time.
+        </p>
+
+        <p>
+          It did not stop the Dragonrise.
+        </p>
+
+      </section>
+
+
+      <!-- 02 -->
+
+      <section
+        class="history-section"
+        data-position="12"
+        data-date="1090 AE"
+        data-context="YOU ARE HERE // Ascalon Falls to the Charr"
+      >
+
+        <p class="history-label">
+          Record 02 // The Foefire
+        </p>
+
+        <h2>
+          Ascalon's last king refuses to surrender
+        </h2>
+
+        <p>
+          In <strong>1090 AE</strong>, the charr High Legions finally
+          broke into Ascalon City.
+        </p>
+
+        <p>
+          King <strong>Adelbern</strong> unleashed the
+          <strong>Foefire</strong>.
+        </p>
+
+        <p>
+          The spell killed the remaining human defenders and transformed
+          many of them into ghosts bound to Ascalon.
+        </p>
+
+        <p>
+          The charr reclaimed the city.
+        </p>
+
+        <p>
+          But the war left a supernatural scar across the land.
+        </p>
+
+      </section>
+
+
+      <!-- 03 -->
+
+      <section
+        class="history-section"
+        data-position="18"
+        data-date="1105–1116 AE"
+        data-context="YOU ARE HERE // Modern Tyria Begins Taking Shape"
+      >
+
+        <p class="history-label">
+          Record 03 // A New Order
+        </p>
+
+        <h2>
+          Institutions rise from the old world
+        </h2>
+
+        <p>
+          In <strong>1105 AE</strong>, the
+          <strong>Durmand Priory</strong> was established in the Shiverpeaks.
+        </p>
+
+        <p>
+          New Krytan became a central written language.
+        </p>
+
+        <p>
+          In <strong>1112 AE</strong>, the charr constructed the
+          <strong>Black Citadel</strong> over the ruins of Rin.
+        </p>
+
+        <p>
+          In <strong>1116 AE</strong>,
+          <strong>Kalla Scorchrazor</strong> led the rebellion that broke
+          the Flame Legion shaman caste's control over charr society.
+        </p>
+
+      </section>
+
+
+      <!-- 04 -->
+
+      <section
+        class="history-section"
+        data-position="25"
+        data-date="1120 AE"
+        data-context="YOU ARE HERE // Primordus Awakens"
+      >
+
+        <p class="history-label">
+          Record 04 // Primordus
+        </p>
+
+        <h2>
+          The first Elder Dragon fully awakens
+        </h2>
+
+        <p>
+          In <strong>1120 AE</strong>,
+          <strong>Primordus awakened</strong>.
+        </p>
+
+        <p>
+          Destroyers spread throughout the Depths of Tyria.
+        </p>
+
+        <p>
+          Underground civilizations were forced toward the surface.
+        </p>
+
+        <p>
+          The asura lost their great subterranean cities, and both
+          <strong>asura and skritt</strong> began appearing throughout
+          the surface world.
+        </p>
+
+        <p>
+          The transformed dwarves continued their war against Primordus
+          beneath the earth.
+        </p>
+
+      </section>
+
+
+      <!-- 05 -->
+
+      <section
+        class="history-section"
+        data-position="30"
+        data-date="1125 AE"
+        data-context="YOU ARE HERE // The Dwarven Transformation Is Completed"
+      >
+
+        <p class="history-label">
+          Record 05 // The Last Dwarves
+        </p>
+
+        <h2>
+          An ancient civilization leaves the surface world
+        </h2>
+
+        <p>
+          By <strong>1125 AE</strong>, the last known dwarves had undergone
+          the transformation into stone.
+        </p>
+
+        <p>
+          The dwarves continued fighting Destroyers in the depths,
+          but their old kingdoms and ordinary society disappeared.
+        </p>
+
+        <p>
+          One of the elder races that had survived the previous
+          Dragonrise had now transformed itself to face the next one.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            The Cycle Returns
+          </p>
+
+          <p>
+            The same ancient race that remembered earlier Dragonrises
+            became one of the first civilizations consumed by the new cycle.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 06 -->
+
+      <section
+        class="history-section"
+        data-position="36"
+        data-date="1127–1135 AE"
+        data-context="YOU ARE HERE // Cantha Closes and Elona Falls"
+      >
+
+        <p class="history-label">
+          Record 06 // Distant Nations Change
+        </p>
+
+        <h2>
+          Tyria begins losing contact with the wider world
+        </h2>
+
+        <p>
+          In <strong>1127 AE</strong>,
+          Emperor <strong>Usoku</strong> began campaigns to fully unify
+          Cantha under imperial rule.
+        </p>
+
+        <p>
+          Kurzick and Luxon independence was crushed, while non-humans
+          and political enemies were purged.
+        </p>
+
+        <p>
+          In <strong>1135 AE</strong>,
+          <strong>Palawa Joko</strong> began his successful conquest
+          of Elona.
+        </p>
+
+        <p>
+          He redirected the River Elon and expanded his Awakened forces.
+        </p>
+
+      </section>
+
+
+      <!-- 07 -->
+
+      <section
+        class="history-section"
+        data-position="43"
+        data-date="1165 AE"
+        data-context="YOU ARE HERE // Jormag Awakens"
+      >
+
+        <p class="history-label">
+          Record 07 // Jormag
+        </p>
+
+        <h2>
+          Winter consumes the north
+        </h2>
+
+        <p>
+          In <strong>1165 AE</strong>,
+          <strong>Jormag</strong>, the Elder Dragon of Ice, awakened.
+        </p>
+
+        <p>
+          A massive snowstorm continued for four years.
+        </p>
+
+        <p>
+          Jormag's Icebrood expanded across the Far Shiverpeaks while
+          several Spirits of the Wild disappeared.
+        </p>
+
+        <p>
+          Norn and kodan settlements were devastated.
+        </p>
+
+      </section>
+
+
+      <!-- 08 -->
+
+      <section
+        class="history-section"
+        data-position="48"
+        data-date="1169 AE"
+        data-context="YOU ARE HERE // The Norn Flee South"
+      >
+
+        <p class="history-label">
+          Record 08 // The Norn Exodus
+        </p>
+
+        <h2>
+          Hoelbrak becomes a new home
+        </h2>
+
+        <p>
+          After years of losses against Jormag's forces, the
+          <strong>norn abandoned the Far Shiverpeaks</strong>.
+        </p>
+
+        <p>
+          They migrated south into the Shiverpeak Mountains.
+        </p>
+
+        <p>
+          In <strong>1169 AE</strong>, they established
+          <strong>Hoelbrak</strong>.
+        </p>
+
+        <p>
+          What later appeared to outsiders as the traditional norn homeland
+          was actually a refuge created by the awakening of an Elder Dragon.
+        </p>
+
+      </section>
+
+
+      <!-- 09 -->
+
+      <section
+        class="history-section"
+        data-position="53"
+        data-date="1175 AE"
+        data-context="YOU ARE HERE // Palawa Joko Conquers Elona"
+      >
+
+        <p class="history-label">
+          Record 09 // The Fall of Elona
+        </p>
+
+        <h2>
+          Palawa Joko finishes what he began centuries earlier
+        </h2>
+
+        <p>
+          In <strong>1175 AE</strong>,
+          <strong>Elona fell to Palawa Joko</strong>.
+        </p>
+
+        <p>
+          The Order of the Sunspears was largely destroyed.
+        </p>
+
+        <p>
+          Joko's Awakened regime took control of the nation and would
+          remain in power for generations.
+        </p>
+
+        <p>
+          Elona effectively disappeared from the political world known
+          to Central Tyria.
+        </p>
+
+      </section>
+
+
+      <!-- 10 -->
+
+      <section
+        class="history-section"
+        data-position="58"
+        data-date="1180 AE"
+        data-context="YOU ARE HERE // Ventari Leaves His Tablet"
+      >
+
+        <p class="history-label">
+          Record 10 // A Quiet Legacy
+        </p>
+
+        <h2>
+          Ventari leaves behind an idea
+        </h2>
+
+        <p>
+          In <strong>1180 AE</strong>, the centaur
+          <strong>Ventari</strong> died beside the Pale Tree.
+        </p>
+
+        <p>
+          He left behind the
+          <strong>Ventari Tablet</strong>, containing principles of peace
+          and coexistence.
+        </p>
+
+        <p>
+          At the time, this seemed like a small event compared with the
+          Dragonrise.
+        </p>
+
+        <p>
+          More than a century later, an entirely new people would build
+          much of their culture around those teachings.
+        </p>
+
+      </section>
+
+
+      <!-- 11 -->
+
+      <section
+        class="history-section"
+        data-position="66"
+        data-date="1219 AE"
+        data-context="YOU ARE HERE // Zhaitan Awakens"
+      >
+
+        <p class="history-label">
+          Record 11 // Zhaitan
+        </p>
+
+        <h2>
+          Orr rises from the sea
+        </h2>
+
+        <p>
+          In <strong>1219 AE</strong>,
+          <strong>Zhaitan awakened</strong> beneath the sunken kingdom
+          of Orr.
+        </p>
+
+        <p>
+          The entire peninsula rose from the depths of the Sea of Sorrows.
+        </p>
+
+        <p>
+          The resulting tsunami destroyed
+          <strong>old Lion's Arch</strong> and devastated coastlines across
+          the region.
+        </p>
+
+        <p>
+          Zhaitan's Risen began spreading from Orr across nearby waters
+          and settlements.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Ancient Echo
+          </p>
+
+          <p>
+            Thousands of years earlier, the elder races had attempted
+            to destroy Zhaitan and failed. Now the same dragon had returned
+            beneath the ruins of one of humanity's greatest kingdoms.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 12 -->
+
+      <section
+        class="history-section"
+        data-position="71"
+        data-date="1219 AE"
+        data-context="YOU ARE HERE // Cantha Is Struck by Zhaitan's Tsunami"
+      >
+
+        <p class="history-label">
+          Record 12 // The Ocean Changes
+        </p>
+
+        <h2>
+          The dragon's awakening reaches Cantha
+        </h2>
+
+        <p>
+          Zhaitan's Great Tsunami crossed the ocean and destroyed
+          <strong>Old Kaineng</strong>.
+        </p>
+
+        <p>
+          Kuunavang called upon
+          <strong>Soo-Won</strong> to leave the depths and defend Cantha.
+        </p>
+
+        <p>
+          Around this period, tengu fought their way through Risen forces
+          and established the <strong>Dominion of Winds</strong>.
+        </p>
+
+      </section>
+
+
+      <!-- 13 -->
+
+      <section
+        class="history-section"
+        data-position="76"
+        data-date="1220–1230 AE"
+        data-context="YOU ARE HERE // New Cities Rise"
+      >
+
+        <p class="history-label">
+          Record 13 // Rebuilding
+        </p>
+
+        <h2>
+          Survivors build around the disasters
+        </h2>
+
+        <p>
+          In <strong>1220 AE</strong>,
+          <strong>Divinity's Reach</strong> was founded in Kryta.
+        </p>
+
+        <p>
+          Over the following decade, pirates and corsairs occupied the
+          drying ruins of old Lion's Arch.
+        </p>
+
+        <p>
+          Cobiah Marriner eventually helped rebuild the settlement as a
+          free city.
+        </p>
+
+        <p>
+          The modern political map of Central Tyria was beginning to emerge.
+        </p>
+
+      </section>
+
+
+      <!-- 14 -->
+
+      <section
+        class="history-section"
+        data-position="81"
+        data-date="1270–1275 AE"
+        data-context="YOU ARE HERE // Refugees Reach Central Tyria"
+      >
+
+        <p class="history-label">
+          Record 14 // Displacement
+        </p>
+
+        <h2>
+          Dragonrise becomes migration
+        </h2>
+
+        <p>
+          By <strong>1270 AE</strong>, danger in the deep ocean had driven
+          peoples such as the <strong>quaggan and krait</strong> toward
+          the shores of Tyria.
+        </p>
+
+        <p>
+          Refugees from conquered Elona also settled in
+          <strong>Divinity's Reach</strong>.
+        </p>
+
+        <p>
+          The Dragonrise was no longer something happening in distant lands.
+        </p>
+
+        <p>
+          It was changing who lived where, who became neighbors, and which
+          peoples were forced into conflict.
+        </p>
+
+      </section>
+
+
+      <!-- 15 -->
+
+      <section
+        class="history-section"
+        data-position="87"
+        data-date="1302 AE"
+        data-context="YOU ARE HERE // The Sylvari Awaken"
+      >
+
+        <p class="history-label">
+          Record 15 // A New People
+        </p>
+
+        <h2>
+          The sylvari appear
+        </h2>
+
+        <p>
+          In <strong>1302 AE</strong>, the first
+          <strong>sylvari</strong> awakened from the Pale Tree.
+        </p>
+
+        <p>
+          They emerged into a world already shaped by Elder Dragon
+          awakenings, ancient wars, and refugee migrations.
+        </p>
+
+        <p>
+          Guided by the Pale Tree and the teachings of Ventari's Tablet,
+          the sylvari quickly became one of Central Tyria's major peoples.
+        </p>
+
+      </section>
+
+
+      <!-- 16 -->
+
+      <section
+        class="history-section"
+        data-position="92"
+        data-date="1319 AE"
+        data-context="YOU ARE HERE // Destiny's Edge Forms"
+      >
+
+        <p class="history-label">
+          Record 16 // Destiny's Edge
+        </p>
+
+        <h2>
+          Champions begin fighting the dragons directly
+        </h2>
+
+        <p>
+          In <strong>1319 AE</strong>,
+          <strong>Destiny's Edge</strong> formed.
+        </p>
+
+        <p>
+          The group defeated several powerful dragon champions,
+          including Jormag's Dragonspawn.
+        </p>
+
+        <p>
+          For a brief time, they represented the possibility that
+          small groups of exceptional fighters could strike directly
+          at the Elder Dragon threat.
+        </p>
+
+      </section>
+
+
+      <!-- 17 -->
+
+      <section
+        class="history-section"
+        data-position="97"
+        data-date="1320 AE"
+        data-context="YOU ARE HERE // Kralkatorrik Awakens"
+      >
+
+        <p class="history-label">
+          Record 17 // Kralkatorrik
+        </p>
+
+        <h2>
+          The Crystal Dragon crosses Tyria
+        </h2>
+
+        <p>
+          In <strong>1320 AE</strong>,
+          <strong>Kralkatorrik awakened</strong>.
+        </p>
+
+        <p>
+          The Elder Dragon flew south across Ascalon toward the
+          Crystal Desert.
+        </p>
+
+        <p>
+          Everything caught beneath its path was transformed by its
+          corruption, creating the enormous scar known as the
+          <strong>Dragonbrand</strong>.
+        </p>
+
+        <p>
+          Destiny's Edge attempted to confront Kralkatorrik with the
+          help of <strong>Glint</strong>.
+        </p>
+
+        <p>
+          Glint was killed.
+        </p>
+
+      </section>
+
+
+      <!-- 18 -->
+
+      <section
+        class="history-section"
+        data-position="100"
+        data-date="1320 AE"
+        data-context="YOU ARE HERE // The World of Guild Wars 2 Takes Shape"
+      >
+
+        <p class="history-label">
+          Record 18 // The Eve of Guild Wars 2
+        </p>
+
+        <h2>
+          Tyria enters the modern Dragonrise
+        </h2>
+
+        <p>
+          By <strong>1320 AE</strong>, multiple Elder Dragons were awake.
+        </p>
+
+        <p>
+          Primordus ruled the depths.
+          Jormag held much of the north.
+          Zhaitan commanded Orr.
+          Kralkatorrik had carved a corrupted path across the continent.
+        </p>
+
+        <p>
+          Nations had survived largely by adapting around the dragons,
+          not defeating them.
+        </p>
+
+        <p>
+          Five years later, a new generation of heroes would begin
+          changing that equation.
+        </p>
+
+      </section>
+
+
+      <!-- DRAGONS INDEX -->
+
+      <section class="key-records">
+
+        <p class="history-label">
+          Dragonrise Index
+        </p>
+
+        <h2>
+          Elder Dragons of This Era
+        </h2>
+
+        <div class="dragon-grid">
+
+          <div class="dragon-card">
+
+            <p class="dragon-card-label">
+              1120 AE
+            </p>
+
+            <h3>
+              Primordus
+            </h3>
+
+            <p>
+              Awakens beneath Tyria and drives underground civilizations
+              toward the surface.
+            </p>
+
+          </div>
+
+
+          <div class="dragon-card">
+
+            <p class="dragon-card-label">
+              1165 AE
+            </p>
+
+            <h3>
+              Jormag
+            </h3>
+
+            <p>
+              Awakens in the north and forces the norn and kodan south.
+            </p>
+
+          </div>
+
+
+          <div class="dragon-card">
+
+            <p class="dragon-card-label">
+              1219 AE
+            </p>
+
+            <h3>
+              Zhaitan
+            </h3>
+
+            <p>
+              Raises Orr from the sea and unleashes the Risen.
+            </p>
+
+          </div>
+
+
+          <div class="dragon-card">
+
+            <p class="dragon-card-label">
+              1320 AE
+            </p>
+
+            <h3>
+              Kralkatorrik
+            </h3>
+
+            <p>
+              Creates the Dragonbrand and kills Glint.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- KEY RECORDS -->
+
+      <section class="key-records">
+
+        <p class="history-label">
+          Archive Index
+        </p>
+
+        <h2>
+          Key Records From This Era
+        </h2>
+
+        <div class="key-grid">
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Charr History
+            </p>
+
+            <h3>
+              Kalla Scorchrazor
+            </h3>
+
+            <p>
+              Leads the rebellion against the Flame Legion shaman caste.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Elona
+            </p>
+
+            <h3>
+              Joko's Conquest
+            </h3>
+
+            <p>
+              Palawa Joko conquers Elona and destroys most of the Sunspears.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Human History
+            </p>
+
+            <h3>
+              Divinity's Reach
+            </h3>
+
+            <p>
+              Founded after Zhaitan's rise and the destruction of old Lion's Arch.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              New Race
+            </p>
+
+            <h3>
+              Sylvari
+            </h3>
+
+            <p>
+              First awaken from the Pale Tree in 1302 AE.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Dragon Hunters
+            </p>
+
+            <h3>
+              Destiny's Edge
+            </h3>
+
+            <p>
+              A famous guild formed to challenge Elder Dragon champions.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              World Scar
+            </p>
+
+            <h3>
+              The Dragonbrand
+            </h3>
+
+            <p>
+              Kralkatorrik's corrupted path across Ascalon and toward Elona.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- NAVIGATION -->
+
+      <section class="page-navigation">
+
+        <p class="navigation-label">
+          Continue the Road Through Time
+        </p>
+
+        <h2>
+          The Age of the Commander
+        </h2>
+
+        <p>
+          By the beginning of Guild Wars 2, Tyria had spent generations
+          reacting to the Elder Dragons. The next era begins when the
+          Pact forms and mortals stop treating the Dragonrise as something
+          they can only survive.
+        </p>
+
+        <div class="navigation-actions">
+
+          <a
+            href="../guild-wars-era/index.html"
+            class="button"
+          >
+            ← The Guild Wars Era
+          </a>
+
+          <a
+            href="../index.html"
+            class="button"
+          >
+            Main Homepage
+          </a>
+
+          <span
+            class="button button-primary pending"
+          >
+            Age of the Commander Coming Next →
+          </span>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      Guild Wars Living Lore Library is an unofficial fan lore project.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
+      belong to their respective owners.
+
+    </div>
+
+  </footer>
+
+
+  <!-- HISTORY POSITION SCRIPT -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      const sections =
+        document.querySelectorAll(".history-section");
+
+      const marker =
+        document.getElementById("historyMarker");
+
+      const currentDate =
+        document.getElementById("currentDate");
+
+      const positionContext =
+        document.getElementById("positionContext");
+
+
+      const updatePosition = (section) => {
+
+        const position =
+          section.dataset.position || "5";
+
+        const date =
+          section.dataset.date || "1078 AE";
+
+        const context =
+          section.dataset.context || "YOU ARE HERE";
+
+        marker.style.left =
+          `${position}%`;
+
+        currentDate.textContent =
+          date;
+
+        positionContext.textContent =
+          context;
+      };
+
+
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+
+            const visible =
+              entries
+                .filter(
+                  (entry) =>
+                    entry.isIntersecting
+                )
+                .sort(
+                  (a, b) =>
+                    b.intersectionRatio -
+                    a.intersectionRatio
+                );
+
+            if (visible.length > 0) {
+              updatePosition(
+                visible[0].target
+              );
+            }
+
+          },
+          {
+            rootMargin:
+              "-35% 0px -45% 0px",
+
+            threshold: [
+              0,
+              0.15,
+              0.3,
+              0.5,
+              0.75
+            ]
+          }
+        );
+
+      sections.forEach(
+        (section) => {
+          observer.observe(section);
+        }
+      );
+
+    })();
+  </script>
+
+</body>
+</html>
