@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="The Exodus of the Gods archive entry in the Guild Wars Living Lore Library."
+  >
+
+  <meta name="theme-color" content="#020617">
+
+  <title>The Exodus of the Gods // GWlll</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #020617;
+      --panel: #0f172a;
+      --panel-hover: #162033;
+      --border: #374151;
+
+      --gold: #f4c76b;
+      --gold-bright: #ffe3a3;
+      --gold-muted: #c99b45;
+
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 170px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(244, 199, 107, 0.08),
+          transparent 34rem
+        ),
+        var(--background);
+
+      color: var(--white);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-small {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .home-link:hover {
+      color: var(--gold-bright);
+      transform: translateX(-3px);
+    }
+
+    /* HISTORY POSITION */
+
+    .history-position {
+      position: sticky;
+      top: 68px;
+      z-index: 40;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .history-position-inner {
+      padding: 13px 0 15px;
+    }
+
+    .position-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      margin-bottom: 10px;
+    }
+
+    .position-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.62rem;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .current-date {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+    }
+
+    .history-rail {
+      position: relative;
+      height: 26px;
+    }
+
+    .history-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background: linear-gradient(
+        to right,
+        rgba(244, 199, 107, 0.25),
+        rgba(244, 199, 107, 0.9),
+        rgba(244, 199, 107, 0.25)
+      );
+    }
+
+    .history-point {
+      position: absolute;
+
+      top: 2px;
+
+      width: 11px;
+      height: 11px;
+
+      border: 1px solid var(--gold-muted);
+      border-radius: 50%;
+
+      background: var(--background);
+
+      transform: translateX(-50%);
+    }
+
+    .history-point.start {
+      left: 5%;
+    }
+
+    .history-point.middle {
+      left: 50%;
+    }
+
+    .history-point.end {
+      left: 95%;
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: -1px;
+      left: 10%;
+
+      width: 17px;
+      height: 17px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 15px rgba(244, 199, 107, 0.5);
+
+      transform: translateX(-50%);
+
+      transition: left 450ms ease;
+    }
+
+    .rail-labels {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 2px;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.58rem;
+    }
+
+    .position-context {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 72px 0 56px;
+      text-align: center;
+    }
+
+    .hero-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 16px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(2.7rem, 8vw, 5.2rem);
+      line-height: 1.03;
+
+      letter-spacing: -0.045em;
+
+      animation: goldPulse 4s ease-in-out infinite;
+    }
+
+    .hero-date {
+      margin: 16px 0 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.8rem;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      max-width: 760px;
+
+      margin: 24px auto 0;
+
+      color: var(--white);
+
+      font-size: 1.06rem;
+      line-height: 1.9;
+    }
+
+    /* NOTE */
+
+    .archive-note {
+      margin-bottom: 55px;
+      padding: 24px;
+
+      border: 1px solid rgba(244, 199, 107, 0.35);
+      border-radius: 12px;
+
+      background: rgba(244, 199, 107, 0.045);
+    }
+
+    .archive-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.68rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .archive-note p:last-child {
+      margin: 12px 0 0;
+      color: var(--white);
+    }
+
+    /* HISTORY */
+
+    .history-section {
+      padding: 36px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .history-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.66rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .history-section h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(1.6rem, 5vw, 2.35rem);
+      line-height: 1.2;
+    }
+
+    .history-section p {
+      margin: 16px 0 0;
+      color: var(--white);
+    }
+
+    .history-section strong {
+      color: var(--gold-bright);
+    }
+
+    .record-box {
+      margin-top: 22px;
+      padding: 20px;
+
+      border-left: 2px solid var(--gold);
+
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .record-box-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .record-box p:last-child {
+      margin: 8px 0 0;
+    }
+
+    /* KEY RECORDS */
+
+    .key-records {
+      padding: 42px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .key-records h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.8rem;
+    }
+
+    .key-grid {
+      margin-top: 24px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .key-card {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.76);
+    }
+
+    .key-card-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.63rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .key-card h3 {
+      margin: 7px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+    }
+
+    .key-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.9rem;
+    }
+
+    /* NAVIGATION */
+
+    .page-navigation {
+      padding: 45px 0 80px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .navigation-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.67rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .page-navigation h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.7rem;
+    }
+
+    .page-navigation p {
+      margin: 13px 0 0;
+
+      color: var(--white);
+    }
+
+    .navigation-actions {
+      margin-top: 24px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 9px;
+
+      background: var(--panel);
+      color: var(--gold);
+
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(244, 199, 107, 0.6);
+      color: var(--gold-bright);
+    }
+
+    .button-primary {
+      border-color: rgba(244, 199, 107, 0.45);
+
+      background: rgba(244, 199, 107, 0.1);
+    }
+
+    .pending {
+      opacity: 0.65;
+      cursor: default;
+    }
+
+    .pending:hover {
+      transform: none;
+      border-color: var(--border);
+      color: var(--gold);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--white);
+
+      text-align: center;
+      font-size: 0.75rem;
+    }
+
+    /* ANIMATION */
+
+    @keyframes goldPulse {
+      0%,
+      100% {
+        color: var(--gold);
+
+        text-shadow:
+          0 0 0 rgba(244, 199, 107, 0);
+      }
+
+      50% {
+        color: var(--gold-bright);
+
+        text-shadow:
+          0 0 16px rgba(244, 199, 107, 0.28),
+          0 0 34px rgba(244, 199, 107, 0.1);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      html {
+        scroll-padding-top: 155px;
+      }
+
+      .container {
+        width: min(100% - 22px, 900px);
+      }
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .brand-small {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 0.84rem;
+      }
+
+      .home-link {
+        font-size: 0.67rem;
+      }
+
+      .history-position {
+        top: 62px;
+      }
+
+      .position-label {
+        font-size: 0.55rem;
+      }
+
+      .current-date {
+        font-size: 0.62rem;
+      }
+
+      .rail-labels {
+        font-size: 0.52rem;
+      }
+
+      .position-context {
+        font-size: 0.65rem;
+      }
+
+      .hero {
+        padding: 52px 0 44px;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      .key-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="../index.html"
+        class="brand"
+      >
+
+        <p class="brand-small">
+          QKommand Archive
+        </p>
+
+        <p class="brand-name">
+          GWlll
+        </p>
+
+      </a>
+
+      <a
+        href="../index.html"
+        class="home-link"
+      >
+        ← Main Homepage
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- YOU ARE HERE -->
+
+  <aside class="history-position">
+
+    <div class="container history-position-inner">
+
+      <div class="position-top">
+
+        <p class="position-label">
+          Tyrian Historical Position
+        </p>
+
+        <p
+          class="current-date"
+          id="currentDate"
+        >
+          0 AE
+        </p>
+
+      </div>
+
+      <div class="history-rail">
+
+        <div class="history-line"></div>
+
+        <span class="history-point start"></span>
+        <span class="history-point middle"></span>
+        <span class="history-point end"></span>
+
+        <span
+          class="history-marker"
+          id="historyMarker"
+        ></span>
+
+      </div>
+
+      <div class="rail-labels">
+
+        <span>1 BE</span>
+        <span>Divine War</span>
+        <span>0 AE</span>
+
+      </div>
+
+      <p
+        class="position-context"
+        id="positionContext"
+      >
+        YOU ARE HERE // Abaddon's Rebellion
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <p class="hero-label">
+          Historical Archive // Record 05
+        </p>
+
+        <h1>
+          The Exodus of the Gods
+        </h1>
+
+        <p class="hero-date">
+          0 AE
+        </p>
+
+        <p class="hero-text">
+          The crisis over magic had already changed Tyria.
+          The Bloodstone was divided. Mortal power was restrained.
+          The wars that followed Abaddon's gift were beginning to end.
+        </p>
+
+        <p class="hero-text">
+          But among the gods themselves, the conflict had only begun.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="container">
+
+      <!-- ARCHIVE NOTE -->
+
+      <div class="archive-note">
+
+        <p class="archive-note-label">
+          Archive Context
+        </p>
+
+        <p>
+          The Exodus marks one of the great dividing lines in Tyrian
+          history. The Mouvelian Calendar uses this event as its center:
+          years before it are recorded as BE, Before the Exodus, and years
+          after it as AE, After the Exodus.
+        </p>
+
+      </div>
+
+
+      <!-- 01 -->
+
+      <section
+        class="history-section"
+        data-position="10"
+        data-date="1 BE"
+        data-context="YOU ARE HERE // Abaddon Rejects the Limitation of Magic"
+      >
+
+        <p class="history-label">
+          Record 01 // The Dispute
+        </p>
+
+        <h2>
+          Abaddon refuses the new order
+        </h2>
+
+        <p>
+          Abaddon had given greater magical power to the peoples of Tyria.
+        </p>
+
+        <p>
+          When the other gods chose to limit that gift using the
+          <strong>Bloodstone</strong>, Abaddon opposed them.
+        </p>
+
+        <p>
+          The disagreement was no longer about mortals alone.
+        </p>
+
+        <p>
+          It became a conflict among gods.
+        </p>
+
+      </section>
+
+
+      <!-- 02 -->
+
+      <section
+        class="history-section"
+        data-position="22"
+        data-date="1 BE – 0 AE"
+        data-context="YOU ARE HERE // The Margonites Are Transformed"
+      >
+
+        <p class="history-label">
+          Record 02 // The Margonites
+        </p>
+
+        <h2>
+          A civilization follows Abaddon
+        </h2>
+
+        <p>
+          The <strong>Margonites</strong> were already one of the great
+          maritime peoples of the age.
+        </p>
+
+        <p>
+          Their settlements stretched along the coastlines north and west
+          of Elona, and their ships once dominated the Unending Ocean.
+        </p>
+
+        <p>
+          During Abaddon's rebellion, he began transforming his followers
+          into powerful ethereal and demonic beings.
+        </p>
+
+        <p>
+          One of the earliest known was <strong>Jadoth</strong>.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Collapse
+          </p>
+
+          <p>
+            The divine war would ultimately destroy Margonite civilization
+            as it had previously existed.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 03 -->
+
+      <section
+        class="history-section"
+        data-position="34"
+        data-date="0 AE"
+        data-context="YOU ARE HERE // Abaddon Assaults the Gates of Heaven"
+      >
+
+        <p class="history-label">
+          Record 03 // The Divine War
+        </p>
+
+        <h2>
+          Abaddon turns against the gods
+        </h2>
+
+        <p>
+          Abaddon openly declared war on the other members of the pantheon.
+        </p>
+
+        <p>
+          His forces assaulted the <strong>Gates of Heaven</strong>.
+        </p>
+
+        <p>
+          Abaddon was powerful enough to fight multiple gods, but he could
+          not defeat the combined strength of the other five.
+        </p>
+
+        <p>
+          The fighting spilled across the world and left permanent scars
+          upon Tyria.
+        </p>
+
+      </section>
+
+
+      <!-- 04 -->
+
+      <section
+        class="history-section"
+        data-position="48"
+        data-date="0 AE"
+        data-context="YOU ARE HERE // The Crystal Sea Is Destroyed"
+      >
+
+        <p class="history-label">
+          Record 04 // The Crystal Sea
+        </p>
+
+        <h2>
+          A sea becomes a desert
+        </h2>
+
+        <p>
+          The battle that defeated Abaddon caused catastrophic changes
+          across southern Tyria.
+        </p>
+
+        <p>
+          The floor of the <strong>Crystal Sea</strong> rose.
+        </p>
+
+        <p>
+          Waters vanished, exposing vast stretches of land that became
+          the <strong>Crystal Desert</strong>.
+        </p>
+
+        <p>
+          Farther south, once-fertile regions were transformed into the
+          sulfurous wasteland later known as the
+          <strong>Desolation</strong>.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            World Changed
+          </p>
+
+          <p>
+            The Crystal Desert was not always a desert. Its landscape is
+            one of the physical scars left behind by the war between gods.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 05 -->
+
+      <section
+        class="history-section"
+        data-position="60"
+        data-date="0 AE"
+        data-context="YOU ARE HERE // Abaddon Is Defeated"
+      >
+
+        <p class="history-label">
+          Record 05 // The Fall of Abaddon
+        </p>
+
+        <h2>
+          The god of knowledge is cast down
+        </h2>
+
+        <p>
+          Abaddon was eventually defeated by the other five gods.
+        </p>
+
+        <p>
+          He and his followers were imprisoned within the
+          <strong>Realm of Torment</strong>.
+        </p>
+
+        <p>
+          The Mouth of Torment became the place where the fallen god's
+          realm touched the world.
+        </p>
+
+        <p>
+          His defeat did not destroy him.
+        </p>
+
+        <p>
+          It only imprisoned him.
+        </p>
+
+      </section>
+
+
+      <!-- 06 -->
+
+      <section
+        class="history-section"
+        data-position="70"
+        data-date="0 AE"
+        data-context="YOU ARE HERE // Abaddon's Memory Is Erased"
+      >
+
+        <p class="history-label">
+          Record 06 // The Forgotten God
+        </p>
+
+        <h2>
+          History is deliberately erased
+        </h2>
+
+        <p>
+          After Abaddon's defeat, the remaining gods attempted to remove
+          knowledge of him from Tyria.
+        </p>
+
+        <p>
+          Records were destroyed.
+        </p>
+
+        <p>
+          His Orrian temple was sunk, and the
+          <strong>Temple of the Six</strong> was pulled into the Realm
+          of Torment with him.
+        </p>
+
+        <p>
+          Later generations would remember the pantheon as though Abaddon
+          had never belonged to it.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Historical Irony
+          </p>
+
+          <p>
+            Abaddon became a forgotten god not because no one had once
+            known him, but because powerful beings deliberately tried
+            to erase him from history.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 07 -->
+
+      <section
+        class="history-section"
+        data-position="80"
+        data-date="0 AE"
+        data-context="YOU ARE HERE // The Gods Withdraw"
+      >
+
+        <p class="history-label">
+          Record 07 // The Exodus
+        </p>
+
+        <h2>
+          The gods leave Tyria
+        </h2>
+
+        <p>
+          The divine war had demonstrated the damage that could occur
+          when gods fought directly within the mortal world.
+        </p>
+
+        <p>
+          After Abaddon's imprisonment, the remaining Five Gods withdrew
+          from Tyria and departed into the <strong>Mists</strong>.
+        </p>
+
+        <p>
+          Legends later claimed that they went to create new worlds.
+        </p>
+
+        <p>
+          Whatever their destination, the age of gods openly walking
+          alongside mortals was over.
+        </p>
+
+      </section>
+
+
+      <!-- 08 -->
+
+      <section
+        class="history-section"
+        data-position="90"
+        data-date="0 AE"
+        data-context="YOU ARE HERE // The Mouvelian Calendar Begins"
+      >
+
+        <p class="history-label">
+          Record 08 // Year Zero
+        </p>
+
+        <h2>
+          History gains a dividing line
+        </h2>
+
+        <p>
+          The Exodus became important enough that Tyrian historians used
+          it to divide their calendar.
+        </p>
+
+        <p>
+          Events before the gods' departure became
+          <strong>BE, Before the Exodus</strong>.
+        </p>
+
+        <p>
+          Events after it became
+          <strong>AE, After the Exodus</strong>.
+        </p>
+
+        <p>
+          The old divine age had ended.
+        </p>
+
+        <p>
+          The age of mortal kingdoms continued without the gods standing
+          beside them.
+        </p>
+
+      </section>
+
+
+      <!-- 09 -->
+
+      <section
+        class="history-section"
+        data-position="96"
+        data-date="After 0 AE"
+        data-context="YOU ARE HERE // Abaddon Continues to Scheme"
+      >
+
+        <p class="history-label">
+          Record 09 // The Prisoner Still Watches
+        </p>
+
+        <h2>
+          The rebellion was not truly over
+        </h2>
+
+        <p>
+          Abaddon remained trapped within the Realm of Torment.
+        </p>
+
+        <p>
+          But imprisonment did not end his influence.
+        </p>
+
+        <p>
+          Over the centuries that followed, his servants and agents would
+          influence events throughout Tyria.
+        </p>
+
+        <p>
+          The Searing of Ascalon, the Cataclysm of Orr, Shiro Tagachi's
+          fall, and eventually Nightfall would all become connected to the
+          fallen god's efforts to return.
+        </p>
+
+        <p>
+          His war had ended.
+        </p>
+
+        <p>
+          His plan had not.
+        </p>
+
+      </section>
+
+
+      <!-- KEY RECORDS -->
+
+      <section class="key-records">
+
+        <p class="history-label">
+          Archive Index
+        </p>
+
+        <h2>
+          Key Records From This Era
+        </h2>
+
+        <div class="key-grid">
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Fallen God
+            </p>
+
+            <h3>
+              Abaddon
+            </h3>
+
+            <p>
+              Defeated and imprisoned within the Realm of Torment.
+            </p>
+
+          </div>
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Civilization
+            </p>
+
+            <h3>
+              The Margonites
+            </h3>
+
+            <p>
+              A maritime people transformed into followers of Abaddon.
+            </p>
+
+          </div>
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Geographic Change
+            </p>
+
+            <h3>
+              Crystal Desert
+            </h3>
+
+            <p>
+              Formed from the destruction and transformation of the Crystal Sea.
+            </p>
+
+          </div>
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Cosmology
+            </p>
+
+            <h3>
+              Realm of Torment
+            </h3>
+
+            <p>
+              The prison realm of Abaddon and his followers.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- NAVIGATION -->
+
+      <section class="page-navigation">
+
+        <p class="navigation-label">
+          Continue the Road Through Time
+        </p>
+
+        <h2>
+          Kingdoms and Guild Wars
+        </h2>
+
+        <p>
+          The gods were gone, but the nations they had helped shape remained.
+          Human kingdoms expanded, guilds grew into great powers, and the
+          struggle for influence slowly moved from divine hands into mortal ones.
+        </p>
+
+        <div class="navigation-actions">
+
+          <a
+            href="../gift-of-magic/index.html"
+            class="button"
+          >
+            ← The Gift of Magic
+          </a>
+
+          <a
+            href="../index.html"
+            class="button"
+          >
+            Main Homepage
+          </a>
+
+          <span
+            class="button button-primary pending"
+          >
+            Kingdoms Archive Coming Next →
+          </span>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      Guild Wars Living Lore Library is an unofficial fan lore project.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
+      belong to their respective owners.
+
+    </div>
+
+  </footer>
+
+
+  <!-- HISTORY POSITION SCRIPT -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      const sections =
+        document.querySelectorAll(".history-section");
+
+      const marker =
+        document.getElementById("historyMarker");
+
+      const currentDate =
+        document.getElementById("currentDate");
+
+      const positionContext =
+        document.getElementById("positionContext");
+
+
+      const updatePosition = (section) => {
+
+        const position =
+          section.dataset.position || "10";
+
+        const date =
+          section.dataset.date || "0 AE";
+
+        const context =
+          section.dataset.context || "YOU ARE HERE";
+
+        marker.style.left =
+          `${position}%`;
+
+        currentDate.textContent =
+          date;
+
+        positionContext.textContent =
+          context;
+      };
+
+
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+
+            const visible =
+              entries
+                .filter(
+                  (entry) =>
+                    entry.isIntersecting
+                )
+                .sort(
+                  (a, b) =>
+                    b.intersectionRatio -
+                    a.intersectionRatio
+                );
+
+            if (visible.length > 0) {
+              updatePosition(
+                visible[0].target
+              );
+            }
+
+          },
+          {
+            rootMargin:
+              "-35% 0px -45% 0px",
+
+            threshold: [
+              0,
+              0.15,
+              0.3,
+              0.5,
+              0.75
+            ]
+          }
+        );
+
+      sections.forEach(
+        (section) => {
+          observer.observe(section);
+        }
+      );
+
+    })();
+  </script>
+
+</body>
+</html>
