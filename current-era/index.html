@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="The Current Era and Visions of Eternity archive entry in the Guild Wars Living Lore Library."
+  >
+
+  <meta name="theme-color" content="#020617">
+
+  <title>The Current Era // Visions of Eternity // GWlll</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #020617;
+      --panel: #0f172a;
+      --panel-hover: #162033;
+      --border: #374151;
+
+      --gold: #f4c76b;
+      --gold-bright: #ffe3a3;
+      --gold-muted: #c99b45;
+
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 170px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(244, 199, 107, 0.09),
+          transparent 34rem
+        ),
+        var(--background);
+
+      color: var(--white);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-small {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .home-link:hover {
+      color: var(--gold-bright);
+      transform: translateX(-3px);
+    }
+
+    /* =========================
+       HISTORY POSITION
+    ========================= */
+
+    .history-position {
+      position: sticky;
+      top: 68px;
+      z-index: 40;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .history-position-inner {
+      padding: 13px 0 15px;
+    }
+
+    .position-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      margin-bottom: 10px;
+    }
+
+    .position-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.62rem;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .current-date {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+    }
+
+    .history-rail {
+      position: relative;
+      height: 26px;
+    }
+
+    .history-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background: linear-gradient(
+        to right,
+        rgba(244, 199, 107, 0.25),
+        rgba(244, 199, 107, 0.9),
+        rgba(244, 199, 107, 0.25)
+      );
+    }
+
+    .history-point {
+      position: absolute;
+
+      top: 2px;
+
+      width: 11px;
+      height: 11px;
+
+      border: 1px solid var(--gold-muted);
+      border-radius: 50%;
+
+      background: var(--background);
+
+      transform: translateX(-50%);
+    }
+
+    .history-point.start {
+      left: 5%;
+    }
+
+    .history-point.middle {
+      left: 50%;
+    }
+
+    .history-point.end {
+      left: 95%;
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: -1px;
+      left: 5%;
+
+      width: 17px;
+      height: 17px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 15px rgba(244, 199, 107, 0.5);
+
+      transform: translateX(-50%);
+
+      transition: left 450ms ease;
+    }
+
+    .history-point.end {
+      animation: currentPulse 2.3s ease-in-out infinite;
+    }
+
+    .rail-labels {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 2px;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.58rem;
+    }
+
+    .position-context {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 72px 0 56px;
+      text-align: center;
+    }
+
+    .hero-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 16px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(2.7rem, 8vw, 5.2rem);
+      line-height: 1.03;
+
+      letter-spacing: -0.045em;
+
+      animation: goldPulse 4s ease-in-out infinite;
+    }
+
+    .hero-date {
+      margin: 16px 0 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.8rem;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      max-width: 760px;
+
+      margin: 24px auto 0;
+
+      color: var(--white);
+
+      font-size: 1.06rem;
+      line-height: 1.9;
+    }
+
+    /* =========================
+       PRESENT DAY BADGE
+    ========================= */
+
+    .present-badge {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 9px;
+
+      margin-top: 26px;
+      padding: 8px 13px;
+
+      border: 1px solid rgba(244, 199, 107, 0.45);
+      border-radius: 999px;
+
+      background: rgba(244, 199, 107, 0.07);
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.68rem;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .present-dot {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 10px rgba(244, 199, 107, 0.75);
+
+      animation: currentPulse 2s ease-in-out infinite;
+    }
+
+    /* =========================
+       ARCHIVE NOTE
+    ========================= */
+
+    .archive-note {
+      margin-bottom: 55px;
+      padding: 24px;
+
+      border: 1px solid rgba(244, 199, 107, 0.35);
+      border-radius: 12px;
+
+      background: rgba(244, 199, 107, 0.045);
+    }
+
+    .archive-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.68rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .archive-note p:last-child {
+      margin: 12px 0 0;
+      color: var(--white);
+    }
+
+    /* =========================
+       HISTORY
+    ========================= */
+
+    .history-section {
+      padding: 36px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .history-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.66rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .history-section h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(1.6rem, 5vw, 2.35rem);
+      line-height: 1.2;
+    }
+
+    .history-section p {
+      margin: 16px 0 0;
+
+      color: var(--white);
+    }
+
+    .history-section strong {
+      color: var(--gold-bright);
+    }
+
+    /* =========================
+       RECORD BOX
+    ========================= */
+
+    .record-box {
+      margin-top: 22px;
+      padding: 20px;
+
+      border-left: 2px solid var(--gold);
+
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .record-box-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .record-box p:last-child {
+      margin: 8px 0 0;
+    }
+
+    /* =========================
+       OPEN RECORD
+    ========================= */
+
+    .open-record {
+      margin-top: 22px;
+      padding: 20px;
+
+      border: 1px dashed rgba(244, 199, 107, 0.5);
+      border-radius: 10px;
+
+      background: rgba(244, 199, 107, 0.035);
+    }
+
+    .open-record-label {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .open-record p:last-child {
+      margin: 8px 0 0;
+    }
+
+    /* =========================
+       KEY RECORDS
+    ========================= */
+
+    .key-records {
+      padding: 42px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .key-records h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.8rem;
+    }
+
+    .key-grid {
+      margin-top: 24px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .key-card {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.76);
+    }
+
+    .key-card-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.63rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .key-card h3 {
+      margin: 7px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+    }
+
+    .key-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       END OF ROAD
+    ========================= */
+
+    .end-road {
+      padding: 55px 0 80px;
+
+      border-top: 1px solid var(--border);
+
+      text-align: center;
+    }
+
+    .end-road-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.67rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .end-road h2 {
+      margin: 10px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+    }
+
+    .end-road-text {
+      max-width: 700px;
+
+      margin: 18px auto 0;
+
+      color: var(--white);
+
+      line-height: 1.85;
+    }
+
+    .current-line {
+      position: relative;
+
+      max-width: 560px;
+      height: 2px;
+
+      margin: 34px auto;
+
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--gold-muted) 15%,
+        var(--gold) 80%,
+        transparent
+      );
+    }
+
+    .current-line::after {
+      content: "";
+
+      position: absolute;
+
+      right: 8%;
+      top: 50%;
+
+      width: 17px;
+      height: 17px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 17px rgba(244, 199, 107, 0.6);
+
+      transform: translateY(-50%);
+
+      animation: currentPulse 2s ease-in-out infinite;
+    }
+
+    .current-line-text {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.75rem;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .navigation-actions {
+      margin-top: 28px;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 9px;
+
+      background: var(--panel);
+      color: var(--gold);
+
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(244, 199, 107, 0.6);
+      color: var(--gold-bright);
+    }
+
+    .button-primary {
+      border-color: rgba(244, 199, 107, 0.45);
+
+      background: rgba(244, 199, 107, 0.1);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--white);
+
+      text-align: center;
+      font-size: 0.75rem;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes goldPulse {
+      0%,
+      100% {
+        color: var(--gold);
+
+        text-shadow:
+          0 0 0 rgba(244, 199, 107, 0);
+      }
+
+      50% {
+        color: var(--gold-bright);
+
+        text-shadow:
+          0 0 16px rgba(244, 199, 107, 0.28),
+          0 0 34px rgba(244, 199, 107, 0.1);
+      }
+    }
+
+    @keyframes currentPulse {
+      0%,
+      100% {
+        box-shadow:
+          0 0 5px rgba(244, 199, 107, 0.25);
+      }
+
+      50% {
+        box-shadow:
+          0 0 18px rgba(244, 199, 107, 0.75);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 650px) {
+      html {
+        scroll-padding-top: 155px;
+      }
+
+      .container {
+        width: min(100% - 22px, 900px);
+      }
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .brand-small {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 0.84rem;
+      }
+
+      .home-link {
+        font-size: 0.67rem;
+      }
+
+      .history-position {
+        top: 62px;
+      }
+
+      .position-top {
+        align-items: flex-start;
+      }
+
+      .position-label {
+        font-size: 0.55rem;
+      }
+
+      .current-date {
+        font-size: 0.62rem;
+      }
+
+      .rail-labels {
+        font-size: 0.52rem;
+      }
+
+      .position-context {
+        font-size: 0.65rem;
+      }
+
+      .hero {
+        padding: 52px 0 44px;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      .key-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="../index.html"
+        class="brand"
+      >
+
+        <p class="brand-small">
+          QKommand Archive
+        </p>
+
+        <p class="brand-name">
+          GWlll
+        </p>
+
+      </a>
+
+      <a
+        href="../index.html"
+        class="home-link"
+      >
+        ← Main Homepage
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       YOU ARE HERE
+  ========================== -->
+
+  <aside class="history-position">
+
+    <div class="container history-position-inner">
+
+      <div class="position-top">
+
+        <p class="position-label">
+          Tyrian Historical Position
+        </p>
+
+        <p
+          class="current-date"
+          id="currentDate"
+        >
+          1338 AE
+        </p>
+
+      </div>
+
+      <div class="history-rail">
+
+        <div class="history-line"></div>
+
+        <span class="history-point start"></span>
+        <span class="history-point middle"></span>
+        <span class="history-point end"></span>
+
+        <span
+          class="history-marker"
+          id="historyMarker"
+        ></span>
+
+      </div>
+
+      <div class="rail-labels">
+
+        <span>1338 AE</span>
+        <span>Visions of Eternity</span>
+        <span>1339 AE</span>
+
+      </div>
+
+      <p
+        class="position-context"
+        id="positionContext"
+      >
+        YOU ARE HERE // The Road Continues
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <p class="hero-label">
+          Historical Archive // Record 11
+        </p>
+
+        <h1>
+          The Current Era
+        </h1>
+
+        <p class="hero-date">
+          Visions of Eternity // 1338 AE – 1339 AE
+        </p>
+
+        <div class="present-badge">
+
+          <span class="present-dot"></span>
+
+          Current Historical Record
+
+        </div>
+
+        <p class="hero-text">
+          The road that began beneath the shadow of ancient dragons
+          has reached the present.
+        </p>
+
+        <p class="hero-text">
+          The Titan crisis is over. The Elder Dragon cycle is history.
+          Tyria now looks beyond the borders that once defined its world,
+          toward places that remain largely unknown.
+        </p>
+
+        <p class="hero-text">
+          One of those roads leads to Castora.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="container">
+
+      <!-- =========================
+           ARCHIVE NOTE
+      ========================== -->
+
+      <div class="archive-note">
+
+        <p class="archive-note-label">
+          Living Archive
+        </p>
+
+        <p>
+          Unlike earlier sections of the Road Through Time, this record
+          describes the current era of Guild Wars 2. The history here is
+          still being written. This archive can expand as new events become
+          part of Tyria's established historical record.
+        </p>
+
+      </div>
+
+
+      <!-- =========================
+           RECORD 01
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="5"
+        data-date="1338 AE"
+        data-context="YOU ARE HERE // The Titan Crisis Ends"
+      >
+
+        <p class="history-label">
+          Record 01 // After Janthir
+        </p>
+
+        <h2>
+          Another old threat is closed away
+        </h2>
+
+        <p>
+          The renewed <strong>Titan</strong> threat had reached back
+          into some of Tyria's oldest conflicts.
+        </p>
+
+        <p>
+          In <strong>1338 AE</strong>, the Titans were defeated and
+          the portal to the
+          <strong>Foundry of Failed Creations</strong> was closed.
+        </p>
+
+        <p>
+          The crisis ended another thread stretching all the way back
+          to Abaddon and the events surrounding the original Guild Wars.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 02
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="17"
+        data-date="1338 AE"
+        data-context="YOU ARE HERE // The Scepter of Orr Is Lost"
+      >
+
+        <p class="history-label">
+          Record 02 // An Artifact Disappears
+        </p>
+
+        <h2>
+          The Scepter of Orr enters the Mists
+        </h2>
+
+        <p>
+          The <strong>Scepter of Orr</strong> was lost to the Mists.
+        </p>
+
+        <p>
+          Few artifacts have touched as many layers of Tyrian history.
+        </p>
+
+        <p>
+          Orr, the mursaat, ancient magic, the Flameseeker Prophecies,
+          and later conflicts all became part of its story.
+        </p>
+
+        <p>
+          Its disappearance left another historical thread unresolved.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Open Thread
+          </p>
+
+          <p>
+            The Scepter has not simply been destroyed. Its trail now
+            extends into the Mists.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 03
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="30"
+        data-date="1338 AE"
+        data-context="YOU ARE HERE // Visions of Eternity Begins"
+      >
+
+        <p class="history-label">
+          Record 03 // Visions of Eternity
+        </p>
+
+        <h2>
+          Attention turns toward Castora
+        </h2>
+
+        <p>
+          A new expedition begins.
+        </p>
+
+        <p>
+          This time, the force driving it is not the Pact,
+          the Wizard's Court, or one of Tyria's great nations.
+        </p>
+
+        <p>
+          It is the <strong>Inquest</strong>.
+        </p>
+
+        <p>
+          Their destination is
+          <strong>Castora</strong>.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 04
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="44"
+        data-date="1338 AE"
+        data-context="YOU ARE HERE // Director Vloxx Leads the Expedition"
+      >
+
+        <p class="history-label">
+          Record 04 // Director Vloxx
+        </p>
+
+        <h2>
+          The Inquest takes the lead
+        </h2>
+
+        <p>
+          The expedition to Castora is led by
+          <strong>Director Vloxx</strong>.
+        </p>
+
+        <p>
+          The Inquest has long pursued magical power, experimental
+          technologies, lost civilizations, and knowledge regardless
+          of the consequences.
+        </p>
+
+        <p>
+          Now that curiosity carries them toward another largely
+          unexplored chapter of the world.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 05
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="58"
+        data-date="1338 AE"
+        data-context="YOU ARE HERE // The Search for Ancora"
+      >
+
+        <p class="history-label">
+          Record 05 // Ancora
+        </p>
+
+        <h2>
+          The expedition has a target
+        </h2>
+
+        <p>
+          The Inquest expedition travels to Castora in search of
+          <strong>Ancora</strong>.
+        </p>
+
+        <p>
+          Within the current record gathered by this library,
+          this search marks the central mystery leading Tyria into
+          the events of <strong>Visions of Eternity</strong>.
+        </p>
+
+        <p>
+          The road has moved far beyond the struggles that once
+          defined the world.
+        </p>
+
+        <p>
+          There is no Elder Dragon at the end of this trail.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 06
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="72"
+        data-date="1338–1339 AE"
+        data-context="YOU ARE HERE // Beyond the Known World"
+      >
+
+        <p class="history-label">
+          Record 06 // A Different Kind of Frontier
+        </p>
+
+        <h2>
+          Tyria is no longer looking inward
+        </h2>
+
+        <p>
+          Much of Tyrian history was shaped by survival.
+        </p>
+
+        <p>
+          Humans fought for kingdoms.
+          Elder races fought extinction.
+          Nations fought one another.
+          Generations fought the Elder Dragons.
+        </p>
+
+        <p>
+          The modern world now finds itself in a different position.
+        </p>
+
+        <p>
+          The greatest known cycle of destruction has ended,
+          cooperation between nations has expanded, and paths through
+          the Mists have become increasingly important.
+        </p>
+
+        <p>
+          Exploration itself is becoming one of the forces shaping history.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 07
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="85"
+        data-date="1339 AE"
+        data-context="YOU ARE HERE // Present Day"
+      >
+
+        <p class="history-label">
+          Record 07 // Present Day
+        </p>
+
+        <h2>
+          History catches up with the reader
+        </h2>
+
+        <p>
+          The calendar has reached <strong>1339 AE</strong>.
+        </p>
+
+        <p>
+          Everything before this point can be approached as history.
+        </p>
+
+        <p>
+          From the disappearance of the Giganticus Lupicus, through
+          the Elder Races, the arrival of humanity, the Exodus,
+          the Guild Wars, the Dragonrise, the Commander, and the
+          mysteries of Janthir, every road has eventually led here.
+        </p>
+
+        <p>
+          Beyond this point, the archive is no longer looking backward.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 08
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="95"
+        data-date="1339 AE"
+        data-context="YOU ARE HERE // The Historical Record Remains Open"
+      >
+
+        <p class="history-label">
+          Record 08 // An Open Page
+        </p>
+
+        <h2>
+          The story is still happening
+        </h2>
+
+        <p>
+          The Guild Wars Living Lore Library ends its main historical
+          road here for now.
+        </p>
+
+        <p>
+          Not because Tyria's history has ended.
+        </p>
+
+        <p>
+          Because this is the point where history becomes the present.
+        </p>
+
+        <div class="open-record">
+
+          <p class="open-record-label">
+            Archive Status // Open
+          </p>
+
+          <p>
+            New established events from Visions of Eternity can be added
+            here as the current era continues.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           KEY RECORDS
+      ========================== -->
+
+      <section class="key-records">
+
+        <p class="history-label">
+          Current Archive Index
+        </p>
+
+        <h2>
+          Key Records
+        </h2>
+
+        <div class="key-grid">
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Current Story
+            </p>
+
+            <h3>
+              Visions of Eternity
+            </h3>
+
+            <p>
+              The present chapter of Tyrian history.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Organization
+            </p>
+
+            <h3>
+              The Inquest
+            </h3>
+
+            <p>
+              The asuran organization leading the expedition toward Castora.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Expedition Leader
+            </p>
+
+            <h3>
+              Director Vloxx
+            </h3>
+
+            <p>
+              Leader of the Inquest expedition to Castora.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Destination
+            </p>
+
+            <h3>
+              Castora
+            </h3>
+
+            <p>
+              The destination of the new Inquest expedition.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Mystery
+            </p>
+
+            <h3>
+              Ancora
+            </h3>
+
+            <p>
+              The object of the Inquest's search in Castora.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Current Year
+            </p>
+
+            <h3>
+              1339 AE
+            </h3>
+
+            <p>
+              The present point reached by the Road Through Time.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           END OF ROAD
+      ========================== -->
+
+      <section class="end-road">
+
+        <p class="end-road-label">
+          Road Through Time // Current Terminus
+        </p>
+
+        <h2>
+          You Are Here
+        </h2>
+
+        <p class="end-road-text">
+          The timeline began in a world where Elder Dragons erased
+          civilizations before recorded history. It ends, for now,
+          in a world that survived them and has begun looking beyond
+          the borders of everything it once understood.
+        </p>
+
+        <div class="current-line"></div>
+
+        <p class="current-line-text">
+          1339 AE // Present Day
+        </p>
+
+        <div class="navigation-actions">
+
+          <a
+            href="../beyond-the-dragon-cycle/index.html"
+            class="button"
+          >
+            ← Beyond the Dragon Cycle
+          </a>
+
+          <a
+            href="../index.html"
+            class="button button-primary"
+          >
+            Return to the Road Through Time
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      Guild Wars Living Lore Library is an unofficial fan lore project.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
+      belong to their respective owners.
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       HISTORY POSITION SCRIPT
+  ========================== -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      const sections =
+        document.querySelectorAll(".history-section");
+
+      const marker =
+        document.getElementById("historyMarker");
+
+      const currentDate =
+        document.getElementById("currentDate");
+
+      const positionContext =
+        document.getElementById("positionContext");
+
+
+      const updatePosition = (section) => {
+
+        const position =
+          section.dataset.position || "5";
+
+        const date =
+          section.dataset.date || "1338 AE";
+
+        const context =
+          section.dataset.context || "YOU ARE HERE";
+
+        marker.style.left =
+          `${position}%`;
+
+        currentDate.textContent =
+          date;
+
+        positionContext.textContent =
+          context;
+      };
+
+
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+
+            const visible =
+              entries
+                .filter(
+                  (entry) =>
+                    entry.isIntersecting
+                )
+                .sort(
+                  (a, b) =>
+                    b.intersectionRatio -
+                    a.intersectionRatio
+                );
+
+            if (visible.length > 0) {
+
+              updatePosition(
+                visible[0].target
+              );
+
+            }
+
+          },
+          {
+            rootMargin:
+              "-35% 0px -45% 0px",
+
+            threshold: [
+              0,
+              0.15,
+              0.3,
+              0.5,
+              0.75
+            ]
+          }
+        );
+
+
+      sections.forEach(
+        (section) => {
+          observer.observe(section);
+        }
+      );
+
+    })();
+  </script>
+
+</body>
+</html>
