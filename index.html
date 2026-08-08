@@ -10,12 +10,12 @@
 
   <meta
     name="description"
-    content="Guild Wars Living Lore Library — follow the history of Tyria from the ancient Dragonrises to the current era."
+    content="Guild Wars Living Lore Library. Travel through the history of Tyria from the ancient Dragonrises to the current era."
   >
 
   <meta name="theme-color" content="#020617">
 
-  <title>GWlll // Guild Wars Living Lore Library</title>
+  <title>GWlll // The Road Through Time</title>
 
   <style>
     :root {
@@ -23,7 +23,7 @@
 
       --background: #020617;
       --panel: #0f172a;
-      --panel-hover: #162033;
+      --panel-light: #111c31;
       --border: #374151;
 
       --gold: #f4c76b;
@@ -39,7 +39,6 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
     }
 
     body {
@@ -49,10 +48,15 @@
       background:
         radial-gradient(
           circle at top,
-          rgba(244, 199, 107, 0.07),
-          transparent 34rem
+          rgba(244, 199, 107, 0.08),
+          transparent 35rem
         ),
-        var(--background);
+        linear-gradient(
+          to bottom,
+          #020617,
+          #030817 50%,
+          #020617
+        );
 
       color: var(--white);
 
@@ -68,22 +72,65 @@
       line-height: 1.7;
     }
 
-    body.modal-open {
-      overflow: hidden;
-    }
-
     a {
       color: inherit;
     }
 
     button,
-    select {
-      font: inherit;
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
-      width: min(1050px, calc(100% - 32px));
+      width: min(1040px, calc(100% - 32px));
       margin-inline: auto;
+    }
+
+    /* =========================
+       STARFIELD
+    ========================= */
+
+    .stars,
+    .stars::before,
+    .stars::after {
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+    }
+
+    .stars {
+      z-index: -2;
+
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.45) 1px, transparent 1px);
+
+      background-size: 95px 95px;
+      opacity: 0.18;
+    }
+
+    .stars::before {
+      content: "";
+
+      background-image:
+        radial-gradient(circle, rgba(244,199,107,0.38) 1px, transparent 1px);
+
+      background-size: 145px 145px;
+      background-position: 45px 20px;
+
+      opacity: 0.18;
+    }
+
+    .stars::after {
+      content: "";
+
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px);
+
+      background-size: 210px 210px;
+      background-position: 80px 110px;
+
+      opacity: 0.16;
     }
 
     /* =========================
@@ -95,9 +142,9 @@
       top: 0;
       z-index: 50;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(55, 65, 81, 0.9);
 
-      background: rgba(2, 6, 23, 0.94);
+      background: rgba(2, 6, 23, 0.92);
       backdrop-filter: blur(14px);
     }
 
@@ -108,7 +155,7 @@
       align-items: center;
       justify-content: space-between;
 
-      gap: 20px;
+      gap: 18px;
     }
 
     .brand {
@@ -121,14 +168,14 @@
       color: var(--white);
 
       font-family: monospace;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
 
       letter-spacing: 0.17em;
       text-transform: uppercase;
     }
 
     .brand-name {
-      margin: 2px 0 0;
+      margin: 3px 0 0;
 
       color: var(--gold);
 
@@ -136,7 +183,7 @@
       font-weight: 700;
     }
 
-    .server-clock {
+    .server-time {
       text-align: right;
     }
 
@@ -146,19 +193,19 @@
       color: var(--white);
 
       font-family: monospace;
-      font-size: 0.61rem;
+      font-size: 0.57rem;
 
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
-    .server-time {
+    .server-clock {
       margin: 2px 0 0;
 
-      color: var(--gold);
+      color: var(--gold-bright);
 
       font-family: monospace;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
     }
 
@@ -167,123 +214,100 @@
     ========================= */
 
     .hero {
-      min-height: 72vh;
-
-      display: flex;
-      align-items: center;
-
-      padding: 80px 0 65px;
+      padding: 82px 0 62px;
 
       text-align: center;
     }
 
-    .hero-content {
-      max-width: 850px;
-      margin-inline: auto;
-    }
-
-    .hero-label {
+    .hero-kicker {
       margin: 0;
 
       color: var(--white);
 
       font-family: monospace;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
 
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
     .hero h1 {
-      margin: 18px 0 0;
+      margin: 17px 0 0;
 
       color: var(--gold);
 
-      font-size: clamp(2.8rem, 8vw, 5.8rem);
-      line-height: 1.02;
+      font-size: clamp(2.6rem, 8vw, 5.6rem);
+      line-height: 1;
 
       letter-spacing: -0.05em;
 
       animation: goldPulse 4s ease-in-out infinite;
     }
 
-    .hero-description {
-      max-width: 730px;
+    .hero-subtitle {
+      max-width: 760px;
 
-      margin: 27px auto 0;
+      margin: 26px auto 0;
 
       color: var(--white);
 
-      font-size: clamp(1rem, 2vw, 1.15rem);
+      font-size: clamp(1rem, 2vw, 1.12rem);
       line-height: 1.9;
     }
 
-    .hero-actions {
-      margin-top: 34px;
+    .hero-range {
+      margin: 22px 0 0;
 
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      gap: 12px;
-    }
-
-    .button {
-      min-height: 47px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 0 20px;
-
-      border: 1px solid var(--border);
-      border-radius: 9px;
-
-      background: var(--panel);
-      color: var(--gold);
-
-      font-weight: 700;
-      text-decoration: none;
-
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        color 180ms ease,
-        background 180ms ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-
-      border-color: rgba(244, 199, 107, 0.6);
       color: var(--gold-bright);
-    }
 
-    .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
+      font-family: monospace;
+      font-size: 0.72rem;
 
-      background: rgba(244, 199, 107, 0.1);
-      color: var(--gold-bright);
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
     }
 
     /* =========================
-       ROAD THROUGH TIME
+       INTRO
     ========================= */
 
-    .road {
-      padding: 70px 0 100px;
+    .intro-panel {
+      margin-bottom: 64px;
+      padding: 26px;
+
+      border: 1px solid rgba(244, 199, 107, 0.28);
+      border-radius: 13px;
+
+      background: rgba(15, 23, 42, 0.68);
     }
 
-    .section-header {
-      max-width: 760px;
+    .intro-label {
+      margin: 0;
 
-      margin: 0 auto 42px;
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.67rem;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .intro-panel p {
+      margin: 13px 0 0;
+    }
+
+    /* =========================
+       ROAD
+    ========================= */
+
+    .road-header {
+      margin-bottom: 28px;
 
       text-align: center;
     }
 
-    .section-label {
+    .road-label {
       margin: 0;
 
       color: var(--white);
@@ -295,44 +319,209 @@
       text-transform: uppercase;
     }
 
-    .section-header h2 {
-      margin: 12px 0 0;
+    .road-header h2 {
+      margin: 8px 0 0;
 
       color: var(--gold);
 
-      font-size: clamp(2rem, 6vw, 3.4rem);
-
-      animation: goldPulse 4s ease-in-out infinite;
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
     }
 
-    .section-header p:last-child {
-      margin: 18px 0 0;
+    .road-header p {
+      max-width: 680px;
+
+      margin: 14px auto 0;
+    }
+
+    .timeline {
+      position: relative;
+
+      width: min(760px, 100%);
+      margin: 0 auto;
+      padding: 12px 0 70px;
+    }
+
+    .timeline-line {
+      position: absolute;
+
+      top: 12px;
+      bottom: 70px;
+      left: 24px;
+
+      width: 1px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(244,199,107,0.25),
+          rgba(244,199,107,0.9) 12%,
+          rgba(244,199,107,0.9) 88%,
+          rgba(244,199,107,0.25)
+        );
+    }
+
+    .timeline-entry {
+      position: relative;
+
+      display: block;
+
+      margin: 0 0 16px;
+      padding: 20px 22px 20px 62px;
+
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15, 23, 42, 0.94),
+          rgba(8, 15, 30, 0.94)
+        );
+
+      text-decoration: none;
+
+      transition:
+        transform 190ms ease,
+        border-color 190ms ease,
+        background 190ms ease;
+    }
+
+    .timeline-entry:hover {
+      transform: translateX(5px);
+
+      border-color: rgba(244, 199, 107, 0.55);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(18, 29, 50, 0.98),
+          rgba(10, 18, 34, 0.98)
+        );
+    }
+
+    .timeline-entry::before {
+      content: "";
+
+      position: absolute;
+
+      top: 28px;
+      left: 17px;
+
+      width: 15px;
+      height: 15px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--background);
+
+      box-shadow:
+        0 0 12px rgba(244,199,107,0.28);
+    }
+
+    .timeline-entry:hover::before {
+      background: var(--gold);
+    }
+
+    .timeline-number {
+      margin: 0;
 
       color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.59rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .timeline-entry h3 {
+      margin: 5px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.25rem;
+      line-height: 1.25;
+    }
+
+    .timeline-date {
+      margin: 6px 0 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.69rem;
+
+      letter-spacing: 0.06em;
+    }
+
+    .timeline-description {
+      margin: 11px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.92rem;
+    }
+
+    .timeline-arrow {
+      display: inline-block;
+
+      margin-top: 13px;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+
+      transition: transform 180ms ease;
+    }
+
+    .timeline-entry:hover .timeline-arrow {
+      transform: translateX(4px);
+    }
+
+    .timeline-entry.current {
+      border-color: rgba(244,199,107,0.5);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(244,199,107,0.09),
+          rgba(15,23,42,0.94)
+        );
+    }
+
+    .timeline-entry.current::before {
+      background: var(--gold);
+
+      box-shadow:
+        0 0 18px rgba(244,199,107,0.5);
     }
 
     /* =========================
-       JUMP MENU
+       PRESENT MARKER
     ========================= */
 
-    .jump-box {
-      max-width: 850px;
+    .present-marker {
+      width: min(760px, 100%);
 
-      margin: 0 auto 42px;
-      padding: 18px;
+      margin: -30px auto 70px;
+      padding: 24px;
 
-      border: 1px solid var(--border);
-      border-radius: 11px;
+      border: 1px solid rgba(244,199,107,0.4);
+      border-radius: 12px;
 
-      background: rgba(15, 23, 42, 0.72);
+      background: rgba(244,199,107,0.045);
+
+      text-align: center;
     }
 
-    .jump-box label {
-      display: block;
+    .present-marker p {
+      margin: 0;
+    }
 
-      margin-bottom: 8px;
-
-      color: var(--white);
+    .present-marker .present-label {
+      color: var(--gold);
 
       font-family: monospace;
       font-size: 0.66rem;
@@ -341,398 +530,73 @@
       text-transform: uppercase;
     }
 
-    .jump-box select {
-      width: 100%;
-      min-height: 48px;
-
-      padding: 0 14px;
-
-      border: 1px solid var(--border);
-      border-radius: 8px;
-
-      outline: none;
-
-      background: var(--background);
-      color: var(--gold);
-
-      cursor: pointer;
-    }
-
-    .jump-box select:focus {
-      border-color: var(--gold-muted);
+    .present-marker strong {
+      color: var(--gold-bright);
     }
 
     /* =========================
-       TIMELINE
+       ARCHIVE NOTE
     ========================= */
 
-    .timeline {
-      position: relative;
+    .archive-guide {
+      padding: 44px 0 74px;
 
-      max-width: 850px;
-
-      margin-inline: auto;
+      border-top: 1px solid var(--border);
     }
 
-    .timeline::before {
-      content: "";
+    .archive-guide h2 {
+      margin: 0;
 
-      position: absolute;
+      color: var(--gold);
 
-      top: 0;
-      bottom: 0;
-      left: 25px;
-
-      width: 1px;
-
-      background:
-        linear-gradient(
-          to bottom,
-          transparent,
-          var(--gold-muted) 4%,
-          var(--gold-muted) 96%,
-          transparent
-        );
+      font-size: 1.7rem;
     }
 
-    .timeline-entry {
-      position: relative;
+    .archive-guide p {
+      max-width: 760px;
+      margin: 14px 0 0;
+    }
 
+    .guide-grid {
       display: grid;
-      grid-template-columns: 52px 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
 
-      gap: 22px;
+      gap: 14px;
 
-      margin-bottom: 24px;
+      margin-top: 26px;
     }
 
-    .timeline-marker {
-      position: relative;
-      z-index: 2;
+    .guide-card {
+      padding: 20px;
 
-      width: 52px;
-      height: 52px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: rgba(15,23,42,0.65);
+    }
 
-      border: 1px solid var(--gold-muted);
-      border-radius: 50%;
-
-      background: var(--background);
+    .guide-card span {
       color: var(--gold);
 
       font-family: monospace;
-      font-size: 0.72rem;
-      font-weight: 700;
-    }
-
-    .timeline-card {
-      padding: 25px;
-
-      border: 1px solid var(--border);
-      border-radius: 12px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(15, 23, 42, 0.95),
-          rgba(8, 15, 29, 0.95)
-        );
-
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        background 180ms ease;
-    }
-
-    .timeline-card:hover {
-      transform: translateY(-2px);
-
-      border-color: rgba(244, 199, 107, 0.45);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(22, 32, 51, 0.97),
-          rgba(10, 18, 33, 0.97)
-        );
-    }
-
-    .timeline-date {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.7rem;
+      font-size: 0.62rem;
 
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .timeline-card h3 {
+    .guide-card h3 {
       margin: 7px 0 0;
 
-      color: var(--gold);
-
-      font-size: 1.35rem;
-    }
-
-    .timeline-card p {
-      margin: 12px 0 0;
-
-      color: var(--white);
-    }
-
-    .record-link {
-      display: inline-flex;
-      align-items: center;
-
-      margin-top: 19px;
-
       color: var(--gold-bright);
 
-      font-family: monospace;
-      font-size: 0.78rem;
-      font-weight: 700;
-
-      text-decoration: none;
-
-      transition:
-        color 180ms ease,
-        transform 180ms ease;
+      font-size: 1rem;
     }
 
-    .record-link:hover {
-      color: var(--gold);
-      transform: translateX(4px);
-    }
-
-    /* CURRENT ERA */
-
-    .timeline-entry.current .timeline-marker {
-      background: var(--gold);
-      color: var(--background);
-
-      box-shadow:
-        0 0 18px rgba(244, 199, 107, 0.45);
-
-      animation: currentPulse 2.3s ease-in-out infinite;
-    }
-
-    .timeline-entry.current .timeline-card {
-      border-color: rgba(244, 199, 107, 0.5);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(244, 199, 107, 0.08),
-          rgba(15, 23, 42, 0.95)
-        );
-    }
-
-    .current-status {
-      display: inline-flex;
-      align-items: center;
-
-      gap: 7px;
-
-      margin-top: 15px;
-      padding: 6px 9px;
-
-      border: 1px solid rgba(244, 199, 107, 0.4);
-      border-radius: 999px;
-
-      color: var(--gold-bright);
-
-      font-family: monospace;
-      font-size: 0.62rem;
-
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .current-status::before {
-      content: "";
-
-      width: 7px;
-      height: 7px;
-
-      border-radius: 50%;
-
-      background: var(--gold);
-
-      box-shadow:
-        0 0 9px rgba(244, 199, 107, 0.75);
-    }
-
-    /* =========================
-       ARCHIVES
-    ========================= */
-
-    .archives {
-      padding: 75px 0 90px;
-
-      border-top: 1px solid var(--border);
-
-      background: rgba(15, 23, 42, 0.3);
-    }
-
-    .archive-grid {
-      margin-top: 35px;
-
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-
-      gap: 15px;
-    }
-
-    .archive-card {
-      padding: 22px;
-
-      border: 1px solid var(--border);
-      border-radius: 11px;
-
-      background: rgba(15, 23, 42, 0.72);
-    }
-
-    .archive-card-label {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.62rem;
-
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .archive-card h3 {
+    .guide-card p {
       margin: 8px 0 0;
 
-      color: var(--gold);
-
-      font-size: 1.1rem;
-    }
-
-    .archive-card p:last-child {
-      margin: 10px 0 0;
-
-      color: var(--white);
-
-      font-size: 0.9rem;
-    }
-
-    /* =========================
-       DISCLAIMER
-    ========================= */
-
-    .disclaimer-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 20px;
-
-      background: rgba(0, 0, 0, 0.8);
-
-      backdrop-filter: blur(10px);
-
-      opacity: 1;
-
-      transition:
-        opacity 300ms ease,
-        visibility 300ms ease;
-    }
-
-    .disclaimer-overlay.hidden {
-      opacity: 0;
-      visibility: hidden;
-
-      pointer-events: none;
-    }
-
-    .disclaimer-window {
-      width: min(540px, 100%);
-      max-height: 90vh;
-
-      overflow-y: auto;
-
-      padding: 30px;
-
-      border: 1px solid rgba(244, 199, 107, 0.45);
-      border-radius: 14px;
-
-      background: #08101f;
-
-      box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.55);
-    }
-
-    .disclaimer-label {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.68rem;
-
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .disclaimer-window h2 {
-      margin: 10px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.8rem;
-    }
-
-    .disclaimer-window p {
-      margin: 16px 0 0;
-
-      color: var(--white);
-
-      line-height: 1.8;
-    }
-
-    .acknowledge-button {
-      width: 100%;
-
-      margin-top: 25px;
-      padding: 14px 18px;
-
-      border: 1px solid var(--gold-muted);
-      border-radius: 8px;
-
-      background: rgba(244, 199, 107, 0.1);
-      color: var(--gold-bright);
-
-      font: inherit;
-      font-weight: 700;
-
-      cursor: pointer;
-
-      transition:
-        background 180ms ease,
-        border-color 180ms ease,
-        transform 180ms ease;
-    }
-
-    .acknowledge-button:hover {
-      transform: translateY(-2px);
-
-      border-color: var(--gold);
-
-      background: rgba(244, 199, 107, 0.16);
+      font-size: 0.88rem;
     }
 
     /* =========================
@@ -744,25 +608,112 @@
 
       border-top: 1px solid var(--border);
 
-      color: var(--white);
-
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
     }
 
-    .footer-disclaimer {
-      display: block;
+    /* =========================
+       SPOILER MODAL
+    ========================= */
 
-      margin: 0 auto 14px;
+    .spoiler-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
 
-      border: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      background: none;
+      padding: 20px;
+
+      background: rgba(2,6,23,0.82);
+
+      backdrop-filter: blur(10px);
+
+      opacity: 1;
+      visibility: visible;
+
+      transition:
+        opacity 260ms ease,
+        visibility 260ms ease;
+    }
+
+    .spoiler-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .spoiler-window {
+      width: min(560px, 100%);
+
+      padding: 28px;
+
+      border: 1px solid rgba(244,199,107,0.48);
+      border-radius: 14px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15,23,42,0.99),
+          rgba(5,10,22,0.99)
+        );
+
+      box-shadow:
+        0 28px 80px rgba(0,0,0,0.48);
+    }
+
+    .spoiler-label {
+      margin: 0;
+
       color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .spoiler-window h2 {
+      margin: 11px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 1.75rem;
+    }
+
+    .spoiler-window p {
+      margin: 16px 0 0;
+    }
+
+    .acknowledge-button {
+      width: 100%;
+      min-height: 48px;
+
+      margin-top: 24px;
+
+      border: 1px solid rgba(244,199,107,0.55);
+      border-radius: 9px;
+
+      background: rgba(244,199,107,0.11);
+      color: var(--gold-bright);
+
+      font: inherit;
+      font-weight: 700;
 
       cursor: pointer;
 
-      text-decoration: underline;
+      transition:
+        transform 180ms ease,
+        background 180ms ease;
+    }
+
+    .acknowledge-button:hover {
+      transform: translateY(-2px);
+
+      background: rgba(244,199,107,0.17);
     }
 
     /* =========================
@@ -775,28 +726,15 @@
         color: var(--gold);
 
         text-shadow:
-          0 0 0 rgba(244, 199, 107, 0);
+          0 0 0 rgba(244,199,107,0);
       }
 
       50% {
         color: var(--gold-bright);
 
         text-shadow:
-          0 0 18px rgba(244, 199, 107, 0.28),
-          0 0 38px rgba(244, 199, 107, 0.1);
-      }
-    }
-
-    @keyframes currentPulse {
-      0%,
-      100% {
-        box-shadow:
-          0 0 7px rgba(244, 199, 107, 0.25);
-      }
-
-      50% {
-        box-shadow:
-          0 0 22px rgba(244, 199, 107, 0.7);
+          0 0 18px rgba(244,199,107,0.3),
+          0 0 36px rgba(244,199,107,0.1);
       }
     }
 
@@ -804,15 +742,10 @@
        MOBILE
     ========================= */
 
-    @media (max-width: 720px) {
-      .archive-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width: 700px) {
 
-    @media (max-width: 650px) {
       .container {
-        width: min(100% - 22px, 1050px);
+        width: min(100% - 22px, 1040px);
       }
 
       .header-inner {
@@ -823,67 +756,58 @@
         display: none;
       }
 
-      .brand-name {
-        font-size: 0.85rem;
-      }
-
       .server-label {
-        font-size: 0.54rem;
+        font-size: 0.51rem;
       }
 
-      .server-time {
-        font-size: 0.7rem;
+      .server-clock {
+        font-size: 0.68rem;
       }
 
       .hero {
-        min-height: 68vh;
-
-        padding: 60px 0 50px;
+        padding: 58px 0 46px;
       }
 
-      .hero-actions {
-        flex-direction: column;
+      .hero-subtitle {
+        font-size: 1rem;
       }
 
-      .button {
+      .timeline {
         width: 100%;
       }
 
-      .road {
-        padding: 55px 0 80px;
-      }
-
-      .timeline::before {
-        left: 19px;
+      .timeline-line {
+        left: 17px;
       }
 
       .timeline-entry {
-        grid-template-columns: 40px 1fr;
-
-        gap: 13px;
+        padding:
+          18px
+          16px
+          18px
+          48px;
       }
 
-      .timeline-marker {
-        width: 40px;
-        height: 40px;
-
-        font-size: 0.62rem;
+      .timeline-entry::before {
+        left: 10px;
+        top: 26px;
       }
 
-      .timeline-card {
-        padding: 20px;
+      .timeline-entry:hover {
+        transform: translateY(-2px);
       }
 
-      .timeline-card h3 {
-        font-size: 1.2rem;
+      .guide-grid {
+        grid-template-columns: 1fr;
       }
 
-      .disclaimer-window {
-        padding: 24px;
+      .spoiler-window {
+        padding: 23px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       html {
         scroll-behavior: auto;
       }
@@ -900,59 +824,7 @@
 
 <body>
 
-  <!-- =========================
-       SPOILER DISCLAIMER
-  ========================== -->
-
-  <div
-    class="disclaimer-overlay"
-    id="spoilerDisclaimer"
-    aria-hidden="true"
-  >
-
-    <div
-      class="disclaimer-window"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="disclaimerTitle"
-    >
-
-      <p class="disclaimer-label">
-        Archive Access Warning
-      </p>
-
-      <h2 id="disclaimerTitle">
-        Spoilers Beyond This Point
-      </h2>
-
-      <p>
-        The Guild Wars Living Lore Library follows the history
-        of Tyria across Guild Wars, Guild Wars 2, Living World,
-        expansions, side stories, and other historical records.
-      </p>
-
-      <p>
-        Major characters, deaths, locations, identities, discoveries,
-        conflicts, and story outcomes may be discussed without hiding
-        spoilers.
-      </p>
-
-      <p>
-        If you would rather discover Tyria through the games first,
-        this is your chance to turn back.
-      </p>
-
-      <button
-        class="acknowledge-button"
-        id="acknowledgeButton"
-        type="button"
-      >
-        I Acknowledge
-      </button>
-
-    </div>
-
-  </div>
+  <div class="stars"></div>
 
 
   <!-- =========================
@@ -963,10 +835,7 @@
 
     <div class="container header-inner">
 
-      <a
-        href="index.html"
-        class="brand"
-      >
+      <a href="index.html" class="brand">
 
         <p class="brand-small">
           QKommand Archive
@@ -979,17 +848,17 @@
       </a>
 
 
-      <div class="server-clock">
+      <div class="server-time">
 
         <p class="server-label">
           Tyria Server Time // UTC
         </p>
 
         <p
-          class="server-time"
-          id="serverTime"
+          class="server-clock"
+          id="serverClock"
         >
-          --:--:--
+          --:--:-- UTC
         </p>
 
       </div>
@@ -1007,9 +876,9 @@
 
     <section class="hero">
 
-      <div class="container hero-content">
+      <div class="container">
 
-        <p class="hero-label">
+        <p class="hero-kicker">
           Guild Wars Living Lore Library
         </p>
 
@@ -1017,752 +886,560 @@
           The Road Through Time
         </h1>
 
-        <p class="hero-description">
-          Tyria remembers more than any one hero ever could.
-          Kingdoms rose where dragons once slept. Seas became deserts.
-          Cities vanished beneath the waves. Gods walked among mortals
-          and eventually disappeared into the Mists.
+        <p class="hero-range">
+          Ancient Past → 1339 AE
         </p>
 
-        <p class="hero-description">
-          Begin with the oldest surviving memories and follow the road
-          forward. Each archive opens another piece of the history that
-          shaped the world of Guild Wars.
+        <p class="hero-subtitle">
+          Tyria was never built in a straight line.
+          Dragons slept beneath kingdoms.
+          Old civilizations vanished into legend.
+          Gods arrived from the Mists.
+          Empires rose, wars reshaped continents,
+          and forgotten history repeatedly returned
+          to become part of the present.
         </p>
 
-        <div class="hero-actions">
-
-          <a
-            href="ancient-dragonrises/index.html"
-            class="button button-primary"
-          >
-            Begin at the Beginning
-          </a>
-
-          <a
-            href="#history"
-            class="button"
-          >
-            View the Timeline
-          </a>
-
-        </div>
+        <p class="hero-subtitle">
+          Start at the beginning,
+          or enter the road wherever
+          your curiosity takes you.
+        </p>
 
       </div>
 
     </section>
 
 
-    <!-- =========================
-         ROAD THROUGH TIME
-    ========================== -->
+    <div class="container">
 
-    <section
-      class="road"
-      id="history"
-    >
+      <!-- =========================
+           INTRO
+      ========================== -->
 
-      <div class="container">
+      <section class="intro-panel">
 
-        <header class="section-header">
+        <p class="intro-label">
+          Archive Navigation
+        </p>
 
-          <p class="section-label">
-            Main Historical Record
+        <p>
+          The main road below follows the major events
+          that shaped Tyria. Each entry is a doorway
+          into that period rather than a complete encyclopedia.
+        </p>
+
+        <p>
+          As the library grows,
+          individual events, people, places,
+          organizations, religions, artifacts,
+          and side stories can branch outward
+          from these eleven historical anchors.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           ROAD HEADER
+      ========================== -->
+
+      <section class="road-header">
+
+        <p class="road-label">
+          Main Historical Spine
+        </p>
+
+        <h2>
+          Follow the Road
+        </h2>
+
+        <p>
+          Move from the oldest surviving fragments
+          of Tyrian history to the living present.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           TIMELINE
+      ========================== -->
+
+      <section class="timeline">
+
+        <div class="timeline-line"></div>
+
+
+        <!-- 01 -->
+
+        <a
+          href="ancient-dragonrises/index.html"
+          class="timeline-entry"
+        >
+
+          <p class="timeline-number">
+            Archive 01
           </p>
 
-          <h2>
-            The Road Through Time
-          </h2>
+          <h3>
+            Ancient Dragonrises
+          </h3>
 
-          <p>
-            Follow Tyria from its earliest remembered ages to the
-            current historical record.
+          <p class="timeline-date">
+            Ancient Past // earliest records c. 20,000 BE
           </p>
 
-        </header>
+          <p class="timeline-description">
+            Elder Dragons, the ancient Dragonrise,
+            the Giganticus Lupicus, Seer magical technology,
+            and the first Bloodstone.
+          </p>
+
+          <span class="timeline-arrow">
+            Enter Archive →
+          </span>
+
+        </a>
 
 
-        <!-- JUMP MENU -->
+        <!-- 02 -->
 
-        <div class="jump-box">
+        <a
+          href="elder-races/index.html"
+          class="timeline-entry"
+        >
 
-          <label for="eraSelect">
-            Open an era
-          </label>
+          <p class="timeline-number">
+            Archive 02
+          </p>
 
-          <select id="eraSelect">
+          <h3>
+            The Elder Races
+          </h3>
 
-            <option value="">
-              Choose a historical era...
-            </option>
+          <p class="timeline-date">
+            Ancient Dragonrise – 1769 BE
+          </p>
 
-            <option value="ancient-dragonrises/index.html">
-              01 // Ancient Dragonrises
-            </option>
+          <p class="timeline-description">
+            Follow the Seers, mursaat, Forgotten,
+            dwarves, jotun, and Glint through
+            the shattered world left by the dragons.
+          </p>
 
-            <option value="elder-races/index.html">
-              02 // The Elder Races
-            </option>
+          <span class="timeline-arrow">
+            Enter Archive →
+          </span>
 
-            <option value="gods-and-humanity/index.html">
-              03 // The Gods and Humanity
-            </option>
-
-            <option value="gift-of-magic/index.html">
-              04 // The Gift of Magic
-            </option>
-
-            <option value="exodus-of-gods/index.html">
-              05 // The Exodus of the Gods
-            </option>
-
-            <option value="kingdoms-and-guild-wars/index.html">
-              06 // Kingdoms and Guild Wars
-            </option>
-
-            <option value="guild-wars-era/index.html">
-              07 // The Guild Wars Era
-            </option>
-
-            <option value="dragons-awaken/index.html">
-              08 // The Dragons Awaken
-            </option>
-
-            <option value="age-of-the-commander/index.html">
-              09 // The Age of the Commander
-            </option>
-
-            <option value="beyond-the-dragon-cycle/index.html">
-              10 // Beyond the Dragon Cycle
-            </option>
-
-            <option value="current-era/index.html">
-              11 // Visions of Eternity
-            </option>
-
-          </select>
-
-        </div>
+        </a>
 
 
-        <!-- =========================
-             TIMELINE
-        ========================== -->
+        <!-- 03 -->
 
-        <div class="timeline">
+        <a
+          href="gods-and-humanity/index.html"
+          class="timeline-entry"
+        >
+
+          <p class="timeline-number">
+            Archive 03
+          </p>
+
+          <h3>
+            Gods and Humanity
+          </h3>
+
+          <p class="timeline-date">
+            Ancient Era – 1 BE
+          </p>
+
+          <p class="timeline-description">
+            The Six arrive from the Mists,
+            humanity enters the world,
+            and new civilizations spread
+            through Cantha, Elona, Orr,
+            Kryta, and Ascalon.
+          </p>
+
+          <span class="timeline-arrow">
+            Enter Archive →
+          </span>
+
+        </a>
 
 
-          <!-- 01 -->
+        <!-- 04 -->
 
-          <article class="timeline-entry">
+        <a
+          href="gift-of-magic/index.html"
+          class="timeline-entry"
+        >
 
-            <div class="timeline-marker">
-              01
-            </div>
+          <p class="timeline-number">
+            Archive 04
+          </p>
 
-            <div class="timeline-card">
+          <h3>
+            The Gift of Magic
+          </h3>
 
-              <p class="timeline-date">
-                Before 10,000 BE
-              </p>
+          <p class="timeline-date">
+            1 BE – 0 AE
+          </p>
 
-              <h3>
-                Ancient Dragonrises
-              </h3>
+          <p class="timeline-description">
+            Abaddon expands mortal access to magic.
+            War follows, King Doric travels to Arah,
+            and the ancient Bloodstone is divided.
+          </p>
 
-              <p>
-                Long before humanity crossed Tyria's shores,
-                civilizations already lived beneath the shadow
-                of the Elder Dragons.
-              </p>
+          <span class="timeline-arrow">
+            Enter Archive →
+          </span>
 
-              <p>
-                The Great Giants disappeared. Ancient peoples
-                struggled to survive. The Seers created the
-                Bloodstone, and the mursaat withdrew into the Mists.
-              </p>
+        </a>
 
-              <a
-                href="ancient-dragonrises/index.html"
-                class="record-link"
-              >
-                Explore Ancient Dragonrises →
-              </a>
 
-            </div>
+        <!-- 05 -->
+
+        <a
+          href="exodus-of-gods/index.html"
+          class="timeline-entry"
+        >
+
+          <p class="timeline-number">
+            Archive 05
+          </p>
+
+          <h3>
+            The Exodus of the Gods
+          </h3>
+
+          <p class="timeline-date">
+            0 AE
+          </p>
+
+          <p class="timeline-description">
+            Abaddon rebels,
+            the Crystal Sea becomes a desert,
+            the Realm of Torment becomes his prison,
+            and the gods leave Tyria.
+          </p>
+
+          <span class="timeline-arrow">
+            Enter Archive →
+          </span>
+
+        </a>
+
+
+        <!-- 06 -->
+
+        <a
+          href="kingdoms-and-guild-wars/index.html"
+          class="timeline-entry"
+        >
+
+          <p class="timeline-number">
+            Archive 06
+          </p>
+
+          <h3>
+            Kingdoms and Guild Wars
+          </h3>
+
+          <p class="timeline-date">
+            2 AE – 1013 AE
+          </p>
+
+          <p class="timeline-description">
+            Mortal kingdoms inherit the world.
+            Guilds rise, Bloodstones scatter,
+            dynasties fall, Shiro changes Cantha,
+            and the Third Guild War begins.
+          </p>
+
+          <span class="timeline-arrow">
+            Enter Archive →
+          </span>
+
+        </a>
+
+
+        <!-- 07 -->
+
+        <a
+          href="guild-wars-era/index.html"
+          class="timeline-entry"
+        >
+
+          <p class="timeline-number">
+            Archive 07
+          </p>
+
+          <h3>
+            The Guild Wars Era
+          </h3>
+
+          <p class="timeline-date">
+            1013 AE – 1080 AE
+          </p>
+
+          <p class="timeline-description">
+            The Searing, Cataclysm of Orr,
+            Flameseeker Prophecies, Shiro,
+            Nightfall, the Great Destroyer,
+            War in Kryta, and Winds of Change.
+          </p>
+
+          <span class="timeline-arrow">
+            Enter Archive →
+          </span>
+
+        </a>
+
+
+        <!-- 08 -->
+
+        <a
+          href="dragons-awaken/index.html"
+          class="timeline-entry"
+        >
+
+          <p class="timeline-number">
+            Archive 08
+          </p>
+
+          <h3>
+            The Dragons Awaken
+          </h3>
+
+          <p class="timeline-date">
+            1080 AE – 1325 AE
+          </p>
+
+          <p class="timeline-description">
+            Primordus, Jormag, Zhaitan,
+            and Kralkatorrik reshape the world
+            while the civilizations of modern
+            Guild Wars 2 take form.
+          </p>
+
+          <span class="timeline-arrow">
+            Enter Archive →
+          </span>
+
+        </a>
+
+
+        <!-- 09 -->
+
+        <a
+          href="age-of-the-commander/index.html"
+          class="timeline-entry"
+        >
+
+          <p class="timeline-number">
+            Archive 09
+          </p>
+
+          <h3>
+            The Age of the Commander
+          </h3>
+
+          <p class="timeline-date">
+            1325 AE – 1335 AE
+          </p>
+
+          <p class="timeline-description">
+            The Pact forms.
+            Elder Dragons fall.
+            Scarlet awakens Mordremoth.
+            Aurene rises, and the traditional
+            Dragon Cycle finally ends.
+          </p>
+
+          <span class="timeline-arrow">
+            Enter Archive →
+          </span>
+
+        </a>
+
+
+        <!-- 10 -->
+
+        <a
+          href="beyond-the-dragon-cycle/index.html"
+          class="timeline-entry"
+        >
+
+          <p class="timeline-number">
+            Archive 10
+          </p>
+
+          <h3>
+            Beyond the Dragon Cycle
+          </h3>
+
+          <p class="timeline-date">
+            1336 AE – 1338 AE
+          </p>
+
+          <p class="timeline-description">
+            The Astral Ward,
+            Kryptis, Nayos,
+            the Tyrian Alliance,
+            Janthir, Titans,
+            and ancient mysteries return.
+          </p>
+
+          <span class="timeline-arrow">
+            Enter Archive →
+          </span>
+
+        </a>
+
+
+        <!-- 11 -->
+
+        <a
+          href="current-era/index.html"
+          class="timeline-entry current"
+        >
+
+          <p class="timeline-number">
+            Archive 11 // Current
+          </p>
+
+          <h3>
+            The Current Era
+          </h3>
+
+          <p class="timeline-date">
+            1338 AE – 1339 AE
+          </p>
+
+          <p class="timeline-description">
+            Visions of Eternity leads to Castora,
+            Ancora, and ancient Seer history
+            becoming part of Tyria's present again.
+          </p>
+
+          <span class="timeline-arrow">
+            Enter Current Archive →
+          </span>
+
+        </a>
+
+      </section>
+
+
+      <!-- =========================
+           PRESENT MARKER
+      ========================== -->
+
+      <section class="present-marker">
+
+        <p class="present-label">
+          Present Edge of the Archive
+        </p>
+
+        <p>
+          <strong>1339 AE</strong>
+          is where the Road Through Time currently ends.
+          Everything beyond this point is still becoming history.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           GUIDE
+      ========================== -->
+
+      <section class="archive-guide">
+
+        <h2>
+          How the Library Will Grow
+        </h2>
+
+        <p>
+          Think of this timeline as the trunk of a tree.
+          The main road stays simple,
+          while deeper lore can branch outward
+          without turning the homepage into a wall of information.
+        </p>
+
+
+        <div class="guide-grid">
+
+
+          <article class="guide-card">
+
+            <span>
+              Events
+            </span>
+
+            <h3>
+              Historical Branches
+            </h3>
+
+            <p>
+              Major events such as the Searing,
+              Jade Wind, Scarab Plague,
+              Bloodstone explosion, or Dragonfall
+              can receive their own archives.
+            </p>
 
           </article>
 
 
-          <!-- 02 -->
+          <article class="guide-card">
 
-          <article class="timeline-entry">
+            <span>
+              People & Factions
+            </span>
 
-            <div class="timeline-marker">
-              02
-            </div>
+            <h3>
+              Connected Stories
+            </h3>
 
-            <div class="timeline-card">
-
-              <p class="timeline-date">
-                Ancient Tyria
-              </p>
-
-              <h3>
-                The Elder Races
-              </h3>
-
-              <p>
-                Dwarves, Forgotten, jotun, mursaat, and Seers carried
-                memories of a world that existed long before the
-                human kingdoms.
-              </p>
-
-              <p>
-                Their alliances, wars, magical discoveries, and failures
-                quietly shaped events thousands of years later.
-              </p>
-
-              <a
-                href="elder-races/index.html"
-                class="record-link"
-              >
-                Explore the Elder Races →
-              </a>
-
-            </div>
+            <p>
+              Follow figures and organizations
+              such as Glint, the mursaat,
+              White Mantle, Order of Whispers,
+              Astral Ward, or Ministry of Purity.
+            </p>
 
           </article>
 
 
-          <!-- 03 -->
-
-          <article class="timeline-entry">
-
-            <div class="timeline-marker">
-              03
-            </div>
-
-            <div class="timeline-card">
-
-              <p class="timeline-date">
-                Before 786 BE – 1 BE
-              </p>
-
-              <h3>
-                The Gods and Humanity
-              </h3>
-
-              <p>
-                The Six Gods came to Tyria from the Mists.
-                Humanity entered a world whose history was already
-                thousands of years old.
-              </p>
-
-              <p>
-                Humans settled Cantha, Elona, Orr, Kryta, and Ascalon,
-                founding kingdoms and empires that transformed the world.
-              </p>
-
-              <a
-                href="gods-and-humanity/index.html"
-                class="record-link"
-              >
-                Explore the Gods and Humanity →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- 04 -->
-
-          <article class="timeline-entry">
-
-            <div class="timeline-marker">
-              04
-            </div>
-
-            <div class="timeline-card">
-
-              <p class="timeline-date">
-                1 BE
-              </p>
-
-              <h3>
-                The Gift of Magic
-              </h3>
-
-              <p>
-                Abaddon gave greater access to magic to the peoples
-                of Tyria.
-              </p>
-
-              <p>
-                Magical warfare followed. King Doric pleaded with the
-                gods to intervene, leading them to use the ancient
-                Bloodstone to limit mortal power.
-              </p>
-
-              <a
-                href="gift-of-magic/index.html"
-                class="record-link"
-              >
-                Explore the Gift of Magic →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- 05 -->
-
-          <article class="timeline-entry">
-
-            <div class="timeline-marker">
-              05
-            </div>
-
-            <div class="timeline-card">
-
-              <p class="timeline-date">
-                0 AE
-              </p>
-
-              <h3>
-                The Exodus of the Gods
-              </h3>
-
-              <p>
-                Abaddon rejected the restriction of magic and turned
-                against the other gods.
-              </p>
-
-              <p>
-                His defeat transformed the Crystal Sea, created the
-                Desolation, and ended the age when the gods openly
-                walked beside mortals.
-              </p>
-
-              <a
-                href="exodus-of-gods/index.html"
-                class="record-link"
-              >
-                Explore the Exodus of the Gods →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- 06 -->
-
-          <article class="timeline-entry">
-
-            <div class="timeline-marker">
-              06
-            </div>
-
-            <div class="timeline-card">
-
-              <p class="timeline-date">
-                1 AE – 1069 AE
-              </p>
-
-              <h3>
-                Kingdoms and Guild Wars
-              </h3>
-
-              <p>
-                Human kingdoms flourished while trade, dynasties,
-                religious movements, and political rivalries reshaped
-                the world.
-              </p>
-
-              <p>
-                Guilds grew into military powers, and generations of
-                conflict weakened Ascalon, Kryta, and Orr just before
-                the charr marched south.
-              </p>
-
-              <a
-                href="kingdoms-and-guild-wars/index.html"
-                class="record-link"
-              >
-                Explore Kingdoms and Guild Wars →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- 07 -->
-
-          <article class="timeline-entry">
-
-            <div class="timeline-marker">
-              07
-            </div>
-
-            <div class="timeline-card">
-
-              <p class="timeline-date">
-                1070 – 1080 AE
-              </p>
-
-              <h3>
-                The Guild Wars Era
-              </h3>
-
-              <p>
-                The Searing shattered Ascalon.
-                Orr sank beneath the sea.
-                The White Mantle seized power in Kryta.
-              </p>
-
-              <p>
-                Shiro returned to Cantha, Nightfall threatened Elona,
-                Abaddon fell, and Primordus began to stir beneath Tyria.
-              </p>
-
-              <a
-                href="guild-wars-era/index.html"
-                class="record-link"
-              >
-                Explore the Guild Wars Era →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- 08 -->
-
-          <article class="timeline-entry">
-
-            <div class="timeline-marker">
-              08
-            </div>
-
-            <div class="timeline-card">
-
-              <p class="timeline-date">
-                1078 – 1320 AE
-              </p>
-
-              <h3>
-                The Dragons Awaken
-              </h3>
-
-              <p>
-                Primordus awakened beneath Tyria.
-                Jormag drove the norn south.
-                Zhaitan raised Orr from the sea.
-              </p>
-
-              <p>
-                Kralkatorrik carved the Dragonbrand across Tyria.
-                The ancient cycle had returned.
-              </p>
-
-              <a
-                href="dragons-awaken/index.html"
-                class="record-link"
-              >
-                Explore The Dragons Awaken →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- 09 -->
-
-          <article class="timeline-entry">
-
-            <div class="timeline-marker">
-              09
-            </div>
-
-            <div class="timeline-card">
-
-              <p class="timeline-date">
-                1325 – 1335 AE
-              </p>
-
-              <h3>
-                The Age of the Commander
-              </h3>
-
-              <p>
-                The Pact formed against Zhaitan, beginning a campaign
-                that changed the relationship between mortals and the
-                Elder Dragons.
-              </p>
-
-              <p>
-                Zhaitan, Mordremoth, Kralkatorrik, Jormag, Primordus,
-                and Soo-Won fell while Aurene rose to inherit the burden
-                of Tyria's magical balance.
-              </p>
-
-              <a
-                href="age-of-the-commander/index.html"
-                class="record-link"
-              >
-                Explore the Age of the Commander →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- 10 -->
-
-          <article class="timeline-entry">
-
-            <div class="timeline-marker">
-              10
-            </div>
-
-            <div class="timeline-card">
-
-              <p class="timeline-date">
-                1336 – 1338 AE
-              </p>
-
-              <h3>
-                Beyond the Dragon Cycle
-              </h3>
-
-              <p>
-                With the Elder Dragon cycle ended, hidden powers
-                stepped into view.
-              </p>
-
-              <p>
-                The Wizard's Court, Astral Ward, Kryptis, Nayos,
-                Janthir, and the return of the Titans revealed that
-                Tyria's history extended far beyond the Dragon Cycle.
-              </p>
-
-              <a
-                href="beyond-the-dragon-cycle/index.html"
-                class="record-link"
-              >
-                Explore Beyond the Dragon Cycle →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- 11 -->
-
-          <article class="timeline-entry current">
-
-            <div class="timeline-marker">
-              11
-            </div>
-
-            <div class="timeline-card">
-
-              <p class="timeline-date">
-                1338 – 1339 AE
-              </p>
-
-              <h3>
-                Visions of Eternity
-              </h3>
-
-              <p>
-                The road reaches the current era.
-              </p>
-
-              <p>
-                The Inquest, led by Director Vloxx, launches an
-                expedition toward Castora in search of Ancora,
-                carrying Tyrian history into another unknown chapter.
-              </p>
-
-              <span class="current-status">
-                Current Historical Record
-              </span>
-
-              <br>
-
-              <a
-                href="current-era/index.html"
-                class="record-link"
-              >
-                Enter the Current Era →
-              </a>
-
-            </div>
+          <article class="guide-card">
+
+            <span>
+              Places & Artifacts
+            </span>
+
+            <h3>
+              Lore Threads
+            </h3>
+
+            <p>
+              Locations and relics such as Arah,
+              Janthir, the Bloodstones,
+              Scepter of Orr, or Castora
+              can connect multiple eras together.
+            </p>
 
           </article>
 
 
         </div>
 
-      </div>
+      </section>
 
-    </section>
-
-
-    <!-- =========================
-         ARCHIVES
-    ========================== -->
-
-    <section
-      class="archives"
-      id="archives"
-    >
-
-      <div class="container">
-
-        <header class="section-header">
-
-          <p class="section-label">
-            Connected Records
-          </p>
-
-          <h2>
-            The Archives
-          </h2>
-
-          <p>
-            The Road Through Time is the spine of the library.
-            These archives will branch away from it to explain the
-            people, places, magic, organizations, and smaller stories
-            behind the major events.
-          </p>
-
-        </header>
-
-
-        <div class="archive-grid">
-
-          <div class="archive-card">
-
-            <p class="archive-card-label">
-              Archive 01
-            </p>
-
-            <h3>
-              Historical Events
-            </h3>
-
-            <p>
-              Wars, catastrophes, migrations, rebellions, discoveries,
-              and major turning points.
-            </p>
-
-          </div>
-
-
-          <div class="archive-card">
-
-            <p class="archive-card-label">
-              Archive 02
-            </p>
-
-            <h3>
-              People & Beings
-            </h3>
-
-            <p>
-              Gods, Elder Dragons, rulers, heroes, scholars, villains,
-              and witnesses to history.
-            </p>
-
-          </div>
-
-
-          <div class="archive-card">
-
-            <p class="archive-card-label">
-              Archive 03
-            </p>
-
-            <h3>
-              Regions & Civilizations
-            </h3>
-
-            <p>
-              Kingdoms, continents, cities, ruins, cultures,
-              wilderness, and places beyond Tyria.
-            </p>
-
-          </div>
-
-
-          <div class="archive-card">
-
-            <p class="archive-card-label">
-              Archive 04
-            </p>
-
-            <h3>
-              Organizations
-            </h3>
-
-            <p>
-              Guilds, orders, legions, ministries, governments,
-              alliances, and hidden societies.
-            </p>
-
-          </div>
-
-
-          <div class="archive-card">
-
-            <p class="archive-card-label">
-              Archive 05
-            </p>
-
-            <h3>
-              Magic & Cosmology
-            </h3>
-
-            <p>
-              Bloodstones, ley lines, artifacts, gods, spirits,
-              Elder Dragon magic, and the Mists.
-            </p>
-
-          </div>
-
-
-          <div class="archive-card">
-
-            <p class="archive-card-label">
-              Archive 06
-            </p>
-
-            <h3>
-              Side Stories
-            </h3>
-
-            <p>
-              Regional histories, legends, personal accounts,
-              mysteries, and stories away from the main road.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
+    </div>
 
   </main>
 
@@ -1775,23 +1452,68 @@
 
     <div class="container">
 
-      <button
-        type="button"
-        class="footer-disclaimer"
-        id="viewDisclaimer"
-      >
-        View Spoiler Disclaimer
-      </button>
-
-      <div>
-        Guild Wars Living Lore Library is an unofficial fan lore
-        project. Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and
-        related properties belong to their respective owners.
-      </div>
+      Guild Wars Living Lore Library is an unofficial fan lore project.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT,
+      and related properties belong to their respective owners.
 
     </div>
 
   </footer>
+
+
+  <!-- =========================
+       SPOILER DISCLAIMER
+  ========================== -->
+
+  <div
+    class="spoiler-overlay"
+    id="spoilerOverlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="spoilerTitle"
+  >
+
+    <div class="spoiler-window">
+
+      <p class="spoiler-label">
+        Archive Notice
+      </p>
+
+      <h2 id="spoilerTitle">
+        This library contains story spoilers.
+      </h2>
+
+      <p>
+        The Guild Wars Living Lore Library follows
+        the history of Tyria across Guild Wars,
+        Guild Wars 2, expansions,
+        Living World releases,
+        and the current story.
+      </p>
+
+      <p>
+        Major characters, locations,
+        revelations, deaths,
+        historical mysteries,
+        and story outcomes may be discussed openly.
+      </p>
+
+      <p>
+        Continue only if you are comfortable
+        exploring the full historical record.
+      </p>
+
+      <button
+        class="acknowledge-button"
+        id="acknowledgeButton"
+        type="button"
+      >
+        I Acknowledge
+      </button>
+
+    </div>
+
+  </div>
 
 
   <!-- =========================
@@ -1804,152 +1526,64 @@
 
 
       /* =========================
-         SERVER CLOCK
+         SERVER TIME
       ========================= */
 
-      const serverTime =
-        document.getElementById("serverTime");
+      const serverClock =
+        document.getElementById("serverClock");
 
 
-      function updateServerTime() {
+      const updateServerClock = () => {
 
         const now = new Date();
 
-        const time =
-          new Intl.DateTimeFormat(
-            "en-US",
+        const utcTime =
+          now.toLocaleTimeString(
+            "en-GB",
             {
               timeZone: "UTC",
+              hour12: false,
               hour: "2-digit",
               minute: "2-digit",
-              second: "2-digit",
-              hour12: false
+              second: "2-digit"
             }
-          ).format(now);
+          );
 
-        const date =
-          new Intl.DateTimeFormat(
-            "en-US",
-            {
-              timeZone: "UTC",
-              month: "short",
-              day: "2-digit",
-              year: "numeric"
-            }
-          ).format(now);
+        serverClock.textContent =
+          `${utcTime} UTC`;
 
-        serverTime.textContent =
-          `${date} // ${time}`;
-      }
+      };
 
 
-      updateServerTime();
+      updateServerClock();
 
-      window.setInterval(
-        updateServerTime,
+      setInterval(
+        updateServerClock,
         1000
       );
 
 
       /* =========================
-         ARCHIVE SELECTOR
+         SPOILER ACKNOWLEDGEMENT
       ========================= */
 
-      const eraSelect =
-        document.getElementById("eraSelect");
-
-
-      eraSelect.addEventListener(
-        "change",
-        () => {
-
-          const destination =
-            eraSelect.value;
-
-          if (!destination) {
-            return;
-          }
-
-          window.location.href =
-            destination;
-
-        }
-      );
-
-
-      /* =========================
-         SPOILER DISCLAIMER
-      ========================= */
-
-      const storageKey =
-        "gwlll-spoiler-acknowledged";
-
-      const disclaimer =
-        document.getElementById(
-          "spoilerDisclaimer"
-        );
+      const spoilerOverlay =
+        document.getElementById("spoilerOverlay");
 
       const acknowledgeButton =
-        document.getElementById(
-          "acknowledgeButton"
-        );
+        document.getElementById("acknowledgeButton");
 
-      const viewDisclaimer =
-        document.getElementById(
-          "viewDisclaimer"
-        );
+      const storageKey =
+        "gwlllSpoilerAcknowledged";
 
 
-      function hasAcknowledged() {
-
-        try {
-
-          return (
-            localStorage.getItem(
-              storageKey
-            ) === "true"
-          );
-
-        } catch {
-
-          return false;
-
-        }
-      }
+      const spoilerAcknowledged =
+        localStorage.getItem(storageKey);
 
 
-      function openDisclaimer() {
+      if (spoilerAcknowledged === "true") {
 
-        disclaimer.classList.remove(
-          "hidden"
-        );
-
-        disclaimer.setAttribute(
-          "aria-hidden",
-          "false"
-        );
-
-        document.body.classList.add(
-          "modal-open"
-        );
-
-      }
-
-
-      function closeDisclaimer() {
-
-        disclaimer.classList.add(
-          "hidden"
-        );
-
-        disclaimer.setAttribute(
-          "aria-hidden",
-          "true"
-        );
-
-        document.body.classList.remove(
-          "modal-open"
-        );
+        spoilerOverlay.classList.add("hidden");
 
       }
 
@@ -1958,42 +1592,17 @@
         "click",
         () => {
 
-          try {
+          localStorage.setItem(
+            storageKey,
+            "true"
+          );
 
-            localStorage.setItem(
-              storageKey,
-              "true"
-            );
-
-          } catch {
-
-            console.warn(
-              "Could not save spoiler acknowledgement."
-            );
-
-          }
-
-          closeDisclaimer();
+          spoilerOverlay.classList.add(
+            "hidden"
+          );
 
         }
       );
-
-
-      viewDisclaimer.addEventListener(
-        "click",
-        openDisclaimer
-      );
-
-
-      if (hasAcknowledged()) {
-
-        closeDisclaimer();
-
-      } else {
-
-        openDisclaimer();
-
-      }
 
     })();
   </script>
