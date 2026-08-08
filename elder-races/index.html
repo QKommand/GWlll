@@ -2,49 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
-
   <meta
     name="description"
     content="The Elder Races archive entry in the Guild Wars Living Lore Library."
   >
-
   <meta name="theme-color" content="#020617">
-
   <title>The Elder Races // GWlll</title>
-
   <style>
     :root {
       color-scheme: dark;
-
       --background: #020617;
       --panel: #0f172a;
       --border: #374151;
-
       --gold: #f4c76b;
       --gold-bright: #ffe3a3;
       --gold-muted: #c99b45;
-
       --white: #ffffff;
     }
-
     * {
       box-sizing: border-box;
     }
-
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 175px;
     }
-
     body {
       margin: 0;
       min-width: 320px;
-
       background:
         radial-gradient(
           circle at top,
@@ -52,9 +40,7 @@
           transparent 34rem
         ),
         var(--background);
-
       color: var(--white);
-
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -63,153 +49,110 @@
         Helvetica,
         Arial,
         sans-serif;
-
       line-height: 1.75;
     }
-
     a {
       color: inherit;
     }
-
     .container {
       width: min(900px, calc(100% - 32px));
       margin-inline: auto;
     }
-
     /* =========================
        HEADER
     ========================= */
-
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-
       border-bottom: 1px solid var(--border);
-
       background: rgba(2, 6, 23, 0.94);
       backdrop-filter: blur(14px);
     }
-
     .header-inner {
       min-height: 68px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 20px;
     }
-
     .brand {
       text-decoration: none;
     }
-
     .brand-small {
       margin: 0;
-
       color: var(--white);
-
       font-family: monospace;
       font-size: 0.65rem;
-
       letter-spacing: 0.17em;
       text-transform: uppercase;
     }
-
     .brand-name {
       margin: 2px 0 0;
-
       color: var(--gold);
-
       font-size: 1rem;
       font-weight: 700;
     }
-
     .home-link {
       color: var(--gold);
-
       font-family: monospace;
       font-size: 0.75rem;
       font-weight: 700;
-
       text-decoration: none;
-
       transition:
         color 180ms ease,
         transform 180ms ease;
     }
-
     .home-link:hover {
       color: var(--gold-bright);
       transform: translateX(-3px);
     }
-
     /* =========================
        HISTORICAL POSITION
     ========================= */
-
     .history-position {
       position: sticky;
       top: 68px;
       z-index: 40;
-
       border-bottom: 1px solid var(--border);
-
       background: rgba(2, 6, 23, 0.96);
       backdrop-filter: blur(12px);
     }
-
     .history-position-inner {
       padding: 13px 0 15px;
     }
-
     .position-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 12px;
-
       margin-bottom: 10px;
     }
-
     .position-label {
       margin: 0;
-
       color: var(--white);
-
       font-family: monospace;
       font-size: 0.62rem;
-
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
-
     .current-date {
       margin: 0;
-
       color: var(--gold-bright);
-
       font-family: monospace;
       font-size: 0.7rem;
       font-weight: 700;
     }
-
     .history-rail {
       position: relative;
       height: 26px;
     }
-
     .history-line {
       position: absolute;
-
       left: 0;
       right: 0;
       top: 7px;
-
       height: 1px;
-
       background:
         linear-gradient(
           to right,
@@ -218,468 +161,325 @@
           rgba(244, 199, 107, 0.25)
         );
     }
-
     .history-point {
       position: absolute;
-
       top: 2px;
-
       width: 11px;
       height: 11px;
-
       border: 1px solid var(--gold-muted);
       border-radius: 50%;
-
       background: var(--background);
-
       transform: translateX(-50%);
     }
-
     .history-point.start {
       left: 5%;
     }
-
     .history-point.middle {
       left: 50%;
     }
-
     .history-point.end {
       left: 95%;
     }
-
     .history-marker {
       position: absolute;
-
       top: -1px;
       left: 5%;
-
       width: 17px;
       height: 17px;
-
       border: 2px solid var(--gold-bright);
       border-radius: 50%;
-
       background: var(--gold);
-
       box-shadow:
         0 0 15px rgba(244, 199, 107, 0.5);
-
       transform: translateX(-50%);
-
       transition: left 450ms ease;
     }
-
     .rail-labels {
       display: flex;
       justify-content: space-between;
-
       margin-top: 2px;
-
       color: var(--white);
-
       font-family: monospace;
       font-size: 0.58rem;
     }
-
     .position-context {
       margin: 8px 0 0;
-
       color: var(--gold);
-
       font-size: 0.72rem;
       text-align: center;
     }
-
     /* =========================
        HERO
     ========================= */
-
     .hero {
       padding: 72px 0 56px;
       text-align: center;
     }
-
     .hero-label {
       margin: 0;
-
       color: var(--white);
-
       font-family: monospace;
       font-size: 0.7rem;
-
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
-
     .hero h1 {
       margin: 16px 0 0;
-
       color: var(--gold);
-
       font-size: clamp(2.7rem, 8vw, 5.2rem);
       line-height: 1.03;
-
       letter-spacing: -0.045em;
-
       animation: goldPulse 4s ease-in-out infinite;
     }
-
     .hero-date {
       margin: 16px 0 0;
-
       color: var(--gold-bright);
-
       font-family: monospace;
       font-size: 0.8rem;
-
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
-
     .hero-text {
       max-width: 760px;
-
       margin: 24px auto 0;
-
       font-size: 1.06rem;
       line-height: 1.9;
     }
-
     /* =========================
        ARCHIVE NOTE
     ========================= */
-
     .archive-note {
       margin-bottom: 55px;
       padding: 24px;
-
       border: 1px solid rgba(244, 199, 107, 0.35);
       border-radius: 12px;
-
       background: rgba(244, 199, 107, 0.045);
     }
-
     .archive-note-label {
       margin: 0;
-
       color: var(--gold);
-
       font-family: monospace;
       font-size: 0.68rem;
-
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
-
     .archive-note p:last-child {
       margin: 12px 0 0;
     }
-
     /* =========================
        HISTORY
     ========================= */
-
     .history-section {
       padding: 36px 0;
-
       border-top: 1px solid var(--border);
     }
-
     .history-label {
       margin: 0;
-
       color: var(--white);
-
       font-family: monospace;
       font-size: 0.66rem;
-
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
-
     .history-section h2 {
       margin: 8px 0 0;
-
       color: var(--gold);
-
       font-size: clamp(1.6rem, 5vw, 2.35rem);
       line-height: 1.2;
     }
-
     .history-section p {
       margin: 16px 0 0;
     }
-
     .history-section strong {
       color: var(--gold-bright);
     }
-
     .record-box {
       margin-top: 22px;
       padding: 20px;
-
       border-left: 2px solid var(--gold);
-
       background: rgba(15, 23, 42, 0.8);
     }
-
     .record-box-label {
       margin: 0;
-
       color: var(--gold);
-
       font-family: monospace;
       font-size: 0.65rem;
-
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
-
     .record-box p:last-child {
       margin: 8px 0 0;
     }
-
     /* =========================
        RACE INDEX
     ========================= */
-
     .race-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-
       gap: 14px;
-
       margin-top: 24px;
     }
-
     .race-card {
       padding: 20px;
-
       border: 1px solid var(--border);
       border-radius: 10px;
-
       background: rgba(15, 23, 42, 0.76);
     }
-
     .race-card-label {
       margin: 0;
-
       color: var(--white);
-
       font-family: monospace;
       font-size: 0.62rem;
-
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
-
     .race-card h3 {
       margin: 7px 0 0;
-
       color: var(--gold);
-
       font-size: 1.05rem;
     }
-
     .race-card p:last-child {
       margin: 8px 0 0;
-
       font-size: 0.9rem;
     }
-
     /* =========================
        NAVIGATION
     ========================= */
-
     .page-navigation {
       padding: 45px 0 80px;
-
       border-top: 1px solid var(--border);
     }
-
     .navigation-label {
       margin: 0;
-
       color: var(--white);
-
       font-family: monospace;
       font-size: 0.67rem;
-
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
-
     .page-navigation h2 {
       margin: 8px 0 0;
-
       color: var(--gold);
-
       font-size: 1.7rem;
     }
-
     .page-navigation p {
       margin: 13px 0 0;
     }
-
     .navigation-actions {
       margin-top: 24px;
-
       display: flex;
       flex-wrap: wrap;
-
       gap: 12px;
     }
-
     .button {
       min-height: 46px;
-
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
       padding: 0 20px;
-
       border: 1px solid var(--border);
       border-radius: 9px;
-
       background: var(--panel);
       color: var(--gold);
-
       font-weight: 700;
       text-decoration: none;
-
       transition:
         transform 180ms ease,
         border-color 180ms ease,
         color 180ms ease;
     }
-
     .button:hover {
       transform: translateY(-2px);
-
       border-color: rgba(244, 199, 107, 0.6);
-
       color: var(--gold-bright);
     }
-
     .button-primary {
       border-color: rgba(244, 199, 107, 0.45);
-
       background: rgba(244, 199, 107, 0.1);
     }
-
     /* =========================
        FOOTER
     ========================= */
-
     footer {
       padding: 30px 0;
-
       border-top: 1px solid var(--border);
-
       text-align: center;
       font-size: 0.75rem;
     }
-
     /* =========================
        ANIMATION
     ========================= */
-
     @keyframes goldPulse {
       0%,
       100% {
         color: var(--gold);
-
         text-shadow:
           0 0 0 rgba(244, 199, 107, 0);
       }
-
       50% {
         color: var(--gold-bright);
-
         text-shadow:
           0 0 16px rgba(244, 199, 107, 0.28),
           0 0 34px rgba(244, 199, 107, 0.1);
       }
     }
-
     /* =========================
        MOBILE
     ========================= */
-
     @media (max-width: 650px) {
-
       html {
         scroll-padding-top: 155px;
       }
-
       .container {
         width: min(100% - 22px, 900px);
       }
-
       .header-inner {
         min-height: 62px;
       }
-
       .brand-small {
         display: none;
       }
-
       .brand-name {
         font-size: 0.84rem;
       }
-
       .home-link {
         font-size: 0.67rem;
       }
-
       .history-position {
         top: 62px;
       }
-
       .position-label {
         font-size: 0.55rem;
       }
-
       .current-date {
         font-size: 0.62rem;
       }
-
       .rail-labels {
         font-size: 0.52rem;
       }
-
       .position-context {
         font-size: 0.65rem;
       }
-
       .hero {
         padding: 52px 0 44px;
       }
-
       .hero-text {
         font-size: 1rem;
       }
-
       .race-grid {
         grid-template-columns: 1fr;
       }
-
       .navigation-actions {
         flex-direction: column;
       }
-
       .button {
         width: 100%;
       }
     }
-
     @media (prefers-reduced-motion: reduce) {
-
       html {
         scroll-behavior: auto;
       }
-
       *,
       *::before,
       *::after {
@@ -689,962 +489,882 @@
     }
   </style>
 </head>
-
 <body>
-
   <!-- =========================
        HEADER
   ========================== -->
-
   <header class="site-header">
-
     <div class="container header-inner">
-
       <a href="../index.html" class="brand">
-
         <p class="brand-small">
           QKommand Archive
         </p>
-
         <p class="brand-name">
           GWlll
         </p>
-
       </a>
-
       <a href="../index.html" class="home-link">
         ← Road Through Time
       </a>
-
     </div>
-
   </header>
-
-
   <!-- =========================
        HISTORICAL POSITION
   ========================== -->
-
   <aside class="history-position">
-
     <div class="container history-position-inner">
-
       <div class="position-top">
-
         <p class="position-label">
           Tyrian Historical Position
         </p>
-
         <p class="current-date" id="currentDate">
-          After the Dragonrise
+          Ancient Dragonrise
         </p>
-
       </div>
-
-
       <div class="history-rail">
-
         <div class="history-line"></div>
-
         <span class="history-point start"></span>
         <span class="history-point middle"></span>
         <span class="history-point end"></span>
-
         <span
           class="history-marker"
           id="historyMarker"
         ></span>
-
       </div>
-
-
       <div class="rail-labels">
-
-        <span>Dragonrise Ends</span>
-
+        <span>Dragonrise</span>
         <span>1680 BE</span>
-
-        <span>Before Humanity</span>
-
+        <span>Before 786 BE</span>
       </div>
-
-
       <p class="position-context" id="positionContext">
-        YOU ARE HERE // The Survivors
+        YOU ARE HERE // The Elder Races
       </p>
-
     </div>
-
   </aside>
-
-
   <main>
-
     <!-- =========================
          HERO
     ========================== -->
-
     <section class="hero">
-
       <div class="container">
-
         <p class="hero-label">
           Historical Archive // Record 02
         </p>
-
         <h1>
           The Elder Races
         </h1>
-
         <p class="hero-date">
-          After the Ancient Dragonrise
+          Ancient Dragonrise – Before 786 BE
         </p>
-
         <p class="hero-text">
-          The Elder Dragons returned to sleep,
-          but the world they left behind
-          was no longer the same.
+          When the Elder Dragons rose,
+          five ancient civilizations
+          attempted to survive a catastrophe
+          larger than any one people could face alone.
         </p>
-
         <p class="hero-text">
-          Five ancient peoples carried pieces
-          of that older Tyria forward.
+          The Seers, Mursaat, Forgotten,
+          Dwarves, and Jotun formed an alliance
+          against the dragons.
         </p>
-
         <p class="hero-text">
-          Some preserved knowledge.
-          Some disappeared.
-          Some hid in the Mists.
-          And some survived long enough
-          to shape events thousands of years later.
+          That alliance would fracture,
+          but the choices made during its collapse
+          shaped Tyria for thousands of years.
         </p>
-
       </div>
-
     </section>
-
-
     <div class="container">
-
       <!-- =========================
            ARCHIVE NOTE
       ========================== -->
-
       <div class="archive-note">
-
         <p class="archive-note-label">
           Archive Scope
         </p>
-
         <p>
-          This archive does not retell the Dragonrise.
-          Instead, it follows the civilizations
-          that survived it and the paths they took afterward.
+          This archive follows the five civilizations
+          known collectively as the
+          <strong>Elder Races</strong>:
+          the Seers, Mursaat, Forgotten,
+          Dwarves, and Jotun.
         </p>
-
         <p>
-          Their stories explain later mysteries involving
+          They survived the previous Dragonrise,
+          but they did not survive it in the same way.
+          Their alliance fractured,
+          some civilizations declined,
+          and ancient rivalries continued
+          long after the Elder Dragons returned to sleep.
+        </p>
+        <p>
+          Their history explains later mysteries involving
           the Bloodstones, Glint, Ascension,
           the White Mantle, Janthir,
-          and the Mists.
+          Castora, and the Mists.
         </p>
-
       </div>
-
-
       <!-- =========================
            RACE INDEX
       ========================== -->
-
       <section
         class="history-section"
         data-position="5"
-        data-date="After the Dragonrise"
-        data-context="YOU ARE HERE // Five Survivors"
+        data-date="Ancient Dragonrise"
+        data-context="YOU ARE HERE // Five Elder Races"
       >
-
         <p class="history-label">
           Archive Index
         </p>
-
         <h2>
-          Five civilizations remain
+          Five civilizations face the Dragonrise
         </h2>
-
         <p>
-          The surviving historical record identifies
+          The historical record identifies
           five great peoples whose civilizations
-          reached back into the ancient world.
+          survived the previous awakening
+          of the Elder Dragons.
         </p>
-
-
         <div class="race-grid">
-
           <div class="race-card">
-
             <p class="race-card-label">
               Elder Race
             </p>
-
             <h3>
               Seers
             </h3>
-
             <p>
-              Masters of ancient magical technology
-              whose work would shape the Bloodstones
-              and the future of Tyria.
+              Masters of ancient magic
+              who created the Shadowstone
+              and original Bloodstone.
             </p>
-
           </div>
-
-
           <div class="race-card">
-
             <p class="race-card-label">
               Elder Race
             </p>
-
             <h3>
               Mursaat
             </h3>
-
             <p>
-              Powerful beings who learned
-              how to survive beyond ordinary
-              physical reality.
+              Powerful spellcasters
+              whose shadowcraft allowed them
+              to escape out of phase with Tyria.
             </p>
-
           </div>
-
-
           <div class="race-card">
-
             <p class="race-card-label">
               Elder Race
             </p>
-
             <h3>
               Forgotten
             </h3>
-
             <p>
-              Serpentine guardians whose history
-              became closely tied to Glint
-              and the Crystal Desert.
+              Serpentine spellcasters
+              whose history became closely tied
+              to Glint and the Crystal Desert.
             </p>
-
           </div>
-
-
           <div class="race-card">
-
             <p class="race-card-label">
               Elder Race
             </p>
-
             <h3>
               Dwarves
             </h3>
-
             <p>
-              An ancient people who rebuilt,
-              founded kingdoms,
-              and carried their history
-              into the modern age.
+              An ancient people who survived,
+              rebuilt, and carried their history
+              into later Tyrian ages.
             </p>
-
           </div>
-
-
           <div class="race-card">
-
             <p class="race-card-label">
               Elder Race
             </p>
-
             <h3>
               Jotun
             </h3>
-
             <p>
               Once a sophisticated civilization
-              whose knowledge faded
-              long before modern Tyria.
+              whose ancient knowledge
+              gradually faded.
             </p>
-
           </div>
-
         </div>
-
       </section>
-
-
+      <!-- =========================
+           THE ALLIANCE
+      ========================== -->
+      <section
+        class="history-section"
+        data-position="15"
+        data-date="Ancient Dragonrise"
+        data-context="YOU ARE HERE // The Elder Alliance"
+      >
+        <p class="history-label">
+          Record 01 // The Alliance
+        </p>
+        <h2>
+          Five peoples attempt to stand together
+        </h2>
+        <p>
+          During the Dragonrise,
+          the Seer leader
+          <strong>Sidony</strong>
+          helped rally representatives
+          of the Elder Races.
+        </p>
+        <p>
+          The Seers,
+          Mursaat,
+          Forgotten,
+          Dwarves,
+          and Jotun
+          formed an alliance
+          against the Elder Dragons.
+        </p>
+        <p>
+          Their cooperation included
+          the exchange of knowledge,
+          magic,
+          and information needed
+          to understand the threat.
+        </p>
+        <p>
+          But when the alliance faced
+          one of its greatest tests,
+          that cooperation failed.
+        </p>
+      </section>
+      <!-- =========================
+           ASSAULT ON ZHAITAN
+      ========================== -->
+      <section
+        class="history-section"
+        data-position="24"
+        data-date="Ancient Dragonrise"
+        data-context="YOU ARE HERE // The Assault on Zhaitan"
+      >
+        <p class="history-label">
+          Record 02 // The Broken Alliance
+        </p>
+        <h2>
+          The assault on Zhaitan fractures the Elder Races
+        </h2>
+        <p>
+          The
+          <strong>Forgotten</strong>
+          and
+          <strong>Mursaat</strong>
+          prepared to confront
+          <strong>Zhaitan</strong>.
+        </p>
+        <p>
+          Before the attack,
+          Sidony withdrew
+          the <strong>Seers</strong>
+          from the assault.
+        </p>
+        <p>
+          The <strong>Dwarves</strong>
+          and <strong>Jotun</strong>
+          also did not join
+          their allies in battle.
+        </p>
+        <p>
+          The Forgotten and Mursaat
+          went forward without them
+          and suffered terrible losses.
+        </p>
+        <p>
+          The Mursaat would remember
+          the failure of their allies
+          as a betrayal.
+        </p>
+        <div class="record-box">
+          <p class="record-box-label">
+            The Alliance Breaks
+          </p>
+          <p>
+            The Elder Races survived
+            the Dragonrise,
+            but their alliance did not.
+            The consequences of this fracture
+            would eventually lead
+            to another ancient war.
+          </p>
+        </div>
+      </section>
       <!-- =========================
            SEERS
       ========================== -->
-
       <section
         class="history-section"
-        data-position="17"
-        data-date="Ancient Aftermath"
+        data-position="34"
+        data-date="Ancient Dragonrise"
         data-context="YOU ARE HERE // The Seers"
       >
-
         <p class="history-label">
-          Record 01 // Seers
+          Record 03 // Seers
         </p>
-
         <h2>
-          The architects of ancient magic
+          The Seers hide magic from the dragons
         </h2>
-
         <p>
           The <strong>Seers</strong>
           were among the most magically advanced
           peoples known from ancient Tyria.
         </p>
-
         <p>
-          Their creations included technologies
-          such as the <strong>Shadowstone</strong>
-          and the original
-          <strong>Bloodstone</strong>.
+          After withdrawing from the assault
+          on Zhaitan,
+          they turned toward another solution.
         </p>
-
+        <p>
+          The Seers forged the
+          <strong>Shadowstone</strong>,
+          which amplified their magical abilities.
+        </p>
+        <p>
+          Using its power,
+          they created the original
+          <strong>Bloodstone</strong>
+          and sealed the world's remaining
+          untainted magic within it.
+        </p>
+        <p>
+          Rather than defeating the Elder Dragons,
+          the strategy denied them access
+          to the magic they consumed.
+        </p>
         <p>
           The Bloodstone would outlive
-          their civilization and become one
-          of the most important magical artifacts
-          in Tyrian history.
+          the Seer civilization
+          and become one of the most important
+          artifacts in Tyrian history.
         </p>
-
-        <p>
-          Their influence therefore continued
-          long after the Seers themselves
-          had almost disappeared.
-        </p>
-
       </section>
-
-
-      <!-- =========================
-           SEER–MURSAAT WAR
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="29"
-        data-date="Ancient Era"
-        data-context="YOU ARE HERE // Seer–Mursaat War"
-      >
-
-        <p class="history-label">
-          Record 02 // An Ancient War
-        </p>
-
-        <h2>
-          The Seers and mursaat become enemies
-        </h2>
-
-        <p>
-          Whatever cooperation had once existed
-          between the two peoples did not survive.
-        </p>
-
-        <p>
-          The Seers and
-          <strong>mursaat</strong>
-          fought a prolonged war.
-        </p>
-
-        <p>
-          Mursaat magic included the devastating
-          ability known as
-          <strong>Spectral Agony</strong>.
-        </p>
-
-        <p>
-          The conflict brought the Seers
-          close to extinction.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Long Shadow
-          </p>
-
-          <p>
-            Thousands of years later,
-            modern discoveries in Janthir and Castora
-            would return Seer and mursaat history
-            to the center of the story.
-          </p>
-
-        </div>
-
-      </section>
-
-
       <!-- =========================
            MURSAAT
       ========================== -->
-
       <section
         class="history-section"
-        data-position="40"
-        data-date="Ancient Era"
-        data-context="YOU ARE HERE // The Mursaat"
+        data-position="44"
+        data-date="Ancient Dragonrise"
+        data-context="YOU ARE HERE // The Mursaat Withdraw"
       >
-
         <p class="history-label">
-          Record 03 // Mursaat
+          Record 04 // Mursaat
         </p>
-
         <h2>
-          A civilization disappears into the Mists
+          The Mursaat abandon the alliance
         </h2>
-
         <p>
-          The <strong>mursaat</strong>
-          possessed an unusual advantage:
-          they could phase themselves
-          partly outside the physical world.
+          After the disastrous assault
+          on Zhaitan,
+          the <strong>Mursaat</strong>
+          refused to surrender their magic
+          to the Seers' Bloodstone.
         </p>
-
         <p>
-          By retreating into the
-          <strong>Mists</strong>,
-          they became largely absent
-          from the history of surface Tyria
-          for thousands of years.
+          Instead,
+          they used their
+          <strong>shadowcraft</strong>
+          to withdraw from ordinary Tyria.
         </p>
-
         <p>
-          Their disappearance did not mean
-          their civilization had ended.
+          They shifted themselves
+          beneath the skin of the world,
+          into a shadowed existence
+          out of phase with Tyria.
         </p>
-
         <p>
-          They would later return
-          to human history under another name:
-          the <strong>Unseen Ones</strong>.
+          This allowed them
+          to escape the Elder Dragons
+          without sacrificing their magic.
         </p>
-
+        <p>
+          To the peoples they abandoned,
+          their disappearance became
+          another act of betrayal.
+        </p>
       </section>
-
-
       <!-- =========================
-           FORGOTTEN
+           GLINT
       ========================== -->
-
       <section
         class="history-section"
-        data-position="52"
+        data-position="53"
         data-date="1680 BE"
         data-context="YOU ARE HERE // Glint Is Freed"
       >
-
         <p class="history-label">
-          Record 04 // Forgotten
+          Record 05 // Forgotten
         </p>
-
         <h2>
           The Forgotten free Glint
         </h2>
-
         <p>
           The <strong>Forgotten</strong>
-          continued to influence the world
-          long after the Dragonrise.
+          possessed powerful magic
+          of their own.
         </p>
-
         <p>
-          Around <strong>1680 BE</strong>,
+          In approximately
+          <strong>1680 BE</strong>,
           they performed a ritual upon
           <strong>Glint</strong>,
-          the champion of Kralkatorrik.
+          champion and scion
+          of the Elder Dragon Kralkatorrik.
         </p>
-
         <p>
-          The ritual broke the Elder Dragon's
-          control over her.
+          The ritual freed Glint
+          from Kralkatorrik's control
+          while causing her
+          to lose much of her former memory.
         </p>
-
         <p>
-          Glint lost much of her former memory,
-          but gained the freedom
+          For the first time,
+          she possessed the freedom
           to choose her own path.
         </p>
-
         <p>
-          Her survival would eventually become
-          critical to the future
-          of the Dragon Cycle itself.
+          Glint would eventually become
+          one of the most important figures
+          in the history
+          of the Dragon Cycle.
         </p>
-
       </section>
-
-
       <!-- =========================
-           FORGOTTEN LEGACY
+           GLINT AND THE SURVIVORS
       ========================== -->
-
       <section
         class="history-section"
-        data-position="62"
-        data-date="Later Ancient Era"
-        data-context="YOU ARE HERE // Guardians of Glint"
+        data-position="61"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // Glint Shelters the Survivors"
       >
-
         <p class="history-label">
-          Record 05 // Guardianship
+          Record 06 // Refuge
         </p>
-
         <h2>
-          The Forgotten become keepers of hidden knowledge
+          Glint helps conceal the survivors
         </h2>
-
         <p>
-          The Forgotten remained closely associated
-          with <strong>Glint</strong>.
+          After gaining her freedom,
+          <strong>Glint</strong>
+          aided several of the Elder Races
+          by concealing them
+          from the Elder Dragons.
         </p>
-
         <p>
-          In later history,
-          they became guardians
-          of the trials of
+          This protection helped
+          surviving members of the ancient peoples
+          endure as the dragons gradually
+          returned to slumber.
+        </p>
+        <p>
+          The Forgotten remained
+          particularly closely associated
+          with Glint.
+        </p>
+        <p>
+          In later ages,
+          they would become guardians
+          of knowledge, prophecy,
+          and the trials of
           <strong>Ascension</strong>
           in the Crystal Desert.
         </p>
-
-        <p>
-          Their story therefore became
-          increasingly connected to prophecy,
-          dragon knowledge,
-          and the ability of mortals
-          to transcend ordinary limitations.
-        </p>
-
         <div class="record-box">
-
           <p class="record-box-label">
             Conflicting Traditions
           </p>
-
           <p>
-            Later human traditions claimed
-            the Forgotten arrived from the Mists
-            with the Human Gods.
-            Their much older involvement
-            in the ancient Dragonrise
-            makes that origin uncertain.
+            Later human traditions associated
+            the Forgotten with the Six Gods.
+            Yet their involvement with
+            the Elder Races and the ancient Dragonrise
+            places them in Tyrian history
+            long before humanity's earliest
+            securely dated civilizations.
           </p>
-
         </div>
-
       </section>
-
-
+      <!-- =========================
+           SEER-MURSAAT WAR
+      ========================== -->
+      <section
+        class="history-section"
+        data-position="70"
+        data-date="After the Dragonrise"
+        data-context="YOU ARE HERE // Seer–Mursaat War"
+      >
+        <p class="history-label">
+          Record 07 // An Ancient War
+        </p>
+        <h2>
+          The Mursaat return for revenge
+        </h2>
+        <p>
+          Once the Elder Dragons
+          had returned to slumber,
+          the <strong>Mursaat</strong>
+          returned to Tyria.
+        </p>
+        <p>
+          Their anger toward the
+          <strong>Seers</strong>
+          had not disappeared.
+        </p>
+        <p>
+          The two civilizations entered
+          a war that continued
+          for thousands of years.
+        </p>
+        <p>
+          The Mursaat wielded
+          the devastating magical ability
+          known as
+          <strong>Spectral Agony</strong>.
+        </p>
+        <p>
+          The Seers eventually developed
+          a defense against it,
+          but too late
+          to reverse the course of the war.
+        </p>
+        <p>
+          The Seers were driven
+          to near extinction,
+          while the Mursaat themselves
+          also suffered heavy losses.
+        </p>
+        <p>
+          The battlefield where
+          the war finally ended
+          would later become the site
+          of the Mursaat capital
+          <strong>Bava Nisos</strong>
+          in Janthir.
+        </p>
+        <div class="record-box">
+          <p class="record-box-label">
+            Long Shadow
+          </p>
+          <p>
+            Thousands of years later,
+            discoveries in Janthir and Castora
+            would expose pieces
+            of this ancient conflict
+            that had been lost
+            to modern Tyria.
+          </p>
+        </div>
+      </section>
       <!-- =========================
            DWARVES
       ========================== -->
-
       <section
         class="history-section"
-        data-position="73"
+        data-position="79"
         data-date="Ancient to Historical Era"
         data-context="YOU ARE HERE // The Dwarves"
       >
-
         <p class="history-label">
-          Record 06 // Dwarves
+          Record 08 // Dwarves
         </p>
-
         <h2>
           One ancient civilization rebuilds
         </h2>
-
         <p>
-          Unlike some elder peoples,
-          the <strong>dwarves</strong>
+          Unlike several of the other
+          Elder Races,
+          the <strong>Dwarves</strong>
           remained highly visible
           through later Tyrian history.
         </p>
-
         <p>
-          They rebuilt powerful settlements
+          They rebuilt settlements
           throughout the Shiverpeak Mountains
-          and eventually formed
-          the kingdom of
+          and eventually established
+          powerful kingdoms,
+          including
           <strong>Deldrimor</strong>.
         </p>
-
         <p>
-          Dwarven legends became
-          some of the few surviving windows
-          into the ancient world.
+          Dwarven records and legends
+          preserved knowledge
+          of the Elder Dragons
+          long after most civilizations
+          had forgotten the previous Dragonrise.
         </p>
-
         <p>
-          Their civilization would endure
-          all the way into the original
-          Guild Wars era.
+          Their history would continue
+          all the way into
+          the original Guild Wars era.
         </p>
-
       </section>
-
-
       <!-- =========================
            JOTUN
       ========================== -->
-
       <section
         class="history-section"
-        data-position="84"
+        data-position="87"
         data-date="Ancient Aftermath"
         data-context="YOU ARE HERE // The Jotun Decline"
       >
-
         <p class="history-label">
-          Record 07 // Jotun
+          Record 09 // Jotun
         </p>
-
         <h2>
           A great civilization forgets itself
         </h2>
-
         <p>
-          The <strong>jotun</strong>
+          The <strong>Jotun</strong>
           survived the ancient age,
-          but their civilization did not.
+          but their civilization declined.
         </p>
-
         <p>
-          Ancient jotun possessed
+          Ancient Jotun possessed
           sophisticated magical,
           astronomical,
           and historical knowledge.
         </p>
-
         <p>
           Over generations,
           much of that knowledge disappeared.
         </p>
-
         <p>
-          The jotun encountered
+          The Jotun encountered
           in modern Tyria are therefore
           remnants of a civilization
           far greater than the societies
           they now maintain.
         </p>
-
         <p>
           Their surviving
           <strong>stelae</strong>
           remain some of the most valuable
           records of the ancient world.
         </p>
-
       </section>
-
-
       <!-- =========================
-           DIFFERENT PATHS
+           FIVE PATHS
       ========================== -->
-
       <section
         class="history-section"
-        data-position="93"
+        data-position="94"
         data-date="Before Human Dominance"
         data-context="YOU ARE HERE // Five Paths"
       >
-
         <p class="history-label">
-          Record 08 // Five Paths
+          Record 10 // Five Paths
         </p>
-
         <h2>
-          Survival leads each people somewhere different
+          The Elder Races do not share one fate
         </h2>
-
         <p>
-          The elder races did not share
-          one common fate.
+          Surviving the Dragonrise
+          did not guarantee
+          that a civilization would endure.
         </p>
-
-
         <div class="race-grid">
-
           <div class="race-card">
-
             <p class="race-card-label">
               Seers
             </p>
-
             <h3>
               Near Extinction
             </h3>
-
             <p>
-              Their civilization largely disappears,
-              but their magical legacy survives.
+              Their civilization nearly disappears,
+              but their magical creations
+              continue shaping Tyria.
             </p>
-
           </div>
-
-
           <div class="race-card">
-
             <p class="race-card-label">
               Mursaat
             </p>
-
             <h3>
-              Into the Mists
+              Withdrawal and War
             </h3>
-
             <p>
-              They withdraw from ordinary Tyria
-              and later return as the Unseen Ones.
+              They escape the Dragonrise,
+              return to battle the Seers,
+              and later emerge in human history
+              as the Unseen Ones.
             </p>
-
           </div>
-
-
           <div class="race-card">
-
             <p class="race-card-label">
               Forgotten
             </p>
-
             <h3>
               Guardians
             </h3>
-
             <p>
               They become closely tied
               to Glint, prophecy,
               and Ascension.
             </p>
-
           </div>
-
-
           <div class="race-card">
-
             <p class="race-card-label">
               Dwarves
             </p>
-
             <h3>
               Rebuilding
             </h3>
-
             <p>
               They establish new kingdoms
               and remain an active civilization
               for thousands of years.
             </p>
-
           </div>
-
-
           <div class="race-card">
-
             <p class="race-card-label">
               Jotun
             </p>
-
             <h3>
               Decline
             </h3>
-
             <p>
               Their people survive,
-              but most of their ancient
-              civilization and knowledge are lost.
+              but much of their ancient
+              civilization and knowledge is lost.
             </p>
-
           </div>
-
         </div>
-
       </section>
-
-
       <!-- =========================
            HANDOFF
       ========================== -->
-
       <section
         class="history-section"
         data-position="100"
         data-date="Before 786 BE"
         data-context="YOU ARE HERE // A New Age Approaches"
       >
-
         <p class="history-label">
-          Record 09 // The End of the Elder Age
+          Record 11 // The End of the Elder Age
         </p>
-
         <h2>
-          The world is about to change again
+          The center of history begins to shift
         </h2>
-
         <p>
-          For thousands of years,
-          these ancient peoples carried
-          the memory of the older world.
+          The Elder Races had survived
+          a world dominated by dragons.
         </p>
-
         <p>
-          Some remained visible.
-          Others disappeared into legend.
+          Some rebuilt.
+          Some declined.
+          Some nearly disappeared.
         </p>
-
         <p>
-          Then powerful beings arrived
-          from the <strong>Mists</strong>.
+          Their artifacts,
+          wars,
+          and unfinished histories
+          remained buried across Tyria.
         </p>
-
         <p>
-          With them came humanity.
+          Then the
+          <strong>Six Human Gods</strong>
+          entered Tyria from the Mists.
         </p>
-
         <p>
-          The center of recorded history
-          was about to shift.
+          Humanity was brought
+          from a world beyond Tyria,
+          and another great age
+          of history began.
         </p>
-
       </section>
-
-
       <!-- =========================
            NEXT ENTRY
       ========================== -->
-
       <section class="page-navigation">
-
         <p class="navigation-label">
           Continue the Road Through Time
         </p>
-
         <h2>
           Gods and Humanity
         </h2>
-
         <p>
-          The elder peoples belonged
+          The Elder Races belonged
           to a world shaped by dragons.
         </p>
-
         <p>
-          The next age begins
-          when beings from the Mists
-          enter Tyria and humanity
-          begins spreading across
-          the known world.
+          The next archive follows
+          the arrival of the Six Gods,
+          humanity's entrance into Tyria,
+          and the rise of the first
+          firmly dated human civilizations.
         </p>
-
-
         <div class="navigation-actions">
-
           <a
             href="../ancient-dragonrises/index.html"
             class="button"
           >
             ← Ancient Dragonrises
           </a>
-
           <a
             href="../index.html"
             class="button"
           >
             Road Through Time
           </a>
-
           <a
             href="../gods-and-humanity/index.html"
             class="button button-primary"
           >
             Gods and Humanity →
           </a>
-
         </div>
-
       </section>
-
     </div>
-
   </main>
-
-
   <!-- =========================
        FOOTER
   ========================== -->
-
   <footer>
-
     <div class="container">
-
       Guild Wars Living Lore Library is an unofficial fan lore project.
       Guild Wars, Guild Wars 2, ArenaNet, NCSOFT,
       and related properties belong to their respective owners.
-
     </div>
-
   </footer>
-
-
   <!-- =========================
        HISTORICAL POSITION SCRIPT
   ========================== -->
-
   <script>
     (() => {
       "use strict";
-
       const sections =
         document.querySelectorAll(
           ".history-section[data-position]"
         );
-
       const marker =
         document.getElementById("historyMarker");
-
       const currentDate =
         document.getElementById("currentDate");
-
       const positionContext =
         document.getElementById("positionContext");
-
-
       const updatePosition = (section) => {
-
         const position =
           section.dataset.position || "5";
-
         const date =
           section.dataset.date || "Ancient Era";
-
         const context =
           section.dataset.context || "YOU ARE HERE";
-
         marker.style.left = `${position}%`;
-
         currentDate.textContent = date;
-
         positionContext.textContent = context;
       };
-
-
       const observer =
         new IntersectionObserver(
           (entries) => {
-
             const visible =
               entries
                 .filter(
@@ -1656,20 +1376,15 @@
                     b.intersectionRatio -
                     a.intersectionRatio
                 );
-
             if (visible.length > 0) {
-
               updatePosition(
                 visible[0].target
               );
-
             }
-
           },
           {
             rootMargin:
               "-35% 0px -45% 0px",
-
             threshold: [
               0,
               0.15,
@@ -1679,16 +1394,12 @@
             ]
           }
         );
-
-
       sections.forEach(
         (section) => {
           observer.observe(section);
         }
       );
-
     })();
   </script>
-
 </body>
 </html>
