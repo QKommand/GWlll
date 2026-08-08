@@ -23,7 +23,6 @@
 
       --background: #020617;
       --panel: #0f172a;
-      --panel-hover: #162033;
       --border: #374151;
 
       --gold: #f4c76b;
@@ -77,7 +76,9 @@
       margin-inline: auto;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     .site-header {
       position: sticky;
@@ -144,7 +145,9 @@
       transform: translateX(-3px);
     }
 
-    /* HISTORY POSITION */
+    /* =========================
+       HISTORICAL POSITION
+    ========================= */
 
     .history-position {
       position: sticky;
@@ -209,12 +212,13 @@
 
       height: 1px;
 
-      background: linear-gradient(
-        to right,
-        rgba(244, 199, 107, 0.25),
-        rgba(244, 199, 107, 0.9),
-        rgba(244, 199, 107, 0.25)
-      );
+      background:
+        linear-gradient(
+          to right,
+          rgba(244, 199, 107, 0.25),
+          rgba(244, 199, 107, 0.9),
+          rgba(244, 199, 107, 0.25)
+        );
     }
 
     .history-point {
@@ -249,7 +253,7 @@
       position: absolute;
 
       top: -1px;
-      left: 6%;
+      left: 5%;
 
       width: 17px;
       height: 17px;
@@ -288,7 +292,9 @@
       text-align: center;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       padding: 72px 0 56px;
@@ -343,7 +349,9 @@
       line-height: 1.9;
     }
 
-    /* ARCHIVE NOTE */
+    /* =========================
+       ARCHIVE NOTE
+    ========================= */
 
     .archive-note {
       margin-bottom: 55px;
@@ -369,10 +377,11 @@
 
     .archive-note p:last-child {
       margin: 12px 0 0;
-      color: var(--white);
     }
 
-    /* HISTORY */
+    /* =========================
+       HISTORY
+    ========================= */
 
     .history-section {
       padding: 36px 0;
@@ -403,6 +412,7 @@
 
     .history-section p {
       margin: 16px 0 0;
+
       color: var(--white);
     }
 
@@ -435,9 +445,11 @@
       margin: 8px 0 0;
     }
 
-    /* DRAGON GRID */
+    /* =========================
+       IMPACT GRID
+    ========================= */
 
-    .dragon-grid {
+    .impact-grid {
       margin-top: 24px;
 
       display: grid;
@@ -446,16 +458,16 @@
       gap: 14px;
     }
 
-    .dragon-card {
+    .impact-card {
       padding: 20px;
 
       border: 1px solid var(--border);
       border-radius: 10px;
 
-      background: rgba(15, 23, 42, 0.78);
+      background: rgba(15, 23, 42, 0.76);
     }
 
-    .dragon-card-label {
+    .impact-card-label {
       margin: 0;
 
       color: var(--white);
@@ -467,7 +479,7 @@
       text-transform: uppercase;
     }
 
-    .dragon-card h3 {
+    .impact-card h3 {
       margin: 7px 0 0;
 
       color: var(--gold);
@@ -475,77 +487,15 @@
       font-size: 1.05rem;
     }
 
-    .dragon-card p:last-child {
+    .impact-card p:last-child {
       margin: 8px 0 0;
-
-      color: var(--white);
 
       font-size: 0.9rem;
     }
 
-    /* KEY RECORDS */
-
-    .key-records {
-      padding: 42px 0;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .key-records h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.8rem;
-    }
-
-    .key-grid {
-      margin-top: 24px;
-
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-
-      gap: 14px;
-    }
-
-    .key-card {
-      padding: 20px;
-
-      border: 1px solid var(--border);
-      border-radius: 10px;
-
-      background: rgba(15, 23, 42, 0.76);
-    }
-
-    .key-card-label {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.63rem;
-
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .key-card h3 {
-      margin: 7px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1rem;
-    }
-
-    .key-card p:last-child {
-      margin: 8px 0 0;
-
-      color: var(--white);
-
-      font-size: 0.9rem;
-    }
-
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .page-navigation {
       padding: 45px 0 80px;
@@ -575,8 +525,6 @@
 
     .page-navigation p {
       margin: 13px 0 0;
-
-      color: var(--white);
     }
 
     .navigation-actions {
@@ -615,28 +563,23 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color: rgba(244, 199, 107, 0.6);
+      border-color:
+        rgba(244, 199, 107, 0.6);
+
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
+      border-color:
+        rgba(244, 199, 107, 0.45);
 
-      background: rgba(244, 199, 107, 0.1);
+      background:
+        rgba(244, 199, 107, 0.1);
     }
 
-    .pending {
-      opacity: 0.65;
-      cursor: default;
-    }
-
-    .pending:hover {
-      transform: none;
-      border-color: var(--border);
-      color: var(--gold);
-    }
-
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 30px 0;
@@ -649,7 +592,9 @@
       font-size: 0.75rem;
     }
 
-    /* ANIMATION */
+    /* =========================
+       ANIMATION
+    ========================= */
 
     @keyframes goldPulse {
       0%,
@@ -669,7 +614,9 @@
       }
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 650px) {
       html {
@@ -724,8 +671,7 @@
         font-size: 1rem;
       }
 
-      .dragon-grid,
-      .key-grid {
+      .impact-grid {
         grid-template-columns: 1fr;
       }
 
@@ -755,7 +701,9 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="site-header">
 
@@ -780,7 +728,7 @@
         href="../index.html"
         class="home-link"
       >
-        ← Main Homepage
+        ← Road Through Time
       </a>
 
     </div>
@@ -788,7 +736,9 @@
   </header>
 
 
-  <!-- YOU ARE HERE -->
+  <!-- =========================
+       HISTORICAL POSITION
+  ========================== -->
 
   <aside class="history-position">
 
@@ -804,10 +754,11 @@
           class="current-date"
           id="currentDate"
         >
-          1078 AE
+          1080 AE
         </p>
 
       </div>
+
 
       <div class="history-rail">
 
@@ -824,19 +775,23 @@
 
       </div>
 
+
       <div class="rail-labels">
 
-        <span>1078 AE</span>
+        <span>1080 AE</span>
+
         <span>1219 AE</span>
+
         <span>1320 AE</span>
 
       </div>
+
 
       <p
         class="position-context"
         id="positionContext"
       >
-        YOU ARE HERE // Primordus Stirs
+        YOU ARE HERE // The Old World Begins to Change
       </p>
 
     </div>
@@ -846,7 +801,9 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero">
 
@@ -861,22 +818,21 @@
         </h1>
 
         <p class="hero-date">
-          1078 AE – 1320 AE
+          1080 AE – 1320 AE
         </p>
 
         <p class="hero-text">
-          For thousands of years, the Elder Dragons had existed mostly
-          as ruins, legends, and warnings from peoples whose civilizations
-          had already faded.
+          The heroes of the Guild Wars era had defeated gods,
+          liches, Titans, and ancient prophecies.
         </p>
 
         <p class="hero-text">
-          Then the earth shook.
+          None of those victories stopped what was waking beneath them.
         </p>
 
         <p class="hero-text">
-          Over the next two centuries, the ancient cycle returned and
-          reshaped nearly every corner of Tyria.
+          Over the next two and a half centuries, the Elder Dragons
+          returned one by one and remade the map of Tyria.
         </p>
 
       </div>
@@ -886,7 +842,9 @@
 
     <div class="container">
 
-      <!-- ARCHIVE NOTE -->
+      <!-- =========================
+           ARCHIVE NOTE
+      ========================== -->
 
       <div class="archive-note">
 
@@ -895,61 +853,66 @@
         </p>
 
         <p>
-          This era bridges Guild Wars and Guild Wars 2. The world encountered
-          in Guild Wars 2 exists because these awakenings displaced entire
-          peoples, destroyed cities, changed coastlines, and forced old enemies
-          into new relationships.
+          Eye of the North already revealed the Destroyers and Primordus
+          beginning to stir. This archive starts after that warning.
+          Its focus is the long transformation between Guild Wars and
+          Guild Wars 2: migrations, destroyed civilizations, new cities,
+          and the full return of the Elder Dragon cycle.
         </p>
 
       </div>
 
 
-      <!-- 01 -->
+      <!-- =========================
+           RECORD 01
+      ========================== -->
 
       <section
         class="history-section"
         data-position="5"
-        data-date="1078 AE"
-        data-context="YOU ARE HERE // Primordus Stirs Beneath Tyria"
+        data-date="1080–1090 AE"
+        data-context="YOU ARE HERE // The Old Wars Continue"
       >
 
         <p class="history-label">
-          Record 01 // The First Warning
+          Record 01 // A World in Transition
         </p>
 
         <h2>
-          Primordus begins to stir
+          The old conflicts have not disappeared yet
         </h2>
 
         <p>
-          During the events surrounding the Great Destroyer in
-          <strong>1078 AE</strong>, the Elder Dragon
-          <strong>Primordus</strong> began stirring beneath Tyria.
+          The years immediately after the Guild Wars era were still shaped
+          by unresolved mortal conflicts.
         </p>
 
         <p>
-          The Great Destroyer was defeated before Primordus could fully
-          awaken.
+          In Ascalon, humans and charr continued fighting.
         </p>
 
         <p>
-          The victory bought Tyria time.
+          The <strong>Ebon Vanguard</strong> withdrew south and fortified
+          <strong>Ebonhawke</strong>.
         </p>
 
         <p>
-          It did not stop the Dragonrise.
+          In <strong>1090 AE</strong>, the charr finally captured
+          Ascalon City.
         </p>
 
       </section>
 
 
-      <!-- 02 -->
+      <!-- =========================
+           RECORD 02
+      ========================== -->
 
       <section
         class="history-section"
         data-position="12"
         data-date="1090 AE"
-        data-context="YOU ARE HERE // Ascalon Falls to the Charr"
+        data-context="YOU ARE HERE // The Foefire"
       >
 
         <p class="history-label">
@@ -957,80 +920,80 @@
         </p>
 
         <h2>
-          Ascalon's last king refuses to surrender
+          Ascalon survives as ghosts
         </h2>
 
         <p>
-          In <strong>1090 AE</strong>, the charr High Legions finally
-          broke into Ascalon City.
-        </p>
-
-        <p>
-          King <strong>Adelbern</strong> unleashed the
+          Facing defeat, <strong>King Adelbern</strong> unleashed the
           <strong>Foefire</strong>.
         </p>
 
         <p>
-          The spell killed the remaining human defenders and transformed
-          many of them into ghosts bound to Ascalon.
+          The spell killed the remaining humans within Ascalon City
+          and transformed many of them into spectral defenders.
         </p>
 
         <p>
-          The charr reclaimed the city.
+          Human rule over Ascalon had effectively ended.
         </p>
 
         <p>
-          But the war left a supernatural scar across the land.
+          The charr reclaimed the region, but inherited a land haunted
+          by the war that had consumed it.
         </p>
 
       </section>
 
 
-      <!-- 03 -->
+      <!-- =========================
+           RECORD 03
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="18"
-        data-date="1105–1116 AE"
-        data-context="YOU ARE HERE // Modern Tyria Begins Taking Shape"
+        data-position="20"
+        data-date="1112–1116 AE"
+        data-context="YOU ARE HERE // Charr Society Changes"
       >
 
         <p class="history-label">
-          Record 03 // A New Order
+          Record 03 // The Charr Rebuild
         </p>
 
         <h2>
-          Institutions rise from the old world
+          A new charr civilization rises
         </h2>
 
         <p>
-          In <strong>1105 AE</strong>, the
-          <strong>Durmand Priory</strong> was established in the Shiverpeaks.
-        </p>
-
-        <p>
-          New Krytan became a central written language.
-        </p>
-
-        <p>
-          In <strong>1112 AE</strong>, the charr constructed the
+          In <strong>1112 AE</strong>, the charr erected the
           <strong>Black Citadel</strong> over the ruins of Rin.
         </p>
 
         <p>
-          In <strong>1116 AE</strong>,
-          <strong>Kalla Scorchrazor</strong> led the rebellion that broke
-          the Flame Legion shaman caste's control over charr society.
+          Four years later,
+          <strong>Kalla Scorchrazor</strong> led a rebellion against
+          the Flame Legion's shaman caste.
+        </p>
+
+        <p>
+          The rebellion helped break the religious control that had
+          dominated charr society.
+        </p>
+
+        <p>
+          The modern High Legions began taking shape.
         </p>
 
       </section>
 
 
-      <!-- 04 -->
+      <!-- =========================
+           RECORD 04
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="25"
+        data-position="29"
         data-date="1120 AE"
         data-context="YOU ARE HERE // Primordus Awakens"
       >
@@ -1045,288 +1008,247 @@
 
         <p>
           In <strong>1120 AE</strong>,
-          <strong>Primordus awakened</strong>.
+          <strong>Primordus</strong> awakened beneath Tyria.
         </p>
 
         <p>
-          Destroyers spread throughout the Depths of Tyria.
+          Destroyers spread through the underground world.
         </p>
 
         <p>
-          Underground civilizations were forced toward the surface.
+          The great subterranean cities of the
+          <strong>asura</strong> fell.
         </p>
 
         <p>
-          The asura lost their great subterranean cities, and both
-          <strong>asura and skritt</strong> began appearing throughout
-          the surface world.
+          Asura and skritt populations were forced toward the surface.
         </p>
 
         <p>
-          The transformed dwarves continued their war against Primordus
-          beneath the earth.
+          The dragon's movements also increased volcanic activity
+          around Mount Maelstrom and surrounding regions.
         </p>
 
       </section>
 
 
-      <!-- 05 -->
-
-      <section
-        class="history-section"
-        data-position="30"
-        data-date="1125 AE"
-        data-context="YOU ARE HERE // The Dwarven Transformation Is Completed"
-      >
-
-        <p class="history-label">
-          Record 05 // The Last Dwarves
-        </p>
-
-        <h2>
-          An ancient civilization leaves the surface world
-        </h2>
-
-        <p>
-          By <strong>1125 AE</strong>, the last known dwarves had undergone
-          the transformation into stone.
-        </p>
-
-        <p>
-          The dwarves continued fighting Destroyers in the depths,
-          but their old kingdoms and ordinary society disappeared.
-        </p>
-
-        <p>
-          One of the elder races that had survived the previous
-          Dragonrise had now transformed itself to face the next one.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            The Cycle Returns
-          </p>
-
-          <p>
-            The same ancient race that remembered earlier Dragonrises
-            became one of the first civilizations consumed by the new cycle.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- 06 -->
+      <!-- =========================
+           RECORD 05
+      ========================== -->
 
       <section
         class="history-section"
         data-position="36"
-        data-date="1127–1135 AE"
-        data-context="YOU ARE HERE // Cantha Closes and Elona Falls"
+        data-date="1125 AE"
+        data-context="YOU ARE HERE // The Dwarves Disappear Into the Depths"
       >
 
         <p class="history-label">
-          Record 06 // Distant Nations Change
+          Record 05 // The Dwarves
         </p>
 
         <h2>
-          Tyria begins losing contact with the wider world
+          The last dwarves become stone
         </h2>
 
         <p>
-          In <strong>1127 AE</strong>,
-          Emperor <strong>Usoku</strong> began campaigns to fully unify
-          Cantha under imperial rule.
+          The transformation begun during the Destroyer crisis eventually
+          reached the remaining dwarves.
         </p>
 
         <p>
-          Kurzick and Luxon independence was crushed, while non-humans
-          and political enemies were purged.
+          By <strong>1125 AE</strong>, the last known dwarves had
+          become stone.
         </p>
 
         <p>
-          In <strong>1135 AE</strong>,
-          <strong>Palawa Joko</strong> began his successful conquest
-          of Elona.
-        </p>
-
-        <p>
-          He redirected the River Elon and expanded his Awakened forces.
+          Their people continued fighting Primordus below the surface,
+          but dwarven civilization largely disappeared from the world above.
         </p>
 
       </section>
 
 
-      <!-- 07 -->
+      <!-- =========================
+           RECORD 06
+      ========================== -->
 
       <section
         class="history-section"
         data-position="43"
-        data-date="1165 AE"
-        data-context="YOU ARE HERE // Jormag Awakens"
+        data-date="1127 AE"
+        data-context="YOU ARE HERE // Cantha Turns Inward"
       >
 
         <p class="history-label">
-          Record 07 // Jormag
+          Record 06 // Emperor Usoku
         </p>
 
         <h2>
-          Winter consumes the north
+          Cantha is forcibly unified
         </h2>
 
         <p>
-          In <strong>1165 AE</strong>,
-          <strong>Jormag</strong>, the Elder Dragon of Ice, awakened.
+          In <strong>1127 AE</strong>,
+          <strong>Emperor Usoku</strong> began a campaign to bring
+          the Luxons and Kurzicks fully under imperial control.
         </p>
 
         <p>
-          A massive snowstorm continued for four years.
+          The empire was reunified through force.
         </p>
 
         <p>
-          Jormag's Icebrood expanded across the Far Shiverpeaks while
-          several Spirits of the Wild disappeared.
+          Political enemies and non-human populations were increasingly
+          targeted as Cantha turned inward.
         </p>
 
         <p>
-          Norn and kodan settlements were devastated.
+          Contact with the wider world became more difficult.
         </p>
 
       </section>
 
 
-      <!-- 08 -->
+      <!-- =========================
+           RECORD 07
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="48"
-        data-date="1169 AE"
-        data-context="YOU ARE HERE // The Norn Flee South"
-      >
-
-        <p class="history-label">
-          Record 08 // The Norn Exodus
-        </p>
-
-        <h2>
-          Hoelbrak becomes a new home
-        </h2>
-
-        <p>
-          After years of losses against Jormag's forces, the
-          <strong>norn abandoned the Far Shiverpeaks</strong>.
-        </p>
-
-        <p>
-          They migrated south into the Shiverpeak Mountains.
-        </p>
-
-        <p>
-          In <strong>1169 AE</strong>, they established
-          <strong>Hoelbrak</strong>.
-        </p>
-
-        <p>
-          What later appeared to outsiders as the traditional norn homeland
-          was actually a refuge created by the awakening of an Elder Dragon.
-        </p>
-
-      </section>
-
-
-      <!-- 09 -->
-
-      <section
-        class="history-section"
-        data-position="53"
-        data-date="1175 AE"
+        data-position="50"
+        data-date="1135–1175 AE"
         data-context="YOU ARE HERE // Palawa Joko Conquers Elona"
       >
 
         <p class="history-label">
-          Record 09 // The Fall of Elona
+          Record 07 // Joko's Elona
         </p>
 
         <h2>
-          Palawa Joko finishes what he began centuries earlier
+          The Scourge of Vabbi returns
         </h2>
 
         <p>
-          In <strong>1175 AE</strong>,
-          <strong>Elona fell to Palawa Joko</strong>.
+          In <strong>1135 AE</strong>, Palawa Joko began another
+          campaign against Elona.
         </p>
 
         <p>
-          The Order of the Sunspears was largely destroyed.
+          He redirected the
+          <strong>River Elon</strong>, transforming the landscape
+          of the Crystal Desert and cutting regions off from water.
         </p>
 
         <p>
-          Joko's Awakened regime took control of the nation and would
-          remain in power for generations.
+          By <strong>1175 AE</strong>, Elona had fallen under his rule.
         </p>
 
         <p>
-          Elona effectively disappeared from the political world known
-          to Central Tyria.
+          The Sunspears were hunted down or forced into hiding.
         </p>
 
       </section>
 
 
-      <!-- 10 -->
+      <!-- =========================
+           RECORD 08
+      ========================== -->
 
       <section
         class="history-section"
         data-position="58"
-        data-date="1180 AE"
-        data-context="YOU ARE HERE // Ventari Leaves His Tablet"
+        data-date="1165–1169 AE"
+        data-context="YOU ARE HERE // Jormag Awakens"
       >
 
         <p class="history-label">
-          Record 10 // A Quiet Legacy
+          Record 08 // Jormag
         </p>
 
         <h2>
-          Ventari leaves behind an idea
+          The north freezes
         </h2>
 
         <p>
-          In <strong>1180 AE</strong>, the centaur
-          <strong>Ventari</strong> died beside the Pale Tree.
+          In <strong>1165 AE</strong>,
+          <strong>Jormag</strong> awakened in the Far Shiverpeaks.
         </p>
 
         <p>
-          He left behind the
-          <strong>Ventari Tablet</strong>, containing principles of peace
-          and coexistence.
+          A massive blizzard lasted for years.
         </p>
 
         <p>
-          At the time, this seemed like a small event compared with the
-          Dragonrise.
+          Norn settlements were overwhelmed, and several Spirits of the Wild
+          disappeared during the conflict.
         </p>
 
         <p>
-          More than a century later, an entirely new people would build
-          much of their culture around those teachings.
+          By <strong>1169 AE</strong>, surviving norn had migrated south
+          and established <strong>Hoelbrak</strong>.
         </p>
 
       </section>
 
 
-      <!-- 11 -->
+      <!-- =========================
+           RECORD 09
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="66"
+        data-position="64"
+        data-date="1180–1304 AE"
+        data-context="YOU ARE HERE // New Peoples Take Their Place"
+      >
+
+        <p class="history-label">
+          Record 09 // New Generations
+        </p>
+
+        <h2>
+          The world keeps growing between disasters
+        </h2>
+
+        <p>
+          Not every major change came from destruction.
+        </p>
+
+        <p>
+          The <strong>Pale Tree</strong> continued growing along
+          the Tarnished Coast.
+        </p>
+
+        <p>
+          In <strong>1302 AE</strong>, the first
+          <strong>sylvari</strong> awakened.
+        </p>
+
+        <p>
+          Two years later, the Secondborn followed.
+        </p>
+
+        <p>
+          A completely new people had entered Tyrian history.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 10
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="70"
         data-date="1219 AE"
         data-context="YOU ARE HERE // Zhaitan Awakens"
       >
 
         <p class="history-label">
-          Record 11 // Zhaitan
+          Record 10 // Zhaitan
         </p>
 
         <h2>
@@ -1335,92 +1257,84 @@
 
         <p>
           In <strong>1219 AE</strong>,
-          <strong>Zhaitan awakened</strong> beneath the sunken kingdom
-          of Orr.
+          <strong>Zhaitan</strong> awakened beneath Orr.
         </p>
 
         <p>
-          The entire peninsula rose from the depths of the Sea of Sorrows.
+          The sunken peninsula rose from the
+          <strong>Sea of Sorrows</strong>.
         </p>
 
         <p>
-          The resulting tsunami destroyed
-          <strong>old Lion's Arch</strong> and devastated coastlines across
-          the region.
+          The event caused enormous waves that destroyed
+          <strong>old Lion's Arch</strong>.
         </p>
 
         <p>
-          Zhaitan's Risen began spreading from Orr across nearby waters
-          and settlements.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Ancient Echo
-          </p>
-
-          <p>
-            Thousands of years earlier, the elder races had attempted
-            to destroy Zhaitan and failed. Now the same dragon had returned
-            beneath the ruins of one of humanity's greatest kingdoms.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- 12 -->
-
-      <section
-        class="history-section"
-        data-position="71"
-        data-date="1219 AE"
-        data-context="YOU ARE HERE // Cantha Is Struck by Zhaitan's Tsunami"
-      >
-
-        <p class="history-label">
-          Record 12 // The Ocean Changes
-        </p>
-
-        <h2>
-          The dragon's awakening reaches Cantha
-        </h2>
-
-        <p>
-          Zhaitan's Great Tsunami crossed the ocean and destroyed
-          <strong>Old Kaineng</strong>.
-        </p>
-
-        <p>
-          Kuunavang called upon
-          <strong>Soo-Won</strong> to leave the depths and defend Cantha.
-        </p>
-
-        <p>
-          Around this period, tengu fought their way through Risen forces
-          and established the <strong>Dominion of Winds</strong>.
+          Zhaitan's Risen spread across nearby waters and coastlines,
+          turning travel through the region into a constant danger.
         </p>
 
       </section>
 
 
-      <!-- 13 -->
+      <!-- =========================
+           RECORD 11
+      ========================== -->
 
       <section
         class="history-section"
         data-position="76"
+        data-date="1219 AE"
+        data-context="YOU ARE HERE // The World Is Cut Apart"
+      >
+
+        <p class="history-label">
+          Record 11 // The Great Tsunami
+        </p>
+
+        <h2>
+          Zhaitan's awakening reaches across the ocean
+        </h2>
+
+        <p>
+          The tsunami caused by Orr's rising did not stop at Central Tyria.
+        </p>
+
+        <p>
+          It reached Cantha and destroyed
+          <strong>Old Kaineng</strong>.
+        </p>
+
+        <p>
+          Maritime routes became increasingly dangerous.
+        </p>
+
+        <p>
+          Combined with political isolation and Dragon activity,
+          contact between continents continued to weaken.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 12
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="81"
         data-date="1220–1230 AE"
         data-context="YOU ARE HERE // New Cities Rise"
       >
 
         <p class="history-label">
-          Record 13 // Rebuilding
+          Record 12 // Rebuilding
         </p>
 
         <h2>
-          Survivors build around the disasters
+          Survivors build around the new world
         </h2>
 
         <p>
@@ -1429,112 +1343,86 @@
         </p>
 
         <p>
-          Over the following decade, pirates and corsairs occupied the
-          drying ruins of old Lion's Arch.
+          A decade later, pirates and sailors began settling the ruins
+          around old Lion's Arch.
         </p>
 
         <p>
-          Cobiah Marriner eventually helped rebuild the settlement as a
-          free city.
-        </p>
-
-        <p>
-          The modern political map of Central Tyria was beginning to emerge.
+          <strong>Cobiah Marriner</strong> helped rebuild the city
+          into the multiracial Lion's Arch known in the modern age.
         </p>
 
       </section>
 
 
-      <!-- 14 -->
+      <!-- =========================
+           RECORD 13
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="81"
+        data-position="86"
         data-date="1270–1275 AE"
         data-context="YOU ARE HERE // Refugees Reach Central Tyria"
       >
 
         <p class="history-label">
-          Record 14 // Displacement
+          Record 13 // Displacement
         </p>
 
         <h2>
-          Dragonrise becomes migration
+          Dragon activity moves entire peoples
         </h2>
 
         <p>
-          By <strong>1270 AE</strong>, danger in the deep ocean had driven
-          peoples such as the <strong>quaggan and krait</strong> toward
-          the shores of Tyria.
+          Threats in the Unending Ocean forced
+          <strong>quaggans</strong> and <strong>krait</strong>
+          toward Central Tyria.
         </p>
 
         <p>
-          Refugees from conquered Elona also settled in
+          Refugees from Joko's Elona settled in
           <strong>Divinity's Reach</strong>.
         </p>
 
         <p>
-          The Dragonrise was no longer something happening in distant lands.
+          The modern population of Central Tyria was increasingly shaped
+          by peoples who had been pushed from their original homes.
         </p>
 
-        <p>
-          It was changing who lived where, who became neighbors, and which
-          peoples were forced into conflict.
-        </p>
+        <div class="record-box">
+
+          <p class="record-box-label">
+            The World of Guild Wars 2
+          </p>
+
+          <p>
+            Many races encountered throughout Guild Wars 2 are living where
+            they do because the Dragonrise displaced them.
+          </p>
+
+        </div>
 
       </section>
 
 
-      <!-- 15 -->
+      <!-- =========================
+           RECORD 14
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="87"
-        data-date="1302 AE"
-        data-context="YOU ARE HERE // The Sylvari Awaken"
-      >
-
-        <p class="history-label">
-          Record 15 // A New People
-        </p>
-
-        <h2>
-          The sylvari appear
-        </h2>
-
-        <p>
-          In <strong>1302 AE</strong>, the first
-          <strong>sylvari</strong> awakened from the Pale Tree.
-        </p>
-
-        <p>
-          They emerged into a world already shaped by Elder Dragon
-          awakenings, ancient wars, and refugee migrations.
-        </p>
-
-        <p>
-          Guided by the Pale Tree and the teachings of Ventari's Tablet,
-          the sylvari quickly became one of Central Tyria's major peoples.
-        </p>
-
-      </section>
-
-
-      <!-- 16 -->
-
-      <section
-        class="history-section"
-        data-position="92"
+        data-position="91"
         data-date="1319 AE"
         data-context="YOU ARE HERE // Destiny's Edge Forms"
       >
 
         <p class="history-label">
-          Record 16 // Destiny's Edge
+          Record 14 // Destiny's Edge
         </p>
 
         <h2>
-          Champions begin fighting the dragons directly
+          A new generation begins fighting back
         </h2>
 
         <p>
@@ -1544,121 +1432,123 @@
 
         <p>
           The group defeated several powerful dragon champions,
-          including Jormag's Dragonspawn.
+          including Jormag's champion known as the Dragonspawn.
         </p>
 
         <p>
-          For a brief time, they represented the possibility that
-          small groups of exceptional fighters could strike directly
-          at the Elder Dragon threat.
+          For the first time in generations, a small group of heroes
+          demonstrated that Elder Dragon forces could be challenged directly.
         </p>
 
       </section>
 
 
-      <!-- 17 -->
+      <!-- =========================
+           RECORD 15
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="97"
+        data-position="96"
         data-date="1320 AE"
         data-context="YOU ARE HERE // Kralkatorrik Awakens"
       >
 
         <p class="history-label">
-          Record 17 // Kralkatorrik
+          Record 15 // Kralkatorrik
         </p>
 
         <h2>
-          The Crystal Dragon crosses Tyria
+          The Crystal Dragon crosses Ascalon
         </h2>
 
         <p>
           In <strong>1320 AE</strong>,
-          <strong>Kralkatorrik awakened</strong>.
+          <strong>Kralkatorrik</strong> awakened.
         </p>
 
         <p>
-          The Elder Dragon flew south across Ascalon toward the
-          Crystal Desert.
+          Its flight south carved the
+          <strong>Dragonbrand</strong> across Ascalon and toward
+          the Crystal Desert.
         </p>
 
         <p>
-          Everything caught beneath its path was transformed by its
-          corruption, creating the enormous scar known as the
-          <strong>Dragonbrand</strong>.
+          Living creatures and landscapes caught within the Brand
+          were transformed into crystalline servants.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 16
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="100"
+        data-date="1320 AE"
+        data-context="YOU ARE HERE // Glint Falls"
+      >
+
+        <p class="history-label">
+          Record 16 // The Breaking of Destiny's Edge
+        </p>
+
+        <h2>
+          Glint dies fighting her former master
+        </h2>
+
+        <p>
+          Destiny's Edge confronted Kralkatorrik with the help of
+          <strong>Glint</strong>.
         </p>
 
         <p>
-          Destiny's Edge attempted to confront Kralkatorrik with the
-          help of <strong>Glint</strong>.
+          The battle failed.
         </p>
 
         <p>
           Glint was killed.
         </p>
 
-      </section>
-
-
-      <!-- 18 -->
-
-      <section
-        class="history-section"
-        data-position="100"
-        data-date="1320 AE"
-        data-context="YOU ARE HERE // The World of Guild Wars 2 Takes Shape"
-      >
-
-        <p class="history-label">
-          Record 18 // The Eve of Guild Wars 2
-        </p>
-
-        <h2>
-          Tyria enters the modern Dragonrise
-        </h2>
-
         <p>
-          By <strong>1320 AE</strong>, multiple Elder Dragons were awake.
+          Destiny's Edge fractured in the aftermath.
         </p>
 
         <p>
-          Primordus ruled the depths.
-          Jormag held much of the north.
-          Zhaitan commanded Orr.
-          Kralkatorrik had carved a corrupted path across the continent.
+          Two years later, Tyria would still be living under the shadow
+          of multiple awakened Elder Dragons.
         </p>
 
         <p>
-          Nations had survived largely by adapting around the dragons,
-          not defeating them.
-        </p>
-
-        <p>
-          Five years later, a new generation of heroes would begin
-          changing that equation.
+          Then a new generation of heroes would enter the story.
         </p>
 
       </section>
 
 
-      <!-- DRAGONS INDEX -->
+      <!-- =========================
+           IMPACT INDEX
+      ========================== -->
 
-      <section class="key-records">
+      <section class="history-section">
 
         <p class="history-label">
           Dragonrise Index
         </p>
 
         <h2>
-          Elder Dragons of This Era
+          How the World Changed
         </h2>
 
-        <div class="dragon-grid">
 
-          <div class="dragon-card">
+        <div class="impact-grid">
 
-            <p class="dragon-card-label">
+          <div class="impact-card">
+
+            <p class="impact-card-label">
               1120 AE
             </p>
 
@@ -1667,16 +1557,16 @@
             </h3>
 
             <p>
-              Awakens beneath Tyria and drives underground civilizations
-              toward the surface.
+              Destroyed subterranean civilizations and forced the asura
+              and other underground peoples toward the surface.
             </p>
 
           </div>
 
 
-          <div class="dragon-card">
+          <div class="impact-card">
 
-            <p class="dragon-card-label">
+            <p class="impact-card-label">
               1165 AE
             </p>
 
@@ -1685,15 +1575,16 @@
             </h3>
 
             <p>
-              Awakens in the north and forces the norn and kodan south.
+              Devastated the Far Shiverpeaks and forced the norn
+              south toward Hoelbrak.
             </p>
 
           </div>
 
 
-          <div class="dragon-card">
+          <div class="impact-card">
 
-            <p class="dragon-card-label">
+            <p class="impact-card-label">
               1219 AE
             </p>
 
@@ -1702,15 +1593,16 @@
             </h3>
 
             <p>
-              Raises Orr from the sea and unleashes the Risen.
+              Raised Orr, destroyed old Lion's Arch, and spread Risen
+              across the Sea of Sorrows.
             </p>
 
           </div>
 
 
-          <div class="dragon-card">
+          <div class="impact-card">
 
-            <p class="dragon-card-label">
+            <p class="impact-card-label">
               1320 AE
             </p>
 
@@ -1719,7 +1611,43 @@
             </h3>
 
             <p>
-              Creates the Dragonbrand and kills Glint.
+              Created the Dragonbrand and killed Glint.
+            </p>
+
+          </div>
+
+
+          <div class="impact-card">
+
+            <p class="impact-card-label">
+              Migration
+            </p>
+
+            <h3>
+              A Displaced World
+            </h3>
+
+            <p>
+              Norn, asura, quaggans, Elonian refugees, and others were
+              pushed into new lands by Dragon activity and regional crises.
+            </p>
+
+          </div>
+
+
+          <div class="impact-card">
+
+            <p class="impact-card-label">
+              Modern Tyria
+            </p>
+
+            <h3>
+              New Nations
+            </h3>
+
+            <p>
+              Divinity's Reach, modern Lion's Arch, Hoelbrak, Rata Sum,
+              the Grove, and the Black Citadel rose within this changed world.
             </p>
 
           </div>
@@ -1729,127 +1657,9 @@
       </section>
 
 
-      <!-- KEY RECORDS -->
-
-      <section class="key-records">
-
-        <p class="history-label">
-          Archive Index
-        </p>
-
-        <h2>
-          Key Records From This Era
-        </h2>
-
-        <div class="key-grid">
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Charr History
-            </p>
-
-            <h3>
-              Kalla Scorchrazor
-            </h3>
-
-            <p>
-              Leads the rebellion against the Flame Legion shaman caste.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Elona
-            </p>
-
-            <h3>
-              Joko's Conquest
-            </h3>
-
-            <p>
-              Palawa Joko conquers Elona and destroys most of the Sunspears.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Human History
-            </p>
-
-            <h3>
-              Divinity's Reach
-            </h3>
-
-            <p>
-              Founded after Zhaitan's rise and the destruction of old Lion's Arch.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              New Race
-            </p>
-
-            <h3>
-              Sylvari
-            </h3>
-
-            <p>
-              First awaken from the Pale Tree in 1302 AE.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Dragon Hunters
-            </p>
-
-            <h3>
-              Destiny's Edge
-            </h3>
-
-            <p>
-              A famous guild formed to challenge Elder Dragon champions.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              World Scar
-            </p>
-
-            <h3>
-              The Dragonbrand
-            </h3>
-
-            <p>
-              Kralkatorrik's corrupted path across Ascalon and toward Elona.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- NAVIGATION -->
+      <!-- =========================
+           NEXT ERA
+      ========================== -->
 
       <section class="page-navigation">
 
@@ -1862,11 +1672,17 @@
         </h2>
 
         <p>
-          By the beginning of Guild Wars 2, Tyria had spent generations
-          reacting to the Elder Dragons. The next era begins when the
-          Pact forms and mortals stop treating the Dragonrise as something
-          they can only survive.
+          By 1320 AE, the Dragonrise had transformed the world.
+          Entire populations had migrated, old kingdoms had vanished,
+          and four Elder Dragons were awake.
         </p>
+
+        <p>
+          The next archive begins in 1325 AE, when the three great orders
+          of Tyria finally unite and a new figure rises with them:
+          the Pact Commander.
+        </p>
+
 
         <div class="navigation-actions">
 
@@ -1881,14 +1697,15 @@
             href="../index.html"
             class="button"
           >
-            Main Homepage
+            Road Through Time
           </a>
 
-          <span
-            class="button button-primary pending"
+          <a
+            href="../age-of-the-commander/index.html"
+            class="button button-primary"
           >
-            Age of the Commander Coming Next →
-          </span>
+            The Age of the Commander →
+          </a>
 
         </div>
 
@@ -1899,7 +1716,9 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
@@ -1914,14 +1733,18 @@
   </footer>
 
 
-  <!-- HISTORY POSITION SCRIPT -->
+  <!-- =========================
+       HISTORY POSITION SCRIPT
+  ========================== -->
 
   <script>
     (() => {
       "use strict";
 
       const sections =
-        document.querySelectorAll(".history-section");
+        document.querySelectorAll(
+          ".history-section[data-position]"
+        );
 
       const marker =
         document.getElementById("historyMarker");
@@ -1939,7 +1762,7 @@
           section.dataset.position || "5";
 
         const date =
-          section.dataset.date || "1078 AE";
+          section.dataset.date || "1080 AE";
 
         const context =
           section.dataset.context || "YOU ARE HERE";
@@ -1972,9 +1795,11 @@
                 );
 
             if (visible.length > 0) {
+
               updatePosition(
                 visible[0].target
               );
+
             }
 
           },
@@ -1991,6 +1816,7 @@
             ]
           }
         );
+
 
       sections.forEach(
         (section) => {
