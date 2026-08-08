@@ -23,7 +23,6 @@
 
       --background: #020617;
       --panel: #0f172a;
-      --panel-hover: #162033;
       --border: #374151;
 
       --gold: #f4c76b;
@@ -39,7 +38,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 170px;
+      scroll-padding-top: 175px;
     }
 
     body {
@@ -195,13 +194,10 @@
       font-family: monospace;
       font-size: 0.7rem;
       font-weight: 700;
-
-      letter-spacing: 0.08em;
     }
 
     .history-rail {
       position: relative;
-
       height: 26px;
     }
 
@@ -353,6 +349,40 @@
     }
 
     /* =========================
+       CERTAINTY BADGE
+    ========================= */
+
+    .certainty-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 25px;
+    }
+
+    .certainty-badge {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 7px 11px;
+
+      border: 1px solid rgba(244, 199, 107, 0.4);
+      border-radius: 999px;
+
+      background: rgba(244, 199, 107, 0.055);
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.63rem;
+
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
        ARCHIVE NOTE
     ========================= */
 
@@ -415,17 +445,11 @@
 
     .history-section p {
       margin: 16px 0 0;
-
-      color: var(--white);
     }
 
     .history-section strong {
       color: var(--gold-bright);
     }
-
-    /* =========================
-       RECORD BOX
-    ========================= */
 
     .record-box {
       margin-top: 22px;
@@ -453,24 +477,41 @@
     }
 
     /* =========================
-       KEY RECORDS
+       SOURCE STATUS
     ========================= */
 
-    .key-records {
-      padding: 42px 0;
+    .status-box {
+      margin-top: 22px;
+      padding: 18px;
 
-      border-top: 1px solid var(--border);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.72);
     }
 
-    .key-records h2 {
-      margin: 8px 0 0;
+    .status-label {
+      margin: 0 !important;
 
       color: var(--gold);
 
-      font-size: 1.8rem;
+      font-family: monospace;
+      font-size: 0.62rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
     }
 
-    .key-grid {
+    .status-box p:last-child {
+      margin: 8px 0 0;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       GRID
+    ========================= */
+
+    .ancient-grid {
       margin-top: 24px;
 
       display: grid;
@@ -479,7 +520,7 @@
       gap: 14px;
     }
 
-    .key-card {
+    .ancient-card {
       padding: 20px;
 
       border: 1px solid var(--border);
@@ -488,30 +529,28 @@
       background: rgba(15, 23, 42, 0.76);
     }
 
-    .key-card-label {
+    .ancient-card-label {
       margin: 0;
 
       color: var(--white);
 
       font-family: monospace;
-      font-size: 0.63rem;
+      font-size: 0.62rem;
 
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-    .key-card h3 {
+    .ancient-card h3 {
       margin: 7px 0 0;
 
       color: var(--gold);
 
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
 
-    .key-card p:last-child {
+    .ancient-card p:last-child {
       margin: 8px 0 0;
-
-      color: var(--white);
 
       font-size: 0.9rem;
     }
@@ -548,8 +587,6 @@
 
     .page-navigation p {
       margin: 13px 0 0;
-
-      color: var(--white);
     }
 
     .navigation-actions {
@@ -588,43 +625,34 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color: rgba(244, 199, 107, 0.6);
+      border-color:
+        rgba(244, 199, 107, 0.6);
 
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
+      border-color:
+        rgba(244, 199, 107, 0.45);
 
-      background: rgba(244, 199, 107, 0.1);
+      background:
+        rgba(244, 199, 107, 0.1);
     }
-
-    /* =========================
-       FOOTER
-    ========================= */
 
     footer {
       padding: 30px 0;
 
       border-top: 1px solid var(--border);
 
-      color: var(--white);
-
       text-align: center;
       font-size: 0.75rem;
     }
-
-    /* =========================
-       ANIMATIONS
-    ========================= */
 
     @keyframes goldPulse {
       0%,
       100% {
         color: var(--gold);
-
-        text-shadow:
-          0 0 0 rgba(244, 199, 107, 0);
+        text-shadow: 0 0 0 rgba(244, 199, 107, 0);
       }
 
       50% {
@@ -636,11 +664,8 @@
       }
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
-
     @media (max-width: 650px) {
+
       html {
         scroll-padding-top: 155px;
       }
@@ -693,7 +718,7 @@
         font-size: 1rem;
       }
 
-      .key-grid {
+      .ancient-grid {
         grid-template-columns: 1fr;
       }
 
@@ -707,6 +732,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       html {
         scroll-behavior: auto;
       }
@@ -776,7 +802,7 @@
           class="current-date"
           id="currentDate"
         >
-          Before 10,000 BE
+          Approx. 20,000 BE
         </p>
 
       </div>
@@ -800,11 +826,11 @@
 
       <div class="rail-labels">
 
-        <span>Ancient World</span>
+        <span>Ancient Past</span>
 
         <span>Dragonrise</span>
 
-        <span>Aftermath</span>
+        <span>c. 10,000 BE</span>
 
       </div>
 
@@ -813,7 +839,7 @@
         class="position-context"
         id="positionContext"
       >
-        YOU ARE HERE // Before Recorded History
+        YOU ARE HERE // Before Reliable Written History
       </p>
 
     </div>
@@ -840,18 +866,40 @@
         </h1>
 
         <p class="hero-date">
-          Before 10,000 BE
+          Unknown Past – Approx. 10,000 BE
+        </p>
+
+
+        <div class="certainty-row">
+
+          <span class="certainty-badge">
+            Ancient Era
+          </span>
+
+          <span class="certainty-badge">
+            Partially Mythological
+          </span>
+
+          <span class="certainty-badge">
+            Dates Approximate
+          </span>
+
+        </div>
+
+
+        <p class="hero-text">
+          The oldest road through Tyrian history does not begin
+          with a kingdom, a hero, or even humanity.
         </p>
 
         <p class="hero-text">
-          Before human kingdoms, before the Six Gods entered the
-          historical record, and before most surviving calendars began,
-          Tyria had already lived through ages of destruction.
+          It begins in fragments.
         </p>
 
         <p class="hero-text">
-          The oldest surviving memories belong to a world shaped by the
-          Elder Dragons.
+          Broken monuments, racial memories, surviving magical artifacts,
+          and traditions passed down from civilizations that watched
+          Elder Dragons rise long before the modern world existed.
         </p>
 
       </div>
@@ -868,15 +916,18 @@
       <div class="archive-note">
 
         <p class="archive-note-label">
-          Archive Context
+          Archive Reliability
         </p>
 
         <p>
-          Exact dates are uncertain this far back. Most surviving knowledge
-          comes from ancient ruins, dwarven traditions, jotun records,
-          mursaat lore, and discoveries made thousands of years later.
-          This archive therefore follows the broad sequence of the previous
-          known Dragonrise rather than pretending every event can be dated.
+          The earliest Tyrian chronology is reconstructed from myths,
+          ancient records, ruined civilizations, magical evidence,
+          and later historical interpretation.
+        </p>
+
+        <p>
+          Dates in this archive should therefore be read as estimates
+          unless a record specifically states otherwise.
         </p>
 
       </div>
@@ -889,36 +940,48 @@
       <section
         class="history-section"
         data-position="5"
-        data-date="Before 10,000 BE"
-        data-context="YOU ARE HERE // A World Before Human History"
+        data-date="Date Unknown"
+        data-context="YOU ARE HERE // Creation Tradition"
       >
 
         <p class="history-label">
-          Record 01 // The Ancient World
+          Record 01 // Before History
         </p>
 
         <h2>
-          Tyria was already old
+          The oldest story begins with a dragon
         </h2>
 
         <p>
-          Long before humanity appeared in the historical record,
-          powerful civilizations already occupied Tyria.
+          One ancient creation tradition claims that an
+          <strong>original Elder Dragon</strong> created the world
+          of Tyria and later created the other Elder Dragons.
         </p>
 
         <p>
-          Among the peoples known to have survived from these distant ages
-          were the <strong>dwarves</strong>,
-          <strong>Forgotten</strong>,
-          <strong>jotun</strong>,
-          <strong>mursaat</strong>, and
-          <strong>Seers</strong>.
+          This account reaches farther back than surviving historical
+          records.
         </p>
 
         <p>
-          Their world was more magically advanced in some ways than
-          later civilizations would realize.
+          It belongs to the oldest layer of Tyrian tradition rather
+          than firmly established historical chronology.
         </p>
+
+
+        <div class="status-box">
+
+          <p class="status-label">
+            Source Status // Creation Tradition
+          </p>
+
+          <p>
+            This account should not be treated as uncontested fact.
+            The archive preserves it because it is part of Tyrian lore,
+            while keeping its uncertain status visible.
+          </p>
+
+        </div>
 
       </section>
 
@@ -929,37 +992,41 @@
 
       <section
         class="history-section"
-        data-position="18"
-        data-date="Around 10,000 BE"
-        data-context="YOU ARE HERE // The Great Giants Disappear"
+        data-position="14"
+        data-date="Approx. 20,000 BE"
+        data-context="YOU ARE HERE // Earliest Recorded Dragonrise"
       >
 
         <p class="history-label">
-          Record 02 // The Great Giants
+          Record 02 // Earliest Known Dragonrise
         </p>
 
         <h2>
-          The Giganticus Lupicus vanish
+          The dragons rise to consume magic
         </h2>
 
         <p>
-          The enormous beings later called the
-          <strong>Giganticus Lupicus</strong>, or Great Giants,
-          once roamed large portions of the world.
+          The master historical calendar places the earliest currently
+          recorded Dragonrise at approximately
+          <strong>20,000 BE</strong>.
         </p>
 
         <p>
-          Their remains can still be found across Tyria and Elona.
+          Elder Dragons periodically awakened when ambient magical
+          energy had accumulated across the world.
         </p>
 
         <p>
-          By approximately <strong>10,000 BE</strong>,
-          the Great Giants had disappeared.
+          They consumed that magic on a colossal scale.
         </p>
 
         <p>
-          Later Tyrian scholarship associated their extinction with
-          the previous rising of the Elder Dragons.
+          When the supply diminished, they eventually returned
+          to hibernation.
+        </p>
+
+        <p>
+          This cycle would repeat across Tyrian history.
         </p>
 
       </section>
@@ -971,34 +1038,136 @@
 
       <section
         class="history-section"
-        data-position="31"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // The Elder Dragons Feed"
+        data-position="24"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // Elder Civilizations"
       >
 
         <p class="history-label">
-          Record 03 // Dragonrise
+          Record 03 // The Ancient World
         </p>
 
         <h2>
-          The Elder Dragons consume the world's magic
+          Powerful civilizations existed before humanity
         </h2>
 
         <p>
-          Elder Dragons periodically awakened when enough ambient magic
-          had accumulated in the world.
+          Several sentient civilizations were already ancient
+          before the modern races rose to prominence.
         </p>
 
-        <p>
-          Once awake, they consumed enormous amounts of magical energy
-          and devastated the civilizations around them.
-        </p>
 
-        <p>
-          The previous Dragonrise reduced powerful cultures to remnants,
-          forced populations into hiding, and permanently changed
-          the balance of the ancient world.
-        </p>
+        <div class="ancient-grid">
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Elder Race
+            </p>
+
+            <h3>
+              Seers
+            </h3>
+
+            <p>
+              Highly advanced magical beings whose technologies
+              would influence Tyrian history thousands of years later.
+            </p>
+
+          </div>
+
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Elder Race
+            </p>
+
+            <h3>
+              Mursaat
+            </h3>
+
+            <p>
+              Powerful spellcasters capable of shifting themselves
+              partly into the Mists.
+            </p>
+
+          </div>
+
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Elder Race
+            </p>
+
+            <h3>
+              Forgotten
+            </h3>
+
+            <p>
+              Serpentine beings whose origins became increasingly
+              complicated as later discoveries revealed their presence
+              during the ancient Dragonrise.
+            </p>
+
+          </div>
+
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Elder Race
+            </p>
+
+            <h3>
+              Dwarves
+            </h3>
+
+            <p>
+              One of the civilizations whose legends preserved
+              pieces of this otherwise poorly documented age.
+            </p>
+
+          </div>
+
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Elder Race
+            </p>
+
+            <h3>
+              Jotun
+            </h3>
+
+            <p>
+              Once part of a far more advanced civilization whose
+              surviving stelae preserve fragments of the ancient past.
+            </p>
+
+          </div>
+
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Ancient Giants
+            </p>
+
+            <h3>
+              Giganticus Lupicus
+            </h3>
+
+            <p>
+              Enormous beings whose disappearance is associated
+              with the previous Elder Dragon awakening.
+            </p>
+
+          </div>
+
+        </div>
 
       </section>
 
@@ -1009,9 +1178,9 @@
 
       <section
         class="history-section"
-        data-position="44"
+        data-position="34"
         data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // The Elder Races Form an Alliance"
+        data-context="YOU ARE HERE // The Elder Races Resist"
       >
 
         <p class="history-label">
@@ -1019,28 +1188,41 @@
         </p>
 
         <h2>
-          Five ancient peoples resist
+          Ancient peoples attempt to resist the dragons
         </h2>
 
         <p>
-          The surviving elder civilizations did not face the Dragonrise
-          entirely alone.
+          Five elder races appear to have cooperated against
+          the Elder Dragons.
         </p>
 
         <p>
-          Five of the elder races formed an alliance against the
-          Elder Dragons.
+          The surviving evidence points to an alliance involving
+          the Seers, mursaat, Forgotten, dwarves, and jotun.
         </p>
 
         <p>
-          The alliance represented one of the earliest known attempts
-          to confront the dragons through cooperation rather than
-          simple survival.
+          Their cooperation was extraordinary.
         </p>
 
         <p>
-          It did not remain united.
+          It did not last.
         </p>
+
+
+        <div class="status-box">
+
+          <p class="status-label">
+            Historical Confidence // Partial
+          </p>
+
+          <p>
+            The alliance is supported by surviving lore, but many
+            details concerning its organization and chronology
+            remain unknown.
+          </p>
+
+        </div>
 
       </section>
 
@@ -1051,49 +1233,38 @@
 
       <section
         class="history-section"
-        data-position="56"
+        data-position="43"
         data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // The Seers Hide Magic"
+        data-context="YOU ARE HERE // Failed Attack on Zhaitan"
       >
 
         <p class="history-label">
-          Record 05 // The Bloodstone
+          Record 05 // Zhaitan
         </p>
 
         <h2>
-          The Seers choose concealment
+          The alliance attempts to kill an Elder Dragon
         </h2>
 
         <p>
-          The <strong>Seers</strong> developed a different strategy
-          for surviving the dragons.
+          The surviving chronology describes an attempt by
+          <strong>mursaat and Forgotten forces</strong>
+          to destroy Zhaitan.
         </p>
 
         <p>
-          They created the first known
-          <strong>Bloodstone</strong> and used it to store magical energy
-          away from the Elder Dragons.
+          The effort failed.
         </p>
 
         <p>
-          By reducing the magic available for the dragons to consume,
-          the surviving races could wait for the creatures to weaken
-          and eventually return to hibernation.
+          The attack devastated both peoples and contributed to
+          growing mistrust inside the elder-race alliance.
         </p>
 
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Why This Matters Later
-          </p>
-
-          <p>
-            Thousands of years afterward, the Human Gods would use this
-            same ancient artifact for an entirely different crisis:
-            limiting the magical power available to mortals.
-          </p>
-
-        </div>
+        <p>
+          Later mursaat accounts appear to have interpreted the failure
+          as evidence that they had been abandoned or betrayed.
+        </p>
 
       </section>
 
@@ -1104,38 +1275,32 @@
 
       <section
         class="history-section"
-        data-position="68"
+        data-position="52"
         data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // The Mursaat Withdraw"
+        data-context="YOU ARE HERE // Seer Magical Technology"
       >
 
         <p class="history-label">
-          Record 06 // The Mursaat
+          Record 06 // Shadowstone
         </p>
 
         <h2>
-          One ally abandons the struggle
+          The Seers search for another solution
         </h2>
 
         <p>
-          The <strong>mursaat</strong> refused to follow the same path
-          as the other allied races.
+          The Seers developed powerful magical technologies
+          during the struggle against the Elder Dragons.
         </p>
 
         <p>
-          After conflict with the Seers and the failure of cooperation
-          against the dragons, the mursaat withdrew from the alliance.
+          The chronology identifies the
+          <strong>Shadowstone</strong> as preceding the Bloodstone.
         </p>
 
         <p>
-          They phased themselves into the
-          <strong>Mists</strong>, escaping the destruction consuming
-          the physical world.
-        </p>
-
-        <p>
-          Their departure left the remaining races to endure the
-          Dragonrise without them.
+          This establishes an ancient progression in Seer magical
+          technology rather than treating the Bloodstone as an isolated invention.
         </p>
 
       </section>
@@ -1147,37 +1312,37 @@
 
       <section
         class="history-section"
-        data-position="79"
+        data-position="61"
         data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // The Seers and Mursaat Go to War"
+        data-context="YOU ARE HERE // The First Bloodstone"
       >
 
         <p class="history-label">
-          Record 07 // Ancient Rivalry
+          Record 07 // The Bloodstone
         </p>
 
         <h2>
-          The Seers are nearly destroyed
+          Magic is hidden from the dragons
         </h2>
 
         <p>
-          The relationship between the Seers and mursaat deteriorated
-          into a long and devastating war.
+          Near the end of the ancient Dragonrise,
+          the <strong>Seers created the first Bloodstone</strong>.
         </p>
 
         <p>
-          The mursaat possessed powerful magic, including the technique
-          later known as <strong>Spectral Agony</strong>.
+          Its purpose was not originally to divide mortal magic
+          into schools.
         </p>
 
         <p>
-          By the end of the conflict, the Seers had been reduced to
-          only a tiny number of survivors.
+          The Seers used it to gather and conceal magical energy
+          from the Elder Dragons.
         </p>
 
         <p>
-          One of the oldest rivalries in Tyrian history would survive
-          long after both civilizations disappeared from ordinary view.
+          By starving the dragons of accessible magic,
+          the surviving races hoped to force them back into hibernation.
         </p>
 
       </section>
@@ -1189,34 +1354,52 @@
 
       <section
         class="history-section"
-        data-position="89"
-        data-date="After the Dragonrise"
-        data-context="YOU ARE HERE // Glint Protects the Survivors"
+        data-position="70"
+        data-date="Ancient Dragonrise"
+        data-context="YOU ARE HERE // The Mursaat Refuse"
       >
 
         <p class="history-label">
-          Record 08 // Glint
+          Record 08 // The Mursaat Betrayal
         </p>
 
         <h2>
-          A dragon champion turns against the cycle
+          The ancient alliance breaks apart
         </h2>
 
         <p>
-          <strong>Glint</strong> had once served the Elder Dragon
-          Kralkatorrik.
+          The mursaat refused to surrender their magic
+          to the Bloodstone strategy.
         </p>
 
         <p>
-          A Forgotten ritual freed her from her master's control and
-          granted her independent will.
+          Conflict with the Seers followed.
         </p>
 
         <p>
-          During the closing stages of the Dragonrise, Glint helped
-          conceal surviving peoples until the Elder Dragons weakened
-          and returned to sleep.
+          The mursaat abandoned the alliance and escaped the
+          Elder Dragons by phasing into the <strong>Mists</strong>.
         </p>
+
+        <p>
+          Their departure left the remaining peoples to endure
+          the Dragonrise without them.
+        </p>
+
+
+        <div class="status-box">
+
+          <p class="status-label">
+            Historical Uncertainty
+          </p>
+
+          <p>
+            The exact motives and sequence surrounding the betrayal
+            remain incomplete. Later evidence gives the mursaat more
+            context than simply describing their actions as cowardice.
+          </p>
+
+        </div>
 
       </section>
 
@@ -1227,159 +1410,263 @@
 
       <section
         class="history-section"
-        data-position="97"
-        data-date="After the Dragonrise"
-        data-context="YOU ARE HERE // The Dragons Return to Slumber"
+        data-position="78"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // Seer–Mursaat War"
       >
 
         <p class="history-label">
-          Record 09 // The Silence
+          Record 09 // Ancient War
         </p>
 
         <h2>
-          The dragons sleep again
+          The Seers nearly disappear
         </h2>
 
         <p>
-          With less magic available to sustain them,
-          the Elder Dragons gradually returned to hibernation.
+          The collapse of cooperation between the Seers and mursaat
+          became a prolonged conflict.
         </p>
 
         <p>
-          The world that emerged afterward was very different from the
-          one that had existed before the Dragonrise.
+          The mursaat possessed devastating magical abilities,
+          including <strong>Spectral Agony</strong>.
         </p>
 
         <p>
-          Some civilizations were gone.
-          Others had lost much of their knowledge or power.
+          The Seers were brought close to extinction.
         </p>
 
         <p>
-          The survivors became the foundation for the next age of Tyria.
+          Only fragments of their civilization survived into later ages.
         </p>
 
       </section>
 
 
       <!-- =========================
-           KEY RECORDS
+           RECORD 10
       ========================== -->
 
-      <section class="key-records">
+      <section
+        class="history-section"
+        data-position="85"
+        data-date="Approx. 10,000 BE"
+        data-context="YOU ARE HERE // The Great Giants Disappear"
+      >
 
         <p class="history-label">
-          Archive Index
+          Record 10 // Giganticus Lupicus
         </p>
 
         <h2>
-          Key Records From This Era
+          The Great Giants vanish from the world
         </h2>
 
+        <p>
+          Around <strong>10,000 BE</strong>,
+          the last known Giganticus Lupicus disappeared from Tyria.
+        </p>
 
-        <div class="key-grid">
+        <p>
+          Earlier Guild Wars histories could not explain their extinction.
+        </p>
 
-          <div class="key-card">
+        <p>
+          Later evidence associates their disappearance with
+          the devastation of the ancient Elder Dragon awakening.
+        </p>
 
-            <p class="key-card-label">
-              Lost Race
+        <p>
+          Their enormous remains can still be found across
+          regions of the world.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 11
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="91"
+        data-date="After the Ancient Dragonrise"
+        data-context="YOU ARE HERE // Glint Protects the Survivors"
+      >
+
+        <p class="history-label">
+          Record 11 // Glint
+        </p>
+
+        <h2>
+          A dragon champion turns against the cycle
+        </h2>
+
+        <p>
+          Glint had originally served
+          <strong>Kralkatorrik</strong>.
+        </p>
+
+        <p>
+          The Forgotten performed a ritual that freed her from
+          the Elder Dragon's control.
+        </p>
+
+        <p>
+          Glint then helped conceal surviving peoples while
+          the Elder Dragons consumed what magic remained available
+          and eventually returned to sleep.
+        </p>
+
+        <p>
+          Her defiance would echo through Tyrian history
+          thousands of years later.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 12
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="96"
+        data-date="After the Dragonrise"
+        data-context="YOU ARE HERE // The Survivors Emerge"
+      >
+
+        <p class="history-label">
+          Record 12 // The World After
+        </p>
+
+        <h2>
+          Civilization emerges into a diminished world
+        </h2>
+
+        <p>
+          Once the Elder Dragons returned to hibernation,
+          surviving peoples emerged from hiding.
+        </p>
+
+        <p>
+          But the world they returned to was different.
+        </p>
+
+        <p>
+          Jotun civilization had largely collapsed.
+          The Seers were nearly gone.
+          Other ancient peoples had been diminished or scattered.
+        </p>
+
+        <p>
+          Charr, kodan, tengu, and other peoples would become
+          increasingly prominent in later ages.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 13
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="100"
+        data-date="Ancient Aftermath"
+        data-context="YOU ARE HERE // History Becomes Fragmented"
+      >
+
+        <p class="history-label">
+          Record 13 // What Survived
+        </p>
+
+        <h2>
+          Most of this age is lost
+        </h2>
+
+        <p>
+          Very little direct documentation survived the ancient Dragonrise.
+        </p>
+
+        <p>
+          What remains comes from fragments:
+        </p>
+
+
+        <div class="ancient-grid">
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Surviving Evidence
             </p>
 
             <h3>
-              Giganticus Lupicus
+              Jotun Stelae
             </h3>
 
             <p>
-              Great Giants whose disappearance is associated with the
-              ancient Dragonrise.
+              Ancient inscriptions preserving pieces of a civilization
+              far more advanced than modern jotun society.
             </p>
 
           </div>
 
 
-          <div class="key-card">
+          <div class="ancient-card">
 
-            <p class="key-card-label">
-              Ancient Threat
+            <p class="ancient-card-label">
+              Surviving Evidence
             </p>
 
             <h3>
-              Elder Dragons
+              Mursaat Tablets
             </h3>
 
             <p>
-              Creatures whose periodic awakenings consumed magic and
-              devastated early civilizations.
+              Records left by one of the few elder peoples to survive
+              by escaping the Dragonrise.
             </p>
 
           </div>
 
 
-          <div class="key-card">
+          <div class="ancient-card">
 
-            <p class="key-card-label">
-              Ancient Magic
+            <p class="ancient-card-label">
+              Surviving Evidence
             </p>
 
             <h3>
-              The Bloodstone
+              Dwarven Legends
             </h3>
 
             <p>
-              A Seer creation used to hide magical energy from the dragons.
+              Oral and written traditions preserving memories
+              of ancient events.
             </p>
 
           </div>
 
 
-          <div class="key-card">
+          <div class="ancient-card">
 
-            <p class="key-card-label">
-              Ancient Conflict
+            <p class="ancient-card-label">
+              Surviving Evidence
             </p>
 
             <h3>
-              Seers and Mursaat
+              Ruins and Artifacts
             </h3>
 
             <p>
-              Former allies whose rivalry nearly destroyed the Seers.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Dragon Champion
-            </p>
-
-            <h3>
-              Glint
-            </h3>
-
-            <p>
-              Kralkatorrik's former champion who helped protect
-              survivors from the Dragonrise.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Survivors
-            </p>
-
-            <h3>
-              The Elder Races
-            </h3>
-
-            <p>
-              Ancient civilizations whose histories continue into
-              the next archive.
+              Lost cities, magical technologies, and physical remains
+              provide evidence where written history does not.
             </p>
 
           </div>
@@ -1390,7 +1677,137 @@
 
 
       <!-- =========================
-           NEXT ERA
+           ARCHIVE INDEX
+      ========================== -->
+
+      <section class="history-section">
+
+        <p class="history-label">
+          Archive Index
+        </p>
+
+        <h2>
+          What We Can Say With Confidence
+        </h2>
+
+
+        <div class="ancient-grid">
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Established
+            </p>
+
+            <h3>
+              Elder Dragons Predate Humanity
+            </h3>
+
+            <p>
+              Their presence reaches farther back than surviving
+              human historical records.
+            </p>
+
+          </div>
+
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Established
+            </p>
+
+            <h3>
+              Elder Civilizations Existed
+            </h3>
+
+            <p>
+              Seers, mursaat, Forgotten, dwarves, and jotun
+              lived during ancient Dragonrises.
+            </p>
+
+          </div>
+
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Established
+            </p>
+
+            <h3>
+              The Seers Created the Bloodstone
+            </h3>
+
+            <p>
+              Its original purpose was connected to hiding magic
+              from the Elder Dragons.
+            </p>
+
+          </div>
+
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Reconstructed
+            </p>
+
+            <h3>
+              Alliance and Betrayal
+            </h3>
+
+            <p>
+              The elder races cooperated, but exact details surrounding
+              their alliance and the mursaat betrayal remain incomplete.
+            </p>
+
+          </div>
+
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Approximate
+            </p>
+
+            <h3>
+              10,000 BE
+            </h3>
+
+            <p>
+              The disappearance of the Giganticus Lupicus provides
+              one of the strongest chronological anchors for this age.
+            </p>
+
+          </div>
+
+
+          <div class="ancient-card">
+
+            <p class="ancient-card-label">
+              Mythic Tradition
+            </p>
+
+            <h3>
+              The First Elder Dragon
+            </h3>
+
+            <p>
+              A creation tradition places one original Elder Dragon
+              before Tyria and the others, but this remains a tradition
+              rather than settled history.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           NEXT ENTRY
       ========================== -->
 
       <section class="page-navigation">
@@ -1404,10 +1821,15 @@
         </h2>
 
         <p>
-          The Dragonrise explains what happened to the ancient world.
-          The next record looks at the peoples who survived it:
-          the Seers, mursaat, Forgotten, dwarves, and jotun, and the
-          legacies they left behind for later civilizations to discover.
+          The Dragonrise left behind a shattered world,
+          but not an empty one.
+        </p>
+
+        <p>
+          The next archive follows the civilizations that survived:
+          the Seers, mursaat, Forgotten, dwarves, and jotun,
+          and the fragments of knowledge they carried into
+          the ages that followed.
         </p>
 
 
@@ -1417,7 +1839,7 @@
             href="../index.html"
             class="button"
           >
-            ← Road Through Time
+            Road Through Time
           </a>
 
           <a
@@ -1454,7 +1876,7 @@
 
 
   <!-- =========================
-       HISTORY POSITION SCRIPT
+       HISTORICAL POSITION SCRIPT
   ========================== -->
 
   <script>
@@ -1462,7 +1884,9 @@
       "use strict";
 
       const sections =
-        document.querySelectorAll(".history-section");
+        document.querySelectorAll(
+          ".history-section[data-position]"
+        );
 
       const marker =
         document.getElementById("historyMarker");
@@ -1480,7 +1904,7 @@
           section.dataset.position || "5";
 
         const date =
-          section.dataset.date || "Ancient Tyria";
+          section.dataset.date || "Date Unknown";
 
         const context =
           section.dataset.context || "YOU ARE HERE";
@@ -1513,9 +1937,11 @@
                 );
 
             if (visible.length > 0) {
+
               updatePosition(
                 visible[0].target
               );
+
             }
 
           },
