@@ -296,7 +296,6 @@
 
     .hero {
       padding: 72px 0 56px;
-
       text-align: center;
     }
 
@@ -342,37 +341,8 @@
 
       margin: 24px auto 0;
 
-      color: var(--white);
-
       font-size: 1.06rem;
       line-height: 1.9;
-    }
-
-    .certainty-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 10px;
-
-      margin-top: 25px;
-    }
-
-    .certainty-badge {
-      padding: 7px 11px;
-
-      border: 1px solid rgba(244, 199, 107, 0.4);
-      border-radius: 999px;
-
-      background: rgba(244, 199, 107, 0.055);
-
-      color: var(--gold-bright);
-
-      font-family: monospace;
-      font-size: 0.63rem;
-
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
     }
 
     /* =========================
@@ -470,7 +440,7 @@
     }
 
     /* =========================
-       RACE GRID
+       RACE INDEX
     ========================= */
 
     .race-grid {
@@ -587,19 +557,20 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color:
-        rgba(244, 199, 107, 0.6);
+      border-color: rgba(244, 199, 107, 0.6);
 
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color:
-        rgba(244, 199, 107, 0.45);
+      border-color: rgba(244, 199, 107, 0.45);
 
-      background:
-        rgba(244, 199, 107, 0.1);
+      background: rgba(244, 199, 107, 0.1);
     }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 30px 0;
@@ -610,11 +581,17 @@
       font-size: 0.75rem;
     }
 
+    /* =========================
+       ANIMATION
+    ========================= */
+
     @keyframes goldPulse {
       0%,
       100% {
         color: var(--gold);
-        text-shadow: 0 0 0 rgba(244, 199, 107, 0);
+
+        text-shadow:
+          0 0 0 rgba(244, 199, 107, 0);
       }
 
       50% {
@@ -625,6 +602,10 @@
           0 0 34px rgba(244, 199, 107, 0.1);
       }
     }
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 650px) {
 
@@ -711,6 +692,10 @@
 
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header class="site-header">
 
     <div class="container header-inner">
@@ -751,7 +736,7 @@
         </p>
 
         <p class="current-date" id="currentDate">
-          Ancient Era
+          After the Dragonrise
         </p>
 
       </div>
@@ -775,17 +760,17 @@
 
       <div class="rail-labels">
 
-        <span>Dragonrise</span>
+        <span>Dragonrise Ends</span>
 
-        <span>c. 10,000 BE</span>
+        <span>1680 BE</span>
 
-        <span>1769 BE</span>
+        <span>Before Humanity</span>
 
       </div>
 
 
       <p class="position-context" id="positionContext">
-        YOU ARE HERE // Survivors of the Ancient World
+        YOU ARE HERE // The Survivors
       </p>
 
     </div>
@@ -812,35 +797,26 @@
         </h1>
 
         <p class="hero-date">
-          Ancient Dragonrise – 1769 BE
-        </p>
-
-
-        <div class="certainty-row">
-
-          <span class="certainty-badge">
-            Ancient History
-          </span>
-
-          <span class="certainty-badge">
-            Fragmentary Records
-          </span>
-
-        </div>
-
-
-        <p class="hero-text">
-          The Elder Dragons did not leave behind an empty world.
+          After the Ancient Dragonrise
         </p>
 
         <p class="hero-text">
-          Some civilizations survived.
+          The Elder Dragons returned to sleep,
+          but the world they left behind
+          was no longer the same.
         </p>
 
         <p class="hero-text">
-          The Seers, mursaat, Forgotten, dwarves, and jotun carried
-          pieces of the ancient world forward, even as much of their
-          power, knowledge, and history disappeared.
+          Five ancient peoples carried pieces
+          of that older Tyria forward.
+        </p>
+
+        <p class="hero-text">
+          Some preserved knowledge.
+          Some disappeared.
+          Some hid in the Mists.
+          And some survived long enough
+          to shape events thousands of years later.
         </p>
 
       </div>
@@ -857,46 +833,48 @@
       <div class="archive-note">
 
         <p class="archive-note-label">
-          Archive Context
+          Archive Scope
         </p>
 
         <p>
-          These peoples are called elder races because their civilizations
-          existed during the ancient Dragonrise, long before most modern
-          nations appeared.
+          This archive does not retell the Dragonrise.
+          Instead, it follows the civilizations
+          that survived it and the paths they took afterward.
         </p>
 
         <p>
-          Much of what survives about them comes from later discoveries,
-          fragmented writings, ruins, legends, and encounters with
-          the remnants of their civilizations.
+          Their stories explain later mysteries involving
+          the Bloodstones, Glint, Ascension,
+          the White Mantle, Janthir,
+          and the Mists.
         </p>
 
       </div>
 
 
       <!-- =========================
-           RECORD 01
+           RACE INDEX
       ========================== -->
 
       <section
         class="history-section"
         data-position="5"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // Five Elder Races"
+        data-date="After the Dragonrise"
+        data-context="YOU ARE HERE // Five Survivors"
       >
 
         <p class="history-label">
-          Record 01 // Survivors
+          Archive Index
         </p>
 
         <h2>
-          Five peoples endure the Dragonrise
+          Five civilizations remain
         </h2>
 
         <p>
-          The surviving historical record identifies five major
-          sentient elder races:
+          The surviving historical record identifies
+          five great peoples whose civilizations
+          reached back into the ancient world.
         </p>
 
 
@@ -913,8 +891,9 @@
             </h3>
 
             <p>
-              Advanced magical beings whose work produced the
-              Shadowstone and later the first Bloodstone.
+              Masters of ancient magical technology
+              whose work would shape the Bloodstones
+              and the future of Tyria.
             </p>
 
           </div>
@@ -931,8 +910,9 @@
             </h3>
 
             <p>
-              Powerful beings capable of shifting partly into the Mists,
-              allowing them to escape the ancient Dragonrise.
+              Powerful beings who learned
+              how to survive beyond ordinary
+              physical reality.
             </p>
 
           </div>
@@ -949,8 +929,9 @@
             </h3>
 
             <p>
-              Serpentine beings who later became closely tied to
-              Glint, Ascension, and the Crystal Desert.
+              Serpentine guardians whose history
+              became closely tied to Glint
+              and the Crystal Desert.
             </p>
 
           </div>
@@ -967,8 +948,10 @@
             </h3>
 
             <p>
-              An ancient civilization whose legends preserved
-              some of the oldest surviving memories of Tyria.
+              An ancient people who rebuilt,
+              founded kingdoms,
+              and carried their history
+              into the modern age.
             </p>
 
           </div>
@@ -985,8 +968,9 @@
             </h3>
 
             <p>
-              Once highly advanced in magic and astronomy,
-              but greatly diminished after the ancient Dragonrise.
+              Once a sophisticated civilization
+              whose knowledge faded
+              long before modern Tyria.
             </p>
 
           </div>
@@ -997,397 +981,105 @@
 
 
       <!-- =========================
-           RECORD 02
+           SEERS
       ========================== -->
 
       <section
         class="history-section"
-        data-position="15"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // The Alliance"
+        data-position="17"
+        data-date="Ancient Aftermath"
+        data-context="YOU ARE HERE // The Seers"
       >
 
         <p class="history-label">
-          Record 02 // Cooperation
+          Record 01 // Seers
         </p>
 
         <h2>
-          The elder races unite against the dragons
+          The architects of ancient magic
         </h2>
 
         <p>
-          The five elder races appear to have formed an alliance
-          against the Elder Dragons.
+          The <strong>Seers</strong>
+          were among the most magically advanced
+          peoples known from ancient Tyria.
         </p>
 
         <p>
-          Their goal was survival.
-        </p>
-
-        <p>
-          The dragons consumed enormous amounts of ambient magic,
-          threatening civilizations whose own societies depended
-          heavily upon magical power.
-        </p>
-
-        <p>
-          For a time, ancient rivals cooperated against a threat
-          larger than any one people.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 03
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="25"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // Attack on Zhaitan"
-      >
-
-        <p class="history-label">
-          Record 03 // A Failed Strike
-        </p>
-
-        <h2>
-          Mursaat and Forgotten attempt to kill Zhaitan
-        </h2>
-
-        <p>
-          One of the alliance's known attempts to directly resist
-          the Elder Dragons targeted <strong>Zhaitan</strong>.
-        </p>
-
-        <p>
-          Mursaat and Forgotten forces participated in the attempt.
-        </p>
-
-        <p>
-          It failed.
-        </p>
-
-        <p>
-          Both peoples suffered heavily, and the failure contributed
-          to tension within the alliance.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Later Perspective
-          </p>
-
-          <p>
-            The mursaat appear to have believed they were abandoned
-            during the failed campaign. Their later betrayal therefore
-            has more context than a simple refusal to fight.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 04
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="36"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // Seer Technology"
-      >
-
-        <p class="history-label">
-          Record 04 // The Seers
-        </p>
-
-        <h2>
-          The Seers try to hide magic itself
-        </h2>
-
-        <p>
-          Directly defeating the Elder Dragons had failed.
-        </p>
-
-        <p>
-          The Seers turned toward another solution:
-          denying the dragons access to the magic they consumed.
-        </p>
-
-        <p>
-          Their magical development appears to have progressed from
-          the <strong>Shadowstone</strong> to the
+          Their creations included technologies
+          such as the <strong>Shadowstone</strong>
+          and the original
           <strong>Bloodstone</strong>.
         </p>
 
-      </section>
-
-
-      <!-- =========================
-           RECORD 05
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="46"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // First Bloodstone"
-      >
-
-        <p class="history-label">
-          Record 05 // The Bloodstone
-        </p>
-
-        <h2>
-          The Seers build a refuge for magic
-        </h2>
-
         <p>
-          The first Bloodstone was created by the
-          <strong>Seers</strong>.
+          The Bloodstone would outlive
+          their civilization and become one
+          of the most important magical artifacts
+          in Tyrian history.
         </p>
 
         <p>
-          Its original purpose was to gather and hide magical energy
-          from the Elder Dragons.
-        </p>
-
-        <p>
-          This is an important correction to older human accounts,
-          which described the Human Gods as the original creators
-          of the Bloodstone.
-        </p>
-
-        <p>
-          The gods would not divide and repurpose it until thousands
-          of years later.
+          Their influence therefore continued
+          long after the Seers themselves
+          had almost disappeared.
         </p>
 
       </section>
 
 
       <!-- =========================
-           RECORD 06
+           SEER–MURSAAT WAR
       ========================== -->
 
       <section
         class="history-section"
-        data-position="57"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // Mursaat Betrayal"
-      >
-
-        <p class="history-label">
-          Record 06 // The Alliance Breaks
-        </p>
-
-        <h2>
-          The mursaat refuse the Bloodstone plan
-        </h2>
-
-        <p>
-          The mursaat did not surrender their magical power
-          to the Seers' plan.
-        </p>
-
-        <p>
-          They abandoned the other elder races and escaped
-          by phasing themselves into the <strong>Mists</strong>.
-        </p>
-
-        <p>
-          Their survival came at the cost of the alliance.
-        </p>
-
-        <p>
-          The exact sequence of events remains incomplete,
-          but the ancient coalition never recovered.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 07
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="66"
+        data-position="29"
         data-date="Ancient Era"
         data-context="YOU ARE HERE // Seer–Mursaat War"
       >
 
         <p class="history-label">
-          Record 07 // Old Enemies
+          Record 02 // An Ancient War
         </p>
 
         <h2>
-          The Seers and mursaat turn on one another
+          The Seers and mursaat become enemies
         </h2>
 
         <p>
-          Conflict between the two peoples became a prolonged war.
+          Whatever cooperation had once existed
+          between the two peoples did not survive.
         </p>
 
         <p>
-          Mursaat abilities such as
-          <strong>Spectral Agony</strong> proved devastating.
+          The Seers and
+          <strong>mursaat</strong>
+          fought a prolonged war.
         </p>
 
         <p>
-          The Seers were nearly exterminated.
+          Mursaat magic included the devastating
+          ability known as
+          <strong>Spectral Agony</strong>.
         </p>
 
         <p>
-          Their civilization largely disappeared,
-          leaving artifacts and scattered survivors behind.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 08
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="75"
-        data-date="1680 BE"
-        data-context="YOU ARE HERE // Glint Is Freed"
-      >
-
-        <p class="history-label">
-          Record 08 // The Forgotten
-        </p>
-
-        <h2>
-          Glint is freed from Kralkatorrik
-        </h2>
-
-        <p>
-          In approximately <strong>1680 BE</strong>,
-          the Forgotten performed a ritual upon
-          <strong>Glint</strong>.
-        </p>
-
-        <p>
-          Glint had been a champion of
-          <strong>Kralkatorrik</strong>.
-        </p>
-
-        <p>
-          The ritual broke the Elder Dragon's control over her,
-          though much of her former memory was lost.
-        </p>
-
-        <p>
-          Glint would become one of the most important bridges
-          between the ancient Dragon Cycle and later mortal history.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 09
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="84"
-        data-date="After the Dragonrise"
-        data-context="YOU ARE HERE // Civilizations Decline"
-      >
-
-        <p class="history-label">
-          Record 09 // The Survivors
-        </p>
-
-        <h2>
-          Survival does not mean recovery
-        </h2>
-
-        <p>
-          When the Elder Dragons returned to hibernation,
-          the surviving elder races emerged into a diminished world.
-        </p>
-
-        <p>
-          The jotun had lost much of their former knowledge
-          and civilization.
-        </p>
-
-        <p>
-          The Seers were nearly extinct.
-        </p>
-
-        <p>
-          The mursaat remained hidden.
-        </p>
-
-        <p>
-          The Forgotten continued into later ages,
-          while the dwarves rebuilt kingdoms that would survive
-          for thousands of years.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 10
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="92"
-        data-date="1769 BE"
-        data-context="YOU ARE HERE // Conflicting Forgotten Traditions"
-      >
-
-        <p class="history-label">
-          Record 10 // The Forgotten Question
-        </p>
-
-        <h2>
-          Later human history tells a different story
-        </h2>
-
-        <p>
-          Human traditions later claimed that the
-          <strong>Forgotten arrived from the Mists</strong>
-          around <strong>1769 BE</strong> and were brought
-          to Tyria by the Human Gods.
-        </p>
-
-        <p>
-          That account conflicts with evidence placing the Forgotten
-          in Tyria during the much older Dragonrise.
-        </p>
-
-        <p>
-          The archive therefore preserves both traditions
-          rather than forcing them into a single explanation.
+          The conflict brought the Seers
+          close to extinction.
         </p>
 
         <div class="record-box">
 
           <p class="record-box-label">
-            Archive Rule
+            Long Shadow
           </p>
 
           <p>
-            When later discoveries contradict older histories,
-            GWlll records the difference instead of silently replacing
-            one version with another.
+            Thousands of years later,
+            modern discoveries in Janthir and Castora
+            would return Seer and mursaat history
+            to the center of the story.
           </p>
 
         </div>
@@ -1396,7 +1088,395 @@
 
 
       <!-- =========================
-           RECORD 11
+           MURSAAT
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="40"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // The Mursaat"
+      >
+
+        <p class="history-label">
+          Record 03 // Mursaat
+        </p>
+
+        <h2>
+          A civilization disappears into the Mists
+        </h2>
+
+        <p>
+          The <strong>mursaat</strong>
+          possessed an unusual advantage:
+          they could phase themselves
+          partly outside the physical world.
+        </p>
+
+        <p>
+          By retreating into the
+          <strong>Mists</strong>,
+          they became largely absent
+          from the history of surface Tyria
+          for thousands of years.
+        </p>
+
+        <p>
+          Their disappearance did not mean
+          their civilization had ended.
+        </p>
+
+        <p>
+          They would later return
+          to human history under another name:
+          the <strong>Unseen Ones</strong>.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           FORGOTTEN
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="52"
+        data-date="1680 BE"
+        data-context="YOU ARE HERE // Glint Is Freed"
+      >
+
+        <p class="history-label">
+          Record 04 // Forgotten
+        </p>
+
+        <h2>
+          The Forgotten free Glint
+        </h2>
+
+        <p>
+          The <strong>Forgotten</strong>
+          continued to influence the world
+          long after the Dragonrise.
+        </p>
+
+        <p>
+          Around <strong>1680 BE</strong>,
+          they performed a ritual upon
+          <strong>Glint</strong>,
+          the champion of Kralkatorrik.
+        </p>
+
+        <p>
+          The ritual broke the Elder Dragon's
+          control over her.
+        </p>
+
+        <p>
+          Glint lost much of her former memory,
+          but gained the freedom
+          to choose her own path.
+        </p>
+
+        <p>
+          Her survival would eventually become
+          critical to the future
+          of the Dragon Cycle itself.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           FORGOTTEN LEGACY
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="62"
+        data-date="Later Ancient Era"
+        data-context="YOU ARE HERE // Guardians of Glint"
+      >
+
+        <p class="history-label">
+          Record 05 // Guardianship
+        </p>
+
+        <h2>
+          The Forgotten become keepers of hidden knowledge
+        </h2>
+
+        <p>
+          The Forgotten remained closely associated
+          with <strong>Glint</strong>.
+        </p>
+
+        <p>
+          In later history,
+          they became guardians
+          of the trials of
+          <strong>Ascension</strong>
+          in the Crystal Desert.
+        </p>
+
+        <p>
+          Their story therefore became
+          increasingly connected to prophecy,
+          dragon knowledge,
+          and the ability of mortals
+          to transcend ordinary limitations.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Conflicting Traditions
+          </p>
+
+          <p>
+            Later human traditions claimed
+            the Forgotten arrived from the Mists
+            with the Human Gods.
+            Their much older involvement
+            in the ancient Dragonrise
+            makes that origin uncertain.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           DWARVES
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="73"
+        data-date="Ancient to Historical Era"
+        data-context="YOU ARE HERE // The Dwarves"
+      >
+
+        <p class="history-label">
+          Record 06 // Dwarves
+        </p>
+
+        <h2>
+          One ancient civilization rebuilds
+        </h2>
+
+        <p>
+          Unlike some elder peoples,
+          the <strong>dwarves</strong>
+          remained highly visible
+          through later Tyrian history.
+        </p>
+
+        <p>
+          They rebuilt powerful settlements
+          throughout the Shiverpeak Mountains
+          and eventually formed
+          the kingdom of
+          <strong>Deldrimor</strong>.
+        </p>
+
+        <p>
+          Dwarven legends became
+          some of the few surviving windows
+          into the ancient world.
+        </p>
+
+        <p>
+          Their civilization would endure
+          all the way into the original
+          Guild Wars era.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           JOTUN
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="84"
+        data-date="Ancient Aftermath"
+        data-context="YOU ARE HERE // The Jotun Decline"
+      >
+
+        <p class="history-label">
+          Record 07 // Jotun
+        </p>
+
+        <h2>
+          A great civilization forgets itself
+        </h2>
+
+        <p>
+          The <strong>jotun</strong>
+          survived the ancient age,
+          but their civilization did not.
+        </p>
+
+        <p>
+          Ancient jotun possessed
+          sophisticated magical,
+          astronomical,
+          and historical knowledge.
+        </p>
+
+        <p>
+          Over generations,
+          much of that knowledge disappeared.
+        </p>
+
+        <p>
+          The jotun encountered
+          in modern Tyria are therefore
+          remnants of a civilization
+          far greater than the societies
+          they now maintain.
+        </p>
+
+        <p>
+          Their surviving
+          <strong>stelae</strong>
+          remain some of the most valuable
+          records of the ancient world.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           DIFFERENT PATHS
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="93"
+        data-date="Before Human Dominance"
+        data-context="YOU ARE HERE // Five Paths"
+      >
+
+        <p class="history-label">
+          Record 08 // Five Paths
+        </p>
+
+        <h2>
+          Survival leads each people somewhere different
+        </h2>
+
+        <p>
+          The elder races did not share
+          one common fate.
+        </p>
+
+
+        <div class="race-grid">
+
+          <div class="race-card">
+
+            <p class="race-card-label">
+              Seers
+            </p>
+
+            <h3>
+              Near Extinction
+            </h3>
+
+            <p>
+              Their civilization largely disappears,
+              but their magical legacy survives.
+            </p>
+
+          </div>
+
+
+          <div class="race-card">
+
+            <p class="race-card-label">
+              Mursaat
+            </p>
+
+            <h3>
+              Into the Mists
+            </h3>
+
+            <p>
+              They withdraw from ordinary Tyria
+              and later return as the Unseen Ones.
+            </p>
+
+          </div>
+
+
+          <div class="race-card">
+
+            <p class="race-card-label">
+              Forgotten
+            </p>
+
+            <h3>
+              Guardians
+            </h3>
+
+            <p>
+              They become closely tied
+              to Glint, prophecy,
+              and Ascension.
+            </p>
+
+          </div>
+
+
+          <div class="race-card">
+
+            <p class="race-card-label">
+              Dwarves
+            </p>
+
+            <h3>
+              Rebuilding
+            </h3>
+
+            <p>
+              They establish new kingdoms
+              and remain an active civilization
+              for thousands of years.
+            </p>
+
+          </div>
+
+
+          <div class="race-card">
+
+            <p class="race-card-label">
+              Jotun
+            </p>
+
+            <h3>
+              Decline
+            </h3>
+
+            <p>
+              Their people survive,
+              but most of their ancient
+              civilization and knowledge are lost.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           HANDOFF
       ========================== -->
 
       <section
@@ -1407,164 +1487,37 @@
       >
 
         <p class="history-label">
-          Record 11 // The World Changes Again
+          Record 09 // The End of the Elder Age
         </p>
 
         <h2>
-          The elder races are no longer alone
+          The world is about to change again
         </h2>
 
         <p>
-          Thousands of years passed after the ancient Dragonrise.
+          For thousands of years,
+          these ancient peoples carried
+          the memory of the older world.
         </p>
 
         <p>
-          New peoples expanded.
-          The charr established their own territories.
-          Surviving elder races followed increasingly separate paths.
+          Some remained visible.
+          Others disappeared into legend.
         </p>
 
         <p>
-          Then powerful beings arrived from the Mists.
+          Then powerful beings arrived
+          from the <strong>Mists</strong>.
         </p>
 
         <p>
-          They would become known to humanity as
-          <strong>the Six Gods</strong>.
+          With them came humanity.
         </p>
 
         <p>
-          And with them came the beginning of a new historical age.
+          The center of recorded history
+          was about to shift.
         </p>
-
-      </section>
-
-
-      <!-- =========================
-           RACE INDEX
-      ========================== -->
-
-      <section class="history-section">
-
-        <p class="history-label">
-          Elder Race Index
-        </p>
-
-        <h2>
-          Where Their Stories Lead
-        </h2>
-
-
-        <div class="race-grid">
-
-          <div class="race-card">
-
-            <p class="race-card-label">
-              Seers
-            </p>
-
-            <h3>
-              Ancient Magical Legacy
-            </h3>
-
-            <p>
-              Shadowstone, Bloodstone, the mursaat war,
-              and later mysteries tied to Castora.
-            </p>
-
-          </div>
-
-
-          <div class="race-card">
-
-            <p class="race-card-label">
-              Mursaat
-            </p>
-
-            <h3>
-              The Unseen Ones
-            </h3>
-
-            <p>
-              Their ancient survival eventually connects them
-              to Janthir, Saul D'Alessio, and the White Mantle.
-            </p>
-
-          </div>
-
-
-          <div class="race-card">
-
-            <p class="race-card-label">
-              Forgotten
-            </p>
-
-            <h3>
-              Guardians of Glint
-            </h3>
-
-            <p>
-              Their later history centers on Glint,
-              Ascension, and the Crystal Desert.
-            </p>
-
-          </div>
-
-
-          <div class="race-card">
-
-            <p class="race-card-label">
-              Dwarves
-            </p>
-
-            <h3>
-              Kingdom of Deldrimor
-            </h3>
-
-            <p>
-              Their civilization survives into the Guild Wars era
-              before the Rite of the Great Dwarf transforms their future.
-            </p>
-
-          </div>
-
-
-          <div class="race-card">
-
-            <p class="race-card-label">
-              Jotun
-            </p>
-
-            <h3>
-              Lost Greatness
-            </h3>
-
-            <p>
-              Their surviving stelae preserve memories of a civilization
-              far more advanced than the jotun known in modern Tyria.
-            </p>
-
-          </div>
-
-
-          <div class="race-card">
-
-            <p class="race-card-label">
-              Shared Legacy
-            </p>
-
-            <h3>
-              Ancient Tyria
-            </h3>
-
-            <p>
-              Together, these peoples prove that Tyria possessed
-              sophisticated civilizations long before human dominance.
-            </p>
-
-          </div>
-
-        </div>
 
       </section>
 
@@ -1580,22 +1533,20 @@
         </p>
 
         <h2>
-          The Gods and Humanity
+          Gods and Humanity
         </h2>
 
         <p>
-          The elder races survived a world shaped by dragons.
+          The elder peoples belonged
+          to a world shaped by dragons.
         </p>
 
         <p>
-          The next great change came from outside Tyria itself.
-        </p>
-
-        <p>
-          Beings from the Mists arrived at the Artesian Waters,
-          humanity entered the historical record,
-          and mortal civilization began spreading across
-          Cantha, Elona, Orr, Kryta, and Ascalon.
+          The next age begins
+          when beings from the Mists
+          enter Tyria and humanity
+          begins spreading across
+          the known world.
         </p>
 
 
@@ -1631,18 +1582,26 @@
   </main>
 
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
 
     <div class="container">
 
       Guild Wars Living Lore Library is an unofficial fan lore project.
-      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
-      belong to their respective owners.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT,
+      and related properties belong to their respective owners.
 
     </div>
 
   </footer>
 
+
+  <!-- =========================
+       HISTORICAL POSITION SCRIPT
+  ========================== -->
 
   <script>
     (() => {
