@@ -23,7 +23,6 @@
 
       --background: #020617;
       --panel: #0f172a;
-      --panel-hover: #162033;
       --border: #374151;
 
       --gold: #f4c76b;
@@ -77,7 +76,9 @@
       margin-inline: auto;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     .site-header {
       position: sticky;
@@ -144,7 +145,9 @@
       transform: translateX(-3px);
     }
 
-    /* HISTORY POSITION */
+    /* =========================
+       HISTORICAL POSITION
+    ========================= */
 
     .history-position {
       position: sticky;
@@ -209,12 +212,13 @@
 
       height: 1px;
 
-      background: linear-gradient(
-        to right,
-        rgba(244, 199, 107, 0.25),
-        rgba(244, 199, 107, 0.9),
-        rgba(244, 199, 107, 0.25)
-      );
+      background:
+        linear-gradient(
+          to right,
+          rgba(244, 199, 107, 0.25),
+          rgba(244, 199, 107, 0.9),
+          rgba(244, 199, 107, 0.25)
+        );
     }
 
     .history-point {
@@ -288,7 +292,9 @@
       text-align: center;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       padding: 72px 0 56px;
@@ -343,7 +349,9 @@
       line-height: 1.9;
     }
 
-    /* ARCHIVE NOTE */
+    /* =========================
+       ARCHIVE NOTE
+    ========================= */
 
     .archive-note {
       margin-bottom: 55px;
@@ -369,10 +377,11 @@
 
     .archive-note p:last-child {
       margin: 12px 0 0;
-      color: var(--white);
     }
 
-    /* HISTORY */
+    /* =========================
+       HISTORY
+    ========================= */
 
     .history-section {
       padding: 36px 0;
@@ -403,6 +412,7 @@
 
     .history-section p {
       margin: 16px 0 0;
+
       color: var(--white);
     }
 
@@ -435,9 +445,11 @@
       margin: 8px 0 0;
     }
 
-    /* ERA GRID */
+    /* =========================
+       STORY GRID
+    ========================= */
 
-    .era-grid {
+    .story-grid {
       margin-top: 24px;
 
       display: grid;
@@ -446,16 +458,16 @@
       gap: 14px;
     }
 
-    .era-card {
+    .story-card {
       padding: 20px;
 
       border: 1px solid var(--border);
       border-radius: 10px;
 
-      background: rgba(15, 23, 42, 0.78);
+      background: rgba(15, 23, 42, 0.76);
     }
 
-    .era-card-label {
+    .story-card-label {
       margin: 0;
 
       color: var(--white);
@@ -467,7 +479,7 @@
       text-transform: uppercase;
     }
 
-    .era-card h3 {
+    .story-card h3 {
       margin: 7px 0 0;
 
       color: var(--gold);
@@ -475,77 +487,15 @@
       font-size: 1.05rem;
     }
 
-    .era-card p:last-child {
+    .story-card p:last-child {
       margin: 8px 0 0;
-
-      color: var(--white);
 
       font-size: 0.9rem;
     }
 
-    /* KEY RECORDS */
-
-    .key-records {
-      padding: 42px 0;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .key-records h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.8rem;
-    }
-
-    .key-grid {
-      margin-top: 24px;
-
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-
-      gap: 14px;
-    }
-
-    .key-card {
-      padding: 20px;
-
-      border: 1px solid var(--border);
-      border-radius: 10px;
-
-      background: rgba(15, 23, 42, 0.76);
-    }
-
-    .key-card-label {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.63rem;
-
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .key-card h3 {
-      margin: 7px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1rem;
-    }
-
-    .key-card p:last-child {
-      margin: 8px 0 0;
-
-      color: var(--white);
-
-      font-size: 0.9rem;
-    }
-
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .page-navigation {
       padding: 45px 0 80px;
@@ -575,8 +525,6 @@
 
     .page-navigation p {
       margin: 13px 0 0;
-
-      color: var(--white);
     }
 
     .navigation-actions {
@@ -615,28 +563,23 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color: rgba(244, 199, 107, 0.6);
+      border-color:
+        rgba(244, 199, 107, 0.6);
+
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
+      border-color:
+        rgba(244, 199, 107, 0.45);
 
-      background: rgba(244, 199, 107, 0.1);
+      background:
+        rgba(244, 199, 107, 0.1);
     }
 
-    .pending {
-      opacity: 0.65;
-      cursor: default;
-    }
-
-    .pending:hover {
-      transform: none;
-      border-color: var(--border);
-      color: var(--gold);
-    }
-
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 30px 0;
@@ -649,7 +592,9 @@
       font-size: 0.75rem;
     }
 
-    /* ANIMATION */
+    /* =========================
+       ANIMATION
+    ========================= */
 
     @keyframes goldPulse {
       0%,
@@ -669,7 +614,9 @@
       }
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 650px) {
       html {
@@ -724,8 +671,7 @@
         font-size: 1rem;
       }
 
-      .era-grid,
-      .key-grid {
+      .story-grid {
         grid-template-columns: 1fr;
       }
 
@@ -755,7 +701,9 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="site-header">
 
@@ -780,7 +728,7 @@
         href="../index.html"
         class="home-link"
       >
-        ← Main Homepage
+        ← Road Through Time
       </a>
 
     </div>
@@ -788,7 +736,9 @@
   </header>
 
 
-  <!-- YOU ARE HERE -->
+  <!-- =========================
+       HISTORICAL POSITION
+  ========================== -->
 
   <aside class="history-position">
 
@@ -809,6 +759,7 @@
 
       </div>
 
+
       <div class="history-rail">
 
         <div class="history-line"></div>
@@ -824,19 +775,23 @@
 
       </div>
 
+
       <div class="rail-labels">
 
         <span>1325 AE</span>
+
         <span>1330 AE</span>
+
         <span>1335 AE</span>
 
       </div>
+
 
       <p
         class="position-context"
         id="positionContext"
       >
-        YOU ARE HERE // The Pact Is Formed
+        YOU ARE HERE // The Pact Forms
       </p>
 
     </div>
@@ -846,7 +801,9 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero">
 
@@ -865,17 +822,18 @@
         </p>
 
         <p class="hero-text">
-          For generations, Tyria survived by retreating from Elder Dragons,
-          rebuilding around the damage they caused, and hoping their attention
-          turned elsewhere.
+          For centuries, the peoples of Tyria had survived the Elder Dragons
+          by fleeing them, hiding from them, or enduring what they destroyed.
         </p>
 
         <p class="hero-text">
-          In 1325 AE, that pattern changed.
+          That changed in this era.
         </p>
 
         <p class="hero-text">
-          The peoples of Tyria began fighting back.
+          Armies united. Dragon champions were confronted directly.
+          The cycle that had shaped Tyria since before recorded history
+          was finally challenged at its source.
         </p>
 
       </div>
@@ -885,7 +843,9 @@
 
     <div class="container">
 
-      <!-- ARCHIVE NOTE -->
+      <!-- =========================
+           ARCHIVE NOTE
+      ========================== -->
 
       <div class="archive-note">
 
@@ -894,16 +854,19 @@
         </p>
 
         <p>
-          This era covers the central story from the beginning of Guild Wars 2
-          through End of Dragons. It follows the rise of the Pact Commander,
-          the deaths of the Elder Dragons, the return of Balthazar, the rise of
-          Aurene, and the eventual end of the ancient Dragon Cycle.
+          This archive follows the major historical events of the Guild Wars 2
+          personal story, Living World Seasons 1 through 4, Heart of Thorns,
+          Path of Fire, the Icebrood Saga, and End of Dragons. Smaller regional
+          stories can later branch from these records without overloading the
+          main road.
         </p>
 
       </div>
 
 
-      <!-- RECORD 01 -->
+      <!-- =========================
+           RECORD 01
+      ========================== -->
 
       <section
         class="history-section"
@@ -913,41 +876,38 @@
       >
 
         <p class="history-label">
-          Record 01 // Claw Island
+          Record 01 // Zhaitan's War
         </p>
 
         <h2>
-          Zhaitan reaches toward Lion's Arch
+          The dragon threat reaches Kryta
         </h2>
 
         <p>
-          In <strong>1325 AE</strong>, the Risen launched an assault
-          against <strong>Claw Island</strong>.
+          In <strong>1325 AE</strong>, Zhaitan's forces attacked
+          <strong>Claw Island</strong>.
         </p>
 
         <p>
-          The attack was led by
-          <strong>Blightghast the Plaguebringer</strong>,
-          one of Zhaitan's powerful champions.
+          The assault made it clear that no individual order could
+          defeat the Elder Dragon alone.
         </p>
 
         <p>
-          The island's fall exposed how vulnerable Lion's Arch and the
-          surrounding nations remained to the Elder Dragon.
-        </p>
-
-        <p>
-          It also forced Tyria's three great orders toward cooperation.
+          The Durmand Priory, Order of Whispers, and Vigil were forced
+          toward cooperation.
         </p>
 
       </section>
 
 
-      <!-- RECORD 02 -->
+      <!-- =========================
+           RECORD 02
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="10"
+        data-position="12"
         data-date="1325 AE"
         data-context="YOU ARE HERE // The Pact Is Founded"
       >
@@ -957,17 +917,11 @@
         </p>
 
         <h2>
-          Tyria stops fighting the dragons separately
+          Tyria creates a unified army
         </h2>
 
         <p>
-          The <strong>Durmand Priory</strong>,
-          <strong>Order of Whispers</strong>, and
-          <strong>Vigil</strong> joined forces.
-        </p>
-
-        <p>
-          Together they created the
+          The three great orders formed the
           <strong>Pact</strong>.
         </p>
 
@@ -977,22 +931,61 @@
         </p>
 
         <p>
-          The future player hero rose to become the
-          <strong>Pact Commander</strong> and Trahearne's
+          The future <strong>Pact Commander</strong> became his
           second-in-command.
+        </p>
+
+        <p>
+          Fort Trinity became the center of a campaign aimed not merely
+          at surviving Zhaitan, but killing it.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 03
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="18"
+        data-date="1326 AE"
+        data-context="YOU ARE HERE // Zhaitan Falls"
+      >
+
+        <p class="history-label">
+          Record 03 // The First Victory
+        </p>
+
+        <h2>
+          An Elder Dragon is killed
+        </h2>
+
+        <p>
+          Pact forces advanced into Orr and weakened Zhaitan's ability
+          to sustain its armies.
+        </p>
+
+        <p>
+          In <strong>1326 AE</strong>, Zhaitan was defeated.
+        </p>
+
+        <p>
+          For the first known time in the modern Dragonrise,
+          mortals had killed an Elder Dragon.
         </p>
 
         <div class="record-box">
 
           <p class="record-box-label">
-            Historical Turning Point
+            The Consequence
           </p>
 
           <p>
-            Earlier civilizations had repeatedly failed to defeat Elder
-            Dragons. The Pact represented a new idea: the major peoples
-            of modern Tyria could combine knowledge, armies, technology,
-            and magic against a common enemy.
+            Killing an Elder Dragon did not simply remove a monster.
+            The magic it had accumulated was released back into the world,
+            changing the magical balance of Tyria.
           </p>
 
         </div>
@@ -1000,57 +993,15 @@
       </section>
 
 
-      <!-- RECORD 03 -->
+      <!-- =========================
+           RECORD 04
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="15"
-        data-date="1326 AE"
-        data-context="YOU ARE HERE // Zhaitan Is Defeated"
-      >
-
-        <p class="history-label">
-          Record 03 // The Death of Zhaitan
-        </p>
-
-        <h2>
-          An Elder Dragon falls
-        </h2>
-
-        <p>
-          The Pact established
-          <strong>Fort Trinity</strong> and began advancing into Orr.
-        </p>
-
-        <p>
-          Pact forces fought through Zhaitan's Risen armies while
-          Trahearne worked to cleanse the corruption of Orr.
-        </p>
-
-        <p>
-          In <strong>1326 AE</strong>, the Pact launched its final
-          assault aboard the <strong>Glory of Tyria</strong>.
-        </p>
-
-        <p>
-          Zhaitan was killed.
-        </p>
-
-        <p>
-          For the first time in the modern Dragonrise, mortals had
-          successfully defeated an Elder Dragon.
-        </p>
-
-      </section>
-
-
-      <!-- RECORD 04 -->
-
-      <section
-        class="history-section"
-        data-position="20"
-        data-date="1326 AE"
-        data-context="YOU ARE HERE // Scarlet Briar Begins Her Campaign"
+        data-position="25"
+        data-date="1326–1327 AE"
+        data-context="YOU ARE HERE // Scarlet Briar Attacks Tyria"
       >
 
         <p class="history-label">
@@ -1058,38 +1009,39 @@
         </p>
 
         <h2>
-          A different threat begins moving across Tyria
+          A new enemy follows the ley lines
         </h2>
 
         <p>
-          Following Zhaitan's death,
-          <strong>Scarlet Briar</strong> began launching attacks
-          throughout Central Tyria.
+          After Zhaitan's death,
+          <strong>Scarlet Briar</strong> launched attacks across Tyria
+          through strange alliances and Twisted Watchwork.
         </p>
 
         <p>
-          She united unlikely groups, created Twisted Watchwork armies,
-          and manipulated events across multiple regions.
+          Her campaign appeared chaotic.
         </p>
 
         <p>
-          At first, her attacks appeared chaotic.
+          It had a destination.
         </p>
 
         <p>
-          They were not.
+          Lion's Arch.
         </p>
 
       </section>
 
 
-      <!-- RECORD 05 -->
+      <!-- =========================
+           RECORD 05
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="26"
+        data-position="31"
         data-date="1327 AE"
-        data-context="YOU ARE HERE // Lion's Arch Is Destroyed"
+        data-context="YOU ARE HERE // Lion's Arch Burns"
       >
 
         <p class="history-label">
@@ -1097,386 +1049,296 @@
         </p>
 
         <h2>
-          Scarlet strikes the heart of the free city
+          Scarlet reaches the ley line hub
         </h2>
 
         <p>
-          In <strong>1327 AE</strong>, Scarlet launched a massive
-          assault against <strong>Lion's Arch</strong>.
+          Scarlet's forces invaded
+          <strong>Lion's Arch</strong>.
         </p>
 
         <p>
-          Her enormous drill, the
-          <strong>Breachmaker</strong>, struck into a major ley-line
-          hub beneath the city.
+          The city was devastated.
         </p>
 
         <p>
-          Lion's Arch was devastated.
+          Scarlet was killed, but her
+          <strong>Breachmaker</strong> struck the ley line network beneath
+          the city.
         </p>
 
         <p>
-          Scarlet was eventually killed.
-        </p>
-
-        <p>
-          But her machine had already accomplished its true purpose.
+          The disturbance awakened
+          <strong>Mordremoth</strong>.
         </p>
 
       </section>
 
 
-      <!-- RECORD 06 -->
+      <!-- =========================
+           RECORD 06
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="31"
-        data-date="1327 AE"
-        data-context="YOU ARE HERE // Mordremoth Awakens"
+        data-position="37"
+        data-date="1327–1328 AE"
+        data-context="YOU ARE HERE // Mordremoth Expands"
       >
 
         <p class="history-label">
-          Record 06 // Mordremoth
+          Record 06 // Heart of Maguuma
         </p>
 
         <h2>
-          The Jungle Dragon wakes
+          The jungle itself becomes hostile
         </h2>
 
         <p>
-          The Breachmaker's strike sent magical energy through Tyria's
-          ley lines.
+          Mordremoth's influence spread through the
+          <strong>Heart of Maguuma</strong>.
         </p>
 
         <p>
-          Deep within the Heart of Maguuma,
-          <strong>Mordremoth</strong> awakened.
+          Mordrem roots tore through the landscape while dragon minions
+          attacked settlements and supply routes.
         </p>
 
         <p>
-          Mordrem vines spread across the jungle and beyond.
+          The Pact assembled a massive fleet to invade the jungle.
         </p>
 
         <p>
-          The Pact began preparing another campaign against an Elder Dragon.
+          Mordremoth destroyed much of it before the campaign
+          had properly begun.
         </p>
 
       </section>
 
 
-      <!-- RECORD 07 -->
+      <!-- =========================
+           RECORD 07
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="36"
+        data-position="43"
         data-date="1328 AE"
-        data-context="YOU ARE HERE // The Pact Fleet Is Destroyed"
+        data-context="YOU ARE HERE // Mordremoth Falls"
       >
 
         <p class="history-label">
-          Record 07 // Heart of Maguuma
+          Record 07 // Heart of Thorns
         </p>
 
         <h2>
-          The Pact enters the jungle
+          The Pact wins at enormous cost
         </h2>
 
         <p>
-          In <strong>1328 AE</strong>, the Pact launched an enormous
-          airship offensive into the Heart of Maguuma.
+          Survivors regrouped and continued the campaign through
+          the jungle.
         </p>
 
         <p>
-          Mordremoth attacked before the fleet could establish itself.
+          After weeks of fighting,
+          <strong>Mordremoth was defeated</strong>.
         </p>
 
         <p>
-          Airships were torn from the sky by massive vines.
+          Marshal Trahearne died during the final struggle.
         </p>
 
         <p>
-          Pact forces were scattered across the jungle.
-        </p>
-
-        <p>
-          The campaign began as a catastrophe.
+          Another Elder Dragon was gone, and another enormous concentration
+          of magic was released into Tyria.
         </p>
 
       </section>
 
 
-      <!-- RECORD 08 -->
+      <!-- =========================
+           RECORD 08
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="41"
-        data-date="1328 AE"
-        data-context="YOU ARE HERE // Mordremoth Is Defeated"
-      >
-
-        <p class="history-label">
-          Record 08 // The Death of Mordremoth
-        </p>
-
-        <h2>
-          Victory carries a cost
-        </h2>
-
-        <p>
-          After a campaign lasting roughly
-          <strong>43 days</strong>, Pact forces and their allies
-          reached Mordremoth.
-        </p>
-
-        <p>
-          The Elder Dragon was defeated.
-        </p>
-
-        <p>
-          But Marshal <strong>Trahearne</strong> was lost during
-          the final confrontation.
-        </p>
-
-        <p>
-          Mordremoth's death released enormous amounts of magical energy
-          into Tyria's ley lines.
-        </p>
-
-      </section>
-
-
-      <!-- RECORD 09 -->
-
-      <section
-        class="history-section"
-        data-position="46"
+        data-position="49"
         data-date="1329 AE"
-        data-context="YOU ARE HERE // The Maguuma Bloodstone Explodes"
+        data-context="YOU ARE HERE // The Bloodstone Explodes"
       >
 
         <p class="history-label">
-          Record 09 // Bloodstone Fen
+          Record 08 // Bloodstone Fen
         </p>
 
         <h2>
-          Ancient magic becomes unstable
+          Magic destabilizes the world around it
         </h2>
 
         <p>
-          In <strong>1329 AE</strong>, the
-          <strong>Maguuma Bloodstone exploded</strong>.
+          In <strong>1329 AE</strong>, the Maguuma Bloodstone exploded.
         </p>
 
         <p>
-          The blast reshaped Bloodstone Fen and contributed to the growing
-          instability of magic across Tyria.
+          The blast reshaped
+          <strong>Bloodstone Fen</strong>.
         </p>
 
         <p>
-          The White Mantle returned openly and began moving against
-          the Krytan throne.
+          At the same time, the White Mantle re-emerged as an open threat
+          to Kryta.
         </p>
 
         <p>
-          At the same time, strange magical phenomena appeared across
-          the world as excess dragon magic continued moving through
-          the ley-line network.
+          The world was beginning to experience the consequences
+          of rapidly changing magical levels.
         </p>
 
       </section>
 
 
-      <!-- RECORD 10 -->
+      <!-- =========================
+           RECORD 09
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="50"
-        data-date="1329 AE"
+        data-position="55"
+        data-date="1329–1330 AE"
+        data-context="YOU ARE HERE // Balthazar Returns"
+      >
+
+        <p class="history-label">
+          Record 09 // A God Returns
+        </p>
+
+        <h2>
+          Balthazar enters the conflict
+        </h2>
+
+        <p>
+          <strong>Balthazar</strong>, the former god of war,
+          returned to Tyria.
+        </p>
+
+        <p>
+          He sought enough power to wage war against the Elder Dragons.
+        </p>
+
+        <p>
+          His campaign brought destruction to places including
+          Lake Doric and Draconis Mons before moving toward the
+          Crystal Desert.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 10
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="61"
+        data-date="1330 AE"
         data-context="YOU ARE HERE // Aurene Is Born"
       >
 
         <p class="history-label">
-          Record 10 // Aurene
+          Record 10 // Glint's Legacy
         </p>
 
         <h2>
-          Glint's second scion enters the world
+          Aurene enters the world
         </h2>
 
         <p>
-          In <strong>1329 AE</strong>,
-          <strong>Aurene</strong>, the second scion of Glint,
-          was born.
+          During this period,
+          <strong>Aurene</strong>, Glint's second scion, was born.
         </p>
 
         <p>
-          Her existence represented a possibility Glint had prepared
-          for long before her death.
+          Her existence represented something different from the
+          Elder Dragons that had dominated previous ages.
         </p>
 
         <p>
-          Tyria might not simply need to destroy Elder Dragons.
-        </p>
-
-        <p>
-          Something would eventually need to take their place within
-          the magical balance of the world.
+          She could form bonds with mortals and potentially inherit
+          magical power without simply repeating the old cycle.
         </p>
 
       </section>
 
 
-      <!-- RECORD 11 -->
+      <!-- =========================
+           RECORD 11
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="54"
+        data-position="67"
         data-date="1330 AE"
-        data-context="YOU ARE HERE // The White Mantle Fall"
+        data-context="YOU ARE HERE // Balthazar Falls"
       >
 
         <p class="history-label">
-          Record 11 // Krytan Civil War
+          Record 11 // Path of Fire
         </p>
 
         <h2>
-          The White Mantle make their final bid for Kryta
+          A god dies in the Crystal Desert
         </h2>
 
         <p>
-          The White Mantle launched a full rebellion against
-          <strong>Queen Jennah</strong>.
+          Balthazar pursued
+          <strong>Kralkatorrik</strong> through the Crystal Desert.
         </p>
 
         <p>
-          Fighting spread through Kryta, including
-          <strong>Lake Doric</strong>.
+          His Forged army battled Awakened forces and anyone standing
+          between him and the Elder Dragon.
         </p>
 
         <p>
-          The civil war ended with the White Mantle's defeat.
-        </p>
-
-        <p>
-          <strong>Lazarus the Dire</strong>, the last known mursaat,
-          also died.
-        </p>
-
-        <p>
-          An ancient civilization that had survived the previous Dragonrise
-          had finally reached its end.
-        </p>
-
-      </section>
-
-
-      <!-- RECORD 12 -->
-
-      <section
-        class="history-section"
-        data-position="59"
-        data-date="1330 AE"
-        data-context="YOU ARE HERE // Balthazar Wages War"
-      >
-
-        <p class="history-label">
-          Record 12 // Path of Fire
-        </p>
-
-        <h2>
-          A god returns to Tyria
-        </h2>
-
-        <p>
-          The god <strong>Balthazar</strong> returned to the world
-          and began pursuing Elder Dragon magic.
-        </p>
-
-        <p>
-          His campaign moved into the Crystal Desert with his
-          <strong>Forged</strong> army.
-        </p>
-
-        <p>
-          Balthazar sought to kill
-          <strong>Kralkatorrik</strong> and take the dragon's power.
-        </p>
-
-        <p>
-          His actions threatened to destabilize Tyria's magical balance
-          even further.
-        </p>
-
-      </section>
-
-
-      <!-- RECORD 13 -->
-
-      <section
-        class="history-section"
-        data-position="63"
-        data-date="1330 AE"
-        data-context="YOU ARE HERE // Balthazar Dies"
-      >
-
-        <p class="history-label">
-          Record 13 // The Death of Balthazar
-        </p>
-
-        <h2>
-          Another god falls
-        </h2>
-
-        <p>
-          Balthazar was confronted in the
+          Balthazar was ultimately killed in the
           <strong>Domain of Vabbi</strong>.
         </p>
 
         <p>
-          He was defeated and killed.
-        </p>
-
-        <p>
-          The released magical energy was absorbed by
-          <strong>Kralkatorrik</strong> and
-          <strong>Aurene</strong>.
-        </p>
-
-        <p>
-          Kralkatorrik became even more powerful.
+          Kralkatorrik absorbed much of the released divine power.
         </p>
 
       </section>
 
 
-      <!-- RECORD 14 -->
+      <!-- =========================
+           RECORD 12
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="68"
+        data-position="73"
         data-date="1330–1331 AE"
         data-context="YOU ARE HERE // Palawa Joko Declares War"
       >
 
         <p class="history-label">
-          Record 14 // Palawa Joko
+          Record 12 // The Scarab Plague
         </p>
 
         <h2>
-          The Scourge of Vabbi turns toward Central Tyria
+          Joko tries to carry his empire into Tyria
         </h2>
 
         <p>
-          Palawa Joko had ruled Elona for generations.
+          <strong>Palawa Joko</strong> turned his attention toward
+          Central Tyria.
         </p>
 
         <p>
-          Following the Commander's arrival in the region, Joko turned
-          his attention toward Central Tyria.
-        </p>
-
-        <p>
-          His forces prepared to unleash a new
+          His plans included the use of a renewed
           <strong>Scarab Plague</strong>.
         </p>
 
@@ -1485,324 +1347,250 @@
         </p>
 
         <p>
-          Aurene consumed the lich, ending his reign over Elona.
+          His rule over Elona finally began to collapse.
         </p>
 
       </section>
 
 
-      <!-- RECORD 15 -->
+      <!-- =========================
+           RECORD 13
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="73"
+        data-position="79"
         data-date="1331–1332 AE"
-        data-context="YOU ARE HERE // Kralkatorrik Invades the Mists"
+        data-context="YOU ARE HERE // Kralkatorrik Enters the Mists"
       >
 
         <p class="history-label">
-          Record 15 // War in the Mists
+          Record 13 // The Crystal Dragon
         </p>
 
         <h2>
-          Kralkatorrik begins consuming realities
+          Kralkatorrik becomes a threat to more than Tyria
         </h2>
 
         <p>
-          Empowered by Balthazar's magic,
-          <strong>Kralkatorrik entered the Mists</strong>.
+          Empowered by Balthazar's death,
+          <strong>Kralkatorrik</strong> entered the
+          <strong>Mists</strong>.
         </p>
 
         <p>
-          The Elder Dragon began consuming pieces of the realms within them.
+          The Elder Dragon began consuming magical realms and tearing
+          apart boundaries between worlds.
         </p>
 
         <p>
-          Glint gathered spirits to resist him while Aurene and the
-          Commander's allies prepared for a confrontation in Tyria.
+          The conflict could no longer be contained to the physical map
+          of Tyria.
         </p>
 
       </section>
 
 
-      <!-- RECORD 16 -->
+      <!-- =========================
+           RECORD 14
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="77"
-        data-date="1332 AE"
-        data-context="YOU ARE HERE // Kralkatorrik Is Slain"
-      >
-
-        <p class="history-label">
-          Record 16 // Dragonfall
-        </p>
-
-        <h2>
-          The Crystal Dragon dies
-        </h2>
-
-        <p>
-          Aurene and the Commander pursued Kralkatorrik through the Mists.
-        </p>
-
-        <p>
-          The Elder Dragon was brought down, and pieces of several
-          mist realms became entangled with his body to form
-          <strong>Dragonfall</strong>.
-        </p>
-
-        <p>
-          Kralkatorrik was finally killed.
-        </p>
-
-        <p>
-          Aurene absorbed his magic.
-        </p>
-
-      </section>
-
-
-      <!-- RECORD 17 -->
-
-      <section
-        class="history-section"
-        data-position="81"
+        data-position="84"
         data-date="1332 AE"
         data-context="YOU ARE HERE // Aurene Ascends"
       >
 
         <p class="history-label">
-          Record 17 // Elder Dragon of Crystal and Light
+          Record 14 // Dragonfall
         </p>
 
         <h2>
-          Aurene takes a place in the cycle
+          Kralkatorrik dies and Aurene changes the cycle
         </h2>
 
         <p>
-          After Kralkatorrik's death,
-          <strong>Aurene ascended</strong>.
+          Kralkatorrik was eventually brought down at
+          <strong>Dragonfall</strong>.
         </p>
 
         <p>
-          She became the
+          Aurene absorbed the Elder Dragon's released power.
+        </p>
+
+        <p>
+          She ascended as the
           <strong>Elder Dragon of Crystal and Light</strong>.
         </p>
 
         <p>
-          Unlike the dragons that came before her, Aurene could absorb
-          different forms of magic without immediately becoming consumed
-          by their conflicting energies.
-        </p>
-
-        <p>
-          Glint's plan was beginning to take shape.
+          For the first time, an Elder Dragon aligned closely with
+          mortal civilization stood within the magical balance.
         </p>
 
       </section>
 
 
-      <!-- RECORD 18 -->
-
-      <section
-        class="history-section"
-        data-position="85"
-        data-date="1332–1333 AE"
-        data-context="YOU ARE HERE // The Charr Civil War"
-      >
-
-        <p class="history-label">
-          Record 18 // The Icebrood Saga
-        </p>
-
-        <h2>
-          Bangar Ruinbringer challenges the new world
-        </h2>
-
-        <p>
-          Imperator <strong>Bangar Ruinbringer</strong> gathered the
-          charr legions after Aurene's ascension.
-        </p>
-
-        <p>
-          He feared the political power represented by a dragon allied
-          with the Commander.
-        </p>
-
-        <p>
-          Bangar sought to claim
-          <strong>Jormag</strong> as a weapon of his own.
-        </p>
-
-        <p>
-          His actions ignited a
-          <strong>charr civil war</strong>.
-        </p>
-
-      </section>
-
-
-      <!-- RECORD 19 -->
+      <!-- =========================
+           RECORD 15
+      ========================== -->
 
       <section
         class="history-section"
         data-position="89"
-        data-date="1333 AE"
-        data-context="YOU ARE HERE // Jormag and Primordus Reawaken"
+        data-date="1332–1333 AE"
+        data-context="YOU ARE HERE // Charr Civil War"
       >
 
         <p class="history-label">
-          Record 19 // Fire and Ice
+          Record 15 // The Icebrood Saga
         </p>
 
         <h2>
-          Two ancient enemies return
+          The charr fracture while Jormag stirs
         </h2>
 
         <p>
-          Jormag fully reawakened.
+          Imperator <strong>Bangar Ruinbringer</strong> launched a campaign
+          built around controlling Jormag.
         </p>
 
         <p>
-          Soon after, tremors signaled the renewed activity of
-          <strong>Primordus</strong>.
+          His actions helped ignite a
+          <strong>charr civil war</strong>.
         </p>
 
         <p>
-          Destroyers attacked across Tyria while the Commander and allies
-          worked to prevent either dragon from overwhelming the world.
+          Ryland Steelcatcher became increasingly tied to Jormag,
+          while the United Legions fought Bangar's Dominion.
         </p>
 
         <p>
-          Braham Eirsson was called upon by the Spirits of the Wild
-          as the norn of prophecy.
+          The civil war ended, but the Elder Dragon threat did not.
         </p>
 
       </section>
 
 
-      <!-- RECORD 20 -->
+      <!-- =========================
+           RECORD 16
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="92"
+        data-position="94"
+        data-date="1333–1334 AE"
+        data-context="YOU ARE HERE // Fire and Ice Reawaken"
+      >
+
+        <p class="history-label">
+          Record 16 // Two Dragons
+        </p>
+
+        <h2>
+          Primordus and Jormag are forced together
+        </h2>
+
+        <p>
+          <strong>Jormag</strong> and
+          <strong>Primordus</strong> fully reawakened.
+        </p>
+
+        <p>
+          Braham Eirsson became tied to Primordus through the prophecy
+          of the Spirits of the Wild.
+        </p>
+
+        <p>
+          Ryland stood as Jormag's champion.
+        </p>
+
+        <p>
+          The two Elder Dragons were drawn into direct confrontation.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 17
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="97"
         data-date="1334 AE"
-        data-context="YOU ARE HERE // Jormag and Primordus Destroy Each Other"
+        data-context="YOU ARE HERE // Jormag and Primordus Die"
       >
 
         <p class="history-label">
-          Record 20 // Dragonstorm
+          Record 17 // Fire and Ice End Together
         </p>
 
         <h2>
-          Fire and ice annihilate one another
+          Two Elder Dragons destroy one another
         </h2>
 
         <p>
-          Primordus and Jormag were brought into direct conflict.
+          At <strong>Anvil Rock</strong>,
+          Jormag and Primordus were brought into direct conflict.
         </p>
 
         <p>
-          Their opposing magical natures were used against one another.
+          The two Elder Dragons annihilated one another.
         </p>
 
         <p>
-          In <strong>1334 AE</strong>, the two Elder Dragons
-          destroyed each other.
+          The magic released by their deaths flowed south.
         </p>
 
         <p>
-          Their released magic flowed south.
-        </p>
-
-        <p>
-          Only one Elder Dragon of the ancient cycle remained unknown.
+          Only one Elder Dragon from the ancient cycle remained.
         </p>
 
       </section>
 
 
-      <!-- RECORD 21 -->
+      <!-- =========================
+           RECORD 18
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="96"
+        data-position="99"
         data-date="1335 AE"
-        data-context="YOU ARE HERE // The Commander Reaches Cantha"
+        data-context="YOU ARE HERE // Cantha Reopens"
       >
 
         <p class="history-label">
-          Record 21 // End of Dragons
+          Record 18 // End of Dragons
         </p>
 
         <h2>
-          Cantha opens to the world again
+          The road leads back to Cantha
         </h2>
 
         <p>
-          The <strong>Aetherblades</strong> returned to Central Tyria
-          and kidnapped Gorrik.
+          The Aetherblades returned and events carried the Commander
+          across the ocean to <strong>Cantha</strong>.
         </p>
 
         <p>
-          The pursuit carried the Commander and Aurene across the ocean
-          to <strong>Cantha</strong>.
+          The empire reopened contact with the outside world.
         </p>
 
         <p>
-          The empire began reopening its borders after generations of
-          isolation.
-        </p>
-
-        <p>
-          There, the Commander learned the identity of the last ancient
-          Elder Dragon.
-        </p>
-
-      </section>
-
-
-      <!-- RECORD 22 -->
-
-      <section
-        class="history-section"
-        data-position="98"
-        data-date="1335 AE"
-        data-context="YOU ARE HERE // Soo-Won"
-      >
-
-        <p class="history-label">
-          Record 22 // The First Elder Dragon
-        </p>
-
-        <h2>
-          Soo-Won stands at the beginning of the cycle
-        </h2>
-
-        <p>
-          The final Elder Dragon was
+          There, the final Elder Dragon was revealed:
           <strong>Soo-Won</strong>.
         </p>
 
-        <p>
-          She was tied to the origins of the Elder Dragon family and had
-          spent years helping stabilize Cantha through its dragonjade
-          technology.
-        </p>
-
-        <p>
-          But the accumulation of unstable magic corrupted her.
-        </p>
-
-        <p>
-          The ancient Dragon Cycle reached its final crisis.
-        </p>
-
       </section>
 
 
-      <!-- RECORD 23 -->
+      <!-- =========================
+           RECORD 19
+      ========================== -->
 
       <section
         class="history-section"
@@ -1812,160 +1600,182 @@
       >
 
         <p class="history-label">
-          Record 23 // The Age of Aurene
+          Record 19 // The End of the Cycle
         </p>
 
         <h2>
-          The old cycle ends
+          Soo-Won dies
         </h2>
 
         <p>
-          Soo-Won was ultimately defeated and died.
+          Soo-Won became corrupted by the magical forces she had spent
+          generations helping contain.
         </p>
 
         <p>
-          With her death, the final Elder Dragon of the ancient cycle
-          was gone.
+          The final confrontation ended with her death.
         </p>
 
         <p>
-          Aurene remained as the primary force capable of managing the
-          magical balance left behind.
+          With Soo-Won gone, the ancient Elder Dragon cycle that had
+          defined Tyria for millennia finally ended.
         </p>
 
         <p>
-          The Pact Commander declared the beginning of the
+          The Commander declared the beginning of the
           <strong>Age of Aurene</strong>.
         </p>
 
         <p>
-          A cycle that had shaped Tyria for tens of thousands of years
-          had finally ended.
+          Tyria had survived the Dragon Cycle.
+        </p>
+
+        <p>
+          Now it had to discover what came after it.
         </p>
 
       </section>
 
 
-      <!-- ERA INDEX -->
+      <!-- =========================
+           STORY INDEX
+      ========================== -->
 
-      <section class="key-records">
+      <section class="history-section">
 
         <p class="history-label">
           Story Index
         </p>
 
         <h2>
-          Major Chapters of the Commander Era
+          Major Campaigns of the Commander Era
         </h2>
 
-        <div class="era-grid">
 
-          <div class="era-card">
+        <div class="story-grid">
 
-            <p class="era-card-label">
+          <div class="story-card">
+
+            <p class="story-card-label">
               1325–1326 AE
             </p>
 
             <h3>
-              Zhaitan
+              Personal Story
             </h3>
 
             <p>
-              The Pact forms and defeats the Elder Dragon of Orr.
+              The Pact forms and defeats Zhaitan.
             </p>
 
           </div>
 
 
-          <div class="era-card">
+          <div class="story-card">
 
-            <p class="era-card-label">
+            <p class="story-card-label">
               1326–1327 AE
             </p>
 
             <h3>
-              Scarlet Briar
+              Living World Season 1
             </h3>
 
             <p>
-              Scarlet attacks Tyria and awakens Mordremoth.
+              Scarlet Briar attacks Tyria and awakens Mordremoth.
             </p>
 
           </div>
 
 
-          <div class="era-card">
+          <div class="story-card">
 
-            <p class="era-card-label">
-              1328 AE
+            <p class="story-card-label">
+              1327–1328 AE
             </p>
 
             <h3>
-              Mordremoth
+              Season 2 / Heart of Thorns
             </h3>
 
             <p>
-              The Pact campaigns through the Heart of Maguuma.
+              The Pact enters Maguuma and defeats Mordremoth.
             </p>
 
           </div>
 
 
-          <div class="era-card">
+          <div class="story-card">
 
-            <p class="era-card-label">
+            <p class="story-card-label">
               1329–1330 AE
             </p>
 
             <h3>
-              Bloodstone & Balthazar
+              Living World Season 3
             </h3>
 
             <p>
-              Magic destabilizes and the fallen god returns.
+              Bloodstone instability, the White Mantle, and Balthazar's return.
             </p>
 
           </div>
 
 
-          <div class="era-card">
+          <div class="story-card">
 
-            <p class="era-card-label">
+            <p class="story-card-label">
+              1330 AE
+            </p>
+
+            <h3>
+              Path of Fire
+            </h3>
+
+            <p>
+              Balthazar's war ends in the Crystal Desert.
+            </p>
+
+          </div>
+
+
+          <div class="story-card">
+
+            <p class="story-card-label">
               1330–1332 AE
             </p>
 
             <h3>
-              Joko & Kralkatorrik
+              Living World Season 4
             </h3>
 
             <p>
-              Elona is freed and Aurene becomes an Elder Dragon.
+              Joko falls, Kralkatorrik dies, and Aurene ascends.
             </p>
 
           </div>
 
 
-          <div class="era-card">
+          <div class="story-card">
 
-            <p class="era-card-label">
+            <p class="story-card-label">
               1332–1334 AE
             </p>
 
             <h3>
-              Fire and Ice
+              The Icebrood Saga
             </h3>
 
             <p>
-              Charr civil war leads into the final battle between
-              Jormag and Primordus.
+              Charr civil war, Jormag and Primordus, and the end of fire and ice.
             </p>
 
           </div>
 
 
-          <div class="era-card">
+          <div class="story-card">
 
-            <p class="era-card-label">
+            <p class="story-card-label">
               1335 AE
             </p>
 
@@ -1974,24 +1784,7 @@
             </h3>
 
             <p>
-              Cantha reopens and Soo-Won's death ends the ancient cycle.
-            </p>
-
-          </div>
-
-
-          <div class="era-card">
-
-            <p class="era-card-label">
-              New Age
-            </p>
-
-            <h3>
-              The Age of Aurene
-            </h3>
-
-            <p>
-              Tyria enters a world no longer ruled by the old Dragon Cycle.
+              Cantha reopens and Soo-Won's death ends the Elder Dragon cycle.
             </p>
 
           </div>
@@ -2001,128 +1794,9 @@
       </section>
 
 
-      <!-- KEY RECORDS -->
-
-      <section class="key-records">
-
-        <p class="history-label">
-          Archive Index
-        </p>
-
-        <h2>
-          Key Records From This Era
-        </h2>
-
-        <div class="key-grid">
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Organization
-            </p>
-
-            <h3>
-              The Pact
-            </h3>
-
-            <p>
-              The united military force created to fight the Elder Dragons.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Commander History
-            </p>
-
-            <h3>
-              Trahearne
-            </h3>
-
-            <p>
-              First Marshal of the Pact and leader of the campaign against Zhaitan.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Dragon Legacy
-            </p>
-
-            <h3>
-              Aurene
-            </h3>
-
-            <p>
-              Glint's second scion and Elder Dragon of Crystal and Light.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Ancient Magic
-            </p>
-
-            <h3>
-              Bloodstone Fen
-            </h3>
-
-            <p>
-              Site of the Maguuma Bloodstone explosion in 1329 AE.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Divine History
-            </p>
-
-            <h3>
-              Balthazar
-            </h3>
-
-            <p>
-              Former god whose campaign threatened the magical balance of Tyria.
-            </p>
-
-          </div>
-
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Dragon Cycle
-            </p>
-
-            <h3>
-              Soo-Won
-            </h3>
-
-            <p>
-              The final ancient Elder Dragon and the last great barrier
-              before the Age of Aurene.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- NAVIGATION -->
+      <!-- =========================
+           NEXT ERA
+      ========================== -->
 
       <section class="page-navigation">
 
@@ -2135,12 +1809,21 @@
         </h2>
 
         <p>
-          Tyria had spent thousands of years living beneath the shadow
-          of the Elder Dragons. With the cycle ended, attention turned
-          outward toward mysteries that had remained hidden behind it:
-          the Wizard's Court, the Kryptis, Nayos, Janthir, and threats
-          moving through the Mists.
+          For most of recorded history, the Elder Dragons were the
+          largest threat hiding behind Tyria's conflicts.
         </p>
+
+        <p>
+          By 1335 AE, that cycle was over.
+        </p>
+
+        <p>
+          The next archive follows what Tyria discovers once the dragons
+          are no longer blocking the view: the Wizard's Court, Astral Ward,
+          Kryptis, Nayos, Janthir, and threats rooted in histories that
+          had remained hidden from most of the world.
+        </p>
+
 
         <div class="navigation-actions">
 
@@ -2155,14 +1838,15 @@
             href="../index.html"
             class="button"
           >
-            Main Homepage
+            Road Through Time
           </a>
 
-          <span
-            class="button button-primary pending"
+          <a
+            href="../beyond-the-dragon-cycle/index.html"
+            class="button button-primary"
           >
-            Beyond the Dragon Cycle Coming Next →
-          </span>
+            Beyond the Dragon Cycle →
+          </a>
 
         </div>
 
@@ -2173,7 +1857,9 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
@@ -2188,14 +1874,18 @@
   </footer>
 
 
-  <!-- HISTORY POSITION SCRIPT -->
+  <!-- =========================
+       HISTORY POSITION SCRIPT
+  ========================== -->
 
   <script>
     (() => {
       "use strict";
 
       const sections =
-        document.querySelectorAll(".history-section");
+        document.querySelectorAll(
+          ".history-section[data-position]"
+        );
 
       const marker =
         document.getElementById("historyMarker");
@@ -2246,9 +1936,11 @@
                 );
 
             if (visible.length > 0) {
+
               updatePosition(
                 visible[0].target
               );
+
             }
 
           },
@@ -2265,6 +1957,7 @@
             ]
           }
         );
+
 
       sections.forEach(
         (section) => {
