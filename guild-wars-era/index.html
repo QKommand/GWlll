@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="The Guild Wars Campaign Era archive entry in the Guild Wars Living Lore Library."
+    content="The Guild Wars Era archive entry in the Guild Wars Living Lore Library."
   >
 
   <meta name="theme-color" content="#020617">
@@ -23,7 +23,6 @@
 
       --background: #020617;
       --panel: #0f172a;
-      --panel-hover: #162033;
       --border: #374151;
 
       --gold: #f4c76b;
@@ -77,7 +76,9 @@
       margin-inline: auto;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     .site-header {
       position: sticky;
@@ -144,7 +145,9 @@
       transform: translateX(-3px);
     }
 
-    /* HISTORY POSITION */
+    /* =========================
+       HISTORICAL POSITION
+    ========================= */
 
     .history-position {
       position: sticky;
@@ -209,12 +212,13 @@
 
       height: 1px;
 
-      background: linear-gradient(
-        to right,
-        rgba(244, 199, 107, 0.25),
-        rgba(244, 199, 107, 0.9),
-        rgba(244, 199, 107, 0.25)
-      );
+      background:
+        linear-gradient(
+          to right,
+          rgba(244, 199, 107, 0.25),
+          rgba(244, 199, 107, 0.9),
+          rgba(244, 199, 107, 0.25)
+        );
     }
 
     .history-point {
@@ -249,7 +253,7 @@
       position: absolute;
 
       top: -1px;
-      left: 8%;
+      left: 5%;
 
       width: 17px;
       height: 17px;
@@ -288,10 +292,13 @@
       text-align: center;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       padding: 72px 0 56px;
+
       text-align: center;
     }
 
@@ -343,7 +350,9 @@
       line-height: 1.9;
     }
 
-    /* ARCHIVE NOTE */
+    /* =========================
+       ARCHIVE NOTE
+    ========================= */
 
     .archive-note {
       margin-bottom: 55px;
@@ -369,10 +378,11 @@
 
     .archive-note p:last-child {
       margin: 12px 0 0;
-      color: var(--white);
     }
 
-    /* HISTORY */
+    /* =========================
+       HISTORY
+    ========================= */
 
     .history-section {
       padding: 36px 0;
@@ -403,6 +413,7 @@
 
     .history-section p {
       margin: 16px 0 0;
+
       color: var(--white);
     }
 
@@ -435,9 +446,11 @@
       margin: 8px 0 0;
     }
 
-    /* CAMPAIGN GRID */
+    /* =========================
+       STORY GRID
+    ========================= */
 
-    .campaign-grid {
+    .story-grid {
       margin-top: 24px;
 
       display: grid;
@@ -446,57 +459,7 @@
       gap: 14px;
     }
 
-    .campaign-card {
-      padding: 20px;
-
-      border: 1px solid var(--border);
-      border-radius: 10px;
-
-      background: rgba(15, 23, 42, 0.78);
-    }
-
-    .campaign-card h3 {
-      margin: 0;
-
-      color: var(--gold);
-
-      font-size: 1.05rem;
-    }
-
-    .campaign-card p {
-      margin: 8px 0 0;
-
-      color: var(--white);
-
-      font-size: 0.9rem;
-    }
-
-    /* KEY RECORDS */
-
-    .key-records {
-      padding: 42px 0;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .key-records h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.8rem;
-    }
-
-    .key-grid {
-      margin-top: 24px;
-
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-
-      gap: 14px;
-    }
-
-    .key-card {
+    .story-card {
       padding: 20px;
 
       border: 1px solid var(--border);
@@ -505,35 +468,35 @@
       background: rgba(15, 23, 42, 0.76);
     }
 
-    .key-card-label {
+    .story-card-label {
       margin: 0;
 
       color: var(--white);
 
       font-family: monospace;
-      font-size: 0.63rem;
+      font-size: 0.62rem;
 
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-    .key-card h3 {
+    .story-card h3 {
       margin: 7px 0 0;
 
       color: var(--gold);
 
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
 
-    .key-card p:last-child {
+    .story-card p:last-child {
       margin: 8px 0 0;
-
-      color: var(--white);
 
       font-size: 0.9rem;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .page-navigation {
       padding: 45px 0 80px;
@@ -563,8 +526,6 @@
 
     .page-navigation p {
       margin: 13px 0 0;
-
-      color: var(--white);
     }
 
     .navigation-actions {
@@ -603,28 +564,23 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color: rgba(244, 199, 107, 0.6);
+      border-color:
+        rgba(244, 199, 107, 0.6);
+
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
+      border-color:
+        rgba(244, 199, 107, 0.45);
 
-      background: rgba(244, 199, 107, 0.1);
+      background:
+        rgba(244, 199, 107, 0.1);
     }
 
-    .pending {
-      opacity: 0.65;
-      cursor: default;
-    }
-
-    .pending:hover {
-      transform: none;
-      border-color: var(--border);
-      color: var(--gold);
-    }
-
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 30px 0;
@@ -637,7 +593,9 @@
       font-size: 0.75rem;
     }
 
-    /* ANIMATION */
+    /* =========================
+       ANIMATION
+    ========================= */
 
     @keyframes goldPulse {
       0%,
@@ -657,7 +615,9 @@
       }
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 650px) {
       html {
@@ -712,8 +672,7 @@
         font-size: 1rem;
       }
 
-      .campaign-grid,
-      .key-grid {
+      .story-grid {
         grid-template-columns: 1fr;
       }
 
@@ -743,7 +702,9 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="site-header">
 
@@ -768,7 +729,7 @@
         href="../index.html"
         class="home-link"
       >
-        ← Main Homepage
+        ← Road Through Time
       </a>
 
     </div>
@@ -776,7 +737,9 @@
   </header>
 
 
-  <!-- YOU ARE HERE -->
+  <!-- =========================
+       HISTORICAL POSITION
+  ========================== -->
 
   <aside class="history-position">
 
@@ -797,6 +760,7 @@
 
       </div>
 
+
       <div class="history-rail">
 
         <div class="history-line"></div>
@@ -812,19 +776,23 @@
 
       </div>
 
+
       <div class="rail-labels">
 
         <span>1070 AE</span>
+
         <span>1075 AE</span>
+
         <span>1080 AE</span>
 
       </div>
+
 
       <p
         class="position-context"
         id="positionContext"
       >
-        YOU ARE HERE // The Charr Invasion
+        YOU ARE HERE // The Searing
       </p>
 
     </div>
@@ -834,7 +802,9 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero">
 
@@ -853,14 +823,18 @@
         </p>
 
         <p class="hero-text">
-          For generations, the human kingdoms had fought one another.
-          Then the charr came south in force.
+          The human kingdoms had spent generations fighting one another.
         </p>
 
         <p class="hero-text">
-          Within only a few years, Ascalon was scorched, Orr was drowned,
-          Kryta fell under the White Mantle, Shiro returned to Cantha,
-          and Abaddon's ancient plan threatened the world through Nightfall.
+          Then the charr came south.
+        </p>
+
+        <p class="hero-text">
+          In a single decade, kingdoms collapsed, ancient prophecies were
+          fulfilled, forgotten gods returned to the center of history,
+          and the first signs of a far older threat began shaking Tyria
+          from below.
         </p>
 
       </div>
@@ -870,7 +844,9 @@
 
     <div class="container">
 
-      <!-- ARCHIVE NOTE -->
+      <!-- =========================
+           ARCHIVE NOTE
+      ========================== -->
 
       <div class="archive-note">
 
@@ -879,21 +855,24 @@
         </p>
 
         <p>
-          This era contains the central events of the original Guild Wars
-          campaigns and their immediate aftermath: Prophecies, Factions,
-          Nightfall, Eye of the North, and Guild Wars Beyond.
+          This era covers the central events of Guild Wars: Prophecies,
+          Factions, Nightfall, Eye of the North, and Guild Wars Beyond.
+          The long build-up to these events belongs to the previous archive.
+          Here, the focus is on what actually breaks the old world apart.
         </p>
 
       </div>
 
 
-      <!-- 01 -->
+      <!-- =========================
+           RECORD 01
+      ========================== -->
 
       <section
         class="history-section"
         data-position="5"
         data-date="1070 AE"
-        data-context="YOU ARE HERE // The Charr Invade Ascalon"
+        data-context="YOU ARE HERE // The Searing"
       >
 
         <p class="history-label">
@@ -901,43 +880,39 @@
         </p>
 
         <h2>
-          The Guild Wars end beneath a larger threat
+          The Third Guild War ends in fire
         </h2>
 
         <p>
           In <strong>1070 AE</strong>, the charr launched a massive
-          invasion south into the human kingdoms.
+          invasion south into Ascalon.
         </p>
 
         <p>
-          Ascalon, Kryta, and Orr had been weakened by the
-          <strong>Third Guild War</strong>.
+          Their assault ended the Third Guild War almost overnight.
         </p>
 
         <p>
-          The invasion forced the human kingdoms to abandon their struggle
-          with one another and turn toward the enemy approaching from
-          the north.
+          Human armies that had spent years fighting each other were
+          suddenly forced to defend their own borders.
         </p>
 
         <p>
-          The Guild Wars ended.
-        </p>
-
-        <p>
-          The disasters that followed were worse.
+          The first great blow fell on Ascalon.
         </p>
 
       </section>
 
 
-      <!-- 02 -->
+      <!-- =========================
+           RECORD 02
+      ========================== -->
 
       <section
         class="history-section"
         data-position="12"
         data-date="1070 AE"
-        data-context="YOU ARE HERE // The Searing"
+        data-context="YOU ARE HERE // Ascalon Burns"
       >
 
         <p class="history-label">
@@ -945,38 +920,35 @@
         </p>
 
         <h2>
-          Ascalon burns
+          Ascalon is transformed
         </h2>
 
         <p>
-          The charr used powerful magical
-          <strong>Searing Cauldrons</strong> in a ritual that brought
-          fire and destruction across Ascalon.
+          The charr used
+          <strong>Searing Cauldrons</strong> and rituals tied to their
+          Titan gods to call down fire upon Ascalon.
         </p>
 
         <p>
-          The event became known as the
-          <strong>Searing</strong>.
+          The destruction scorched the plains, shattered settlements,
+          and breached the Great Northern Wall.
         </p>
 
         <p>
-          Cities were destroyed, the landscape was scorched, and the
-          Great Northern Wall was breached.
-        </p>
-
-        <p>
-          Ascalon survived, but the kingdom would never fully recover.
+          Ascalon survived as a kingdom, but it would never return
+          to what it had been before.
         </p>
 
         <div class="record-box">
 
           <p class="record-box-label">
-            Hidden Influence
+            Turning Point
           </p>
 
           <p>
-            The charr's Titan gods and the magical power behind the Searing
-            were ultimately connected to Abaddon's agents.
+            The Searing marks the beginning of the playable story of
+            Guild Wars: Prophecies and the collapse of the old balance
+            between the human kingdoms.
           </p>
 
         </div>
@@ -984,180 +956,154 @@
       </section>
 
 
-      <!-- 03 -->
+      <!-- =========================
+           RECORD 03
+      ========================== -->
 
       <section
         class="history-section"
         data-position="20"
+        data-date="1070–1071 AE"
+        data-context="YOU ARE HERE // Kryta and Orr Are Attacked"
+      >
+
+        <p class="history-label">
+          Record 03 // The Charr Move South
+        </p>
+
+        <h2>
+          The invasion spreads beyond Ascalon
+        </h2>
+
+        <p>
+          Charr forces continued west and south toward
+          <strong>Kryta</strong> and <strong>Orr</strong>.
+        </p>
+
+        <p>
+          Kryta survived through the intervention of the
+          <strong>White Mantle</strong> and the mursaat they worshiped
+          as the Unseen Ones.
+        </p>
+
+        <p>
+          Orr met a far darker fate.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 04
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="27"
         data-date="1071 AE"
-        data-context="YOU ARE HERE // The Cataclysm of Orr"
+        data-context="YOU ARE HERE // Orr Sinks"
       >
 
         <p class="history-label">
-          Record 03 // Orr Falls
+          Record 04 // The Cataclysm
         </p>
 
         <h2>
-          An entire kingdom sinks beneath the sea
+          Orr destroys itself to stop the charr
         </h2>
 
         <p>
-          Charr forces moved toward Orr after devastating Ascalon.
+          As the charr advanced across Orr,
+          <strong>Vizier Khilbron</strong> used a forbidden spell.
         </p>
 
         <p>
-          Vizier <strong>Khilbron</strong> turned to a forbidden scroll
-          in an effort tied to the defense of the kingdom.
+          The resulting
+          <strong>Cataclysm</strong> sank the Orrian peninsula beneath
+          the sea.
         </p>
 
         <p>
-          The resulting spell caused the
-          <strong>Cataclysm of Orr</strong>.
+          Nearly everyone still in Orr died.
         </p>
 
         <p>
-          The peninsula sank beneath the sea and nearly every person
-          within Orr died.
-        </p>
-
-        <p>
-          Khilbron survived only by becoming undead.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Abaddon's Shadow
-          </p>
-
-          <p>
-            Khilbron was a follower of Abaddon, tying Orr's destruction
-            to the fallen god's long attempt to influence Tyria.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- 04 -->
-
-      <section
-        class="history-section"
-        data-position="28"
-        data-date="1070–1072 AE"
-        data-context="YOU ARE HERE // The White Mantle Rise"
-      >
-
-        <p class="history-label">
-          Record 04 // Kryta
-        </p>
-
-        <h2>
-          The Unseen Ones save a kingdom
-        </h2>
-
-        <p>
-          Kryta faced its own charr invasion.
-        </p>
-
-        <p>
-          King Jadon fled, leaving the kingdom without effective leadership.
-        </p>
-
-        <p>
-          <strong>Saul D'Alessio</strong> and the
-          <strong>White Mantle</strong> stepped forward.
-        </p>
-
-        <p>
-          With the help of the mursaat, worshiped as the
-          <strong>Unseen Ones</strong>, the White Mantle defeated
-          the invading charr.
-        </p>
-
-        <p>
-          Kryta survived.
-        </p>
-
-        <p>
-          But salvation came with a hidden cost.
+          Khilbron survived in a changed form, becoming the
+          <strong>Undead Lich</strong>.
         </p>
 
       </section>
 
 
-      <!-- 05 -->
+      <!-- =========================
+           RECORD 05
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="35"
+        data-position="34"
         data-date="1072 AE"
-        data-context="YOU ARE HERE // Guild Wars Prophecies"
+        data-context="YOU ARE HERE // The Flameseeker Prophecies"
       >
 
         <p class="history-label">
-          Record 05 // The Flameseeker Prophecies
+          Record 05 // Prophecies
         </p>
 
         <h2>
-          The prophecy begins to fulfill itself
+          The mursaat try to prevent their own destruction
         </h2>
 
         <p>
-          Ascalonian refugees crossed the Shiverpeaks toward Kryta
-          under <strong>Prince Rurik</strong>.
+          The events of <strong>Guild Wars: Prophecies</strong> brought
+          the Flameseeker Prophecies toward fulfillment.
         </p>
 
         <p>
-          Rurik died protecting the refugees from the Stone Summit.
+          The White Mantle sacrificed Chosen humans to power
+          <strong>soul batteries</strong> used by the mursaat.
         </p>
 
         <p>
-          In Kryta, heroes discovered that the White Mantle were
-          sacrificing innocents to power
-          <strong>soul batteries</strong>.
+          Their goal was to keep the
+          <strong>Door of Komalie</strong> sealed and prevent the Titans
+          from entering Tyria.
         </p>
 
         <p>
-          Those sacrifices helped sustain the mursaat's defense
-          against Glint's <strong>Flameseeker Prophecies</strong>.
-        </p>
-
-        <p>
-          The Shining Blade rebellion and the actions of Tyrian heroes
-          ultimately brought the prophecy toward completion.
+          The effort failed.
         </p>
 
       </section>
 
 
-      <!-- 06 -->
+      <!-- =========================
+           RECORD 06
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="42"
+        data-position="41"
         data-date="1072 AE"
-        data-context="YOU ARE HERE // The Door of Komalie Opens"
+        data-context="YOU ARE HERE // The Titans Are Released"
       >
 
         <p class="history-label">
-          Record 06 // The Titans
+          Record 06 // The Door of Komalie
         </p>
 
         <h2>
-          The mursaat fall
+          The prophecy comes true
         </h2>
 
         <p>
-          The Flameseeker Prophecies led heroes to the
-          <strong>Ring of Fire</strong>.
+          The Undead Lich attempted to use the
+          <strong>Scepter of Orr</strong> to open the Door of Komalie.
         </p>
 
         <p>
-          The surviving mursaat were devastated, and
-          <strong>Khilbron</strong>, now the Lich Lord, opened the
-          <strong>Door of Komalie</strong>.
+          The mursaat were nearly wiped out as the Flameseeker Prophecies
+          reached their conclusion.
         </p>
 
         <p>
@@ -1165,24 +1111,22 @@
         </p>
 
         <p>
-          Khilbron was defeated, and the Titans were eventually destroyed
-          or driven back.
-        </p>
-
-        <p>
-          The mursaat survived only in tiny numbers.
+          The Lich was defeated, and the invading Titans were eventually
+          hunted down and destroyed.
         </p>
 
       </section>
 
 
-      <!-- 07 -->
+      <!-- =========================
+           RECORD 07
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="50"
+        data-position="49"
         data-date="1072 AE"
-        data-context="YOU ARE HERE // Shiro Returns to Cantha"
+        data-context="YOU ARE HERE // Shiro Returns"
       >
 
         <p class="history-label">
@@ -1190,121 +1134,126 @@
         </p>
 
         <h2>
-          The Jade Wind's architect returns
+          Cantha faces the return of Shiro Tagachi
         </h2>
 
         <p>
-          In Cantha, the spirit of
-          <strong>Shiro Tagachi</strong> returned more than two centuries
-          after his death.
+          In late <strong>1072 AE</strong>,
+          <strong>Shiro Tagachi</strong> returned as an Envoy.
         </p>
 
         <p>
-          He unleashed the
-          <strong>Affliction</strong>, transforming victims into violent,
-          corrupted creatures.
+          His presence unleashed the
+          <strong>Affliction</strong>, a plague that twisted living beings
+          into grotesque creatures.
         </p>
 
         <p>
-          Shiro also created armies of
-          <strong>Shiro'ken</strong>.
-        </p>
-
-        <p>
-          The crisis spread from Shing Jea Island into Kaineng City,
+          The crisis spread from Shing Jea into Kaineng City,
           the Echovald Forest, and the Jade Sea.
         </p>
 
-      </section>
-
-
-      <!-- 08 -->
-
-      <section
-        class="history-section"
-        data-position="57"
-        data-date="1072 AE"
-        data-context="YOU ARE HERE // Shiro Is Defeated Again"
-      >
-
-        <p class="history-label">
-          Record 08 // Shiro's Second Fall
-        </p>
-
-        <h2>
-          Cantha survives the Affliction
-        </h2>
-
         <p>
-          Canthan heroes joined with allies from the Kurzicks and Luxons
-          against Shiro.
-        </p>
-
-        <p>
-          The dragon <strong>Kuunavang</strong> was freed from corruption
-          and joined the struggle.
-        </p>
-
-        <p>
-          Shiro was defeated again, ending the immediate threat.
-        </p>
-
-        <p>
-          The Afflicted, however, remained throughout Cantha and would
-          take years to eliminate.
+          Shiro was ultimately defeated again.
         </p>
 
       </section>
 
 
-      <!-- 09 -->
+      <!-- =========================
+           RECORD 08
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="65"
+        data-position="56"
         data-date="1075 AE"
         data-context="YOU ARE HERE // Nightfall Begins"
       >
 
         <p class="history-label">
-          Record 09 // Nightfall
+          Record 08 // Nightfall
         </p>
 
         <h2>
-          Abaddon's plan reaches Elona
+          Abaddon's old plan reaches Elona
         </h2>
 
         <p>
           In <strong>1075 AE</strong>,
-          Warmarshal <strong>Varesh Ossa</strong> attempted to bring about
+          Warmarshal <strong>Varesh Ossa</strong> worked to bring about
           <strong>Nightfall</strong>.
         </p>
 
         <p>
-          Nightfall would merge parts of Tyria with the
-          <strong>Realm of Torment</strong>, allowing Abaddon to escape.
+          The Realm of Torment began bleeding into Elona.
         </p>
 
         <p>
-          Demons entered Elona while the landscape itself began to twist
-          under the influence of the fallen god.
+          Demons entered the physical world, and the landscape itself
+          began changing under Abaddon's influence.
         </p>
 
         <p>
-          The Sunspears and Order of Whispers united against Varesh
-          and Abaddon.
+          The imprisoned god was attempting to return.
         </p>
 
       </section>
 
 
-      <!-- 10 -->
+      <!-- =========================
+           RECORD 09
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="72"
+        data-position="63"
         data-date="1075 AE"
-        data-context="YOU ARE HERE // Palawa Joko Is Freed"
+        data-context="YOU ARE HERE // Abaddon Falls"
+      >
+
+        <p class="history-label">
+          Record 09 // The Death of a God
+        </p>
+
+        <h2>
+          Abaddon is finally destroyed
+        </h2>
+
+        <p>
+          Varesh was defeated, and the campaign continued into the
+          <strong>Realm of Torment</strong>.
+        </p>
+
+        <p>
+          There, <strong>Abaddon</strong> was killed.
+        </p>
+
+        <p>
+          His released power threatened to destroy Tyria if left uncontrolled.
+        </p>
+
+        <p>
+          <strong>Kormir</strong> absorbed that power and ascended,
+          becoming the new Goddess of Truth.
+        </p>
+
+        <p>
+          The pantheon had changed.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 10
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="70"
+        data-date="1075 AE"
+        data-context="YOU ARE HERE // Palawa Joko Is Free Again"
       >
 
         <p class="history-label">
@@ -1312,479 +1261,399 @@
         </p>
 
         <h2>
-          Palawa Joko leaves his prison
+          Palawa Joko walks free
         </h2>
 
         <p>
-          Crossing the Desolation required the help of a familiar enemy.
+          The campaign against Nightfall also resulted in the release of
+          <strong>Palawa Joko</strong> from his prison.
         </p>
 
         <p>
-          <strong>Palawa Joko</strong> was released from the prison
-          where Turai Ossa's forces had sealed him centuries earlier.
+          He assisted the Sunspears when their interests temporarily aligned.
         </p>
 
         <p>
-          Joko aided the heroes with knowledge of the Desolation and
-          used his Awakened forces against the Kournans.
-        </p>
-
-        <p>
-          Once the immediate crisis ended, however, nothing prevented
-          Joko from rebuilding his own power.
+          Once the crisis ended, Joko was free to rebuild his Awakened armies
+          and resume plans that would reshape Elona generations later.
         </p>
 
       </section>
 
 
-      <!-- 11 -->
+      <!-- =========================
+           RECORD 11
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="78"
-        data-date="1075 AE"
-        data-context="YOU ARE HERE // Abaddon Dies"
-      >
-
-        <p class="history-label">
-          Record 11 // The Death of a God
-        </p>
-
-        <h2>
-          Abaddon's thousand-year plan ends
-        </h2>
-
-        <p>
-          Heroes entered the Realm of Torment and confronted
-          <strong>Abaddon</strong>.
-        </p>
-
-        <p>
-          The fallen god was defeated and killed.
-        </p>
-
-        <p>
-          But divine power could not simply disappear.
-        </p>
-
-        <p>
-          The released magical energy threatened to destroy Tyria.
-        </p>
-
-        <p>
-          <strong>Kormir</strong> entered the unstable power and emerged
-          as the new <strong>Goddess of Truth</strong>.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            The Pantheon Changes
-          </p>
-
-          <p>
-            Abaddon was replaced by Kormir, preserving the balance of the
-            divine power that had been released.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- 12 -->
-
-      <section
-        class="history-section"
-        data-position="84"
+        data-position="77"
         data-date="1078 AE"
-        data-context="YOU ARE HERE // Eye of the North"
+        data-context="YOU ARE HERE // The Earth Begins to Shake"
       >
 
         <p class="history-label">
-          Record 12 // The Earth Shakes
+          Record 11 // Eye of the North
         </p>
 
         <h2>
-          Something ancient stirs below Tyria
+          A deeper threat begins moving beneath Tyria
         </h2>
 
         <p>
-          In <strong>1078 AE</strong>, earthquakes opened passages
-          throughout Tyria.
+          In <strong>1078 AE</strong>, earthquakes erupted across Tyria.
         </p>
 
         <p>
-          Creatures of stone and fire known as
-          <strong>Destroyers</strong> emerged from the depths.
+          Underground passages opened and creatures known as
+          <strong>Destroyers</strong> began appearing.
         </p>
 
         <p>
-          The crisis brought several peoples into greater contact:
-          the asura were driven toward the surface, the norn became
-          known to southern races, and the dwarves faced an ancient prophecy.
+          The crisis forced the <strong>asura</strong> toward the surface
+          and brought southern peoples into greater contact with the
+          <strong>norn</strong>.
+        </p>
+
+        <p>
+          The threat came from far below the conflicts of human kingdoms.
         </p>
 
       </section>
 
 
-      <!-- 13 -->
+      <!-- =========================
+           RECORD 12
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="89"
+        data-position="83"
         data-date="1078 AE"
         data-context="YOU ARE HERE // The Dwarves Transform"
       >
 
         <p class="history-label">
-          Record 13 // The Great Destroyer
+          Record 12 // The Great Destroyer
         </p>
 
         <h2>
-          The dwarves sacrifice their old future
+          The dwarves fulfill an ancient prophecy
         </h2>
 
         <p>
-          The Destroyer invasion fulfilled ancient dwarven legends
-          concerning the <strong>Great Destroyer</strong>.
+          The Destroyer invasion culminated in battle against the
+          <strong>Great Destroyer</strong>.
         </p>
 
         <p>
-          King <strong>Jalis Ironhammer</strong> invoked the
-          <strong>Rite of the Great Dwarf</strong>.
+          The dwarves underwent the
+          <strong>Rite of the Great Dwarf</strong>, transforming
+          themselves into stone.
         </p>
 
         <p>
-          Dwarves began transforming into beings of living stone.
+          They descended into the depths to wage war against the
+          Destroyers.
         </p>
 
         <p>
-          They descended into the Depths to wage a war against
-          Primordus and the Destroyers.
-        </p>
-
-        <p>
-          The transformation marked the beginning of the end of dwarven
-          civilization as Tyria had known it.
+          Their civilization would never return to the surface in
+          its old form.
         </p>
 
       </section>
 
 
-      <!-- 14 -->
+      <!-- =========================
+           RECORD 13
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="93"
+        data-position="88"
         data-date="1078 AE"
         data-context="YOU ARE HERE // Primordus Stirs"
       >
 
         <p class="history-label">
-          Record 14 // The First Dragon Stirs
+          Record 13 // The Dragon Beneath
         </p>
 
         <h2>
-          The ancient cycle begins again
+          The Destroyers have a master
         </h2>
 
         <p>
-          Beneath Tyria, the Elder Dragon
-          <strong>Primordus</strong> began to stir.
+          The Great Destroyer was only a champion.
         </p>
 
         <p>
-          The Great Destroyer was defeated before Primordus could fully awaken.
+          Beneath Tyria rested the Elder Dragon
+          <strong>Primordus</strong>.
         </p>
 
         <p>
-          The dragon remained dormant.
+          The dragon stirred but did not fully awaken.
         </p>
 
         <p>
-          But the age of Elder Dragons was returning.
+          The immediate threat was stopped.
+        </p>
+
+        <p>
+          The deeper cycle had already begun moving again.
         </p>
 
       </section>
 
 
-      <!-- 15 -->
+      <!-- =========================
+           RECORD 14
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="93"
+        data-date="1079 AE"
+        data-context="YOU ARE HERE // Kryta Breaks the White Mantle"
+      >
+
+        <p class="history-label">
+          Record 14 // War in Kryta
+        </p>
+
+        <h2>
+          The White Mantle finally lose control
+        </h2>
+
+        <p>
+          In <strong>1079 AE</strong>, the Krytan civil war reached
+          its conclusion.
+        </p>
+
+        <p>
+          The <strong>Shining Blade</strong> and their allies defeated
+          the White Mantle leadership.
+        </p>
+
+        <p>
+          <strong>Princess Salma</strong> was crowned, restoring the
+          royal line.
+        </p>
+
+        <p>
+          The Seraph were established as part of the new Krytan order.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 15
+      ========================== -->
 
       <section
         class="history-section"
         data-position="96"
-        data-date="1079 AE"
-        data-context="YOU ARE HERE // The Krytan Civil War Ends"
+        data-date="1079–1080 AE"
+        data-context="YOU ARE HERE // Winds of Change"
       >
 
         <p class="history-label">
-          Record 15 // War in Kryta
+          Record 15 // Cantha After Shiro
         </p>
 
         <h2>
-          The White Mantle lose the throne
+          The Ministry of Purity rises
         </h2>
 
         <p>
-          The White Mantle continued ruling Kryta even after the
-          devastation of the mursaat.
+          In Cantha, the
+          <strong>Ministry of Purity</strong> expanded its campaign
+          against the remaining Afflicted.
         </p>
 
         <p>
-          The Shining Blade rallied around
-          <strong>Princess Salma</strong>.
+          Minister Reiko Murakami turned that campaign into a broader
+          political movement.
         </p>
 
         <p>
-          In <strong>1079 AE</strong>, the Krytan civil war ended
-          with the defeat of the White Mantle government.
-        </p>
-
-        <p>
-          Salma was crowned, and the
-          <strong>Seraph</strong> were established.
+          Reiko was eventually killed, but the Ministry remained powerful
+          enough to influence the direction of Cantha long afterward.
         </p>
 
       </section>
 
 
-      <!-- 16 -->
-
-      <section
-        class="history-section"
-        data-position="98"
-        data-date="1077–1080 AE"
-        data-context="YOU ARE HERE // The Ministry of Purity"
-      >
-
-        <p class="history-label">
-          Record 16 // Winds of Change
-        </p>
-
-        <h2>
-          Cantha purges the Afflicted
-        </h2>
-
-        <p>
-          The <strong>Ministry of Purity</strong>, formally established
-          by Reiko Murakami in <strong>1077 AE</strong>, rose to power
-          during the effort to eliminate the remaining Afflicted.
-        </p>
-
-        <p>
-          By <strong>1079 AE</strong>, the organization had begun its
-          final campaign against the Affliction.
-        </p>
-
-        <p>
-          Reiko's growing authoritarian movement was eventually defeated,
-          but the political direction of Cantha had begun to change.
-        </p>
-
-      </section>
-
-
-      <!-- 17 -->
+      <!-- =========================
+           RECORD 16
+      ========================== -->
 
       <section
         class="history-section"
         data-position="100"
         data-date="1080 AE"
-        data-context="YOU ARE HERE // Ebonhawke Is Established"
+        data-context="YOU ARE HERE // The Old Era Gives Way"
       >
 
         <p class="history-label">
-          Record 17 // The End of an Era
+          Record 16 // The End of the Guild Wars Era
         </p>
 
         <h2>
-          The world prepares for the centuries ahead
+          Tyria survives, but the next age is already arriving
         </h2>
 
         <p>
-          In <strong>1080 AE</strong>, King Adelbern recalled the
-          <strong>Ebon Vanguard</strong> from the north.
+          By <strong>1080 AE</strong>, the great crises of the Guild Wars
+          era had been contained.
         </p>
 
         <p>
-          They fortified <strong>Ebonhawke</strong>, establishing what
-          would become one of humanity's last major strongholds in Ascalon.
+          Abaddon was dead.
+          The Titans had been defeated.
+          Shiro was gone.
+          Kryta had broken the White Mantle's rule.
         </p>
 
         <p>
-          The great crises of the Guild Wars campaigns had passed.
+          But beneath Tyria, Primordus had stirred.
         </p>
 
         <p>
-          But beneath the surface, Elder Dragons were beginning to awaken.
+          The world had spent generations worrying about kingdoms,
+          gods, guilds, and prophecy.
+        </p>
+
+        <p>
+          Soon, Elder Dragons would become the defining threat.
         </p>
 
       </section>
 
 
-      <!-- CAMPAIGN SUMMARY -->
+      <!-- =========================
+           STORY INDEX
+      ========================== -->
 
-      <section class="key-records">
+      <section class="history-section">
 
         <p class="history-label">
-          Campaign Index
+          Story Index
         </p>
 
         <h2>
-          The Guild Wars Campaigns
+          The Major Campaigns
         </h2>
 
-        <div class="campaign-grid">
 
-          <div class="campaign-card">
+        <div class="story-grid">
+
+          <div class="story-card">
+
+            <p class="story-card-label">
+              1070–1072 AE
+            </p>
+
             <h3>
               Prophecies
             </h3>
+
             <p>
-              Ascalon's fall, the White Mantle, the mursaat,
-              the Flameseeker Prophecies, and the Titans.
+              The Searing, fall of Orr, mursaat, White Mantle,
+              Flameseeker Prophecies, and Titans.
             </p>
+
           </div>
 
-          <div class="campaign-card">
+
+          <div class="story-card">
+
+            <p class="story-card-label">
+              1072 AE
+            </p>
+
             <h3>
               Factions
             </h3>
+
             <p>
-              Shiro Tagachi returns and unleashes the Affliction across Cantha.
+              Shiro Tagachi returns and unleashes the Affliction
+              across Cantha.
             </p>
+
           </div>
 
-          <div class="campaign-card">
+
+          <div class="story-card">
+
+            <p class="story-card-label">
+              1075 AE
+            </p>
+
             <h3>
               Nightfall
             </h3>
+
             <p>
-              Varesh Ossa brings about Nightfall and Abaddon attempts to return.
+              Varesh Ossa attempts to free Abaddon, leading to
+              his death and Kormir's ascension.
             </p>
+
           </div>
 
-          <div class="campaign-card">
+
+          <div class="story-card">
+
+            <p class="story-card-label">
+              1078 AE
+            </p>
+
             <h3>
               Eye of the North
             </h3>
-            <p>
-              Destroyers rise, the dwarves transform, and Primordus begins to stir.
-            </p>
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- KEY RECORDS -->
-
-      <section class="key-records">
-
-        <p class="history-label">
-          Archive Index
-        </p>
-
-        <h2>
-          Key Records From This Era
-        </h2>
-
-        <div class="key-grid">
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Ascalon
-            </p>
-
-            <h3>
-              The Searing
-            </h3>
 
             <p>
-              The charr devastate the kingdom and breach the Great Northern Wall.
+              Destroyers rise, the dwarves transform,
+              and Primordus begins to stir.
             </p>
 
           </div>
 
-          <div class="key-card">
 
-            <p class="key-card-label">
-              Orr
+          <div class="story-card">
+
+            <p class="story-card-label">
+              1079 AE
             </p>
 
             <h3>
-              The Cataclysm
+              War in Kryta
             </h3>
 
             <p>
-              Orr sinks beneath the sea after Khilbron's forbidden spell.
+              The White Mantle are overthrown and Salma restores
+              Krytan royal rule.
             </p>
 
           </div>
 
-          <div class="key-card">
 
-            <p class="key-card-label">
-              Cantha
+          <div class="story-card">
+
+            <p class="story-card-label">
+              1079–1080 AE
             </p>
 
             <h3>
-              Shiro Tagachi
+              Winds of Change
             </h3>
 
             <p>
-              Shiro returns and unleashes the Affliction.
-            </p>
-
-          </div>
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Elona
-            </p>
-
-            <h3>
-              Nightfall
-            </h3>
-
-            <p>
-              Abaddon's attempt to merge Tyria with the Realm of Torment.
-            </p>
-
-          </div>
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Divine History
-            </p>
-
-            <h3>
-              Kormir's Ascension
-            </h3>
-
-            <p>
-              Kormir replaces Abaddon as Goddess of Truth.
-            </p>
-
-          </div>
-
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Elder Dragons
-            </p>
-
-            <h3>
-              Primordus Stirs
-            </h3>
-
-            <p>
-              The first sign that the ancient Dragonrise is returning.
+              Cantha purges the Afflicted while the Ministry of Purity
+              rises as a political force.
             </p>
 
           </div>
@@ -1794,7 +1663,9 @@
       </section>
 
 
-      <!-- NAVIGATION -->
+      <!-- =========================
+           NEXT ERA
+      ========================== -->
 
       <section class="page-navigation">
 
@@ -1807,11 +1678,16 @@
         </h2>
 
         <p>
-          The heroes of the Guild Wars era stopped Abaddon, Shiro,
-          the Titans, and the Great Destroyer. But they had only delayed
-          a far older cycle. Over the next two centuries, Primordus,
-          Jormag, Zhaitan, and Kralkatorrik would awaken and reshape Tyria.
+          The Guild Wars era ended with many immediate threats defeated,
+          but Eye of the North revealed something much older beneath them.
         </p>
+
+        <p>
+          The next archive follows the centuries between the original
+          Guild Wars and Guild Wars 2, when Primordus, Jormag, Zhaitan,
+          and Kralkatorrik awaken and reshape the world.
+        </p>
+
 
         <div class="navigation-actions">
 
@@ -1826,14 +1702,15 @@
             href="../index.html"
             class="button"
           >
-            Main Homepage
+            Road Through Time
           </a>
 
-          <span
-            class="button button-primary pending"
+          <a
+            href="../dragons-awaken/index.html"
+            class="button button-primary"
           >
-            Dragons Awaken Coming Next →
-          </span>
+            The Dragons Awaken →
+          </a>
 
         </div>
 
@@ -1844,7 +1721,9 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
@@ -1859,14 +1738,18 @@
   </footer>
 
 
-  <!-- HISTORY POSITION SCRIPT -->
+  <!-- =========================
+       HISTORY POSITION SCRIPT
+  ========================== -->
 
   <script>
     (() => {
       "use strict";
 
       const sections =
-        document.querySelectorAll(".history-section");
+        document.querySelectorAll(
+          ".history-section[data-position]"
+        );
 
       const marker =
         document.getElementById("historyMarker");
@@ -1917,9 +1800,11 @@
                 );
 
             if (visible.length > 0) {
+
               updatePosition(
                 visible[0].target
               );
+
             }
 
           },
@@ -1936,6 +1821,7 @@
             ]
           }
         );
+
 
       sections.forEach(
         (section) => {
