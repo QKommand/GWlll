@@ -38,7 +38,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 170px;
+      scroll-padding-top: 175px;
     }
 
     body {
@@ -194,8 +194,6 @@
       font-family: monospace;
       font-size: 0.7rem;
       font-weight: 700;
-
-      letter-spacing: 0.08em;
     }
 
     .history-rail {
@@ -298,7 +296,6 @@
 
     .hero {
       padding: 72px 0 56px;
-
       text-align: center;
     }
 
@@ -413,8 +410,6 @@
 
     .history-section p {
       margin: 16px 0 0;
-
-      color: var(--white);
     }
 
     .history-section strong {
@@ -447,19 +442,19 @@
     }
 
     /* =========================
-       REGION GRID
+       GRID
     ========================= */
 
-    .region-grid {
-      margin-top: 24px;
-
+    .history-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
 
       gap: 14px;
+
+      margin-top: 24px;
     }
 
-    .region-card {
+    .history-card {
       padding: 20px;
 
       border: 1px solid var(--border);
@@ -468,7 +463,7 @@
       background: rgba(15, 23, 42, 0.76);
     }
 
-    .region-card-label {
+    .history-card-label {
       margin: 0;
 
       color: var(--white);
@@ -480,7 +475,7 @@
       text-transform: uppercase;
     }
 
-    .region-card h3 {
+    .history-card h3 {
       margin: 7px 0 0;
 
       color: var(--gold);
@@ -488,7 +483,7 @@
       font-size: 1.05rem;
     }
 
-    .region-card p:last-child {
+    .history-card p:last-child {
       margin: 8px 0 0;
 
       font-size: 0.9rem;
@@ -564,46 +559,31 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color:
-        rgba(244, 199, 107, 0.6);
+      border-color: rgba(244, 199, 107, 0.6);
 
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color:
-        rgba(244, 199, 107, 0.45);
+      border-color: rgba(244, 199, 107, 0.45);
 
-      background:
-        rgba(244, 199, 107, 0.1);
+      background: rgba(244, 199, 107, 0.1);
     }
-
-    /* =========================
-       FOOTER
-    ========================= */
 
     footer {
       padding: 30px 0;
 
       border-top: 1px solid var(--border);
 
-      color: var(--white);
-
       text-align: center;
       font-size: 0.75rem;
     }
-
-    /* =========================
-       ANIMATION
-    ========================= */
 
     @keyframes goldPulse {
       0%,
       100% {
         color: var(--gold);
-
-        text-shadow:
-          0 0 0 rgba(244, 199, 107, 0);
+        text-shadow: 0 0 0 rgba(244, 199, 107, 0);
       }
 
       50% {
@@ -615,11 +595,8 @@
       }
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
-
     @media (max-width: 650px) {
+
       html {
         scroll-padding-top: 155px;
       }
@@ -672,7 +649,7 @@
         font-size: 1rem;
       }
 
-      .region-grid {
+      .history-grid {
         grid-template-columns: 1fr;
       }
 
@@ -686,6 +663,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       html {
         scroll-behavior: auto;
       }
@@ -702,18 +680,11 @@
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
-
   <header class="site-header">
 
     <div class="container header-inner">
 
-      <a
-        href="../index.html"
-        class="brand"
-      >
+      <a href="../index.html" class="brand">
 
         <p class="brand-small">
           QKommand Archive
@@ -725,10 +696,7 @@
 
       </a>
 
-      <a
-        href="../index.html"
-        class="home-link"
-      >
+      <a href="../index.html" class="home-link">
         ← Road Through Time
       </a>
 
@@ -751,11 +719,8 @@
           Tyrian Historical Position
         </p>
 
-        <p
-          class="current-date"
-          id="currentDate"
-        >
-          1 AE
+        <p class="current-date" id="currentDate">
+          2 AE
         </p>
 
       </div>
@@ -779,20 +744,17 @@
 
       <div class="rail-labels">
 
-        <span>1 AE</span>
+        <span>2 AE</span>
 
-        <span>Guild Wars</span>
+        <span>452 AE</span>
 
-        <span>1069 AE</span>
+        <span>1013 AE</span>
 
       </div>
 
 
-      <p
-        class="position-context"
-        id="positionContext"
-      >
-        YOU ARE HERE // Mortals Inherit the Age
+      <p class="position-context" id="positionContext">
+        YOU ARE HERE // The Mortal Age Expands
       </p>
 
     </div>
@@ -819,23 +781,25 @@
         </h1>
 
         <p class="hero-date">
-          1 AE – 1069 AE
+          2 AE – 1013 AE
         </p>
 
         <p class="hero-text">
-          The gods had withdrawn.
+          The gods had left.
         </p>
 
         <p class="hero-text">
-          What followed was not an empty age, but a mortal one.
-          Kingdoms expanded, dynasties collapsed, trade crossed continents,
-          guilds became armies, and old rivalries hardened into generations
-          of conflict.
+          The world did not become quiet.
         </p>
 
         <p class="hero-text">
-          By the end of this era, the human kingdoms of continental Tyria
-          were powerful, divided, and dangerously exhausted.
+          Kings, guilds, dynasties, traders, prophets,
+          and conquerors now shaped the age.
+        </p>
+
+        <p class="hero-text">
+          Over the next thousand years, mortal civilization
+          would grow powerful enough to create its own catastrophes.
         </p>
 
       </div>
@@ -856,10 +820,10 @@
         </p>
 
         <p>
-          This record follows the long period between the Exodus and the
-          eve of the original Guild Wars campaigns. Its purpose is to show
-          how mortal civilizations developed and why the human kingdoms were
-          already weakened before the disasters beginning in 1070 AE.
+          This is a long transitional era rather than a single war.
+          It follows the rise and decline of kingdoms after the Exodus,
+          the increasing power of guilds, the scattering of the Bloodstones,
+          and the conflicts that eventually lead into the Guild Wars era.
         </p>
 
       </div>
@@ -872,36 +836,32 @@
       <section
         class="history-section"
         data-position="5"
-        data-date="1–2 AE"
-        data-context="YOU ARE HERE // Human Nations Become Independent"
+        data-date="2 AE"
+        data-context="YOU ARE HERE // Orr Becomes Independent"
       >
 
         <p class="history-label">
-          Record 01 // After the Exodus
+          Record 01 // Orr
         </p>
 
         <h2>
-          Mortal nations move forward without the gods
+          Orr becomes an independent nation
         </h2>
 
         <p>
-          The Exodus changed the relationship between mortals and the divine,
-          but it did not halt human civilization.
+          In <strong>2 AE</strong>,
+          Orr became an independent human nation.
         </p>
 
         <p>
-          In <strong>1 AE</strong>, Prince Chang Hai became the first
-          Ascendant emperor of Cantha.
+          The kingdom possessed a particularly strong relationship
+          with magic and remained closely associated with
+          <strong>Arah</strong>, the former city of the gods.
         </p>
 
         <p>
-          In <strong>2 AE</strong>, <strong>Orr</strong> became an
-          independent nation.
-        </p>
-
-        <p>
-          The political world was becoming more divided, regional,
-          and increasingly controlled by mortal rulers.
+          Orr would eventually become one of the three great human
+          kingdoms of continental Tyria.
         </p>
 
       </section>
@@ -913,37 +873,51 @@
 
       <section
         class="history-section"
-        data-position="14"
-        data-date="29–174 AE"
-        data-context="YOU ARE HERE // Kingdoms Expand"
+        data-position="12"
+        data-date="100 AE"
+        data-context="YOU ARE HERE // Bloodstones Scatter"
       >
 
         <p class="history-label">
-          Record 02 // Expansion
+          Record 02 // The Ring of Fire
         </p>
 
         <h2>
-          Human influence spreads across the known world
+          The Bloodstones return to the world
         </h2>
 
         <p>
-          The Primeval Kings expanded their influence into
-          <strong>Vabbi</strong> and the <strong>Desolation</strong>.
+          About a century after the Exodus,
+          <strong>Abaddon's Mouth erupted</strong>.
         </p>
 
         <p>
-          Human settlements continued growing across continental Tyria.
+          The five great Bloodstones were scattered
+          across Tyria.
         </p>
 
         <p>
-          By <strong>174 AE</strong>, the expansion of humanity had pushed
-          the <strong>Forgotten</strong> farther into the Crystal Desert.
+          Magic seeped into the surrounding land and atmosphere.
         </p>
 
         <p>
-          There they increasingly became associated with Glint and
-          the trials later used by mortals seeking Ascension.
+          What had been hidden to prevent another magical catastrophe
+          was now spread throughout the world again.
         </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Important Boundary
+          </p>
+
+          <p>
+            The Bloodstones were placed in Abaddon's Mouth before
+            the Exodus. They were scattered later by the volcanic
+            eruption, not during the Exodus itself.
+          </p>
+
+        </div>
 
       </section>
 
@@ -954,50 +928,39 @@
 
       <section
         class="history-section"
-        data-position="22"
-        data-date="100 AE"
-        data-context="YOU ARE HERE // The Bloodstones Are Scattered"
+        data-position="18"
+        data-date="100 AE and After"
+        data-context="YOU ARE HERE // The Guilds Grow"
       >
 
         <p class="history-label">
-          Record 03 // The Volcano Erupts
+          Record 03 // Rise of the Guilds
         </p>
 
         <h2>
-          The Bloodstones return to the world
+          Organizations begin rivaling kings
         </h2>
 
         <p>
-          Around <strong>100 AE</strong>, Abaddon's Mouth erupted.
+          During the century after the Exodus,
+          guilds became increasingly important social,
+          military, and political organizations.
         </p>
 
         <p>
-          The major Bloodstones that had been hidden within the volcano
-          were scattered across Tyria.
+          They did more than organize craftsmen or merchants.
         </p>
 
         <p>
-          Their magical influence seeped into the surrounding lands.
+          Powerful guilds enforced laws,
+          fielded armed forces,
+          and acted according to their own interests.
         </p>
 
         <p>
-          The stones became objects of power that ambitious groups
-          wanted to control.
+          As their influence overlapped,
+          competition increasingly became conflict. :contentReference[oaicite:1]{index=1}
         </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            A Different Bloodstone Story
-          </p>
-
-          <p>
-            In the previous age, the Bloodstones had been safeguards.
-            Once scattered, they became prizes whose power helped fuel
-            mortal competition.
-          </p>
-
-        </div>
 
       </section>
 
@@ -1008,35 +971,34 @@
 
       <section
         class="history-section"
-        data-position="31"
-        data-date="100 AE onward"
-        data-context="YOU ARE HERE // Guilds Become Political Powers"
+        data-position="25"
+        data-date="174 AE"
+        data-context="YOU ARE HERE // Forgotten Enter the Crystal Desert"
       >
 
         <p class="history-label">
-          Record 04 // The Guilds
+          Record 04 // The Forgotten
         </p>
 
         <h2>
-          Organizations begin rivaling kings
+          Human expansion pushes the Forgotten away
         </h2>
 
         <p>
-          Powerful guilds grew within the human nations.
+          By <strong>174 AE</strong>,
+          continued human expansion had pushed the
+          <strong>Forgotten</strong> into the Crystal Desert.
         </p>
 
         <p>
-          These were not merely social organizations.
+          There they became caretakers of
+          <strong>Glint</strong> and guardians of the
+          trials associated with <strong>Ascension</strong>. :contentReference[oaicite:2]{index=2}
         </p>
 
         <p>
-          Guilds possessed fighters, wealth, influence, and the ability
-          to enforce laws or ignore them depending on their interests.
-        </p>
-
-        <p>
-          As their influence spread across borders, disputes that once
-          belonged to kings increasingly became conflicts between guilds.
+          One of Tyria's oldest peoples had largely withdrawn
+          from the growing human world.
         </p>
 
       </section>
@@ -1048,36 +1010,32 @@
 
       <section
         class="history-section"
-        data-position="39"
-        data-date="221–358 AE"
-        data-context="YOU ARE HERE // Trade and New Kingdoms Grow"
+        data-position="32"
+        data-date="221 AE"
+        data-context="YOU ARE HERE // Cantha Opens Trade"
       >
 
         <p class="history-label">
-          Record 05 // A Connected World
+          Record 05 // International Trade
         </p>
 
         <h2>
-          Trade ties distant civilizations together
+          The continents become more connected
         </h2>
 
         <p>
-          In <strong>221 AE</strong>, Cantha began formal trade with
-          Tyria, Elona, and northern regions.
+          In <strong>221 AE</strong>,
+          Cantha entered the Age of the Hedgehog.
         </p>
 
         <p>
-          <strong>Kryta</strong> became an official colony of Elona
-          in <strong>300 AE</strong>.
+          Formal trade expanded between
+          <strong>Cantha, Tyria, and Elona</strong>.
         </p>
 
         <p>
-          It gained independence in <strong>358 AE</strong>.
-        </p>
-
-        <p>
-          The known world was increasingly connected by merchants,
-          diplomats, migrations, and political agreements.
+          Goods, people, ideas, and political influence increasingly
+          crossed continental borders. :contentReference[oaicite:3]{index=3}
         </p>
 
       </section>
@@ -1089,38 +1047,34 @@
 
       <section
         class="history-section"
-        data-position="48"
-        data-date="452–640 AE"
-        data-context="YOU ARE HERE // Elona's Dynasties Collapse and Reform"
+        data-position="39"
+        data-date="272 AE"
+        data-context="YOU ARE HERE // Flameseeker Prophecies"
       >
 
         <p class="history-label">
-          Record 06 // Elona Changes
+          Record 06 // Glint
         </p>
 
         <h2>
-          Plague breaks an ancient dynasty
+          Glint records a prophecy for a distant future
         </h2>
 
         <p>
-          In <strong>452 AE</strong>, the
-          <strong>Scarab Plague</strong> devastated Elona.
+          In <strong>272 AE</strong>,
+          Glint compiled the
+          <strong>Flameseeker Prophecies</strong>.
         </p>
 
         <p>
-          The royal house of the Primeval Kings was wiped out,
-          and Istan was abandoned.
+          Their importance would not become clear
+          for centuries.
         </p>
 
         <p>
-          New dynasties rose and later collapsed during the
-          <strong>Shattered Dynasty Era</strong>.
-        </p>
-
-        <p>
-          By <strong>640 AE</strong>, Elona had emerged as three allied
-          provinces: <strong>Istan</strong>, <strong>Kourna</strong>,
-          and <strong>Vabbi</strong>.
+          Eventually they would become central to the downfall
+          of the mursaat and the events surrounding
+          the Door of Komalie.
         </p>
 
       </section>
@@ -1132,38 +1086,37 @@
 
       <section
         class="history-section"
-        data-position="57"
-        data-date="757–868 AE"
-        data-context="YOU ARE HERE // Palawa Joko Rises"
+        data-position="46"
+        data-date="300–358 AE"
+        data-context="YOU ARE HERE // Kryta Becomes Independent"
       >
 
         <p class="history-label">
-          Record 07 // Palawa Joko
+          Record 07 // Kryta
         </p>
 
         <h2>
-          An undead conqueror nearly takes Elona
+          A colony becomes a kingdom
         </h2>
 
         <p>
-          <strong>Palawa Joko</strong> emerged from the Desolation
-          and built his Bone Palace.
+          In <strong>300 AE</strong>,
+          Kryta was formally recognized as a colony of Elona.
         </p>
 
         <p>
-          In <strong>860 AE</strong>, he invaded Elona and conquered
-          much of Vabbi.
+          Human expansion through the region intensified
+          conflict with local centaur populations.
         </p>
 
         <p>
-          Two years later, <strong>Turai Ossa</strong> defeated him
-          at the Battle of Jahai.
+          In <strong>358 AE</strong>,
+          Kryta became independent.
         </p>
 
         <p>
-          Joko could not be permanently killed, so he was imprisoned,
-          and the <strong>Order of Whispers</strong> was established
-          to watch over his tomb.
+          It joined Ascalon and Orr as one of the major
+          human powers of continental Tyria.
         </p>
 
       </section>
@@ -1175,37 +1128,37 @@
 
       <section
         class="history-section"
-        data-position="65"
-        data-date="851 AE"
-        data-context="YOU ARE HERE // Lord Odran Opens the Mists"
+        data-position="54"
+        data-date="452–456 AE"
+        data-context="YOU ARE HERE // Scarab Plague"
       >
 
         <p class="history-label">
-          Record 08 // Lord Odran
+          Record 08 // Elona
         </p>
 
         <h2>
-          A mortal finds a way into the Mists
+          The Primeval Dynasty falls
         </h2>
 
         <p>
-          In <strong>851 AE</strong>, the arcanist
-          <strong>Lord Odran</strong> became the first recorded living
-          mortal to enter the Rift.
+          In <strong>452 AE</strong>,
+          the <strong>Scarab Plague</strong> swept through Elona.
         </p>
 
         <p>
-          Through dangerous rituals and sacrifices, he opened permanent
-          portals between Tyria and regions of the Mists.
+          The plague devastated Istan,
+          killed enormous numbers of people,
+          and destroyed the royal family of the Primeval Kings.
         </p>
 
         <p>
-          His death eventually left those pathways exposed.
+          Istan was abandoned.
         </p>
 
         <p>
-          Mortals now had access to places once thought to belong
-          only to spirits and gods.
+          By <strong>456 AE</strong>,
+          the plague years had ended and a new dynasty began.
         </p>
 
       </section>
@@ -1217,37 +1170,34 @@
 
       <section
         class="history-section"
-        data-position="73"
-        data-date="872 AE"
-        data-context="YOU ARE HERE // The Jade Wind"
+        data-position="61"
+        data-date="583–640 AE"
+        data-context="YOU ARE HERE // Elona Fractures"
       >
 
         <p class="history-label">
-          Record 09 // Shiro Tagachi
+          Record 09 // Shattered Dynasties
         </p>
 
         <h2>
-          Cantha is frozen in a single moment
+          Elona survives political collapse
         </h2>
 
         <p>
-          In <strong>872 AE</strong>,
-          <strong>Shiro Tagachi</strong> assassinated
-          Emperor Angsiyan during the Harvest Ceremony.
+          The Great Dynasty eventually collapsed.
         </p>
 
         <p>
-          Shiro was killed by Saint Viktor, Archemorus, and Vizu.
+          The resulting
+          <strong>Pretender Wars</strong>
+          began a period remembered as the
+          <strong>Shattered Dynasty Era</strong>.
         </p>
 
         <p>
-          His death released the
-          <strong>Jade Wind</strong>.
-        </p>
-
-        <p>
-          The Jade Sea solidified and the Echovald Forest was petrified,
-          permanently changing the landscape of Cantha.
+          By <strong>640 AE</strong>,
+          Elona emerged as three allied provinces:
+          <strong>Istan, Kourna, and Vabbi</strong>.
         </p>
 
       </section>
@@ -1259,37 +1209,43 @@
 
       <section
         class="history-section"
-        data-position="81"
-        data-date="880–1022 AE"
-        data-context="YOU ARE HERE // Cantha Withdraws From Foreign Trade"
+        data-position="67"
+        data-date="757–868 AE"
+        data-context="YOU ARE HERE // Palawa Joko Rises"
       >
 
         <p class="history-label">
-          Record 10 // Growing Isolation
+          Record 10 // Palawa Joko
         </p>
 
         <h2>
-          Cantha turns increasingly inward
+          An undead conqueror challenges Elona
         </h2>
 
         <p>
-          Conflict with the tengu grew into the
-          <strong>Tengu Wars</strong>.
+          Palawa Joko emerged from the Desolation
+          and built his power over generations.
         </p>
 
         <p>
-          Trade agreements with Ascalon, Kryta, and Orr were dissolved
-          in <strong>902 AE</strong>.
+          In <strong>860 AE</strong>,
+          his invasion captured much of Vabbi.
         </p>
 
         <p>
-          Canthan embassies eventually closed, and contact with the northern
-          kingdoms weakened.
+          In <strong>862 AE</strong>,
+          Warmarshal <strong>Turai Ossa</strong>
+          defeated Joko at the Battle of Jahai.
         </p>
 
         <p>
-          Informal trade resumed in <strong>1022 AE</strong>,
-          but relations remained more limited than before.
+          The Order of Whispers was established to help
+          keep the defeated lich imprisoned.
+        </p>
+
+        <p>
+          In <strong>868 AE</strong>,
+          Turai led the Great Pilgrimage into the Crystal Desert.
         </p>
 
       </section>
@@ -1301,37 +1257,37 @@
 
       <section
         class="history-section"
-        data-position="88"
-        data-date="1013 AE"
-        data-context="YOU ARE HERE // The Third Guild War Begins"
+        data-position="73"
+        data-date="851 AE"
+        data-context="YOU ARE HERE // Lord Odran Reaches the Mists"
       >
 
         <p class="history-label">
-          Record 11 // The Third Guild War
+          Record 11 // Lord Odran
         </p>
 
         <h2>
-          Human rivalry consumes continental Tyria
+          A mortal opens the way into the Mists
         </h2>
 
         <p>
-          There had already been two earlier Guild Wars,
-          though their exact dates remain uncertain.
+          In <strong>851 AE</strong>,
+          Lord Odran used sacrifices and powerful rituals
+          to open portals into the Mists.
         </p>
 
         <p>
-          In <strong>1013 AE</strong>, the
-          <strong>Third Guild War</strong> began.
+          He became the first recorded living mortal
+          to enter the Rift.
         </p>
 
         <p>
-          Guilds tied to the great human kingdoms fought for influence
-          and supremacy.
+          His death eventually left those hidden routes
+          accessible to others.
         </p>
 
         <p>
-          Ascalon, Kryta, and eventually Orr were pulled into a conflict
-          that consumed wealth, soldiers, and political attention.
+          Mortal access to the Mists had changed forever.
         </p>
 
       </section>
@@ -1343,38 +1299,42 @@
 
       <section
         class="history-section"
-        data-position="94"
-        data-date="1067–1069 AE"
-        data-context="YOU ARE HERE // The White Mantle Appears"
+        data-position="80"
+        data-date="872 AE"
+        data-context="YOU ARE HERE // The Jade Wind"
       >
 
         <p class="history-label">
-          Record 12 // Saul D'Alessio
+          Record 12 // Cantha
         </p>
 
         <h2>
-          Kryta gains a new faith
+          Shiro Tagachi changes an entire landscape
         </h2>
 
         <p>
-          Around <strong>1067 AE</strong>,
-          the exile <strong>Saul D'Alessio</strong> encountered the
-          <strong>mursaat</strong>.
+          In <strong>872 AE</strong>,
+          Shiro Tagachi assassinated
+          <strong>Emperor Angsiyan</strong>.
         </p>
 
         <p>
-          He returned to Kryta and founded the
-          <strong>White Mantle</strong>.
+          Saint Viktor, Archemorus, and Vizu killed Shiro.
         </p>
 
         <p>
-          The mursaat became known to their followers as the
-          <strong>Unseen Ones</strong>.
+          His death released the
+          <strong>Jade Wind</strong>.
         </p>
 
         <p>
-          What began as a religious movement would soon become central
-          to the survival and later rule of Kryta.
+          The Jade Sea solidified,
+          while the Echovald Forest was petrified.
+        </p>
+
+        <p>
+          Cantha entered the
+          <strong>Age of the Dragon</strong>.
         </p>
 
       </section>
@@ -1386,163 +1346,244 @@
 
       <section
         class="history-section"
-        data-position="100"
-        data-date="1069 AE"
-        data-context="YOU ARE HERE // The Human Kingdoms Stand Divided"
+        data-position="87"
+        data-date="902–1022 AE"
+        data-context="YOU ARE HERE // Trade Breaks Down"
       >
 
         <p class="history-label">
-          Record 13 // The Eve of Disaster
+          Record 13 // Isolation and Trade
         </p>
 
         <h2>
-          The kingdoms are powerful, but exhausted
+          Connections between nations weaken
         </h2>
 
         <p>
-          By <strong>1069 AE</strong>, the human kingdoms of continental
-          Tyria had spent generations fighting among themselves.
+          In <strong>902 AE</strong>,
+          Cantha formally dissolved long-standing trade agreements
+          with the northern human kingdoms.
         </p>
 
         <p>
-          Ascalon remained locked in rivalry with its neighbors.
-          Kryta was undergoing religious and political change.
-          Orr had largely remained outside the worst of the fighting,
-          but could not ignore the conflict forever.
+          Diplomatic connections weakened further over time.
         </p>
 
         <p>
-          None of them knew that the Guild Wars were about to become
-          the smaller problem.
-        </p>
-
-        <p>
-          North of Ascalon, the charr were preparing to march south.
+          Informal trade eventually resumed,
+          but the world was becoming politically fragmented.
         </p>
 
       </section>
 
 
       <!-- =========================
-           REGIONAL SUMMARY
+           RECORD 14
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="93"
+        data-date="First and Second Guild Wars"
+        data-context="YOU ARE HERE // Guilds Fight for Power"
+      >
+
+        <p class="history-label">
+          Record 14 // Guild Wars
+        </p>
+
+        <h2>
+          Guilds turn their power against one another
+        </h2>
+
+        <p>
+          There were three major
+          <strong>Guild Wars</strong>.
+        </p>
+
+        <p>
+          The exact dates of the first two remain uncertain.
+        </p>
+
+        <p>
+          Ascalon and Kryta were major participants,
+          while Orr initially attempted to remain outside
+          the early conflicts.
+        </p>
+
+        <p>
+          Guild armies had become powerful enough that kings
+          could no longer reliably control them. :contentReference[oaicite:4]{index=4}
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 15
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="100"
+        data-date="1013 AE"
+        data-context="YOU ARE HERE // The Third Guild War Begins"
+      >
+
+        <p class="history-label">
+          Record 15 // The Third Guild War
+        </p>
+
+        <h2>
+          The final Guild War begins
+        </h2>
+
+        <p>
+          In <strong>1013 AE</strong>,
+          the <strong>Third Guild War</strong> began.
+        </p>
+
+        <p>
+          Ascalon, Kryta, and eventually Orr
+          became drawn into increasingly destructive conflict.
+        </p>
+
+        <p>
+          Orr entered hoping to end the war.
+        </p>
+
+        <p>
+          Instead, the fighting became even more severe. :contentReference[oaicite:5]{index=5}
+        </p>
+
+        <p>
+          The kingdoms were still fighting one another
+          when a far older enemy moved south.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           ERA SUMMARY
       ========================== -->
 
       <section class="history-section">
 
         <p class="history-label">
-          Mortal World Index
+          Era Summary
         </p>
 
         <h2>
-          The Major Powers Before 1070 AE
+          Mortals inherit the world
         </h2>
 
 
-        <div class="region-grid">
+        <div class="history-grid">
 
-          <div class="region-card">
+          <div class="history-card">
 
-            <p class="region-card-label">
-              Continental Tyria
+            <p class="history-card-label">
+              Kingdoms
             </p>
 
             <h3>
-              Ascalon
+              Human Powers Rise
             </h3>
 
             <p>
-              A powerful human kingdom increasingly consumed by war
-              and its long conflict with the charr.
+              Ascalon, Kryta, Orr, Elona, and Cantha
+              grow into major civilizations.
             </p>
 
           </div>
 
 
-          <div class="region-card">
+          <div class="history-card">
 
-            <p class="region-card-label">
-              Continental Tyria
+            <p class="history-card-label">
+              Magic
             </p>
 
             <h3>
-              Kryta
+              Bloodstones Scatter
             </h3>
 
             <p>
-              An independent human kingdom where the White Mantle
-              and Unseen Faith were beginning to rise.
+              The stones return to the wider world
+              after the Ring of Fire eruption.
             </p>
 
           </div>
 
 
-          <div class="region-card">
+          <div class="history-card">
 
-            <p class="region-card-label">
-              Continental Tyria
+            <p class="history-card-label">
+              Politics
             </p>
 
             <h3>
-              Orr
+              Guilds Gain Power
             </h3>
 
             <p>
-              The ancient human kingdom surrounding Arah,
-              renowned for its magical tradition.
+              Some guilds become strong enough to rival
+              the authority of kings.
             </p>
 
           </div>
 
 
-          <div class="region-card">
+          <div class="history-card">
 
-            <p class="region-card-label">
-              Cantha
+            <p class="history-card-label">
+              The Mists
             </p>
 
             <h3>
-              Empire of the Dragon
+              Lord Odran
             </h3>
 
             <p>
-              A long-lived empire shaped by the Jade Wind,
-              the Luxon-Kurzick divide, and growing isolation.
+              Mortals gain routes into realms once reached
+              only by gods and spirits.
             </p>
 
           </div>
 
 
-          <div class="region-card">
+          <div class="history-card">
 
-            <p class="region-card-label">
-              Elona
+            <p class="history-card-label">
+              Catastrophe
             </p>
 
             <h3>
-              Three Provinces
+              Jade Wind
             </h3>
 
             <p>
-              Istan, Kourna, and Vabbi emerged from centuries
-              of plague, dynastic collapse, and rebuilding.
+              Shiro's death permanently transforms
+              Cantha's landscape.
             </p>
 
           </div>
 
 
-          <div class="region-card">
+          <div class="history-card">
 
-            <p class="region-card-label">
-              Political Power
+            <p class="history-card-label">
+              1013 AE
             </p>
 
             <h3>
-              The Guilds
+              Third Guild War
             </h3>
 
             <p>
-              Organizations whose military and political influence
-              became powerful enough to challenge royal authority.
+              The great Tyrian kingdoms enter the conflict
+              that leads directly into the Guild Wars era.
             </p>
 
           </div>
@@ -1553,7 +1594,7 @@
 
 
       <!-- =========================
-           NEXT ERA
+           NEXT ENTRY
       ========================== -->
 
       <section class="page-navigation">
@@ -1567,16 +1608,21 @@
         </h2>
 
         <p>
-          More than a thousand years after the Exodus, the mortal world
-          had built kingdoms, empires, orders, trade routes, and rivalries
-          of its own.
+          By the eleventh century AE,
+          the great human kingdoms were exhausted
+          by generations of rivalry.
         </p>
 
         <p>
-          Then in 1070 AE the charr invasion transformed those rivalries
-          overnight. The next archive begins with the Searing and follows
-          the events of Guild Wars: Prophecies, Factions, Nightfall,
-          Eye of the North, and Guild Wars Beyond.
+          Then the charr invaded.
+        </p>
+
+        <p>
+          The Searing, the Cataclysm of Orr,
+          the Flameseeker Prophecies,
+          Shiro's return, Nightfall,
+          and the Destroyers would turn old political wars
+          into a struggle for the survival of entire nations.
         </p>
 
 
@@ -1612,10 +1658,6 @@
   </main>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
   <footer>
 
     <div class="container">
@@ -1628,10 +1670,6 @@
 
   </footer>
 
-
-  <!-- =========================
-       HISTORY POSITION SCRIPT
-  ========================== -->
 
   <script>
     (() => {
@@ -1658,19 +1696,16 @@
           section.dataset.position || "5";
 
         const date =
-          section.dataset.date || "1 AE";
+          section.dataset.date || "2 AE";
 
         const context =
           section.dataset.context || "YOU ARE HERE";
 
-        marker.style.left =
-          `${position}%`;
+        marker.style.left = `${position}%`;
 
-        currentDate.textContent =
-          date;
+        currentDate.textContent = date;
 
-        positionContext.textContent =
-          context;
+        positionContext.textContent = context;
       };
 
 
