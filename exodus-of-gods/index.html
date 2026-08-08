@@ -23,7 +23,6 @@
 
       --background: #020617;
       --panel: #0f172a;
-      --panel-hover: #162033;
       --border: #374151;
 
       --gold: #f4c76b;
@@ -77,7 +76,9 @@
       margin-inline: auto;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     .site-header {
       position: sticky;
@@ -111,6 +112,7 @@
 
       font-family: monospace;
       font-size: 0.65rem;
+
       letter-spacing: 0.17em;
       text-transform: uppercase;
     }
@@ -143,7 +145,9 @@
       transform: translateX(-3px);
     }
 
-    /* HISTORY POSITION */
+    /* =========================
+       HISTORICAL POSITION
+    ========================= */
 
     .history-position {
       position: sticky;
@@ -208,12 +212,13 @@
 
       height: 1px;
 
-      background: linear-gradient(
-        to right,
-        rgba(244, 199, 107, 0.25),
-        rgba(244, 199, 107, 0.9),
-        rgba(244, 199, 107, 0.25)
-      );
+      background:
+        linear-gradient(
+          to right,
+          rgba(244, 199, 107, 0.25),
+          rgba(244, 199, 107, 0.9),
+          rgba(244, 199, 107, 0.25)
+        );
     }
 
     .history-point {
@@ -248,7 +253,7 @@
       position: absolute;
 
       top: -1px;
-      left: 10%;
+      left: 5%;
 
       width: 17px;
       height: 17px;
@@ -287,10 +292,13 @@
       text-align: center;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       padding: 72px 0 56px;
+
       text-align: center;
     }
 
@@ -342,7 +350,9 @@
       line-height: 1.9;
     }
 
-    /* NOTE */
+    /* =========================
+       ARCHIVE NOTE
+    ========================= */
 
     .archive-note {
       margin-bottom: 55px;
@@ -368,10 +378,11 @@
 
     .archive-note p:last-child {
       margin: 12px 0 0;
-      color: var(--white);
     }
 
-    /* HISTORY */
+    /* =========================
+       HISTORY
+    ========================= */
 
     .history-section {
       padding: 36px 0;
@@ -402,6 +413,7 @@
 
     .history-section p {
       margin: 16px 0 0;
+
       color: var(--white);
     }
 
@@ -434,21 +446,9 @@
       margin: 8px 0 0;
     }
 
-    /* KEY RECORDS */
-
-    .key-records {
-      padding: 42px 0;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .key-records h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.8rem;
-    }
+    /* =========================
+       KEY GRID
+    ========================= */
 
     .key-grid {
       margin-top: 24px;
@@ -474,7 +474,7 @@
       color: var(--white);
 
       font-family: monospace;
-      font-size: 0.63rem;
+      font-size: 0.62rem;
 
       letter-spacing: 0.13em;
       text-transform: uppercase;
@@ -485,18 +485,18 @@
 
       color: var(--gold);
 
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
 
     .key-card p:last-child {
       margin: 8px 0 0;
 
-      color: var(--white);
-
       font-size: 0.9rem;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .page-navigation {
       padding: 45px 0 80px;
@@ -526,8 +526,6 @@
 
     .page-navigation p {
       margin: 13px 0 0;
-
-      color: var(--white);
     }
 
     .navigation-actions {
@@ -566,28 +564,23 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color: rgba(244, 199, 107, 0.6);
+      border-color:
+        rgba(244, 199, 107, 0.6);
+
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
+      border-color:
+        rgba(244, 199, 107, 0.45);
 
-      background: rgba(244, 199, 107, 0.1);
+      background:
+        rgba(244, 199, 107, 0.1);
     }
 
-    .pending {
-      opacity: 0.65;
-      cursor: default;
-    }
-
-    .pending:hover {
-      transform: none;
-      border-color: var(--border);
-      color: var(--gold);
-    }
-
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 30px 0;
@@ -600,7 +593,9 @@
       font-size: 0.75rem;
     }
 
-    /* ANIMATION */
+    /* =========================
+       ANIMATION
+    ========================= */
 
     @keyframes goldPulse {
       0%,
@@ -620,7 +615,9 @@
       }
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 650px) {
       html {
@@ -705,7 +702,9 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="site-header">
 
@@ -730,7 +729,7 @@
         href="../index.html"
         class="home-link"
       >
-        ← Main Homepage
+        ← Road Through Time
       </a>
 
     </div>
@@ -738,7 +737,9 @@
   </header>
 
 
-  <!-- YOU ARE HERE -->
+  <!-- =========================
+       HISTORICAL POSITION
+  ========================== -->
 
   <aside class="history-position">
 
@@ -754,10 +755,11 @@
           class="current-date"
           id="currentDate"
         >
-          0 AE
+          1 BE
         </p>
 
       </div>
+
 
       <div class="history-rail">
 
@@ -774,19 +776,23 @@
 
       </div>
 
+
       <div class="rail-labels">
 
         <span>1 BE</span>
-        <span>Divine War</span>
+
+        <span>War of the Gods</span>
+
         <span>0 AE</span>
 
       </div>
+
 
       <p
         class="position-context"
         id="positionContext"
       >
-        YOU ARE HERE // Abaddon's Rebellion
+        YOU ARE HERE // Abaddon Rejects the Restriction
       </p>
 
     </div>
@@ -796,7 +802,9 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero">
 
@@ -811,17 +819,21 @@
         </h1>
 
         <p class="hero-date">
-          0 AE
+          1 BE – 0 AE
         </p>
 
         <p class="hero-text">
-          The crisis over magic had already changed Tyria.
-          The Bloodstone was divided. Mortal power was restrained.
-          The wars that followed Abaddon's gift were beginning to end.
+          The mortal wars over magic had been contained.
         </p>
 
         <p class="hero-text">
-          But among the gods themselves, the conflict had only begun.
+          The argument that caused them was not.
+        </p>
+
+        <p class="hero-text">
+          Abaddon believed the gods had taken back too much of the power
+          he had given to Tyria. His refusal to accept their decision
+          turned a dispute over magic into a war between gods.
         </p>
 
       </div>
@@ -831,7 +843,9 @@
 
     <div class="container">
 
-      <!-- ARCHIVE NOTE -->
+      <!-- =========================
+           ARCHIVE NOTE
+      ========================== -->
 
       <div class="archive-note">
 
@@ -840,22 +854,25 @@
         </p>
 
         <p>
-          The Exodus marks one of the great dividing lines in Tyrian
-          history. The Mouvelian Calendar uses this event as its center:
-          years before it are recorded as BE, Before the Exodus, and years
-          after it as AE, After the Exodus.
+          The previous archive covers why magic was restricted and how
+          the Bloodstone system worked. This record begins with the
+          consequence: Abaddon's rejection of that decision and the
+          divine war that permanently changed the geography and spiritual
+          history of Tyria.
         </p>
 
       </div>
 
 
-      <!-- 01 -->
+      <!-- =========================
+           RECORD 01
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="10"
+        data-position="5"
         data-date="1 BE"
-        data-context="YOU ARE HERE // Abaddon Rejects the Limitation of Magic"
+        data-context="YOU ARE HERE // Abaddon Rejects the Decision"
       >
 
         <p class="history-label">
@@ -863,36 +880,39 @@
         </p>
 
         <h2>
-          Abaddon refuses the new order
+          Abaddon refuses to accept the new order
         </h2>
 
         <p>
-          Abaddon had given greater magical power to the peoples of Tyria.
+          Abaddon had supported giving greater magical power to mortals.
         </p>
 
         <p>
-          When the other gods chose to limit that gift using the
-          <strong>Bloodstone</strong>, Abaddon opposed them.
+          When the other gods chose to restrict that power,
+          <strong>Abaddon opposed them</strong>.
         </p>
 
         <p>
-          The disagreement was no longer about mortals alone.
+          The disagreement became irreconcilable.
         </p>
 
         <p>
-          It became a conflict among gods.
+          The god of knowledge and water turned against the rest
+          of the pantheon.
         </p>
 
       </section>
 
 
-      <!-- 02 -->
+      <!-- =========================
+           RECORD 02
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="22"
-        data-date="1 BE – 0 AE"
-        data-context="YOU ARE HERE // The Margonites Are Transformed"
+        data-position="17"
+        data-date="1 BE"
+        data-context="YOU ARE HERE // The Margonites Follow Abaddon"
       >
 
         <p class="history-label">
@@ -900,93 +920,125 @@
         </p>
 
         <h2>
-          A civilization follows Abaddon
+          A mortal civilization follows its god into war
         </h2>
 
         <p>
-          The <strong>Margonites</strong> were already one of the great
-          maritime peoples of the age.
+          The <strong>Margonites</strong> had developed along the coasts
+          surrounding the Crystal Sea and became a powerful maritime culture.
         </p>
 
         <p>
-          Their settlements stretched along the coastlines north and west
-          of Elona, and their ships once dominated the Unending Ocean.
+          Their devotion to Abaddon drew them into his rebellion.
         </p>
 
         <p>
-          During Abaddon's rebellion, he began transforming his followers
-          into powerful ethereal and demonic beings.
+          Abaddon began transforming his followers into
+          <strong>ethereal demonic beings</strong>, beginning with
+          figures such as Jadoth.
         </p>
 
         <p>
-          One of the earliest known was <strong>Jadoth</strong>.
+          A human civilization was becoming an army for a fallen god.
         </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Collapse
-          </p>
-
-          <p>
-            The divine war would ultimately destroy Margonite civilization
-            as it had previously existed.
-          </p>
-
-        </div>
 
       </section>
 
 
-      <!-- 03 -->
+      <!-- =========================
+           RECORD 03
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="34"
-        data-date="0 AE"
+        data-position="29"
+        data-date="1 BE"
         data-context="YOU ARE HERE // Abaddon Assaults the Gates of Heaven"
       >
 
         <p class="history-label">
-          Record 03 // The Divine War
+          Record 03 // Divine War
         </p>
 
         <h2>
-          Abaddon turns against the gods
+          Abaddon turns on the pantheon
         </h2>
 
         <p>
-          Abaddon openly declared war on the other members of the pantheon.
+          Abaddon declared war on the other gods and
+          <strong>assaulted the Gates of Heaven</strong>.
         </p>
 
         <p>
-          His forces assaulted the <strong>Gates of Heaven</strong>.
+          He was powerful enough to fight more than one god,
+          but could not overcome the combined strength of the others.
         </p>
 
         <p>
-          Abaddon was powerful enough to fight multiple gods, but he could
-          not defeat the combined strength of the other five.
+          The resulting conflict was unlike the mortal wars that had
+          preceded it.
         </p>
 
         <p>
-          The fighting spilled across the world and left permanent scars
-          upon Tyria.
+          Divine power began reshaping the world itself.
         </p>
 
       </section>
 
 
-      <!-- 04 -->
+      <!-- =========================
+           RECORD 04
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="48"
+        data-position="42"
+        data-date="0 AE"
+        data-context="YOU ARE HERE // Abaddon Is Defeated"
+      >
+
+        <p class="history-label">
+          Record 04 // The Fall
+        </p>
+
+        <h2>
+          The rebellion ends at the Mouth of Torment
+        </h2>
+
+        <p>
+          The other gods defeated Abaddon.
+        </p>
+
+        <p>
+          His fall occurred near the place later known as the
+          <strong>Mouth of Torment</strong>.
+        </p>
+
+        <p>
+          He and his followers were cast into the
+          <strong>Realm of Torment</strong>.
+        </p>
+
+        <p>
+          Victory did not leave the world untouched.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 05
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="55"
         data-date="0 AE"
         data-context="YOU ARE HERE // The Crystal Sea Is Destroyed"
       >
 
         <p class="history-label">
-          Record 04 // The Crystal Sea
+          Record 05 // The Crystal Sea
         </p>
 
         <h2>
@@ -994,34 +1046,34 @@
         </h2>
 
         <p>
-          The battle that defeated Abaddon caused catastrophic changes
-          across southern Tyria.
+          The force unleashed during Abaddon's defeat transformed
+          the geography of the region.
         </p>
 
         <p>
-          The floor of the <strong>Crystal Sea</strong> rose.
+          The floor of the
+          <strong>Crystal Sea</strong> rose.
         </p>
 
         <p>
-          Waters vanished, exposing vast stretches of land that became
-          the <strong>Crystal Desert</strong>.
+          Water vanished from vast stretches of the landscape,
+          creating the <strong>Crystal Desert</strong>.
         </p>
 
         <p>
-          Farther south, once-fertile regions were transformed into the
-          sulfurous wasteland later known as the
+          Lands farther south were twisted into the sulfurous
           <strong>Desolation</strong>.
         </p>
 
         <div class="record-box">
 
           <p class="record-box-label">
-            World Changed
+            A Permanent Scar
           </p>
 
           <p>
-            The Crystal Desert was not always a desert. Its landscape is
-            one of the physical scars left behind by the war between gods.
+            The Crystal Desert was not always a desert. Its landscape
+            is a surviving physical record of a war between gods.
           </p>
 
         </div>
@@ -1029,68 +1081,72 @@
       </section>
 
 
-      <!-- 05 -->
+      <!-- =========================
+           RECORD 06
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="60"
+        data-position="67"
         data-date="0 AE"
-        data-context="YOU ARE HERE // Abaddon Is Defeated"
+        data-context="YOU ARE HERE // Abaddon Is Imprisoned"
       >
 
         <p class="history-label">
-          Record 05 // The Fall of Abaddon
+          Record 06 // The Realm of Torment
         </p>
 
         <h2>
-          The god of knowledge is cast down
+          The fallen god is sealed away
         </h2>
 
         <p>
-          Abaddon was eventually defeated by the other five gods.
-        </p>
-
-        <p>
-          He and his followers were imprisoned within the
+          Abaddon was imprisoned within the
           <strong>Realm of Torment</strong>.
         </p>
 
         <p>
-          The Mouth of Torment became the place where the fallen god's
-          realm touched the world.
+          His transformed Margonite followers were imprisoned with him.
         </p>
 
         <p>
-          His defeat did not destroy him.
+          The barrier between Tyria and the fallen god's prison remained
+          scarred by the violence of his defeat.
         </p>
 
         <p>
-          It only imprisoned him.
+          Abaddon was contained.
+        </p>
+
+        <p>
+          He was not powerless.
         </p>
 
       </section>
 
 
-      <!-- 06 -->
+      <!-- =========================
+           RECORD 07
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="70"
+        data-position="78"
         data-date="0 AE"
         data-context="YOU ARE HERE // Abaddon's Memory Is Erased"
       >
 
         <p class="history-label">
-          Record 06 // The Forgotten God
+          Record 07 // The Forgotten God
         </p>
 
         <h2>
-          History is deliberately erased
+          The victors try to erase his influence
         </h2>
 
         <p>
-          After Abaddon's defeat, the remaining gods attempted to remove
-          knowledge of him from Tyria.
+          After Abaddon's defeat, the remaining gods attempted to
+          remove knowledge of him from the world.
         </p>
 
         <p>
@@ -1098,166 +1154,152 @@
         </p>
 
         <p>
-          His Orrian temple was sunk, and the
-          <strong>Temple of the Six</strong> was pulled into the Realm
-          of Torment with him.
+          His Orrian temple was sunk, and other places associated
+          with the fallen god were hidden or removed.
         </p>
 
         <p>
-          Later generations would remember the pantheon as though Abaddon
-          had never belonged to it.
+          Over time, Abaddon became the
+          <strong>forgotten member of the pantheon</strong>.
         </p>
 
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Historical Irony
-          </p>
-
-          <p>
-            Abaddon became a forgotten god not because no one had once
-            known him, but because powerful beings deliberately tried
-            to erase him from history.
-          </p>
-
-        </div>
+        <p>
+          His followers did not forget him.
+        </p>
 
       </section>
 
 
-      <!-- 07 -->
+      <!-- =========================
+           RECORD 08
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="80"
+        data-position="89"
         data-date="0 AE"
-        data-context="YOU ARE HERE // The Gods Withdraw"
+        data-context="YOU ARE HERE // The Gods Leave Tyria"
       >
 
         <p class="history-label">
-          Record 07 // The Exodus
+          Record 08 // The Exodus
         </p>
 
         <h2>
-          The gods leave Tyria
+          The gods withdraw from the mortal world
         </h2>
 
         <p>
-          The divine war had demonstrated the damage that could occur
-          when gods fought directly within the mortal world.
+          The war had shown the devastation that could occur when
+          gods fought directly upon Tyria.
         </p>
 
         <p>
-          After Abaddon's imprisonment, the remaining Five Gods withdrew
-          from Tyria and departed into the <strong>Mists</strong>.
+          The remaining gods chose to leave the physical world
+          and withdraw into the <strong>Mists</strong>.
         </p>
 
         <p>
-          Legends later claimed that they went to create new worlds.
+          This departure became known as the
+          <strong>Exodus of the Gods</strong>.
         </p>
 
         <p>
-          Whatever their destination, the age of gods openly walking
-          alongside mortals was over.
+          The gods continued to influence their followers, but the age
+          in which they openly walked among mortals had ended.
         </p>
 
       </section>
 
 
-      <!-- 08 -->
-
-      <section
-        class="history-section"
-        data-position="90"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // The Mouvelian Calendar Begins"
-      >
-
-        <p class="history-label">
-          Record 08 // Year Zero
-        </p>
-
-        <h2>
-          History gains a dividing line
-        </h2>
-
-        <p>
-          The Exodus became important enough that Tyrian historians used
-          it to divide their calendar.
-        </p>
-
-        <p>
-          Events before the gods' departure became
-          <strong>BE, Before the Exodus</strong>.
-        </p>
-
-        <p>
-          Events after it became
-          <strong>AE, After the Exodus</strong>.
-        </p>
-
-        <p>
-          The old divine age had ended.
-        </p>
-
-        <p>
-          The age of mortal kingdoms continued without the gods standing
-          beside them.
-        </p>
-
-      </section>
-
-
-      <!-- 09 -->
+      <!-- =========================
+           RECORD 09
+      ========================== -->
 
       <section
         class="history-section"
         data-position="96"
-        data-date="After 0 AE"
-        data-context="YOU ARE HERE // Abaddon Continues to Scheme"
+        data-date="0 AE"
+        data-context="YOU ARE HERE // A New Calendar Begins"
       >
 
         <p class="history-label">
-          Record 09 // The Prisoner Still Watches
+          Record 09 // Year Zero
         </p>
 
         <h2>
-          The rebellion was not truly over
+          The Exodus becomes the center of recorded time
         </h2>
 
         <p>
-          Abaddon remained trapped within the Realm of Torment.
+          The event was significant enough that later Tyrian historians
+          used it as the dividing point of the
+          <strong>Mouvelian Calendar</strong>.
         </p>
 
         <p>
-          But imprisonment did not end his influence.
+          Years before the departure became
+          <strong>BE — Before the Exodus</strong>.
         </p>
 
         <p>
-          Over the centuries that followed, his servants and agents would
-          influence events throughout Tyria.
+          Years after became
+          <strong>AE — After the Exodus</strong>.
         </p>
 
         <p>
-          The Searing of Ascalon, the Cataclysm of Orr, Shiro Tagachi's
-          fall, and eventually Nightfall would all become connected to the
-          fallen god's efforts to return.
-        </p>
-
-        <p>
-          His war had ended.
-        </p>
-
-        <p>
-          His plan had not.
+          The world had entered a new age.
         </p>
 
       </section>
 
 
-      <!-- KEY RECORDS -->
+      <!-- =========================
+           RECORD 10
+      ========================== -->
 
-      <section class="key-records">
+      <section
+        class="history-section"
+        data-position="100"
+        data-date="0–1 AE"
+        data-context="YOU ARE HERE // Mortals Inherit the World"
+      >
+
+        <p class="history-label">
+          Record 10 // After the Gods
+        </p>
+
+        <h2>
+          Mortals are left to shape the next age
+        </h2>
+
+        <p>
+          The Six Gods had transformed the world, guided humanity,
+          intervened in magical crises, and fought a war that altered
+          the face of continents.
+        </p>
+
+        <p>
+          Now they were gone from Tyria.
+        </p>
+
+        <p>
+          Human kingdoms, guilds, dynasties, religions, and rivalries
+          would increasingly determine the course of recorded history.
+        </p>
+
+        <p>
+          The next centuries belonged to mortals.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           KEY RECORDS
+      ========================== -->
+
+      <section class="history-section">
 
         <p class="history-label">
           Archive Index
@@ -1266,6 +1308,7 @@
         <h2>
           Key Records From This Era
         </h2>
+
 
         <div class="key-grid">
 
@@ -1280,47 +1323,35 @@
             </h3>
 
             <p>
-              Defeated and imprisoned within the Realm of Torment.
+              The god whose dispute over magic became a war against
+              the rest of the pantheon.
             </p>
 
           </div>
 
+
           <div class="key-card">
 
             <p class="key-card-label">
-              Civilization
+              Followers
             </p>
 
             <h3>
-              The Margonites
+              Margonites
             </h3>
 
             <p>
-              A maritime people transformed into followers of Abaddon.
+              A maritime human civilization transformed into
+              Abaddon's demonic servants.
             </p>
 
           </div>
 
-          <div class="key-card">
-
-            <p class="key-card-label">
-              Geographic Change
-            </p>
-
-            <h3>
-              Crystal Desert
-            </h3>
-
-            <p>
-              Formed from the destruction and transformation of the Crystal Sea.
-            </p>
-
-          </div>
 
           <div class="key-card">
 
             <p class="key-card-label">
-              Cosmology
+              Divine Prison
             </p>
 
             <h3>
@@ -1328,7 +1359,59 @@
             </h3>
 
             <p>
-              The prison realm of Abaddon and his followers.
+              The realm where Abaddon and his followers were imprisoned.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Changed Landscape
+            </p>
+
+            <h3>
+              Crystal Desert
+            </h3>
+
+            <p>
+              The former Crystal Sea, transformed during Abaddon's fall.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Changed Landscape
+            </p>
+
+            <h3>
+              The Desolation
+            </h3>
+
+            <p>
+              A once-fertile region transformed into a sulfurous wasteland.
+            </p>
+
+          </div>
+
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Historical Divide
+            </p>
+
+            <h3>
+              The Exodus
+            </h3>
+
+            <p>
+              The departure of the gods and the starting point
+              of the Mouvelian Calendar.
             </p>
 
           </div>
@@ -1338,7 +1421,9 @@
       </section>
 
 
-      <!-- NAVIGATION -->
+      <!-- =========================
+           NEXT ERA
+      ========================== -->
 
       <section class="page-navigation">
 
@@ -1351,10 +1436,17 @@
         </h2>
 
         <p>
-          The gods were gone, but the nations they had helped shape remained.
-          Human kingdoms expanded, guilds grew into great powers, and the
-          struggle for influence slowly moved from divine hands into mortal ones.
+          The gods had withdrawn and Abaddon was imprisoned.
+          The immediate divine crisis was over.
         </p>
+
+        <p>
+          What followed was a long age shaped by mortal ambition:
+          expanding kingdoms, dynasties, trade, guilds, political rivalry,
+          the scattering of the Bloodstones, and eventually the wars
+          that gave the Guild Wars their name.
+        </p>
+
 
         <div class="navigation-actions">
 
@@ -1369,14 +1461,15 @@
             href="../index.html"
             class="button"
           >
-            Main Homepage
+            Road Through Time
           </a>
 
-          <span
-            class="button button-primary pending"
+          <a
+            href="../kingdoms-and-guild-wars/index.html"
+            class="button button-primary"
           >
-            Kingdoms Archive Coming Next →
-          </span>
+            Kingdoms and Guild Wars →
+          </a>
 
         </div>
 
@@ -1387,7 +1480,9 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
@@ -1402,14 +1497,18 @@
   </footer>
 
 
-  <!-- HISTORY POSITION SCRIPT -->
+  <!-- =========================
+       HISTORY POSITION SCRIPT
+  ========================== -->
 
   <script>
     (() => {
       "use strict";
 
       const sections =
-        document.querySelectorAll(".history-section");
+        document.querySelectorAll(
+          ".history-section[data-position]"
+        );
 
       const marker =
         document.getElementById("historyMarker");
@@ -1424,7 +1523,7 @@
       const updatePosition = (section) => {
 
         const position =
-          section.dataset.position || "10";
+          section.dataset.position || "5";
 
         const date =
           section.dataset.date || "0 AE";
@@ -1460,9 +1559,11 @@
                 );
 
             if (visible.length > 0) {
+
               updatePosition(
                 visible[0].target
               );
+
             }
 
           },
@@ -1479,6 +1580,7 @@
             ]
           }
         );
+
 
       sections.forEach(
         (section) => {
