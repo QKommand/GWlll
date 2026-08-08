@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="The Elder Races archive entry in the Guild Wars Living Lore Library."
+  >
+
+  <meta name="theme-color" content="#020617">
+
+  <title>The Elder Races // GWlll</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #020617;
+      --panel: #0f172a;
+      --panel-hover: #162033;
+      --border: #374151;
+
+      --gold: #f4c76b;
+      --gold-bright: #ffe3a3;
+      --gold-muted: #c99b45;
+
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 170px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(244, 199, 107, 0.07),
+          transparent 34rem
+        ),
+        var(--background);
+
+      color: var(--white);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-small {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .home-link:hover {
+      color: var(--gold-bright);
+      transform: translateX(-3px);
+    }
+
+    /* HISTORY POSITION RAIL */
+
+    .history-position {
+      position: sticky;
+      top: 68px;
+      z-index: 40;
+
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(2, 6, 23, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .history-position-inner {
+      padding: 13px 0 15px;
+    }
+
+    .position-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      margin-bottom: 10px;
+    }
+
+    .position-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.62rem;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .current-date {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+    }
+
+    .history-rail {
+      position: relative;
+      height: 26px;
+    }
+
+    .history-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background: linear-gradient(
+        to right,
+        rgba(244, 199, 107, 0.25),
+        rgba(244, 199, 107, 0.85),
+        rgba(244, 199, 107, 0.25)
+      );
+    }
+
+    .history-point {
+      position: absolute;
+
+      top: 2px;
+
+      width: 11px;
+      height: 11px;
+
+      border: 1px solid var(--gold-muted);
+      border-radius: 50%;
+
+      background: var(--background);
+
+      transform: translateX(-50%);
+    }
+
+    .history-point.start {
+      left: 4%;
+    }
+
+    .history-point.middle {
+      left: 50%;
+    }
+
+    .history-point.end {
+      left: 96%;
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: -1px;
+      left: 10%;
+
+      width: 17px;
+      height: 17px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 15px rgba(244, 199, 107, 0.45);
+
+      transform: translateX(-50%);
+
+      transition: left 450ms ease;
+    }
+
+    .rail-labels {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 2px;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.58rem;
+    }
+
+    .position-context {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 72px 0 56px;
+      text-align: center;
+    }
+
+    .hero-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 16px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(2.7rem, 8vw, 5.2rem);
+      line-height: 1.03;
+
+      letter-spacing: -0.045em;
+
+      animation: goldPulse 4s ease-in-out infinite;
+    }
+
+    .hero-date {
+      margin: 16px 0 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.8rem;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      max-width: 760px;
+
+      margin: 24px auto 0;
+
+      color: var(--white);
+
+      font-size: 1.06rem;
+      line-height: 1.9;
+    }
+
+    /* ARCHIVE NOTE */
+
+    .archive-note {
+      margin-bottom: 55px;
+      padding: 24px;
+
+      border: 1px solid rgba(244, 199, 107, 0.35);
+      border-radius: 12px;
+
+      background: rgba(244, 199, 107, 0.045);
+    }
+
+    .archive-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.68rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .archive-note p:last-child {
+      margin: 12px 0 0;
+      color: var(--white);
+    }
+
+    /* HISTORY */
+
+    .history-section {
+      padding: 36px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .history-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.66rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .history-section h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(1.6rem, 5vw, 2.35rem);
+      line-height: 1.2;
+    }
+
+    .history-section p {
+      margin: 16px 0 0;
+      color: var(--white);
+    }
+
+    .history-section strong {
+      color: var(--gold-bright);
+    }
+
+    .record-box {
+      margin-top: 22px;
+      padding: 20px;
+
+      border-left: 2px solid var(--gold);
+
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .record-box-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .record-box p:last-child {
+      margin: 8px 0 0;
+    }
+
+    /* KEY RECORDS */
+
+    .key-records {
+      padding: 42px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .key-records h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.8rem;
+    }
+
+    .key-grid {
+      margin-top: 24px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .key-card {
+      padding: 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(15, 23, 42, 0.76);
+    }
+
+    .key-card-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.63rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .key-card h3 {
+      margin: 7px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+    }
+
+    .key-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--white);
+
+      font-size: 0.9rem;
+    }
+
+    /* NAVIGATION */
+
+    .page-navigation {
+      padding: 45px 0 80px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .navigation-label {
+      margin: 0;
+
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.67rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .page-navigation h2 {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.7rem;
+    }
+
+    .page-navigation p {
+      margin: 13px 0 0;
+      color: var(--white);
+    }
+
+    .navigation-actions {
+      margin-top: 24px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 9px;
+
+      background: var(--panel);
+      color: var(--gold);
+
+      font-weight: 700;
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(244, 199, 107, 0.6);
+      color: var(--gold-bright);
+    }
+
+    .button-primary {
+      border-color: rgba(244, 199, 107, 0.45);
+      background: rgba(244, 199, 107, 0.1);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--white);
+
+      text-align: center;
+      font-size: 0.75rem;
+    }
+
+    /* ANIMATION */
+
+    @keyframes goldPulse {
+      0%,
+      100% {
+        color: var(--gold);
+
+        text-shadow:
+          0 0 0 rgba(244, 199, 107, 0);
+      }
+
+      50% {
+        color: var(--gold-bright);
+
+        text-shadow:
+          0 0 16px rgba(244, 199, 107, 0.28),
+          0 0 34px rgba(244, 199, 107, 0.1);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      html {
+        scroll-padding-top: 155px;
+      }
+
+      .container {
+        width: min(100% - 22px, 900px);
+      }
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .brand-small {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 0.84rem;
+      }
+
+      .home-link {
+        font-size: 0.67rem;
+      }
+
+      .history-position {
+        top: 62px;
+      }
+
+      .position-top {
+        align-items: flex-start;
+      }
+
+      .position-label {
+        font-size: 0.55rem;
+      }
+
+      .current-date {
+        font-size: 0.62rem;
+      }
+
+      .rail-labels {
+        font-size: 0.52rem;
+      }
+
+      .position-context {
+        font-size: 0.65rem;
+      }
+
+      .hero {
+        padding: 52px 0 44px;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      .key-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="../index.html"
+        class="brand"
+      >
+
+        <p class="brand-small">
+          QKommand Archive
+        </p>
+
+        <p class="brand-name">
+          GWlll
+        </p>
+
+      </a>
+
+      <a
+        href="../index.html"
+        class="home-link"
+      >
+        ← Main Homepage
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- YOU ARE HERE -->
+
+  <aside class="history-position">
+
+    <div class="container history-position-inner">
+
+      <div class="position-top">
+
+        <p class="position-label">
+          Tyrian Historical Position
+        </p>
+
+        <p
+          class="current-date"
+          id="currentDate"
+        >
+          Ancient Era
+        </p>
+
+      </div>
+
+      <div class="history-rail">
+
+        <div class="history-line"></div>
+
+        <span class="history-point start"></span>
+        <span class="history-point middle"></span>
+        <span class="history-point end"></span>
+
+        <span
+          class="history-marker"
+          id="historyMarker"
+        ></span>
+
+      </div>
+
+      <div class="rail-labels">
+
+        <span>10,000 BE</span>
+        <span>5,000 BE</span>
+        <span>0 AE</span>
+
+      </div>
+
+      <p
+        class="position-context"
+        id="positionContext"
+      >
+        YOU ARE HERE // The Elder Races
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <p class="hero-label">
+          Historical Archive // Record 02
+        </p>
+
+        <h1>
+          The Elder Races
+        </h1>
+
+        <p class="hero-date">
+          Ancient Tyria
+        </p>
+
+        <p class="hero-text">
+          When the Elder Dragons returned to sleep, Tyria was not empty.
+          Five ancient peoples remained, carrying memories of a world
+          most later civilizations would never know.
+        </p>
+
+        <p class="hero-text">
+          Some preserved knowledge. Some lost it. Some disappeared into
+          the Mists. And some would survive long enough to shape history
+          thousands of years later.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="container">
+
+      <!-- ARCHIVE NOTE -->
+
+      <div class="archive-note">
+
+        <p class="archive-note-label">
+          Archive Context
+        </p>
+
+        <p>
+          The exact chronology of the elder races is incomplete.
+          Much of what survives comes from ancient stelae, magical ruins,
+          later discoveries, and records preserved by civilizations
+          that were already in decline.
+        </p>
+
+      </div>
+
+
+      <!-- 01 -->
+
+      <section
+        class="history-section"
+        data-position="10"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // Survivors of the Dragonrise"
+      >
+
+        <p class="history-label">
+          Record 01 // Those Who Remained
+        </p>
+
+        <h2>
+          Five elder peoples survive
+        </h2>
+
+        <p>
+          The peoples most often remembered as Tyria's
+          <strong>elder races</strong> were the
+          <strong>dwarves, Forgotten, jotun, mursaat, and Seers</strong>.
+        </p>
+
+        <p>
+          They were among the most magically advanced civilizations
+          known to have survived the previous Dragonrise.
+        </p>
+
+        <p>
+          Yet survival did not leave them untouched.
+        </p>
+
+        <p>
+          Their alliances had fractured, populations had fallen,
+          and entire bodies of knowledge had already begun to disappear.
+        </p>
+
+      </section>
+
+
+      <!-- 02 -->
+
+      <section
+        class="history-section"
+        data-position="18"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // The Seers"
+      >
+
+        <p class="history-label">
+          Record 02 // The Seers
+        </p>
+
+        <h2>
+          The architects of the Bloodstone
+        </h2>
+
+        <p>
+          The <strong>Seers</strong> were among the most powerful
+          magical peoples of ancient Tyria.
+        </p>
+
+        <p>
+          During the Dragonrise, they developed the
+          <strong>Shadowstone</strong> and later the
+          <strong>Bloodstone</strong> as a way to conceal magic
+          from the Elder Dragons.
+        </p>
+
+        <p>
+          Their conflict with the mursaat would eventually devastate
+          their civilization.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Lasting Legacy
+          </p>
+
+          <p>
+            The Seers' Bloodstone survived into the human age and
+            became central to the later history of magic.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 03 -->
+
+      <section
+        class="history-section"
+        data-position="25"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // The Mursaat"
+      >
+
+        <p class="history-label">
+          Record 03 // The Mursaat
+        </p>
+
+        <h2>
+          Those who stepped outside the world
+        </h2>
+
+        <p>
+          The <strong>mursaat</strong> refused the plan to surrender
+          their magic to the Bloodstone.
+        </p>
+
+        <p>
+          Instead, they withdrew from the elder alliance and
+          <strong>phased themselves into the Mists</strong>.
+        </p>
+
+        <p>
+          This allowed them to avoid much of the destruction that
+          consumed the other civilizations.
+        </p>
+
+        <p>
+          Their feud with the Seers continued for centuries and
+          pushed the Seers close to extinction.
+        </p>
+
+      </section>
+
+
+      <!-- 04 -->
+
+      <section
+        class="history-section"
+        data-position="35"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // The Jotun"
+      >
+
+        <p class="history-label">
+          Record 04 // The Jotun
+        </p>
+
+        <h2>
+          Giants who remembered the stars
+        </h2>
+
+        <p>
+          The <strong>jotun</strong> were once far more advanced
+          than the brutal tribes later encountered in the Shiverpeaks.
+        </p>
+
+        <p>
+          Their ancient stelae preserved knowledge of the sky,
+          celestial movements, and the earlier Dragonrise.
+        </p>
+
+        <p>
+          Over time, however, jotun civilization declined.
+        </p>
+
+        <p>
+          Much of their old knowledge was forgotten, leaving later
+          generations surrounded by the remains of an age they could
+          no longer fully understand.
+        </p>
+
+      </section>
+
+
+      <!-- 05 -->
+
+      <section
+        class="history-section"
+        data-position="44"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // The Dwarves"
+      >
+
+        <p class="history-label">
+          Record 05 // The Dwarves
+        </p>
+
+        <h2>
+          A people beneath the mountains
+        </h2>
+
+        <p>
+          The <strong>dwarves</strong> endured through the ancient
+          Dragonrise and established civilizations within and around
+          the Shiverpeak Mountains.
+        </p>
+
+        <p>
+          Their oldest surviving architecture dates back thousands
+          of years.
+        </p>
+
+        <p>
+          In later ages, dwarven history would become dominated by
+          the kingdom of Deldrimor, the Stone Summit rebellion,
+          and legends of the Great Dwarf and Great Destroyer.
+        </p>
+
+        <div class="record-box">
+
+          <p class="record-box-label">
+            Future Connection
+          </p>
+
+          <p>
+            The dwarves would ultimately become one of the first
+            peoples to directly confront Primordus and his Destroyers
+            during the next Dragonrise.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 06 -->
+
+      <section
+        class="history-section"
+        data-position="52"
+        data-date="1769 BE"
+        data-context="YOU ARE HERE // Forgotten Recorded in Tyria"
+      >
+
+        <p class="history-label">
+          Record 06 // The Forgotten
+        </p>
+
+        <h2>
+          Guardians and caretakers
+        </h2>
+
+        <p>
+          The <strong>Forgotten</strong> were an ancient serpentine
+          people whose history reaches back to the previous Dragonrise.
+        </p>
+
+        <p>
+          Later human traditions claimed that the Forgotten arrived
+          in Tyria from the Mists in <strong>1769 BE</strong>.
+        </p>
+
+        <p>
+          Those traditions sit beside older evidence showing that
+          the Forgotten had already existed during the Elder Dragon
+          conflicts.
+        </p>
+
+        <p>
+          In later ages they became remembered as caretakers,
+          teachers, and guardians of powerful magical knowledge.
+        </p>
+
+      </section>
+
+
+      <!-- 07 -->
+
+      <section
+        class="history-section"
+        data-position="58"
+        data-date="1680 BE"
+        data-context="YOU ARE HERE // Glint Is Freed"
+      >
+
+        <p class="history-label">
+          Record 07 // The Forgotten and Glint
+        </p>
+
+        <h2>
+          Breaking a dragon's control
+        </h2>
+
+        <p>
+          In approximately <strong>1680 BE</strong>, the Forgotten
+          performed a ritual upon <strong>Glint</strong>, the scion
+          and champion of Kralkatorrik.
+        </p>
+
+        <p>
+          The ritual freed Glint from the Elder Dragon's control.
+        </p>
+
+        <p>
+          She lost much of her previous memory, but gained the ability
+          to choose her own path.
+        </p>
+
+        <p>
+          Glint later helped conceal surviving peoples until the Elder
+          Dragons finally returned to slumber.
+        </p>
+
+      </section>
+
+
+      <!-- 08 -->
+
+      <section
+        class="history-section"
+        data-position="66"
+        data-date="After the Dragonrise"
+        data-context="YOU ARE HERE // The Age of Giants"
+      >
+
+        <p class="history-label">
+          Record 08 // The Age of Giants
+        </p>
+
+        <h2>
+          A remembered age after the dragons
+        </h2>
+
+        <p>
+          Jotun traditions describe an
+          <strong>Age of Giants</strong> after the Elder Dragons
+          entered hibernation.
+        </p>
+
+        <p>
+          According to these stories, giant peoples including the
+          jotun and norn once ruled over and guided parts of Tyria.
+        </p>
+
+        <p>
+          How literally these traditions should be understood remains
+          uncertain.
+        </p>
+
+        <p>
+          What is clear is that the centuries following the Dragonrise
+          gave surviving peoples room to rebuild.
+        </p>
+
+      </section>
+
+
+      <!-- 09 -->
+
+      <section
+        class="history-section"
+        data-position="75"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // New Powers Rise"
+      >
+
+        <p class="history-label">
+          Record 09 // A Changing World
+        </p>
+
+        <h2>
+          Younger races move into the open
+        </h2>
+
+        <p>
+          With the Elder Dragons asleep, the balance of power began
+          changing.
+        </p>
+
+        <p>
+          Races such as the <strong>charr, kodan, and tengu</strong>
+          became increasingly prominent.
+        </p>
+
+        <p>
+          The charr united beneath the Khan-Ur and expanded their
+          territory across the north.
+        </p>
+
+        <p>
+          Older civilizations remained, but they no longer stood
+          alone at the center of Tyrian history.
+        </p>
+
+      </section>
+
+
+      <!-- 10 -->
+
+      <section
+        class="history-section"
+        data-position="84"
+        data-date="Before 786 BE"
+        data-context="YOU ARE HERE // The World Before Humanity"
+      >
+
+        <p class="history-label">
+          Record 10 // Before Humanity
+        </p>
+
+        <h2>
+          An ancient world awaits newcomers
+        </h2>
+
+        <p>
+          By the time humanity entered the historical record,
+          Tyria had already endured civilizations rising and falling,
+          wars between ancient magical peoples, and at least one
+          devastating Dragonrise.
+        </p>
+
+        <p>
+          The ruins, grudges, artifacts, and surviving races of this
+          older world would become part of humanity's inheritance,
+          whether humans understood them or not.
+        </p>
+
+        <p>
+          Soon, another force would arrive from the Mists.
+        </p>
+
+        <p>
+          The Six Gods.
+        </p>
+
+      </section>
+
+
+      <!-- KEY RECORDS -->
+
+      <section class="key-records">
+
+        <p class="history-label">
+          Archive Index
+        </p>
+
+        <h2>
+          Key Records From This Era
+        </h2>
+
+        <div class="key-grid">
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Elder Race
+            </p>
+
+            <h3>
+              Seers
+            </h3>
+
+            <p>
+              Ancient magical architects of the Bloodstone.
+            </p>
+
+          </div>
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Elder Race
+            </p>
+
+            <h3>
+              Mursaat
+            </h3>
+
+            <p>
+              Powerful beings who withdrew into the Mists.
+            </p>
+
+          </div>
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Elder Race
+            </p>
+
+            <h3>
+              Forgotten
+            </h3>
+
+            <p>
+              Ancient serpentine caretakers and masters of magical ritual.
+            </p>
+
+          </div>
+
+          <div class="key-card">
+
+            <p class="key-card-label">
+              Elder Race
+            </p>
+
+            <h3>
+              Jotun & Dwarves
+            </h3>
+
+            <p>
+              Two ancient peoples whose later cultures preserved only
+              fragments of their earliest history.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- NAVIGATION -->
+
+      <section class="page-navigation">
+
+        <p class="navigation-label">
+          Continue the Road Through Time
+        </p>
+
+        <h2>
+          The Gods and Humanity
+        </h2>
+
+        <p>
+          The elder civilizations had already shaped Tyria for thousands
+          of years before humanity entered the historical record.
+          The arrival of the Six Gods and humans would begin another
+          transformation of the world.
+        </p>
+
+        <div class="navigation-actions">
+
+          <a
+            href="../ancient-dragonrises/index.html"
+            class="button"
+          >
+            ← Ancient Dragonrises
+          </a>
+
+          <a
+            href="../index.html"
+            class="button button-primary"
+          >
+            Return to Main Homepage
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      Guild Wars Living Lore Library is an unofficial fan lore project.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
+      belong to their respective owners.
+
+    </div>
+
+  </footer>
+
+
+  <script>
+    (() => {
+      "use strict";
+
+      const sections =
+        document.querySelectorAll(".history-section");
+
+      const marker =
+        document.getElementById("historyMarker");
+
+      const currentDate =
+        document.getElementById("currentDate");
+
+      const positionContext =
+        document.getElementById("positionContext");
+
+      const updatePosition = (section) => {
+        const position =
+          section.dataset.position || "10";
+
+        const date =
+          section.dataset.date || "Ancient Era";
+
+        const context =
+          section.dataset.context || "YOU ARE HERE";
+
+        marker.style.left =
+          `${position}%`;
+
+        currentDate.textContent =
+          date;
+
+        positionContext.textContent =
+          context;
+      };
+
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+
+            const visible =
+              entries
+                .filter(
+                  (entry) =>
+                    entry.isIntersecting
+                )
+                .sort(
+                  (a, b) =>
+                    b.intersectionRatio -
+                    a.intersectionRatio
+                );
+
+            if (visible.length > 0) {
+              updatePosition(
+                visible[0].target
+              );
+            }
+
+          },
+          {
+            rootMargin:
+              "-35% 0px -45% 0px",
+
+            threshold: [
+              0,
+              0.15,
+              0.3,
+              0.5,
+              0.75
+            ]
+          }
+        );
+
+      sections.forEach(
+        (section) => {
+          observer.observe(section);
+        }
+      );
+    })();
+  </script>
+
+</body>
+</html>
