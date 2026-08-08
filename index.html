@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Guild Wars Living Lore Library — follow the history of Tyria from the ancient Dragonrises to the present day."
+    content="Guild Wars Living Lore Library — follow the history of Tyria from the ancient Dragonrises to the current era."
   >
 
   <meta name="theme-color" content="#020617">
@@ -268,7 +268,7 @@
     }
 
     /* =========================
-       TIMELINE SECTION
+       ROAD THROUGH TIME
     ========================= */
 
     .road {
@@ -277,6 +277,7 @@
 
     .section-header {
       max-width: 760px;
+
       margin: 0 auto 42px;
 
       text-align: center;
@@ -369,6 +370,7 @@
       position: relative;
 
       max-width: 850px;
+
       margin-inline: auto;
     }
 
@@ -402,8 +404,6 @@
       gap: 22px;
 
       margin-bottom: 24px;
-
-      scroll-margin-top: 100px;
     }
 
     .timeline-marker {
@@ -486,8 +486,6 @@
       color: var(--white);
     }
 
-    /* LIVE ARCHIVE LINK */
-
     .record-link {
       display: inline-flex;
       align-items: center;
@@ -512,26 +510,62 @@
       transform: translateX(4px);
     }
 
-    /* PENDING ARCHIVE */
+    /* CURRENT ERA */
 
-    .archive-pending {
+    .timeline-entry.current .timeline-marker {
+      background: var(--gold);
+      color: var(--background);
+
+      box-shadow:
+        0 0 18px rgba(244, 199, 107, 0.45);
+
+      animation: currentPulse 2.3s ease-in-out infinite;
+    }
+
+    .timeline-entry.current .timeline-card {
+      border-color: rgba(244, 199, 107, 0.5);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(244, 199, 107, 0.08),
+          rgba(15, 23, 42, 0.95)
+        );
+    }
+
+    .current-status {
       display: inline-flex;
+      align-items: center;
 
-      margin-top: 19px;
+      gap: 7px;
+
+      margin-top: 15px;
       padding: 6px 9px;
 
-      border: 1px solid var(--border);
-      border-radius: 6px;
+      border: 1px solid rgba(244, 199, 107, 0.4);
+      border-radius: 999px;
 
-      color: var(--white);
+      color: var(--gold-bright);
 
       font-family: monospace;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
 
       letter-spacing: 0.1em;
       text-transform: uppercase;
+    }
 
-      opacity: 0.7;
+    .current-status::before {
+      content: "";
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 9px rgba(244, 199, 107, 0.75);
     }
 
     /* =========================
@@ -750,6 +784,19 @@
         text-shadow:
           0 0 18px rgba(244, 199, 107, 0.28),
           0 0 38px rgba(244, 199, 107, 0.1);
+      }
+    }
+
+    @keyframes currentPulse {
+      0%,
+      100% {
+        box-shadow:
+          0 0 7px rgba(244, 199, 107, 0.25);
+      }
+
+      50% {
+        box-shadow:
+          0 0 22px rgba(244, 199, 107, 0.7);
       }
     }
 
@@ -972,31 +1019,31 @@
 
         <p class="hero-description">
           Tyria remembers more than any one hero ever could.
-          Kingdoms rose where dragons once slept. Seas became
-          deserts. Cities vanished beneath the waves. Gods walked
-          among mortals and eventually disappeared into the Mists.
+          Kingdoms rose where dragons once slept. Seas became deserts.
+          Cities vanished beneath the waves. Gods walked among mortals
+          and eventually disappeared into the Mists.
         </p>
 
         <p class="hero-description">
-          Begin with the oldest surviving memories and follow the
-          road forward. When a moment catches your attention, open
-          its archive and step deeper into the history behind it.
+          Begin with the oldest surviving memories and follow the road
+          forward. Each archive opens another piece of the history that
+          shaped the world of Guild Wars.
         </p>
 
         <div class="hero-actions">
 
           <a
-            href="#history"
+            href="ancient-dragonrises/index.html"
             class="button button-primary"
           >
-            Begin the Journey
+            Begin at the Beginning
           </a>
 
           <a
-            href="#archives"
+            href="#history"
             class="button"
           >
-            Explore the Archives
+            View the Timeline
           </a>
 
         </div>
@@ -1028,8 +1075,8 @@
           </h2>
 
           <p>
-            Follow the major turning points that carried Tyria
-            from its oldest remembered ages into the present.
+            Follow Tyria from its earliest remembered ages to the
+            current historical record.
           </p>
 
         </header>
@@ -1040,7 +1087,7 @@
         <div class="jump-box">
 
           <label for="eraSelect">
-            Jump to an era
+            Open an era
           </label>
 
           <select id="eraSelect">
@@ -1049,48 +1096,48 @@
               Choose a historical era...
             </option>
 
-            <option value="ancient-dragonrises">
-              Ancient Dragonrises
+            <option value="ancient-dragonrises/index.html">
+              01 // Ancient Dragonrises
             </option>
 
-            <option value="elder-races">
-              The Elder Races
+            <option value="elder-races/index.html">
+              02 // The Elder Races
             </option>
 
-            <option value="gods-and-humanity">
-              The Gods and Humanity
+            <option value="gods-and-humanity/index.html">
+              03 // The Gods and Humanity
             </option>
 
-            <option value="gift-of-magic">
-              The Gift of Magic
+            <option value="gift-of-magic/index.html">
+              04 // The Gift of Magic
             </option>
 
-            <option value="exodus">
-              The Exodus of the Gods
+            <option value="exodus-of-gods/index.html">
+              05 // The Exodus of the Gods
             </option>
 
-            <option value="human-kingdoms">
-              Kingdoms and Guild Wars
+            <option value="kingdoms-and-guild-wars/index.html">
+              06 // Kingdoms and Guild Wars
             </option>
 
-            <option value="guild-wars-era">
-              The Guild Wars Era
+            <option value="guild-wars-era/index.html">
+              07 // The Guild Wars Era
             </option>
 
-            <option value="dragons-awaken">
-              The Dragons Awaken
+            <option value="dragons-awaken/index.html">
+              08 // The Dragons Awaken
             </option>
 
-            <option value="commander">
-              The Age of the Commander
+            <option value="age-of-the-commander/index.html">
+              09 // The Age of the Commander
             </option>
 
-            <option value="after-dragons">
-              Beyond the Dragon Cycle
+            <option value="beyond-the-dragon-cycle/index.html">
+              10 // Beyond the Dragon Cycle
             </option>
 
-            <option value="present">
-              Visions of Eternity
+            <option value="current-era/index.html">
+              11 // Visions of Eternity
             </option>
 
           </select>
@@ -1098,20 +1145,16 @@
         </div>
 
 
-        <!-- TIMELINE -->
+        <!-- =========================
+             TIMELINE
+        ========================== -->
 
         <div class="timeline">
 
 
-          <!-- =====================
-               01
-               LIVE
-          ====================== -->
+          <!-- 01 -->
 
-          <article
-            class="timeline-entry"
-            id="ancient-dragonrises"
-          >
+          <article class="timeline-entry">
 
             <div class="timeline-marker">
               01
@@ -1136,7 +1179,7 @@
               <p>
                 The Great Giants disappeared. Ancient peoples
                 struggled to survive. The Seers created the
-                Bloodstone, and the mursaat vanished into the Mists.
+                Bloodstone, and the mursaat withdrew into the Mists.
               </p>
 
               <a
@@ -1151,15 +1194,9 @@
           </article>
 
 
-          <!-- =====================
-               02
-               LIVE
-          ====================== -->
+          <!-- 02 -->
 
-          <article
-            class="timeline-entry"
-            id="elder-races"
-          >
+          <article class="timeline-entry">
 
             <div class="timeline-marker">
               02
@@ -1176,15 +1213,14 @@
               </h3>
 
               <p>
-                Dwarves, Forgotten, jotun, mursaat, and Seers
-                carried memories of a world that existed long
-                before the human kingdoms.
+                Dwarves, Forgotten, jotun, mursaat, and Seers carried
+                memories of a world that existed long before the
+                human kingdoms.
               </p>
 
               <p>
-                Their alliances, wars, magical discoveries, and
-                failures would quietly shape events thousands of
-                years later.
+                Their alliances, wars, magical discoveries, and failures
+                quietly shaped events thousands of years later.
               </p>
 
               <a
@@ -1199,15 +1235,9 @@
           </article>
 
 
-          <!-- =====================
-               03
-               LIVE
-          ====================== -->
+          <!-- 03 -->
 
-          <article
-            class="timeline-entry"
-            id="gods-and-humanity"
-          >
+          <article class="timeline-entry">
 
             <div class="timeline-marker">
               03
@@ -1225,14 +1255,13 @@
 
               <p>
                 The Six Gods came to Tyria from the Mists.
-                Humanity followed into a world whose history was
-                already thousands of years old.
+                Humanity entered a world whose history was already
+                thousands of years old.
               </p>
 
               <p>
-                Humans settled Cantha, Elona, Orr, Kryta, and
-                Ascalon, founding kingdoms and empires that would
-                dominate the next age.
+                Humans settled Cantha, Elona, Orr, Kryta, and Ascalon,
+                founding kingdoms and empires that transformed the world.
               </p>
 
               <a
@@ -1247,15 +1276,9 @@
           </article>
 
 
-          <!-- =====================
-               04
-               PENDING
-          ====================== -->
+          <!-- 04 -->
 
-          <article
-            class="timeline-entry"
-            id="gift-of-magic"
-          >
+          <article class="timeline-entry">
 
             <div class="timeline-marker">
               04
@@ -1272,34 +1295,31 @@
               </h3>
 
               <p>
-                Abaddon gave powerful magic to the peoples of Tyria.
-                What was intended as a gift quickly became fuel for
-                devastating wars.
+                Abaddon gave greater access to magic to the peoples
+                of Tyria.
               </p>
 
               <p>
-                King Doric traveled to Arah and pleaded with the gods
-                to intervene before magical conflict destroyed the
-                civilizations they had helped build.
+                Magical warfare followed. King Doric pleaded with the
+                gods to intervene, leading them to use the ancient
+                Bloodstone to limit mortal power.
               </p>
 
-              <span class="archive-pending">
-                Archive Pending
-              </span>
+              <a
+                href="gift-of-magic/index.html"
+                class="record-link"
+              >
+                Explore the Gift of Magic →
+              </a>
 
             </div>
 
           </article>
 
 
-          <!-- =====================
-               05
-          ====================== -->
+          <!-- 05 -->
 
-          <article
-            class="timeline-entry"
-            id="exodus"
-          >
+          <article class="timeline-entry">
 
             <div class="timeline-marker">
               05
@@ -1316,34 +1336,31 @@
               </h3>
 
               <p>
-                Magic was sealed within the Bloodstone.
-                Abaddon rebelled against the other gods, and the
-                conflict transformed the Crystal Sea into the
-                Crystal Desert and Desolation.
+                Abaddon rejected the restriction of magic and turned
+                against the other gods.
               </p>
 
               <p>
-                Abaddon was imprisoned within the Realm of Torment.
-                The remaining gods departed Tyria for the Mists.
+                His defeat transformed the Crystal Sea, created the
+                Desolation, and ended the age when the gods openly
+                walked beside mortals.
               </p>
 
-              <span class="archive-pending">
-                Archive Pending
-              </span>
+              <a
+                href="exodus-of-gods/index.html"
+                class="record-link"
+              >
+                Explore the Exodus of the Gods →
+              </a>
 
             </div>
 
           </article>
 
 
-          <!-- =====================
-               06
-          ====================== -->
+          <!-- 06 -->
 
-          <article
-            class="timeline-entry"
-            id="human-kingdoms"
-          >
+          <article class="timeline-entry">
 
             <div class="timeline-marker">
               06
@@ -1360,34 +1377,32 @@
               </h3>
 
               <p>
-                Human civilization flourished across the known world.
-                Guilds grew from organizations into political and
-                military powers.
+                Human kingdoms flourished while trade, dynasties,
+                religious movements, and political rivalries reshaped
+                the world.
               </p>
 
               <p>
-                Conflict between Ascalon, Kryta, and Orr eventually
-                consumed generations and weakened the kingdoms just
-                as another enemy prepared to strike.
+                Guilds grew into military powers, and generations of
+                conflict weakened Ascalon, Kryta, and Orr just before
+                the charr marched south.
               </p>
 
-              <span class="archive-pending">
-                Archive Pending
-              </span>
+              <a
+                href="kingdoms-and-guild-wars/index.html"
+                class="record-link"
+              >
+                Explore Kingdoms and Guild Wars →
+              </a>
 
             </div>
 
           </article>
 
 
-          <!-- =====================
-               07
-          ====================== -->
+          <!-- 07 -->
 
-          <article
-            class="timeline-entry"
-            id="guild-wars-era"
-          >
+          <article class="timeline-entry">
 
             <div class="timeline-marker">
               07
@@ -1406,32 +1421,29 @@
               <p>
                 The Searing shattered Ascalon.
                 Orr sank beneath the sea.
-                The White Mantle seized control of Kryta.
+                The White Mantle seized power in Kryta.
               </p>
 
               <p>
-                Shiro Tagachi returned to Cantha, Nightfall threatened
-                Elona, and Abaddon's thousand-year plan finally reached
-                its conclusion.
+                Shiro returned to Cantha, Nightfall threatened Elona,
+                Abaddon fell, and Primordus began to stir beneath Tyria.
               </p>
 
-              <span class="archive-pending">
-                Archive Pending
-              </span>
+              <a
+                href="guild-wars-era/index.html"
+                class="record-link"
+              >
+                Explore the Guild Wars Era →
+              </a>
 
             </div>
 
           </article>
 
 
-          <!-- =====================
-               08
-          ====================== -->
+          <!-- 08 -->
 
-          <article
-            class="timeline-entry"
-            id="dragons-awaken"
-          >
+          <article class="timeline-entry">
 
             <div class="timeline-marker">
               08
@@ -1448,34 +1460,31 @@
               </h3>
 
               <p>
-                Primordus stirred beneath the earth.
+                Primordus awakened beneath Tyria.
                 Jormag drove the norn south.
                 Zhaitan raised Orr from the sea.
               </p>
 
               <p>
                 Kralkatorrik carved the Dragonbrand across Tyria.
-                The cycle that ancient civilizations once feared
-                had begun again.
+                The ancient cycle had returned.
               </p>
 
-              <span class="archive-pending">
-                Archive Pending
-              </span>
+              <a
+                href="dragons-awaken/index.html"
+                class="record-link"
+              >
+                Explore The Dragons Awaken →
+              </a>
 
             </div>
 
           </article>
 
 
-          <!-- =====================
-               09
-          ====================== -->
+          <!-- 09 -->
 
-          <article
-            class="timeline-entry"
-            id="commander"
-          >
+          <article class="timeline-entry">
 
             <div class="timeline-marker">
               09
@@ -1492,34 +1501,32 @@
               </h3>
 
               <p>
-                The Pact formed against Zhaitan and began a struggle
-                that would eventually challenge the ancient Elder
-                Dragon cycle itself.
+                The Pact formed against Zhaitan, beginning a campaign
+                that changed the relationship between mortals and the
+                Elder Dragons.
               </p>
 
               <p>
-                Scarlet Briar, Mordremoth, Balthazar, Kralkatorrik,
-                Jormag, Primordus, and Soo-Won transformed the magical
-                balance of the world.
+                Zhaitan, Mordremoth, Kralkatorrik, Jormag, Primordus,
+                and Soo-Won fell while Aurene rose to inherit the burden
+                of Tyria's magical balance.
               </p>
 
-              <span class="archive-pending">
-                Archive Pending
-              </span>
+              <a
+                href="age-of-the-commander/index.html"
+                class="record-link"
+              >
+                Explore the Age of the Commander →
+              </a>
 
             </div>
 
           </article>
 
 
-          <!-- =====================
-               10
-          ====================== -->
+          <!-- 10 -->
 
-          <article
-            class="timeline-entry"
-            id="after-dragons"
-          >
+          <article class="timeline-entry">
 
             <div class="timeline-marker">
               10
@@ -1536,34 +1543,31 @@
               </h3>
 
               <p>
-                With the Elder Dragon cycle ended, Tyria discovered
-                that the dragons had never been the only powers
-                moving beyond the world's borders.
+                With the Elder Dragon cycle ended, hidden powers
+                stepped into view.
               </p>
 
               <p>
-                The Wizard's Court, the Kryptis, Nayos, Janthir,
-                and the return of the Titans revealed histories
-                hidden for centuries.
+                The Wizard's Court, Astral Ward, Kryptis, Nayos,
+                Janthir, and the return of the Titans revealed that
+                Tyria's history extended far beyond the Dragon Cycle.
               </p>
 
-              <span class="archive-pending">
-                Archive Pending
-              </span>
+              <a
+                href="beyond-the-dragon-cycle/index.html"
+                class="record-link"
+              >
+                Explore Beyond the Dragon Cycle →
+              </a>
 
             </div>
 
           </article>
 
 
-          <!-- =====================
-               11
-          ====================== -->
+          <!-- 11 -->
 
-          <article
-            class="timeline-entry"
-            id="present"
-          >
+          <article class="timeline-entry current">
 
             <div class="timeline-marker">
               11
@@ -1580,7 +1584,7 @@
               </h3>
 
               <p>
-                The road reaches the present age.
+                The road reaches the current era.
               </p>
 
               <p>
@@ -1589,9 +1593,18 @@
                 carrying Tyrian history into another unknown chapter.
               </p>
 
-              <span class="archive-pending">
-                Current Era Archive Pending
+              <span class="current-status">
+                Current Historical Record
               </span>
+
+              <br>
+
+              <a
+                href="current-era/index.html"
+                class="record-link"
+              >
+                Enter the Current Era →
+              </a>
 
             </div>
 
@@ -1627,10 +1640,10 @@
           </h2>
 
           <p>
-            The Road Through Time follows the broad history.
-            The archives will eventually branch into the people,
-            places, civilizations, magic, organizations, and smaller
-            stories behind those events.
+            The Road Through Time is the spine of the library.
+            These archives will branch away from it to explain the
+            people, places, magic, organizations, and smaller stories
+            behind the major events.
           </p>
 
         </header>
@@ -1649,8 +1662,8 @@
             </h3>
 
             <p>
-              Wars, catastrophes, migrations, rebellions,
-              discoveries, and major turning points.
+              Wars, catastrophes, migrations, rebellions, discoveries,
+              and major turning points.
             </p>
 
           </div>
@@ -1667,8 +1680,8 @@
             </h3>
 
             <p>
-              Gods, Elder Dragons, rulers, heroes, scholars,
-              villains, and witnesses to history.
+              Gods, Elder Dragons, rulers, heroes, scholars, villains,
+              and witnesses to history.
             </p>
 
           </div>
@@ -1781,9 +1794,14 @@
   </footer>
 
 
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+
   <script>
     (() => {
       "use strict";
+
 
       /* =========================
          SERVER CLOCK
@@ -1792,7 +1810,9 @@
       const serverTime =
         document.getElementById("serverTime");
 
+
       function updateServerTime() {
+
         const now = new Date();
 
         const time =
@@ -1822,6 +1842,7 @@
           `${date} // ${time}`;
       }
 
+
       updateServerTime();
 
       window.setInterval(
@@ -1831,32 +1852,27 @@
 
 
       /* =========================
-         ERA JUMP
+         ARCHIVE SELECTOR
       ========================= */
 
       const eraSelect =
         document.getElementById("eraSelect");
 
+
       eraSelect.addEventListener(
         "change",
         () => {
-          if (!eraSelect.value) {
+
+          const destination =
+            eraSelect.value;
+
+          if (!destination) {
             return;
           }
 
-          const target =
-            document.getElementById(
-              eraSelect.value
-            );
+          window.location.href =
+            destination;
 
-          if (!target) {
-            return;
-          }
-
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
         }
       );
 
@@ -1885,19 +1901,25 @@
 
 
       function hasAcknowledged() {
+
         try {
+
           return (
             localStorage.getItem(
               storageKey
             ) === "true"
           );
+
         } catch {
+
           return false;
+
         }
       }
 
 
       function openDisclaimer() {
+
         disclaimer.classList.remove(
           "hidden"
         );
@@ -1910,10 +1932,12 @@
         document.body.classList.add(
           "modal-open"
         );
+
       }
 
 
       function closeDisclaimer() {
+
         disclaimer.classList.add(
           "hidden"
         );
@@ -1926,24 +1950,31 @@
         document.body.classList.remove(
           "modal-open"
         );
+
       }
 
 
       acknowledgeButton.addEventListener(
         "click",
         () => {
+
           try {
+
             localStorage.setItem(
               storageKey,
               "true"
             );
+
           } catch {
+
             console.warn(
               "Could not save spoiler acknowledgement."
             );
+
           }
 
           closeDisclaimer();
+
         }
       );
 
@@ -1955,9 +1986,13 @@
 
 
       if (hasAcknowledged()) {
+
         closeDisclaimer();
+
       } else {
+
         openDisclaimer();
+
       }
 
     })();
