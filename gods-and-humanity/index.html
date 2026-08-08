@@ -23,7 +23,6 @@
 
       --background: #020617;
       --panel: #0f172a;
-      --panel-hover: #162033;
       --border: #374151;
 
       --gold: #f4c76b;
@@ -49,7 +48,7 @@
       background:
         radial-gradient(
           circle at top,
-          rgba(244, 199, 107, 0.07),
+          rgba(244, 199, 107, 0.08),
           transparent 34rem
         ),
         var(--background);
@@ -77,7 +76,9 @@
       margin-inline: auto;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     .site-header {
       position: sticky;
@@ -144,7 +145,9 @@
       transform: translateX(-3px);
     }
 
-    /* HISTORY POSITION */
+    /* =========================
+       HISTORICAL POSITION
+    ========================= */
 
     .history-position {
       position: sticky;
@@ -209,12 +212,13 @@
 
       height: 1px;
 
-      background: linear-gradient(
-        to right,
-        rgba(244, 199, 107, 0.25),
-        rgba(244, 199, 107, 0.85),
-        rgba(244, 199, 107, 0.25)
-      );
+      background:
+        linear-gradient(
+          to right,
+          rgba(244, 199, 107, 0.25),
+          rgba(244, 199, 107, 0.9),
+          rgba(244, 199, 107, 0.25)
+        );
     }
 
     .history-point {
@@ -234,7 +238,7 @@
     }
 
     .history-point.start {
-      left: 4%;
+      left: 5%;
     }
 
     .history-point.middle {
@@ -242,14 +246,14 @@
     }
 
     .history-point.end {
-      left: 96%;
+      left: 95%;
     }
 
     .history-marker {
       position: absolute;
 
       top: -1px;
-      left: 12%;
+      left: 5%;
 
       width: 17px;
       height: 17px;
@@ -260,7 +264,7 @@
       background: var(--gold);
 
       box-shadow:
-        0 0 15px rgba(244, 199, 107, 0.45);
+        0 0 15px rgba(244, 199, 107, 0.5);
 
       transform: translateX(-50%);
 
@@ -288,10 +292,13 @@
       text-align: center;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       padding: 72px 0 56px;
+
       text-align: center;
     }
 
@@ -343,7 +350,9 @@
       line-height: 1.9;
     }
 
-    /* NOTE */
+    /* =========================
+       ARCHIVE NOTE
+    ========================= */
 
     .archive-note {
       margin-bottom: 55px;
@@ -369,10 +378,11 @@
 
     .archive-note p:last-child {
       margin: 12px 0 0;
-      color: var(--white);
     }
 
-    /* HISTORY */
+    /* =========================
+       HISTORY
+    ========================= */
 
     .history-section {
       padding: 36px 0;
@@ -403,6 +413,7 @@
 
     .history-section p {
       margin: 16px 0 0;
+
       color: var(--white);
     }
 
@@ -435,23 +446,11 @@
       margin: 8px 0 0;
     }
 
-    /* KEY RECORDS */
+    /* =========================
+       GOD GRID
+    ========================= */
 
-    .key-records {
-      padding: 42px 0;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .key-records h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.8rem;
-    }
-
-    .key-grid {
+    .god-grid {
       margin-top: 24px;
 
       display: grid;
@@ -460,7 +459,7 @@
       gap: 14px;
     }
 
-    .key-card {
+    .god-card {
       padding: 20px;
 
       border: 1px solid var(--border);
@@ -469,35 +468,35 @@
       background: rgba(15, 23, 42, 0.76);
     }
 
-    .key-card-label {
+    .god-card-label {
       margin: 0;
 
       color: var(--white);
 
       font-family: monospace;
-      font-size: 0.63rem;
+      font-size: 0.62rem;
 
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-    .key-card h3 {
+    .god-card h3 {
       margin: 7px 0 0;
 
       color: var(--gold);
 
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
 
-    .key-card p:last-child {
+    .god-card p:last-child {
       margin: 8px 0 0;
-
-      color: var(--white);
 
       font-size: 0.9rem;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .page-navigation {
       padding: 45px 0 80px;
@@ -527,7 +526,6 @@
 
     .page-navigation p {
       margin: 13px 0 0;
-      color: var(--white);
     }
 
     .navigation-actions {
@@ -566,16 +564,23 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color: rgba(244, 199, 107, 0.6);
+      border-color:
+        rgba(244, 199, 107, 0.6);
+
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
-      background: rgba(244, 199, 107, 0.1);
+      border-color:
+        rgba(244, 199, 107, 0.45);
+
+      background:
+        rgba(244, 199, 107, 0.1);
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 30px 0;
@@ -588,7 +593,9 @@
       font-size: 0.75rem;
     }
 
-    /* ANIMATION */
+    /* =========================
+       ANIMATION
+    ========================= */
 
     @keyframes goldPulse {
       0%,
@@ -608,7 +615,9 @@
       }
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 650px) {
       html {
@@ -639,10 +648,6 @@
         top: 62px;
       }
 
-      .position-top {
-        align-items: flex-start;
-      }
-
       .position-label {
         font-size: 0.55rem;
       }
@@ -667,7 +672,7 @@
         font-size: 1rem;
       }
 
-      .key-grid {
+      .god-grid {
         grid-template-columns: 1fr;
       }
 
@@ -697,7 +702,9 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="site-header">
 
@@ -722,7 +729,7 @@
         href="../index.html"
         class="home-link"
       >
-        ← Main Homepage
+        ← Road Through Time
       </a>
 
     </div>
@@ -730,7 +737,9 @@
   </header>
 
 
-  <!-- YOU ARE HERE -->
+  <!-- =========================
+       HISTORICAL POSITION
+  ========================== -->
 
   <aside class="history-position">
 
@@ -751,6 +760,7 @@
 
       </div>
 
+
       <div class="history-rail">
 
         <div class="history-line"></div>
@@ -766,19 +776,23 @@
 
       </div>
 
+
       <div class="rail-labels">
 
-        <span>2000 BE</span>
-        <span>1000 BE</span>
-        <span>0 AE</span>
+        <span>Gods Arrive</span>
+
+        <span>Human Expansion</span>
+
+        <span>1 BE</span>
 
       </div>
+
 
       <p
         class="position-context"
         id="positionContext"
       >
-        YOU ARE HERE // Before Humanity's Expansion
+        YOU ARE HERE // A New Age Begins
       </p>
 
     </div>
@@ -788,7 +802,9 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero">
 
@@ -807,14 +823,17 @@
         </p>
 
         <p class="hero-text">
-          Tyria had already survived Dragonrises, ancient wars,
-          and the decline of civilizations before humanity entered
-          the historical record.
+          The elder civilizations had inherited Tyria from ages shaped
+          by the Elder Dragons.
         </p>
 
         <p class="hero-text">
-          Then beings from the Mists arrived, and with them came a
-          people whose kingdoms would reshape much of the known world.
+          Then beings from the Mists arrived, and with them came a people
+          whose kingdoms would eventually dominate much of recorded history.
+        </p>
+
+        <p class="hero-text">
+          Humanity had entered Tyria.
         </p>
 
       </div>
@@ -824,7 +843,9 @@
 
     <div class="container">
 
-      <!-- ARCHIVE NOTE -->
+      <!-- =========================
+           ARCHIVE NOTE
+      ========================== -->
 
       <div class="archive-note">
 
@@ -833,139 +854,152 @@
         </p>
 
         <p>
-          The origins of both the Six Gods and humanity extend beyond
-          Tyria's surviving historical record. What is known is that
-          the gods came from the Mists and humanity arrived in Tyria
-          through routes that later generations no longer remembered.
+          This record follows the Six Gods and the expansion of humanity.
+          The ancient races remain important, but their individual histories
+          are covered in the previous archive. The story here is about the
+          new civilizations that began replacing them as the dominant powers
+          in the historical record.
         </p>
 
       </div>
 
 
-      <!-- 01 -->
+      <!-- =========================
+           RECORD 01
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="10"
-        data-date="Before 786 BE"
+        data-position="5"
+        data-date="Ancient Past"
         data-context="YOU ARE HERE // The Six Gods Reach Tyria"
       >
 
         <p class="history-label">
-          Record 01 // The Artesian Waters
+          Record 01 // From the Mists
         </p>
 
         <h2>
-          The gods arrive from the Mists
+          The Six Gods enter Tyria
         </h2>
 
         <p>
-          At an unknown point in the distant past, the
-          <strong>Six Gods</strong> came to Tyria from the Mists.
+          At an uncertain point in the ancient past, the beings later known
+          as the <strong>Six Gods</strong> arrived in Tyria from the
+          <strong>Mists</strong>.
         </p>
 
         <p>
-          Their arrival is associated with the
-          <strong>Artesian Waters in Orr</strong>, a place that would
-          later become deeply tied to the gods and the city of Arah.
+          Their first known point of arrival was the
+          <strong>Artesian Waters</strong> beneath Orr.
         </p>
 
         <p>
-          Dwayna, Balthazar, Melandru, Lyssa, Grenth, and Abaddon would
-          become the central divine figures of human civilization.
+          They became central to human religion and to the development
+          of several civilizations that followed.
         </p>
 
       </section>
 
 
-      <!-- 02 -->
+      <!-- =========================
+           RECORD 02
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="18"
-        data-date="Before 786 BE"
-        data-context="YOU ARE HERE // The Gods Shape the Land"
+        data-position="16"
+        data-date="Ancient Past"
+        data-context="YOU ARE HERE // The Gods Reshape the Land"
       >
 
         <p class="history-label">
-          Record 02 // A Changed World
+          Record 02 // The World of the Gods
         </p>
 
         <h2>
-          The gods begin reshaping Tyria
+          The landscape changes around them
         </h2>
 
         <p>
-          Human and charr traditions both describe the gods as beings
-          who transformed the lands they walked through.
+          Human and charr traditions both remember the gods as beings
+          capable of reshaping the environment around them.
         </p>
 
         <p>
-          They restored life to places scarred by earlier Dragonrises
-          and established <strong>Arah</strong> in Orr as the City of
-          the Gods.
+          They established <strong>Arah</strong> in Orr and became
+          associated with the restoration and cultivation of lands
+          touched by earlier destruction.
         </p>
 
         <p>
-          Their presence marked the beginning of a new age in Tyrian
-          history.
+          Orr would eventually become the spiritual center of human
+          civilization on the Tyrian continent.
         </p>
 
       </section>
 
 
-      <!-- 03 -->
+      <!-- =========================
+           RECORD 03
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="24"
+        data-position="27"
         data-date="786 BE"
         data-context="YOU ARE HERE // Humanity Appears in Cantha"
       >
 
         <p class="history-label">
-          Record 03 // The First Human Records
+          Record 03 // Cantha
         </p>
 
         <h2>
-          Humanity reaches Cantha
+          Humanity enters the historical record
         </h2>
 
         <p>
-          The oldest surviving human records place humanity on the
-          northern shores of <strong>Cantha in 786 BE</strong>.
+          The oldest surviving human records date to
+          <strong>786 BE</strong>.
         </p>
 
         <p>
-          These settlers established communities along the coast and
-          eventually spread farther across the continent.
+          Humans appeared along the northern shores of
+          <strong>Cantha</strong>.
         </p>
 
         <p>
-          Other groups later settled the Echovald Forest and Jade Sea.
-          Their exact origins were already lost to history, although
-          Canthan traditions remembered that humanity had come from
-          lands across the ocean.
+          Other human populations later settled the Jade Sea and
+          Echovald Forest from lands whose locations have been lost
+          to history.
+        </p>
+
+        <p>
+          Cantha became the earliest known center of recorded
+          human civilization.
         </p>
 
       </section>
 
 
-      <!-- 04 -->
+      <!-- =========================
+           RECORD 04
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="32"
+        data-position="38"
         data-date="510 BE"
-        data-context="YOU ARE HERE // Cantha Is Unified"
+        data-context="YOU ARE HERE // The Empire of the Dragon Is Founded"
       >
 
         <p class="history-label">
-          Record 04 // The Empire of the Dragon
+          Record 04 // Kaineng Tah
         </p>
 
         <h2>
-          Kaineng Tah unites the Canthan clans
+          Cantha becomes an empire
         </h2>
 
         <p>
@@ -975,23 +1009,186 @@
 
         <p>
           He declared himself the first
-          <strong>Lord Emperor of the Dragon</strong> and began
-          construction of the first Raisu Palace.
+          <strong>Lord Emperor of the Dragon</strong>.
         </p>
 
         <p>
-          The Canthan Calendar begins from this moment.
+          The unification created the
+          <strong>Empire of the Dragon</strong> and established the
+          Canthan Calendar.
+        </p>
+
+        <p>
+          Human rule in Cantha had become organized, imperial,
+          and increasingly powerful.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 05
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="49"
+        data-date="462–459 BE"
+        data-context="YOU ARE HERE // Luxons and Kurzicks Resist Imperial Rule"
+      >
+
+        <p class="history-label">
+          Record 05 // The Vassal Clans
+        </p>
+
+        <h2>
+          Imperial unity does not mean peace
+        </h2>
+
+        <p>
+          The <strong>Luxons</strong> and
+          <strong>Kurzicks</strong> both attempted to break from imperial rule.
+        </p>
+
+        <p>
+          Emperor Yian Zho responded violently.
+        </p>
+
+        <p>
+          Both cultures were eventually forced into becoming vassal states
+          of the Canthan Empire while retaining distinct identities and
+          rivalries of their own.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 06
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="59"
+        data-date="205 BE"
+        data-context="YOU ARE HERE // Humans Reach Orr and Elona"
+      >
+
+        <p class="history-label">
+          Record 06 // Across the Seas
+        </p>
+
+        <h2>
+          Human civilization spreads west
+        </h2>
+
+        <p>
+          In <strong>205 BE</strong>, humans arrived by sea on the shores
+          of <strong>Orr</strong>, <strong>Istan</strong>, and the
+          southern valleys of <strong>Elona</strong>.
+        </p>
+
+        <p>
+          Their original homeland remains unknown.
+        </p>
+
+        <p>
+          These settlers formed the foundations of new human nations
+          separate from the Canthan Empire.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 07
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="68"
+        data-date="200–175 BE"
+        data-context="YOU ARE HERE // Elona's Early Kingdoms"
+      >
+
+        <p class="history-label">
+          Record 07 // Elona
+        </p>
+
+        <h2>
+          The Primeval Dynasty rises
+        </h2>
+
+        <p>
+          In <strong>200 BE</strong>, the first of the
+          <strong>Primeval Kings</strong> ruled Elona from
+          <strong>Fahranur</strong> in Istan.
+        </p>
+
+        <p>
+          This marked the beginning of both the Primeval Dynasty and
+          the Dynastic Reckoning calendar.
+        </p>
+
+        <p>
+          Along the coast, the
+          <strong>Margonites</strong> developed into a major maritime
+          civilization whose ships dominated parts of the Unending Ocean.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 08
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="77"
+        data-date="100 BE"
+        data-context="YOU ARE HERE // Humanity Claims Ascalon"
+      >
+
+        <p class="history-label">
+          Record 08 // Ascalon
+        </p>
+
+        <h2>
+          Human expansion reaches charr lands
+        </h2>
+
+        <p>
+          Human settlement expanded northward into the high plains
+          later known as <strong>Ascalon</strong>.
+        </p>
+
+        <p>
+          In <strong>100 BE</strong>, humans drove the
+          <strong>charr</strong> north from lands the charr had
+          previously controlled.
+        </p>
+
+        <p>
+          <strong>Doric</strong> was crowned king of the human lands
+          of continental Tyria.
+        </p>
+
+        <p>
+          The conflict over Ascalon would outlive nearly every ruler
+          who participated in it.
         </p>
 
         <div class="record-box">
 
           <p class="record-box-label">
-            Historical Turning Point
+            Long Memory
           </p>
 
           <p>
-            Humanity had moved from scattered settlements to one of
-            Tyria's earliest enduring human empires.
+            To later humans, Ascalon was an ancestral homeland.
+            To the charr, it was territory that humanity had taken from them.
+            Both histories shaped the wars that followed.
           </p>
 
         </div>
@@ -999,353 +1196,207 @@
       </section>
 
 
-      <!-- 05 -->
+      <!-- =========================
+           RECORD 09
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="38"
-        data-date="464–459 BE"
-        data-context="YOU ARE HERE // Luxon and Kurzick Secession"
+        data-position="86"
+        data-date="100–1 BE"
+        data-context="YOU ARE HERE // Human Kingdoms Dominate the Record"
       >
 
         <p class="history-label">
-          Record 05 // The Empire Fractures
+          Record 09 // Human Ascendancy
         </p>
 
         <h2>
-          Luxons and Kurzicks seek independence
+          A new political world takes shape
         </h2>
 
         <p>
-          After Kaineng Tah's death, his son
-          <strong>Yian Zho</strong> inherited the empire.
+          By the final century before the Exodus, human civilizations
+          occupied large portions of the known world.
         </p>
 
         <p>
-          The Luxon clans formally broke away in
-          <strong>462 BE</strong>, while the Kurzicks followed in
-          <strong>459 BE</strong>.
+          Cantha had an empire.
+          Elona had dynasties.
+          Orr stood near the City of the Gods.
+          Human settlements spread across Kryta and Ascalon.
         </p>
 
         <p>
-          Yian Zho responded with brutal military campaigns.
-          Both peoples were eventually forced into becoming vassals
-          of the empire, but their hostility toward one another and
-          toward imperial rule endured.
+          Many older peoples remained, but the written record increasingly
+          centered on human kingdoms, rulers, religions, and conflicts.
         </p>
 
       </section>
 
 
-      <!-- 06 -->
+      <!-- =========================
+           RECORD 10
+      ========================== -->
 
       <section
         class="history-section"
-        data-position="53"
-        data-date="205 BE"
-        data-context="YOU ARE HERE // Humanity Reaches Orr and Elona"
-      >
-
-        <p class="history-label">
-          Record 06 // Humanity Crosses the Seas
-        </p>
-
-        <h2>
-          New settlements appear in Orr and Elona
-        </h2>
-
-        <p>
-          In <strong>205 BE</strong>, human settlers arrived by ship
-          on the shores of <strong>Orr, Istan, and the southern valleys
-          of Elona</strong>.
-        </p>
-
-        <p>
-          Their homeland has been lost to history.
-        </p>
-
-        <p>
-          These humans did not appear to have come from Cantha,
-          suggesting that multiple human migrations reached different
-          parts of the world.
-        </p>
-
-      </section>
-
-
-      <!-- 07 -->
-
-      <section
-        class="history-section"
-        data-position="58"
-        data-date="200 BE"
-        data-context="YOU ARE HERE // The Primeval Dynasty Begins"
-      >
-
-        <p class="history-label">
-          Record 07 // The Primeval Kings
-        </p>
-
-        <h2>
-          Elona gains its first great dynasty
-        </h2>
-
-        <p>
-          In <strong>200 BE</strong>, the first of the
-          <strong>Primeval Kings</strong> ruled Elona from the city
-          of Fahranur in Istan.
-        </p>
-
-        <p>
-          This marked the beginning of the
-          <strong>Primeval Dynasty</strong> and the Dynastic Reckoning
-          calendar.
-        </p>
-
-        <p>
-          Over time, the Primeval Kings expanded their influence into
-          Vabbi, the Desolation, and the lands surrounding the Crystal Sea.
-        </p>
-
-      </section>
-
-
-      <!-- 08 -->
-
-      <section
-        class="history-section"
-        data-position="64"
-        data-date="175 BE"
-        data-context="YOU ARE HERE // The Margonites Rise"
-      >
-
-        <p class="history-label">
-          Record 08 // The Margonites
-        </p>
-
-        <h2>
-          A maritime civilization controls the ocean
-        </h2>
-
-        <p>
-          By <strong>175 BE</strong>, Margonite settlements existed
-          along the coastlines north and west of Elona.
-        </p>
-
-        <p>
-          Their ships dominated the
-          <strong>Unending Ocean</strong>, making the Margonites one
-          of the most powerful maritime civilizations of the age.
-        </p>
-
-        <p>
-          Their future would become inseparable from the god
-          <strong>Abaddon</strong>.
-        </p>
-
-      </section>
-
-
-      <!-- 09 -->
-
-      <section
-        class="history-section"
-        data-position="73"
-        data-date="100 BE"
-        data-context="YOU ARE HERE // Humanity Takes Ascalon"
-      >
-
-        <p class="history-label">
-          Record 09 // Ascalon
-        </p>
-
-        <h2>
-          Humanity pushes north
-        </h2>
-
-        <p>
-          In <strong>100 BE</strong>, humans expanded into the lands
-          later known as <strong>Ascalon</strong>.
-        </p>
-
-        <p>
-          The charr were driven north from territories they had
-          previously conquered.
-        </p>
-
-        <p>
-          <strong>Doric</strong> was crowned king of the Tyrian human
-          lands, creating a political center for humanity on the
-          continent.
-        </p>
-
-        <p>
-          The conflict between humans and charr had begun.
-        </p>
-
-      </section>
-
-
-      <!-- 10 -->
-
-      <section
-        class="history-section"
-        data-position="79"
-        data-date="115–45 BE"
-        data-context="YOU ARE HERE // The Gods Walk Among Humanity"
-      >
-
-        <p class="history-label">
-          Record 10 // Divine Presence
-        </p>
-
-        <h2>
-          Mortals still speak directly with gods
-        </h2>
-
-        <p>
-          The centuries before the Exodus contain accounts of the gods
-          directly interacting with humanity.
-        </p>
-
-        <p>
-          Dwayna answered Doric during a long war.
-          Balthazar aided a human army.
-          Melandru punished those who rejected her teachings.
-          Lyssa tested the people of Wren.
-          Grenth gathered his earliest followers.
-        </p>
-
-        <p>
-          To humanity of this era, the gods were not distant figures
-          of faith.
-        </p>
-
-        <p>
-          They were part of the world.
-        </p>
-
-      </section>
-
-
-      <!-- 11 -->
-
-      <section
-        class="history-section"
-        data-position="90"
+        data-position="96"
         data-date="1 BE"
-        data-context="YOU ARE HERE // Abaddon Gives Magic"
+        data-context="YOU ARE HERE // Abaddon Changes the World"
       >
 
         <p class="history-label">
-          Record 11 // The Gift
+          Record 10 // The Edge of a Magical Age
         </p>
 
         <h2>
-          Abaddon gives magic to the world
+          Power is about to change hands
         </h2>
 
         <p>
-          In <strong>1 BE</strong>, Abaddon gave the knowledge and
-          power of magic to the sentient races of Tyria.
+          Humanity had spread across the known continents under the
+          influence of gods, kings, emperors, and expanding civilizations.
         </p>
 
         <p>
-          Magic itself had existed before this moment, but the gift
-          dramatically increased the amount of magical power available
-          to mortal civilizations.
+          Then one member of the pantheon made a decision that affected
+          far more than humanity.
         </p>
 
         <p>
-          The consequences were immediate.
+          In <strong>1 BE</strong>,
+          <strong>Abaddon</strong> gave the peoples of Tyria far greater
+          access to magic.
         </p>
 
         <p>
-          Races turned the gift against one another, and widespread
-          magical wars erupted across the world.
-        </p>
-
-        <p>
-          Humanity stood on the edge of another catastrophe.
+          The result would immediately change the balance of power
+          across the world.
         </p>
 
       </section>
 
 
-      <!-- KEY RECORDS -->
+      <!-- =========================
+           GOD INDEX
+      ========================== -->
 
-      <section class="key-records">
+      <section class="history-section">
 
         <p class="history-label">
-          Archive Index
+          Pantheon Index
         </p>
 
         <h2>
-          Key Records From This Era
+          The Six Gods
         </h2>
 
-        <div class="key-grid">
 
-          <div class="key-card">
+        <div class="god-grid">
 
-            <p class="key-card-label">
-              Divine History
+          <div class="god-card">
+
+            <p class="god-card-label">
+              Life & Air
             </p>
 
             <h3>
-              The Six Gods
+              Dwayna
             </h3>
 
             <p>
-              Powerful beings from the Mists who became central to human history.
+              Goddess associated with healing, life, warmth, and air,
+              and regarded as leader of the pantheon.
             </p>
 
           </div>
 
-          <div class="key-card">
 
-            <p class="key-card-label">
-              Civilization
+          <div class="god-card">
+
+            <p class="god-card-label">
+              War & Fire
             </p>
 
             <h3>
-              Empire of the Dragon
+              Balthazar
             </h3>
 
             <p>
-              The Canthan empire founded by Kaineng Tah in 510 BE.
+              God associated with war, fire, and courage who encouraged
+              humanity's expansion.
             </p>
 
           </div>
 
-          <div class="key-card">
 
-            <p class="key-card-label">
-              Dynasty
+          <div class="god-card">
+
+            <p class="god-card-label">
+              Nature & Earth
             </p>
 
             <h3>
-              Primeval Kings
+              Melandru
             </h3>
 
             <p>
-              Elona's earliest recorded ruling dynasty.
+              Goddess associated with nature, earth, and growth.
             </p>
 
           </div>
 
-          <div class="key-card">
 
-            <p class="key-card-label">
-              Turning Point
+          <div class="god-card">
+
+            <p class="god-card-label">
+              Beauty & Illusion
             </p>
 
             <h3>
-              The Gift of Magic
+              Lyssa
             </h3>
 
             <p>
-              Abaddon's gift transforms the balance of power in Tyria.
+              Twin goddesses Lyss and Ilya, associated with beauty
+              and illusion.
+            </p>
+
+          </div>
+
+
+          <div class="god-card">
+
+            <p class="god-card-label">
+              Death & Ice
+            </p>
+
+            <h3>
+              Grenth
+            </h3>
+
+            <p>
+              God associated with death, darkness, and ice,
+              who succeeded Dhuum.
+            </p>
+
+          </div>
+
+
+          <div class="god-card">
+
+            <p class="god-card-label">
+              Knowledge & Water
+            </p>
+
+            <h3>
+              Abaddon
+            </h3>
+
+            <p>
+              God whose decision to grant greater magical power to mortals
+              leads directly into the next historical archive.
             </p>
 
           </div>
@@ -1355,7 +1406,9 @@
       </section>
 
 
-      <!-- NAVIGATION -->
+      <!-- =========================
+           NEXT ERA
+      ========================== -->
 
       <section class="page-navigation">
 
@@ -1364,14 +1417,20 @@
         </p>
 
         <h2>
-          Magic, Abaddon, and the Exodus
+          The Gift of Magic
         </h2>
 
         <p>
-          Humanity had spread across the world and the gods still walked
-          among mortals. Then magic was given too freely, and the resulting
-          wars would force even the gods to reconsider what they had created.
+          Humanity had built kingdoms and empires across the known world,
+          while the Six Gods remained active in mortal affairs.
         </p>
+
+        <p>
+          The next archive begins in 1 BE, when Abaddon gave the sentient
+          peoples of Tyria access to far greater magical power and
+          transformed an age of expansion into an age of magical war.
+        </p>
+
 
         <div class="navigation-actions">
 
@@ -1384,9 +1443,16 @@
 
           <a
             href="../index.html"
+            class="button"
+          >
+            Road Through Time
+          </a>
+
+          <a
+            href="../gift-of-magic/index.html"
             class="button button-primary"
           >
-            Return to Main Homepage
+            The Gift of Magic →
           </a>
 
         </div>
@@ -1398,7 +1464,9 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
@@ -1413,12 +1481,18 @@
   </footer>
 
 
+  <!-- =========================
+       HISTORY POSITION SCRIPT
+  ========================== -->
+
   <script>
     (() => {
       "use strict";
 
       const sections =
-        document.querySelectorAll(".history-section");
+        document.querySelectorAll(
+          ".history-section[data-position]"
+        );
 
       const marker =
         document.getElementById("historyMarker");
@@ -1429,12 +1503,14 @@
       const positionContext =
         document.getElementById("positionContext");
 
+
       const updatePosition = (section) => {
+
         const position =
-          section.dataset.position || "10";
+          section.dataset.position || "5";
 
         const date =
-          section.dataset.date || "Ancient Era";
+          section.dataset.date || "Ancient Tyria";
 
         const context =
           section.dataset.context || "YOU ARE HERE";
@@ -1448,6 +1524,7 @@
         positionContext.textContent =
           context;
       };
+
 
       const observer =
         new IntersectionObserver(
@@ -1466,9 +1543,11 @@
                 );
 
             if (visible.length > 0) {
+
               updatePosition(
                 visible[0].target
               );
+
             }
 
           },
@@ -1486,11 +1565,13 @@
           }
         );
 
+
       sections.forEach(
         (section) => {
           observer.observe(section);
         }
       );
+
     })();
   </script>
 
