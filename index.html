@@ -23,7 +23,6 @@
 
       --background: #020617;
       --panel: #0f172a;
-      --panel-light: #111c31;
       --border: #374151;
 
       --gold: #f4c76b;
@@ -103,7 +102,11 @@
       z-index: -2;
 
       background-image:
-        radial-gradient(circle, rgba(255,255,255,0.45) 1px, transparent 1px);
+        radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.45) 1px,
+          transparent 1px
+        );
 
       background-size: 95px 95px;
       opacity: 0.18;
@@ -113,7 +116,11 @@
       content: "";
 
       background-image:
-        radial-gradient(circle, rgba(244,199,107,0.38) 1px, transparent 1px);
+        radial-gradient(
+          circle,
+          rgba(244, 199, 107, 0.38) 1px,
+          transparent 1px
+        );
 
       background-size: 145px 145px;
       background-position: 45px 20px;
@@ -125,7 +132,11 @@
       content: "";
 
       background-image:
-        radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px);
+        radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.35) 1px,
+          transparent 1px
+        );
 
       background-size: 210px 210px;
       background-position: 80px 110px;
@@ -333,10 +344,15 @@
       margin: 14px auto 0;
     }
 
+    /* =========================
+       TIMELINE
+    ========================= */
+
     .timeline {
       position: relative;
 
       width: min(760px, 100%);
+
       margin: 0 auto;
       padding: 12px 0 70px;
     }
@@ -353,10 +369,10 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(244,199,107,0.25),
-          rgba(244,199,107,0.9) 12%,
-          rgba(244,199,107,0.9) 88%,
-          rgba(244,199,107,0.25)
+          rgba(244, 199, 107, 0.25),
+          rgba(244, 199, 107, 0.9) 12%,
+          rgba(244, 199, 107, 0.9) 88%,
+          rgba(244, 199, 107, 0.25)
         );
     }
 
@@ -416,7 +432,7 @@
       background: var(--background);
 
       box-shadow:
-        0 0 12px rgba(244,199,107,0.28);
+        0 0 12px rgba(244, 199, 107, 0.28);
     }
 
     .timeline-entry:hover::before {
@@ -481,13 +497,13 @@
     }
 
     .timeline-entry.current {
-      border-color: rgba(244,199,107,0.5);
+      border-color: rgba(244, 199, 107, 0.5);
 
       background:
         linear-gradient(
           145deg,
-          rgba(244,199,107,0.09),
-          rgba(15,23,42,0.94)
+          rgba(244, 199, 107, 0.09),
+          rgba(15, 23, 42, 0.94)
         );
     }
 
@@ -495,7 +511,7 @@
       background: var(--gold);
 
       box-shadow:
-        0 0 18px rgba(244,199,107,0.5);
+        0 0 18px rgba(244, 199, 107, 0.5);
     }
 
     /* =========================
@@ -508,10 +524,10 @@
       margin: -30px auto 70px;
       padding: 24px;
 
-      border: 1px solid rgba(244,199,107,0.4);
+      border: 1px solid rgba(244, 199, 107, 0.4);
       border-radius: 12px;
 
-      background: rgba(244,199,107,0.045);
+      background: rgba(244, 199, 107, 0.045);
 
       text-align: center;
     }
@@ -535,68 +551,112 @@
     }
 
     /* =========================
-       ARCHIVE NOTE
+       PRIORY ARCHIVE
     ========================= */
 
-    .archive-guide {
-      padding: 44px 0 74px;
+    .priory-section {
+      padding: 50px 0 78px;
 
       border-top: 1px solid var(--border);
     }
 
-    .archive-guide h2 {
+    .priory-panel {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 32px;
+
+      border: 1px solid rgba(244, 199, 107, 0.32);
+      border-radius: 13px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15, 23, 42, 0.82),
+          rgba(6, 12, 26, 0.88)
+        );
+    }
+
+    .priory-panel::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 4px;
+      height: 100%;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent,
+          var(--gold),
+          transparent
+        );
+
+      opacity: 0.75;
+    }
+
+    .priory-label {
       margin: 0;
 
       color: var(--gold);
 
-      font-size: 1.7rem;
-    }
-
-    .archive-guide p {
-      max-width: 760px;
-      margin: 14px 0 0;
-    }
-
-    .guide-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-
-      gap: 14px;
-
-      margin-top: 26px;
-    }
-
-    .guide-card {
-      padding: 20px;
-
-      border: 1px solid var(--border);
-      border-radius: 10px;
-
-      background: rgba(15,23,42,0.65);
-    }
-
-    .guide-card span {
-      color: var(--gold);
-
       font-family: monospace;
-      font-size: 0.62rem;
+      font-size: 0.66rem;
 
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .guide-card h3 {
-      margin: 7px 0 0;
+    .priory-panel h2 {
+      margin: 9px 0 0;
 
       color: var(--gold-bright);
 
-      font-size: 1rem;
+      font-size: clamp(1.65rem, 4vw, 2.25rem);
     }
 
-    .guide-card p {
-      margin: 8px 0 0;
+    .priory-subtitle {
+      margin: 6px 0 0;
 
-      font-size: 0.88rem;
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+
+      letter-spacing: 0.08em;
+    }
+
+    .priory-text {
+      max-width: 790px;
+
+      margin-top: 24px;
+    }
+
+    .priory-text p {
+      margin: 16px 0 0;
+    }
+
+    .priory-text p:first-child {
+      margin-top: 0;
+    }
+
+    .priory-signoff {
+      margin-top: 28px;
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(55, 65, 81, 0.75);
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.7rem;
+
+      letter-spacing: 0.08em;
     }
 
     /* =========================
@@ -627,7 +687,7 @@
 
       padding: 20px;
 
-      background: rgba(2,6,23,0.82);
+      background: rgba(2, 6, 23, 0.82);
 
       backdrop-filter: blur(10px);
 
@@ -650,18 +710,18 @@
 
       padding: 28px;
 
-      border: 1px solid rgba(244,199,107,0.48);
+      border: 1px solid rgba(244, 199, 107, 0.48);
       border-radius: 14px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(15,23,42,0.99),
-          rgba(5,10,22,0.99)
+          rgba(15, 23, 42, 0.99),
+          rgba(5, 10, 22, 0.99)
         );
 
       box-shadow:
-        0 28px 80px rgba(0,0,0,0.48);
+        0 28px 80px rgba(0, 0, 0, 0.48);
     }
 
     .spoiler-label {
@@ -694,10 +754,10 @@
 
       margin-top: 24px;
 
-      border: 1px solid rgba(244,199,107,0.55);
+      border: 1px solid rgba(244, 199, 107, 0.55);
       border-radius: 9px;
 
-      background: rgba(244,199,107,0.11);
+      background: rgba(244, 199, 107, 0.11);
       color: var(--gold-bright);
 
       font: inherit;
@@ -713,7 +773,7 @@
     .acknowledge-button:hover {
       transform: translateY(-2px);
 
-      background: rgba(244,199,107,0.17);
+      background: rgba(244, 199, 107, 0.17);
     }
 
     /* =========================
@@ -726,15 +786,15 @@
         color: var(--gold);
 
         text-shadow:
-          0 0 0 rgba(244,199,107,0);
+          0 0 0 rgba(244, 199, 107, 0);
       }
 
       50% {
         color: var(--gold-bright);
 
         text-shadow:
-          0 0 18px rgba(244,199,107,0.3),
-          0 0 36px rgba(244,199,107,0.1);
+          0 0 18px rgba(244, 199, 107, 0.3),
+          0 0 36px rgba(244, 199, 107, 0.1);
       }
     }
 
@@ -797,8 +857,12 @@
         transform: translateY(-2px);
       }
 
-      .guide-grid {
-        grid-template-columns: 1fr;
+      .priory-section {
+        padding: 42px 0 60px;
+      }
+
+      .priory-panel {
+        padding: 24px 21px;
       }
 
       .spoiler-window {
@@ -838,7 +902,7 @@
       <a href="index.html" class="brand">
 
         <p class="brand-small">
-          QKommand Archive
+          Durmand Priory Archive
         </p>
 
         <p class="brand-name">
@@ -924,17 +988,15 @@
         </p>
 
         <p>
-          The main road below follows the major events
-          that shaped Tyria. Each entry is a doorway
-          into that period rather than a complete encyclopedia.
+          The records below follow the major events
+          that shaped Tyria.
         </p>
 
         <p>
-          As the library grows,
-          individual events, people, places,
-          organizations, religions, artifacts,
-          and side stories can branch outward
-          from these eleven historical anchors.
+          Each archive preserves a section
+          of the historical road.
+          Follow them in order,
+          or select the era you wish to study.
         </p>
 
       </section>
@@ -947,7 +1009,7 @@
       <section class="road-header">
 
         <p class="road-label">
-          Main Historical Spine
+          Main Historical Record
         </p>
 
         <h2>
@@ -955,7 +1017,7 @@
         </h2>
 
         <p>
-          Move from the oldest surviving fragments
+          Travel from the oldest surviving fragments
           of Tyrian history to the living present.
         </p>
 
@@ -991,9 +1053,11 @@
           </p>
 
           <p class="timeline-description">
-            Elder Dragons, the ancient Dragonrise,
-            the Giganticus Lupicus, Seer magical technology,
-            and the first Bloodstone.
+            The ancient world,
+            the Elder Dragon cycle,
+            the loss of the Giganticus Lupicus,
+            and the first great attempt
+            to hide magic from the dragons.
           </p>
 
           <span class="timeline-arrow">
@@ -1019,13 +1083,14 @@
           </h3>
 
           <p class="timeline-date">
-            Ancient Dragonrise – 1769 BE
+            After the Ancient Dragonrise
           </p>
 
           <p class="timeline-description">
-            Follow the Seers, mursaat, Forgotten,
-            dwarves, jotun, and Glint through
-            the shattered world left by the dragons.
+            Follow the Seers, mursaat,
+            Forgotten, dwarves, and jotun
+            through the world that remained
+            after the dragons returned to sleep.
           </p>
 
           <span class="timeline-arrow">
@@ -1223,7 +1288,7 @@
             Primordus, Jormag, Zhaitan,
             and Kralkatorrik reshape the world
             while the civilizations of modern
-            Guild Wars 2 take form.
+            Tyria take form.
           </p>
 
           <span class="timeline-arrow">
@@ -1256,8 +1321,8 @@
             The Pact forms.
             Elder Dragons fall.
             Scarlet awakens Mordremoth.
-            Aurene rises, and the traditional
-            Dragon Cycle finally ends.
+            Aurene rises,
+            and the traditional Dragon Cycle ends.
           </p>
 
           <span class="timeline-arrow">
@@ -1348,92 +1413,94 @@
         <p>
           <strong>1339 AE</strong>
           is where the Road Through Time currently ends.
-          Everything beyond this point is still becoming history.
+          Everything beyond this point
+          is still becoming history.
         </p>
 
       </section>
 
 
       <!-- =========================
-           GUIDE
+           DURMAND PRIORY ARCHIVE
       ========================== -->
 
-      <section class="archive-guide">
+      <section class="priory-section">
 
-        <h2>
-          How the Library Will Grow
-        </h2>
+        <div class="priory-panel">
 
-        <p>
-          Think of this timeline as the trunk of a tree.
-          The main road stays simple,
-          while deeper lore can branch outward
-          without turning the homepage into a wall of information.
-        </p>
+          <p class="priory-label">
+            Durmand Priory // Terminal 77-B
+          </p>
+
+          <h2>
+            Living Lore Library
+          </h2>
+
+          <p class="priory-subtitle">
+            HISTORICAL RECORD ACCESS // ACTIVE
+          </p>
 
 
-        <div class="guide-grid">
-
-
-          <article class="guide-card">
-
-            <span>
-              Events
-            </span>
-
-            <h3>
-              Historical Branches
-            </h3>
+          <div class="priory-text">
 
             <p>
-              Major events such as the Searing,
-              Jade Wind, Scarab Plague,
-              Bloodstone explosion, or Dragonfall
-              can receive their own archives.
+              Welcome, traveler.
             </p>
-
-          </article>
-
-
-          <article class="guide-card">
-
-            <span>
-              People & Factions
-            </span>
-
-            <h3>
-              Connected Stories
-            </h3>
 
             <p>
-              Follow figures and organizations
-              such as Glint, the mursaat,
-              White Mantle, Order of Whispers,
-              Astral Ward, or Ministry of Purity.
+              You are accessing the Living Lore Library,
+              a historical collection maintained within
+              the library archives of Terminal 77-B
+              of the Durmand Priory.
             </p>
-
-          </article>
-
-
-          <article class="guide-card">
-
-            <span>
-              Places & Artifacts
-            </span>
-
-            <h3>
-              Lore Threads
-            </h3>
 
             <p>
-              Locations and relics such as Arah,
-              Janthir, the Bloodstones,
-              Scepter of Orr, or Castora
-              can connect multiple eras together.
+              These records preserve the long memory of Tyria:
+              civilizations that rose before humanity,
+              the ancient awakenings of the Elder Dragons,
+              the arrival of the gods,
+              the rise and fall of kingdoms,
+              the wars of guilds,
+              and the events that shaped
+              the world we know today.
             </p>
 
-          </article>
+            <p>
+              Not every account has survived intact.
+            </p>
 
+            <p>
+              Some histories remain only in ruins.
+              Others were recovered from forgotten writings,
+              ancient artifacts,
+              distant lands,
+              or the testimony of those
+              who witnessed history firsthand.
+            </p>
+
+            <p>
+              The Priory has gathered those fragments here
+              so that they may be followed
+              as one road through time.
+            </p>
+
+            <p>
+              Select an era and begin where you wish.
+            </p>
+
+            <p>
+              History does not require
+              that you start at the beginning.
+            </p>
+
+          </div>
+
+
+          <p class="priory-signoff">
+            DURMAND PRIORY ARCHIVAL NETWORK //
+            TERMINAL 77-B //
+            RECORDS AVAILABLE
+          </p>
 
         </div>
 
