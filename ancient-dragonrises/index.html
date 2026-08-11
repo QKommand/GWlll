@@ -2,1034 +2,1746 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
+
   <meta
     name="description"
-    content="Ancient Dragonrises archive entry in the Guild Wars Living Lore Library."
+    content="Commander Q's historical record of the ancient Dragonrises and the earliest known ages of Tyria."
   >
-  <meta name="theme-color" content="#020617">
-  <title>Ancient Dragonrises // GWlll</title>
+
+  <meta name="theme-color" content="#070b14">
+
+  <title>Ancient Dragonrises // The Records of Commander Q</title>
+
   <style>
     :root {
       color-scheme: dark;
-      --background: #020617;
-      --panel: #0f172a;
-      --border: #374151;
-      --gold: #f4c76b;
-      --gold-bright: #ffe3a3;
-      --gold-muted: #c99b45;
-      --white: #ffffff;
+
+      --background: #070b14;
+      --background-deep: #03060c;
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
+
+      --border: #334155;
+      --border-soft: rgba(148, 163, 184, 0.18);
+
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
+
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
+
+      --quote: #c7d2e0;
+
+      --max-width: 820px;
     }
+
     * {
       box-sizing: border-box;
     }
+
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 175px;
+      scroll-padding-top: 150px;
     }
+
     body {
       margin: 0;
       min-width: 320px;
+
       background:
         radial-gradient(
           circle at top,
-          rgba(244, 199, 107, 0.08),
-          transparent 34rem
+          rgba(214, 179, 106, 0.07),
+          transparent 32rem
         ),
-        var(--background);
-      color: var(--white);
+        linear-gradient(
+          to bottom,
+          #090e18,
+          var(--background) 30rem
+        );
+
+      color: var(--ink);
+
       font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-      line-height: 1.75;
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 1.05rem;
+      line-height: 1.85;
     }
+
     a {
       color: inherit;
     }
+
     .container {
-      width: min(900px, calc(100% - 32px));
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
+
       margin-inline: auto;
     }
-    /* =========================
+
+    /* ========================================
        HEADER
-    ========================= */
+    ======================================== */
+
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      border-bottom: 1px solid var(--border);
-      background: rgba(2, 6, 23, 0.94);
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(3, 6, 12, 0.95);
+
       backdrop-filter: blur(14px);
     }
+
     .header-inner {
-      min-height: 68px;
+      min-height: 66px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
+
     .brand {
       text-decoration: none;
     }
+
     .brand-small {
       margin: 0;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.17em;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
+
     .brand-name {
       margin: 2px 0 0;
+
       color: var(--gold);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 1rem;
       font-weight: 700;
     }
+
     .home-link {
       color: var(--gold);
-      font-family: monospace;
-      font-size: 0.75rem;
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.7rem;
       font-weight: 700;
+
       text-decoration: none;
+
       transition:
         color 180ms ease,
         transform 180ms ease;
     }
+
     .home-link:hover {
       color: var(--gold-bright);
       transform: translateX(-3px);
     }
-    /* =========================
-       HISTORICAL POSITION
-    ========================= */
-    .history-position {
+
+    /* ========================================
+       CHRONOLOGY BAR
+    ======================================== */
+
+    .chronology {
       position: sticky;
-      top: 68px;
+      top: 66px;
       z-index: 40;
-      border-bottom: 1px solid var(--border);
-      background: rgba(2, 6, 23, 0.96);
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(7, 11, 20, 0.96);
+
       backdrop-filter: blur(12px);
     }
-    .history-position-inner {
-      padding: 13px 0 15px;
+
+    .chronology-inner {
+      padding: 11px 0 13px;
     }
-    .position-top {
+
+    .chronology-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
+
+      gap: 15px;
+
+      margin-bottom: 8px;
     }
-    .position-label {
+
+    .chronology-label,
+    .chronology-date {
       margin: 0;
-      color: var(--white);
-      font-family: monospace;
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .chronology-label {
+      color: var(--ink-faint);
+    }
+
+    .chronology-date {
+      color: var(--gold-bright);
+      font-weight: 700;
+    }
+
+    .history-rail {
+      position: relative;
+      height: 17px;
+    }
+
+    .history-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          to right,
+          rgba(214, 179, 106, 0.18),
+          rgba(214, 179, 106, 0.85),
+          rgba(214, 179, 106, 0.18)
+        );
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: 1px;
+      left: 5%;
+
+      width: 13px;
+      height: 13px;
+
+      border:
+        2px solid var(--gold-bright);
+
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 12px
+        rgba(214, 179, 106, 0.38);
+
+      transform: translateX(-50%);
+
+      transition: left 400ms ease;
+    }
+
+    .chronology-context {
+      margin: 4px 0 0;
+
+      color: var(--ink-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+
+      text-align: center;
+    }
+
+    /* ========================================
+       BOOK HEADER
+    ======================================== */
+
+    .book-header {
+      padding:
+        80px 0
+        52px;
+
+      text-align: center;
+    }
+
+    .volume {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.67rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .book-header h1 {
+      margin: 17px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size:
+        clamp(
+          2.6rem,
+          8vw,
+          4.8rem
+        );
+
+      font-weight: 500;
+
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      max-width: 620px;
+
+      margin:
+        18px auto 0;
+
+      color: var(--ink-muted);
+
+      font-style: italic;
+      font-size: 1.08rem;
+    }
+
+    .ornament {
+      width: 120px;
+
+      margin:
+        32px auto 0;
+
+      border: 0;
+      border-top:
+        1px solid var(--gold-muted);
+    }
+
+    /* ========================================
+       AUTHOR
+    ======================================== */
+
+    .author-card {
+      margin-bottom: 60px;
+
+      padding:
+        24px 26px;
+
+      border-top:
+        1px solid var(--border-soft);
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      text-align: center;
+    }
+
+    .author-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .author-name {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .author-title {
+      margin: 5px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.91rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       PREFACE
+    ======================================== */
+
+    .preface {
+      margin-bottom: 68px;
+    }
+
+    .section-kicker {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.64rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .preface h2,
+    .chapter h2 {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size:
+        clamp(
+          1.65rem,
+          5vw,
+          2.25rem
+        );
+
+      font-weight: 500;
+
+      line-height: 1.25;
+    }
+
+    .preface p {
+      margin: 18px 0 0;
+    }
+
+    .signature {
+      margin-top: 28px;
+
+      color: var(--gold-bright);
+
+      font-style: italic;
+    }
+
+    /* ========================================
+       RESEARCH NOTE
+    ======================================== */
+
+    .research-note {
+      margin:
+        28px 0;
+
+      padding:
+        20px 22px;
+
+      border-left:
+        2px solid var(--gold-muted);
+
+      background:
+        rgba(214, 179, 106, 0.045);
+    }
+
+    .research-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
       font-size: 0.62rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
-    .current-date {
+
+    .research-note p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.96rem;
+    }
+
+    /* ========================================
+       CHAPTERS
+    ======================================== */
+
+    .chapter {
+      padding:
+        48px 0;
+
+      border-top:
+        1px solid var(--border-soft);
+    }
+
+    .chapter-number {
       margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .chapter p {
+      margin: 18px 0 0;
+    }
+
+    .chapter strong {
       color: var(--gold-bright);
-      font-family: monospace;
-      font-size: 0.7rem;
-      font-weight: 700;
+      font-weight: 600;
     }
-    .history-rail {
-      position: relative;
-      height: 26px;
+
+    .chapter-opening::first-letter {
+      float: left;
+
+      margin:
+        7px 8px
+        0 0;
+
+      color: var(--gold);
+
+      font-size: 3.6rem;
+      line-height: 0.75;
     }
-    .history-line {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 7px;
-      height: 1px;
+
+    /* ========================================
+       COMMANDER Q OBSERVATION
+    ======================================== */
+
+    .q-observation {
+      margin:
+        30px 0 6px;
+
+      padding:
+        21px 23px;
+
+      border:
+        1px solid var(--border-soft);
+
       background:
         linear-gradient(
-          to right,
-          rgba(244, 199, 107, 0.25),
-          rgba(244, 199, 107, 0.9),
-          rgba(244, 199, 107, 0.25)
+          135deg,
+          rgba(214, 179, 106, 0.05),
+          rgba(15, 23, 42, 0.45)
         );
     }
-    .history-point {
-      position: absolute;
-      top: 2px;
-      width: 11px;
-      height: 11px;
-      border: 1px solid var(--gold-muted);
-      border-radius: 50%;
-      background: var(--background);
-      transform: translateX(-50%);
-    }
-    .history-point.start {
-      left: 5%;
-    }
-    .history-point.middle {
-      left: 50%;
-    }
-    .history-point.end {
-      left: 95%;
-    }
-    .history-marker {
-      position: absolute;
-      top: -1px;
-      left: 5%;
-      width: 17px;
-      height: 17px;
-      border: 2px solid var(--gold-bright);
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow:
-        0 0 15px rgba(244, 199, 107, 0.5);
-      transform: translateX(-50%);
-      transition: left 450ms ease;
-    }
-    .rail-labels {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2px;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.58rem;
-    }
-    .position-context {
-      margin: 8px 0 0;
-      color: var(--gold);
-      font-size: 0.72rem;
-      text-align: center;
-    }
-    /* =========================
-       HERO
-    ========================= */
-    .hero {
-      padding: 72px 0 56px;
-      text-align: center;
-    }
-    .hero-label {
+
+    .q-observation-label {
       margin: 0;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      margin: 16px 0 0;
+
       color: var(--gold);
-      font-size: clamp(2.7rem, 8vw, 5.2rem);
-      line-height: 1.03;
-      letter-spacing: -0.045em;
-      animation: goldPulse 4s ease-in-out infinite;
-    }
-    .hero-date {
-      margin: 16px 0 0;
-      color: var(--gold-bright);
-      font-family: monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .hero-text {
-      max-width: 760px;
-      margin: 24px auto 0;
-      font-size: 1.06rem;
-      line-height: 1.9;
-    }
-    /* =========================
-       ARCHIVE NOTE
-    ========================= */
-    .archive-note {
-      margin-bottom: 55px;
-      padding: 24px;
-      border: 1px solid rgba(244, 199, 107, 0.35);
-      border-radius: 12px;
-      background: rgba(244, 199, 107, 0.045);
-    }
-    .archive-note-label {
-      margin: 0;
-      color: var(--gold);
-      font-family: monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-    .archive-note p:last-child {
-      margin: 12px 0 0;
-    }
-    /* =========================
-       HISTORY
-    ========================= */
-    .history-section {
-      padding: 36px 0;
-      border-top: 1px solid var(--border);
-    }
-    .history-label {
-      margin: 0;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-    .history-section h2 {
-      margin: 8px 0 0;
-      color: var(--gold);
-      font-size: clamp(1.6rem, 5vw, 2.35rem);
-      line-height: 1.2;
-    }
-    .history-section p {
-      margin: 16px 0 0;
-    }
-    .history-section strong {
-      color: var(--gold-bright);
-    }
-    .record-box {
-      margin-top: 22px;
-      padding: 20px;
-      border-left: 2px solid var(--gold);
-      background: rgba(15, 23, 42, 0.8);
-    }
-    .record-box-label {
-      margin: 0;
-      color: var(--gold);
-      font-family: monospace;
-      font-size: 0.65rem;
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
-    .record-box p:last-child {
-      margin: 8px 0 0;
+
+    .q-observation p:last-child {
+      margin: 9px 0 0;
+
+      color: var(--quote);
+
+      font-style: italic;
     }
-    /* =========================
-       NAVIGATION
-    ========================= */
-    .page-navigation {
-      padding: 45px 0 80px;
-      border-top: 1px solid var(--border);
+
+    /* ========================================
+       TRANSITION
+    ======================================== */
+
+    .transition {
+      padding:
+        58px 0
+        70px;
+
+      border-top:
+        1px solid var(--border-soft);
     }
-    .navigation-label {
+
+    .transition-label {
       margin: 0;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.67rem;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.63rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
-    .page-navigation h2 {
-      margin: 8px 0 0;
+
+    .transition h2 {
+      margin: 10px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .transition p {
+      margin: 16px 0 0;
+    }
+
+    .next-title {
+      margin-top: 30px !important;
+
       color: var(--gold);
-      font-size: 1.7rem;
+
+      font-size: 1.15rem;
+      font-weight: 700;
     }
-    .page-navigation p {
-      margin: 13px 0 0;
-    }
+
     .navigation-actions {
-      margin-top: 24px;
+      margin-top: 28px;
+
       display: flex;
       flex-wrap: wrap;
+
       gap: 12px;
     }
+
     .button {
       min-height: 46px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0 20px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--panel);
+
+      padding:
+        0 20px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 5px;
+
+      background:
+        rgba(15, 23, 42, 0.7);
+
       color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.75rem;
       font-weight: 700;
+
       text-decoration: none;
+
       transition:
         transform 180ms ease,
         border-color 180ms ease,
         color 180ms ease;
     }
+
     .button:hover {
       transform: translateY(-2px);
-      border-color: rgba(244, 199, 107, 0.6);
+
+      border-color:
+        rgba(214, 179, 106, 0.6);
+
       color: var(--gold-bright);
     }
+
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
-      background: rgba(244, 199, 107, 0.1);
+      border-color:
+        rgba(214, 179, 106, 0.45);
+
+      background:
+        rgba(214, 179, 106, 0.08);
     }
-    /* =========================
+
+    /* ========================================
        FOOTER
-    ========================= */
+    ======================================== */
+
     footer {
-      padding: 30px 0;
-      border-top: 1px solid var(--border);
+      padding:
+        34px 0;
+
+      border-top:
+        1px solid var(--border-soft);
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.65rem;
+      line-height: 1.7;
+
       text-align: center;
-      font-size: 0.75rem;
     }
-    /* =========================
-       ANIMATION
-    ========================= */
-    @keyframes goldPulse {
-      0%,
-      100% {
-        color: var(--gold);
-        text-shadow:
-          0 0 0 rgba(244, 199, 107, 0);
-      }
-      50% {
-        color: var(--gold-bright);
-        text-shadow:
-          0 0 16px rgba(244, 199, 107, 0.28),
-          0 0 34px rgba(244, 199, 107, 0.1);
-      }
-    }
-    /* =========================
+
+    /* ========================================
        MOBILE
-    ========================= */
+    ======================================== */
+
     @media (max-width: 650px) {
+
       html {
-        scroll-padding-top: 155px;
+        scroll-padding-top: 135px;
       }
+
+      body {
+        font-size: 1rem;
+      }
+
       .container {
-        width: min(100% - 22px, 900px);
+        width:
+          min(
+            100% - 24px,
+            var(--max-width)
+          );
       }
+
       .header-inner {
-        min-height: 62px;
+        min-height: 60px;
       }
+
       .brand-small {
         display: none;
       }
+
       .brand-name {
-        font-size: 0.84rem;
+        font-size: 0.88rem;
       }
+
       .home-link {
-        font-size: 0.67rem;
-      }
-      .history-position {
-        top: 62px;
-      }
-      .position-label {
-        font-size: 0.55rem;
-      }
-      .current-date {
         font-size: 0.62rem;
       }
-      .rail-labels {
-        font-size: 0.52rem;
+
+      .chronology {
+        top: 60px;
       }
-      .position-context {
-        font-size: 0.65rem;
+
+      .chronology-label {
+        font-size: 0.53rem;
       }
-      .hero {
-        padding: 52px 0 44px;
+
+      .chronology-date {
+        font-size: 0.56rem;
       }
-      .hero-text {
-        font-size: 1rem;
+
+      .chronology-context {
+        font-size: 0.53rem;
       }
+
+      .book-header {
+        padding:
+          58px 0
+          42px;
+      }
+
+      .author-card {
+        padding:
+          21px 14px;
+      }
+
+      .chapter {
+        padding:
+          40px 0;
+      }
+
       .navigation-actions {
         flex-direction: column;
       }
+
       .button {
         width: 100%;
       }
     }
-    @media (prefers-reduced-motion: reduce) {
+
+    @media (
+      prefers-reduced-motion: reduce
+    ) {
+
       html {
         scroll-behavior: auto;
       }
+
       *,
       *::before,
       *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+        animation-duration:
+          0.01ms !important;
+
+        transition-duration:
+          0.01ms !important;
       }
     }
   </style>
 </head>
+
 <body>
-  <!-- =========================
+
+  <!-- ========================================
        HEADER
-  ========================== -->
+  ========================================= -->
+
   <header class="site-header">
+
     <div class="container header-inner">
-      <a href="../index.html" class="brand">
+
+      <a
+        href="../index.html"
+        class="brand"
+      >
+
         <p class="brand-small">
-          QKommand Archive
+          The Historical Records of Commander Q
         </p>
+
         <p class="brand-name">
           GWlll
         </p>
+
       </a>
-      <a href="../index.html" class="home-link">
+
+      <a
+        href="../index.html"
+        class="home-link"
+      >
         ← Road Through Time
       </a>
+
     </div>
+
   </header>
-  <!-- =========================
-       HISTORICAL POSITION
-  ========================== -->
-  <aside class="history-position">
-    <div class="container history-position-inner">
-      <div class="position-top">
-        <p class="position-label">
-          Tyrian Historical Position
+
+
+  <!-- ========================================
+       CHRONOLOGY
+  ========================================= -->
+
+  <aside class="chronology">
+
+    <div class="container chronology-inner">
+
+      <div class="chronology-top">
+
+        <p class="chronology-label">
+          Historical Position
         </p>
-        <p class="current-date" id="currentDate">
+
+        <p
+          class="chronology-date"
+          id="currentDate"
+        >
           c. 20,000 BE
         </p>
+
       </div>
+
       <div class="history-rail">
+
         <div class="history-line"></div>
-        <span class="history-point start"></span>
-        <span class="history-point middle"></span>
-        <span class="history-point end"></span>
+
         <span
           class="history-marker"
           id="historyMarker"
         ></span>
+
       </div>
-      <div class="rail-labels">
-        <span>c. 20,000 BE</span>
-        <span>c. 10,000 BE</span>
-        <span>Dragons Sleep</span>
-      </div>
-      <p class="position-context" id="positionContext">
-        YOU ARE HERE // The Ancient World
+
+      <p
+        class="chronology-context"
+        id="positionContext"
+      >
+        EARLIEST RECORDED DRAGONRISE
       </p>
+
     </div>
+
   </aside>
+
+
   <main>
-    <!-- =========================
-         HERO
-    ========================== -->
-    <section class="hero">
+
+    <!-- ========================================
+         BOOK TITLE
+    ========================================= -->
+
+    <section class="book-header">
+
       <div class="container">
-        <p class="hero-label">
-          Historical Archive // Record 01
+
+        <p class="volume">
+          Volume I // The Ancient World
         </p>
+
         <h1>
           Ancient Dragonrises
         </h1>
-        <p class="hero-date">
-          c. 20,000 BE – Ancient Past
+
+        <p class="subtitle">
+          On the Elder Dragons, the loss of the
+          ancient world, and the civilizations
+          that refused to disappear with it.
         </p>
-        <p class="hero-text">
-          Long before Kryta had kings,
-          before the first Guild War,
-          and before humanity built its great kingdoms,
-          Tyria already knew catastrophe.
-        </p>
-        <p class="hero-text">
-          Beneath the world slept beings
-          whose awakening could change continents.
-        </p>
-        <p class="hero-text">
-          When the Elder Dragons rose,
-          civilizations did not fight for territory.
-          They fought to remain part of history.
-        </p>
+
+        <hr class="ornament">
+
       </div>
+
     </section>
+
+
     <div class="container">
-      <!-- =========================
-           ARCHIVE NOTE
-      ========================== -->
-      <div class="archive-note">
-        <p class="archive-note-label">
-          Archive Scope
+
+      <!-- ========================================
+           AUTHOR
+      ========================================= -->
+
+      <section class="author-card">
+
+        <p class="author-label">
+          Compiled and Annotated By
         </p>
+
+        <p class="author-name">
+          Commander Q
+        </p>
+
+        <p class="author-title">
+          Captain Commander of the Vanguard Knights
+          <br>
+          Researcher of Tyrian History and the Mists
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           PREFACE
+      ========================================= -->
+
+      <section class="preface">
+
+        <p class="section-kicker">
+          Author's Preface
+        </p>
+
+        <h2>
+          Where does Tyrian history begin?
+        </h2>
+
         <p>
-          This entry follows one of the earliest known
-          Dragonrises in Tyrian history:
-          the awakening of the Elder Dragons,
-          the devastation they caused,
-          the disappearance of the Giganticus Lupicus,
-          the elder races' failed attempts to resist them,
-          the Seers' creation of the first Bloodstone,
-          and the eventual return of the dragons to slumber.
-        </p>
+          Every historian eventually reaches
+          a point where the road disappears.
+      </p>
+
         <p>
-          Dates from this period are approximate.
-          Much of what survives comes from ruins,
-          ancient testimony, magical records,
-          and the memories of civilizations
-          that endured the Dragonrise.
+          Names become uncertain.
+          Dates become estimates.
+          Written records give way to ruins,
+          fossils, magical evidence,
+          and the memories of peoples
+          old enough to remember a world
+          that no longer exists.
         </p>
-      </div>
-      <!-- =========================
-           RECORD 01
-      ========================== -->
+
+        <p>
+          That is where this history begins.
+        </p>
+
+        <p>
+          Not with humanity.
+          Not with Ascalon.
+          Not even with the Six Gods.
+        </p>
+
+        <p>
+          It begins with Tyria itself
+          enduring something that would happen
+          again and again:
+          the awakening of the Elder Dragons.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Note on Dating
+          </p>
+
+          <p>
+            The earliest recorded Dragonrise
+            is placed at approximately
+            20,000 BE.
+            The better documented previous
+            Dragonrise appears much later,
+            beginning around 10,000 BE.
+            Events from these ancient periods
+            should not be treated as belonging
+            to one continuous awakening.
+          </p>
+
+        </div>
+
+        <p class="signature">
+          — Commander Q
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER I
+      ========================================= -->
+
       <section
-        class="history-section"
+        class="chapter"
         data-position="5"
         data-date="c. 20,000 BE"
-        data-context="YOU ARE HERE // Earliest Known Dragonrise"
+        data-context="EARLIEST RECORDED DRAGONRISE"
       >
-        <p class="history-label">
-          Record 01 // Before Recorded History
+
+        <p class="chapter-number">
+          I
         </p>
+
         <h2>
-          Tyria before the familiar world
+          The first shadow in the record
         </h2>
-        <p>
-          The oldest reaches of Tyrian history
-          are not a clean written record.
+
+        <p class="chapter-opening">
+          Around 20,000 BE,
+          the surviving historical record
+          places one of the earliest known
+          awakenings of the Elder Dragons.
         </p>
+
         <p>
-          They survive as ruins,
-          magical artifacts,
-          ancient writings,
-          racial memory,
-          and fragments preserved
-          by civilizations that endured
-          long enough to remember.
+          We know remarkably little
+          about the civilizations
+          that witnessed it.
+          That absence is itself evidence
+          of the scale of the age.
         </p>
+
         <p>
-          By roughly
-          <strong>20,000 BE</strong>,
-          the Elder Dragons had already begun
-          one of the earliest known Dragonrises.
+          What can be established is that
+          the Elder Dragons were already part
+          of Tyria's natural history
+          long before the nations
+          recognizable to modern scholars
+          existed.
         </p>
+
+        <p>
+          They awakened,
+          consumed immense quantities of magic,
+          altered the lands around them,
+          and eventually returned to slumber.
+        </p>
+
+        <p>
+          This was not the last time
+          Tyria would endure them.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER II
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="22"
+        data-date="Ancient Ages"
+        data-context="THE DRAGON CYCLE"
+      >
+
+        <p class="chapter-number">
+          II
+        </p>
+
+        <h2>
+          A world built around a cycle
+        </h2>
+
+        <p class="chapter-opening">
+          Elder Dragons did not remain awake
+          indefinitely.
+        </p>
+
+        <p>
+          Their activity followed a terrible
+          rhythm tied to the world's magic.
+        </p>
+
+        <p>
+          When magic was abundant,
+          the dragons could awaken
+          and consume it.
+          Their corruption spread through
+          creatures and landscapes,
+          while their minions extended
+          their influence far beyond
+          the dragons themselves.
+        </p>
+
+        <p>
+          As available magic diminished,
+          the dragons eventually returned
+          to slumber.
+        </p>
+
+        <p>
+          Ages could pass.
+          Civilizations could rise.
+          The world could begin to believe
+          the danger belonged to history.
+        </p>
+
+        <p>
+          Then the cycle could begin again.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            We tend to measure history
+            by kingdoms and wars.
+            The Elder Dragons force us
+            to use a larger scale.
+            Nations were chapters.
+            The Dragon Cycle was the binding
+            holding those chapters together.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER III
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="42"
+        data-date="c. 10,000 BE"
+        data-context="THE PREVIOUS DRAGONRISE"
+      >
+
+        <p class="chapter-number">
+          III
+        </p>
+
+        <h2>
+          The world before our world
+        </h2>
+
+        <p class="chapter-opening">
+          By approximately 10,000 BE,
+          another Dragonrise appears
+          in the surviving record.
+        </p>
+
+        <p>
+          This age is clearer than
+          the one that came before it,
+          although its chronology
+          remains incomplete.
+        </p>
+
         <p>
           Enormous creatures known as the
           <strong>Giganticus Lupicus</strong>
-          also inhabited this ancient world.
+          inhabited ancient Tyria.
+          By around this period,
+          the last known members
+          disappeared.
         </p>
+
         <p>
-          Their fossilized remains would survive
-          for thousands of years,
-          leaving behind evidence
-          of a world far older
-          than the civilizations
-          familiar to modern Tyrians.
+          Their remains endured
+          long after the creatures themselves,
+          leaving fossils scattered across
+          a world that would eventually
+          forget almost everything else
+          about them.
         </p>
+
+        <p>
+          But other peoples survived.
+        </p>
+
+        <p>
+          Among them were civilizations
+          whose names still appear
+          throughout modern Tyrian history:
+          the <strong>Seers</strong>,
+          <strong>mursaat</strong>,
+          <strong>Forgotten</strong>,
+          <strong>dwarves</strong>,
+          and <strong>jotun</strong>.
+        </p>
+
+        <p>
+          Their survival is where
+          the ancient record becomes
+          considerably more important
+          to everything that follows.
+        </p>
+
       </section>
-      <!-- =========================
-           RECORD 02
-      ========================== -->
+
+
+      <!-- ========================================
+           CHAPTER IV
+      ========================================= -->
+
       <section
-        class="history-section"
-        data-position="18"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // The Dragons Rise"
+        class="chapter"
+        data-position="61"
+        data-date="Previous Dragonrise"
+        data-context="THE ELDER RACES RESIST"
       >
-        <p class="history-label">
-          Record 02 // Dragonrise
+
+        <p class="chapter-number">
+          IV
         </p>
+
         <h2>
-          The Elder Dragons awaken
+          Those who refused to disappear
         </h2>
+
+        <p class="chapter-opening">
+          The peoples of this age
+          did not simply wait
+          for the dragons to consume them.
+        </p>
+
         <p>
-          The Elder Dragons emerged
-          as immense concentrations
-          of magical power.
+          Efforts were made
+          to resist the Elder Dragons
+          and preserve the civilizations
+          threatened by them.
         </p>
+
         <p>
-          Their rising was not simply
-          the appearance of powerful creatures.
+          The surviving evidence describes
+          attempts at cooperation among
+          several elder races,
+          although those alliances
+          were neither simple
+          nor permanent.
         </p>
-        <p>
-          They consumed enormous amounts
-          of magical energy,
-          corrupted living creatures,
-          created armies of minions,
-          and transformed the regions
-          surrounding them.
-        </p>
-        <p>
-          Entire civilizations were forced
-          to adapt to a world
-          being steadily stripped
-          of both life and magic.
-        </p>
-        <div class="record-box">
-          <p class="record-box-label">
-            The Dragon Cycle
-          </p>
-          <p>
-            The ancient Dragonrise was part
-            of a repeating pattern.
-            Elder Dragons awakened,
-            consumed magic,
-            devastated the world around them,
-            and eventually returned to slumber
-            when available magic became scarce.
-          </p>
-        </div>
-      </section>
-      <!-- =========================
-           RECORD 03
-      ========================== -->
-      <section
-        class="history-section"
-        data-position="33"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // The Elder Races Resist"
-      >
-        <p class="history-label">
-          Record 03 // Resistance
-        </p>
-        <h2>
-          The elder races try to fight back
-        </h2>
-        <p>
-          Several powerful civilizations
-          lived through this Dragonrise,
-          including the
-          <strong>Seers, mursaat, Forgotten,
-          dwarves, and jotun</strong>.
-        </p>
-        <p>
-          They did not immediately surrender
-          the world to the dragons.
-        </p>
-        <p>
-          Ancient alliances formed,
-          and some of these peoples attempted
-          to confront the Elder Dragons directly.
-        </p>
+
         <p>
           The Forgotten and mursaat,
           for example,
-          fought against
+          attempted to confront
           <strong>Zhaitan</strong>.
         </p>
+
         <p>
-          Those efforts ultimately failed.
+          Military resistance alone
+          was not enough.
         </p>
+
         <p>
-          The dragons could not be defeated
-          by ordinary warfare.
+          The problem was larger
+          than defeating armies.
+          The dragons were feeding
+          upon the same force
+          that empowered the civilizations
+          trying to stop them:
+          <strong>magic</strong>.
         </p>
+
       </section>
-      <!-- =========================
-           RECORD 04
-      ========================== -->
+
+
+      <!-- ========================================
+           CHAPTER V
+      ========================================= -->
+
       <section
-        class="history-section"
-        data-position="48"
-        data-date="c. 10,000 BE"
-        data-context="YOU ARE HERE // Last Known Giganticus Lupicus"
+        class="chapter"
+        data-position="77"
+        data-date="Previous Dragonrise"
+        data-context="THE FIRST BLOODSTONE"
       >
-        <p class="history-label">
-          Record 04 // c. 10,000 BE
+
+        <p class="chapter-number">
+          V
         </p>
+
         <h2>
-          The Giganticus Lupicus disappear
+          Hide the magic
         </h2>
+
+        <p class="chapter-opening">
+          If the dragons could not be defeated
+          through force,
+          another answer was required.
+        </p>
+
         <p>
-          The ancient
-          <strong>Giganticus Lupicus</strong>
-          survived deep into this forgotten age.
+          The <strong>Seers</strong>
+          pursued one.
         </p>
+
         <p>
-          By approximately
-          <strong>10,000 BE</strong>,
-          the last known members
-          had disappeared from Tyria.
+          Their experiments included
+          the <strong>Shadowstone</strong>,
+          an artifact connected
+          to their efforts to preserve magic
+          beyond the dragons' reach.
         </p>
+
         <p>
-          Their extinction occurred during
-          the broader age shaped
-          by repeated Elder Dragon activity,
-          although the surviving record
-          does not preserve a complete account
-          of exactly how they vanished.
-        </p>
-        <p>
-          Thousands of years later,
-          their enormous remains
-          could still be found across Tyria.
-        </p>
-        <div class="record-box">
-          <p class="record-box-label">
-            Historical Caution
-          </p>
-          <p>
-            The disappearance of the
-            Giganticus Lupicus should not be treated
-            as a single event occurring
-            at the beginning of the Dragonrise.
-            Their final disappearance is placed
-            much later, around 10,000 BE.
-          </p>
-        </div>
-      </section>
-      <!-- =========================
-           RECORD 05
-      ========================== -->
-      <section
-        class="history-section"
-        data-position="63"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // The Problem of Magic"
-      >
-        <p class="history-label">
-          Record 05 // The Problem of Magic
-        </p>
-        <h2>
-          How do you hide food from a dragon?
-        </h2>
-        <p>
-          The Elder Dragons fed upon magic.
-        </p>
-        <p>
-          That created a brutal problem
-          for the civilizations trying
-          to survive them.
-        </p>
-        <p>
-          Magic was one of their greatest tools,
-          but every reserve left exposed
-          was another source of power
-          the dragons could consume.
-        </p>
-        <p>
-          Direct resistance had failed.
-        </p>
-        <p>
-          Survival now required finding a way
-          to remove the world's remaining
-          uncorrupted magic
-          from the dragons' reach.
-        </p>
-      </section>
-      <!-- =========================
-           RECORD 06
-      ========================== -->
-      <section
-        class="history-section"
-        data-position="78"
-        data-date="Ancient Dragonrise"
-        data-context="YOU ARE HERE // The Seers Create the Bloodstone"
-      >
-        <p class="history-label">
-          Record 06 // The Bloodstone
-        </p>
-        <h2>
-          The Seers seal magic away
-        </h2>
-        <p>
-          The
-          <strong>Seers</strong>
-          created one of the most important
-          artifacts in Tyrian history:
+          Those efforts eventually culminated
+          in one of the most consequential
+          creations in Tyrian history:
           the original
           <strong>Bloodstone</strong>.
         </p>
+
         <p>
-          Using the power of the
-          <strong>Shadowstone</strong>,
-          they gathered the remaining
+          The Seers gathered
+          much of the world's remaining
           uncorrupted magic
           and sealed it within
-          a single great repository.
+          the great artifact,
+          denying that power
+          to the Elder Dragons.
         </p>
+
         <p>
-          This denied the Elder Dragons
-          access to a vast source of magical energy.
-        </p>
-        <p>
-          The Bloodstone was not originally
+          This Bloodstone was not yet
           the collection of separate stones
-          known to later humanity.
+          known to later civilizations.
         </p>
+
         <p>
-          It began as
-          <strong>one great magical artifact</strong>.
+          At this point in history,
+          it was one repository.
         </p>
-        <div class="record-box">
-          <p class="record-box-label">
-            Why This Matters
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Research Note // Bloodstone
           </p>
+
           <p>
-            The Bloodstone begins here.
-            Thousands of years later,
-            the Six Gods would use it again,
-            divide it,
-            and turn this ancient survival mechanism
-            into one of the most important
-            sources of magical conflict
-            in human history.
+            Surviving accounts connect
+            the Shadowstone to the Seers'
+            development of the Bloodstone,
+            while other records describe
+            additional resources involved
+            in its creation.
+            The exact process remains
+            incompletely documented.
           </p>
+
         </div>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            This is the first reason
+            I ask readers to remember
+            the Bloodstone.
+            At its beginning,
+            it was not created as a weapon
+            for human wars.
+            It was created because
+            an ancient civilization
+            was trying to keep magic
+            out of a dragon's mouth.
+          </p>
+
+        </div>
+
       </section>
-      <!-- =========================
-           RECORD 07
-      ========================== -->
+
+
+      <!-- ========================================
+           CHAPTER VI
+      ========================================= -->
+
       <section
-        class="history-section"
-        data-position="91"
-        data-date="End of the Dragonrise"
-        data-context="YOU ARE HERE // The Dragons Return to Sleep"
+        class="chapter"
+        data-position="90"
+        data-date="Late Previous Dragonrise"
+        data-context="THE DRAGONS RETURN TO SLUMBER"
       >
-        <p class="history-label">
-          Record 07 // The Long Silence
+
+        <p class="chapter-number">
+          VI
         </p>
+
         <h2>
-          The Elder Dragons return to slumber
+          The long silence
         </h2>
-        <p>
-          With much of the world's
-          remaining uncorrupted magic
-          sealed beyond their reach,
-          the Elder Dragons gradually weakened.
+
+        <p class="chapter-opening">
+          Hiding so much uncorrupted magic
+          helped deny the Elder Dragons
+          the energy they sought.
         </p>
+
         <p>
-          Eventually,
-          they returned to sleep.
+          It was not the only act
+          that allowed civilizations
+          to survive.
         </p>
+
         <p>
-          Tyria survived.
+          Different peoples found
+          different means of endurance.
+          Some hid.
+          Some fled.
+          Some sacrificed what they had.
+          And some received protection
+          from powers whose importance
+          would only become clear later.
         </p>
+
         <p>
-          But survival did not mean
-          the world returned
-          to what it had been before.
+          As accessible magic dwindled,
+          the Elder Dragons gradually
+          returned to slumber.
         </p>
+
         <p>
-          Species had vanished.
-          Civilizations had been broken.
-          Magic had been hidden away.
-          And the dragons remained beneath the world.
+          Tyria survived another cycle.
         </p>
+
         <p>
-          The catastrophe ended,
-          but its machinery was still there.
+          It did not survive unchanged.
         </p>
+
       </section>
-      <!-- =========================
-           RECORD 08
-      ========================== -->
+
+
+      <!-- ========================================
+           CHAPTER VII
+      ========================================= -->
+
       <section
-        class="history-section"
+        class="chapter"
         data-position="100"
         data-date="After the Dragonrise"
-        data-context="YOU ARE HERE // The Survivors"
+        data-context="THE SURVIVORS INHERIT TYRIA"
       >
-        <p class="history-label">
-          Record 08 // What Remained
+
+        <p class="chapter-number">
+          VII
         </p>
+
         <h2>
-          The survivors inherit a changed world
+          What the survivors inherited
         </h2>
-        <p>
-          The Dragonrise passed into ancient memory,
-          but not every civilization disappeared with it.
+
+        <p class="chapter-opening">
+          When the dragons slept,
+          the peoples who remained
+          inherited a damaged world
+          and the consequences
+          of everything they had done
+          to preserve it.
         </p>
+
         <p>
-          Some survived by hiding.
-          Others sacrificed their magic.
-          Some escaped into places
-          the dragons could not easily reach.
+          The Seers still had enemies.
+          The mursaat had not forgotten
+          old betrayals.
+          The Forgotten carried knowledge
+          that would shape events
+          thousands of years later.
+          The dwarves and jotun
+          followed paths of their own.
         </p>
+
         <p>
-          Their choices would echo
-          for thousands of years.
+          And somewhere within
+          that recovering world
+          remained the Bloodstone,
+          holding magic whose purpose
+          would eventually be changed
+          by hands that had not yet
+          entered this history.
         </p>
+
         <p>
-          The Bloodstones,
-          Glint,
-          the Mists,
-          Ascension,
-          and conflicts still unfolding
-          in the modern age all carry pieces
-          of this ancient world forward.
+          That is where this record ends.
         </p>
+
         <p>
-          To understand those connections,
-          the road must now leave the dragons
-          and follow the people who survived them.
+          The dragons are asleep.
         </p>
+
+        <p>
+          Now we can finally follow
+          those who survived them.
+        </p>
+
       </section>
-      <!-- =========================
-           NEXT ENTRY
-      ========================== -->
-      <section class="page-navigation">
-        <p class="navigation-label">
-          Continue the Road Through Time
+
+
+      <!-- ========================================
+           NEXT VOLUME
+      ========================================= -->
+
+      <section class="transition">
+
+        <p class="transition-label">
+          End of Volume I
         </p>
+
         <h2>
-          The Elder Races
+          The road continues.
         </h2>
+
         <p>
-          The dragons slept.
-          The world was wounded.
-          But several ancient civilizations
-          remained.
+          The Dragonrise explains
+          why the ancient world broke.
         </p>
+
         <p>
-          The next archive follows the
-          <strong>Seers, mursaat, Forgotten,
-          dwarves, and jotun</strong>
-          beyond the Dragonrise and explores
-          what became of each civilization.
+          It does not explain
+          what became of the civilizations
+          that lived through it.
         </p>
+
+        <p>
+          That question belongs
+          to the next record.
+        </p>
+
+        <p class="next-title">
+          Volume II // The Elder Races
+        </p>
+
+        <p>
+          Seers.
+          Mursaat.
+          Forgotten.
+          Dwarves.
+          Jotun.
+        </p>
+
+        <p>
+          Five peoples who survived
+          the age of dragons,
+          and whose choices would continue
+          shaping Tyria long after
+          their ancient world disappeared.
+        </p>
+
         <div class="navigation-actions">
+
           <a
             href="../index.html"
             class="button"
           >
             ← Road Through Time
           </a>
+
           <a
             href="../elder-races/index.html"
             class="button button-primary"
           >
-            The Elder Races →
+            Read Volume II →
           </a>
+
         </div>
+
       </section>
+
     </div>
+
   </main>
-  <!-- =========================
+
+
+  <!-- ========================================
        FOOTER
-  ========================== -->
+  ========================================= -->
+
   <footer>
+
     <div class="container">
-      Guild Wars Living Lore Library is an unofficial fan lore project.
-      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
-      belong to their respective owners.
+
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
+
     </div>
+
   </footer>
-  <!-- =========================
-       HISTORICAL POSITION SCRIPT
-  ========================== -->
+
+
+  <!-- ========================================
+       CHRONOLOGY SCRIPT
+  ========================================= -->
+
   <script>
     (() => {
       "use strict";
+
       const sections =
         document.querySelectorAll(
-          ".history-section[data-position]"
+          ".chapter[data-position]"
         );
+
       const marker =
-        document.getElementById("historyMarker");
+        document.getElementById(
+          "historyMarker"
+        );
+
       const currentDate =
-        document.getElementById("currentDate");
+        document.getElementById(
+          "currentDate"
+        );
+
       const positionContext =
-        document.getElementById("positionContext");
-      const updatePosition = (section) => {
-        const position =
-          section.dataset.position || "5";
-        const date =
-          section.dataset.date || "Ancient Past";
-        const context =
-          section.dataset.context || "YOU ARE HERE";
-        marker.style.left = `${position}%`;
-        currentDate.textContent = date;
-        positionContext.textContent = context;
-      };
+        document.getElementById(
+          "positionContext"
+        );
+
+      const updatePosition =
+        (section) => {
+
+          const position =
+            section.dataset.position || "5";
+
+          const date =
+            section.dataset.date ||
+            "Ancient Past";
+
+          const context =
+            section.dataset.context ||
+            "HISTORICAL RECORD";
+
+          marker.style.left =
+            `${position}%`;
+
+          currentDate.textContent =
+            date;
+
+          positionContext.textContent =
+            context;
+        };
+
       const observer =
         new IntersectionObserver(
           (entries) => {
+
             const visible =
               entries
                 .filter(
@@ -1041,6 +1753,7 @@
                     b.intersectionRatio -
                     a.intersectionRatio
                 );
+
             if (visible.length > 0) {
               updatePosition(
                 visible[0].target
@@ -1050,6 +1763,7 @@
           {
             rootMargin:
               "-35% 0px -45% 0px",
+
             threshold: [
               0,
               0.15,
@@ -1059,6 +1773,7 @@
             ]
           }
         );
+
       sections.forEach(
         (section) => {
           observer.observe(section);
@@ -1066,5 +1781,6 @@
       );
     })();
   </script>
+
 </body>
 </html>
