@@ -181,7 +181,7 @@
     }
 
     /* ========================================
-       CHRONOLOGY BAR
+       CHRONOLOGY
     ======================================== */
 
     .chronology {
@@ -244,11 +244,9 @@
 
     .history-line {
       position: absolute;
-
       left: 0;
       right: 0;
       top: 7px;
-
       height: 1px;
 
       background:
@@ -262,16 +260,13 @@
 
     .history-marker {
       position: absolute;
-
       top: 1px;
       left: 5%;
 
       width: 13px;
       height: 13px;
 
-      border:
-        2px solid var(--gold-bright);
-
+      border: 2px solid var(--gold-bright);
       border-radius: 50%;
 
       background: var(--gold);
@@ -281,7 +276,6 @@
         rgba(214, 179, 106, 0.38);
 
       transform: translateX(-50%);
-
       transition: left 400ms ease;
     }
 
@@ -298,7 +292,6 @@
         monospace;
 
       font-size: 0.59rem;
-
       text-align: center;
     }
 
@@ -307,10 +300,7 @@
     ======================================== */
 
     .book-header {
-      padding:
-        80px 0
-        52px;
-
+      padding: 80px 0 52px;
       text-align: center;
     }
 
@@ -344,7 +334,6 @@
         );
 
       font-weight: 500;
-
       line-height: 1.05;
       letter-spacing: -0.035em;
     }
@@ -352,8 +341,7 @@
     .subtitle {
       max-width: 620px;
 
-      margin:
-        18px auto 0;
+      margin: 18px auto 0;
 
       color: var(--ink-muted);
 
@@ -364,12 +352,10 @@
     .ornament {
       width: 120px;
 
-      margin:
-        32px auto 0;
+      margin: 32px auto 0;
 
       border: 0;
-      border-top:
-        1px solid var(--gold-muted);
+      border-top: 1px solid var(--gold-muted);
     }
 
     /* ========================================
@@ -379,14 +365,10 @@
     .author-card {
       margin-bottom: 60px;
 
-      padding:
-        24px 26px;
+      padding: 24px 26px;
 
-      border-top:
-        1px solid var(--border-soft);
-
-      border-bottom:
-        1px solid var(--border-soft);
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
 
       text-align: center;
     }
@@ -466,7 +448,6 @@
         );
 
       font-weight: 500;
-
       line-height: 1.25;
     }
 
@@ -478,7 +459,6 @@
       margin-top: 28px;
 
       color: var(--gold-bright);
-
       font-style: italic;
     }
 
@@ -487,14 +467,11 @@
     ======================================== */
 
     .research-note {
-      margin:
-        28px 0;
+      margin: 28px 0;
 
-      padding:
-        20px 22px;
+      padding: 20px 22px;
 
-      border-left:
-        2px solid var(--gold-muted);
+      border-left: 2px solid var(--gold-muted);
 
       background:
         rgba(214, 179, 106, 0.045);
@@ -530,11 +507,9 @@
     ======================================== */
 
     .chapter {
-      padding:
-        48px 0;
+      padding: 48px 0;
 
-      border-top:
-        1px solid var(--border-soft);
+      border-top: 1px solid var(--border-soft);
     }
 
     .chapter-number {
@@ -566,9 +541,7 @@
     .chapter-opening::first-letter {
       float: left;
 
-      margin:
-        7px 8px
-        0 0;
+      margin: 7px 8px 0 0;
 
       color: var(--gold);
 
@@ -581,14 +554,11 @@
     ======================================== */
 
     .q-observation {
-      margin:
-        30px 0 6px;
+      margin: 30px 0 6px;
 
-      padding:
-        21px 23px;
+      padding: 21px 23px;
 
-      border:
-        1px solid var(--border-soft);
+      border: 1px solid var(--border-soft);
 
       background:
         linear-gradient(
@@ -619,7 +589,6 @@
       margin: 9px 0 0;
 
       color: var(--quote);
-
       font-style: italic;
     }
 
@@ -628,12 +597,9 @@
     ======================================== */
 
     .transition {
-      padding:
-        58px 0
-        70px;
+      padding: 58px 0 70px;
 
-      border-top:
-        1px solid var(--border-soft);
+      border-top: 1px solid var(--border-soft);
     }
 
     .transition-label {
@@ -691,12 +657,9 @@
       align-items: center;
       justify-content: center;
 
-      padding:
-        0 20px;
+      padding: 0 20px;
 
-      border:
-        1px solid var(--border);
-
+      border: 1px solid var(--border);
       border-radius: 5px;
 
       background:
@@ -744,11 +707,9 @@
     ======================================== */
 
     footer {
-      padding:
-        34px 0;
+      padding: 34px 0;
 
-      border-top:
-        1px solid var(--border-soft);
+      border-top: 1px solid var(--border-soft);
 
       color: var(--ink-faint);
 
@@ -820,19 +781,15 @@
       }
 
       .book-header {
-        padding:
-          58px 0
-          42px;
+        padding: 58px 0 42px;
       }
 
       .author-card {
-        padding:
-          21px 14px;
+        padding: 21px 14px;
       }
 
       .chapter {
-        padding:
-          40px 0;
+        padding: 40px 0;
       }
 
       .navigation-actions {
@@ -844,9 +801,7 @@
       }
     }
 
-    @media (
-      prefers-reduced-motion: reduce
-    ) {
+    @media (prefers-reduced-motion: reduce) {
 
       html {
         scroll-behavior: auto;
@@ -855,11 +810,8 @@
       *,
       *::before,
       *::after {
-        animation-duration:
-          0.01ms !important;
-
-        transition-duration:
-          0.01ms !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -867,19 +819,13 @@
 
 <body>
 
-  <!-- ========================================
-       HEADER
-  ========================================= -->
-
   <header class="site-header">
-
     <div class="container header-inner">
 
       <a
         href="../index.html"
         class="brand"
       >
-
         <p class="brand-small">
           The Historical Records of Commander Q
         </p>
@@ -887,7 +833,6 @@
         <p class="brand-name">
           GWlll
         </p>
-
       </a>
 
       <a
@@ -898,13 +843,8 @@
       </a>
 
     </div>
-
   </header>
 
-
-  <!-- ========================================
-       CHRONOLOGY
-  ========================================= -->
 
   <aside class="chronology">
 
@@ -926,14 +866,12 @@
       </div>
 
       <div class="history-rail">
-
         <div class="history-line"></div>
 
         <span
           class="history-marker"
           id="historyMarker"
         ></span>
-
       </div>
 
       <p
@@ -950,10 +888,6 @@
 
   <main>
 
-    <!-- ========================================
-         BOOK TITLE
-    ========================================= -->
-
     <section class="book-header">
 
       <div class="container">
@@ -967,9 +901,9 @@
         </h1>
 
         <p class="subtitle">
-          On the Elder Dragons, the loss of the
-          ancient world, and the civilizations
-          that refused to disappear with it.
+          On the Elder Dragons, the ancient world,
+          and the civilizations that survived long
+          enough to shape the ages that followed.
         </p>
 
         <hr class="ornament">
@@ -980,10 +914,6 @@
 
 
     <div class="container">
-
-      <!-- ========================================
-           AUTHOR
-      ========================================= -->
 
       <section class="author-card">
 
@@ -1004,10 +934,6 @@
       </section>
 
 
-      <!-- ========================================
-           PREFACE
-      ========================================= -->
-
       <section class="preface">
 
         <p class="section-kicker">
@@ -1015,39 +941,25 @@
         </p>
 
         <h2>
-          Where does Tyrian history begin?
+          Where Tyrian history begins
         </h2>
 
         <p>
-          Every historian eventually reaches
-          a point where the road disappears.
-      </p>
-
-        <p>
-          Names become uncertain.
-          Dates become estimates.
-          Written records give way to ruins,
-          fossils, magical evidence,
-          and the memories of peoples
-          old enough to remember a world
-          that no longer exists.
+          Every historian eventually reaches a point where
+          the road becomes difficult to follow. Written
+          accounts disappear, dates become estimates, and
+          the surviving evidence is reduced to ruins, fossils,
+          magical artifacts, and the memories of peoples old
+          enough to remember a world that no longer exists.
         </p>
 
         <p>
-          That is where this history begins.
-        </p>
-
-        <p>
-          Not with humanity.
-          Not with Ascalon.
-          Not even with the Six Gods.
-        </p>
-
-        <p>
-          It begins with Tyria itself
-          enduring something that would happen
-          again and again:
-          the awakening of the Elder Dragons.
+          That is where this history begins. It does not begin
+          with humanity, the kingdoms of Ascalon and Kryta, or
+          even the arrival of the Six Gods. It begins much
+          earlier, with Tyria enduring one of the forces that
+          shaped nearly every age that came after: the awakening
+          of the Elder Dragons.
         </p>
 
         <div class="research-note">
@@ -1057,15 +969,12 @@
           </p>
 
           <p>
-            The earliest recorded Dragonrise
-            is placed at approximately
-            20,000 BE.
-            The better documented previous
-            Dragonrise appears much later,
-            beginning around 10,000 BE.
-            Events from these ancient periods
-            should not be treated as belonging
-            to one continuous awakening.
+            The earliest recorded Dragonrise is placed at
+            approximately 20,000 BE. A later and better
+            documented Dragonrise appears around 10,000 BE.
+            Because the evidence from these periods is incomplete,
+            events from the ancient past should not be treated
+            as one continuous awakening.
           </p>
 
         </div>
@@ -1076,10 +985,6 @@
 
       </section>
 
-
-      <!-- ========================================
-           CHAPTER I
-      ========================================= -->
 
       <section
         class="chapter"
@@ -1093,51 +998,36 @@
         </p>
 
         <h2>
-          The first shadow in the record
+          The earliest Dragonrise
         </h2>
 
         <p class="chapter-opening">
-          Around 20,000 BE,
-          the surviving historical record
-          places one of the earliest known
-          awakenings of the Elder Dragons.
+          Around 20,000 BE, the surviving historical record
+          places one of the earliest known awakenings of the
+          Elder Dragons. Very little is known about the
+          civilizations that witnessed it, which makes this
+          period one of the most difficult parts of Tyrian
+          history to reconstruct.
         </p>
 
         <p>
-          We know remarkably little
-          about the civilizations
-          that witnessed it.
-          That absence is itself evidence
-          of the scale of the age.
+          What can be established is that the Elder Dragons were
+          already part of Tyria's history long before the nations
+          familiar to modern scholars existed. Their awakenings
+          were tied to enormous concentrations of magic, and
+          their presence could alter both the land and the
+          creatures living upon it.
         </p>
 
         <p>
-          What can be established is that
-          the Elder Dragons were already part
-          of Tyria's natural history
-          long before the nations
-          recognizable to modern scholars
-          existed.
-        </p>
-
-        <p>
-          They awakened,
-          consumed immense quantities of magic,
-          altered the lands around them,
-          and eventually returned to slumber.
-        </p>
-
-        <p>
-          This was not the last time
-          Tyria would endure them.
+          Eventually, as the available magic of the world
+          diminished, the dragons returned to slumber. The cycle
+          did not end there, however, and later civilizations
+          would be forced to confront the same threat again.
         </p>
 
       </section>
 
-
-      <!-- ========================================
-           CHAPTER II
-      ========================================= -->
 
       <section
         class="chapter"
@@ -1151,45 +1041,30 @@
         </p>
 
         <h2>
-          A world built around a cycle
+          The Dragon Cycle
         </h2>
 
         <p class="chapter-opening">
-          Elder Dragons did not remain awake
-          indefinitely.
+          The Elder Dragons did not remain active indefinitely.
+          Their awakenings followed a larger cycle connected to
+          the amount of magic available in the world.
         </p>
 
         <p>
-          Their activity followed a terrible
-          rhythm tied to the world's magic.
+          When magic was abundant, the dragons could awaken,
+          consume it, and spread their corruption through both
+          living creatures and the regions surrounding them.
+          Their minions extended that influence even farther,
+          turning an individual dragon into the center of a much
+          larger ecological and magical disaster.
         </p>
 
         <p>
-          When magic was abundant,
-          the dragons could awaken
-          and consume it.
-          Their corruption spread through
-          creatures and landscapes,
-          while their minions extended
-          their influence far beyond
-          the dragons themselves.
-        </p>
-
-        <p>
-          As available magic diminished,
-          the dragons eventually returned
-          to slumber.
-        </p>
-
-        <p>
-          Ages could pass.
-          Civilizations could rise.
-          The world could begin to believe
-          the danger belonged to history.
-        </p>
-
-        <p>
-          Then the cycle could begin again.
+          As accessible magic became scarce, the Elder Dragons
+          gradually returned to slumber. Centuries or even
+          millennia could pass before another awakening, giving
+          new civilizations enough time to rise in a world that
+          might no longer remember what had come before.
         </p>
 
         <div class="q-observation">
@@ -1199,23 +1074,17 @@
           </p>
 
           <p>
-            We tend to measure history
-            by kingdoms and wars.
-            The Elder Dragons force us
-            to use a larger scale.
-            Nations were chapters.
-            The Dragon Cycle was the binding
-            holding those chapters together.
+            Most histories are organized around kingdoms,
+            dynasties, and wars. The Elder Dragons require a
+            larger scale. Civilizations rose and fell within the
+            boundaries of a cycle that was older than any nation
+            that tried to understand it.
           </p>
 
         </div>
 
       </section>
 
-
-      <!-- ========================================
-           CHAPTER III
-      ========================================= -->
 
       <section
         class="chapter"
@@ -1229,68 +1098,37 @@
         </p>
 
         <h2>
-          The world before our world
+          The previous Dragonrise
         </h2>
 
         <p class="chapter-opening">
-          By approximately 10,000 BE,
-          another Dragonrise appears
-          in the surviving record.
-        </p>
-
-        <p>
-          This age is clearer than
-          the one that came before it,
-          although its chronology
-          remains incomplete.
+          By approximately 10,000 BE, another Dragonrise appears
+          in the surviving record. Although the chronology remains
+          incomplete, this period is better understood than the
+          far older awakening that preceded it.
         </p>
 
         <p>
           Enormous creatures known as the
-          <strong>Giganticus Lupicus</strong>
-          inhabited ancient Tyria.
-          By around this period,
-          the last known members
-          disappeared.
+          <strong>Giganticus Lupicus</strong> still inhabited the
+          ancient world, but by around this period the last known
+          members had disappeared. Their remains endured long
+          after the creatures themselves, leaving behind physical
+          evidence of a world far older than the civilizations
+          known to modern Tyrians.
         </p>
 
         <p>
-          Their remains endured
-          long after the creatures themselves,
-          leaving fossils scattered across
-          a world that would eventually
-          forget almost everything else
-          about them.
-        </p>
-
-        <p>
-          But other peoples survived.
-        </p>
-
-        <p>
-          Among them were civilizations
-          whose names still appear
-          throughout modern Tyrian history:
-          the <strong>Seers</strong>,
-          <strong>mursaat</strong>,
-          <strong>Forgotten</strong>,
-          <strong>dwarves</strong>,
-          and <strong>jotun</strong>.
-        </p>
-
-        <p>
-          Their survival is where
-          the ancient record becomes
-          considerably more important
-          to everything that follows.
+          Other peoples survived the same age. Among them were the
+          <strong>Seers</strong>, <strong>mursaat</strong>,
+          <strong>Forgotten</strong>, <strong>dwarves</strong>,
+          and <strong>jotun</strong>. Their attempts to survive
+          the Dragonrise would shape much of the history that
+          followed.
         </p>
 
       </section>
 
-
-      <!-- ========================================
-           CHAPTER IV
-      ========================================= -->
 
       <section
         class="chapter"
@@ -1304,59 +1142,35 @@
         </p>
 
         <h2>
-          Those who refused to disappear
+          Resistance among the elder races
         </h2>
 
         <p class="chapter-opening">
-          The peoples of this age
-          did not simply wait
-          for the dragons to consume them.
+          The civilizations of this age did not simply wait for
+          the dragons to destroy them. Several attempted to
+          organize resistance, preserve what they could, and find
+          ways to survive a threat that ordinary warfare could
+          not overcome.
         </p>
 
         <p>
-          Efforts were made
-          to resist the Elder Dragons
-          and preserve the civilizations
-          threatened by them.
+          The surviving record describes efforts at cooperation
+          among several elder races, although those alliances were
+          neither permanent nor free from conflict. The Forgotten
+          and mursaat, for example, took part in efforts against
+          <strong>Zhaitan</strong>, but those efforts ultimately
+          failed to produce a military victory.
         </p>
 
         <p>
-          The surviving evidence describes
-          attempts at cooperation among
-          several elder races,
-          although those alliances
-          were neither simple
-          nor permanent.
-        </p>
-
-        <p>
-          The Forgotten and mursaat,
-          for example,
-          attempted to confront
-          <strong>Zhaitan</strong>.
-        </p>
-
-        <p>
-          Military resistance alone
-          was not enough.
-        </p>
-
-        <p>
-          The problem was larger
-          than defeating armies.
-          The dragons were feeding
-          upon the same force
-          that empowered the civilizations
-          trying to stop them:
+          The deeper problem was the nature of the dragons
+          themselves. They were feeding on the same force that
+          powered the civilizations attempting to stop them:
           <strong>magic</strong>.
         </p>
 
       </section>
 
-
-      <!-- ========================================
-           CHAPTER V
-      ========================================= -->
 
       <section
         class="chapter"
@@ -1370,55 +1184,39 @@
         </p>
 
         <h2>
-          Hide the magic
+          The first Bloodstone
         </h2>
 
         <p class="chapter-opening">
-          If the dragons could not be defeated
-          through force,
-          another answer was required.
+          When direct resistance failed, the Seers pursued a
+          different solution. Rather than defeat the Elder Dragons
+          through force, they sought a way to deny them access to
+          the uncorrupted magic that remained in the world.
         </p>
 
         <p>
-          The <strong>Seers</strong>
-          pursued one.
+          Their experiments included the
+          <strong>Shadowstone</strong>, an artifact connected to
+          the Seers' attempts to preserve magic beyond the reach
+          of the dragons. Those efforts eventually led to the
+          creation of the original <strong>Bloodstone</strong>,
+          one of the most consequential magical artifacts in
+          Tyrian history.
         </p>
 
         <p>
-          Their experiments included
-          the <strong>Shadowstone</strong>,
-          an artifact connected
-          to their efforts to preserve magic
-          beyond the dragons' reach.
+          The Seers gathered much of the world's remaining
+          uncorrupted magic and sealed it within the great
+          repository. By removing that magic from the open world,
+          they denied the Elder Dragons access to a significant
+          source of power.
         </p>
 
         <p>
-          Those efforts eventually culminated
-          in one of the most consequential
-          creations in Tyrian history:
-          the original
-          <strong>Bloodstone</strong>.
-        </p>
-
-        <p>
-          The Seers gathered
-          much of the world's remaining
-          uncorrupted magic
-          and sealed it within
-          the great artifact,
-          denying that power
-          to the Elder Dragons.
-        </p>
-
-        <p>
-          This Bloodstone was not yet
-          the collection of separate stones
-          known to later civilizations.
-        </p>
-
-        <p>
-          At this point in history,
-          it was one repository.
+          At this point in history, the Bloodstone was not the
+          collection of separate stones known to later
+          civilizations. It existed as a single great artifact,
+          created for survival rather than conquest.
         </p>
 
         <div class="research-note">
@@ -1428,14 +1226,12 @@
           </p>
 
           <p>
-            Surviving accounts connect
-            the Shadowstone to the Seers'
-            development of the Bloodstone,
-            while other records describe
-            additional resources involved
-            in its creation.
-            The exact process remains
-            incompletely documented.
+            Surviving accounts connect the Shadowstone to the
+            Seers' work on the Bloodstone, while other records
+            describe additional resources involved in its
+            creation. The exact process is not fully documented,
+            so this record treats the relationship as established
+            without claiming that every step is known.
           </p>
 
         </div>
@@ -1447,26 +1243,17 @@
           </p>
 
           <p>
-            This is the first reason
-            I ask readers to remember
-            the Bloodstone.
-            At its beginning,
-            it was not created as a weapon
-            for human wars.
-            It was created because
-            an ancient civilization
-            was trying to keep magic
-            out of a dragon's mouth.
+            The later history of the Bloodstone makes it easy to
+            think of it as a source of conflict, but its origin
+            was very different. It was first created as a
+            survival measure by a civilization trying to keep
+            magic away from the Elder Dragons.
           </p>
 
         </div>
 
       </section>
 
-
-      <!-- ========================================
-           CHAPTER VI
-      ========================================= -->
 
       <section
         class="chapter"
@@ -1480,52 +1267,35 @@
         </p>
 
         <h2>
-          The long silence
+          The dragons return to sleep
         </h2>
 
         <p class="chapter-opening">
-          Hiding so much uncorrupted magic
-          helped deny the Elder Dragons
-          the energy they sought.
+          The sealing of so much uncorrupted magic helped deny the
+          Elder Dragons the energy they sought, but it was only
+          one part of the struggle to survive the Dragonrise.
+          Different civilizations relied on different strategies,
+          including concealment, retreat, sacrifice, and the
+          preservation of knowledge.
         </p>
 
         <p>
-          It was not the only act
-          that allowed civilizations
-          to survive.
+          As accessible magic became increasingly scarce, the
+          Elder Dragons gradually returned to slumber. Tyria
+          survived another cycle, but the world that emerged from
+          it was different from the one that had entered it.
         </p>
 
         <p>
-          Different peoples found
-          different means of endurance.
-          Some hid.
-          Some fled.
-          Some sacrificed what they had.
-          And some received protection
-          from powers whose importance
-          would only become clear later.
-        </p>
-
-        <p>
-          As accessible magic dwindled,
-          the Elder Dragons gradually
-          returned to slumber.
-        </p>
-
-        <p>
-          Tyria survived another cycle.
-        </p>
-
-        <p>
-          It did not survive unchanged.
+          Entire species had disappeared, ancient civilizations
+          had been weakened or divided, and much of the world's
+          magic had been placed beyond ordinary reach. The dragons
+          were sleeping again, but the choices made during their
+          awakening would continue to shape the ages that followed.
         </p>
 
       </section>
 
-
-      <!-- ========================================
-           CHAPTER VII
-      ========================================= -->
 
       <section
         class="chapter"
@@ -1539,58 +1309,39 @@
         </p>
 
         <h2>
-          What the survivors inherited
+          The world left behind
         </h2>
 
         <p class="chapter-opening">
-          When the dragons slept,
-          the peoples who remained
-          inherited a damaged world
-          and the consequences
-          of everything they had done
-          to preserve it.
+          When the Dragonrise ended, the civilizations that
+          remained inherited both a damaged world and the
+          consequences of the choices they had made to survive it.
         </p>
 
         <p>
-          The Seers still had enemies.
-          The mursaat had not forgotten
-          old betrayals.
-          The Forgotten carried knowledge
-          that would shape events
-          thousands of years later.
-          The dwarves and jotun
-          followed paths of their own.
+          The Seers still had enemies. The mursaat carried their
+          own memories of betrayal. The Forgotten preserved
+          knowledge that would become important thousands of years
+          later, while the dwarves and jotun followed very
+          different paths through the ages that came after.
         </p>
 
         <p>
-          And somewhere within
-          that recovering world
-          remained the Bloodstone,
-          holding magic whose purpose
-          would eventually be changed
-          by hands that had not yet
-          entered this history.
+          The Bloodstone also remained, still holding the magic
+          that had once been hidden from the Elder Dragons. Its
+          purpose would eventually change, and future civilizations
+          would use it in ways its creators could never have
+          intended.
         </p>
 
         <p>
-          That is where this record ends.
-        </p>
-
-        <p>
-          The dragons are asleep.
-        </p>
-
-        <p>
-          Now we can finally follow
-          those who survived them.
+          The next part of the record follows the peoples who
+          survived this ancient age and examines what became of
+          them after the dragons returned to sleep.
         </p>
 
       </section>
 
-
-      <!-- ========================================
-           NEXT VOLUME
-      ========================================= -->
 
       <section class="transition">
 
@@ -1599,23 +1350,14 @@
         </p>
 
         <h2>
-          The road continues.
+          The road continues
         </h2>
 
         <p>
-          The Dragonrise explains
-          why the ancient world broke.
-        </p>
-
-        <p>
-          It does not explain
-          what became of the civilizations
-          that lived through it.
-        </p>
-
-        <p>
-          That question belongs
-          to the next record.
+          The Dragonrise explains how the ancient world was
+          transformed, but the history of that world cannot be
+          understood without following the civilizations that
+          survived it.
         </p>
 
         <p class="next-title">
@@ -1623,19 +1365,10 @@
         </p>
 
         <p>
-          Seers.
-          Mursaat.
-          Forgotten.
-          Dwarves.
-          Jotun.
-        </p>
-
-        <p>
-          Five peoples who survived
-          the age of dragons,
-          and whose choices would continue
-          shaping Tyria long after
-          their ancient world disappeared.
+          The next archive follows the Seers, mursaat, Forgotten,
+          dwarves, and jotun as they emerged from the Dragonrise
+          and began shaping the world that would eventually be
+          inherited by later civilizations.
         </p>
 
         <div class="navigation-actions">
@@ -1663,10 +1396,6 @@
   </main>
 
 
-  <!-- ========================================
-       FOOTER
-  ========================================= -->
-
   <footer>
 
     <div class="container">
@@ -1685,10 +1414,6 @@
 
   </footer>
 
-
-  <!-- ========================================
-       CHRONOLOGY SCRIPT
-  ========================================= -->
 
   <script>
     (() => {
