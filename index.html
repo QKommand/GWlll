@@ -337,7 +337,7 @@
     .intro {
       max-width: 780px;
 
-      margin: 0 auto 72px;
+      margin: 0 auto 78px;
     }
 
     .section-kicker {
@@ -358,7 +358,7 @@
     }
 
     .intro h2,
-    .section-header h2 {
+    .road-header h2 {
       margin: 9px 0 0;
 
       color: var(--gold);
@@ -379,120 +379,18 @@
     }
 
     /* ========================================
-       QUICK REFERENCE
-    ======================================== */
-
-    .quick-reference {
-      padding: 58px 0;
-
-      border-top:
-        1px solid var(--border-soft);
-
-      border-bottom:
-        1px solid var(--border-soft);
-    }
-
-    .section-header {
-      margin-bottom: 28px;
-      text-align: center;
-    }
-
-    .section-header p {
-      max-width: 680px;
-
-      margin: 12px auto 0;
-
-      color: var(--ink-muted);
-    }
-
-    .event-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-      gap: 12px;
-    }
-
-    .event-link {
-      min-height: 118px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      padding: 18px;
-
-      border:
-        1px solid var(--border-soft);
-
-      background:
-        rgba(15, 23, 42, 0.55);
-
-      text-decoration: none;
-
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        background 180ms ease;
-    }
-
-    .event-link:hover {
-      transform: translateY(-3px);
-
-      border-color:
-        rgba(214, 179, 106, 0.5);
-
-      background:
-        rgba(20, 30, 49, 0.8);
-    }
-
-    .event-date {
-      margin: 0;
-
-      color: var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.57rem;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .event-link h3 {
-      margin: 6px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.35;
-    }
-
-    .event-volume {
-      margin: 8px 0 0;
-
-      color: var(--ink-muted);
-
-      font-size: 0.82rem;
-      line-height: 1.5;
-    }
-
-    /* ========================================
-       ROAD HEADER
+       ROAD
     ======================================== */
 
     .road-section {
-      padding: 72px 0 82px;
+      padding: 66px 0 82px;
+
+      border-top:
+        1px solid var(--border-soft);
     }
 
     .road-header {
-      margin-bottom: 38px;
+      margin-bottom: 40px;
       text-align: center;
     }
 
@@ -681,6 +579,7 @@
 
       font-size: 0.62rem;
       line-height: 1.65;
+      letter-spacing: 0.03em;
     }
 
     .volume-arrow {
@@ -756,17 +655,17 @@
     }
 
     /* ========================================
-       ARCHIVE NOTE
+       ARCHIVE METHOD
     ======================================== */
 
-    .archive-note {
+    .archive-method {
       padding: 58px 0 72px;
 
       border-top:
         1px solid var(--border-soft);
     }
 
-    .archive-note-inner {
+    .archive-method-inner {
       max-width: 760px;
 
       margin-inline: auto;
@@ -780,7 +679,7 @@
         rgba(214, 179, 106, 0.035);
     }
 
-    .archive-note-label {
+    .archive-method-label {
       margin: 0;
 
       color: var(--gold);
@@ -797,7 +696,7 @@
       text-transform: uppercase;
     }
 
-    .archive-note-inner h2 {
+    .archive-method-inner h2 {
       margin: 8px 0 0;
 
       color: var(--gold-bright);
@@ -806,7 +705,7 @@
       font-weight: 500;
     }
 
-    .archive-note-inner p {
+    .archive-method-inner p {
       margin: 14px 0 0;
 
       color: var(--ink-muted);
@@ -968,14 +867,8 @@
        MOBILE
     ======================================== */
 
-    @media (max-width: 800px) {
-      .event-grid {
-        grid-template-columns:
-          repeat(2, minmax(0, 1fr));
-      }
-    }
-
     @media (max-width: 650px) {
+
       body {
         font-size: 1rem;
       }
@@ -1020,12 +913,12 @@
         padding: 21px 14px;
       }
 
-      .event-grid {
-        grid-template-columns: 1fr;
+      .intro {
+        margin-bottom: 62px;
       }
 
-      .event-link {
-        min-height: auto;
+      .road-section {
+        padding: 54px 0 66px;
       }
 
       .timeline-line {
@@ -1055,6 +948,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       html {
         scroll-behavior: auto;
       }
@@ -1193,517 +1087,20 @@
         </p>
 
         <p>
-          These records are arranged chronologically.
-          Read straight through from Volume I, or use the
-          quick-reference events below to jump directly to
-          the period you are looking for.
+          The records below are arranged chronologically.
+          Beginning with the oldest surviving histories,
+          each volume follows naturally into the next until
+          the archive reaches the present era.
+        </p>
+
+        <p>
+          You can read the entire road from beginning to end
+          or enter at whichever period you wish to study.
         </p>
 
       </section>
 
     </div>
-
-
-    <!-- ========================================
-         QUICK REFERENCE
-    ========================================= -->
-
-    <section class="quick-reference">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <p class="section-kicker">
-            Historical Quick Reference
-          </p>
-
-          <h2>
-            Major Events
-          </h2>
-
-          <p>
-            Select an event to enter the volume
-            where that period of history is recorded.
-          </p>
-
-        </div>
-
-
-        <div class="event-grid">
-
-          <a
-            href="ancient-dragonrises/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              c. 20,000 BE
-            </p>
-
-            <h3>
-              Ancient Dragonrise
-            </h3>
-
-            <p class="event-volume">
-              Volume I
-            </p>
-          </a>
-
-
-          <a
-            href="elder-races/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              Ancient Era
-            </p>
-
-            <h3>
-              The Elder Races
-            </h3>
-
-            <p class="event-volume">
-              Volume II
-            </p>
-          </a>
-
-
-          <a
-            href="gods-and-humanity/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              Before 786 BE
-            </p>
-
-            <h3>
-              The Gods Enter Tyria
-            </h3>
-
-            <p class="event-volume">
-              Volume III
-            </p>
-          </a>
-
-
-          <a
-            href="gods-and-humanity/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              786 BE
-            </p>
-
-            <h3>
-              Humanity in Cantha
-            </h3>
-
-            <p class="event-volume">
-              Volume III
-            </p>
-          </a>
-
-
-          <a
-            href="gift-of-magic/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1 BE
-            </p>
-
-            <h3>
-              The Gift of Magic
-            </h3>
-
-            <p class="event-volume">
-              Volume IV
-            </p>
-          </a>
-
-
-          <a
-            href="exodus-of-gods/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              0 AE
-            </p>
-
-            <h3>
-              Exodus of the Gods
-            </h3>
-
-            <p class="event-volume">
-              Volume V
-            </p>
-          </a>
-
-
-          <a
-            href="kingdoms-and-guild-wars/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              c. 100 AE
-            </p>
-
-            <h3>
-              Bloodstones Scatter
-            </h3>
-
-            <p class="event-volume">
-              Volume VI
-            </p>
-          </a>
-
-
-          <a
-            href="kingdoms-and-guild-wars/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              872 AE
-            </p>
-
-            <h3>
-              The Jade Wind
-            </h3>
-
-            <p class="event-volume">
-              Volume VI
-            </p>
-          </a>
-
-
-          <a
-            href="kingdoms-and-guild-wars/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1013 AE
-            </p>
-
-            <h3>
-              Third Guild War
-            </h3>
-
-            <p class="event-volume">
-              Volume VI
-            </p>
-          </a>
-
-
-          <a
-            href="guild-wars-era/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1070 AE
-            </p>
-
-            <h3>
-              The Searing
-            </h3>
-
-            <p class="event-volume">
-              Volume VII
-            </p>
-          </a>
-
-
-          <a
-            href="guild-wars-era/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1071 AE
-            </p>
-
-            <h3>
-              Cataclysm of Orr
-            </h3>
-
-            <p class="event-volume">
-              Volume VII
-            </p>
-          </a>
-
-
-          <a
-            href="guild-wars-era/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1072 AE
-            </p>
-
-            <h3>
-              Flameseeker Prophecies
-            </h3>
-
-            <p class="event-volume">
-              Volume VII
-            </p>
-          </a>
-
-
-          <a
-            href="guild-wars-era/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1075 AE
-            </p>
-
-            <h3>
-              Nightfall
-            </h3>
-
-            <p class="event-volume">
-              Volume VII
-            </p>
-          </a>
-
-
-          <a
-            href="guild-wars-era/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1078 AE
-            </p>
-
-            <h3>
-              The Great Destroyer
-            </h3>
-
-            <p class="event-volume">
-              Volume VII
-            </p>
-          </a>
-
-
-          <a
-            href="dragons-awaken/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1120 AE
-            </p>
-
-            <h3>
-              Primordus Awakens
-            </h3>
-
-            <p class="event-volume">
-              Volume VIII
-            </p>
-          </a>
-
-
-          <a
-            href="dragons-awaken/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1165 AE
-            </p>
-
-            <h3>
-              Jormag Awakens
-            </h3>
-
-            <p class="event-volume">
-              Volume VIII
-            </p>
-          </a>
-
-
-          <a
-            href="dragons-awaken/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1219 AE
-            </p>
-
-            <h3>
-              Zhaitan Awakens
-            </h3>
-
-            <p class="event-volume">
-              Volume VIII
-            </p>
-          </a>
-
-
-          <a
-            href="dragons-awaken/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1320 AE
-            </p>
-
-            <h3>
-              Kralkatorrik Awakens
-            </h3>
-
-            <p class="event-volume">
-              Volume VIII
-            </p>
-          </a>
-
-
-          <a
-            href="age-of-the-commander/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1325 AE
-            </p>
-
-            <h3>
-              The Pact Forms
-            </h3>
-
-            <p class="event-volume">
-              Volume IX
-            </p>
-          </a>
-
-
-          <a
-            href="age-of-the-commander/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1326 AE
-            </p>
-
-            <h3>
-              Zhaitan Falls
-            </h3>
-
-            <p class="event-volume">
-              Volume IX
-            </p>
-          </a>
-
-
-          <a
-            href="age-of-the-commander/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1328 AE
-            </p>
-
-            <h3>
-              Mordremoth Falls
-            </h3>
-
-            <p class="event-volume">
-              Volume IX
-            </p>
-          </a>
-
-
-          <a
-            href="age-of-the-commander/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1332 AE
-            </p>
-
-            <h3>
-              Aurene Ascends
-            </h3>
-
-            <p class="event-volume">
-              Volume IX
-            </p>
-          </a>
-
-
-          <a
-            href="age-of-the-commander/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1335 AE
-            </p>
-
-            <h3>
-              End of the Dragon Cycle
-            </h3>
-
-            <p class="event-volume">
-              Volume IX
-            </p>
-          </a>
-
-
-          <a
-            href="beyond-the-dragon-cycle/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1336 AE
-            </p>
-
-            <h3>
-              Kryptis Crisis
-            </h3>
-
-            <p class="event-volume">
-              Volume X
-            </p>
-          </a>
-
-
-          <a
-            href="beyond-the-dragon-cycle/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1337 AE
-            </p>
-
-            <h3>
-              Janthir
-            </h3>
-
-            <p class="event-volume">
-              Volume X
-            </p>
-          </a>
-
-
-          <a
-            href="current-era/index.html"
-            class="event-link"
-          >
-            <p class="event-date">
-              1338–1339 AE
-            </p>
-
-            <h3>
-              Castora
-            </h3>
-
-            <p class="event-volume">
-              Volume XI
-            </p>
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
 
 
     <!-- ========================================
@@ -1721,12 +1118,12 @@
           </p>
 
           <h2>
-            The Eleven Volumes
+            The Road Through Time
           </h2>
 
           <p>
-            The volumes below form the continuous
-            Road Through Time in chronological order.
+            Eleven volumes arranged from the ancient past
+            to the current historical record.
           </p>
 
         </div>
@@ -2128,7 +1525,7 @@
 
             <p class="volume-events">
               ASTRAL WARD // KRYPTIS // NAYOS //
-              TYRIAN ALLIANCE // JANThIR // TITANS
+              TYRIAN ALLIANCE // JANTHIR // TITANS
             </p>
 
             <span class="volume-arrow">
@@ -2193,9 +1590,8 @@
           <p>
             The archive currently reaches
             <strong>1339 AE</strong>.
-            Future chapters can continue the chronology
-            by extending Volume XI or adding the next volume
-            when the historical period warrants one.
+            New chapters can be added to the Current Era
+            as the chronology advances.
           </p>
 
         </section>
@@ -2206,35 +1602,35 @@
 
 
     <!-- ========================================
-         ARCHIVE NOTE
+         ARCHIVE METHOD
     ========================================= -->
 
-    <section class="archive-note">
+    <section class="archive-method">
 
       <div class="container">
 
-        <div class="archive-note-inner">
+        <div class="archive-method-inner">
 
-          <p class="archive-note-label">
+          <p class="archive-method-label">
             Archive Method
           </p>
 
           <h2>
-            Follow the record, not a perfect certainty
+            Following the surviving record
           </h2>
 
           <p>
             Tyrian history is assembled from surviving records,
             ruins, dialogue, artifacts, chronicles, and events
-            witnessed across Guild Wars and Guild Wars 2.
+            witnessed throughout Guild Wars and Guild Wars 2.
             Some ancient dates and sequences remain approximate.
           </p>
 
           <p>
-            Where the historical record is uncertain,
-            individual volumes distinguish established events
-            from interpretation rather than forcing every
-            fragment into a certainty the sources do not provide.
+            When the historical record is uncertain,
+            the individual volumes preserve that uncertainty
+            rather than assigning details the surviving sources
+            do not establish.
           </p>
 
         </div>
