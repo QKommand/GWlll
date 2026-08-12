@@ -10,35 +10,37 @@
 
   <meta
     name="description"
-    content="Guild Wars Living Lore Library. Explore the history of Tyria from the Ancient Dragonrises to the Current Era."
+    content="Commander Q's historical record of the Current Era, the Castora expedition, Ancora, and the return of ancient Seer history to modern Tyria."
   >
 
-  <meta name="theme-color" content="#020617">
+  <meta name="theme-color" content="#070b14">
 
-  <title>GWlll // The Road Through Time</title>
+  <title>Current Era // The Records of Commander Q</title>
 
   <style>
     :root {
       color-scheme: dark;
 
-      --background: #020617;
-      --background-soft: #060b17;
+      --background: #070b14;
+      --background-deep: #03060c;
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
 
-      --panel: #0f172a;
-      --panel-light: #131e33;
-
-      --border: #374151;
+      --border: #334155;
       --border-soft: rgba(148, 163, 184, 0.18);
 
-      --gold: #f4c76b;
-      --gold-bright: #ffe3a3;
-      --gold-muted: #c99b45;
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
 
-      --white: #ffffff;
-      --text-soft: #d7dce5;
-      --text-muted: #9ca3af;
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
 
-      --max-width: 1040px;
+      --quote: #c7d2e0;
+
+      --max-width: 820px;
     }
 
     * {
@@ -47,7 +49,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 150px;
     }
 
     body {
@@ -57,125 +59,59 @@
       background:
         radial-gradient(
           circle at top,
-          rgba(244, 199, 107, 0.08),
-          transparent 34rem
+          rgba(214, 179, 106, 0.07),
+          transparent 32rem
         ),
         linear-gradient(
           to bottom,
-          #020617,
-          #030817 50%,
-          #020617
+          #090e18,
+          var(--background) 30rem
         );
 
-      color: var(--white);
+      color: var(--ink);
 
       font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
+        Georgia,
+        "Times New Roman",
+        serif;
 
-      line-height: 1.75;
+      font-size: 1.05rem;
+      line-height: 1.85;
     }
 
     a {
       color: inherit;
     }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
     .container {
       width: min(
         var(--max-width),
-        calc(100% - 32px)
+        calc(100% - 34px)
       );
 
       margin-inline: auto;
     }
 
-    /* =========================
-       BACKGROUND
-    ========================= */
-
-    .stars,
-    .stars::before,
-    .stars::after {
-      position: fixed;
-      inset: 0;
-
-      pointer-events: none;
-    }
-
-    .stars {
-      z-index: -2;
-
-      background-image:
-        radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.45) 1px,
-          transparent 1px
-        );
-
-      background-size: 105px 105px;
-
-      opacity: 0.12;
-    }
-
-    .stars::before {
-      content: "";
-
-      background-image:
-        radial-gradient(
-          circle,
-          rgba(244, 199, 107, 0.38) 1px,
-          transparent 1px
-        );
-
-      background-size: 165px 165px;
-      background-position: 45px 20px;
-
-      opacity: 0.12;
-    }
-
-    .stars::after {
-      content: "";
-
-      background-image:
-        radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.3) 1px,
-          transparent 1px
-        );
-
-      background-size: 235px 235px;
-      background-position: 80px 110px;
-
-      opacity: 0.1;
-    }
-
-    /* =========================
+    /* ========================================
        HEADER
-    ========================= */
+    ======================================== */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border-soft);
 
-      background: rgba(2, 6, 23, 0.94);
+      background:
+        rgba(3, 6, 12, 0.95);
+
       backdrop-filter: blur(14px);
     }
 
     .header-inner {
-      min-height: 68px;
+      min-height: 66px;
 
       display: flex;
       align-items: center;
@@ -191,12 +127,17 @@
     .brand-small {
       margin: 0;
 
-      color: var(--white);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.62rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      letter-spacing: 0.17em;
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
@@ -209,109 +150,605 @@
       font-weight: 700;
     }
 
-    .header-status {
-      text-align: right;
+    .home-link {
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
     }
 
-    .status-label {
+    .home-link:hover {
+      color: var(--gold-bright);
+      transform: translateX(-3px);
+    }
+
+    /* ========================================
+       CHRONOLOGY
+    ======================================== */
+
+    .chronology {
+      position: sticky;
+      top: 66px;
+      z-index: 40;
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(7, 11, 20, 0.96);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .chronology-inner {
+      padding: 11px 0 13px;
+    }
+
+    .chronology-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+
+      margin-bottom: 8px;
+    }
+
+    .chronology-label,
+    .chronology-date {
       margin: 0;
 
-      color: var(--white);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      font-family: monospace;
-      font-size: 0.56rem;
-
-      letter-spacing: 0.14em;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .status-value {
-      margin: 2px 0 0;
+    .chronology-label {
+      color: var(--ink-faint);
+    }
 
+    .chronology-date {
       color: var(--gold-bright);
-
-      font-family: monospace;
-      font-size: 0.72rem;
       font-weight: 700;
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    .history-rail {
+      position: relative;
+      height: 17px;
+    }
 
-    .hero {
-      padding: 88px 0 68px;
+    .history-line {
+      position: absolute;
 
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          to right,
+          rgba(214, 179, 106, 0.18),
+          rgba(214, 179, 106, 0.85),
+          rgba(214, 179, 106, 0.18)
+        );
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: 1px;
+      left: 5%;
+
+      width: 13px;
+      height: 13px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 12px
+        rgba(214, 179, 106, 0.38);
+
+      transform: translateX(-50%);
+
+      transition: left 400ms ease;
+    }
+
+    .chronology-context {
+      margin: 4px 0 0;
+
+      color: var(--ink-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
       text-align: center;
     }
 
-    .hero-kicker {
+    /* ========================================
+       BOOK HEADER
+    ======================================== */
+
+    .book-header {
+      padding: 80px 0 52px;
+      text-align: center;
+    }
+
+    .volume {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold-muted);
 
-      font-family: monospace;
-      font-size: 0.68rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.67rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    .hero h1 {
+    .book-header h1 {
       margin: 17px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size:
+        clamp(
+          2.6rem,
+          8vw,
+          4.8rem
+        );
+
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      max-width: 680px;
+
+      margin: 18px auto 0;
+
+      color: var(--ink-muted);
+
+      font-style: italic;
+      font-size: 1.08rem;
+    }
+
+    .ornament {
+      width: 120px;
+
+      margin: 32px auto 0;
+
+      border: 0;
+      border-top: 1px solid var(--gold-muted);
+    }
+
+    /* ========================================
+       AUTHOR
+    ======================================== */
+
+    .author-card {
+      margin-bottom: 60px;
+
+      padding: 24px 26px;
+
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+
+      text-align: center;
+    }
+
+    .author-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .author-name {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .author-title {
+      margin: 5px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.91rem;
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       PREFACE
+    ======================================== */
+
+    .preface {
+      margin-bottom: 68px;
+    }
+
+    .section-kicker {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.64rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .preface h2,
+    .chapter h2 {
+      margin: 9px 0 0;
 
       color: var(--gold);
 
       font-size:
         clamp(
-          2.8rem,
-          8vw,
-          5.7rem
+          1.65rem,
+          5vw,
+          2.25rem
         );
 
-      line-height: 1;
-      letter-spacing: -0.05em;
-
-      animation:
-        goldPulse 4s
-        ease-in-out infinite;
+      font-weight: 500;
+      line-height: 1.25;
     }
 
-    .hero-range {
-      margin: 21px 0 0;
+    .preface p {
+      margin: 18px 0 0;
+    }
+
+    .signature {
+      margin-top: 28px;
 
       color: var(--gold-bright);
+      font-style: italic;
+    }
 
-      font-family: monospace;
-      font-size: 0.72rem;
+    /* ========================================
+       RESEARCH NOTE
+    ======================================== */
 
+    .research-note {
+      margin: 28px 0;
+
+      padding: 20px 22px;
+
+      border-left: 2px solid var(--gold-muted);
+
+      background:
+        rgba(214, 179, 106, 0.045);
+    }
+
+    .research-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .research-note p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
+      font-size: 0.96rem;
+    }
+
+    /* ========================================
+       CHAPTERS
+    ======================================== */
+
+    .chapter {
+      padding: 48px 0;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .chapter-number {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .chapter p {
+      margin: 18px 0 0;
+    }
+
+    .chapter strong {
+      color: var(--gold-bright);
+      font-weight: 600;
+    }
+
+    .chapter-opening::first-letter {
+      float: left;
+
+      margin: 7px 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 3.6rem;
+      line-height: 0.75;
+    }
+
+    /* ========================================
+       HISTORY GRID
+    ======================================== */
+
+    .history-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+
+      margin-top: 28px;
+    }
+
+    .history-card {
+      padding: 19px 20px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        rgba(15, 23, 42, 0.58);
+    }
+
+    .history-card-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-    .hero-description {
-      max-width: 720px;
+    .history-card h3 {
+      margin: 6px 0 0;
 
-      margin: 25px auto 0;
-
-      color: var(--text-soft);
+      color: var(--gold);
 
       font-size: 1.06rem;
-      line-height: 1.9;
+      font-weight: 600;
     }
 
-    .hero-actions {
-      margin-top: 30px;
+    .history-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       COMMANDER Q OBSERVATION
+    ======================================== */
+
+    .q-observation {
+      margin: 30px 0 6px;
+
+      padding: 21px 23px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(214, 179, 106, 0.05),
+          rgba(15, 23, 42, 0.45)
+        );
+    }
+
+    .q-observation-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .q-observation p:last-child {
+      margin: 9px 0 0;
+
+      color: var(--quote);
+      font-style: italic;
+    }
+
+    /* ========================================
+       CURRENT STATUS
+    ======================================== */
+
+    .current-status {
+      margin: 30px 0 6px;
+
+      padding: 22px 23px;
+
+      border:
+        1px solid
+        rgba(214, 179, 106, 0.28);
+
+      background:
+        rgba(214, 179, 106, 0.04);
+    }
+
+    .current-status-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .current-status h3 {
+      margin: 7px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .current-status p:last-child {
+      margin: 9px 0 0;
+
+      color: var(--ink-muted);
+    }
+
+    /* ========================================
+       TRANSITION
+    ======================================== */
+
+    .transition {
+      padding: 58px 0 70px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .transition-label {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.63rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .transition h2 {
+      margin: 10px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .transition p {
+      margin: 16px 0 0;
+    }
+
+    .navigation-actions {
+      margin-top: 28px;
 
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
 
       gap: 12px;
     }
 
-    .hero-button {
-      min-height: 47px;
+    .button {
+      min-height: 46px;
 
       display: inline-flex;
       align-items: center;
@@ -320,706 +757,97 @@
       padding: 0 20px;
 
       border: 1px solid var(--border);
-      border-radius: 8px;
-
-      background: var(--panel);
-
-      color: var(--gold);
-
-      font-weight: 700;
-      text-decoration: none;
-
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        color 180ms ease,
-        background 180ms ease;
-    }
-
-    .hero-button:hover {
-      transform: translateY(-2px);
-
-      border-color:
-        rgba(244, 199, 107, 0.55);
-
-      color: var(--gold-bright);
-    }
-
-    .hero-button-primary {
-      border-color:
-        rgba(244, 199, 107, 0.48);
-
-      background:
-        rgba(244, 199, 107, 0.09);
-    }
-
-    /* =========================
-       QUICK JUMP
-    ========================= */
-
-    .quick-jump {
-      margin-bottom: 70px;
-      padding: 27px;
-
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-
-      background:
-        rgba(15, 23, 42, 0.35);
-    }
-
-    .quick-jump-header {
-      text-align: center;
-    }
-
-    .quick-label {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.64rem;
-
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .quick-jump h2 {
-      margin: 7px 0 0;
-
-      color: var(--gold);
-
-      font-size:
-        clamp(
-          1.55rem,
-          4vw,
-          2rem
-        );
-    }
-
-    .quick-jump-header p {
-      margin: 9px auto 0;
-
-      max-width: 650px;
-
-      color: var(--text-soft);
-    }
-
-    .quick-events {
-      margin-top: 24px;
-
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      gap: 10px;
-    }
-
-    .quick-event {
-      display: inline-flex;
-      align-items: center;
-
-      min-height: 39px;
-
-      padding: 7px 13px;
-
-      border:
-        1px solid
-        rgba(244, 199, 107, 0.28);
-
-      border-radius: 999px;
-
-      background:
-        rgba(244, 199, 107, 0.045);
-
-      color: var(--gold-bright);
-
-      font-family: monospace;
-      font-size: 0.65rem;
-
-      text-decoration: none;
-
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        background 180ms ease;
-    }
-
-    .quick-event:hover {
-      transform: translateY(-2px);
-
-      border-color:
-        rgba(244, 199, 107, 0.65);
-
-      background:
-        rgba(244, 199, 107, 0.1);
-    }
-
-    /* =========================
-       TIMELINE INTRO
-    ========================= */
-
-    .timeline-heading {
-      max-width: 720px;
-
-      margin: 0 auto 42px;
-
-      text-align: center;
-    }
-
-    .timeline-heading-label {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.65rem;
-
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-    }
-
-    .timeline-heading h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size:
-        clamp(
-          2rem,
-          5vw,
-          2.8rem
-        );
-    }
-
-    .timeline-heading p {
-      margin: 14px auto 0;
-
-      color: var(--text-soft);
-    }
-
-    /* =========================
-       MASTER TIMELINE
-    ========================= */
-
-    .master-timeline {
-      position: relative;
-
-      width: min(880px, 100%);
-
-      margin: 0 auto;
-      padding-bottom: 60px;
-    }
-
-    .timeline-spine {
-      position: absolute;
-
-      top: 20px;
-      bottom: 60px;
-      left: 31px;
-
-      width: 1px;
-
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(244, 199, 107, 0.18),
-          rgba(244, 199, 107, 0.9) 8%,
-          rgba(244, 199, 107, 0.9) 92%,
-          rgba(244, 199, 107, 0.18)
-        );
-    }
-
-    .era {
-      position: relative;
-
-      margin-bottom: 24px;
-
-      padding-left: 70px;
-    }
-
-    .era-marker {
-      position: absolute;
-
-      top: 28px;
-      left: 21px;
-
-      width: 21px;
-      height: 21px;
-
-      border:
-        2px solid
-        var(--gold-bright);
-
-      border-radius: 50%;
-
-      background: var(--background);
-
-      box-shadow:
-        0 0 15px
-        rgba(244, 199, 107, 0.25);
-    }
-
-    .era.current .era-marker {
-      background: var(--gold);
-
-      box-shadow:
-        0 0 20px
-        rgba(244, 199, 107, 0.55);
-    }
-
-    .era-card {
-      overflow: hidden;
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 12px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(15, 23, 42, 0.94),
-          rgba(6, 12, 26, 0.94)
-        );
-    }
-
-    .era.current .era-card {
-      border-color:
-        rgba(244, 199, 107, 0.48);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(244, 199, 107, 0.07),
-          rgba(15, 23, 42, 0.96)
-        );
-    }
-
-    .era-main {
-      display: block;
-
-      padding: 23px 24px;
-
-      text-decoration: none;
-
-      transition:
-        background 180ms ease;
-    }
-
-    .era-main:hover {
-      background:
-        rgba(244, 199, 107, 0.035);
-    }
-
-    .era-meta {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-
-      gap: 18px;
-    }
-
-    .era-volume {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.61rem;
-
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .era-date {
-      margin: 0;
-
-      color: var(--gold-bright);
-
-      font-family: monospace;
-      font-size: 0.66rem;
-
-      text-align: right;
-    }
-
-    .era h3 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size:
-        clamp(
-          1.45rem,
-          4vw,
-          1.95rem
-        );
-
-      line-height: 1.2;
-    }
-
-    .era-description {
-      max-width: 700px;
-
-      margin: 12px 0 0;
-
-      color: var(--text-soft);
-
-      font-size: 0.95rem;
-    }
-
-    .open-volume {
-      display: inline-block;
-
-      margin-top: 15px;
-
-      color: var(--gold);
-
-      font-family: monospace;
-      font-size: 0.68rem;
-
-      font-weight: 700;
-    }
-
-    /* =========================
-       MAJOR EVENTS
-    ========================= */
-
-    .major-events {
-      display: grid;
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-      gap: 1px;
-
-      border-top:
-        1px solid var(--border);
-
-      background: var(--border);
-    }
-
-    .major-event {
-      position: relative;
-
-      min-height: 105px;
-
-      padding: 18px 20px;
-
-      background:
-        rgba(7, 12, 24, 0.97);
-
-      text-decoration: none;
-
-      transition:
-        background 180ms ease;
-    }
-
-    .major-event:hover {
-      background:
-        rgba(244, 199, 107, 0.07);
-    }
-
-    .event-date {
-      margin: 0;
-
-      color: var(--gold-bright);
-
-      font-family: monospace;
-      font-size: 0.61rem;
-
-      letter-spacing: 0.07em;
-    }
-
-    .major-event h4 {
-      margin: 5px 0 0;
-
-      color: var(--white);
-
-      font-size: 0.97rem;
-    }
-
-    .event-arrow {
-      display: inline-block;
-
-      margin-top: 7px;
-
-      color: var(--gold-muted);
-
-      font-family: monospace;
-      font-size: 0.62rem;
-    }
-
-    /* =========================
-       PRESENT MARKER
-    ========================= */
-
-    .present-marker {
-      width: min(880px, 100%);
-
-      margin: 0 auto 74px;
-      padding: 25px;
-
-      border:
-        1px solid
-        rgba(244, 199, 107, 0.38);
-
-      border-radius: 12px;
-
-      background:
-        rgba(244, 199, 107, 0.04);
-
-      text-align: center;
-    }
-
-    .present-label {
-      margin: 0;
-
-      color: var(--gold);
-
-      font-family: monospace;
-      font-size: 0.64rem;
-
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .present-marker h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold-bright);
-
-      font-size: 1.7rem;
-    }
-
-    .present-marker p {
-      max-width: 610px;
-
-      margin: 11px auto 0;
-
-      color: var(--text-soft);
-    }
-
-    /* =========================
-       ABOUT ARCHIVE
-    ========================= */
-
-    .archive-note {
-      padding: 48px 0 76px;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .archive-note-inner {
-      width: min(760px, 100%);
-
-      margin-inline: auto;
-
-      padding: 22px 24px;
-
-      border-left: 2px solid var(--gold);
+      border-radius: 5px;
 
       background:
         rgba(15, 23, 42, 0.7);
-    }
-
-    .archive-note-label {
-      margin: 0;
 
       color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.64rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .archive-note p {
-      margin: 11px 0 0;
-
-      color: var(--text-soft);
-    }
-
-    .archive-note strong {
-      color: var(--gold-bright);
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      padding: 32px 0;
-
-      border-top: 1px solid var(--border);
-
-      color: var(--text-muted);
-
-      text-align: center;
-      font-size: 0.74rem;
-    }
-
-    /* =========================
-       DISCLAIMER
-    ========================= */
-
-    .spoiler-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 20px;
-
-      background:
-        rgba(2, 6, 23, 0.88);
-
-      backdrop-filter: blur(12px);
-
-      opacity: 1;
-      visibility: visible;
-
-      transition:
-        opacity 250ms ease,
-        visibility 250ms ease;
-    }
-
-    .spoiler-overlay.hidden {
-      opacity: 0;
-      visibility: hidden;
-
-      pointer-events: none;
-    }
-
-    .spoiler-window {
-      width: min(560px, 100%);
-
-      padding: 29px;
-
-      border:
-        1px solid
-        rgba(244, 199, 107, 0.5);
-
-      border-radius: 13px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(15, 23, 42, 0.99),
-          rgba(5, 10, 22, 0.99)
-        );
-
-      box-shadow:
-        0 28px 80px
-        rgba(0, 0, 0, 0.52);
-    }
-
-    .spoiler-label {
-      margin: 0;
-
-      color: var(--gold);
-
-      font-family: monospace;
-      font-size: 0.64rem;
-
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .spoiler-window h2 {
-      margin: 10px 0 0;
-
-      color: var(--gold-bright);
-
-      font-size: 1.75rem;
-      line-height: 1.2;
-    }
-
-    .spoiler-window p {
-      margin: 16px 0 0;
-
-      color: var(--text-soft);
-    }
-
-    .acknowledge-button {
-      width: 100%;
-      min-height: 49px;
-
-      margin-top: 24px;
-
-      border:
-        1px solid
-        rgba(244, 199, 107, 0.55);
-
-      border-radius: 8px;
-
-      background:
-        rgba(244, 199, 107, 0.1);
-
-      color: var(--gold-bright);
-
-      font: inherit;
+      font-size: 0.75rem;
       font-weight: 700;
 
-      cursor: pointer;
+      text-decoration: none;
 
       transition:
         transform 180ms ease,
-        background 180ms ease;
+        border-color 180ms ease,
+        color 180ms ease;
     }
 
-    .acknowledge-button:hover {
+    .button:hover {
       transform: translateY(-2px);
 
+      border-color:
+        rgba(214, 179, 106, 0.6);
+
+      color: var(--gold-bright);
+    }
+
+    .button-primary {
+      border-color:
+        rgba(214, 179, 106, 0.45);
+
       background:
-        rgba(244, 199, 107, 0.16);
+        rgba(214, 179, 106, 0.08);
     }
 
-    /* =========================
-       ANIMATION
-    ========================= */
+    /* ========================================
+       FOOTER
+    ======================================== */
 
-    @keyframes goldPulse {
-      0%,
-      100% {
-        color: var(--gold);
+    footer {
+      padding: 34px 0;
 
-        text-shadow:
-          0 0 0
-          rgba(244, 199, 107, 0);
-      }
+      border-top:
+        1px solid var(--border-soft);
 
-      50% {
-        color: var(--gold-bright);
+      color: var(--ink-faint);
 
-        text-shadow:
-          0 0 16px
-          rgba(244, 199, 107, 0.28),
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-          0 0 34px
-          rgba(244, 199, 107, 0.1);
-      }
+      font-size: 0.65rem;
+      line-height: 1.7;
+
+      text-align: center;
     }
 
-    /* =========================
+    /* ========================================
        MOBILE
-    ========================= */
+    ======================================== */
 
-    @media (max-width: 700px) {
+    @media (max-width: 650px) {
+
+      html {
+        scroll-padding-top: 135px;
+      }
+
+      body {
+        font-size: 1rem;
+      }
 
       .container {
         width:
           min(
-            100% - 22px,
+            100% - 24px,
             var(--max-width)
           );
       }
 
       .header-inner {
-        min-height: 62px;
+        min-height: 60px;
       }
 
       .brand-small {
@@ -1027,99 +855,51 @@
       }
 
       .brand-name {
-        font-size: 0.87rem;
+        font-size: 0.88rem;
       }
 
-      .status-label {
-        font-size: 0.49rem;
-      }
-
-      .status-value {
+      .home-link {
         font-size: 0.62rem;
       }
 
-      .hero {
-        padding: 60px 0 50px;
+      .chronology {
+        top: 60px;
       }
 
-      .hero-description {
-        font-size: 1rem;
+      .chronology-label {
+        font-size: 0.53rem;
       }
 
-      .hero-actions {
-        flex-direction: column;
+      .chronology-date {
+        font-size: 0.56rem;
       }
 
-      .hero-button {
-        width: 100%;
+      .chronology-context {
+        font-size: 0.53rem;
       }
 
-      .quick-jump {
-        padding:
-          24px
-          14px;
+      .book-header {
+        padding: 58px 0 42px;
       }
 
-      .quick-events {
-        justify-content: flex-start;
+      .author-card {
+        padding: 21px 14px;
       }
 
-      .quick-event {
-        flex: 1 1 auto;
-
-        justify-content: center;
-
-        text-align: center;
+      .chapter {
+        padding: 40px 0;
       }
 
-      .master-timeline {
-        width: 100%;
-      }
-
-      .timeline-spine {
-        left: 16px;
-      }
-
-      .era {
-        padding-left: 43px;
-      }
-
-      .era-marker {
-        left: 7px;
-        top: 27px;
-
-        width: 19px;
-        height: 19px;
-      }
-
-      .era-main {
-        padding: 20px 18px;
-      }
-
-      .era-meta {
-        display: block;
-      }
-
-      .era-date {
-        margin-top: 5px;
-
-        text-align: left;
-      }
-
-      .major-events {
+      .history-grid {
         grid-template-columns: 1fr;
       }
 
-      .major-event {
-        min-height: auto;
+      .navigation-actions {
+        flex-direction: column;
       }
 
-      .present-marker {
-        padding: 23px 18px;
-      }
-
-      .spoiler-window {
-        padding: 24px;
+      .button {
+        width: 100%;
       }
     }
 
@@ -1132,11 +912,8 @@
       *,
       *::before,
       *::after {
-        animation-duration:
-          0.01ms !important;
-
-        transition-duration:
-          0.01ms !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -1144,24 +921,21 @@
 
 <body>
 
-  <div class="stars"></div>
-
-
-  <!-- =========================
+  <!-- ========================================
        HEADER
-  ========================== -->
+  ========================================= -->
 
   <header class="site-header">
 
     <div class="container header-inner">
 
       <a
-        href="index.html"
+        href="../index.html"
         class="brand"
       >
 
         <p class="brand-small">
-          QKommand Archive
+          The Historical Records of Commander Q
         </p>
 
         <p class="brand-name">
@@ -1170,185 +944,89 @@
 
       </a>
 
-
-      <div class="header-status">
-
-        <p class="status-label">
-          Historical Record
-        </p>
-
-        <p class="status-value">
-          Ancient Past → 1339 AE
-        </p>
-
-      </div>
+      <a
+        href="../index.html"
+        class="home-link"
+      >
+        ← Road Through Time
+      </a>
 
     </div>
 
   </header>
 
 
-  <main>
+  <!-- ========================================
+       CHRONOLOGY
+  ========================================= -->
 
-    <!-- =========================
-         HERO
-    ========================== -->
+  <aside class="chronology">
 
-    <section class="hero">
+    <div class="container chronology-inner">
 
-      <div class="container">
+      <div class="chronology-top">
 
-        <p class="hero-kicker">
-          Guild Wars Living Lore Library
+        <p class="chronology-label">
+          Historical Position
         </p>
 
-        <h1>
-          The Road Through Time
-        </h1>
-
-        <p class="hero-range">
-          A History of Tyria
+        <p
+          class="chronology-date"
+          id="currentDate"
+        >
+          1338 AE
         </p>
-
-        <p class="hero-description">
-          Follow the major civilizations,
-          wars, Dragonrises, discoveries,
-          and turning points that carried Tyria
-          from its oldest surviving history
-          to the modern age.
-        </p>
-
-
-        <div class="hero-actions">
-
-          <a
-            href="#timeline"
-            class="hero-button hero-button-primary"
-          >
-            Explore the Timeline
-          </a>
-
-          <a
-            href="ancient-dragonrises/index.html"
-            class="hero-button"
-          >
-            Begin at the Beginning
-          </a>
-
-        </div>
 
       </div>
 
-    </section>
+      <div class="history-rail">
+
+        <div class="history-line"></div>
+
+        <span
+          class="history-marker"
+          id="historyMarker"
+        ></span>
+
+      </div>
+
+      <p
+        class="chronology-context"
+        id="positionContext"
+      >
+        THE CASTORA EXPEDITION
+      </p>
+
+    </div>
+
+  </aside>
 
 
-    <!-- =========================
-         QUICK EVENT ACCESS
-    ========================== -->
+  <main>
 
-    <section class="quick-jump">
+    <!-- ========================================
+         BOOK HEADER
+    ========================================= -->
+
+    <section class="book-header">
 
       <div class="container">
 
-        <div class="quick-jump-header">
+        <p class="volume">
+          Volume XI // The Current Era
+        </p>
 
-          <p class="quick-label">
-            Major Turning Points
-          </p>
+        <h1>
+          The Current Era
+        </h1>
 
-          <h2>
-            Jump Through History
-          </h2>
+        <p class="subtitle">
+          On Castora, Ancora, the surviving legacy
+          of the Seers, and the return of ancient
+          magical history to the affairs of modern Tyria.
+        </p>
 
-          <p>
-            Looking for a particular moment?
-            These events mark some of the largest
-            shifts in Tyrian history.
-          </p>
-
-        </div>
-
-
-        <div class="quick-events">
-
-          <a
-            href="ancient-dragonrises/index.html"
-            class="quick-event"
-          >
-            c. 20,000 BE // Ancient Dragonrise
-          </a>
-
-          <a
-            href="elder-races/index.html"
-            class="quick-event"
-          >
-            Elder Races
-          </a>
-
-          <a
-            href="gods-and-humanity/index.html"
-            class="quick-event"
-          >
-            786 BE // Humanity
-          </a>
-
-          <a
-            href="gift-of-magic/index.html"
-            class="quick-event"
-          >
-            1 BE // Gift of Magic
-          </a>
-
-          <a
-            href="exodus-of-gods/index.html"
-            class="quick-event"
-          >
-            0 AE // Exodus
-          </a>
-
-          <a
-            href="guild-wars-era/index.html"
-            class="quick-event"
-          >
-            1070 AE // The Searing
-          </a>
-
-          <a
-            href="dragons-awaken/index.html"
-            class="quick-event"
-          >
-            1219 AE // Zhaitan Awakens
-          </a>
-
-          <a
-            href="age-of-the-commander/index.html"
-            class="quick-event"
-          >
-            1325 AE // The Pact
-          </a>
-
-          <a
-            href="age-of-the-commander/index.html"
-            class="quick-event"
-          >
-            1335 AE // End of Dragons
-          </a>
-
-          <a
-            href="beyond-the-dragon-cycle/index.html"
-            class="quick-event"
-          >
-            1337 AE // Janthir
-          </a>
-
-          <a
-            href="current-era/index.html"
-            class="quick-event"
-          >
-            1338 AE // Castora
-          </a>
-
-        </div>
+        <hr class="ornament">
 
       </div>
 
@@ -1357,1251 +1035,588 @@
 
     <div class="container">
 
-      <!-- =========================
-           TIMELINE HEADER
-      ========================== -->
+      <!-- ========================================
+           AUTHOR
+      ========================================= -->
+
+      <section class="author-card">
+
+        <p class="author-label">
+          Compiled and Annotated By
+        </p>
+
+        <p class="author-name">
+          Commander Q
+        </p>
+
+        <p class="author-title">
+          Captain Commander of the Vanguard Knights
+          <br>
+          Researcher of Tyrian History and the Mists
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           PREFACE
+      ========================================= -->
+
+      <section class="preface">
+
+        <p class="section-kicker">
+          Author's Preface
+        </p>
+
+        <h2>
+          The road bends toward the ancient world
+        </h2>
+
+        <p>
+          The end of the Elder Dragon Cycle did not leave Tyria
+          without a past. If anything, removing the Dragons from
+          the center of every crisis made older histories easier
+          to see. Janthir returned the Mursaat, the Seers, and
+          the Titans to modern attention, while the disappearance
+          of the Scepter of Orr into the Mists left another
+          ancient question unresolved.
+        </p>
+
+        <p>
+          The trail now reaches <strong>Castora</strong>.
+          What began as an expedition led by the Inquest has
+          exposed ruins, magical practices, and knowledge tied
+          to one of the oldest civilizations in the historical
+          record.
+        </p>
+
+        <p>
+          That is what makes this era different from the years
+          immediately before it. We are no longer merely
+          discovering that the ancient world survived in fragments.
+          We are beginning to encounter those fragments directly.
+        </p>
+
+        <p class="signature">
+          — Commander Q
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER I
+      ========================================= -->
 
       <section
-        class="timeline-heading"
-        id="timeline"
+        class="chapter"
+        data-position="5"
+        data-date="1338 AE"
+        data-context="THE CASTORA EXPEDITION"
       >
 
-        <p class="timeline-heading-label">
-          Main Historical Record
+        <p class="chapter-number">
+          I
         </p>
 
         <h2>
-          The Timeline of Tyria
+          Director Vloxx sails for Castora
         </h2>
 
-        <p>
-          Each volume continues the road forward.
-          Open the full volume or select
-          one of its major events.
+        <p class="chapter-opening">
+          In <strong>1338 AE</strong>, an
+          <strong>Inquest</strong> expedition under
+          <strong>Director Vloxx</strong> traveled to
+          <strong>Castora</strong>, a distant island that had
+          remained largely outside the affairs of modern Tyria.
         </p>
-
-      </section>
-
-
-      <!-- =========================
-           MASTER TIMELINE
-      ========================== -->
-
-      <section class="master-timeline">
-
-        <div class="timeline-spine"></div>
-
-
-        <!-- =========================
-             VOLUME I
-        ========================== -->
-
-        <article class="era">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="ancient-dragonrises/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume I
-                </p>
-
-                <p class="era-date">
-                  Ancient Past
-                </p>
-
-              </div>
-
-              <h3>
-                Ancient Dragonrises
-              </h3>
-
-              <p class="era-description">
-                The earliest surviving history
-                of Tyria begins with Elder Dragons,
-                ancient civilizations,
-                and the struggle to preserve
-                the world's remaining magic.
-              </p>
-
-              <span class="open-volume">
-                Open Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="ancient-dragonrises/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  c. 20,000 BE
-                </p>
-
-                <h4>
-                  Ancient Dragonrise
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="ancient-dragonrises/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  Ancient Era
-                </p>
-
-                <h4>
-                  The First Bloodstone
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- =========================
-             VOLUME II
-        ========================== -->
-
-        <article class="era">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="elder-races/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume II
-                </p>
-
-                <p class="era-date">
-                  Ancient Era – Before 786 BE
-                </p>
-
-              </div>
-
-              <h3>
-                The Elder Races
-              </h3>
-
-              <p class="era-description">
-                The Seers, Mursaat, Forgotten,
-                Dwarves, and Jotun survive
-                the ancient Dragonrise
-                and inherit a changed world.
-              </p>
-
-              <span class="open-volume">
-                Open Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="elder-races/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  Ancient Dragonrise
-                </p>
-
-                <h4>
-                  The Elder Alliance
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="elder-races/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1680 BE
-                </p>
-
-                <h4>
-                  Glint Is Freed
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- =========================
-             VOLUME III
-        ========================== -->
-
-        <article class="era">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="gods-and-humanity/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume III
-                </p>
-
-                <p class="era-date">
-                  Before 786 BE – 1 BE
-                </p>
-
-              </div>
-
-              <h3>
-                Gods and Humanity
-              </h3>
-
-              <p class="era-description">
-                The Human Gods enter an ancient Tyria,
-                Humanity establishes itself across
-                multiple continents,
-                and new kingdoms begin to rise.
-              </p>
-
-              <span class="open-volume">
-                Open Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="gods-and-humanity/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  Before 786 BE
-                </p>
-
-                <h4>
-                  The Gods Enter Tyria
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="gods-and-humanity/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  786 BE
-                </p>
-
-                <h4>
-                  Humanity in Cantha
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- =========================
-             VOLUME IV
-        ========================== -->
-
-        <article class="era">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="gift-of-magic/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume IV
-                </p>
-
-                <p class="era-date">
-                  1 BE
-                </p>
-
-              </div>
-
-              <h3>
-                The Gift of Magic
-              </h3>
-
-              <p class="era-description">
-                Abaddon expands mortal access
-                to magical power,
-                war follows,
-                and the ancient Bloodstone
-                is divided.
-              </p>
-
-              <span class="open-volume">
-                Open Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="gift-of-magic/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1 BE
-                </p>
-
-                <h4>
-                  Abaddon's Gift
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="gift-of-magic/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1 BE
-                </p>
-
-                <h4>
-                  Bloodstone Divided
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- =========================
-             VOLUME V
-        ========================== -->
-
-        <article class="era">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="exodus-of-gods/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume V
-                </p>
-
-                <p class="era-date">
-                  0 AE
-                </p>
-
-              </div>
-
-              <h3>
-                The Exodus of the Gods
-              </h3>
-
-              <p class="era-description">
-                Abaddon's rebellion scars the world,
-                the fallen God is imprisoned,
-                and the remaining Gods
-                withdraw from Tyria.
-              </p>
-
-              <span class="open-volume">
-                Open Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="exodus-of-gods/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  0 AE
-                </p>
-
-                <h4>
-                  Abaddon's Fall
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="exodus-of-gods/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  0 AE
-                </p>
-
-                <h4>
-                  The Exodus
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- =========================
-             VOLUME VI
-        ========================== -->
-
-        <article class="era">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="kingdoms-and-guild-wars/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume VI
-                </p>
-
-                <p class="era-date">
-                  2 AE – 1013 AE
-                </p>
-
-              </div>
-
-              <h3>
-                Kingdoms and Guild Wars
-              </h3>
-
-              <p class="era-description">
-                Human kingdoms expand,
-                Guilds become political powers,
-                Bloodstones return to the world,
-                and centuries of conflict follow.
-              </p>
-
-              <span class="open-volume">
-                Open Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="kingdoms-and-guild-wars/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  872 AE
-                </p>
-
-                <h4>
-                  The Jade Wind
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="kingdoms-and-guild-wars/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1013 AE
-                </p>
-
-                <h4>
-                  Third Guild War
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- =========================
-             VOLUME VII
-        ========================== -->
-
-        <article class="era">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="guild-wars-era/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume VII
-                </p>
-
-                <p class="era-date">
-                  1013 AE – 1080 AE
-                </p>
-
-              </div>
-
-              <h3>
-                The Guild Wars Era
-              </h3>
-
-              <p class="era-description">
-                The original Guild Wars campaigns
-                reshape Tyria through the Searing,
-                Prophecies, Shiro, Nightfall,
-                and the first signs of Primordus.
-              </p>
-
-              <span class="open-volume">
-                Open Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="guild-wars-era/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1070 AE
-                </p>
-
-                <h4>
-                  The Searing
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="guild-wars-era/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1075 AE
-                </p>
-
-                <h4>
-                  Abaddon Dies
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="guild-wars-era/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1078 AE
-                </p>
-
-                <h4>
-                  Primordus Stirs
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="guild-wars-era/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1080 AE
-                </p>
-
-                <h4>
-                  Ebonhawke
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- =========================
-             VOLUME VIII
-        ========================== -->
-
-        <article class="era">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="dragons-awaken/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume VIII
-                </p>
-
-                <p class="era-date">
-                  1080 AE – 1325 AE
-                </p>
-
-              </div>
-
-              <h3>
-                The Dragons Awaken
-              </h3>
-
-              <p class="era-description">
-                Elder Dragons reshape continents,
-                displace civilizations,
-                and create the world encountered
-                at the beginning of Guild Wars 2.
-              </p>
-
-              <span class="open-volume">
-                Open Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="dragons-awaken/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1120 AE
-                </p>
-
-                <h4>
-                  Primordus Awakens
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="dragons-awaken/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1165 AE
-                </p>
-
-                <h4>
-                  Jormag Awakens
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="dragons-awaken/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1219 AE
-                </p>
-
-                <h4>
-                  Zhaitan Awakens
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="dragons-awaken/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1320 AE
-                </p>
-
-                <h4>
-                  Kralkatorrik Awakens
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- =========================
-             VOLUME IX
-        ========================== -->
-
-        <article class="era">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="age-of-the-commander/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume IX
-                </p>
-
-                <p class="era-date">
-                  1325 AE – 1335 AE
-                </p>
-
-              </div>
-
-              <h3>
-                The Age of the Commander
-              </h3>
-
-              <p class="era-description">
-                Tyria stops merely surviving
-                the Elder Dragons.
-                The Pact forms, Dragons fall,
-                Aurene rises,
-                and the ancient cycle ends.
-              </p>
-
-              <span class="open-volume">
-                Open Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="age-of-the-commander/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1325 AE
-                </p>
-
-                <h4>
-                  The Pact Forms
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="age-of-the-commander/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1326 AE
-                </p>
-
-                <h4>
-                  Zhaitan Falls
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="age-of-the-commander/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1332 AE
-                </p>
-
-                <h4>
-                  Aurene Ascends
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="age-of-the-commander/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1335 AE
-                </p>
-
-                <h4>
-                  End of the Dragon Cycle
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- =========================
-             VOLUME X
-        ========================== -->
-
-        <article class="era">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="beyond-the-dragon-cycle/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume X
-                </p>
-
-                <p class="era-date">
-                  1336 AE – 1338 AE
-                </p>
-
-              </div>
-
-              <h3>
-                Beyond the Dragon Cycle
-              </h3>
-
-              <p class="era-description">
-                Hidden defenders,
-                civilizations of the Mists,
-                Janthir, Titans,
-                and ancient histories emerge
-                after the Dragon Cycle ends.
-              </p>
-
-              <span class="open-volume">
-                Open Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="beyond-the-dragon-cycle/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1336 AE
-                </p>
-
-                <h4>
-                  The Astral Ward
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="beyond-the-dragon-cycle/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1337 AE
-                </p>
-
-                <h4>
-                  Nayos and Peitha
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="beyond-the-dragon-cycle/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1337 AE
-                </p>
-
-                <h4>
-                  The Isles of Janthir
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="beyond-the-dragon-cycle/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1338 AE
-                </p>
-
-                <h4>
-                  Titan Crisis Ends
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- =========================
-             VOLUME XI
-        ========================== -->
-
-        <article class="era current">
-
-          <span class="era-marker"></span>
-
-          <div class="era-card">
-
-            <a
-              href="current-era/index.html"
-              class="era-main"
-            >
-
-              <div class="era-meta">
-
-                <p class="era-volume">
-                  Volume XI // Current
-                </p>
-
-                <p class="era-date">
-                  1338 AE – 1339 AE
-                </p>
-
-              </div>
-
-              <h3>
-                The Current Era
-              </h3>
-
-              <p class="era-description">
-                The road reaches Castora,
-                where Director Vloxx,
-                Ancora,
-                and surviving Seer knowledge
-                bring ancient history
-                into the modern age.
-              </p>
-
-              <span class="open-volume">
-                Enter Current Volume →
-              </span>
-
-            </a>
-
-
-            <div class="major-events">
-
-              <a
-                href="current-era/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1338 AE
-                </p>
-
-                <h4>
-                  Castora Expedition
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="current-era/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1338 AE
-                </p>
-
-                <h4>
-                  Ancora
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="current-era/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1338 AE
-                </p>
-
-                <h4>
-                  Rite of Divinity
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-
-              <a
-                href="current-era/index.html"
-                class="major-event"
-              >
-                <p class="event-date">
-                  1339 AE
-                </p>
-
-                <h4>
-                  Current Historical Position
-                </h4>
-
-                <span class="event-arrow">
-                  Visit Event →
-                </span>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-      </section>
-
-
-      <!-- =========================
-           PRESENT
-      ========================== -->
-
-      <section class="present-marker">
-
-        <p class="present-label">
-          Present Edge of the Archive
-        </p>
-
-        <h2>
-          1339 AE
-        </h2>
 
         <p>
-          The current record reaches
-          the Castora conflict.
-          Future chapters can continue
-          directly from Volume XI.
+          The expedition was searching for
+          <strong>Ancora</strong>. Whatever Vloxx expected to
+          find, the journey placed the Inquest within a region
+          containing evidence of a history far older than the
+          organization itself.
         </p>
 
-      </section>
+        <p>
+          Castora had existed on the edge of Tyrian knowledge
+          for generations, but exploration now moved it from
+          rumor and geography into the active historical record.
+        </p>
 
+        <div class="q-observation">
 
-      <!-- =========================
-           ARCHIVE NOTE
-      ========================== -->
-
-      <section class="archive-note">
-
-        <div class="archive-note-inner">
-
-          <p class="archive-note-label">
-            QKommand Archive // Historical Record
+          <p class="q-observation-label">
+            Commander Q // Observation
           </p>
 
           <p>
-            The <strong>Guild Wars Living Lore Library</strong>
-            organizes the major history of Tyria
-            into connected volumes so that each era
-            can be read on its own or followed
-            as one continuous road through time.
+            There is a recurring mistake in Tyrian history:
+            assuming that because a place has been absent from
+            our maps, it has also been absent from history.
+            Castora appears determined to correct that assumption.
           </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER II
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="23"
+        data-date="1338 AE"
+        data-context="CASTORA ENTERS THE RECORD"
+      >
+
+        <p class="chapter-number">
+          II
+        </p>
+
+        <h2>
+          A distant island reveals an older past
+        </h2>
+
+        <p class="chapter-opening">
+          Castora's importance does not come simply from its
+          isolation. The island contains ruins and surviving
+          traces connected to civilizations whose histories
+          reach back thousands of years.
+        </p>
+
+        <p>
+          This places the current expedition within a much larger
+          story. The conflicts of Janthir had already forced
+          modern Tyria to reconsider what remained of the
+          <strong>Mursaat</strong> and <strong>Seers</strong>.
+          Castora carried that question farther.
+        </p>
+
+        <p>
+          The island was not merely another unexplored territory.
+          It represented another surviving piece of the world
+          that existed before Humanity became one of Tyria's
+          dominant civilizations.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER III
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="41"
+        data-date="1338–1339 AE"
+        data-context="THE SEER LEGACY"
+      >
+
+        <p class="chapter-number">
+          III
+        </p>
+
+        <h2>
+          The Seers return to the center of history
+        </h2>
+
+        <p class="chapter-opening">
+          The <strong>Seers</strong> once stood among the
+          Elder Races that survived the ancient Dragonrise.
+          Their mastery of magic produced the original Bloodstone
+          and helped preserve uncorrupted magic from the Elder
+          Dragons.
+        </p>
+
+        <p>
+          Their later war with the Mursaat nearly destroyed
+          their civilization. By the original Guild Wars era,
+          only isolated survivors were known, and the last
+          previously recorded living Seer died during the
+          conflict surrounding Kryta and the White Mantle.
+        </p>
+
+        <p>
+          Discoveries on Castora therefore carry unusual weight.
+          Seer ruins and surviving knowledge suggest that their
+          historical legacy extended beyond the fragments
+          previously known to modern scholars.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Research Note // The Seer Record
+          </p>
+
+          <p>
+            Evidence of Seer construction or magical knowledge
+            should not automatically be treated as evidence that
+            an unknown population of living Seers survived there.
+            Ruins, artifacts, preserved systems, and living
+            members of a civilization are separate claims and
+            should remain separate until the record supports
+            otherwise.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER IV
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="59"
+        data-date="1338–1339 AE"
+        data-context="ANCORA AND ANCIENT MAGIC"
+      >
+
+        <p class="chapter-number">
+          IV
+        </p>
+
+        <h2>
+          Ancora draws the past into the present
+        </h2>
+
+        <p class="chapter-opening">
+          The search for <strong>Ancora</strong> placed ancient
+          magical knowledge at the center of the Castoran
+          expedition. The significance of that knowledge extends
+          beyond the ambitions of the Inquest or the immediate
+          struggle surrounding the island.
+        </p>
+
+        <p>
+          Seer magic belongs to a tradition that predates the
+          arrival of Humanity, the Human Gods, the Exodus, and
+          the Guild Wars. Its reappearance therefore connects
+          the current era directly to the earliest volumes of
+          this archive.
+        </p>
+
+        <p>
+          The Bloodstones already demonstrated how an artifact
+          created in the ancient world could continue shaping
+          later civilizations for thousands of years. Castora
+          now raises the same question about knowledge itself.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            An artifact can survive because someone buried it.
+            Knowledge is harder. If a magical practice survives
+            thousands of years, then somewhere along the road
+            someone understood enough to preserve it.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER V
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="78"
+        data-date="1339 AE"
+        data-context="THE RITE OF DIVINITY"
+      >
+
+        <p class="chapter-number">
+          V
+        </p>
+
+        <h2>
+          Ancient practice becomes a modern concern
+        </h2>
+
+        <p class="chapter-opening">
+          Among the Seer traditions brought back into modern
+          attention is the <strong>Rite of Divinity</strong>.
+          Its appearance reinforces a pattern that has become
+          increasingly clear since the events of Janthir:
+          ancient magical systems did not necessarily disappear
+          when the civilizations that created them declined.
+        </p>
+
+        <p>
+          Some survived through structures, artifacts, rituals,
+          or records that later peoples could discover and use.
+          Their original creators might be gone, but the effects
+          of their knowledge remain capable of reaching the
+          present.
+        </p>
+
+        <p>
+          Castora therefore marks more than the discovery of old
+          ruins. It represents the return of ancient magical
+          practice to a world whose institutions were built
+          thousands of years after that practice began.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER VI
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="100"
+        data-date="1339 AE"
+        data-context="PRESENT HISTORICAL POSITION"
+      >
+
+        <p class="chapter-number">
+          VI
+        </p>
+
+        <h2>
+          The archive reaches the present
+        </h2>
+
+        <p class="chapter-opening">
+          By <strong>1339 AE</strong>, the oldest layers of
+          Tyrian history have again become part of the affairs
+          of the modern world.
+        </p>
+
+        <p>
+          The Elder Dragon Cycle has ended, while
+          <strong>Aurene</strong> remains responsible for
+          regulating the magical balance left behind. The
+          <strong>Tyrian Alliance</strong> represents a growing
+          effort toward cooperation among the world's nations,
+          and contact with the <strong>Mists</strong> has moved
+          far beyond what earlier generations considered possible.
+        </p>
+
+        <p>
+          At the same time, Janthir and Castora have brought
+          attention back to the Seers, the Mursaat, ancient
+          magical systems, and conflicts that began before
+          Humanity entered the historical record.
+        </p>
+
+        <p>
+          The road has not returned to its beginning, but the
+          present now depends upon understanding it.
+        </p>
+
+        <div class="current-status">
+
+          <p class="current-status-label">
+            Current Archive Position
+          </p>
+
+          <h3>
+            1339 AE
+          </h3>
+
+          <p>
+            The record presently reaches the events surrounding
+            Castora, Ancora, and the renewed study of Seer
+            history. Additional chapters can continue directly
+            from this point as later events enter the chronology.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           ARCHIVE INDEX
+      ========================================= -->
+
+      <section class="chapter">
+
+        <p class="chapter-number">
+          Current Volume Index
+        </p>
+
+        <h2>
+          The threads now in motion
+        </h2>
+
+        <div class="history-grid">
+
+          <div class="history-card">
+
+            <p class="history-card-label">
+              Expedition
+            </p>
+
+            <h3>
+              Castora
+            </h3>
+
+            <p>
+              A distant island becomes the center
+              of modern exploration and ancient discovery.
+            </p>
+
+          </div>
+
+
+          <div class="history-card">
+
+            <p class="history-card-label">
+              Inquest
+            </p>
+
+            <h3>
+              Director Vloxx
+            </h3>
+
+            <p>
+              An Inquest expedition searches
+              Castora for Ancora.
+            </p>
+
+          </div>
+
+
+          <div class="history-card">
+
+            <p class="history-card-label">
+              Ancient Civilization
+            </p>
+
+            <h3>
+              The Seers
+            </h3>
+
+            <p>
+              Ruins and magical knowledge reopen
+              questions about one of Tyria's
+              oldest civilizations.
+            </p>
+
+          </div>
+
+
+          <div class="history-card">
+
+            <p class="history-card-label">
+              Ancient Knowledge
+            </p>
+
+            <h3>
+              Ancora
+            </h3>
+
+            <p>
+              The search connects the present
+              directly to surviving Seer
+              magical traditions.
+            </p>
+
+          </div>
+
+
+          <div class="history-card">
+
+            <p class="history-card-label">
+              Magical Tradition
+            </p>
+
+            <h3>
+              Rite of Divinity
+            </h3>
+
+            <p>
+              Ancient practice becomes relevant
+              to the modern historical record.
+            </p>
+
+          </div>
+
+
+          <div class="history-card">
+
+            <p class="history-card-label">
+              Present Date
+            </p>
+
+            <h3>
+              1339 AE
+            </h3>
+
+            <p>
+              The current edge of the
+              Road Through Time.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           NAVIGATION
+      ========================================= -->
+
+      <section class="transition">
+
+        <p class="transition-label">
+          Volume XI // Current Record
+        </p>
+
+        <h2>
+          Present historical position
+        </h2>
+
+        <p>
+          The previous volume followed Tyria beyond the
+          Elder Dragon Cycle through the Astral Ward, Nayos,
+          the Tyrian Alliance, Janthir, and the return of
+          several ancient conflicts.
+        </p>
+
+        <p>
+          This volume continues that road through Castora.
+          Future entries can be added here as new events
+          extend the chronology beyond 1339 AE.
+        </p>
+
+        <div class="navigation-actions">
+
+          <a
+            href="../beyond-the-dragon-cycle/index.html"
+            class="button"
+          >
+            ← Volume X
+          </a>
+
+          <a
+            href="../index.html"
+            class="button button-primary"
+          >
+            Road Through Time
+          </a>
 
         </div>
 
@@ -2612,176 +1627,122 @@
   </main>
 
 
-  <!-- =========================
+  <!-- ========================================
        FOOTER
-  ========================== -->
+  ========================================= -->
 
   <footer>
 
     <div class="container">
 
-      Guild Wars Living Lore Library is an unofficial fan lore project.
-      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT,
-      and related properties belong to their respective owners.
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
 
     </div>
 
   </footer>
 
 
-  <!-- =========================
-       FIRST VISIT DISCLAIMER
-  ========================== -->
-
-  <div
-    class="spoiler-overlay"
-    id="spoilerOverlay"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="spoilerTitle"
-    aria-describedby="spoilerDescription"
-  >
-
-    <div class="spoiler-window">
-
-      <p class="spoiler-label">
-        Archive Notice
-      </p>
-
-      <h2 id="spoilerTitle">
-        This library contains major story spoilers.
-      </h2>
-
-      <p id="spoilerDescription">
-        The Guild Wars Living Lore Library follows
-        the complete historical record across
-        Guild Wars, Guild Wars 2,
-        expansions, Living World releases,
-        and the current story.
-      </p>
-
-      <p>
-        Major characters, deaths, locations,
-        revelations, historical mysteries,
-        and story outcomes are discussed openly.
-      </p>
-
-      <button
-        class="acknowledge-button"
-        id="acknowledgeButton"
-        type="button"
-      >
-        Enter the Archive
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-       SCRIPT
-  ========================== -->
+  <!-- ========================================
+       CHRONOLOGY SCRIPT
+  ========================================= -->
 
   <script>
     (() => {
       "use strict";
 
+      const sections =
+        document.querySelectorAll(
+          ".chapter[data-position]"
+        );
 
-      /* =========================
-         FIRST VISIT DISCLAIMER
-      ========================= */
-
-      const spoilerOverlay =
+      const marker =
         document.getElementById(
-          "spoilerOverlay"
+          "historyMarker"
         );
 
-      const acknowledgeButton =
+      const currentDate =
         document.getElementById(
-          "acknowledgeButton"
+          "currentDate"
         );
 
-      const storageKey =
-        "gwlllArchiveDisclaimerAccepted";
-
-
-      /*
-        localStorage keeps the acknowledgement
-        in this browser on this device.
-
-        A new browser, private window,
-        cleared browser storage,
-        or another device will receive
-        the disclaimer again.
-      */
-
-      const disclaimerAccepted =
-        localStorage.getItem(
-          storageKey
+      const positionContext =
+        document.getElementById(
+          "positionContext"
         );
 
+      const updatePosition =
+        (section) => {
 
-      if (
-        disclaimerAccepted === "true"
-      ) {
+          const position =
+            section.dataset.position || "5";
 
-        spoilerOverlay.classList.add(
-          "hidden"
-        );
+          const date =
+            section.dataset.date ||
+            "1338 AE";
 
-      } else {
+          const context =
+            section.dataset.context ||
+            "CURRENT HISTORICAL RECORD";
 
-        document.body.style.overflow =
-          "hidden";
+          marker.style.left =
+            `${position}%`;
 
-        acknowledgeButton.focus();
+          currentDate.textContent =
+            date;
 
-      }
+          positionContext.textContent =
+            context;
+        };
 
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
 
-      acknowledgeButton.addEventListener(
-        "click",
-        () => {
+            const visible =
+              entries
+                .filter(
+                  (entry) =>
+                    entry.isIntersecting
+                )
+                .sort(
+                  (a, b) =>
+                    b.intersectionRatio -
+                    a.intersectionRatio
+                );
 
-          localStorage.setItem(
-            storageKey,
-            "true"
-          );
+            if (visible.length > 0) {
+              updatePosition(
+                visible[0].target
+              );
+            }
+          },
+          {
+            rootMargin:
+              "-35% 0px -45% 0px",
 
-          spoilerOverlay.classList.add(
-            "hidden"
-          );
-
-          document.body.style.overflow =
-            "";
-
-        }
-      );
-
-
-      /* =========================
-         ESCAPE PROTECTION
-      ========================= */
-
-      document.addEventListener(
-        "keydown",
-        (event) => {
-
-          if (
-            event.key === "Escape" &&
-            !spoilerOverlay.classList.contains(
-              "hidden"
-            )
-          ) {
-
-            acknowledgeButton.focus();
-
+            threshold: [
+              0,
+              0.15,
+              0.3,
+              0.5,
+              0.75
+            ]
           }
+        );
 
+      sections.forEach(
+        (section) => {
+          observer.observe(section);
         }
       );
-
     })();
   </script>
 
