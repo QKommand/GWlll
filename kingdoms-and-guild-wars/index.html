@@ -10,26 +10,37 @@
 
   <meta
     name="description"
-    content="Kingdoms and Guild Wars archive entry in the Guild Wars Living Lore Library."
+    content="Commander Q's historical record of the rise of mortal kingdoms, the Guilds, and the conflicts leading to the Third Guild War."
   >
 
-  <meta name="theme-color" content="#020617">
+  <meta name="theme-color" content="#070b14">
 
-  <title>Kingdoms and Guild Wars // GWlll</title>
+  <title>Kingdoms and Guild Wars // The Records of Commander Q</title>
 
   <style>
     :root {
       color-scheme: dark;
 
-      --background: #020617;
-      --panel: #0f172a;
-      --border: #374151;
+      --background: #070b14;
+      --background-deep: #03060c;
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
 
-      --gold: #f4c76b;
-      --gold-bright: #ffe3a3;
-      --gold-muted: #c99b45;
+      --border: #334155;
+      --border-soft: rgba(148, 163, 184, 0.18);
 
-      --white: #ffffff;
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
+
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
+
+      --quote: #c7d2e0;
+
+      --max-width: 820px;
     }
 
     * {
@@ -38,7 +49,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 175px;
+      scroll-padding-top: 150px;
     }
 
     body {
@@ -48,23 +59,24 @@
       background:
         radial-gradient(
           circle at top,
-          rgba(244, 199, 107, 0.08),
-          transparent 34rem
+          rgba(214, 179, 106, 0.07),
+          transparent 32rem
         ),
-        var(--background);
+        linear-gradient(
+          to bottom,
+          #090e18,
+          var(--background) 30rem
+        );
 
-      color: var(--white);
+      color: var(--ink);
 
       font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
+        Georgia,
+        "Times New Roman",
+        serif;
 
-      line-height: 1.75;
+      font-size: 1.05rem;
+      line-height: 1.85;
     }
 
     a {
@@ -72,27 +84,34 @@
     }
 
     .container {
-      width: min(900px, calc(100% - 32px));
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
+
       margin-inline: auto;
     }
 
-    /* =========================
+    /* ========================================
        HEADER
-    ========================= */
+    ======================================== */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border-soft);
 
-      background: rgba(2, 6, 23, 0.94);
+      background:
+        rgba(3, 6, 12, 0.95);
+
       backdrop-filter: blur(14px);
     }
 
     .header-inner {
-      min-height: 68px;
+      min-height: 66px;
 
       display: flex;
       align-items: center;
@@ -108,12 +127,17 @@
     .brand-small {
       margin: 0;
 
-      color: var(--white);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.65rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      letter-spacing: 0.17em;
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
@@ -129,8 +153,14 @@
     .home-link {
       color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.75rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.7rem;
       font-weight: 700;
 
       text-decoration: none;
@@ -145,60 +175,66 @@
       transform: translateX(-3px);
     }
 
-    /* =========================
-       HISTORICAL POSITION
-    ========================= */
+    /* ========================================
+       CHRONOLOGY
+    ======================================== */
 
-    .history-position {
+    .chronology {
       position: sticky;
-      top: 68px;
+      top: 66px;
       z-index: 40;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border-soft);
 
-      background: rgba(2, 6, 23, 0.96);
+      background:
+        rgba(7, 11, 20, 0.96);
+
       backdrop-filter: blur(12px);
     }
 
-    .history-position-inner {
-      padding: 13px 0 15px;
+    .chronology-inner {
+      padding: 11px 0 13px;
     }
 
-    .position-top {
+    .chronology-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      gap: 12px;
+      gap: 15px;
 
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    .position-label {
+    .chronology-label,
+    .chronology-date {
       margin: 0;
 
-      color: var(--white);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      font-family: monospace;
       font-size: 0.62rem;
-
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .current-date {
-      margin: 0;
+    .chronology-label {
+      color: var(--ink-faint);
+    }
 
+    .chronology-date {
       color: var(--gold-bright);
-
-      font-family: monospace;
-      font-size: 0.7rem;
       font-weight: 700;
     }
 
     .history-rail {
       position: relative;
-      height: 26px;
+      height: 17px;
     }
 
     .history-line {
@@ -213,48 +249,20 @@
       background:
         linear-gradient(
           to right,
-          rgba(244, 199, 107, 0.25),
-          rgba(244, 199, 107, 0.9),
-          rgba(244, 199, 107, 0.25)
+          rgba(214, 179, 106, 0.18),
+          rgba(214, 179, 106, 0.85),
+          rgba(214, 179, 106, 0.18)
         );
-    }
-
-    .history-point {
-      position: absolute;
-
-      top: 2px;
-
-      width: 11px;
-      height: 11px;
-
-      border: 1px solid var(--gold-muted);
-      border-radius: 50%;
-
-      background: var(--background);
-
-      transform: translateX(-50%);
-    }
-
-    .history-point.start {
-      left: 5%;
-    }
-
-    .history-point.middle {
-      left: 50%;
-    }
-
-    .history-point.end {
-      left: 95%;
     }
 
     .history-marker {
       position: absolute;
 
-      top: -1px;
+      top: 1px;
       left: 5%;
 
-      width: 17px;
-      height: 17px;
+      width: 13px;
+      height: 13px;
 
       border: 2px solid var(--gold-bright);
       border-radius: 50%;
@@ -262,269 +270,436 @@
       background: var(--gold);
 
       box-shadow:
-        0 0 15px rgba(244, 199, 107, 0.5);
+        0 0 12px
+        rgba(214, 179, 106, 0.38);
 
       transform: translateX(-50%);
 
-      transition: left 450ms ease;
+      transition: left 400ms ease;
     }
 
-    .rail-labels {
-      display: flex;
-      justify-content: space-between;
+    .chronology-context {
+      margin: 4px 0 0;
 
-      margin-top: 2px;
+      color: var(--ink-muted);
 
-      color: var(--white);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      font-family: monospace;
-      font-size: 0.58rem;
-    }
-
-    .position-context {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: 0.72rem;
+      font-size: 0.59rem;
       text-align: center;
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    /* ========================================
+       BOOK HEADER
+    ======================================== */
 
-    .hero {
-      padding: 72px 0 56px;
+    .book-header {
+      padding: 80px 0 52px;
       text-align: center;
     }
 
-    .hero-label {
+    .volume {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold-muted);
 
-      font-family: monospace;
-      font-size: 0.7rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.67rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    .hero h1 {
-      margin: 16px 0 0;
-
-      color: var(--gold);
-
-      font-size: clamp(2.7rem, 8vw, 5.2rem);
-      line-height: 1.03;
-
-      letter-spacing: -0.045em;
-
-      animation: goldPulse 4s ease-in-out infinite;
-    }
-
-    .hero-date {
-      margin: 16px 0 0;
+    .book-header h1 {
+      margin: 17px 0 0;
 
       color: var(--gold-bright);
 
-      font-family: monospace;
-      font-size: 0.8rem;
+      font-size:
+        clamp(
+          2.6rem,
+          8vw,
+          4.8rem
+        );
 
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
     }
 
-    .hero-text {
-      max-width: 760px;
+    .subtitle {
+      max-width: 680px;
 
-      margin: 24px auto 0;
+      margin: 18px auto 0;
 
-      color: var(--white);
+      color: var(--ink-muted);
 
-      font-size: 1.06rem;
-      line-height: 1.9;
+      font-style: italic;
+      font-size: 1.08rem;
     }
 
-    /* =========================
-       ARCHIVE NOTE
-    ========================= */
+    .ornament {
+      width: 120px;
 
-    .archive-note {
-      margin-bottom: 55px;
-      padding: 24px;
+      margin: 32px auto 0;
 
-      border: 1px solid rgba(244, 199, 107, 0.35);
-      border-radius: 12px;
-
-      background: rgba(244, 199, 107, 0.045);
+      border: 0;
+      border-top: 1px solid var(--gold-muted);
     }
 
-    .archive-note-label {
+    /* ========================================
+       AUTHOR
+    ======================================== */
+
+    .author-card {
+      margin-bottom: 60px;
+
+      padding: 24px 26px;
+
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+
+      text-align: center;
+    }
+
+    .author-label {
       margin: 0;
 
-      color: var(--gold);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.68rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.62rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .archive-note p:last-child {
-      margin: 12px 0 0;
+    .author-name {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.2rem;
+      font-weight: 700;
     }
 
-    /* =========================
-       HISTORY
-    ========================= */
+    .author-title {
+      margin: 5px 0 0;
 
-    .history-section {
-      padding: 36px 0;
+      color: var(--ink-muted);
 
-      border-top: 1px solid var(--border);
+      font-size: 0.91rem;
+      font-style: italic;
+      line-height: 1.65;
     }
 
-    .history-label {
+    /* ========================================
+       PREFACE
+    ======================================== */
+
+    .preface {
+      margin-bottom: 68px;
+    }
+
+    .section-kicker {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold-muted);
 
-      font-family: monospace;
-      font-size: 0.66rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.64rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .preface h2,
+    .chapter h2 {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size:
+        clamp(
+          1.65rem,
+          5vw,
+          2.25rem
+        );
+
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .preface p {
+      margin: 18px 0 0;
+    }
+
+    .signature {
+      margin-top: 28px;
+
+      color: var(--gold-bright);
+      font-style: italic;
+    }
+
+    /* ========================================
+       RESEARCH NOTE
+    ======================================== */
+
+    .research-note {
+      margin: 28px 0;
+
+      padding: 20px 22px;
+
+      border-left: 2px solid var(--gold-muted);
+
+      background:
+        rgba(214, 179, 106, 0.045);
+    }
+
+    .research-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .research-note p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
+      font-size: 0.96rem;
+    }
+
+    /* ========================================
+       CHAPTERS
+    ======================================== */
+
+    .chapter {
+      padding: 48px 0;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .chapter-number {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .history-section h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: clamp(1.6rem, 5vw, 2.35rem);
-      line-height: 1.2;
+    .chapter p {
+      margin: 18px 0 0;
     }
 
-    .history-section p {
-      margin: 16px 0 0;
-    }
-
-    .history-section strong {
+    .chapter strong {
       color: var(--gold-bright);
+      font-weight: 600;
     }
 
-    .record-box {
-      margin-top: 22px;
-      padding: 20px;
+    .chapter-opening::first-letter {
+      float: left;
 
-      border-left: 2px solid var(--gold);
-
-      background: rgba(15, 23, 42, 0.8);
-    }
-
-    .record-box-label {
-      margin: 0;
+      margin: 7px 8px 0 0;
 
       color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.65rem;
-
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      font-size: 3.6rem;
+      line-height: 0.75;
     }
 
-    .record-box p:last-child {
-      margin: 8px 0 0;
-    }
-
-    /* =========================
-       GRID
-    ========================= */
+    /* ========================================
+       HISTORY GRID
+    ======================================== */
 
     .history-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
       gap: 14px;
 
-      margin-top: 24px;
+      margin-top: 28px;
     }
 
     .history-card {
-      padding: 20px;
+      padding: 19px 20px;
 
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      border: 1px solid var(--border-soft);
 
-      background: rgba(15, 23, 42, 0.76);
+      background:
+        rgba(15, 23, 42, 0.58);
     }
 
     .history-card-label {
       margin: 0;
 
-      color: var(--white);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.62rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.59rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
     .history-card h3 {
-      margin: 7px 0 0;
+      margin: 6px 0 0;
 
       color: var(--gold);
 
-      font-size: 1.05rem;
+      font-size: 1.06rem;
+      font-weight: 600;
     }
 
     .history-card p:last-child {
       margin: 8px 0 0;
 
+      color: var(--ink-muted);
+
       font-size: 0.9rem;
+      line-height: 1.65;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
+    /* ========================================
+       COMMANDER Q OBSERVATION
+    ======================================== */
 
-    .page-navigation {
-      padding: 45px 0 80px;
+    .q-observation {
+      margin: 30px 0 6px;
 
-      border-top: 1px solid var(--border);
+      padding: 21px 23px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(214, 179, 106, 0.05),
+          rgba(15, 23, 42, 0.45)
+        );
     }
 
-    .navigation-label {
+    .q-observation-label {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.67rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.61rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .q-observation p:last-child {
+      margin: 9px 0 0;
+
+      color: var(--quote);
+      font-style: italic;
+    }
+
+    /* ========================================
+       TRANSITION
+    ======================================== */
+
+    .transition {
+      padding: 58px 0 70px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .transition-label {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.63rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .page-navigation h2 {
-      margin: 8px 0 0;
+    .transition h2 {
+      margin: 10px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .transition p {
+      margin: 16px 0 0;
+    }
+
+    .next-title {
+      margin-top: 30px !important;
 
       color: var(--gold);
 
-      font-size: 1.7rem;
-    }
-
-    .page-navigation p {
-      margin: 13px 0 0;
+      font-size: 1.15rem;
+      font-weight: 700;
     }
 
     .navigation-actions {
-      margin-top: 24px;
+      margin-top: 28px;
 
       display: flex;
       flex-wrap: wrap;
@@ -542,12 +717,23 @@
       padding: 0 20px;
 
       border: 1px solid var(--border);
-      border-radius: 9px;
+      border-radius: 5px;
 
-      background: var(--panel);
+      background:
+        rgba(15, 23, 42, 0.7);
+
       color: var(--gold);
 
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.75rem;
       font-weight: 700;
+
       text-decoration: none;
 
       transition:
@@ -559,68 +745,69 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color: rgba(244, 199, 107, 0.6);
+      border-color:
+        rgba(214, 179, 106, 0.6);
 
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
+      border-color:
+        rgba(214, 179, 106, 0.45);
 
-      background: rgba(244, 199, 107, 0.1);
+      background:
+        rgba(214, 179, 106, 0.08);
     }
 
-    /* =========================
+    /* ========================================
        FOOTER
-    ========================= */
+    ======================================== */
 
     footer {
-      padding: 30px 0;
+      padding: 34px 0;
 
-      border-top: 1px solid var(--border);
+      border-top:
+        1px solid var(--border-soft);
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.65rem;
+      line-height: 1.7;
 
       text-align: center;
-      font-size: 0.75rem;
     }
 
-    /* =========================
-       ANIMATION
-    ========================= */
-
-    @keyframes goldPulse {
-      0%,
-      100% {
-        color: var(--gold);
-
-        text-shadow:
-          0 0 0 rgba(244, 199, 107, 0);
-      }
-
-      50% {
-        color: var(--gold-bright);
-
-        text-shadow:
-          0 0 16px rgba(244, 199, 107, 0.28),
-          0 0 34px rgba(244, 199, 107, 0.1);
-      }
-    }
-
-    /* =========================
+    /* ========================================
        MOBILE
-    ========================= */
+    ======================================== */
 
     @media (max-width: 650px) {
 
       html {
-        scroll-padding-top: 155px;
+        scroll-padding-top: 135px;
+      }
+
+      body {
+        font-size: 1rem;
       }
 
       .container {
-        width: min(100% - 22px, 900px);
+        width:
+          min(
+            100% - 24px,
+            var(--max-width)
+          );
       }
 
       .header-inner {
-        min-height: 62px;
+        min-height: 60px;
       }
 
       .brand-small {
@@ -628,39 +815,39 @@
       }
 
       .brand-name {
-        font-size: 0.84rem;
+        font-size: 0.88rem;
       }
 
       .home-link {
-        font-size: 0.67rem;
-      }
-
-      .history-position {
-        top: 62px;
-      }
-
-      .position-label {
-        font-size: 0.55rem;
-      }
-
-      .current-date {
         font-size: 0.62rem;
       }
 
-      .rail-labels {
-        font-size: 0.52rem;
+      .chronology {
+        top: 60px;
       }
 
-      .position-context {
-        font-size: 0.65rem;
+      .chronology-label {
+        font-size: 0.53rem;
       }
 
-      .hero {
-        padding: 52px 0 44px;
+      .chronology-date {
+        font-size: 0.56rem;
       }
 
-      .hero-text {
-        font-size: 1rem;
+      .chronology-context {
+        font-size: 0.53rem;
+      }
+
+      .book-header {
+        padding: 58px 0 42px;
+      }
+
+      .author-card {
+        padding: 21px 14px;
+      }
+
+      .chapter {
+        padding: 40px 0;
       }
 
       .history-grid {
@@ -694,18 +881,21 @@
 
 <body>
 
-  <!-- =========================
+  <!-- ========================================
        HEADER
-  ========================== -->
+  ========================================= -->
 
   <header class="site-header">
 
     <div class="container header-inner">
 
-      <a href="../index.html" class="brand">
+      <a
+        href="../index.html"
+        class="brand"
+      >
 
         <p class="brand-small">
-          QKommand Archive
+          The Historical Records of Commander Q
         </p>
 
         <p class="brand-name">
@@ -714,7 +904,10 @@
 
       </a>
 
-      <a href="../index.html" class="home-link">
+      <a
+        href="../index.html"
+        class="home-link"
+      >
         ← Road Through Time
       </a>
 
@@ -723,34 +916,32 @@
   </header>
 
 
-  <!-- =========================
-       HISTORICAL POSITION
-  ========================== -->
+  <!-- ========================================
+       CHRONOLOGY
+  ========================================= -->
 
-  <aside class="history-position">
+  <aside class="chronology">
 
-    <div class="container history-position-inner">
+    <div class="container chronology-inner">
 
-      <div class="position-top">
+      <div class="chronology-top">
 
-        <p class="position-label">
-          Tyrian Historical Position
+        <p class="chronology-label">
+          Historical Position
         </p>
 
-        <p class="current-date" id="currentDate">
+        <p
+          class="chronology-date"
+          id="currentDate"
+        >
           2 AE
         </p>
 
       </div>
 
-
       <div class="history-rail">
 
         <div class="history-line"></div>
-
-        <span class="history-point start"></span>
-        <span class="history-point middle"></span>
-        <span class="history-point end"></span>
 
         <span
           class="history-marker"
@@ -759,20 +950,11 @@
 
       </div>
 
-
-      <div class="rail-labels">
-
-        <span>2 AE</span>
-
-        <span>452 AE</span>
-
-        <span>1013 AE</span>
-
-      </div>
-
-
-      <p class="position-context" id="positionContext">
-        YOU ARE HERE // The Mortal Age Expands
+      <p
+        class="chronology-context"
+        id="positionContext"
+      >
+        THE MORTAL AGE EXPANDS
       </p>
 
     </div>
@@ -782,44 +964,29 @@
 
   <main>
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <!-- ========================================
+         BOOK HEADER
+    ========================================= -->
 
-    <section class="hero">
+    <section class="book-header">
 
       <div class="container">
 
-        <p class="hero-label">
-          Historical Archive // Record 06
+        <p class="volume">
+          Volume VI // The Age of Mortal Kingdoms
         </p>
 
         <h1>
           Kingdoms and Guild Wars
         </h1>
 
-        <p class="hero-date">
-          2 AE – 1013 AE
+        <p class="subtitle">
+          On the rise of Human kingdoms, the growing power
+          of Guilds, and a thousand years of conflict,
+          trade, prophecy, and catastrophe after the Exodus.
         </p>
 
-        <p class="hero-text">
-          The gods had left.
-        </p>
-
-        <p class="hero-text">
-          The world did not become quiet.
-        </p>
-
-        <p class="hero-text">
-          Kings, guilds, dynasties, traders, prophets,
-          and conquerors now shaped the age.
-        </p>
-
-        <p class="hero-text">
-          Over the next thousand years, mortal civilizations
-          would build kingdoms, cross continents, reach into the Mists,
-          and create conflicts powerful enough to reshape history.
-        </p>
+        <hr class="ornament">
 
       </div>
 
@@ -828,128 +995,180 @@
 
     <div class="container">
 
-      <!-- =========================
-           ARCHIVE NOTE
-      ========================== -->
+      <!-- ========================================
+           AUTHOR
+      ========================================= -->
 
-      <div class="archive-note">
+      <section class="author-card">
 
-        <p class="archive-note-label">
-          Archive Context
+        <p class="author-label">
+          Compiled and Annotated By
         </p>
 
-        <p>
-          This is a long transitional era rather than a single war.
-          After the Exodus, human kingdoms expanded and international
-          trade flourished. Guilds grew from economic organizations
-          into political and military powers capable of operating
-          across national borders.
+        <p class="author-name">
+          Commander Q
         </p>
 
-        <p>
-          When the Bloodstones were scattered across Tyria,
-          competition for their power helped ignite the conflicts
-          that became known as the Guild Wars.
-        </p>
-
-      </div>
-
-
-      <!-- =========================
-           RECORD 01
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="5"
-        data-date="2 AE"
-        data-context="YOU ARE HERE // Orr Becomes Independent"
-      >
-
-        <p class="history-label">
-          Record 01 // Orr
-        </p>
-
-        <h2>
-          Orr becomes an independent nation
-        </h2>
-
-        <p>
-          In <strong>2 AE</strong>,
-          Orr became an independent human nation.
-        </p>
-
-        <p>
-          The kingdom possessed a particularly strong relationship
-          with magic and remained closely associated with
-          <strong>Arah</strong>, the former city of the gods.
-        </p>
-
-        <p>
-          Orr would become one of the three great human
-          kingdoms of continental Tyria alongside
-          Ascalon and Kryta.
+        <p class="author-title">
+          Captain Commander of the Vanguard Knights
+          <br>
+          Researcher of Tyrian History and the Mists
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 02
-      ========================== -->
+      <!-- ========================================
+           PREFACE
+      ========================================= -->
 
-      <section
-        class="history-section"
-        data-position="12"
-        data-date="c. 100 AE"
-        data-context="YOU ARE HERE // The Bloodstones Scatter"
-      >
+      <section class="preface">
 
-        <p class="history-label">
-          Record 02 // The Ring of Fire
+        <p class="section-kicker">
+          Author's Preface
         </p>
 
         <h2>
-          The Bloodstones return to the world
+          Mortals inherit the consequences
         </h2>
 
         <p>
-          Roughly a century after the Exodus,
-          the volcano known as
-          <strong>Abaddon's Mouth</strong>
-          erupted.
+          The Exodus ended the age when the Gods physically
+          inhabited Tyria, but it did not remove the world they
+          had helped shape. Human kingdoms remained, magical
+          traditions continued, and the Bloodstones were still
+          hidden within the Ring of Fire.
         </p>
 
         <p>
-          The Bloodstones hidden within the Ring of Fire
-          were scattered across Tyria.
+          Over the next thousand years, political power became
+          increasingly mortal. Kingdoms expanded, international
+          trade connected distant continents, and Guilds grew
+          from organizations of common interest into institutions
+          capable of rivaling rulers and influencing nations.
         </p>
 
         <p>
-          Their magical influence spread into the lands
-          surrounding them.
+          This period also produced disasters and discoveries
+          whose consequences would extend into the modern age.
+          The Bloodstones returned to the wider world, Glint
+          recorded the Flameseeker Prophecies, Lord Odran forced
+          open paths into the Mists, Shiro Tagachi transformed
+          Cantha, and the Guild Wars repeatedly drew kingdoms
+          into conflicts that began beyond the authority of kings.
+        </p>
+
+        <p class="signature">
+          — Commander Q
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER I
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="5"
+        data-date="2 AE"
+        data-context="ORR BECOMES INDEPENDENT"
+      >
+
+        <p class="chapter-number">
+          I
+        </p>
+
+        <h2>
+          The Human kingdoms stand on their own
+        </h2>
+
+        <p class="chapter-opening">
+          In <strong>2 AE</strong>, Orr became an independent
+          Human nation. Its close association with
+          <strong>Arah</strong> and the magical traditions
+          surrounding the former City of the Gods gave the
+          kingdom a distinctive place among the Human powers
+          of continental Tyria.
         </p>
 
         <p>
-          Mortals soon realized the enormous power
-          associated with the stones.
+          Alongside <strong>Ascalon</strong> and the territories
+          that would become <strong>Kryta</strong>, Orr formed
+          part of a changing political landscape in which Human
+          nations increasingly governed themselves without the
+          physical presence of the Gods.
         </p>
 
         <p>
-          Competition for that power would help ignite
-          a new kind of conflict.
+          The first century after the Exodus was remembered as
+          a period of relative prosperity. The Bloodstones were
+          still hidden, kingdoms continued to develop, and the
+          conflicts that would later define the Guild Wars had
+          not yet consumed the continent.
         </p>
 
-        <div class="record-box">
+      </section>
 
-          <p class="record-box-label">
-            Important Boundary
+
+      <!-- ========================================
+           CHAPTER II
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="13"
+        data-date="100 AE"
+        data-context="THE BLOODSTONES SCATTER"
+      >
+
+        <p class="chapter-number">
+          II
+        </p>
+
+        <h2>
+          Abaddon's Mouth erupts
+        </h2>
+
+        <p class="chapter-opening">
+          In approximately <strong>100 AE</strong>, the volcano
+          known as <strong>Abaddon's Mouth</strong> erupted.
+          The five major <strong>Bloodstones</strong> that had
+          been placed within the Ring of Fire were scattered
+          across Tyria.
+        </p>
+
+        <p>
+          For the first time since the Gods had hidden them,
+          the Stones were again present in regions accessible
+          to mortal civilizations. Their magical power attracted
+          the attention of organizations capable of pursuing that
+          power beyond the borders of any single kingdom.
+        </p>
+
+        <p>
+          The first of the conflicts remembered as the
+          <strong>Guild Wars</strong> began during this period
+          as Guilds competed for control of the Bloodstones.
+          What began as a struggle between powerful organizations
+          eventually drew <strong>Ascalon</strong> and
+          <strong>Kryta</strong> into the fighting.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Research Note // First Guild War
           </p>
 
           <p>
-            The Bloodstones were placed within Abaddon's Mouth
-            before the Exodus. Their later scattering was caused
-            by the volcano's eruption roughly a century afterward.
+            The exact beginning and end of the First Guild War
+            are not securely dated. The surviving record places
+            its beginning sometime around the period following
+            the eruption of Abaddon's Mouth and directly connects
+            the conflict to competition over the scattered
+            Bloodstones.
           </p>
 
         </div>
@@ -957,636 +1176,477 @@
       </section>
 
 
-      <!-- =========================
-           RECORD 03
-      ========================== -->
+      <!-- ========================================
+           CHAPTER III
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="18"
+        class="chapter"
+        data-position="21"
         data-date="Early Centuries AE"
-        data-context="YOU ARE HERE // The Guilds Gain Power"
+        data-context="THE GUILDS GAIN POWER"
       >
 
-        <p class="history-label">
-          Record 03 // Rise of the Guilds
+        <p class="chapter-number">
+          III
         </p>
 
         <h2>
-          Organizations begin rivaling kings
+          Guilds become powers of their own
         </h2>
 
-        <p>
-          The centuries after the Exodus brought
-          prosperity, invention, and expanding trade.
+        <p class="chapter-opening">
+          Guilds had existed as organizations for trade,
+          professions, religion, magic, military service, and
+          other shared interests. As their wealth and influence
+          expanded, some began operating across political borders
+          and accumulating power that individual rulers could
+          not easily control.
         </p>
 
         <p>
-          Guilds originally developed largely as
-          economic organizations.
+          Military Guilds became particularly influential.
+          They could enforce laws, protect commercial interests,
+          maintain armed forces, and support factions whose
+          loyalties did not always align with the governments
+          of the lands in which they operated.
         </p>
 
         <p>
-          Merchants used them to exchange goods,
-          establish prices, and build networks
-          that crossed political borders.
+          The Guild Wars demonstrated what could happen when
+          these organizations fought one another. Conflicts that
+          began outside the structures of national government
+          could eventually pull entire kingdoms into war.
         </p>
 
-        <p>
-          But the idea spread.
-        </p>
+        <div class="q-observation">
 
-        <p>
-          Military, religious, magical,
-          and social guilds appeared.
-        </p>
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
 
-        <p>
-          Some operated across several kingdoms
-          at the same time.
-        </p>
+          <p>
+            A kingdom knows where its border ends. A Guild does
+            not necessarily have that problem. Once organizations
+            can move wealth, soldiers, and loyalty across borders,
+            kings are no longer the only people capable of
+            starting wars.
+          </p>
 
-        <p>
-          Eventually military guilds became powerful enough
-          to enforce laws and influence governments.
-        </p>
-
-        <p>
-          Kings still ruled.
-          But they no longer held all the power.
-        </p>
+        </div>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 04
-      ========================== -->
+      <!-- ========================================
+           CHAPTER IV
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="24"
-        data-date="Date Uncertain"
-        data-context="YOU ARE HERE // The Forgotten Withdraw"
+        class="chapter"
+        data-position="29"
+        data-date="221–272 AE"
+        data-context="TRADE AND PROPHECY"
       >
 
-        <p class="history-label">
-          Record 04 // The Forgotten
+        <p class="chapter-number">
+          IV
         </p>
 
         <h2>
-          Human expansion changes an ancient world
+          The continents grow closer
         </h2>
 
-        <p>
-          Long before humanity dominated continental Tyria,
-          the <strong>Forgotten</strong>
-          had inhabited large portions of the world.
+        <p class="chapter-opening">
+          While conflict reshaped continental Tyria, trade was
+          connecting the wider Human world. In
+          <strong>221 AE</strong>, Cantha entered the
+          <strong>Age of the Hedgehog</strong> and expanded
+          formal trade with Tyria, Elona, and northern regions.
         </p>
 
         <p>
-          As human populations expanded,
-          the Forgotten gradually withdrew
-          toward the <strong>Crystal Desert</strong>.
+          Goods were not the only things crossing the seas.
+          Political ideas, religious traditions, travelers, and
+          knowledge moved with the same networks. Human societies
+          remained distinct, but their histories were becoming
+          increasingly connected.
         </p>
-
-        <p>
-          There they became closely associated with
-          <strong>Glint</strong>
-          and the trials surrounding
-          <strong>Ascension</strong>.
-        </p>
-
-        <p>
-          Their retreat was part of a larger transformation:
-          humanity was becoming one of the dominant civilizations
-          of the known world.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 05
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="32"
-        data-date="221 AE"
-        data-context="YOU ARE HERE // Cantha Opens Trade"
-      >
-
-        <p class="history-label">
-          Record 05 // International Trade
-        </p>
-
-        <h2>
-          The continents become more connected
-        </h2>
-
-        <p>
-          In <strong>221 AE</strong>,
-          Cantha entered the
-          <strong>Age of the Hedgehog</strong>.
-        </p>
-
-        <p>
-          Formal trade expanded between
-          <strong>Cantha, Tyria, and Elona</strong>.
-        </p>
-
-        <p>
-          Goods, people, ideas, and political influence
-          increasingly crossed continental borders.
-        </p>
-
-        <p>
-          The known human world was becoming
-          more interconnected.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 06
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="39"
-        data-date="272 AE"
-        data-context="YOU ARE HERE // Flameseeker Prophecies"
-      >
-
-        <p class="history-label">
-          Record 06 // Glint
-        </p>
-
-        <h2>
-          Glint records a prophecy for a distant future
-        </h2>
 
         <p>
           In <strong>272 AE</strong>,
-          Glint foresaw the events remembered as the
-          <strong>Flameseeker Prophecies</strong>.
+          <strong>Glint</strong> compiled the
+          <strong>Flameseeker Prophecies</strong>, recording
+          visions concerning events that would not reach their
+          fulfillment for centuries.
         </p>
 
         <p>
-          The prophecies concerned future catastrophes
-          that would threaten humanity and transform Tyria.
-        </p>
-
-        <p>
-          Their meaning would not become fully apparent
-          for centuries.
-        </p>
-
-        <p>
-          Eventually they would become central
-          to the fall of the Mursaat,
-          the opening of the Door of Komalie,
-          and the events of the first
-          <strong>Guild Wars</strong> campaign.
+          At the time, the prophecy belonged to an uncertain
+          future. By 1072 AE, its words would guide events
+          surrounding the Mursaat, the Door of Komalie, and
+          the rise of the Titans.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 07
-      ========================== -->
+      <!-- ========================================
+           CHAPTER V
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="46"
+        class="chapter"
+        data-position="37"
         data-date="300–358 AE"
-        data-context="YOU ARE HERE // Kryta Becomes Independent"
+        data-context="KRYTA BECOMES A KINGDOM"
       >
 
-        <p class="history-label">
-          Record 07 // Kryta
+        <p class="chapter-number">
+          V
         </p>
 
         <h2>
-          A colony becomes a kingdom
+          Kryta separates from Elona
         </h2>
 
-        <p>
-          In <strong>300 AE</strong>,
-          Kryta was established as a colony of Elona.
+        <p class="chapter-opening">
+          In <strong>300 AE</strong>, Kryta was established as
+          a colony of Elona. Human settlement expanded throughout
+          the region and increasingly brought settlers into
+          conflict with the <strong>Centaurs</strong> who also
+          inhabited the western lands.
         </p>
 
         <p>
-          Human expansion through the region
-          intensified conflict with local
-          centaur populations.
+          By <strong>358 AE</strong>, Kryta had gained its
+          independence and emerged as a kingdom in its own right.
+          It joined Ascalon and Orr as one of the major Human
+          powers of continental Tyria.
         </p>
 
         <p>
-          In <strong>358 AE</strong>,
-          Kryta gained its independence.
-        </p>
-
-        <p>
-          It joined Ascalon and Orr
-          as one of the major human powers
-          of continental Tyria.
+          This political independence also mattered to the Guild
+          Wars. Ascalon and Kryta repeatedly became the kingdoms
+          most directly drawn into struggles between Guilds,
+          turning organizational rivalries into national wars.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 08
-      ========================== -->
+      <!-- ========================================
+           CHAPTER VI
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="54"
+        class="chapter"
+        data-position="45"
         data-date="452–456 AE"
-        data-context="YOU ARE HERE // The Scarab Plague"
+        data-context="THE SCARAB PLAGUE"
       >
 
-        <p class="history-label">
-          Record 08 // Elona
+        <p class="chapter-number">
+          VI
         </p>
 
         <h2>
-          The Primeval Dynasty falls
+          The Scarab Plague ends a Dynasty
         </h2>
 
-        <p>
-          In <strong>452 AE</strong>,
-          the <strong>Scarab Plague</strong>
-          began spreading through Elona.
+        <p class="chapter-opening">
+          In <strong>452 AE</strong>, the
+          <strong>Scarab Plague</strong> began spreading through
+          Elona. The disease devastated the population of Istan
+          and killed the ruling family of the
+          <strong>Primeval Dynasty</strong>.
         </p>
 
         <p>
-          The plague devastated Istan,
-          killed enormous numbers of people,
-          and wiped out the royal family
-          of the Primeval Kings.
+          Fahranur and much of Istan were abandoned as survivors
+          attempted to escape the plague. By
+          <strong>456 AE</strong>, the worst years had passed,
+          but the political order that had governed Elona for
+          centuries was gone.
         </p>
 
         <p>
-          Istan was abandoned.
-        </p>
-
-        <p>
-          By <strong>456 AE</strong>,
-          the plague years had ended,
-          but the political order they destroyed
-          could not simply be restored.
+          Later rulers attempted to fill the vacuum, producing
+          further wars and dynastic struggles. Over time,
+          <strong>Istan</strong>, <strong>Kourna</strong>,
+          and <strong>Vabbi</strong> emerged as the distinct
+          provinces familiar to later generations.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 09
-      ========================== -->
+      <!-- ========================================
+           CHAPTER VII
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="61"
-        data-date="After 456 AE"
-        data-context="YOU ARE HERE // Elona Fractures"
-      >
-
-        <p class="history-label">
-          Record 09 // Shattered Dynasties
-        </p>
-
-        <h2>
-          Elona survives political collapse
-        </h2>
-
-        <p>
-          The fall of the Primeval Kings
-          was followed by new rulers
-          and eventually further political conflict.
-        </p>
-
-        <p>
-          The
-          <strong>Pretender Wars</strong>
-          helped usher in a period remembered as the
-          <strong>Shattered Dynasty Era</strong>.
-        </p>
-
-        <p>
-          In time,
-          Elona developed into the three provinces
-          familiar in later history:
-          <strong>Istan, Kourna, and Vabbi</strong>.
-        </p>
-
-        <p>
-          The old unified dynastic order
-          had given way to a more divided political landscape.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 10
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="67"
+        class="chapter"
+        data-position="55"
         data-date="757–868 AE"
-        data-context="YOU ARE HERE // Palawa Joko Rises"
+        data-context="PALAWA JOKO AND TURAI OSSA"
       >
 
-        <p class="history-label">
-          Record 10 // Palawa Joko
+        <p class="chapter-number">
+          VII
         </p>
 
         <h2>
-          An undead conqueror challenges Elona
+          Elona faces an Undead conqueror
         </h2>
 
-        <p>
-          By <strong>757 AE</strong>,
-          the undead lord
-          <strong>Palawa Joko</strong>
-          had established his Bone Palace
-          within the Desolation.
+        <p class="chapter-opening">
+          By <strong>757 AE</strong>, the Undead lord
+          <strong>Palawa Joko</strong> had established the
+          <strong>Bone Palace</strong> within the Desolation.
+          A century later, he turned his attention toward the
+          living provinces of Elona.
         </p>
 
         <p>
-          In <strong>860 AE</strong>,
-          Joko invaded Elona
-          and captured much of the Northern Province,
-          earning the title
-          <strong>Scourge of Vabbi</strong>.
-        </p>
-
-        <p>
-          For two years,
-          his forces threatened the Elonian provinces.
-        </p>
-
-        <p>
-          In <strong>862 AE</strong>,
-          the Kournan general
-          <strong>Turai Ossa</strong>
-          defeated Joko at the
+          In <strong>860 AE</strong>, Joko invaded and conquered
+          much of the northern region, earning the name
+          <strong>Scourge of Vabbi</strong>. His advance was
+          finally stopped in <strong>862 AE</strong> by
+          <strong>Turai Ossa</strong> at the
           <strong>Battle of Jahai</strong>.
         </p>
 
         <p>
-          The
-          <strong>Order of Whispers</strong>,
-          originating from Turai's intelligence network,
-          helped seal the defeated lich away
-          and guarded his prison.
+          Joko was defeated but not destroyed. Turai's agents,
+          associated with the beginnings of what became the
+          <strong>Order of Whispers</strong>, helped imprison
+          the Lich within the region.
         </p>
 
         <p>
-          In <strong>868 AE</strong>,
-          Turai led the
-          <strong>Great Pilgrimage</strong>
-          into the Crystal Desert
-          seeking Ascension.
+          Turai's victory eventually led him toward a different
+          ambition. In <strong>868 AE</strong>, he led the
+          <strong>Great Pilgrimage</strong> into the Crystal
+          Desert in search of Ascension.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 11
-      ========================== -->
+      <!-- ========================================
+           CHAPTER VIII
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="73"
+        class="chapter"
+        data-position="64"
         data-date="851 AE"
-        data-context="YOU ARE HERE // Lord Odran Reaches the Rift"
+        data-context="LORD ODRAN ENTERS THE RIFT"
       >
 
-        <p class="history-label">
-          Record 11 // Lord Odran
+        <p class="chapter-number">
+          VIII
         </p>
 
         <h2>
-          A mortal forces open the way into the Mists
+          Lord Odran opens the Mists
         </h2>
 
-        <p>
-          In <strong>851 AE</strong>,
-          the powerful arcanist
-          <strong>Lord Odran</strong>
-          used his own magic and the sacrifice
-          of many souls to open a portal
-          into the Mists.
+        <p class="chapter-opening">
+          In <strong>851 AE</strong>, the Human arcanist
+          <strong>Lord Odran</strong> achieved something once
+          thought beyond mortal reach. Through powerful magic
+          and the sacrifice of lives, he opened a portal into
+          the <strong>Mists</strong> and eventually reached
+          the <strong>Rift</strong> itself.
         </p>
 
         <p>
-          He eventually reached the
-          <strong>Rift</strong>
-          and traveled through the
-          <strong>Hall of Heroes</strong>.
+          Odran traveled through the
+          <strong>Hall of Heroes</strong> and established
+          hidden portals linking the Rift to other worlds.
+          For a time, these passages remained concealed by
+          his enchantments.
         </p>
 
         <p>
-          Over time,
-          Odran created hidden portals
-          linking the Rift to other worlds.
+          The spirits of the Hall eventually killed Odran.
+          With his death, the magic concealing his portals
+          failed, leaving routes through the Mists available
+          to others.
         </p>
 
-        <p>
-          When the spirits of the Hall
-          eventually killed him,
-          the enchantments hiding those portals failed.
-        </p>
+        <div class="q-observation">
 
-        <p>
-          Routes once known only to Odran
-          became accessible to other mortals.
-        </p>
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            Odran did not discover the Mists. He discovered
+            that a sufficiently determined mortal could force
+            open a door into them. Those are very different
+            accomplishments, and the second may be the more
+            dangerous one.
+          </p>
+
+        </div>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 12
-      ========================== -->
+      <!-- ========================================
+           CHAPTER IX
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="80"
+        class="chapter"
+        data-position="73"
         data-date="872 AE"
-        data-context="YOU ARE HERE // The Jade Wind"
+        data-context="THE JADE WIND"
       >
 
-        <p class="history-label">
-          Record 12 // Cantha
+        <p class="chapter-number">
+          IX
         </p>
 
         <h2>
-          Shiro Tagachi changes an entire landscape
+          Shiro Tagachi transforms Cantha
         </h2>
 
-        <p>
-          In <strong>872 AE</strong>,
-          imperial bodyguard
-          <strong>Shiro Tagachi</strong>
-          assassinated
-          <strong>Emperor Angsiyan</strong>
-          at the Harvest Temple.
+        <p class="chapter-opening">
+          In <strong>872 AE</strong>, the Imperial bodyguard
+          <strong>Shiro Tagachi</strong> assassinated
+          <strong>Emperor Angsiyan</strong> during the Harvest
+          Ceremony at the Harvest Temple.
         </p>
 
         <p>
           Shiro was killed by
           <strong>Saint Viktor</strong>,
-          <strong>Archemorus</strong>,
-          and the assassin
-          <strong>Vizu</strong>.
-        </p>
-
-        <p>
-          But his death released
-          an enormous magical shockwave
-          remembered as the
+          <strong>Archemorus</strong>, and
+          <strong>Vizu</strong>, but his death released a
+          massive wave of magical energy known as the
           <strong>Jade Wind</strong>.
         </p>
 
         <p>
-          The Jade Sea solidified.
-        </p>
-
-        <p>
-          The Echovald Forest was petrified.
+          The catastrophe reshaped southern Cantha. The
+          <strong>Jade Sea</strong> became solid jade, while
+          the <strong>Echovald Forest</strong> was petrified.
+          Entire cultures survived within landscapes that had
+          been permanently transformed in a matter of moments.
         </p>
 
         <p>
           Cantha entered the
-          <strong>Age of the Dragon</strong>.
+          <strong>Age of the Dragon</strong>, carrying the
+          consequences of Shiro's death into the centuries
+          that followed.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 13
-      ========================== -->
+      <!-- ========================================
+           CHAPTER X
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="87"
+        class="chapter"
+        data-position="81"
         data-date="902–940 AE"
-        data-context="YOU ARE HERE // International Ties Weaken"
+        data-context="CANTHAN CONNECTIONS WEAKEN"
       >
 
-        <p class="history-label">
-          Record 13 // Isolation and Trade
+        <p class="chapter-number">
+          X
         </p>
 
         <h2>
-          Connections between nations weaken
+          The international Human world begins to pull apart
         </h2>
 
-        <p>
-          In <strong>902 AE</strong>,
-          Cantha dissolved its long-standing
-          trade agreements with the northern
-          human kingdoms by imperial decree.
+        <p class="chapter-opening">
+          The trade networks that had connected Human societies
+          for centuries became less stable during the tenth
+          century AE. In <strong>902 AE</strong>, Cantha ended
+          long-standing trade agreements with the northern
+          Human kingdoms by Imperial decree.
         </p>
 
         <p>
-          By <strong>940 AE</strong>,
-          Cantha's embassy in Ascalon
-          and its diplomatic presence in Elona
-          had formally closed.
+          By <strong>940 AE</strong>, Canthan diplomatic
+          establishments in Ascalon and Elona had closed.
+          Piracy and political changes further weakened the
+          routes that had once connected distant Human powers.
         </p>
 
         <p>
-          Political connections weakened,
-          while piracy further disrupted trade.
-        </p>
-
-        <p>
-          The connections between continents
-          had not vanished,
-          but they had become less stable.
+          The continents were not entirely isolated, but the
+          era of expanding international contact had given way
+          to a period in which regional concerns increasingly
+          dominated political life.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 14
-      ========================== -->
+      <!-- ========================================
+           CHAPTER XI
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="93"
+        class="chapter"
+        data-position="90"
         data-date="Dates Uncertain"
-        data-context="YOU ARE HERE // The First Guild Wars"
+        data-context="THE SECOND GUILD WAR"
       >
 
-        <p class="history-label">
-          Record 14 // The Guild Wars
+        <p class="chapter-number">
+          XI
         </p>
 
         <h2>
-          Competition for power becomes war
+          The Guild Wars return
         </h2>
 
-        <p>
-          The eruption of Abaddon's Mouth
-          scattered the Bloodstones across Tyria.
+        <p class="chapter-opening">
+          The First Guild War did not settle the competition
+          among the Guilds. At an uncertain later date, a
+          <strong>Second Guild War</strong> again drew Ascalon
+          and Kryta into conflict.
         </p>
 
         <p>
-          Once their power became known,
-          guilds began competing to control them.
+          The incomplete dating of the first two wars makes
+          their individual campaigns difficult to reconstruct,
+          but their broader effect is clear. Guild organizations
+          had accumulated enough influence that disputes between
+          them repeatedly destabilized Human kingdoms.
         </p>
 
         <p>
-          That competition escalated into the
-          <strong>First Guild War</strong>.
+          The wars were therefore not simply national conflicts
+          between Ascalon and Kryta. The kingdoms were participants
+          in struggles whose origins lay in competing Guilds,
+          access to magical power, territorial influence, and
+          rival political interests.
         </p>
 
-        <p>
-          Ascalon and Kryta were eventually
-          dragged into the fighting.
-        </p>
+        <div class="research-note">
 
-        <p>
-          A
-          <strong>Second Guild War</strong>
-          followed at an uncertain date,
-          again involving Ascalon and Kryta.
-        </p>
-
-        <p>
-          By this point,
-          conflicts that began between guilds
-          had become wars capable of consuming kingdoms.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Why They Were Called Guild Wars
+          <p class="research-note-label">
+            Historical Caution
           </p>
 
           <p>
-            The conflicts were not simply wars
-            between Ascalon and Kryta.
-            Powerful guilds were at the center
-            of the struggle,
-            competing for Bloodstones,
-            territory,
-            political influence,
-            and military power.
+            The surviving chronology does not provide secure
+            beginning or ending dates for the First and Second
+            Guild Wars. Their placement in this record therefore
+            follows the known sequence without assigning dates
+            the sources do not preserve.
           </p>
 
         </div>
@@ -1594,239 +1654,89 @@
       </section>
 
 
-      <!-- =========================
-           RECORD 15
-      ========================== -->
+      <!-- ========================================
+           CHAPTER XII
+      ========================================= -->
 
       <section
-        class="history-section"
+        class="chapter"
         data-position="100"
         data-date="1013 AE"
-        data-context="YOU ARE HERE // The Third Guild War Begins"
+        data-context="THE THIRD GUILD WAR BEGINS"
       >
 
-        <p class="history-label">
-          Record 15 // The Third Guild War
+        <p class="chapter-number">
+          XII
         </p>
 
         <h2>
           The bloodiest Guild War begins
         </h2>
 
-        <p>
-          In <strong>1013 AE</strong>,
-          the
-          <strong>Third Guild War</strong>
-          began.
+        <p class="chapter-opening">
+          In <strong>1013 AE</strong>, the
+          <strong>Third Guild War</strong> began. Ascalon and
+          Kryta were once again drawn into widespread fighting,
+          and the conflict eventually became more destructive
+          than either of the Guild Wars that preceded it.
         </p>
 
         <p>
-          Ascalon and Kryta
-          again became consumed by conflict.
+          <strong>Orr</strong> initially remained outside the
+          conflict. King Reza eventually sent Orrian forces into
+          the war in an attempt to impose peace, but Orr's entry
+          only increased the scale of the casualties.
         </p>
 
         <p>
-          Orr initially remained outside the war.
+          The Third Guild War continued for decades. Human
+          kingdoms remained focused upon one another while the
+          balance of power beyond their borders was changing.
         </p>
 
         <p>
-          Eventually,
-          King Reza sent Orrian forces
-          into the conflict hoping to end it.
-        </p>
-
-        <p>
-          Instead,
-          Orr's entry made the war
-          even more destructive.
-        </p>
-
-        <p>
-          The Third Guild War
-          would continue for decades.
-        </p>
-
-        <p>
-          And while the human kingdoms
-          fought one another,
-          the Charr were preparing
-          to reclaim lands
-          humanity had taken from them.
+          The <strong>Charr</strong>, driven northward centuries
+          earlier during Human expansion into Ascalon, were
+          preparing a campaign that would bring the Guild Wars
+          to an abrupt end.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           ERA SUMMARY
-      ========================== -->
+      <!-- ========================================
+           NEXT VOLUME
+      ========================================= -->
 
-      <section class="history-section">
+      <section class="transition">
 
-        <p class="history-label">
-          Era Summary
+        <p class="transition-label">
+          End of Volume VI
         </p>
 
         <h2>
-          Mortals inherit the world
-        </h2>
-
-
-        <div class="history-grid">
-
-          <div class="history-card">
-
-            <p class="history-card-label">
-              Kingdoms
-            </p>
-
-            <h3>
-              Human Powers Rise
-            </h3>
-
-            <p>
-              Ascalon, Kryta, Orr, Elona,
-              and Cantha develop into major
-              political and cultural powers.
-            </p>
-
-          </div>
-
-
-          <div class="history-card">
-
-            <p class="history-card-label">
-              Magic
-            </p>
-
-            <h3>
-              Bloodstones Scatter
-            </h3>
-
-            <p>
-              The Ring of Fire eruption
-              returns the Bloodstones
-              to the wider world.
-            </p>
-
-          </div>
-
-
-          <div class="history-card">
-
-            <p class="history-card-label">
-              Politics
-            </p>
-
-            <h3>
-              Guilds Gain Power
-            </h3>
-
-            <p>
-              Guilds evolve from trade organizations
-              into political and military powers
-              capable of influencing kingdoms.
-            </p>
-
-          </div>
-
-
-          <div class="history-card">
-
-            <p class="history-card-label">
-              The Mists
-            </p>
-
-            <h3>
-              Lord Odran
-            </h3>
-
-            <p>
-              A mortal forces open routes
-              through the Mists
-              and into the Rift.
-            </p>
-
-          </div>
-
-
-          <div class="history-card">
-
-            <p class="history-card-label">
-              Catastrophe
-            </p>
-
-            <h3>
-              Jade Wind
-            </h3>
-
-            <p>
-              Shiro's death permanently transforms
-              the landscape of Cantha.
-            </p>
-
-          </div>
-
-
-          <div class="history-card">
-
-            <p class="history-card-label">
-              1013 AE
-            </p>
-
-            <h3>
-              Third Guild War
-            </h3>
-
-            <p>
-              The bloodiest of the Guild Wars begins
-              while another threat gathers
-              beyond humanity's borders.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           NEXT ENTRY
-      ========================== -->
-
-      <section class="page-navigation">
-
-        <p class="navigation-label">
-          Continue the Road Through Time
-        </p>
-
-        <h2>
-          The Guild Wars Era
+          The road continues
         </h2>
 
         <p>
-          The Third Guild War had begun.
+          By the beginning of the eleventh century AE, the
+          Human kingdoms were still fighting a war that had
+          already lasted generations. They did not know that
+          the conflict was approaching its end for reasons none
+          of them had chosen.
+        </p>
+
+        <p class="next-title">
+          Volume VII // The Guild Wars Era
         </p>
 
         <p>
-          For decades,
-          Ascalon, Kryta, and Orr
-          would remain consumed by human conflict.
-        </p>
-
-        <p>
-          Then, in <strong>1070 AE</strong>,
-          the Charr invaded Ascalon.
-        </p>
-
-        <p>
-          The Searing would transform
-          the conflict and begin the chain of events
-          that leads directly into
+          The next archive follows the final decades of the
+          Third Guild War, the Charr invasion of Ascalon,
+          the <strong>Searing</strong> of 1070 AE, and the
+          events that lead directly into
           <strong>Guild Wars: Prophecies</strong>.
         </p>
-
 
         <div class="navigation-actions">
 
@@ -1834,7 +1744,7 @@
             href="../exodus-of-gods/index.html"
             class="button"
           >
-            ← The Exodus of the Gods
+            ← Volume V
           </a>
 
           <a
@@ -1848,7 +1758,7 @@
             href="../guild-wars-era/index.html"
             class="button button-primary"
           >
-            The Guild Wars Era →
+            Read Volume VII →
           </a>
 
         </div>
@@ -1860,26 +1770,32 @@
   </main>
 
 
-  <!-- =========================
+  <!-- ========================================
        FOOTER
-  ========================== -->
+  ========================================= -->
 
   <footer>
 
     <div class="container">
 
-      Guild Wars Living Lore Library is an unofficial fan lore project.
-      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
-      belong to their respective owners.
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
 
     </div>
 
   </footer>
 
 
-  <!-- =========================
-       HISTORICAL POSITION SCRIPT
-  ========================== -->
+  <!-- ========================================
+       CHRONOLOGY SCRIPT
+  ========================================= -->
 
   <script>
     (() => {
@@ -1887,37 +1803,47 @@
 
       const sections =
         document.querySelectorAll(
-          ".history-section[data-position]"
+          ".chapter[data-position]"
         );
 
       const marker =
-        document.getElementById("historyMarker");
+        document.getElementById(
+          "historyMarker"
+        );
 
       const currentDate =
-        document.getElementById("currentDate");
+        document.getElementById(
+          "currentDate"
+        );
 
       const positionContext =
-        document.getElementById("positionContext");
+        document.getElementById(
+          "positionContext"
+        );
 
+      const updatePosition =
+        (section) => {
 
-      const updatePosition = (section) => {
+          const position =
+            section.dataset.position || "5";
 
-        const position =
-          section.dataset.position || "5";
+          const date =
+            section.dataset.date ||
+            "2 AE";
 
-        const date =
-          section.dataset.date || "2 AE";
+          const context =
+            section.dataset.context ||
+            "HISTORICAL RECORD";
 
-        const context =
-          section.dataset.context || "YOU ARE HERE";
+          marker.style.left =
+            `${position}%`;
 
-        marker.style.left = `${position}%`;
+          currentDate.textContent =
+            date;
 
-        currentDate.textContent = date;
-
-        positionContext.textContent = context;
-      };
-
+          positionContext.textContent =
+            context;
+        };
 
       const observer =
         new IntersectionObserver(
@@ -1936,13 +1862,10 @@
                 );
 
             if (visible.length > 0) {
-
               updatePosition(
                 visible[0].target
               );
-
             }
-
           },
           {
             rootMargin:
@@ -1958,13 +1881,11 @@
           }
         );
 
-
       sections.forEach(
         (section) => {
           observer.observe(section);
         }
       );
-
     })();
   </script>
 
