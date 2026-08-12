@@ -10,37 +10,27 @@
 
   <meta
     name="description"
-    content="Commander Q's historical record of the Six Human Gods, the arrival of Humanity, and the rise of early Human civilizations."
+    content="The Gods and Humanity archive entry in the Guild Wars Living Lore Library."
   >
 
-  <meta name="theme-color" content="#070b14">
+  <meta name="theme-color" content="#020617">
 
-  <title>Gods and Humanity // The Records of Commander Q</title>
+  <title>The Gods and Humanity // GWlll</title>
 
   <style>
     :root {
       color-scheme: dark;
 
-      --background: #070b14;
-      --background-deep: #03060c;
-      --paper: #111827;
-      --paper-light: #172033;
-      --panel: #0d1422;
+      --background: #020617;
+      --panel: #0f172a;
+      --border: #374151;
 
-      --border: #334155;
-      --border-soft: rgba(148, 163, 184, 0.18);
+      --gold: #f4c76b;
+      --gold-bright: #ffe3a3;
+      --gold-muted: #c99b45;
 
-      --gold: #d6b36a;
-      --gold-bright: #f1d79a;
-      --gold-muted: #9f8148;
-
-      --ink: #e8e5dc;
-      --ink-muted: #b9b8b2;
-      --ink-faint: #8f949e;
-
-      --quote: #c7d2e0;
-
-      --max-width: 820px;
+      --white: #ffffff;
+      --text-muted: #d6d9e0;
     }
 
     * {
@@ -49,7 +39,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 150px;
+      scroll-padding-top: 175px;
     }
 
     body {
@@ -59,24 +49,23 @@
       background:
         radial-gradient(
           circle at top,
-          rgba(214, 179, 106, 0.07),
-          transparent 32rem
+          rgba(244, 199, 107, 0.08),
+          transparent 34rem
         ),
-        linear-gradient(
-          to bottom,
-          #090e18,
-          var(--background) 30rem
-        );
+        var(--background);
 
-      color: var(--ink);
+      color: var(--white);
 
       font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
-      font-size: 1.05rem;
-      line-height: 1.85;
+      line-height: 1.8;
     }
 
     a {
@@ -84,34 +73,27 @@
     }
 
     .container {
-      width: min(
-        var(--max-width),
-        calc(100% - 34px)
-      );
-
+      width: min(900px, calc(100% - 32px));
       margin-inline: auto;
     }
 
-    /* ========================================
+    /* =========================
        HEADER
-    ======================================== */
+    ========================= */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
 
-      border-bottom:
-        1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border);
 
-      background:
-        rgba(3, 6, 12, 0.95);
-
+      background: rgba(2, 6, 23, 0.94);
       backdrop-filter: blur(14px);
     }
 
     .header-inner {
-      min-height: 66px;
+      min-height: 68px;
 
       display: flex;
       align-items: center;
@@ -127,17 +109,12 @@
     .brand-small {
       margin: 0;
 
-      color: var(--ink-faint);
+      color: var(--white);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.65rem;
 
-      font-size: 0.61rem;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
     }
 
@@ -153,14 +130,8 @@
     .home-link {
       color: var(--gold);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.7rem;
+      font-family: monospace;
+      font-size: 0.75rem;
       font-weight: 700;
 
       text-decoration: none;
@@ -175,66 +146,59 @@
       transform: translateX(-3px);
     }
 
-    /* ========================================
-       CHRONOLOGY
-    ======================================== */
+    /* =========================
+       HISTORICAL POSITION
+    ========================= */
 
-    .chronology {
+    .history-position {
       position: sticky;
-      top: 66px;
+      top: 68px;
       z-index: 40;
 
-      border-bottom:
-        1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border);
 
-      background:
-        rgba(7, 11, 20, 0.96);
-
+      background: rgba(2, 6, 23, 0.96);
       backdrop-filter: blur(12px);
     }
 
-    .chronology-inner {
-      padding: 11px 0 13px;
+    .history-position-inner {
+      padding: 13px 0 15px;
     }
 
-    .chronology-top {
+    .position-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      gap: 15px;
-
-      margin-bottom: 8px;
+      gap: 12px;
+      margin-bottom: 10px;
     }
 
-    .chronology-label,
-    .chronology-date {
+    .position-label {
       margin: 0;
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      color: var(--white);
 
+      font-family: monospace;
       font-size: 0.62rem;
-      letter-spacing: 0.12em;
+
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
-    .chronology-label {
-      color: var(--ink-faint);
-    }
+    .current-date {
+      margin: 0;
 
-    .chronology-date {
       color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.7rem;
       font-weight: 700;
     }
 
     .history-rail {
       position: relative;
-      height: 17px;
+      height: 26px;
     }
 
     .history-line {
@@ -249,20 +213,47 @@
       background:
         linear-gradient(
           to right,
-          rgba(214, 179, 106, 0.18),
-          rgba(214, 179, 106, 0.85),
-          rgba(214, 179, 106, 0.18)
+          rgba(244, 199, 107, 0.25),
+          rgba(244, 199, 107, 0.9),
+          rgba(244, 199, 107, 0.25)
         );
+    }
+
+    .history-point {
+      position: absolute;
+      top: 2px;
+
+      width: 11px;
+      height: 11px;
+
+      border: 1px solid var(--gold-muted);
+      border-radius: 50%;
+
+      background: var(--background);
+
+      transform: translateX(-50%);
+    }
+
+    .history-point.start {
+      left: 5%;
+    }
+
+    .history-point.middle {
+      left: 50%;
+    }
+
+    .history-point.end {
+      left: 95%;
     }
 
     .history-marker {
       position: absolute;
 
-      top: 1px;
+      top: -1px;
       left: 5%;
 
-      width: 13px;
-      height: 13px;
+      width: 17px;
+      height: 17px;
 
       border: 2px solid var(--gold-bright);
       border-radius: 50%;
@@ -270,436 +261,345 @@
       background: var(--gold);
 
       box-shadow:
-        0 0 12px
-        rgba(214, 179, 106, 0.38);
+        0 0 15px rgba(244, 199, 107, 0.5);
 
       transform: translateX(-50%);
 
-      transition: left 400ms ease;
+      transition: left 450ms ease;
     }
 
-    .chronology-context {
-      margin: 4px 0 0;
+    .rail-labels {
+      display: flex;
+      justify-content: space-between;
 
-      color: var(--ink-muted);
+      margin-top: 2px;
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      color: var(--white);
 
-      font-size: 0.59rem;
+      font-family: monospace;
+      font-size: 0.58rem;
+    }
+
+    .position-context {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 0.72rem;
       text-align: center;
     }
 
-    /* ========================================
-       BOOK HEADER
-    ======================================== */
+    /* =========================
+       HERO
+    ========================= */
 
-    .book-header {
-      padding: 80px 0 52px;
+    .hero {
+      padding: 72px 0 52px;
       text-align: center;
     }
 
-    .volume {
+    .hero-label {
       margin: 0;
 
-      color: var(--gold-muted);
+      color: var(--white);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.7rem;
 
-      font-size: 0.67rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    .book-header h1 {
-      margin: 17px 0 0;
-
-      color: var(--gold-bright);
-
-      font-size:
-        clamp(
-          2.6rem,
-          8vw,
-          4.8rem
-        );
-
-      font-weight: 500;
-      line-height: 1.05;
-      letter-spacing: -0.035em;
-    }
-
-    .subtitle {
-      max-width: 650px;
-
-      margin: 18px auto 0;
-
-      color: var(--ink-muted);
-
-      font-style: italic;
-      font-size: 1.08rem;
-    }
-
-    .ornament {
-      width: 120px;
-
-      margin: 32px auto 0;
-
-      border: 0;
-      border-top: 1px solid var(--gold-muted);
-    }
-
-    /* ========================================
-       AUTHOR
-    ======================================== */
-
-    .author-card {
-      margin-bottom: 60px;
-
-      padding: 24px 26px;
-
-      border-top: 1px solid var(--border-soft);
-      border-bottom: 1px solid var(--border-soft);
-
-      text-align: center;
-    }
-
-    .author-label {
-      margin: 0;
-
-      color: var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .author-name {
-      margin: 9px 0 0;
+    .hero h1 {
+      margin: 16px 0 0;
 
       color: var(--gold);
 
-      font-size: 1.2rem;
+      font-size: clamp(2.7rem, 8vw, 5.2rem);
+      line-height: 1.03;
+
+      letter-spacing: -0.045em;
+
+      animation: goldPulse 4s ease-in-out infinite;
+    }
+
+    .hero-date {
+      margin: 16px 0 0;
+
+      color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.8rem;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      max-width: 760px;
+
+      margin: 25px auto 0;
+
+      font-size: 1.08rem;
+      line-height: 1.9;
+    }
+
+    /* =========================
+       COMMANDER BYLINE
+    ========================= */
+
+    .commander-byline {
+      max-width: 680px;
+
+      margin: 34px auto 0;
+      padding-top: 22px;
+
+      border-top: 1px solid rgba(244, 199, 107, 0.25);
+    }
+
+    .commander-name {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
       font-weight: 700;
     }
 
-    .author-title {
+    .commander-title {
       margin: 5px 0 0;
 
-      color: var(--ink-muted);
+      color: var(--text-muted);
 
-      font-size: 0.91rem;
-      font-style: italic;
-      line-height: 1.65;
-    }
+      font-family: monospace;
+      font-size: 0.68rem;
 
-    /* ========================================
-       PREFACE
-    ======================================== */
-
-    .preface {
-      margin-bottom: 68px;
-    }
-
-    .section-kicker {
-      margin: 0;
-
-      color: var(--gold-muted);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.64rem;
-      letter-spacing: 0.17em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .preface h2,
-    .chapter h2 {
-      margin: 9px 0 0;
+    /* =========================
+       ARCHIVE NOTE
+    ========================= */
 
-      color: var(--gold);
+    .archive-note {
+      margin-bottom: 55px;
+      padding: 26px;
 
-      font-size:
-        clamp(
-          1.65rem,
-          5vw,
-          2.25rem
-        );
+      border: 1px solid rgba(244, 199, 107, 0.35);
+      border-radius: 12px;
 
-      font-weight: 500;
-      line-height: 1.25;
+      background: rgba(244, 199, 107, 0.045);
     }
 
-    .preface p {
-      margin: 18px 0 0;
-    }
-
-    .signature {
-      margin-top: 28px;
-
-      color: var(--gold-bright);
-      font-style: italic;
-    }
-
-    /* ========================================
-       RESEARCH NOTE
-    ======================================== */
-
-    .research-note {
-      margin: 28px 0;
-
-      padding: 20px 22px;
-
-      border-left: 2px solid var(--gold-muted);
-
-      background:
-        rgba(214, 179, 106, 0.045);
-    }
-
-    .research-note-label {
+    .archive-note-label {
       margin: 0;
 
       color: var(--gold);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.68rem;
 
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .research-note p:last-child {
-      margin: 8px 0 0;
-
-      color: var(--ink-muted);
-      font-size: 0.96rem;
-    }
-
-    /* ========================================
-       CHAPTERS
-    ======================================== */
-
-    .chapter {
-      padding: 48px 0;
-
-      border-top: 1px solid var(--border-soft);
-    }
-
-    .chapter-number {
-      margin: 0;
-
-      color: var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.62rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .chapter p {
-      margin: 18px 0 0;
+    .archive-note p {
+      margin: 12px 0 0;
     }
 
-    .chapter strong {
-      color: var(--gold-bright);
-      font-weight: 600;
+    /* =========================
+       HISTORY
+    ========================= */
+
+    .history-section {
+      padding: 42px 0;
+
+      border-top: 1px solid var(--border);
     }
 
-    .chapter-opening::first-letter {
-      float: left;
+    .history-label {
+      margin: 0;
 
-      margin: 7px 8px 0 0;
+      color: var(--white);
+
+      font-family: monospace;
+      font-size: 0.66rem;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .history-section h2 {
+      margin: 8px 0 0;
 
       color: var(--gold);
 
-      font-size: 3.6rem;
-      line-height: 0.75;
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(1.7rem, 5vw, 2.45rem);
+      line-height: 1.25;
     }
 
-    /* ========================================
-       HISTORY GRID
-    ======================================== */
+    .history-section p {
+      margin: 18px 0 0;
+    }
+
+    .history-section strong {
+      color: var(--gold-bright);
+    }
+
+    .record-box {
+      margin-top: 25px;
+      padding: 21px;
+
+      border-left: 2px solid var(--gold);
+
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .record-box-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.65rem;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .record-box p {
+      margin: 9px 0 0;
+    }
+
+    /* =========================
+       COMMANDER NOTES
+    ========================= */
+
+    .commander-note {
+      margin-top: 26px;
+      padding: 23px 24px;
+
+      border-top: 1px solid rgba(244, 199, 107, 0.35);
+      border-bottom: 1px solid rgba(244, 199, 107, 0.18);
+
+      background:
+        linear-gradient(
+          to right,
+          rgba(244, 199, 107, 0.055),
+          rgba(244, 199, 107, 0.015)
+        );
+    }
+
+    .commander-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family: monospace;
+      font-size: 0.64rem;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .commander-note p {
+      margin: 10px 0 0;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    /* =========================
+       GRID
+    ========================= */
 
     .history-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
 
       gap: 14px;
 
-      margin-top: 28px;
+      margin-top: 25px;
     }
 
     .history-card {
-      padding: 19px 20px;
+      padding: 20px;
 
-      border: 1px solid var(--border-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
 
-      background:
-        rgba(15, 23, 42, 0.58);
+      background: rgba(15, 23, 42, 0.76);
     }
 
     .history-card-label {
       margin: 0;
 
-      color: var(--ink-faint);
+      color: var(--white);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.62rem;
 
-      font-size: 0.59rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
     .history-card h3 {
-      margin: 6px 0 0;
+      margin: 7px 0 0;
 
       color: var(--gold);
 
-      font-size: 1.06rem;
-      font-weight: 600;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.1rem;
     }
 
     .history-card p:last-child {
       margin: 8px 0 0;
 
-      color: var(--ink-muted);
-
       font-size: 0.9rem;
-      line-height: 1.65;
     }
 
-    /* ========================================
-       COMMANDER Q OBSERVATION
-    ======================================== */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
-    .q-observation {
-      margin: 30px 0 6px;
+    .page-navigation {
+      padding: 48px 0 80px;
 
-      padding: 21px 23px;
-
-      border: 1px solid var(--border-soft);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(214, 179, 106, 0.05),
-          rgba(15, 23, 42, 0.45)
-        );
+      border-top: 1px solid var(--border);
     }
 
-    .q-observation-label {
+    .navigation-label {
       margin: 0;
 
-      color: var(--gold);
+      color: var(--white);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.67rem;
 
-      font-size: 0.61rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .q-observation p:last-child {
-      margin: 9px 0 0;
-
-      color: var(--quote);
-      font-style: italic;
-    }
-
-    /* ========================================
-       TRANSITION
-    ======================================== */
-
-    .transition {
-      padding: 58px 0 70px;
-
-      border-top: 1px solid var(--border-soft);
-    }
-
-    .transition-label {
-      margin: 0;
-
-      color: var(--gold-muted);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.63rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .transition h2 {
-      margin: 10px 0 0;
-
-      color: var(--gold-bright);
-
-      font-size: 2rem;
-      font-weight: 500;
-    }
-
-    .transition p {
-      margin: 16px 0 0;
-    }
-
-    .next-title {
-      margin-top: 30px !important;
+    .page-navigation h2 {
+      margin: 8px 0 0;
 
       color: var(--gold);
 
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.8rem;
+    }
+
+    .page-navigation p {
+      margin: 14px 0 0;
     }
 
     .navigation-actions {
-      margin-top: 28px;
+      margin-top: 25px;
 
       display: flex;
       flex-wrap: wrap;
@@ -717,23 +617,12 @@
       padding: 0 20px;
 
       border: 1px solid var(--border);
-      border-radius: 5px;
+      border-radius: 9px;
 
-      background:
-        rgba(15, 23, 42, 0.7);
-
+      background: var(--panel);
       color: var(--gold);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.75rem;
       font-weight: 700;
-
       text-decoration: none;
 
       transition:
@@ -745,69 +634,66 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color:
-        rgba(214, 179, 106, 0.6);
+      border-color: rgba(244, 199, 107, 0.6);
 
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color:
-        rgba(214, 179, 106, 0.45);
+      border-color: rgba(244, 199, 107, 0.45);
 
-      background:
-        rgba(214, 179, 106, 0.08);
+      background: rgba(244, 199, 107, 0.1);
     }
 
-    /* ========================================
+    /* =========================
        FOOTER
-    ======================================== */
+    ========================= */
 
     footer {
-      padding: 34px 0;
+      padding: 30px 0;
 
-      border-top:
-        1px solid var(--border-soft);
-
-      color: var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.65rem;
-      line-height: 1.7;
+      border-top: 1px solid var(--border);
 
       text-align: center;
+      font-size: 0.75rem;
     }
 
-    /* ========================================
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes goldPulse {
+      0%,
+      100% {
+        color: var(--gold);
+        text-shadow: 0 0 0 rgba(244, 199, 107, 0);
+      }
+
+      50% {
+        color: var(--gold-bright);
+
+        text-shadow:
+          0 0 16px rgba(244, 199, 107, 0.28),
+          0 0 34px rgba(244, 199, 107, 0.1);
+      }
+    }
+
+    /* =========================
        MOBILE
-    ======================================== */
+    ========================= */
 
     @media (max-width: 650px) {
 
       html {
-        scroll-padding-top: 135px;
-      }
-
-      body {
-        font-size: 1rem;
+        scroll-padding-top: 155px;
       }
 
       .container {
-        width:
-          min(
-            100% - 24px,
-            var(--max-width)
-          );
+        width: min(100% - 22px, 900px);
       }
 
       .header-inner {
-        min-height: 60px;
+        min-height: 62px;
       }
 
       .brand-small {
@@ -815,39 +701,39 @@
       }
 
       .brand-name {
-        font-size: 0.88rem;
+        font-size: 0.84rem;
       }
 
       .home-link {
+        font-size: 0.67rem;
+      }
+
+      .history-position {
+        top: 62px;
+      }
+
+      .position-label {
+        font-size: 0.55rem;
+      }
+
+      .current-date {
         font-size: 0.62rem;
       }
 
-      .chronology {
-        top: 60px;
+      .rail-labels {
+        font-size: 0.52rem;
       }
 
-      .chronology-label {
-        font-size: 0.53rem;
+      .position-context {
+        font-size: 0.65rem;
       }
 
-      .chronology-date {
-        font-size: 0.56rem;
+      .hero {
+        padding: 52px 0 44px;
       }
 
-      .chronology-context {
-        font-size: 0.53rem;
-      }
-
-      .book-header {
-        padding: 58px 0 42px;
-      }
-
-      .author-card {
-        padding: 21px 14px;
-      }
-
-      .chapter {
-        padding: 40px 0;
+      .hero-text {
+        font-size: 1rem;
       }
 
       .history-grid {
@@ -881,21 +767,18 @@
 
 <body>
 
-  <!-- ========================================
+  <!-- =========================
        HEADER
-  ========================================= -->
+  ========================== -->
 
   <header class="site-header">
 
     <div class="container header-inner">
 
-      <a
-        href="../index.html"
-        class="brand"
-      >
+      <a href="../index.html" class="brand">
 
         <p class="brand-small">
-          The Historical Records of Commander Q
+          QKommand Archive
         </p>
 
         <p class="brand-name">
@@ -904,10 +787,7 @@
 
       </a>
 
-      <a
-        href="../index.html"
-        class="home-link"
-      >
+      <a href="../index.html" class="home-link">
         ← Road Through Time
       </a>
 
@@ -916,24 +796,21 @@
   </header>
 
 
-  <!-- ========================================
-       CHRONOLOGY
-  ========================================= -->
+  <!-- =========================
+       HISTORICAL POSITION
+  ========================== -->
 
-  <aside class="chronology">
+  <aside class="history-position">
 
-    <div class="container chronology-inner">
+    <div class="container history-position-inner">
 
-      <div class="chronology-top">
+      <div class="position-top">
 
-        <p class="chronology-label">
-          Historical Position
+        <p class="position-label">
+          Tyrian Historical Position
         </p>
 
-        <p
-          class="chronology-date"
-          id="currentDate"
-        >
+        <p class="current-date" id="currentDate">
           Before 786 BE
         </p>
 
@@ -943,6 +820,10 @@
 
         <div class="history-line"></div>
 
+        <span class="history-point start"></span>
+        <span class="history-point middle"></span>
+        <span class="history-point end"></span>
+
         <span
           class="history-marker"
           id="historyMarker"
@@ -950,11 +831,18 @@
 
       </div>
 
-      <p
-        class="chronology-context"
-        id="positionContext"
-      >
-        THE GODS ENTER TYRIA
+      <div class="rail-labels">
+
+        <span>Gods Arrive</span>
+
+        <span>786 BE</span>
+
+        <span>1 BE</span>
+
+      </div>
+
+      <p class="position-context" id="positionContext">
+        YOU ARE HERE // The Gods Enter Tyria
       </p>
 
     </div>
@@ -964,29 +852,53 @@
 
   <main>
 
-    <!-- ========================================
-         BOOK HEADER
-    ========================================= -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
-    <section class="book-header">
+    <section class="hero">
 
       <div class="container">
 
-        <p class="volume">
-          Volume III // The Divine and Human Age
+        <p class="hero-label">
+          Historical Archive // Record 03
         </p>
 
         <h1>
-          Gods and Humanity
+          The Gods and Humanity
         </h1>
 
-        <p class="subtitle">
-          On the arrival of the Human Gods, the migration
-          of Humanity into Tyria, and the civilizations
-          that rose under Divine influence.
+        <p class="hero-date">
+          Ancient Era – 1 BE
         </p>
 
-        <hr class="ornament">
+        <p class="hero-text">
+          The previous archive left Tyria in the long aftermath
+          of the Elder Dragonrise. The Elder Races had survived,
+          but their civilizations followed very different paths
+          as the world moved into another age. Into that already
+          ancient world came powerful beings from the Mists,
+          followed by a people whose descendants would eventually
+          establish kingdoms across much of the known world.
+        </p>
+
+        <p class="hero-text">
+          This is where the history of the Six Gods and Humanity
+          enters the Tyrian record.
+        </p>
+
+        <div class="commander-byline">
+
+          <p class="commander-name">
+            Recorded by Commander Q
+          </p>
+
+          <p class="commander-title">
+            Captain Commander of the Vanguard Knights
+            // Researcher of Tyrian History and the Mists
+          </p>
+
+        </div>
 
       </div>
 
@@ -995,138 +907,85 @@
 
     <div class="container">
 
-      <!-- ========================================
-           AUTHOR
-      ========================================= -->
+      <!-- =========================
+           ARCHIVE NOTE
+      ========================== -->
 
-      <section class="author-card">
+      <div class="archive-note">
 
-        <p class="author-label">
-          Compiled and Annotated By
-        </p>
-
-        <p class="author-name">
-          Commander Q
-        </p>
-
-        <p class="author-title">
-          Captain Commander of the Vanguard Knights,
-          an offshoot of the Ascalon Knights
-          <br>
-          Researcher of Tyrian History and the Mists
-        </p>
-
-      </section>
-
-
-      <!-- ========================================
-           PREFACE
-      ========================================= -->
-
-      <section class="preface">
-
-        <p class="section-kicker">
-          Author's Preface
-        </p>
-
-        <h2>
-          A new people enters an old world
-        </h2>
-
-        <p>
-          The previous records followed civilizations whose
-          histories reached back into the age of the Elder
-          Dragons. Humanity belongs to a different chapter.
-          Humans were not native to Tyria, and the Gods they
-          worshipped did not create the world they eventually
-          came to inhabit.
+        <p class="archive-note-label">
+          Researcher's Note
         </p>
 
         <p>
-          Both arrived from beyond Tyria. The Human Gods crossed
-          from the Mists, while surviving traditions maintain
-          that Humanity was brought from another world under
-          their guidance. By the time Humans began establishing
-          civilizations of their own, they were settling lands
-          already marked by the ruins, conflicts, and magical
-          inheritance of peoples who had come before them.
+          The earliest history of Humanity requires some care.
+          Humans did not originate on the world of Tyria, and
+          surviving records do not identify their original homeland
+          with certainty. The Six Gods brought Humanity into Tyria
+          from elsewhere, but the chronology between the arrival
+          of the Gods and the first firmly dated Human civilizations
+          remains incomplete.
         </p>
 
         <p>
-          This is therefore not the beginning of Tyrian history.
-          It is the point where Humanity enters that history and
-          gradually becomes one of its dominant political forces.
+          What can be established is that the Gods entered a world
+          already shaped by the Elder Dragons and the civilizations
+          that survived them. Their arrival did not begin Tyrian
+          history. It began another chapter within it.
         </p>
 
-        <p class="signature">
-          — Commander Q
-        </p>
-
-      </section>
+      </div>
 
 
-      <!-- ========================================
-           CHAPTER I
-      ========================================= -->
+      <!-- =========================
+           RECORD 01
+      ========================== -->
 
       <section
-        class="chapter"
+        class="history-section"
         data-position="5"
         data-date="Before 786 BE"
-        data-context="THE GODS ENTER TYRIA"
+        data-context="YOU ARE HERE // The Gods Enter Tyria"
       >
 
-        <p class="chapter-number">
-          I
+        <p class="history-label">
+          Record 01 // From the Mists
         </p>
 
         <h2>
-          The Gods cross from the Mists
+          The Six Gods enter Tyria
         </h2>
 
-        <p class="chapter-opening">
-          At an unknown point before <strong>786 BE</strong>,
-          powerful Divine beings crossed from the Mists and
-          entered Tyria. Human tradition remembers them as the
-          Gods who would guide Humanity through much of its
-          early history.
+        <p>
+          Sometime before <strong>786 BE</strong>, the divine beings
+          later worshipped as the <strong>Six Human Gods</strong>
+          entered Tyria from the Mists. Orrian tradition remembers
+          <strong>Dwayna</strong> as the first to arrive, followed
+          by <strong>Balthazar</strong>, <strong>Melandru</strong>,
+          <strong>Lyssa</strong>, and <strong>Abaddon</strong>.
+          <strong>Grenth</strong> would later take his place among
+          the Six.
         </p>
 
         <p>
-          The original Divine company included
-          <strong>Dwayna</strong>, <strong>Balthazar</strong>,
-          <strong>Melandru</strong>, <strong>Lyssa</strong>,
-          <strong>Abaddon</strong>, and
-          <strong>Dhuum</strong>. The pantheon familiar to later
-          Humans changed over time. Most notably,
-          <strong>Grenth</strong>, who was born on Tyria,
-          eventually defeated Dhuum and took his place as the
-          God associated with Death.
+          They entered neither an empty world nor a young one.
+          Tyria already possessed ancient magic, the scars of the
+          Elder Dragons, and civilizations whose histories stretched
+          thousands of years into the past.
         </p>
 
-        <p>
-          According to the Orrian History Scrolls,
-          <strong>Dwayna</strong> was the first of the Gods to
-          appear in Tyria. These accounts were written through
-          a Human religious tradition, so they remain valuable
-          historical sources without necessarily providing a
-          complete account of everything that occurred before
-          Humanity began preserving its own records.
-        </p>
+        <div class="commander-note">
 
-        <div class="research-note">
-
-          <p class="research-note-label">
-            Research Note // The Six
+          <p class="commander-note-label">
+            Commander Q // Field Observation
           </p>
 
           <p>
-            Referring to the "Six Human Gods" across the entire
-            historical record can hide an important detail: the
-            membership of the Six changed. Dhuum belonged to the
-            older Divine generation, while Grenth later replaced
-            him. Kormir would eventually replace Abaddon thousands
-            of years afterward.
+            It is easy to mistake the beginning of Human history
+            for the beginning of Tyrian history. The ruins say
+            otherwise. By the time the Gods arrived, they were
+            walking into a story that had already survived several
+            endings.
           </p>
 
         </div>
@@ -1134,126 +993,97 @@
       </section>
 
 
-      <!-- ========================================
-           CHAPTER II
-      ========================================= -->
+      <!-- =========================
+           RECORD 02
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="14"
+        class="history-section"
+        data-position="12"
         data-date="Before 786 BE"
-        data-context="THE ARTESIAN WATERS"
+        data-context="YOU ARE HERE // The Artesian Waters"
       >
 
-        <p class="chapter-number">
-          II
+        <p class="history-label">
+          Record 02 // Orr
         </p>
 
         <h2>
-          The Artesian Waters draw the Gods to Orr
+          The Gods establish themselves in Orr
         </h2>
 
-        <p class="chapter-opening">
-          The earliest known Divine presence in Tyria is
+        <p>
+          The earliest known divine presence in Tyria is closely
           associated with the <strong>Artesian Waters</strong>,
-          a powerful subterranean source of magic beneath the
-          region that would become Orr. The magic concentrated
-          there was powerful enough to draw the attention of the
-          Gods after they entered the world.
+          a powerful magical spring beneath Orr. The Gods were drawn
+          to this source of magic and eventually established
+          <strong>Arah</strong> above it.
         </p>
 
         <p>
-          The Gods established themselves around this magical
-          center and transformed the surrounding region.
-          <strong>Arah</strong> eventually rose above the
-          Artesian Waters and became known as the
-          <strong>City of the Gods</strong>, serving as the
-          center of Divine activity in Tyria.
+          Arah became the great city of the Gods and the spiritual
+          center of ancient Orr. Long before the ruined and corrupted
+          landscape known to modern Tyrians, Orr was remembered as
+          a fertile and beautiful land where divine beings openly
+          walked among mortals.
         </p>
 
         <p>
-          Later generations would remember Orr as a fertile and
-          sacred land rather than the ruined kingdom familiar to
-          the modern age. The contrast is worth remembering,
-          because nearly every later account of Orr is shaped by
-          catastrophes that had not yet occurred.
+          From this center, the influence of the Gods spread through
+          the cultures that gathered around them. Temples, traditions,
+          magical practices, and eventually entire civilizations
+          would carry their influence far beyond Orr itself.
         </p>
-
-        <div class="q-observation">
-
-          <p class="q-observation-label">
-            Commander Q // Observation
-          </p>
-
-          <p>
-            Arah is sometimes treated as though its construction
-            marks the beginning of civilization itself. It does
-            not. The Gods built their city over a world whose
-            oldest ruins were already ancient by the time they
-            arrived.
-          </p>
-
-        </div>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER III
-      ========================================= -->
+      <!-- =========================
+           RECORD 03
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="23"
-        data-date="Before 786 BE"
-        data-context="HUMANITY ENTERS TYRIA"
+        class="history-section"
+        data-position="22"
+        data-date="Ancient Era"
+        data-context="YOU ARE HERE // Humanity Enters Tyria"
       >
 
-        <p class="chapter-number">
-          III
+        <p class="history-label">
+          Record 03 // Humanity
         </p>
 
         <h2>
-          Humanity comes from another world
+          Humanity is brought into an older world
         </h2>
 
-        <p class="chapter-opening">
-          Humanity did not originate on Tyria. Human traditions
-          and later scholarship agree that the Gods brought
-          Humans from another world connected to the Mists,
-          although the name, location, and ultimate fate of that
-          homeland remain unknown.
+        <p>
+          Humanity came to Tyria from somewhere beyond the world,
+          brought by the Gods whose worship would become inseparable
+          from early Human civilization. The identity of Humanity's
+          original homeland remains unresolved, as does the complete
+          route by which the first Human populations reached the
+          regions where they later established themselves.
         </p>
 
         <p>
-          The surviving Orrian accounts associate Dwayna
-          especially closely with this migration. They describe
-          her as bringing her people to Tyria in search of a more
-          peaceful future, while other passages suggest that
-          memories of Humanity's earlier existence were allowed
-          to fade.
+          This uncertainty creates an important gap in the archive.
+          The arrival of the Gods and the earliest securely dated
+          Human civilizations cannot simply be treated as a single
+          event. Somewhere between those points lies a period of
+          migration and settlement whose full history has not survived.
         </p>
 
-        <p>
-          The exact sequence between the Gods' arrival, Humanity's
-          entrance into Tyria, and the later settlement of the
-          continents cannot be reconstructed with certainty.
-          What we do possess are increasingly reliable dates once
-          Human settlements begin appearing in regional records.
-        </p>
+        <div class="record-box">
 
-        <div class="research-note">
-
-          <p class="research-note-label">
+          <p class="record-box-label">
             Historical Caution
           </p>
 
           <p>
-            The arrival of the Gods, the arrival of Humanity,
-            and the establishment of the first securely dated
-            Human settlements should not be treated as a single
-            event. The sources leave an uncertain period between
-            these developments.
+            The absence of a complete record should not be replaced
+            with certainty. The archive distinguishes between what
+            surviving sources establish and what remains unknown.
           </p>
 
         </div>
@@ -1261,203 +1091,244 @@
       </section>
 
 
-      <!-- ========================================
-           CHAPTER IV
-      ========================================= -->
+      <!-- =========================
+           RECORD 04
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="33"
+        class="history-section"
+        data-position="32"
         data-date="786 BE"
-        data-context="HUMAN SETTLEMENT IN CANTHA"
+        data-context="YOU ARE HERE // Humanity in Cantha"
       >
 
-        <p class="chapter-number">
-          IV
+        <p class="history-label">
+          Record 04 // 786 BE
         </p>
 
         <h2>
-          The first firmly dated Human settlement
+          The first firmly dated Human presence appears in Cantha
         </h2>
 
-        <p class="chapter-opening">
-          In <strong>786 BE</strong>, Humans were brought to the
-          northern coast of <strong>Cantha</strong>. This remains
-          the earliest securely dated Human settlement preserved
-          in the known chronology, although scattered traditions
-          leave open the possibility that Human communities may
-          have existed elsewhere before this date.
+        <p>
+          In <strong>786 BE</strong>, Humans arrived along the
+          northern coastline of <strong>Cantha</strong>. This marks
+          the earliest firmly dated Human presence preserved in the
+          known historical record.
         </p>
 
         <p>
-          From these settlements, Human populations expanded
-          throughout Cantha and formed communities that would
-          eventually develop into one of the longest-lasting
-          civilizations in Human history.
-        </p>
-
-        <p>
-          In <strong>510 BE</strong>,
-          <strong>Kaineng Tah</strong> unified the Human clans
-          and established the <strong>Empire of the Dragon</strong>.
-          The same period became the foundation of the Canthan
-          Calendar, giving later historians one of the clearest
-          chronological anchors from the ancient Human world.
+          Human communities spread across the continent over the
+          generations that followed. Their settlements grew into
+          organized societies, and those societies eventually formed
+          one of the oldest enduring Human civilizations known to
+          Tyrian history.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER V
-      ========================================= -->
+      <!-- =========================
+           RECORD 05
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="47"
-        data-date="205–200 BE"
-        data-context="HUMANS SETTLE ORR AND ELONA"
+        class="history-section"
+        data-position="41"
+        data-date="510 BE"
+        data-context="YOU ARE HERE // Empire of the Dragon"
       >
 
-        <p class="chapter-number">
-          V
+        <p class="history-label">
+          Record 05 // Cantha
         </p>
 
         <h2>
-          Human settlement spreads westward
+          The Empire of the Dragon is founded
         </h2>
 
-        <p class="chapter-opening">
-          By <strong>205 BE</strong>, Human groups had arrived
-          by sea in <strong>Orr</strong>, <strong>Istan</strong>,
-          and the southern regions of <strong>Elona</strong>.
-          The surviving record describes them as coming from
-          unknown lands and does not preserve a simple migration
-          route connecting every Human population of this era.
+        <p>
+          By <strong>510 BE</strong>, Human settlement in Cantha had
+          developed far beyond scattered communities. Lord Emperor
+          <strong>Kaineng Tah</strong> unified the Human clans and
+          established the <strong>Empire of the Dragon</strong>,
+          creating a political order whose history would continue
+          across many centuries.
         </p>
 
         <p>
-          In Orr, Human society developed around the sacred
-          territory of Arah and the presence of the Gods. In
-          Elona, settlement quickly produced a powerful monarchy.
-          By <strong>200 BE</strong>, the
-          <strong>Primeval Dynasty</strong> had begun, with
-          <strong>Fahranur, the First City</strong> serving as
-          the seat of the Primeval Kings.
-        </p>
-
-        <p>
-          Human history was therefore no longer concentrated in
-          one region. Within a relatively short span of the
-          surviving chronology, distinct societies were forming
-          across Cantha, Elona, and the Tyrian continent.
+          His reign also established the beginning of the
+          <strong>Canthan Calendar</strong>, giving later historians
+          one of the clearest chronological anchors available for
+          early Human history.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER VI
-      ========================================= -->
+      <!-- =========================
+           RECORD 06
+      ========================== -->
 
       <section
-        class="chapter"
+        class="history-section"
+        data-position="51"
+        data-date="205 BE"
+        data-context="YOU ARE HERE // Orr and Elona"
+      >
+
+        <p class="history-label">
+          Record 06 // 205 BE
+        </p>
+
+        <h2>
+          Human settlement reaches Orr and Elona
+        </h2>
+
+        <p>
+          In <strong>205 BE</strong>, Human tribes arrived by sea
+          in <strong>Orr</strong>, <strong>Istan</strong>, and the
+          southern valleys of <strong>Elona</strong>. Surviving
+          accounts describe these settlers as arriving from unknown
+          lands, leaving their precise relationship to the earlier
+          Humans of Cantha uncertain.
+        </p>
+
+        <p>
+          These migrations established the foundations for several
+          major Human civilizations. Orr grew around the sacred
+          presence of Arah, while the communities of Elona developed
+          their own kingdoms and traditions.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 07
+      ========================== -->
+
+      <section
+        class="history-section"
         data-position="59"
+        data-date="200 BE"
+        data-context="YOU ARE HERE // The Primeval Dynasty"
+      >
+
+        <p class="history-label">
+          Record 07 // Elona
+        </p>
+
+        <h2>
+          The Primeval Dynasty begins
+        </h2>
+
+        <p>
+          Around <strong>200 BE</strong>, the first of the
+          <strong>Primeval Kings</strong> ruled from
+          <strong>Fahranur, the First City</strong>, in Istan.
+          This marked the beginning of the
+          <strong>Primeval Dynasty</strong> and the Dynastic
+          Reckoning calendar.
+        </p>
+
+        <p>
+          Within only a few generations of the migrations recorded
+          in 205 BE, organized Human kingdoms had therefore begun
+          to emerge in Elona. Humanity was no longer merely entering
+          new lands. It was establishing states capable of preserving
+          dynasties, institutions, and historical records of their own.
+        </p>
+
+      </section>
+
+
+      <!-- =========================
+           RECORD 08
+      ========================== -->
+
+      <section
+        class="history-section"
+        data-position="67"
         data-date="175 BE"
-        data-context="THE MARGONITES"
+        data-context="YOU ARE HERE // The Margonites"
       >
 
-        <p class="chapter-number">
-          VI
+        <p class="history-label">
+          Record 08 // The Margonites
         </p>
 
         <h2>
-          The Margonites take to the sea
+          A Human civilization turns toward the sea
         </h2>
 
-        <p class="chapter-opening">
-          By approximately <strong>175 BE</strong>,
-          <strong>Margonite</strong> communities had appeared
-          along the coasts north and west of Elona. Their ships
-          became an important presence upon the
-          <strong>Unending Ocean</strong>, and their culture
-          developed a particularly strong relationship with
-          <strong>Abaddon</strong>.
+        <p>
+          By <strong>175 BE</strong>, the
+          <strong>Margonites</strong> had established settlements
+          along the coastlines north and west of Elona. Their ships
+          became a major presence upon the
+          <strong>Unending Ocean</strong>, establishing them as a
+          maritime Human civilization.
         </p>
 
         <p>
-          It is important to distinguish these early Margonites
-          from the demonic beings encountered much later in
-          history. The Margonites began as a Human civilization.
-          Their later transformation belongs to the story of
-          Abaddon's fall and should not be projected backward
-          onto their earlier society.
-        </p>
-
-        <p>
-          Their growing devotion to Abaddon would nevertheless
-          make them central to events that eventually reshaped
-          the relationship between Humanity and the Gods.
+          The Margonites of this period should not be confused with
+          the transformed beings encountered in later history.
+          They began as Humans. Their eventual demonic transformation
+          came through their devotion to <strong>Abaddon</strong>
+          and belongs to a later chapter of this archive.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER VII
-      ========================================= -->
+      <!-- =========================
+           RECORD 09
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="69"
+        class="history-section"
+        data-position="75"
         data-date="c. 100 BE"
-        data-context="HUMAN EXPANSION INTO ASCALON"
+        data-context="YOU ARE HERE // Humanity in Ascalon"
       >
 
-        <p class="chapter-number">
-          VII
+        <p class="history-label">
+          Record 09 // Ascalon
         </p>
 
         <h2>
-          Humanity enters Ascalon
+          Human expansion reaches Charr territory
         </h2>
 
-        <p class="chapter-opening">
-          By approximately <strong>100 BE</strong>, Human
-          expansion had reached <strong>Ascalon</strong>, a land
-          whose history already included other peoples and the
-          growing power of the <strong>Charr</strong>.
+        <p>
+          By approximately <strong>100 BE</strong>, Humanity had
+          established itself in <strong>Ascalon</strong>, but the
+          region was not an unclaimed frontier. The
+          <strong>Charr</strong> already held power there, and Human
+          expansion forced them northward from lands they had
+          previously conquered.
         </p>
 
         <p>
-          The Charr had established their own control over much
-          of the region after conquering indigenous populations
-          such as the Grawl. Human expansion challenged that
-          control and drove the Charr northward from portions
-          of the territory they had claimed.
+          The struggle that followed became more than a dispute over
+          territory. Ascalon would develop into a homeland central
+          to Human identity while remaining part of the ancestral
+          history of the Charr. The competing claims created a wound
+          that would remain open for centuries.
         </p>
 
-        <p>
-          This was not a brief border dispute. Competition for
-          Ascalon became one of the longest-running conflicts in
-          the history of both peoples, and later generations on
-          each side would remember the land as part of their own
-          inheritance.
-        </p>
+        <div class="commander-note">
 
-        <div class="q-observation">
-
-          <p class="q-observation-label">
-            Commander Q // Observation
+          <p class="commander-note-label">
+            Commander Q // Researcher's Observation
           </p>
 
           <p>
-            Ascalon's history becomes easier to understand once
-            we stop looking for a single moment when the land
-            became someone's rightful homeland. Peoples conquered,
-            settled, lost, reclaimed, and remembered the same
-            territory across generations. The arguments that
-            followed were built on all of those memories at once.
+            Ascalon's history makes more sense when neither side is
+            treated as arriving in an empty land. Kingdoms remember
+            borders. Peoples remember what existed before the borders
+            were drawn. Those memories do not always agree.
           </p>
 
         </div>
@@ -1465,264 +1336,273 @@
       </section>
 
 
-      <!-- ========================================
-           CHAPTER VIII
-      ========================================= -->
+      <!-- =========================
+           RECORD 10
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="80"
+        class="history-section"
+        data-position="83"
         data-date="48 BE"
-        data-context="THE SCRIPTURES OF MELANDRU"
+        data-context="YOU ARE HERE // Melandru Intervenes"
       >
 
-        <p class="chapter-number">
-          VIII
+        <p class="history-label">
+          Record 10 // 48 BE
         </p>
 
         <h2>
-          The Gods still walked among mortals
+          Melandru intervenes directly in mortal life
         </h2>
 
-        <p class="chapter-opening">
-          Human civilization had expanded considerably by the
-          first century before the Exodus, yet the Gods were
-          still remembered as beings capable of intervening
-          directly in mortal life. The
-          <strong>Scriptures of Melandru</strong> preserve one
-          such account from <strong>48 BE</strong>.
+        <p>
+          The <strong>Scriptures of Melandru</strong> preserve an
+          account from <strong>48 BE</strong> in which the Goddess
+          directly confronted a wandering Human tribe whose passage
+          damaged the natural world. Their leader,
+          <strong>Ewan</strong>, belonged to a people who rejected
+          magic and threatened those among them who practiced it.
         </p>
 
         <p>
-          The scripture tells of <strong>Ewan</strong> and his
-          tribe, who rejected magic and damaged the lands through
-          which they traveled. When they attempted to abandon
-          another exhausted campsite, the earth itself prevented
-          their departure, and <strong>Melandru</strong> appeared
-          before them.
+          According to the scripture, when the tribe attempted to
+          abandon the land they had harmed, thorned growth blocked
+          their path and a great tree rose before them. Melandru
+          revealed herself and bound the tribe to the land,
+          transforming them so that branches grew from their bodies
+          and their blood became like the sap of trees.
         </p>
 
         <p>
-          According to the account, Melandru transformed Ewan
-          and his people, binding them physically to the natural
-          world they had mistreated. Whether read as literal
-          Divine history, religious scripture, or both, the story
-          shows how Humans of this period understood the Gods:
-          not as distant creators remembered from an unreachable
-          past, but as powers who could still appear and act
-          within the world.
+          Whether read as religious testimony, historical record,
+          or both, the account preserves something important about
+          this period: only forty-eight years before the Exodus,
+          Human tradition still remembered the Gods as beings capable
+          of appearing before mortals and directly altering their lives.
         </p>
-
-        <div class="research-note">
-
-          <p class="research-note-label">
-            Research Note // Religious Sources
-          </p>
-
-          <p>
-            Scriptures preserve historical traditions, but their
-            purpose is also religious. I treat their dates and
-            recorded events as part of the historical record
-            while keeping the nature of the source visible rather
-            than presenting every theological detail as neutral
-            observation.
-          </p>
-
-        </div>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER IX
-      ========================================= -->
+      <!-- =========================
+           HUMAN WORLD
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="90"
+        class="history-section"
+        data-position="89"
         data-date="Before 1 BE"
-        data-context="THE HUMAN WORLD EXPANDS"
+        data-context="YOU ARE HERE // Human Kingdoms Expand"
       >
 
-        <p class="chapter-number">
-          IX
+        <p class="history-label">
+          Record 11 // A Human Age
         </p>
 
         <h2>
-          Human civilizations take their place in Tyria
+          Humanity becomes a power in the known world
         </h2>
 
-        <p class="chapter-opening">
-          By the end of this period, Humanity had developed from
-          migrant populations guided into Tyria by the Gods into
-          a collection of kingdoms, empires, maritime cultures,
-          and regional societies spread across much of the known
-          world.
+        <p>
+          By the final years before the Exodus, Human civilization
+          had spread across much of the known world. The peoples who
+          had once entered an ancient Tyria now possessed kingdoms,
+          dynasties, trade networks, religions, rivalries, and
+          territorial ambitions of their own.
         </p>
 
         <div class="history-grid">
 
           <div class="history-card">
+
             <p class="history-card-label">
               Cantha
             </p>
+
             <h3>
               Empire of the Dragon
             </h3>
+
             <p>
-              An ancient Imperial civilization rooted in the
-              earliest securely dated Human settlement.
+              One of Humanity's oldest known enduring civilizations.
             </p>
+
           </div>
 
           <div class="history-card">
+
             <p class="history-card-label">
               Elona
             </p>
+
             <h3>
               Primeval Dynasty
             </h3>
+
             <p>
-              A monarchy centered first upon Istan and later
-              connected to the wider development of Elona.
+              A growing Human kingdom centered first upon Istan.
             </p>
+
           </div>
 
           <div class="history-card">
+
             <p class="history-card-label">
               Orr
             </p>
+
             <h3>
-              Sacred Kingdom
+              Land of the Gods
             </h3>
+
             <p>
-              A Human civilization built around Arah and the
-              Divine heart of the Human faith.
+              A sacred Human kingdom built around Arah and the
+              Artesian Waters.
             </p>
+
           </div>
 
           <div class="history-card">
+
             <p class="history-card-label">
               Ascalon
             </p>
+
             <h3>
-              Contested Territory
+              Contested Homeland
             </h3>
+
             <p>
-              Human settlement entered a region already shaped
-              by Charr conquest and older native populations.
+              A Human kingdom established amid a continuing struggle
+              with the Charr.
             </p>
+
           </div>
 
           <div class="history-card">
+
+            <p class="history-card-label">
+              Kryta
+            </p>
+
+            <h3>
+              Western Kingdom
+            </h3>
+
+            <p>
+              Human settlement developed into another major kingdom
+              along the western reaches of Tyria.
+            </p>
+
+          </div>
+
+          <div class="history-card">
+
             <p class="history-card-label">
               Margonites
             </p>
+
             <h3>
-              Maritime Civilization
+              People of the Sea
             </h3>
+
             <p>
-              A seafaring Human culture whose devotion to
-              Abaddon would carry enormous consequences.
+              A maritime Human civilization whose history would
+              become inseparable from Abaddon.
             </p>
+
           </div>
 
         </div>
 
-        <p>
-          These societies did not form one unified Human world.
-          Their politics, traditions, calendars, and rivalries
-          developed independently, even while devotion to the
-          Gods provided an important cultural connection between
-          many of them.
-        </p>
-
       </section>
 
 
-      <!-- ========================================
-           CHAPTER X
-      ========================================= -->
+      <!-- =========================
+           RECORD 12
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="100"
+        class="history-section"
+        data-position="96"
         data-date="1 BE"
-        data-context="THE GIFT OF MAGIC APPROACHES"
+        data-context="YOU ARE HERE // The Gift of Magic Approaches"
       >
 
-        <p class="chapter-number">
-          X
+        <p class="history-label">
+          Record 12 // The Turning Point
         </p>
 
         <h2>
-          Abaddon changes the balance
+          The Divine Age approaches its breaking point
         </h2>
 
-        <p class="chapter-opening">
-          By <strong>1 BE</strong>, Humanity had spread across
-          much of the known world while the Gods remained deeply
-          connected to mortal civilization. At this point,
-          <strong>Abaddon</strong> made a decision that would
-          transform the relationship between mortals, magic,
-          and the Divine.
+        <p>
+          By <strong>1 BE</strong>, the Gods had influenced Human
+          civilization for generations, while Humanity itself had
+          become one of the major political forces of the world.
+          The relationship between mortals and the divine was about
+          to change because of something that had shaped Tyria long
+          before either Humanity or the Gods arrived: magic.
         </p>
 
         <p>
-          The ancient <strong>Bloodstone</strong>, created long
-          before Humanity arrived in Tyria, had eventually come
-          into the possession of the Gods. Abaddon used its power
-          to grant widespread access to magic.
+          <strong>Abaddon</strong> would grant widespread access to
+          magical power. What followed would reveal how quickly a
+          divine gift could become a mortal weapon.
         </p>
 
         <p>
-          The consequences were immediate and far larger than
-          any one Human kingdom. Magic gave mortals extraordinary
-          new possibilities, but it also provided new means of
-          conquest and destruction.
+          The resulting conflict would eventually draw the Gods back
+          to the ancient <strong>Bloodstone</strong>, connecting
+          Humanity's young civilizations to a solution first created
+          by the Seers during the age of the Elder Dragons.
         </p>
 
-        <p>
-          The history of Humanity had reached another turning
-          point. The Gods had brought Humans into Tyria and helped
-          guide their earliest civilizations. Now one of those
-          Gods was about to give mortals power that would test
-          the order the pantheon had built.
-        </p>
+        <div class="commander-note">
+
+          <p class="commander-note-label">
+            Commander Q // Closing Note
+          </p>
+
+          <p>
+            This is one of the reasons I keep following the road
+            backward. Tyrian history rarely leaves anything buried
+            forever. A tool created to survive the Elder Dragons
+            would eventually decide how Humanity itself was allowed
+            to wield magic.
+          </p>
+
+        </div>
 
       </section>
 
 
-      <!-- ========================================
-           NEXT VOLUME
-      ========================================= -->
+      <!-- =========================
+           NEXT ENTRY
+      ========================== -->
 
-      <section class="transition">
+      <section class="page-navigation">
 
-        <p class="transition-label">
-          End of Volume III
+        <p class="navigation-label">
+          Continue the Road Through Time
         </p>
 
         <h2>
-          The road continues
+          The Gift of Magic
         </h2>
 
         <p>
-          Humanity had established itself across Tyria, and the
-          Gods remained part of mortal life. The next change
-          would come not from another migration or expanding
-          kingdom, but from the sudden spread of magical power.
-        </p>
-
-        <p class="next-title">
-          Volume IV // The Gift of Magic
+          In <strong>1 BE</strong>, Abaddon's gift changed the
+          relationship between Humanity and magic. The power spread
+          quickly, and so did the wars fought with it.
         </p>
 
         <p>
-          The next archive follows Abaddon's Gift, the conflicts
-          that followed, King Doric's appeal to the Gods, and the
-          return of the ancient Bloodstone to the center of
-          Tyrian history.
+          The next archive follows the Gift of Magic, King Doric's
+          journey to Arah, the division of the Bloodstone, the fall
+          of Abaddon, and the event remembered as the
+          <strong>Exodus of the Gods</strong>.
         </p>
 
         <div class="navigation-actions">
@@ -1731,7 +1611,7 @@
             href="../elder-races/index.html"
             class="button"
           >
-            ← Volume II
+            ← The Elder Races
           </a>
 
           <a
@@ -1745,7 +1625,7 @@
             href="../gift-of-magic/index.html"
             class="button button-primary"
           >
-            Read Volume IV →
+            The Gift of Magic →
           </a>
 
         </div>
@@ -1757,32 +1637,26 @@
   </main>
 
 
-  <!-- ========================================
+  <!-- =========================
        FOOTER
-  ========================================= -->
+  ========================== -->
 
   <footer>
 
     <div class="container">
 
-      The Historical Records of Commander Q
-      are an unofficial Guild Wars fan project.
-
-      <br>
-
-      Guild Wars, Guild Wars 2,
-      ArenaNet, NCSOFT,
-      and related properties belong
-      to their respective owners.
+      Guild Wars Living Lore Library is an unofficial fan lore project.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
+      belong to their respective owners.
 
     </div>
 
   </footer>
 
 
-  <!-- ========================================
-       CHRONOLOGY SCRIPT
-  ========================================= -->
+  <!-- =========================
+       HISTORICAL POSITION SCRIPT
+  ========================== -->
 
   <script>
     (() => {
@@ -1790,47 +1664,37 @@
 
       const sections =
         document.querySelectorAll(
-          ".chapter[data-position]"
+          ".history-section[data-position]"
         );
 
       const marker =
-        document.getElementById(
-          "historyMarker"
-        );
+        document.getElementById("historyMarker");
 
       const currentDate =
-        document.getElementById(
-          "currentDate"
-        );
+        document.getElementById("currentDate");
 
       const positionContext =
-        document.getElementById(
-          "positionContext"
-        );
+        document.getElementById("positionContext");
 
-      const updatePosition =
-        (section) => {
 
-          const position =
-            section.dataset.position || "5";
+      const updatePosition = (section) => {
 
-          const date =
-            section.dataset.date ||
-            "Ancient Era";
+        const position =
+          section.dataset.position || "5";
 
-          const context =
-            section.dataset.context ||
-            "HISTORICAL RECORD";
+        const date =
+          section.dataset.date || "Date Unknown";
 
-          marker.style.left =
-            `${position}%`;
+        const context =
+          section.dataset.context || "YOU ARE HERE";
 
-          currentDate.textContent =
-            date;
+        marker.style.left = `${position}%`;
 
-          positionContext.textContent =
-            context;
-        };
+        currentDate.textContent = date;
+
+        positionContext.textContent = context;
+      };
+
 
       const observer =
         new IntersectionObserver(
@@ -1849,10 +1713,13 @@
                 );
 
             if (visible.length > 0) {
+
               updatePosition(
                 visible[0].target
               );
+
             }
+
           },
           {
             rootMargin:
@@ -1868,11 +1735,13 @@
           }
         );
 
+
       sections.forEach(
         (section) => {
           observer.observe(section);
         }
       );
+
     })();
   </script>
 
