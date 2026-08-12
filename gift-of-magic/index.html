@@ -2,491 +2,873 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
+
   <meta
     name="description"
-    content="The Gift of Magic archive entry in the Guild Wars Living Lore Library."
+    content="Commander Q's historical record of the Gift of Magic, King Doric, and the division of the ancient Bloodstone."
   >
-  <meta name="theme-color" content="#020617">
-  <title>The Gift of Magic // GWlll</title>
+
+  <meta name="theme-color" content="#070b14">
+
+  <title>The Gift of Magic // The Records of Commander Q</title>
+
   <style>
     :root {
       color-scheme: dark;
-      --background: #020617;
-      --panel: #0f172a;
-      --border: #374151;
-      --gold: #f4c76b;
-      --gold-bright: #ffe3a3;
-      --gold-muted: #c99b45;
-      --white: #ffffff;
+
+      --background: #070b14;
+      --background-deep: #03060c;
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
+
+      --border: #334155;
+      --border-soft: rgba(148, 163, 184, 0.18);
+
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
+
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
+
+      --quote: #c7d2e0;
+
+      --max-width: 820px;
     }
+
     * {
       box-sizing: border-box;
     }
+
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 170px;
+      scroll-padding-top: 150px;
     }
+
     body {
       margin: 0;
       min-width: 320px;
+
       background:
         radial-gradient(
           circle at top,
-          rgba(244, 199, 107, 0.08),
-          transparent 34rem
+          rgba(214, 179, 106, 0.07),
+          transparent 32rem
         ),
-        var(--background);
-      color: var(--white);
+        linear-gradient(
+          to bottom,
+          #090e18,
+          var(--background) 30rem
+        );
+
+      color: var(--ink);
+
       font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-      line-height: 1.75;
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 1.05rem;
+      line-height: 1.85;
     }
+
     a {
       color: inherit;
     }
+
     .container {
-      width: min(900px, calc(100% - 32px));
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
+
       margin-inline: auto;
     }
-    /* =========================
+
+    /* ========================================
        HEADER
-    ========================= */
+    ======================================== */
+
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      border-bottom: 1px solid var(--border);
-      background: rgba(2, 6, 23, 0.94);
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(3, 6, 12, 0.95);
+
       backdrop-filter: blur(14px);
     }
+
     .header-inner {
-      min-height: 68px;
+      min-height: 66px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
+
     .brand {
       text-decoration: none;
     }
+
     .brand-small {
       margin: 0;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.17em;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
+
     .brand-name {
       margin: 2px 0 0;
+
       color: var(--gold);
+
       font-size: 1rem;
       font-weight: 700;
     }
+
     .home-link {
       color: var(--gold);
-      font-family: monospace;
-      font-size: 0.75rem;
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.7rem;
       font-weight: 700;
+
       text-decoration: none;
+
       transition:
         color 180ms ease,
         transform 180ms ease;
     }
+
     .home-link:hover {
       color: var(--gold-bright);
       transform: translateX(-3px);
     }
-    /* =========================
-       HISTORICAL POSITION
-    ========================= */
-    .history-position {
+
+    /* ========================================
+       CHRONOLOGY
+    ======================================== */
+
+    .chronology {
       position: sticky;
-      top: 68px;
+      top: 66px;
       z-index: 40;
-      border-bottom: 1px solid var(--border);
-      background: rgba(2, 6, 23, 0.96);
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(7, 11, 20, 0.96);
+
       backdrop-filter: blur(12px);
     }
-    .history-position-inner {
-      padding: 13px 0 15px;
+
+    .chronology-inner {
+      padding: 11px 0 13px;
     }
-    .position-top {
+
+    .chronology-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
+
+      gap: 15px;
+
+      margin-bottom: 8px;
     }
-    .position-label {
+
+    .chronology-label,
+    .chronology-date {
       margin: 0;
-      color: var(--white);
-      font-family: monospace;
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .chronology-label {
+      color: var(--ink-faint);
+    }
+
+    .chronology-date {
+      color: var(--gold-bright);
+      font-weight: 700;
+    }
+
+    .history-rail {
+      position: relative;
+      height: 17px;
+    }
+
+    .history-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          to right,
+          rgba(214, 179, 106, 0.18),
+          rgba(214, 179, 106, 0.85),
+          rgba(214, 179, 106, 0.18)
+        );
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: 1px;
+      left: 5%;
+
+      width: 13px;
+      height: 13px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 12px
+        rgba(214, 179, 106, 0.38);
+
+      transform: translateX(-50%);
+
+      transition: left 400ms ease;
+    }
+
+    .chronology-context {
+      margin: 4px 0 0;
+
+      color: var(--ink-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+      text-align: center;
+    }
+
+    /* ========================================
+       BOOK HEADER
+    ======================================== */
+
+    .book-header {
+      padding: 80px 0 52px;
+      text-align: center;
+    }
+
+    .volume {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.67rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .book-header h1 {
+      margin: 17px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size:
+        clamp(
+          2.6rem,
+          8vw,
+          4.8rem
+        );
+
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      max-width: 650px;
+
+      margin: 18px auto 0;
+
+      color: var(--ink-muted);
+
+      font-style: italic;
+      font-size: 1.08rem;
+    }
+
+    .ornament {
+      width: 120px;
+
+      margin: 32px auto 0;
+
+      border: 0;
+      border-top: 1px solid var(--gold-muted);
+    }
+
+    /* ========================================
+       AUTHOR
+    ======================================== */
+
+    .author-card {
+      margin-bottom: 60px;
+
+      padding: 24px 26px;
+
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+
+      text-align: center;
+    }
+
+    .author-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .author-name {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .author-title {
+      margin: 5px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.91rem;
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       PREFACE
+    ======================================== */
+
+    .preface {
+      margin-bottom: 68px;
+    }
+
+    .section-kicker {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.64rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .preface h2,
+    .chapter h2 {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size:
+        clamp(
+          1.65rem,
+          5vw,
+          2.25rem
+        );
+
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .preface p {
+      margin: 18px 0 0;
+    }
+
+    .signature {
+      margin-top: 28px;
+
+      color: var(--gold-bright);
+      font-style: italic;
+    }
+
+    /* ========================================
+       RESEARCH NOTE
+    ======================================== */
+
+    .research-note {
+      margin: 28px 0;
+
+      padding: 20px 22px;
+
+      border-left: 2px solid var(--gold-muted);
+
+      background:
+        rgba(214, 179, 106, 0.045);
+    }
+
+    .research-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
       font-size: 0.62rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
-    .current-date {
-      margin: 0;
-      color: var(--gold-bright);
-      font-family: monospace;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-    }
-    .history-rail {
-      position: relative;
-      height: 26px;
-    }
-    .history-line {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 7px;
-      height: 1px;
-      background:
-        linear-gradient(
-          to right,
-          rgba(244, 199, 107, 0.25),
-          rgba(244, 199, 107, 0.9),
-          rgba(244, 199, 107, 0.25)
-        );
-    }
-    .history-point {
-      position: absolute;
-      top: 2px;
-      width: 11px;
-      height: 11px;
-      border: 1px solid var(--gold-muted);
-      border-radius: 50%;
-      background: var(--background);
-      transform: translateX(-50%);
-    }
-    .history-point.start {
-      left: 5%;
-    }
-    .history-point.middle {
-      left: 50%;
-    }
-    .history-point.end {
-      left: 95%;
-    }
-    .history-marker {
-      position: absolute;
-      top: -1px;
-      left: 5%;
-      width: 17px;
-      height: 17px;
-      border: 2px solid var(--gold-bright);
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow:
-        0 0 15px rgba(244, 199, 107, 0.5);
-      transform: translateX(-50%);
-      transition: left 450ms ease;
-    }
-    .rail-labels {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2px;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.58rem;
-    }
-    .position-context {
+
+    .research-note p:last-child {
       margin: 8px 0 0;
-      color: var(--gold);
-      font-size: 0.72rem;
-      text-align: center;
+
+      color: var(--ink-muted);
+      font-size: 0.96rem;
     }
-    /* =========================
-       HERO
-    ========================= */
-    .hero {
-      padding: 72px 0 56px;
-      text-align: center;
+
+    /* ========================================
+       CHAPTERS
+    ======================================== */
+
+    .chapter {
+      padding: 48px 0;
+
+      border-top: 1px solid var(--border-soft);
     }
-    .hero-label {
+
+    .chapter-number {
       margin: 0;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      margin: 16px 0 0;
-      color: var(--gold);
-      font-size: clamp(2.7rem, 8vw, 5.2rem);
-      line-height: 1.03;
-      letter-spacing: -0.045em;
-      animation: goldPulse 4s ease-in-out infinite;
-    }
-    .hero-date {
-      margin: 16px 0 0;
-      color: var(--gold-bright);
-      font-family: monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .hero-text {
-      max-width: 760px;
-      margin: 24px auto 0;
-      color: var(--white);
-      font-size: 1.06rem;
-      line-height: 1.9;
-    }
-    /* =========================
-       ARCHIVE NOTE
-    ========================= */
-    .archive-note {
-      margin-bottom: 55px;
-      padding: 24px;
-      border: 1px solid rgba(244, 199, 107, 0.35);
-      border-radius: 12px;
-      background: rgba(244, 199, 107, 0.045);
-    }
-    .archive-note-label {
-      margin: 0;
-      color: var(--gold);
-      font-family: monospace;
-      font-size: 0.68rem;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
-    .archive-note p:last-child {
-      margin: 12px 0 0;
+
+    .chapter p {
+      margin: 18px 0 0;
     }
-    /* =========================
-       HISTORY
-    ========================= */
-    .history-section {
-      padding: 36px 0;
-      border-top: 1px solid var(--border);
-    }
-    .history-label {
-      margin: 0;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-    .history-section h2 {
-      margin: 8px 0 0;
-      color: var(--gold);
-      font-size: clamp(1.6rem, 5vw, 2.35rem);
-      line-height: 1.2;
-    }
-    .history-section p {
-      margin: 16px 0 0;
-      color: var(--white);
-    }
-    .history-section strong {
+
+    .chapter strong {
       color: var(--gold-bright);
+      font-weight: 600;
     }
-    .record-box {
-      margin-top: 22px;
-      padding: 20px;
-      border-left: 2px solid var(--gold);
-      background: rgba(15, 23, 42, 0.8);
-    }
-    .record-box-label {
-      margin: 0;
+
+    .chapter-opening::first-letter {
+      float: left;
+
+      margin: 7px 8px 0 0;
+
       color: var(--gold);
-      font-family: monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+
+      font-size: 3.6rem;
+      line-height: 0.75;
     }
-    .record-box p:last-child {
-      margin: 8px 0 0;
-    }
-    /* =========================
+
+    /* ========================================
        MAGIC GRID
-    ========================= */
+    ======================================== */
+
     .magic-grid {
-      margin-top: 24px;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
       gap: 14px;
+
+      margin-top: 28px;
     }
+
     .magic-card {
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: rgba(15, 23, 42, 0.76);
+      padding: 19px 20px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        rgba(15, 23, 42, 0.58);
     }
+
     .magic-card-label {
       margin: 0;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.62rem;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
+
     .magic-card h3 {
-      margin: 7px 0 0;
+      margin: 6px 0 0;
+
       color: var(--gold);
-      font-size: 1.05rem;
+
+      font-size: 1.06rem;
+      font-weight: 600;
     }
+
     .magic-card p:last-child {
       margin: 8px 0 0;
+
+      color: var(--ink-muted);
+
       font-size: 0.9rem;
+      line-height: 1.65;
     }
-    /* =========================
-       NAVIGATION
-    ========================= */
-    .page-navigation {
-      padding: 45px 0 80px;
-      border-top: 1px solid var(--border);
+
+    /* ========================================
+       COMMANDER Q OBSERVATION
+    ======================================== */
+
+    .q-observation {
+      margin: 30px 0 6px;
+
+      padding: 21px 23px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(214, 179, 106, 0.05),
+          rgba(15, 23, 42, 0.45)
+        );
     }
-    .navigation-label {
+
+    .q-observation-label {
       margin: 0;
-      color: var(--white);
-      font-family: monospace;
-      font-size: 0.67rem;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .q-observation p:last-child {
+      margin: 9px 0 0;
+
+      color: var(--quote);
+      font-style: italic;
+    }
+
+    /* ========================================
+       TRANSITION
+    ======================================== */
+
+    .transition {
+      padding: 58px 0 70px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .transition-label {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.63rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
-    .page-navigation h2 {
-      margin: 8px 0 0;
+
+    .transition h2 {
+      margin: 10px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .transition p {
+      margin: 16px 0 0;
+    }
+
+    .next-title {
+      margin-top: 30px !important;
+
       color: var(--gold);
-      font-size: 1.7rem;
+
+      font-size: 1.15rem;
+      font-weight: 700;
     }
-    .page-navigation p {
-      margin: 13px 0 0;
-    }
+
     .navigation-actions {
-      margin-top: 24px;
+      margin-top: 28px;
+
       display: flex;
       flex-wrap: wrap;
+
       gap: 12px;
     }
+
     .button {
       min-height: 46px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       padding: 0 20px;
+
       border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--panel);
+      border-radius: 5px;
+
+      background:
+        rgba(15, 23, 42, 0.7);
+
       color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.75rem;
       font-weight: 700;
+
       text-decoration: none;
+
       transition:
         transform 180ms ease,
         border-color 180ms ease,
         color 180ms ease;
     }
+
     .button:hover {
       transform: translateY(-2px);
+
       border-color:
-        rgba(244, 199, 107, 0.6);
+        rgba(214, 179, 106, 0.6);
+
       color: var(--gold-bright);
     }
+
     .button-primary {
       border-color:
-        rgba(244, 199, 107, 0.45);
+        rgba(214, 179, 106, 0.45);
+
       background:
-        rgba(244, 199, 107, 0.1);
+        rgba(214, 179, 106, 0.08);
     }
-    /* =========================
+
+    /* ========================================
        FOOTER
-    ========================= */
+    ======================================== */
+
     footer {
-      padding: 30px 0;
-      border-top: 1px solid var(--border);
-      color: var(--white);
+      padding: 34px 0;
+
+      border-top:
+        1px solid var(--border-soft);
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.65rem;
+      line-height: 1.7;
+
       text-align: center;
-      font-size: 0.75rem;
     }
-    /* =========================
-       ANIMATION
-    ========================= */
-    @keyframes goldPulse {
-      0%,
-      100% {
-        color: var(--gold);
-        text-shadow:
-          0 0 0 rgba(244, 199, 107, 0);
-      }
-      50% {
-        color: var(--gold-bright);
-        text-shadow:
-          0 0 16px rgba(244, 199, 107, 0.28),
-          0 0 34px rgba(244, 199, 107, 0.1);
-      }
-    }
-    /* =========================
+
+    /* ========================================
        MOBILE
-    ========================= */
+    ======================================== */
+
     @media (max-width: 650px) {
+
       html {
-        scroll-padding-top: 155px;
+        scroll-padding-top: 135px;
       }
+
+      body {
+        font-size: 1rem;
+      }
+
       .container {
-        width: min(100% - 22px, 900px);
+        width:
+          min(
+            100% - 24px,
+            var(--max-width)
+          );
       }
+
       .header-inner {
-        min-height: 62px;
+        min-height: 60px;
       }
+
       .brand-small {
         display: none;
       }
+
       .brand-name {
-        font-size: 0.84rem;
+        font-size: 0.88rem;
       }
+
       .home-link {
-        font-size: 0.67rem;
-      }
-      .history-position {
-        top: 62px;
-      }
-      .position-label {
-        font-size: 0.55rem;
-      }
-      .current-date {
         font-size: 0.62rem;
       }
-      .rail-labels {
-        font-size: 0.52rem;
+
+      .chronology {
+        top: 60px;
       }
-      .position-context {
-        font-size: 0.65rem;
+
+      .chronology-label {
+        font-size: 0.53rem;
       }
-      .hero {
-        padding: 52px 0 44px;
+
+      .chronology-date {
+        font-size: 0.56rem;
       }
-      .hero-text {
-        font-size: 1rem;
+
+      .chronology-context {
+        font-size: 0.53rem;
       }
+
+      .book-header {
+        padding: 58px 0 42px;
+      }
+
+      .author-card {
+        padding: 21px 14px;
+      }
+
+      .chapter {
+        padding: 40px 0;
+      }
+
       .magic-grid {
         grid-template-columns: 1fr;
       }
+
       .navigation-actions {
         flex-direction: column;
       }
+
       .button {
         width: 100%;
       }
     }
+
     @media (prefers-reduced-motion: reduce) {
+
       html {
         scroll-behavior: auto;
       }
+
       *,
       *::before,
       *::after {
@@ -496,759 +878,798 @@
     }
   </style>
 </head>
+
 <body>
-  <!-- =========================
+
+  <!-- ========================================
        HEADER
-  ========================== -->
+  ========================================= -->
+
   <header class="site-header">
+
     <div class="container header-inner">
+
       <a
         href="../index.html"
         class="brand"
       >
+
         <p class="brand-small">
-          QKommand Archive
+          The Historical Records of Commander Q
         </p>
+
         <p class="brand-name">
           GWlll
         </p>
+
       </a>
+
       <a
         href="../index.html"
         class="home-link"
       >
         ← Road Through Time
       </a>
+
     </div>
+
   </header>
-  <!-- =========================
-       HISTORICAL POSITION
-  ========================== -->
-  <aside class="history-position">
-    <div class="container history-position-inner">
-      <div class="position-top">
-        <p class="position-label">
-          Tyrian Historical Position
+
+
+  <!-- ========================================
+       CHRONOLOGY
+  ========================================= -->
+
+  <aside class="chronology">
+
+    <div class="container chronology-inner">
+
+      <div class="chronology-top">
+
+        <p class="chronology-label">
+          Historical Position
         </p>
+
         <p
-          class="current-date"
+          class="chronology-date"
           id="currentDate"
         >
           1 BE
         </p>
+
       </div>
+
       <div class="history-rail">
+
         <div class="history-line"></div>
-        <span class="history-point start"></span>
-        <span class="history-point middle"></span>
-        <span class="history-point end"></span>
+
         <span
           class="history-marker"
           id="historyMarker"
         ></span>
+
       </div>
-      <div class="rail-labels">
-        <span>Gift of Magic</span>
-        <span>Bloodstone Divided</span>
-        <span>Abaddon's Rebellion</span>
-      </div>
+
       <p
-        class="position-context"
+        class="chronology-context"
         id="positionContext"
       >
-        YOU ARE HERE // Abaddon Gives Magic
+        THE GIFT OF MAGIC
       </p>
+
     </div>
+
   </aside>
+
+
   <main>
-    <!-- =========================
-         HERO
-    ========================== -->
-    <section class="hero">
+
+    <!-- ========================================
+         BOOK HEADER
+    ========================================= -->
+
+    <section class="book-header">
+
       <div class="container">
-        <p class="hero-label">
-          Historical Archive // Record 04
+
+        <p class="volume">
+          Volume IV // The Divine and Human Age
         </p>
+
         <h1>
           The Gift of Magic
         </h1>
-        <p class="hero-date">
-          1 BE
+
+        <p class="subtitle">
+          On Abaddon's Gift, the wars that followed,
+          King Doric's appeal to the Gods, and the division
+          of the ancient Bloodstone.
         </p>
-        <p class="hero-text">
-          Magic was older than humanity.
-        </p>
-        <p class="hero-text">
-          But in 1 BE, the gods opened access
-          to magical power on a scale
-          mortal civilizations had never known.
-        </p>
-        <p class="hero-text">
-          What was meant to elevate the peoples of Tyria
-          quickly became a source of war.
-          Before the year was over,
-          the gods would reverse their decision
-          and reshape the ancient Bloodstone.
-        </p>
+
+        <hr class="ornament">
+
       </div>
+
     </section>
+
+
     <div class="container">
-      <!-- =========================
-           ARCHIVE NOTE
-      ========================== -->
-      <div class="archive-note">
-        <p class="archive-note-label">
-          Archive Context
+
+      <!-- ========================================
+           AUTHOR
+      ========================================= -->
+
+      <section class="author-card">
+
+        <p class="author-label">
+          Compiled and Annotated By
         </p>
+
+        <p class="author-name">
+          Commander Q
+        </p>
+
+        <p class="author-title">
+          Captain Commander of the Vanguard Knights
+          <br>
+          Researcher of Tyrian History and the Mists
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           PREFACE
+      ========================================= -->
+
+      <section class="preface">
+
+        <p class="section-kicker">
+          Author's Preface
+        </p>
+
+        <h2>
+          Magic was never new
+        </h2>
+
         <p>
-          Magic did not begin with the Human Gods.
-          Ancient peoples such as the
-          <strong>Seers</strong> and
-          <strong>Mursaat</strong>
-          possessed powerful magical traditions
-          long before humanity arrived.
+          The previous record ended as Humanity approached
+          one of the great turning points of its early history.
+          By 1 BE, Human civilizations had spread across much
+          of the known world while the Gods remained active
+          within mortal affairs.
         </p>
+
         <p>
-          The original Bloodstone was itself
-          an ancient Seer creation.
-          By the time of the Human Gods,
-          the artifact had been brought to
-          <strong>Arah</strong>.
+          Magic itself was already ancient. The Seers, Mursaat,
+          Forgotten, and other peoples had practiced powerful
+          forms of it thousands of years before Humans arrived
+          in Tyria. The Bloodstone had also existed since the
+          previous Dragonrise, when the Seers used it to place
+          much of the world's uncorrupted magic beyond the reach
+          of the Elder Dragons.
         </p>
+
         <p>
-          This archive concerns the events of
-          <strong>1 BE</strong>,
-          when Abaddon used the Bloodstone
-          as part of the gods' great gift of magic
-          and the disastrous consequences
-          forced the pantheon to reverse course.
+          What changed in 1 BE was not the existence of magic,
+          but access to it. Abaddon distributed magical power
+          across the mortal races on a scale that transformed
+          civilization almost immediately. What followed forced
+          the Gods to confront a problem that their own Gift
+          had helped create.
         </p>
-      </div>
-      <!-- =========================
-           RECORD 01
-      ========================== -->
+
+        <p class="signature">
+          — Commander Q
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER I
+      ========================================= -->
+
       <section
-        class="history-section"
+        class="chapter"
         data-position="5"
         data-date="1 BE"
-        data-context="YOU ARE HERE // The Gods Release Magic"
+        data-context="ABADDON DISTRIBUTES MAGIC"
       >
-        <p class="history-label">
-          Record 01 // The Gift
+
+        <p class="chapter-number">
+          I
         </p>
+
         <h2>
-          The gods give magic to mortal races
+          Abaddon distributes the Gift
         </h2>
-        <p>
-          In <strong>1 BE</strong>,
-          the Six Gods decided to spread
-          magical power among the mortal peoples of Tyria.
+
+        <p class="chapter-opening">
+          In <strong>1 BE</strong>, the Gods decided to extend
+          magical power among the sentient races of Tyria.
+          <strong>Abaddon</strong>, then the God of Knowledge
+          and Water, took responsibility for distributing
+          the Gift.
         </p>
+
         <p>
-          <strong>Abaddon</strong>,
-          God of Knowledge and Water,
-          took on the task of distributing the gift.
+          The ancient <strong>Bloodstone</strong> became part
+          of this effort. Power that had once been concentrated
+          within the artifact became available on a far broader
+          scale, allowing mortal civilizations access to forms
+          of magic that could dramatically alter their lives.
         </p>
+
         <p>
-          He used the ancient
-          <strong>Bloodstone</strong>
-          to release magic that had been sealed away
-          since the previous Dragonrise.
+          The intention was not to create magic, because magic
+          had always been part of Tyria. The change was that
+          magical power became available to far more people,
+          and civilizations quickly discovered uses for it
+          beyond those the Gods may have intended.
         </p>
-        <p>
-          Different peoples received access
-          to powerful forms of magic.
-        </p>
-        <p>
-          The world already knew magic.
-        </p>
-        <p>
-          What changed was its scale
-          and availability.
-        </p>
-        <div class="record-box">
-          <p class="record-box-label">
-            Important Distinction
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
           </p>
+
           <p>
-            Abaddon did not create magic.
-            The gift dramatically expanded
-            mortal access to power
-            that already existed in Tyria.
+            It is easy to call this the moment when the Gods
+            "gave Tyria magic," but that wording erases nearly
+            everything we have already learned about the ancient
+            world. What they gave mortals was access. The power
+            itself was much older than any Human kingdom.
           </p>
+
         </div>
+
       </section>
-      <!-- =========================
-           RECORD 02
-      ========================== -->
+
+
+      <!-- ========================================
+           CHAPTER II
+      ========================================= -->
+
       <section
-        class="history-section"
-        data-position="17"
+        class="chapter"
+        data-position="20"
         data-date="1 BE"
-        data-context="YOU ARE HERE // The Gift Becomes a Weapon"
+        data-context="THE WARS OF MAGIC"
       >
-        <p class="history-label">
-          Record 02 // The Magical Wars
+
+        <p class="chapter-number">
+          II
         </p>
+
         <h2>
-          Power spreads faster than restraint
+          The Gift becomes a weapon
         </h2>
-        <p>
-          The gift did not bring lasting prosperity.
+
+        <p class="chapter-opening">
+          The spread of magic quickly intensified existing
+          rivalries among the peoples of Tyria. Civilizations
+          that had gained new magical capabilities began turning
+          those powers against one another, and disputes that
+          might once have remained limited became increasingly
+          destructive.
         </p>
+
         <p>
-          Civilizations began using
-          their newfound magical power
-          against one another.
+          The resulting conflicts caused widespread casualties.
+          The Gods had expanded what mortals were capable of
+          doing, but greater power had not produced greater
+          restraint. Instead, magic became another means by which
+          competing peoples could pursue conquest and settle
+          old rivalries.
         </p>
+
         <p>
-          Rivalry became conflict.
+          The crisis grew severe enough that a mortal ruler
+          eventually sought Divine intervention.
         </p>
-        <p>
-          Conflict became war.
-        </p>
-        <p>
-          The resulting destruction
-          spread across Tyria
-          and caused enormous loss of life.
-        </p>
-        <p>
-          The gods had increased
-          what mortals were capable of doing.
-        </p>
-        <p>
-          They had not changed
-          what mortals might choose to do with it.
-        </p>
+
       </section>
-      <!-- =========================
-           RECORD 03
-      ========================== -->
+
+
+      <!-- ========================================
+           CHAPTER III
+      ========================================= -->
+
       <section
-        class="history-section"
-        data-position="29"
+        class="chapter"
+        data-position="35"
         data-date="1 BE"
-        data-context="YOU ARE HERE // King Doric Travels to Arah"
+        data-context="KING DORIC PETITIONS THE GODS"
       >
-        <p class="history-label">
-          Record 03 // King Doric
+
+        <p class="chapter-number">
+          III
         </p>
+
         <h2>
-          A king asks the gods to intervene
+          King Doric travels to Arah
         </h2>
-        <p>
-          <strong>King Doric</strong>
-          ruled the human lands
-          on the Tyrian continent.
+
+        <p class="chapter-opening">
+          <strong>King Doric</strong>, ruler of the Human
+          kingdoms of the Tyrian continent, witnessed the
+          growing devastation caused by the wars of magic.
+          Seeking an end to the bloodshed, he traveled to
+          <strong>Arah</strong> and pleaded directly with
+          the Gods to restrain the power they had released.
         </p>
+
         <p>
-          Watching the magical wars
-          grow increasingly destructive,
-          Doric made the long journey
-          to <strong>Arah</strong>,
-          the City of the Gods.
+          The appeal placed the Gods in an unusual position.
+          The Gift had been intended to empower mortal
+          civilization, yet the same power was now being used
+          to destroy it. Most of the pantheon agreed that
+          magical access had to be reduced.
         </p>
+
         <p>
-          He pleaded with the Six
-          to end the bloodshed
-          and restrain the power
-          they had released into the world.
+          Their solution returned them to an artifact created
+          for an entirely different crisis thousands of years
+          earlier.
         </p>
-        <p>
-          Most of the gods agreed.
-        </p>
+
       </section>
-      <!-- =========================
-           RECORD 04
-      ========================== -->
+
+
+      <!-- ========================================
+           CHAPTER IV
+      ========================================= -->
+
       <section
-        class="history-section"
-        data-position="41"
+        class="chapter"
+        data-position="50"
         data-date="1 BE"
-        data-context="YOU ARE HERE // Magic Returns to the Bloodstone"
+        data-context="MAGIC RETURNS TO THE BLOODSTONE"
       >
-        <p class="history-label">
-          Record 04 // The Bloodstone
+
+        <p class="chapter-number">
+          IV
         </p>
+
         <h2>
-          The gods turn back to an ancient solution
+          The Bloodstone becomes a restraint
         </h2>
-        <p>
-          The gods did not create
-          the original Bloodstone.
+
+        <p class="chapter-opening">
+          The Gods turned to the original
+          <strong>Bloodstone</strong>, the Seer-created
+          repository that had once helped protect magic from
+          the Elder Dragons. This time, the artifact would
+          be used to limit the amount of magical power available
+          to mortals.
         </p>
+
         <p>
-          It had been forged
-          thousands of years earlier
-          by the <strong>Seers</strong>
-          as a way to hide magic
-          from the Elder Dragons.
+          Much of the Gift was drawn back into the Bloodstone,
+          reducing the power available throughout Tyria.
+          The purpose was different from the one envisioned
+          by the Seers, but the underlying principle remained
+          familiar: magic could be controlled by concentrating
+          it and limiting access to it.
         </p>
+
         <p>
-          Now the gods used
-          that same ancient artifact
-          to restrain mortal access to magic.
+          The Gods went further than simply restoring the
+          Bloodstone. They changed the artifact itself so that
+          no single person could easily seize control over the
+          full concentration of magic it contained.
         </p>
-        <p>
-          Magic was drawn back
-          into the Bloodstone,
-          greatly reducing the power
-          available throughout the world.
-        </p>
-        <p>
-          In doing so,
-          the gods repeated the basic logic
-          of the Seers' ancient solution:
-          control the flow of magic
-          by concentrating it somewhere else.
-        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Research Note // The Same Artifact
+          </p>
+
+          <p>
+            This is the same Bloodstone introduced in the
+            previous Dragonrise. It was not a new Human or
+            Divine creation. Its purpose had changed from hiding
+            uncorrupted magic from the Elder Dragons to limiting
+            the magical power available to mortal civilizations.
+          </p>
+
+        </div>
+
       </section>
-      <!-- =========================
-           RECORD 05
-      ========================== -->
+
+
+      <!-- ========================================
+           CHAPTER V
+      ========================================= -->
+
       <section
-        class="history-section"
-        data-position="53"
+        class="chapter"
+        data-position="65"
         data-date="1 BE"
-        data-context="YOU ARE HERE // The Bloodstone Is Divided"
+        data-context="THE BLOODSTONE IS DIVIDED"
       >
-        <p class="history-label">
-          Record 05 // Five Great Pieces
+
+        <p class="chapter-number">
+          V
         </p>
+
         <h2>
-          The Bloodstone is divided
+          One Bloodstone becomes five
         </h2>
-        <p>
-          Still in <strong>1 BE</strong>,
-          the gods shattered
-          the original Bloodstone
-          into five major pieces.
+
+        <p class="chapter-opening">
+          At an altar in Arah, the Gods divided the original
+          Bloodstone into <strong>five major pieces</strong>.
+          Four became associated with the traditional schools
+          of magic, while the fifth served as the
+          <strong>Keystone</strong> required to reunite them.
         </p>
-        <p>
-          Four became associated
-          with the traditional
-          schools of magic:
-        </p>
+
         <div class="magic-grid">
+
           <div class="magic-card">
+
             <p class="magic-card-label">
               School of Magic
             </p>
+
             <h3>
               Preservation
             </h3>
+
             <p>
-              One of the four ancient magical divisions
-              represented by a major Bloodstone.
+              One of the four divisions through which the
+              Gods separated the magical power contained
+              within the original Bloodstone.
             </p>
+
           </div>
+
+
           <div class="magic-card">
+
             <p class="magic-card-label">
               School of Magic
             </p>
-            <h3>
-              Destruction
-            </h3>
-            <p>
-              One of the four ancient magical divisions
-              represented by a major Bloodstone.
-            </p>
-          </div>
-          <div class="magic-card">
-            <p class="magic-card-label">
-              School of Magic
-            </p>
+
             <h3>
               Aggression
             </h3>
+
             <p>
-              One of the four ancient magical divisions
+              One of the four traditional magical schools
               represented by a major Bloodstone.
             </p>
+
           </div>
+
+
           <div class="magic-card">
+
             <p class="magic-card-label">
               School of Magic
             </p>
+
             <h3>
               Denial
             </h3>
+
             <p>
-              One of the four ancient magical divisions
+              One of the four traditional magical schools
               represented by a major Bloodstone.
             </p>
+
           </div>
+
+
+          <div class="magic-card">
+
+            <p class="magic-card-label">
+              School of Magic
+            </p>
+
+            <h3>
+              Destruction
+            </h3>
+
+            <p>
+              One of the four traditional magical schools
+              represented by a major Bloodstone.
+            </p>
+
+          </div>
+
+
+          <div class="magic-card">
+
+            <p class="magic-card-label">
+              Fifth Piece
+            </p>
+
+            <h3>
+              The Keystone
+            </h3>
+
+            <p>
+              The fifth major fragment was required to bring
+              the four school-aligned Bloodstones together
+              again.
+            </p>
+
+          </div>
+
         </div>
+
+        <p>
+          The division created a safeguard. The magical power
+          of the original Bloodstone no longer rested within
+          a single intact artifact, and restoring that original
+          concentration required possession of the Keystone.
+        </p>
+
       </section>
-      <!-- =========================
-           RECORD 06
-      ========================== -->
+
+
+      <!-- ========================================
+           CHAPTER VI
+      ========================================= -->
+
       <section
-        class="history-section"
-        data-position="64"
+        class="chapter"
+        data-position="80"
         data-date="1 BE"
-        data-context="YOU ARE HERE // The Keystone"
+        data-context="DORIC'S BLOOD SEALS THE STONES"
       >
-        <p class="history-label">
-          Record 06 // The Keystone
+
+        <p class="chapter-number">
+          VI
         </p>
+
         <h2>
-          The fifth stone becomes the key
+          Doric's blood seals the Stones
         </h2>
-        <p>
-          The fifth major piece
-          became the
-          <strong>Keystone</strong>.
+
+        <p class="chapter-opening">
+          King Doric's role did not end with his appeal to the
+          Gods. His blood was used to seal the
+          <strong>Bloodstones</strong>, and surviving traditions
+          state that his bloodline was given responsibility for
+          guarding them.
         </p>
+
         <p>
-          The Keystone was required
-          to reunite the four other
-          major Bloodstones.
+          The five major Stones were then taken from Arah and
+          placed within the great volcano of the
+          <strong>Ring of Fire</strong> that became known as
+          <strong>Abaddon's Mouth</strong>. There they were
+          intended to remain beyond easy mortal reach.
         </p>
+
         <p>
-          Without it,
-          no one could simply reconstruct
-          the original stone
-          and regain control
-          over the complete concentration
-          of magic it represented.
+          The immediate crisis had been answered. Magical power
+          was restricted, the Bloodstone had been divided, and
+          the means of restoring it had been separated among
+          multiple pieces.
         </p>
+
         <p>
-          Smaller Bloodstone fragments
-          were also created
-          during the sundering.
+          The decision solved one problem while creating another.
+          The God who had distributed the Gift did not accept
+          its removal.
         </p>
+
       </section>
-      <!-- =========================
-           RECORD 07
-      ========================== -->
+
+
+      <!-- ========================================
+           CHAPTER VII
+      ========================================= -->
+
       <section
-        class="history-section"
-        data-position="75"
-        data-date="1 BE"
-        data-context="YOU ARE HERE // Doric's Blood Seals the Stones"
-      >
-        <p class="history-label">
-          Record 07 // Doric's Blood
-        </p>
-        <h2>
-          Doric becomes part of the seal
-        </h2>
-        <p>
-          King Doric had been
-          the mortal ruler
-          who asked the gods
-          to restrain magic.
-        </p>
-        <p>
-          His blood was used
-          to seal the
-          <strong>Bloodstones</strong>.
-        </p>
-        <p>
-          The stones would thereafter
-          be known by the name
-          <strong>Bloodstone</strong>,
-          and Doric's bloodline
-          was entrusted with responsibility
-          for guarding them.
-        </p>
-        <div class="record-box">
-          <p class="record-box-label">
-            The Name
-          </p>
-          <p>
-            The artifact itself
-            was far older than Doric.
-            Its familiar name,
-            however,
-            became associated with
-            the sealing of the stones
-            using the king's blood.
-          </p>
-        </div>
-      </section>
-      <!-- =========================
-           RECORD 08
-      ========================== -->
-      <section
-        class="history-section"
-        data-position="86"
-        data-date="1 BE"
-        data-context="YOU ARE HERE // The Stones Enter Abaddon's Mouth"
-      >
-        <p class="history-label">
-          Record 08 // Ring of Fire
-        </p>
-        <h2>
-          The five stones are hidden
-        </h2>
-        <p>
-          The five major Bloodstones
-          were taken from Arah
-          to the <strong>Ring of Fire</strong>.
-        </p>
-        <p>
-          They were placed
-          within the great volcano
-          later known as
-          <strong>Abaddon's Mouth</strong>.
-        </p>
-        <p>
-          Mortal access to magic
-          had been dramatically reduced.
-        </p>
-        <p>
-          The magical wars
-          could now be contained.
-        </p>
-        <p>
-          But the decision
-          had created a new enemy.
-        </p>
-      </section>
-      <!-- =========================
-           RECORD 09
-      ========================== -->
-      <section
-        class="history-section"
+        class="chapter"
         data-position="100"
         data-date="1 BE"
-        data-context="YOU ARE HERE // Abaddon Rejects the Restriction"
+        data-context="ABADDON REBELS"
       >
-        <p class="history-label">
-          Record 09 // The Breaking Point
+
+        <p class="chapter-number">
+          VII
         </p>
+
         <h2>
-          Abaddon refuses the new limits
+          Abaddon turns against the pantheon
         </h2>
+
+        <p class="chapter-opening">
+          <strong>Abaddon</strong> fiercely opposed the decision
+          to restrict the Gift he had distributed. What began as
+          a disagreement over mortal access to magic became one
+          part of a much larger conflict between Abaddon and his
+          fellow Gods.
+        </p>
+
         <p>
-          <strong>Abaddon</strong>
-          had overseen the distribution
-          of widespread magic.
+          Abaddon's devoted <strong>Margonite</strong> followers
+          rallied to him. He began transforming some of them into
+          demonic beings, with <strong>Jadoth</strong> remembered
+          among the first to undergo the change. The maritime
+          people introduced in the previous volume were becoming
+          the army of a rebellious God.
         </p>
+
         <p>
-          He fiercely opposed
-          the decision to revoke
-          the gift and restrict
-          mortal magical power.
+          Abaddon eventually declared war upon the other Gods
+          and assaulted the Gates of Heaven. The dispute that
+          had begun with the distribution and restriction of
+          magic had now become a Divine rebellion.
         </p>
-        <p>
-          His protests were rejected
-          by the other gods.
-        </p>
-        <p>
-          The conflict soon escalated
-          beyond disagreement.
-        </p>
-        <p>
-          Abaddon began transforming
-          his devoted
-          <strong>Margonite</strong>
-          followers and turned
-          against the rest of the pantheon.
-        </p>
-        <p>
-          Before the next year began,
-          a mortal crisis over magic
-          had become a war among gods.
-        </p>
-      </section>
-      <!-- =========================
-           KEY RECORDS
-      ========================== -->
-      <section class="history-section">
-        <p class="history-label">
-          Archive Index
-        </p>
-        <h2>
-          What Changed
-        </h2>
-        <div class="magic-grid">
-          <div class="magic-card">
-            <p class="magic-card-label">
-              1 BE
-            </p>
-            <h3>
-              Widespread Magic
-            </h3>
-            <p>
-              Abaddon oversees the distribution
-              of greatly expanded magical power
-              to mortal races.
-            </p>
-          </div>
-          <div class="magic-card">
-            <p class="magic-card-label">
-              Mortal Response
-            </p>
-            <h3>
-              Magical Wars
-            </h3>
-            <p>
-              Civilizations turn
-              their new power
-              against one another.
-            </p>
-          </div>
-          <div class="magic-card">
-            <p class="magic-card-label">
-              Human Intervention
-            </p>
-            <h3>
-              King Doric
-            </h3>
-            <p>
-              Doric journeys to Arah
-              and asks the gods
-              to end the bloodshed.
-            </p>
-          </div>
-          <div class="magic-card">
-            <p class="magic-card-label">
-              Ancient Artifact
-            </p>
-            <h3>
-              The Bloodstone
-            </h3>
-            <p>
-              The Seer-created artifact
-              becomes the mechanism
-              used to restrict magic again.
-            </p>
-          </div>
-          <div class="magic-card">
-            <p class="magic-card-label">
-              Five Pieces
-            </p>
-            <h3>
-              Four Schools + Keystone
-            </h3>
-            <p>
-              The Bloodstone is divided
-              into four school-aligned stones
-              and the Keystone.
-            </p>
-          </div>
-          <div class="magic-card">
-            <p class="magic-card-label">
-              Consequence
-            </p>
-            <h3>
-              Divine Rebellion
-            </h3>
-            <p>
-              Abaddon's rejection
-              of the restriction
-              pushes the crisis
-              into open conflict.
-            </p>
-          </div>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            The Bloodstone had now served two very different
+            civilizations in two very different emergencies.
+            The Seers used it because Dragons consumed magic.
+            The Gods used it because mortals consumed one another
+            with magic. The artifact stayed the same. The danger
+            around it changed.
+          </p>
+
         </div>
+
       </section>
-      <!-- =========================
-           NEXT ERA
-      ========================== -->
-      <section class="page-navigation">
-        <p class="navigation-label">
-          Continue the Road Through Time
+
+
+      <!-- ========================================
+           NEXT VOLUME
+      ========================================= -->
+
+      <section class="transition">
+
+        <p class="transition-label">
+          End of Volume IV
         </p>
+
         <h2>
-          The Exodus of the Gods
+          The road continues
         </h2>
+
         <p>
-          The Gift of Magic
-          and the Bloodstone crisis
-          both unfolded in
-          <strong>1 BE</strong>.
+          The Gift had been restricted, but the argument over
+          magic was no longer the greatest danger facing Tyria.
+          Abaddon had turned against the pantheon, and the
+          Margonites had become his army.
         </p>
+
+        <p class="next-title">
+          Volume V // The Exodus of the Gods
+        </p>
+
         <p>
-          The next year,
-          <strong>0 AE</strong>,
-          would become one of the great
-          dividing points in Tyrian history.
+          The next archive follows Abaddon's Rebellion, the war
+          that transformed the Crystal Sea, his imprisonment in
+          the Realm of Torment, and the departure of the remaining
+          Gods from Tyria in <strong>0 AE</strong>.
         </p>
-        <p>
-          Abaddon's rebellion would devastate
-          the Crystal Sea,
-          destroy the old Margonite civilization,
-          create the Crystal Desert
-          and Desolation,
-          and end with the fallen god
-          imprisoned in the Realm of Torment.
-        </p>
-        <p>
-          Afterward,
-          the remaining gods would leave Tyria
-          in the event remembered as
-          the <strong>Exodus of the Gods</strong>.
-        </p>
+
         <div class="navigation-actions">
+
           <a
             href="../gods-and-humanity/index.html"
             class="button"
           >
-            ← Gods and Humanity
+            ← Volume III
           </a>
+
           <a
             href="../index.html"
             class="button"
           >
             Road Through Time
           </a>
+
           <a
             href="../exodus-of-gods/index.html"
             class="button button-primary"
           >
-            The Exodus of the Gods →
+            Read Volume V →
           </a>
+
         </div>
+
       </section>
+
     </div>
+
   </main>
-  <!-- =========================
+
+
+  <!-- ========================================
        FOOTER
-  ========================== -->
+  ========================================= -->
+
   <footer>
+
     <div class="container">
-      Guild Wars Living Lore Library is an unofficial fan lore project.
-      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
-      belong to their respective owners.
+
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
+
     </div>
+
   </footer>
-  <!-- =========================
-       HISTORY POSITION SCRIPT
-  ========================== -->
+
+
+  <!-- ========================================
+       CHRONOLOGY SCRIPT
+  ========================================= -->
+
   <script>
     (() => {
       "use strict";
+
       const sections =
         document.querySelectorAll(
-          ".history-section[data-position]"
+          ".chapter[data-position]"
         );
+
       const marker =
-        document.getElementById("historyMarker");
+        document.getElementById(
+          "historyMarker"
+        );
+
       const currentDate =
-        document.getElementById("currentDate");
+        document.getElementById(
+          "currentDate"
+        );
+
       const positionContext =
-        document.getElementById("positionContext");
-      const updatePosition = (section) => {
-        const position =
-          section.dataset.position || "5";
-        const date =
-          section.dataset.date || "1 BE";
-        const context =
-          section.dataset.context || "YOU ARE HERE";
-        marker.style.left =
-          `${position}%`;
-        currentDate.textContent =
-          date;
-        positionContext.textContent =
-          context;
-      };
+        document.getElementById(
+          "positionContext"
+        );
+
+      const updatePosition =
+        (section) => {
+
+          const position =
+            section.dataset.position || "5";
+
+          const date =
+            section.dataset.date ||
+            "1 BE";
+
+          const context =
+            section.dataset.context ||
+            "HISTORICAL RECORD";
+
+          marker.style.left =
+            `${position}%`;
+
+          currentDate.textContent =
+            date;
+
+          positionContext.textContent =
+            context;
+        };
+
       const observer =
         new IntersectionObserver(
           (entries) => {
+
             const visible =
               entries
                 .filter(
@@ -1260,6 +1681,7 @@
                     b.intersectionRatio -
                     a.intersectionRatio
                 );
+
             if (visible.length > 0) {
               updatePosition(
                 visible[0].target
@@ -1269,6 +1691,7 @@
           {
             rootMargin:
               "-35% 0px -45% 0px",
+
             threshold: [
               0,
               0.15,
@@ -1278,6 +1701,7 @@
             ]
           }
         );
+
       sections.forEach(
         (section) => {
           observer.observe(section);
@@ -1285,5 +1709,6 @@
       );
     })();
   </script>
+
 </body>
 </html>
