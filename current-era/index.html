@@ -10,37 +10,26 @@
 
   <meta
     name="description"
-    content="Commander Q's living historical record of the Current Era, Castora, the Seers, Ancora, Director Vloxx, and the unfolding events of Visions of Eternity."
+    content="The Current Era archive entry in the Guild Wars Living Lore Library."
   >
 
-  <meta name="theme-color" content="#070b14">
+  <meta name="theme-color" content="#020617">
 
-  <title>The Current Era // The Records of Commander Q</title>
+  <title>The Current Era // GWlll</title>
 
   <style>
     :root {
       color-scheme: dark;
 
-      --background: #070b14;
-      --background-deep: #03060c;
-      --paper: #111827;
-      --paper-light: #172033;
-      --panel: #0d1422;
+      --background: #020617;
+      --panel: #0f172a;
+      --border: #374151;
 
-      --border: #334155;
-      --border-soft: rgba(148, 163, 184, 0.18);
+      --gold: #f4c76b;
+      --gold-bright: #ffe3a3;
+      --gold-muted: #c99b45;
 
-      --gold: #d6b36a;
-      --gold-bright: #f1d79a;
-      --gold-muted: #9f8148;
-
-      --ink: #e8e5dc;
-      --ink-muted: #b9b8b2;
-      --ink-faint: #8f949e;
-
-      --quote: #c7d2e0;
-
-      --max-width: 820px;
+      --white: #ffffff;
     }
 
     * {
@@ -49,7 +38,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 150px;
+      scroll-padding-top: 175px;
     }
 
     body {
@@ -59,24 +48,23 @@
       background:
         radial-gradient(
           circle at top,
-          rgba(214, 179, 106, 0.07),
-          transparent 32rem
+          rgba(244, 199, 107, 0.08),
+          transparent 34rem
         ),
-        linear-gradient(
-          to bottom,
-          #090e18,
-          var(--background) 30rem
-        );
+        var(--background);
 
-      color: var(--ink);
+      color: var(--white);
 
       font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
-      font-size: 1.05rem;
-      line-height: 1.85;
+      line-height: 1.75;
     }
 
     a {
@@ -84,34 +72,27 @@
     }
 
     .container {
-      width: min(
-        var(--max-width),
-        calc(100% - 34px)
-      );
-
+      width: min(900px, calc(100% - 32px));
       margin-inline: auto;
     }
 
-    /* ========================================
+    /* =========================
        HEADER
-    ======================================== */
+    ========================= */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
 
-      border-bottom:
-        1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border);
 
-      background:
-        rgba(3, 6, 12, 0.95);
-
+      background: rgba(2, 6, 23, 0.94);
       backdrop-filter: blur(14px);
     }
 
     .header-inner {
-      min-height: 66px;
+      min-height: 68px;
 
       display: flex;
       align-items: center;
@@ -127,17 +108,12 @@
     .brand-small {
       margin: 0;
 
-      color: var(--ink-faint);
+      color: var(--white);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.65rem;
 
-      font-size: 0.61rem;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
     }
 
@@ -153,14 +129,8 @@
     .home-link {
       color: var(--gold);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.7rem;
+      font-family: monospace;
+      font-size: 0.75rem;
       font-weight: 700;
 
       text-decoration: none;
@@ -175,66 +145,60 @@
       transform: translateX(-3px);
     }
 
-    /* ========================================
-       CHRONOLOGY
-    ======================================== */
+    /* =========================
+       HISTORICAL POSITION
+    ========================= */
 
-    .chronology {
+    .history-position {
       position: sticky;
-      top: 66px;
+      top: 68px;
       z-index: 40;
 
-      border-bottom:
-        1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border);
 
-      background:
-        rgba(7, 11, 20, 0.96);
-
+      background: rgba(2, 6, 23, 0.96);
       backdrop-filter: blur(12px);
     }
 
-    .chronology-inner {
-      padding: 11px 0 13px;
+    .history-position-inner {
+      padding: 13px 0 15px;
     }
 
-    .chronology-top {
+    .position-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      gap: 15px;
+      gap: 12px;
 
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    .chronology-label,
-    .chronology-date {
+    .position-label {
       margin: 0;
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      color: var(--white);
 
+      font-family: monospace;
       font-size: 0.62rem;
-      letter-spacing: 0.12em;
+
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
-    .chronology-label {
-      color: var(--ink-faint);
-    }
+    .current-date {
+      margin: 0;
 
-    .chronology-date {
       color: var(--gold-bright);
+
+      font-family: monospace;
+      font-size: 0.7rem;
       font-weight: 700;
     }
 
     .history-rail {
       position: relative;
-      height: 17px;
+      height: 26px;
     }
 
     .history-line {
@@ -249,20 +213,48 @@
       background:
         linear-gradient(
           to right,
-          rgba(214, 179, 106, 0.18),
-          rgba(214, 179, 106, 0.85),
-          rgba(214, 179, 106, 0.18)
+          rgba(244, 199, 107, 0.25),
+          rgba(244, 199, 107, 0.9),
+          rgba(244, 199, 107, 0.25)
         );
+    }
+
+    .history-point {
+      position: absolute;
+
+      top: 2px;
+
+      width: 11px;
+      height: 11px;
+
+      border: 1px solid var(--gold-muted);
+      border-radius: 50%;
+
+      background: var(--background);
+
+      transform: translateX(-50%);
+    }
+
+    .history-point.start {
+      left: 5%;
+    }
+
+    .history-point.middle {
+      left: 50%;
+    }
+
+    .history-point.end {
+      left: 95%;
     }
 
     .history-marker {
       position: absolute;
 
-      top: 1px;
+      top: -1px;
       left: 5%;
 
-      width: 13px;
-      height: 13px;
+      width: 17px;
+      height: 17px;
 
       border: 2px solid var(--gold-bright);
       border-radius: 50%;
@@ -270,497 +262,240 @@
       background: var(--gold);
 
       box-shadow:
-        0 0 12px
-        rgba(214, 179, 106, 0.38);
+        0 0 15px rgba(244, 199, 107, 0.5);
 
       transform: translateX(-50%);
 
-      transition: left 400ms ease;
+      transition: left 450ms ease;
     }
 
-    .chronology-context {
-      margin: 4px 0 0;
+    .rail-labels {
+      display: flex;
+      justify-content: space-between;
 
-      color: var(--ink-muted);
+      margin-top: 2px;
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      color: var(--white);
 
-      font-size: 0.59rem;
+      font-family: monospace;
+      font-size: 0.58rem;
+    }
+
+    .position-context {
+      margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 0.72rem;
       text-align: center;
     }
 
-    /* ========================================
-       BOOK HEADER
-    ======================================== */
+    /* =========================
+       HERO
+    ========================= */
 
-    .book-header {
-      padding: 80px 0 52px;
+    .hero {
+      padding: 72px 0 56px;
+
       text-align: center;
     }
 
-    .volume {
+    .hero-label {
       margin: 0;
 
-      color: var(--gold-muted);
+      color: var(--white);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.7rem;
 
-      font-size: 0.67rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    .book-header h1 {
-      margin: 17px 0 0;
+    .hero h1 {
+      margin: 16px 0 0;
+
+      color: var(--gold);
+
+      font-size: clamp(2.7rem, 8vw, 5.2rem);
+      line-height: 1.03;
+
+      letter-spacing: -0.045em;
+
+      animation: goldPulse 4s ease-in-out infinite;
+    }
+
+    .hero-date {
+      margin: 16px 0 0;
 
       color: var(--gold-bright);
 
-      font-size:
-        clamp(
-          2.6rem,
-          8vw,
-          4.8rem
-        );
+      font-family: monospace;
+      font-size: 0.8rem;
 
-      font-weight: 500;
-      line-height: 1.05;
-      letter-spacing: -0.035em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .subtitle {
-      max-width: 690px;
+    .hero-text {
+      max-width: 760px;
 
-      margin: 18px auto 0;
+      margin: 24px auto 0;
 
-      color: var(--ink-muted);
-
-      font-style: italic;
-      font-size: 1.08rem;
-    }
-
-    .ornament {
-      width: 120px;
-
-      margin: 32px auto 0;
-
-      border: 0;
-      border-top: 1px solid var(--gold-muted);
+      font-size: 1.06rem;
+      line-height: 1.9;
     }
 
     .present-badge {
       display: inline-flex;
       align-items: center;
 
-      margin-top: 26px;
+      margin-top: 24px;
       padding: 8px 13px;
 
-      border:
-        1px solid
-        rgba(214, 179, 106, 0.42);
-
+      border: 1px solid rgba(244, 199, 107, 0.45);
       border-radius: 999px;
 
-      background:
-        rgba(214, 179, 106, 0.055);
+      background: rgba(244, 199, 107, 0.07);
 
       color: var(--gold-bright);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.65rem;
 
-      font-size: 0.61rem;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    /* ========================================
-       AUTHOR
-    ======================================== */
+    /* =========================
+       ARCHIVE NOTE
+    ========================= */
 
-    .author-card {
-      margin-bottom: 60px;
+    .archive-note {
+      margin-bottom: 55px;
+      padding: 24px;
 
-      padding: 24px 26px;
+      border: 1px solid rgba(244, 199, 107, 0.35);
+      border-radius: 12px;
 
-      border-top:
-        1px solid var(--border-soft);
-
-      border-bottom:
-        1px solid var(--border-soft);
-
-      text-align: center;
+      background: rgba(244, 199, 107, 0.045);
     }
 
-    .author-label {
+    .archive-note-label {
       margin: 0;
 
-      color: var(--ink-faint);
+      color: var(--gold);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.68rem;
 
-      font-size: 0.62rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .author-name {
-      margin: 9px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.2rem;
-      font-weight: 700;
+    .archive-note p:last-child {
+      margin: 12px 0 0;
     }
 
-    .author-title {
-      margin: 5px 0 0;
+    /* =========================
+       HISTORY
+    ========================= */
 
-      color: var(--ink-muted);
+    .history-section {
+      padding: 36px 0;
 
-      font-size: 0.91rem;
-      font-style: italic;
-      line-height: 1.65;
+      border-top: 1px solid var(--border);
     }
 
-    /* ========================================
-       PREFACE
-    ======================================== */
-
-    .preface {
-      margin-bottom: 68px;
-    }
-
-    .section-kicker {
+    .history-label {
       margin: 0;
 
-      color: var(--gold-muted);
+      color: var(--white);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.66rem;
 
-      font-size: 0.64rem;
-      letter-spacing: 0.17em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .preface h2,
-    .chapter h2 {
-      margin: 9px 0 0;
-
-      color: var(--gold);
-
-      font-size:
-        clamp(
-          1.65rem,
-          5vw,
-          2.25rem
-        );
-
-      font-weight: 500;
-      line-height: 1.25;
-    }
-
-    .preface p {
-      margin: 18px 0 0;
-    }
-
-    .signature {
-      margin-top: 28px;
-
-      color: var(--gold-bright);
-      font-style: italic;
-    }
-
-    /* ========================================
-       RESEARCH NOTE
-    ======================================== */
-
-    .research-note {
-      margin: 28px 0;
-
-      padding: 20px 22px;
-
-      border-left:
-        2px solid var(--gold-muted);
-
-      background:
-        rgba(214, 179, 106, 0.045);
-    }
-
-    .research-note-label {
-      margin: 0;
-
-      color: var(--gold);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .research-note p:last-child {
+    .history-section h2 {
       margin: 8px 0 0;
 
-      color: var(--ink-muted);
-      font-size: 0.96rem;
+      color: var(--gold);
+
+      font-size: clamp(1.6rem, 5vw, 2.35rem);
+      line-height: 1.2;
     }
 
-    /* ========================================
-       CHAPTERS
-    ======================================== */
-
-    .chapter {
-      padding: 48px 0;
-
-      border-top:
-        1px solid var(--border-soft);
+    .history-section p {
+      margin: 16px 0 0;
     }
 
-    .chapter-number {
-      margin: 0;
-
-      color: var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .chapter p {
-      margin: 18px 0 0;
-    }
-
-    .chapter strong {
+    .history-section strong {
       color: var(--gold-bright);
-      font-weight: 600;
     }
 
-    .chapter-opening::first-letter {
-      float: left;
+    .record-box {
+      margin-top: 22px;
+      padding: 20px;
 
-      margin: 7px 8px 0 0;
+      border-left: 2px solid var(--gold);
 
-      color: var(--gold);
-
-      font-size: 3.6rem;
-      line-height: 0.75;
+      background: rgba(15, 23, 42, 0.8);
     }
 
-    /* ========================================
-       COMMANDER Q OBSERVATION
-    ======================================== */
-
-    .q-observation {
-      margin: 30px 0 6px;
-
-      padding: 21px 23px;
-
-      border:
-        1px solid var(--border-soft);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(214, 179, 106, 0.05),
-          rgba(15, 23, 42, 0.45)
-        );
-    }
-
-    .q-observation-label {
+    .record-box-label {
       margin: 0;
 
       color: var(--gold);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.65rem;
 
-      font-size: 0.61rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
-    .q-observation p:last-child {
-      margin: 9px 0 0;
-
-      color: var(--quote);
-      font-style: italic;
-    }
-
-    /* ========================================
-       LIVING RECORD
-    ======================================== */
-
-    .living-record {
-      margin: 54px 0 68px;
-
-      padding: 28px;
-
-      border:
-        1px solid
-        rgba(214, 179, 106, 0.32);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(214, 179, 106, 0.07),
-          rgba(15, 23, 42, 0.48)
-        );
-    }
-
-    .living-record-label {
-      margin: 0;
-
-      color: var(--gold);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.63rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .living-record h2 {
+    .record-box p:last-child {
       margin: 8px 0 0;
-
-      color: var(--gold-bright);
-
-      font-size: 1.85rem;
-      font-weight: 500;
     }
 
-    .living-record p {
-      margin: 16px 0 0;
-    }
+    /* =========================
+       CURRENT THREAD GRID
+    ========================= */
 
-    /* ========================================
-       ARCHIVE OVERVIEW
-    ======================================== */
-
-    .archive-overview {
-      padding: 52px 0;
-
-      border-top:
-        1px solid var(--border-soft);
-    }
-
-    .archive-overview h2 {
-      margin: 9px 0 0;
-
-      color: var(--gold);
-
-      font-size: 2rem;
-      font-weight: 500;
-    }
-
-    .timeline-grid {
+    .history-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
 
       gap: 14px;
 
-      margin-top: 28px;
+      margin-top: 24px;
     }
 
-    .timeline-card {
+    .history-card {
       padding: 20px;
 
-      border:
-        1px solid var(--border-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
 
-      background:
-        rgba(15, 23, 42, 0.58);
-
-      text-decoration: none;
-
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        background 180ms ease;
+      background: rgba(15, 23, 42, 0.76);
     }
 
-    .timeline-card:hover {
-      transform: translateY(-2px);
-
-      border-color:
-        rgba(214, 179, 106, 0.5);
-
-      background:
-        rgba(15, 23, 42, 0.84);
-    }
-
-    .timeline-card-current {
-      border-color:
-        rgba(214, 179, 106, 0.45);
-
-      background:
-        rgba(214, 179, 106, 0.055);
-    }
-
-    .timeline-card-label {
+    .history-card-label {
       margin: 0;
 
-      color: var(--ink-faint);
+      color: var(--white);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.62rem;
 
-      font-size: 0.59rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-    .timeline-card h3 {
+    .history-card h3 {
       margin: 7px 0 0;
 
       color: var(--gold);
@@ -768,58 +503,48 @@
       font-size: 1.05rem;
     }
 
-    .timeline-card p:last-child {
+    .history-card p:last-child {
       margin: 8px 0 0;
 
-      color: var(--ink-muted);
-
-      font-size: 0.88rem;
-      line-height: 1.65;
+      font-size: 0.9rem;
     }
 
-    /* ========================================
+    /* =========================
        NAVIGATION
-    ======================================== */
+    ========================= */
 
-    .transition {
-      padding: 58px 0 70px;
+    .page-navigation {
+      padding: 45px 0 80px;
 
-      border-top:
-        1px solid var(--border-soft);
+      border-top: 1px solid var(--border);
     }
 
-    .transition-label {
+    .navigation-label {
       margin: 0;
 
-      color: var(--gold-muted);
+      color: var(--white);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
+      font-family: monospace;
+      font-size: 0.67rem;
 
-      font-size: 0.63rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .transition h2 {
-      margin: 10px 0 0;
+    .page-navigation h2 {
+      margin: 8px 0 0;
 
-      color: var(--gold-bright);
+      color: var(--gold);
 
-      font-size: 2rem;
-      font-weight: 500;
+      font-size: 1.7rem;
     }
 
-    .transition p {
-      margin: 16px 0 0;
+    .page-navigation p {
+      margin: 13px 0 0;
     }
 
     .navigation-actions {
-      margin-top: 28px;
+      margin-top: 24px;
 
       display: flex;
       flex-wrap: wrap;
@@ -837,23 +562,12 @@
       padding: 0 20px;
 
       border: 1px solid var(--border);
-      border-radius: 5px;
+      border-radius: 9px;
 
-      background:
-        rgba(15, 23, 42, 0.7);
-
+      background: var(--panel);
       color: var(--gold);
 
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.75rem;
       font-weight: 700;
-
       text-decoration: none;
 
       transition:
@@ -865,69 +579,68 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color:
-        rgba(214, 179, 106, 0.6);
+      border-color: rgba(244, 199, 107, 0.6);
 
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color:
-        rgba(214, 179, 106, 0.45);
+      border-color: rgba(244, 199, 107, 0.45);
 
-      background:
-        rgba(214, 179, 106, 0.08);
+      background: rgba(244, 199, 107, 0.1);
     }
 
-    /* ========================================
+    /* =========================
        FOOTER
-    ======================================== */
+    ========================= */
 
     footer {
-      padding: 34px 0;
+      padding: 30px 0;
 
-      border-top:
-        1px solid var(--border-soft);
-
-      color: var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.65rem;
-      line-height: 1.7;
+      border-top: 1px solid var(--border);
 
       text-align: center;
+      font-size: 0.75rem;
     }
 
-    /* ========================================
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes goldPulse {
+      0%,
+      100% {
+        color: var(--gold);
+
+        text-shadow:
+          0 0 0 rgba(244, 199, 107, 0);
+      }
+
+      50% {
+        color: var(--gold-bright);
+
+        text-shadow:
+          0 0 16px rgba(244, 199, 107, 0.28),
+          0 0 34px rgba(244, 199, 107, 0.1);
+      }
+    }
+
+    /* =========================
        MOBILE
-    ======================================== */
+    ========================= */
 
     @media (max-width: 650px) {
 
       html {
-        scroll-padding-top: 135px;
-      }
-
-      body {
-        font-size: 1rem;
+        scroll-padding-top: 155px;
       }
 
       .container {
-        width:
-          min(
-            100% - 24px,
-            var(--max-width)
-          );
+        width: min(100% - 22px, 900px);
       }
 
       .header-inner {
-        min-height: 60px;
+        min-height: 62px;
       }
 
       .brand-small {
@@ -935,47 +648,43 @@
       }
 
       .brand-name {
-        font-size: 0.88rem;
+        font-size: 0.84rem;
       }
 
       .home-link {
+        font-size: 0.67rem;
+      }
+
+      .history-position {
+        top: 62px;
+      }
+
+      .position-label {
+        font-size: 0.55rem;
+      }
+
+      .current-date {
         font-size: 0.62rem;
       }
 
-      .chronology {
-        top: 60px;
+      .rail-labels {
+        font-size: 0.52rem;
       }
 
-      .chronology-label {
-        font-size: 0.53rem;
+      .position-context {
+        font-size: 0.65rem;
       }
 
-      .chronology-date {
-        font-size: 0.56rem;
+      .hero {
+        padding: 52px 0 44px;
       }
 
-      .chronology-context {
-        font-size: 0.53rem;
+      .hero-text {
+        font-size: 1rem;
       }
 
-      .book-header {
-        padding: 58px 0 42px;
-      }
-
-      .author-card {
-        padding: 21px 14px;
-      }
-
-      .chapter {
-        padding: 40px 0;
-      }
-
-      .timeline-grid {
+      .history-grid {
         grid-template-columns: 1fr;
-      }
-
-      .living-record {
-        padding: 22px;
       }
 
       .navigation-actions {
@@ -1005,9 +714,9 @@
 
 <body>
 
-  <!-- ========================================
+  <!-- =========================
        HEADER
-  ========================================= -->
+  ========================== -->
 
   <header class="site-header">
 
@@ -1019,7 +728,7 @@
       >
 
         <p class="brand-small">
-          The Historical Records of Commander Q
+          QKommand Archive
         </p>
 
         <p class="brand-name">
@@ -1040,22 +749,22 @@
   </header>
 
 
-  <!-- ========================================
-       CHRONOLOGY
-  ========================================= -->
+  <!-- =========================
+       HISTORICAL POSITION
+  ========================== -->
 
-  <aside class="chronology">
+  <aside class="history-position">
 
-    <div class="container chronology-inner">
+    <div class="container history-position-inner">
 
-      <div class="chronology-top">
+      <div class="position-top">
 
-        <p class="chronology-label">
-          Historical Position
+        <p class="position-label">
+          Tyrian Historical Position
         </p>
 
         <p
-          class="chronology-date"
+          class="current-date"
           id="currentDate"
         >
           1338 AE
@@ -1063,9 +772,14 @@
 
       </div>
 
+
       <div class="history-rail">
 
         <div class="history-line"></div>
+
+        <span class="history-point start"></span>
+        <span class="history-point middle"></span>
+        <span class="history-point end"></span>
 
         <span
           class="history-marker"
@@ -1074,11 +788,23 @@
 
       </div>
 
+
+      <div class="rail-labels">
+
+        <span>1338 AE</span>
+
+        <span>Castora</span>
+
+        <span>1339 AE</span>
+
+      </div>
+
+
       <p
-        class="chronology-context"
+        class="position-context"
         id="positionContext"
       >
-        THE CASTORA EXPEDITION
+        YOU ARE HERE // The Castora Expedition
       </p>
 
     </div>
@@ -1088,33 +814,43 @@
 
   <main>
 
-    <!-- ========================================
-         BOOK HEADER
-    ========================================= -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
-    <section class="book-header">
+    <section class="hero">
 
       <div class="container">
 
-        <p class="volume">
-          Volume XI // The Current Era
+        <p class="hero-label">
+          Historical Archive // Record 11
         </p>
 
         <h1>
           The Current Era
         </h1>
 
-        <p class="subtitle">
-          On Castora, the forgotten history of the Seers,
-          the Rite of Divinity, and events whose ending
-          has not yet entered the historical record.
+        <p class="hero-date">
+          1338 AE – 1339 AE
         </p>
 
         <span class="present-badge">
-          Living Historical Record
+          Current Archive
         </span>
 
-        <hr class="ornament">
+        <p class="hero-text">
+          The fall of the Elder Dragons opened Tyria
+          to histories that had remained hidden behind
+          older wars and forgotten civilizations.
+        </p>
+
+        <p class="hero-text">
+          The road now reaches Castora,
+          where the legacy of the Seers,
+          ancient magical traditions,
+          and Director Vloxx's ambitions
+          have become part of the present conflict.
+        </p>
 
       </div>
 
@@ -1123,270 +859,167 @@
 
     <div class="container">
 
-      <!-- ========================================
-           AUTHOR
-      ========================================= -->
+      <!-- =========================
+           ARCHIVE NOTE
+      ========================== -->
 
-      <section class="author-card">
+      <div class="archive-note">
 
-        <p class="author-label">
-          Compiled and Annotated By
-        </p>
-
-        <p class="author-name">
-          Commander Q
-        </p>
-
-        <p class="author-title">
-          Captain Commander of the Vanguard Knights
-          <br>
-          Researcher of Tyrian History and the Mists
-        </p>
-
-      </section>
-
-
-      <!-- ========================================
-           PREFACE
-      ========================================= -->
-
-      <section class="preface">
-
-        <p class="section-kicker">
-          Author's Preface
-        </p>
-
-        <h2>
-          There is no ending to write yet
-        </h2>
-
-        <p>
-          Every previous volume in this archive has had one
-          advantage that this record does not. I knew how the
-          story ended.
+        <p class="archive-note-label">
+          Archive Context
         </p>
 
         <p>
-          The Seers could be followed from the ancient
-          Dragonrise to the Bloodstone. The Human Gods could
-          be followed from their arrival to the Exodus.
-          The Guild Wars became history, and even the Elder
-          Dragon Cycle eventually reached its conclusion.
+          This volume follows the events of
+          <strong>Visions of Eternity</strong>,
+          beginning with the expedition to Castora
+          in <strong>1338 AE</strong> and continuing
+          into <strong>1339 AE</strong>.
         </p>
 
         <p>
-          Castora offers no such distance. The expedition there
-          belongs to the present, and discoveries are arriving
-          faster than historians can comfortably place them.
-          Ancient names that once occupied only a few surviving
-          records now have ruins, rituals, artifacts, and
-          consequences attached to them.
+          New story chapters can be added to this volume
+          in chronological order as the Castora conflict develops.
         </p>
 
-        <p>
-          For that reason, this volume must remain different
-          from those before it. I can record what has been
-          discovered. I can connect those discoveries to the
-          older archive. I cannot pretend that an unfinished
-          event already has a conclusion.
-        </p>
-
-        <p>
-          History is still happening.
-        </p>
-
-        <p class="signature">
-          — Commander Q
-        </p>
-
-      </section>
+      </div>
 
 
-      <!-- ========================================
-           CHAPTER I
-      ========================================= -->
+      <!-- =========================
+           RECORD 01
+      ========================== -->
 
       <section
-        class="chapter"
+        class="history-section"
         data-position="5"
         data-date="1338 AE"
-        data-context="THE INQUEST SAIL FOR CASTORA"
+        data-context="YOU ARE HERE // The Castora Expedition"
       >
 
-        <p class="chapter-number">
-          I
+        <p class="history-label">
+          Record 01 // Visions of Eternity
         </p>
 
         <h2>
-          Director Vloxx searches for Castora
+          Director Vloxx leads an expedition to Castora
         </h2>
 
-        <p class="chapter-opening">
-          In <strong>1338 AE</strong>, the
-          <strong>Inquest</strong> launched an expedition toward
-          <strong>Castora</strong>, a distant island continent
-          long known through sailors' stories but regarded by
-          many Tyrians as inaccessible, or perhaps not real at all.
+        <p>
+          In <strong>1338 AE</strong>,
+          an Inquest expedition led by
+          <strong>Director Vloxx</strong>
+          traveled toward the distant island
+          of <strong>Castora</strong>.
         </p>
 
         <p>
-          The expedition was led by
-          <strong>Director Vloxx</strong>, the latest leader
-          of the Inquest. His forces were not traveling to
-          Castora simply to chart an unexplored shore.
+          Vloxx was searching for an ancient artifact
+          known as <strong>Ancora</strong>,
+          drawing the Tyrian Alliance into pursuit.
         </p>
 
         <p>
-          Vloxx was searching for an ancient artifact known as
-          <strong>Ancora</strong>.
-        </p>
-
-        <p>
-          The Tyrian Alliance pursued the expedition, carrying
-          the Commander and several allies into a region that
-          had remained outside ordinary Tyrian politics for
-          generations.
-        </p>
-
-        <p>
-          The journey immediately proved difficult. Castora's
-          waters, magical defenses, and natural hazards damaged
-          the Inquest fleet before its members could establish
-          themselves securely on the island.
+          The expedition brought modern Tyria
+          into a region that had remained
+          largely outside the known historical record.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER II
-      ========================================= -->
+      <!-- =========================
+           RECORD 02
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="15"
+        class="history-section"
+        data-position="17"
         data-date="1338 AE"
-        data-context="CASTORA"
+        data-context="YOU ARE HERE // Castora"
       >
 
-        <p class="chapter-number">
-          II
+        <p class="history-label">
+          Record 02 // Castora
         </p>
 
         <h2>
-          An island thought to be legend becomes geography
+          A distant island reveals an ancient past
         </h2>
 
-        <p class="chapter-opening">
-          Castora proved to be far more than an isolated island.
-          Its landscape was saturated with
-          <strong>Ley Energy</strong>, and ancient magic had
-          altered the creatures and environments that developed
-          there.
+        <p>
+          Castora proved to be saturated
+          with powerful magical energy
+          and filled with ruins belonging
+          to the <strong>Seers</strong>.
         </p>
 
         <p>
-          Modern visitors were not the first civilization to
-          recognize the island's importance. Ruins scattered
-          throughout Castora pointed toward occupation and
-          construction by the <strong>Seers</strong>, one of
-          the Elder Races whose history reached back to the
-          previous Dragonrise.
+          Ancient defenses, ritual structures,
+          and magical systems remained active
+          long after the civilization
+          that created them had faded.
         </p>
 
         <p>
-          The island was protected by magical systems designed
-          to survive long after their creators. Enchanted
-          guardians, arcane barriers, and powerful creatures
-          bound into service continued enforcing instructions
-          left behind thousands of years earlier.
+          The island offered something rare:
+          direct evidence of Seer society
+          rather than scattered remnants
+          preserved through other civilizations.
         </p>
-
-        <p>
-          Castora therefore presented a rare historical problem.
-          It was not merely a ruined civilization whose remains
-          could be excavated. Parts of the civilization's
-          defensive infrastructure were still functioning.
-        </p>
-
-        <div class="q-observation">
-
-          <p class="q-observation-label">
-            Commander Q // Observation
-          </p>
-
-          <p>
-            A ruin usually tells us what a civilization left
-            behind. Castora is stranger. Some of what the Seers
-            left behind is still following orders.
-          </p>
-
-        </div>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER III
-      ========================================= -->
+      <!-- =========================
+           RECORD 03
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="25"
+        class="history-section"
+        data-position="29"
         data-date="1338 AE"
-        data-context="THE SEER RUINS"
+        data-context="YOU ARE HERE // The Seers"
       >
 
-        <p class="chapter-number">
-          III
+        <p class="history-label">
+          Record 03 // Ancient Seers
         </p>
 
         <h2>
-          The Seers become more than fragments in other histories
+          Seer civilization comes back into focus
         </h2>
 
-        <p class="chapter-opening">
-          Earlier volumes encountered the
-          <strong>Seers</strong> mainly through the things they
-          left behind. They created the original Bloodstone,
-          fought the Mursaat, developed defenses against
-          Spectral Agony, and were eventually reduced to only
-          a handful of survivors.
+        <p>
+          Earlier records preserved the Seers
+          through their role in the ancient Dragonrise,
+          their creation of the Bloodstone,
+          and their war with the Mursaat.
         </p>
 
         <p>
-          Castora changed the nature of that evidence.
-          Seer ruins, writings, magical systems, and ritual
-          structures preserved information about the civilization
-          itself rather than merely the role it played in
-          someone else's story.
+          Castora revealed more of the civilization itself,
+          including its rituals, magical practices,
+          defenses, and internal traditions.
         </p>
 
         <p>
-          These discoveries showed a society with its own
-          hierarchy, traditions, disagreements, and understanding
-          of magical transformation.
+          A people once known mainly
+          through the artifacts they left behind
+          were becoming easier to understand
+          on their own terms.
         </p>
 
-        <p>
-          The Seers were no longer simply the people who created
-          the Bloodstone before disappearing from history.
-          Castora was beginning to show how they lived and what
-          they believed.
-        </p>
+        <div class="record-box">
 
-        <div class="research-note">
-
-          <p class="research-note-label">
+          <p class="record-box-label">
             Archive Connection
           </p>
 
           <p>
-            The Road Through Time first encountered the Seers
-            near the beginning of the archive, during the ancient
-            Dragonrise. Castora brings their civilization back
-            into focus thousands of years later without requiring
-            the earlier history to be repeated here.
+            The Seers first appear near the beginning
+            of the Road Through Time.
+            Castora returns the archive to that ancient history
+            without repeating the full story of the Dragonrise.
           </p>
 
         </div>
@@ -1394,368 +1027,235 @@
       </section>
 
 
-      <!-- ========================================
-           CHAPTER IV
-      ========================================= -->
+      <!-- =========================
+           RECORD 04
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="36"
+        class="history-section"
+        data-position="41"
         data-date="1338 AE"
-        data-context="ISGARREN'S PAST"
+        data-context="YOU ARE HERE // Isgarren's Past"
       >
 
-        <p class="chapter-number">
-          IV
+        <p class="history-label">
+          Record 04 // Isgarren
         </p>
 
         <h2>
-          Isgarren was once one of the Seers
+          Isgarren's history reaches back to the Seers
         </h2>
 
-        <p class="chapter-opening">
-          The Castoran discoveries also changed the historical
-          understanding of <strong>Isgarren</strong>, the ancient
-          Wizard whose influence had shaped the Wizard's Court
-          long before the Commander discovered it.
+        <p>
+          The Castoran discoveries connected
+          <strong>Isgarren</strong>
+          directly to the ancient Seer civilization.
         </p>
 
         <p>
-          Isgarren had once belonged to the
-          <strong>Seers</strong>.
+          Before becoming the Wizard known
+          to the modern Astral Ward,
+          Isgarren had once belonged
+          to the Seers.
         </p>
 
         <p>
-          His history reached back to the civilization whose
-          ruins now covered parts of Castora, making his
-          extraordinary age and magical knowledge part of a much
-          older story than the modern Astral Ward.
-        </p>
-
-        <p>
-          Among the traditions preserved by the Seers was a
-          transformative ceremony known as the
-          <strong>Rite of Divinity</strong>.
-        </p>
-
-        <p>
-          Isgarren had undergone that rite in the ancient past.
-          The process used the artifact known as
-          <strong>Ancora</strong>.
-        </p>
-
-        <p>
-          The same object Vloxx had crossed the ocean to find
-          was therefore connected directly to the origin of one
-          of the most powerful Wizards known to modern Tyria.
+          His transformation was associated
+          with an ancient ceremony called
+          the <strong>Rite of Divinity</strong>,
+          performed using the artifact
+          known as <strong>Ancora</strong>.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER V
-      ========================================= -->
+      <!-- =========================
+           RECORD 05
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="47"
+        class="history-section"
+        data-position="53"
         data-date="1338 AE"
-        data-context="ANCORA"
+        data-context="YOU ARE HERE // Ancora"
       >
 
-        <p class="chapter-number">
-          V
+        <p class="history-label">
+          Record 05 // Ancora
         </p>
 
         <h2>
-          Ancora was built for transformation
+          The purpose of Vloxx's search becomes clear
         </h2>
 
-        <p class="chapter-opening">
-          <strong>Ancora</strong> was not simply a powerful
-          Seer weapon. It was a ritual staff tied to the
-          <strong>Rite of Divinity</strong>, a process capable
-          of elevating those who underwent it beyond their
-          previous mortal condition.
+        <p>
+          <strong>Ancora</strong>
+          was more than a surviving Seer artifact.
         </p>
 
         <p>
-          The Seers themselves understood that such power could
-          not be allowed to fall casually into other hands.
-          Ancient accounts associated with the artifact show
-          that its preservation was treated as a dangerous
-          necessity rather than an ordinary act of safekeeping.
+          The staff was tied to the
+          <strong>Rite of Divinity</strong>,
+          a magical transformation capable
+          of elevating those who underwent it.
         </p>
 
         <p>
-          The artifact was concealed behind defenses involving
-          Seer magic, traps, guardians, and
-          <strong>Shadowstone</strong>.
+          Its defenses showed that the Seers
+          understood how dangerous such knowledge
+          could become in the wrong hands.
         </p>
 
         <p>
-          Director Vloxx sought Ancora because he intended to
-          use the Seers' knowledge of ascension for himself.
-        </p>
-
-        <p>
-          The mystery was no longer what the Inquest had come
-          to Castora to find.
-        </p>
-
-        <p>
-          The question became what Vloxx intended to do once
-          he possessed it.
+          Director Vloxx intended to use
+          that knowledge for himself.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER VI
-      ========================================= -->
+      <!-- =========================
+           RECORD 06
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="58"
+        class="history-section"
+        data-position="65"
         data-date="1338 AE"
-        data-context="THE RACE FOR ANCORA"
+        data-context="YOU ARE HERE // The Race for Ancora"
       >
 
-        <p class="chapter-number">
-          VI
+        <p class="history-label">
+          Record 06 // The Pursuit
         </p>
 
         <h2>
-          The Alliance and Inquest race through Seer history
+          The Alliance and Inquest race through the ruins
         </h2>
 
-        <p class="chapter-opening">
-          The pursuit of Ancora carried both the Alliance and
-          the Inquest deeper into Castora's surviving Seer
-          structures. Exploration became inseparable from the
-          conflict because each new discovery revealed another
-          part of the route toward the artifact.
+        <p>
+          The search for Ancora carried both sides
+          deeper into Castora's surviving Seer structures.
         </p>
 
         <p>
-          The Commander and allies reached Seer ritual sites,
-          studied the defenses surrounding them, and learned
-          more about the culture responsible for building
-          Castora's ancient magical network.
+          Each ruin revealed more about
+          the civilization that had built it,
+          while Vloxx demonstrated enough understanding
+          of Seer traditions to remain ahead
+          of the Alliance.
         </p>
 
         <p>
-          Director Vloxx remained ahead often enough to make
-          those discoveries dangerous. He was not looting ruins
-          at random. His actions showed that he understood enough
-          of the Seers' traditions to identify the pieces needed
-          for the Rite of Divinity.
-        </p>
-
-        <p>
-          The expedition had therefore become a race between
-          two forms of historical research.
-        </p>
-
-        <p>
-          One side wanted to understand the past before using it.
-          The other believed understanding was valuable mainly
-          because it created the possibility of action.
+          Exploration and conflict became inseparable.
+          Whoever understood the ruins first
+          gained the advantage.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER VII
-      ========================================= -->
+      <!-- =========================
+           RECORD 07
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="69"
+        class="history-section"
+        data-position="76"
         data-date="1338 AE"
-        data-context="VLOXX TAKES ANCORA"
+        data-context="YOU ARE HERE // Vloxx Takes Ancora"
       >
 
-        <p class="chapter-number">
-          VII
+        <p class="history-label">
+          Record 07 // Ancora Lost
         </p>
 
         <h2>
-          Ancora falls into Inquest hands
+          Vloxx escapes with the Seer artifact
         </h2>
 
-        <p class="chapter-opening">
-          The Commander eventually reached
-          <strong>Ancora</strong>, but possession of the artifact
-          was brief. Vloxx and his forces intervened and escaped
-          with the Seer staff.
+        <p>
+          Although the Commander reached
+          <strong>Ancora</strong>,
+          Director Vloxx and the Inquest
+          ultimately escaped with it.
         </p>
 
         <p>
-          From that point onward, the problem changed again.
-          Castora no longer held the artifact everyone was
-          seeking.
+          The conflict then moved deeper
+          into Castora and toward
+          <strong>Eternity's Garden</strong>.
         </p>
 
         <p>
-          Vloxx did.
-        </p>
-
-        <p>
-          His ability to move through Castora's surviving magical
-          defenses also demonstrated that the Inquest expedition
-          had learned far more about the island than its damaged
-          arrival initially suggested.
-        </p>
-
-        <p>
-          The Alliance continued the pursuit deeper into
-          <strong>Eternity's Garden</strong>, where the surviving
-          Seer legacy and Vloxx's ambitions increasingly
-          overlapped.
+          What had begun as a search
+          for an ancient artifact
+          became a struggle over
+          what the Seers' knowledge
+          could be used to accomplish.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER VIII
-      ========================================= -->
+      <!-- =========================
+           RECORD 08
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="79"
+        class="history-section"
+        data-position="86"
         data-date="1338 AE"
-        data-context="VLOXX SEEKS ASCENSION"
+        data-context="YOU ARE HERE // The Rite of Divinity"
       >
 
-        <p class="chapter-number">
-          VIII
+        <p class="history-label">
+          Record 08 // Vloxx's Ambition
         </p>
 
         <h2>
-          Vloxx intends to become something greater
+          Vloxx seeks the power of the Seers
         </h2>
 
-        <p class="chapter-opening">
-          Vloxx eventually confirmed what the search for Ancora
-          had implied. He intended to perform a form of the
-          <strong>Seer Rite of Divinity</strong> and elevate
-          himself through its power.
+        <p>
+          Vloxx confirmed that he intended
+          to use Ancora in a form
+          of the <strong>Rite of Divinity</strong>.
         </p>
 
         <p>
-          His stated ambitions reached farther than personal
-          immortality or another Inquest attempt to collect
-          magical weapons.
+          His objective extended beyond
+          acquiring another powerful artifact.
+          He sought transformation through
+          the same ancient traditions
+          connected to Isgarren.
         </p>
 
         <p>
-          Vloxx argued that Tyria had repeatedly placed its
-          future into the hands of exceptional beings,
-          institutions, rulers, Wizards, Dragons, and organizations
-          capable of deciding what ordinary people were allowed
-          to become.
+          Vloxx argued that Tyria had repeatedly
+          depended on exceptional individuals
+          and powerful institutions
+          to determine its future.
         </p>
 
         <p>
-          He presented his own plans as an attempt to return
-          control of Tyria's future to its people and create
-          another generation capable of accomplishing what
-          individuals such as the Commander had achieved.
+          His solution was to change
+          who had access to that kind of power.
         </p>
 
-        <p>
-          Whether his solution would actually accomplish that
-          remained far less certain than his confidence in it.
-        </p>
+        <div class="record-box">
 
-        <div class="q-observation">
-
-          <p class="q-observation-label">
-            Commander Q // Observation
-          </p>
-
-          <p>
-            I have learned to be suspicious whenever someone
-            announces that they intend to give everyone else
-            freedom after first making themselves powerful
-            enough to decide what freedom should mean.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- ========================================
-           CHAPTER IX
-      ========================================= -->
-
-      <section
-        class="chapter"
-        data-position="88"
-        data-date="1338–1339 AE"
-        data-context="THE QUESTION BECOMES LARGER"
-      >
-
-        <p class="chapter-number">
-          IX
-        </p>
-
-        <h2>
-          The problem is no longer only Ancora
-        </h2>
-
-        <p class="chapter-opening">
-          As the pursuit continued, Vloxx's language suggested
-          that the Rite of Divinity was not the final purpose
-          of his plan.
-        </p>
-
-        <p>
-          Ascension would provide him with power, but power was
-          a means rather than an ending.
-        </p>
-
-        <p>
-          Vloxx increasingly described Tyria's repeated failures
-          as symptoms of something deeper. Dragons had been
-          defeated. Gods had been challenged. Tyrants had fallen,
-          only for new institutions, conflicts, and concentrations
-          of power to emerge afterward.
-        </p>
-
-        <p>
-          His conclusion was that repairing individual crises
-          would never be enough if the underlying structure that
-          allowed those crises to recur remained unchanged.
-        </p>
-
-        <p>
-          Whatever Vloxx intends to alter, his objective appears
-          to have moved beyond changing a government or defeating
-          another enemy.
-        </p>
-
-        <p>
-          He believes there is something wrong at the foundation.
-        </p>
-
-        <div class="research-note">
-
-          <p class="research-note-label">
+          <p class="record-box-label">
             Historical Caution
           </p>
 
           <p>
-            Vloxx's complete objective has not yet been revealed.
-            This archive therefore records the direction of his
-            stated intentions without treating speculation about
-            his final plan as established history.
+            Vloxx's complete objective
+            remains only partly understood.
+            His stated ambitions should not be treated
+            as proof of what his final plan
+            will ultimately accomplish.
           </p>
 
         </div>
@@ -1763,406 +1263,179 @@
       </section>
 
 
-      <!-- ========================================
-           CHAPTER X
-      ========================================= -->
+      <!-- =========================
+           RECORD 09
+      ========================== -->
 
       <section
-        class="chapter"
-        data-position="96"
+        class="history-section"
+        data-position="94"
         data-date="1339 AE"
-        data-context="SO IT IS WRITTEN"
+        data-context="YOU ARE HERE // So It Is Written"
       >
 
-        <p class="chapter-number">
-          X
+        <p class="history-label">
+          Record 09 // 1339 AE
         </p>
 
         <h2>
-          The record enters 1339 AE
+          The Castora conflict enters a new year
         </h2>
 
-        <p class="chapter-opening">
-          By <strong>1339 AE</strong>, the pursuit of Director
-          Vloxx and Ancora had carried the story beyond the
-          events first recorded during the Castora expedition.
+        <p>
+          By <strong>1339 AE</strong>,
+          the pursuit of Vloxx and Ancora
+          had moved beyond the expedition's
+          original search.
         </p>
 
         <p>
-          The historical record has now reached the events
-          surrounding <strong>So It Is Written</strong>, with
-          Vloxx's transformation, the Seer legacy, and his
-          intended changes to Tyria still unresolved.
+          Vloxx's transformation,
+          Isgarren's ancient history,
+          and the purpose behind the
+          Rite of Divinity had become central
+          to the developing conflict.
         </p>
 
         <p>
-          Isgarren's own ancient history has become increasingly
-          important to understanding what the Rite of Divinity
-          can accomplish and what Vloxx may now be capable of.
-        </p>
-
-        <p>
-          For the first time in this archive, the chapter being
-          written is not safely behind us.
-        </p>
-
-        <p>
-          It is the present.
+          The events surrounding
+          <strong>So It Is Written</strong>
+          mark the current chronological point
+          of this volume.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           PRESENT DAY
-      ========================================= -->
+      <!-- =========================
+           CURRENT POSITION
+      ========================== -->
 
       <section
-        class="chapter"
+        class="history-section"
         data-position="100"
         data-date="1339 AE"
-        data-context="PRESENT DAY"
+        data-context="YOU ARE HERE // Current Historical Position"
       >
 
-        <p class="chapter-number">
-          XI // Present Record
+        <p class="history-label">
+          Current Position
         </p>
 
         <h2>
-          This is where the archive currently ends
-        </h2>
-
-        <p class="chapter-opening">
-          The year is <strong>1339 AE</strong>.
-        </p>
-
-        <p>
-          The traditional Elder Dragon Cycle is over, while
-          <strong>Aurene</strong> remains responsible for
-          helping maintain Tyria's magical balance.
-        </p>
-
-        <p>
-          The <strong>Tyrian Alliance</strong> has created a
-          political framework for cooperation that earlier
-          generations could scarcely have imagined.
-        </p>
-
-        <p>
-          The <strong>Astral Ward</strong> and
-          <strong>Wizard's Court</strong> have brought the
-          politics of the Mists into ordinary Tyrian awareness.
-        </p>
-
-        <p>
-          The history of the <strong>Mursaat</strong> and
-          <strong>Seers</strong>, once confined largely to
-          ancient ruins and incomplete testimony, has become
-          relevant to current events again.
-        </p>
-
-        <p>
-          <strong>Director Vloxx</strong> possesses knowledge
-          and power derived from Seer traditions, while the
-          consequences of his larger plan remain unknown.
-        </p>
-
-        <p>
-          The Road Through Time began with the Seers trying to
-          preserve a world dominated by Elder Dragons.
-        </p>
-
-        <p>
-          Thousands of years later, the road has returned to them.
-        </p>
-
-        <p>
-          Not because history repeated itself exactly, but
-          because something they understood about magic,
-          transformation, and the structure of the world was
-          never completely buried.
-        </p>
-
-        <div class="q-observation">
-
-          <p class="q-observation-label">
-            Commander Q // Present Entry
-          </p>
-
-          <p>
-            There is a temptation at the edge of an archive to
-            invent a conclusion simply because every book feels
-            cleaner with one. I would rather leave the last page
-            unfinished. When the next event becomes history,
-            there will be room to write it properly.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- ========================================
-           LIVING RECORD
-      ========================================= -->
-
-      <section class="living-record">
-
-        <p class="living-record-label">
-          Living Archive // Open Record
-        </p>
-
-        <h2>
-          History is still being written
+          1339 AE
         </h2>
 
         <p>
-          Unlike the earlier volumes, this archive does not
-          conclude with the end of an era.
+          The Castora expedition has brought
+          ancient Seer history directly
+          into modern Tyrian affairs.
         </p>
 
         <p>
-          It ends at the point where documented history meets
-          events that are still unfolding.
+          Director Vloxx now possesses
+          knowledge and power connected
+          to the <strong>Rite of Divinity</strong>,
+          while the consequences
+          of his larger plan remain unresolved.
         </p>
 
         <p>
-          Future discoveries concerning Castora, Ancora,
-          Director Vloxx, Isgarren, the Seers, and the wider
-          consequences of the current crisis can be added here
-          without rewriting the historical road that came before.
+          Future records in this volume
+          will continue from this point.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           COMPLETE ARCHIVE
-      ========================================= -->
+      <!-- =========================
+           CURRENT THREADS
+      ========================== -->
 
-      <section class="archive-overview">
+      <section class="history-section">
 
-        <p class="section-kicker">
-          Complete Historical Collection
+        <p class="history-label">
+          Current Archive Index
         </p>
 
         <h2>
-          The Road Through Time
+          Active Historical Threads
         </h2>
 
-        <p>
-          Eleven volumes now connect the ancient Dragonrise
-          to the living history of 1339 AE.
-        </p>
+        <div class="history-grid">
 
-        <div class="timeline-grid">
+          <div class="history-card">
 
-          <a
-            href="../ancient-dragonrises/index.html"
-            class="timeline-card"
-          >
-            <p class="timeline-card-label">
-              Volume I
+            <p class="history-card-label">
+              Castora
             </p>
 
             <h3>
-              Ancient Dragonrises
+              Seer Ruins
             </h3>
 
             <p>
-              The Elder Dragons awaken and the first
-              Bloodstone is created.
+              Ancient structures preserve
+              knowledge of a civilization
+              once thought nearly lost.
             </p>
-          </a>
+
+          </div>
 
 
-          <a
-            href="../elder-races/index.html"
-            class="timeline-card"
-          >
-            <p class="timeline-card-label">
-              Volume II
+          <div class="history-card">
+
+            <p class="history-card-label">
+              Ancient Artifact
             </p>
 
             <h3>
-              The Elder Races
+              Ancora
             </h3>
 
             <p>
-              The Seers, Mursaat, Forgotten,
-              Dwarves, Jotun, and Glint.
+              A Seer ritual staff tied
+              to the Rite of Divinity.
             </p>
-          </a>
+
+          </div>
 
 
-          <a
-            href="../gods-and-humanity/index.html"
-            class="timeline-card"
-          >
-            <p class="timeline-card-label">
-              Volume III
+          <div class="history-card">
+
+            <p class="history-card-label">
+              Ancient History
             </p>
 
             <h3>
-              Gods and Humanity
+              Isgarren
             </h3>
 
             <p>
-              The Gods enter Tyria and Human
-              civilizations spread across the world.
+              The Wizard's origins connect
+              directly to Seer civilization
+              and its transformative magic.
             </p>
-          </a>
+
+          </div>
 
 
-          <a
-            href="../gift-of-magic/index.html"
-            class="timeline-card"
-          >
-            <p class="timeline-card-label">
-              Volume IV
+          <div class="history-card">
+
+            <p class="history-card-label">
+              Present Threat
             </p>
 
             <h3>
-              The Gift of Magic
+              Director Vloxx
             </h3>
 
             <p>
-              Abaddon's gift, King Doric,
-              and the division of the Bloodstone.
-            </p>
-          </a>
-
-
-          <a
-            href="../exodus-of-gods/index.html"
-            class="timeline-card"
-          >
-            <p class="timeline-card-label">
-              Volume V
+              The Inquest leader seeks
+              to use ancient Seer knowledge
+              to reshape Tyria's future.
             </p>
 
-            <h3>
-              The Exodus of the Gods
-            </h3>
-
-            <p>
-              Abaddon's rebellion changes the world
-              and the Gods leave Tyria.
-            </p>
-          </a>
-
-
-          <a
-            href="../kingdoms-and-guild-wars/index.html"
-            class="timeline-card"
-          >
-            <p class="timeline-card-label">
-              Volume VI
-            </p>
-
-            <h3>
-              Kingdoms and Guild Wars
-            </h3>
-
-            <p>
-              Mortal kingdoms, guilds, trade,
-              prophecy, and centuries of conflict.
-            </p>
-          </a>
-
-
-          <a
-            href="../guild-wars-era/index.html"
-            class="timeline-card"
-          >
-            <p class="timeline-card-label">
-              Volume VII
-            </p>
-
-            <h3>
-              The Guild Wars Era
-            </h3>
-
-            <p>
-              Prophecies, Factions, Nightfall,
-              Eye of the North, and Beyond.
-            </p>
-          </a>
-
-
-          <a
-            href="../dragons-awaken/index.html"
-            class="timeline-card"
-          >
-            <p class="timeline-card-label">
-              Volume VIII
-            </p>
-
-            <h3>
-              The Dragons Awaken
-            </h3>
-
-            <p>
-              The modern Dragonrise transforms Tyria
-              between 1080 and 1325 AE.
-            </p>
-          </a>
-
-
-          <a
-            href="../age-of-the-commander/index.html"
-            class="timeline-card"
-          >
-            <p class="timeline-card-label">
-              Volume IX
-            </p>
-
-            <h3>
-              The Age of the Commander
-            </h3>
-
-            <p>
-              The Pact, Aurene, and the destruction
-              of the traditional Dragon Cycle.
-            </p>
-          </a>
-
-
-          <a
-            href="../beyond-the-dragon-cycle/index.html"
-            class="timeline-card"
-          >
-            <p class="timeline-card-label">
-              Volume X
-            </p>
-
-            <h3>
-              Beyond the Dragon Cycle
-            </h3>
-
-            <p>
-              The Astral Ward, Kryptis, Nayos,
-              Janthir, and the return of ancient history.
-            </p>
-          </a>
-
-
-          <div
-            class="timeline-card timeline-card-current"
-          >
-            <p class="timeline-card-label">
-              Volume XI // Present
-            </p>
-
-            <h3>
-              The Current Era
-            </h3>
-
-            <p>
-              Castora, Ancora, Director Vloxx,
-              the Seers, and the living record
-              of Visions of Eternity.
-            </p>
           </div>
 
         </div>
@@ -2170,29 +1443,27 @@
       </section>
 
 
-      <!-- ========================================
+      <!-- =========================
            NAVIGATION
-      ========================================= -->
+      ========================== -->
 
-      <section class="transition">
+      <section class="page-navigation">
 
-        <p class="transition-label">
-          Present Edge of the Road
+        <p class="navigation-label">
+          Current Edge of the Road
         </p>
 
         <h2>
-          The archive remains open
+          The Current Era
         </h2>
 
         <p>
-          There is no Volume XII yet because the history needed
-          to create it has not happened.
-        </p>
-
-        <p>
-          Until then, this page remains the final shelf of the
-          collection and the point where the Road Through Time
-          reaches the present.
+          This volume currently ends in
+          <strong>1339 AE</strong>.
+          Additional records can continue
+          directly from the Castora storyline
+          as later events become part
+          of the archive chronology.
         </p>
 
         <div class="navigation-actions">
@@ -2201,7 +1472,7 @@
             href="../beyond-the-dragon-cycle/index.html"
             class="button"
           >
-            ← Volume X
+            ← Beyond the Dragon Cycle
           </a>
 
           <a
@@ -2220,32 +1491,26 @@
   </main>
 
 
-  <!-- ========================================
+  <!-- =========================
        FOOTER
-  ========================================= -->
+  ========================== -->
 
   <footer>
 
     <div class="container">
 
-      The Historical Records of Commander Q
-      are an unofficial Guild Wars fan project.
-
-      <br>
-
-      Guild Wars, Guild Wars 2,
-      ArenaNet, NCSOFT,
-      and related properties belong
-      to their respective owners.
+      Guild Wars Living Lore Library is an unofficial fan lore project.
+      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT,
+      and related properties belong to their respective owners.
 
     </div>
 
   </footer>
 
 
-  <!-- ========================================
-       CHRONOLOGY SCRIPT
-  ========================================= -->
+  <!-- =========================
+       HISTORICAL POSITION SCRIPT
+  ========================== -->
 
   <script>
     (() => {
@@ -2253,7 +1518,7 @@
 
       const sections =
         document.querySelectorAll(
-          ".chapter[data-position]"
+          ".history-section[data-position]"
         );
 
       const marker =
@@ -2271,29 +1536,28 @@
           "positionContext"
         );
 
-      const updatePosition =
-        (section) => {
 
-          const position =
-            section.dataset.position || "5";
+      const updatePosition = (section) => {
 
-          const date =
-            section.dataset.date ||
-            "1338 AE";
+        const position =
+          section.dataset.position || "5";
 
-          const context =
-            section.dataset.context ||
-            "HISTORICAL RECORD";
+        const date =
+          section.dataset.date || "1338 AE";
 
-          marker.style.left =
-            `${position}%`;
+        const context =
+          section.dataset.context || "YOU ARE HERE";
 
-          currentDate.textContent =
-            date;
+        marker.style.left =
+          `${position}%`;
 
-          positionContext.textContent =
-            context;
-        };
+        currentDate.textContent =
+          date;
+
+        positionContext.textContent =
+          context;
+      };
+
 
       const observer =
         new IntersectionObserver(
@@ -2312,10 +1576,13 @@
                 );
 
             if (visible.length > 0) {
+
               updatePosition(
                 visible[0].target
               );
+
             }
+
           },
           {
             rootMargin:
@@ -2331,11 +1598,13 @@
           }
         );
 
+
       sections.forEach(
         (section) => {
           observer.observe(section);
         }
       );
+
     })();
   </script>
 
