@@ -10,26 +10,37 @@
 
   <meta
     name="description"
-    content="The Exodus of the Gods archive entry in the Guild Wars Living Lore Library."
+    content="Commander Q's historical record of Abaddon's Rebellion, his imprisonment, and the Exodus of the Human Gods."
   >
 
-  <meta name="theme-color" content="#020617">
+  <meta name="theme-color" content="#070b14">
 
-  <title>The Exodus of the Gods // GWlll</title>
+  <title>The Exodus of the Gods // The Records of Commander Q</title>
 
   <style>
     :root {
       color-scheme: dark;
 
-      --background: #020617;
-      --panel: #0f172a;
-      --border: #374151;
+      --background: #070b14;
+      --background-deep: #03060c;
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
 
-      --gold: #f4c76b;
-      --gold-bright: #ffe3a3;
-      --gold-muted: #c99b45;
+      --border: #334155;
+      --border-soft: rgba(148, 163, 184, 0.18);
 
-      --white: #ffffff;
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
+
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
+
+      --quote: #c7d2e0;
+
+      --max-width: 820px;
     }
 
     * {
@@ -38,7 +49,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 175px;
+      scroll-padding-top: 150px;
     }
 
     body {
@@ -48,23 +59,24 @@
       background:
         radial-gradient(
           circle at top,
-          rgba(244, 199, 107, 0.08),
-          transparent 34rem
+          rgba(214, 179, 106, 0.07),
+          transparent 32rem
         ),
-        var(--background);
+        linear-gradient(
+          to bottom,
+          #090e18,
+          var(--background) 30rem
+        );
 
-      color: var(--white);
+      color: var(--ink);
 
       font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
+        Georgia,
+        "Times New Roman",
+        serif;
 
-      line-height: 1.75;
+      font-size: 1.05rem;
+      line-height: 1.85;
     }
 
     a {
@@ -72,27 +84,34 @@
     }
 
     .container {
-      width: min(900px, calc(100% - 32px));
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
+
       margin-inline: auto;
     }
 
-    /* =========================
+    /* ========================================
        HEADER
-    ========================= */
+    ======================================== */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border-soft);
 
-      background: rgba(2, 6, 23, 0.94);
+      background:
+        rgba(3, 6, 12, 0.95);
+
       backdrop-filter: blur(14px);
     }
 
     .header-inner {
-      min-height: 68px;
+      min-height: 66px;
 
       display: flex;
       align-items: center;
@@ -108,12 +127,17 @@
     .brand-small {
       margin: 0;
 
-      color: var(--white);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.65rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      letter-spacing: 0.17em;
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
@@ -129,8 +153,14 @@
     .home-link {
       color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.75rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.7rem;
       font-weight: 700;
 
       text-decoration: none;
@@ -145,60 +175,66 @@
       transform: translateX(-3px);
     }
 
-    /* =========================
-       HISTORICAL POSITION
-    ========================= */
+    /* ========================================
+       CHRONOLOGY
+    ======================================== */
 
-    .history-position {
+    .chronology {
       position: sticky;
-      top: 68px;
+      top: 66px;
       z-index: 40;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border-soft);
 
-      background: rgba(2, 6, 23, 0.96);
+      background:
+        rgba(7, 11, 20, 0.96);
+
       backdrop-filter: blur(12px);
     }
 
-    .history-position-inner {
-      padding: 13px 0 15px;
+    .chronology-inner {
+      padding: 11px 0 13px;
     }
 
-    .position-top {
+    .chronology-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      gap: 12px;
+      gap: 15px;
 
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    .position-label {
+    .chronology-label,
+    .chronology-date {
       margin: 0;
 
-      color: var(--white);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      font-family: monospace;
       font-size: 0.62rem;
-
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .current-date {
-      margin: 0;
+    .chronology-label {
+      color: var(--ink-faint);
+    }
 
+    .chronology-date {
       color: var(--gold-bright);
-
-      font-family: monospace;
-      font-size: 0.7rem;
       font-weight: 700;
     }
 
     .history-rail {
       position: relative;
-      height: 26px;
+      height: 17px;
     }
 
     .history-line {
@@ -213,48 +249,20 @@
       background:
         linear-gradient(
           to right,
-          rgba(244, 199, 107, 0.25),
-          rgba(244, 199, 107, 0.9),
-          rgba(244, 199, 107, 0.25)
+          rgba(214, 179, 106, 0.18),
+          rgba(214, 179, 106, 0.85),
+          rgba(214, 179, 106, 0.18)
         );
-    }
-
-    .history-point {
-      position: absolute;
-
-      top: 2px;
-
-      width: 11px;
-      height: 11px;
-
-      border: 1px solid var(--gold-muted);
-      border-radius: 50%;
-
-      background: var(--background);
-
-      transform: translateX(-50%);
-    }
-
-    .history-point.start {
-      left: 5%;
-    }
-
-    .history-point.middle {
-      left: 50%;
-    }
-
-    .history-point.end {
-      left: 95%;
     }
 
     .history-marker {
       position: absolute;
 
-      top: -1px;
+      top: 1px;
       left: 5%;
 
-      width: 17px;
-      height: 17px;
+      width: 13px;
+      height: 13px;
 
       border: 2px solid var(--gold-bright);
       border-radius: 50%;
@@ -262,269 +270,436 @@
       background: var(--gold);
 
       box-shadow:
-        0 0 15px rgba(244, 199, 107, 0.5);
+        0 0 12px
+        rgba(214, 179, 106, 0.38);
 
       transform: translateX(-50%);
 
-      transition: left 450ms ease;
+      transition: left 400ms ease;
     }
 
-    .rail-labels {
-      display: flex;
-      justify-content: space-between;
+    .chronology-context {
+      margin: 4px 0 0;
 
-      margin-top: 2px;
+      color: var(--ink-muted);
 
-      color: var(--white);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      font-family: monospace;
-      font-size: 0.58rem;
-    }
-
-    .position-context {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: 0.72rem;
+      font-size: 0.59rem;
       text-align: center;
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    /* ========================================
+       BOOK HEADER
+    ======================================== */
 
-    .hero {
-      padding: 72px 0 56px;
+    .book-header {
+      padding: 80px 0 52px;
       text-align: center;
     }
 
-    .hero-label {
+    .volume {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold-muted);
 
-      font-family: monospace;
-      font-size: 0.7rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.67rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    .hero h1 {
-      margin: 16px 0 0;
-
-      color: var(--gold);
-
-      font-size: clamp(2.7rem, 8vw, 5.2rem);
-      line-height: 1.03;
-
-      letter-spacing: -0.045em;
-
-      animation: goldPulse 4s ease-in-out infinite;
-    }
-
-    .hero-date {
-      margin: 16px 0 0;
+    .book-header h1 {
+      margin: 17px 0 0;
 
       color: var(--gold-bright);
 
-      font-family: monospace;
-      font-size: 0.8rem;
+      font-size:
+        clamp(
+          2.6rem,
+          8vw,
+          4.8rem
+        );
 
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
     }
 
-    .hero-text {
-      max-width: 760px;
+    .subtitle {
+      max-width: 650px;
 
-      margin: 24px auto 0;
+      margin: 18px auto 0;
 
-      color: var(--white);
+      color: var(--ink-muted);
 
-      font-size: 1.06rem;
-      line-height: 1.9;
+      font-style: italic;
+      font-size: 1.08rem;
     }
 
-    /* =========================
-       ARCHIVE NOTE
-    ========================= */
+    .ornament {
+      width: 120px;
 
-    .archive-note {
-      margin-bottom: 55px;
-      padding: 24px;
+      margin: 32px auto 0;
 
-      border: 1px solid rgba(244, 199, 107, 0.35);
-      border-radius: 12px;
-
-      background: rgba(244, 199, 107, 0.045);
+      border: 0;
+      border-top: 1px solid var(--gold-muted);
     }
 
-    .archive-note-label {
+    /* ========================================
+       AUTHOR
+    ======================================== */
+
+    .author-card {
+      margin-bottom: 60px;
+
+      padding: 24px 26px;
+
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+
+      text-align: center;
+    }
+
+    .author-label {
       margin: 0;
 
-      color: var(--gold);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.68rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.62rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .archive-note p:last-child {
-      margin: 12px 0 0;
+    .author-name {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.2rem;
+      font-weight: 700;
     }
 
-    /* =========================
-       HISTORY
-    ========================= */
+    .author-title {
+      margin: 5px 0 0;
 
-    .history-section {
-      padding: 36px 0;
+      color: var(--ink-muted);
 
-      border-top: 1px solid var(--border);
+      font-size: 0.91rem;
+      font-style: italic;
+      line-height: 1.65;
     }
 
-    .history-label {
+    /* ========================================
+       PREFACE
+    ======================================== */
+
+    .preface {
+      margin-bottom: 68px;
+    }
+
+    .section-kicker {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold-muted);
 
-      font-family: monospace;
-      font-size: 0.66rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.64rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .preface h2,
+    .chapter h2 {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size:
+        clamp(
+          1.65rem,
+          5vw,
+          2.25rem
+        );
+
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .preface p {
+      margin: 18px 0 0;
+    }
+
+    .signature {
+      margin-top: 28px;
+
+      color: var(--gold-bright);
+      font-style: italic;
+    }
+
+    /* ========================================
+       RESEARCH NOTE
+    ======================================== */
+
+    .research-note {
+      margin: 28px 0;
+
+      padding: 20px 22px;
+
+      border-left: 2px solid var(--gold-muted);
+
+      background:
+        rgba(214, 179, 106, 0.045);
+    }
+
+    .research-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .research-note p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
+      font-size: 0.96rem;
+    }
+
+    /* ========================================
+       CHAPTERS
+    ======================================== */
+
+    .chapter {
+      padding: 48px 0;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .chapter-number {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .history-section h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: clamp(1.6rem, 5vw, 2.35rem);
-      line-height: 1.2;
+    .chapter p {
+      margin: 18px 0 0;
     }
 
-    .history-section p {
-      margin: 16px 0 0;
-    }
-
-    .history-section strong {
+    .chapter strong {
       color: var(--gold-bright);
+      font-weight: 600;
     }
 
-    .record-box {
-      margin-top: 22px;
-      padding: 20px;
+    .chapter-opening::first-letter {
+      float: left;
 
-      border-left: 2px solid var(--gold);
-
-      background: rgba(15, 23, 42, 0.8);
-    }
-
-    .record-box-label {
-      margin: 0;
+      margin: 7px 8px 0 0;
 
       color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.65rem;
-
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      font-size: 3.6rem;
+      line-height: 0.75;
     }
 
-    .record-box p:last-child {
-      margin: 8px 0 0;
-    }
-
-    /* =========================
+    /* ========================================
        IMPACT GRID
-    ========================= */
+    ======================================== */
 
     .impact-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
       gap: 14px;
 
-      margin-top: 24px;
+      margin-top: 28px;
     }
 
     .impact-card {
-      padding: 20px;
+      padding: 19px 20px;
 
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      border: 1px solid var(--border-soft);
 
-      background: rgba(15, 23, 42, 0.76);
+      background:
+        rgba(15, 23, 42, 0.58);
     }
 
     .impact-card-label {
       margin: 0;
 
-      color: var(--white);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.62rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.59rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
     .impact-card h3 {
-      margin: 7px 0 0;
+      margin: 6px 0 0;
 
       color: var(--gold);
 
-      font-size: 1.05rem;
+      font-size: 1.06rem;
+      font-weight: 600;
     }
 
     .impact-card p:last-child {
       margin: 8px 0 0;
 
+      color: var(--ink-muted);
+
       font-size: 0.9rem;
+      line-height: 1.65;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
+    /* ========================================
+       COMMANDER Q OBSERVATION
+    ======================================== */
 
-    .page-navigation {
-      padding: 45px 0 80px;
+    .q-observation {
+      margin: 30px 0 6px;
 
-      border-top: 1px solid var(--border);
+      padding: 21px 23px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(214, 179, 106, 0.05),
+          rgba(15, 23, 42, 0.45)
+        );
     }
 
-    .navigation-label {
+    .q-observation-label {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.67rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.61rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .q-observation p:last-child {
+      margin: 9px 0 0;
+
+      color: var(--quote);
+      font-style: italic;
+    }
+
+    /* ========================================
+       TRANSITION
+    ======================================== */
+
+    .transition {
+      padding: 58px 0 70px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .transition-label {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.63rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .page-navigation h2 {
-      margin: 8px 0 0;
+    .transition h2 {
+      margin: 10px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .transition p {
+      margin: 16px 0 0;
+    }
+
+    .next-title {
+      margin-top: 30px !important;
 
       color: var(--gold);
 
-      font-size: 1.7rem;
-    }
-
-    .page-navigation p {
-      margin: 13px 0 0;
+      font-size: 1.15rem;
+      font-weight: 700;
     }
 
     .navigation-actions {
-      margin-top: 24px;
+      margin-top: 28px;
 
       display: flex;
       flex-wrap: wrap;
@@ -542,12 +717,23 @@
       padding: 0 20px;
 
       border: 1px solid var(--border);
-      border-radius: 9px;
+      border-radius: 5px;
 
-      background: var(--panel);
+      background:
+        rgba(15, 23, 42, 0.7);
+
       color: var(--gold);
 
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.75rem;
       font-weight: 700;
+
       text-decoration: none;
 
       transition:
@@ -559,54 +745,69 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color: rgba(244, 199, 107, 0.6);
+      border-color:
+        rgba(214, 179, 106, 0.6);
 
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
+      border-color:
+        rgba(214, 179, 106, 0.45);
 
-      background: rgba(244, 199, 107, 0.1);
+      background:
+        rgba(214, 179, 106, 0.08);
     }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
 
     footer {
-      padding: 30px 0;
+      padding: 34px 0;
 
-      border-top: 1px solid var(--border);
+      border-top:
+        1px solid var(--border-soft);
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.65rem;
+      line-height: 1.7;
 
       text-align: center;
-      font-size: 0.75rem;
     }
 
-    @keyframes goldPulse {
-      0%,
-      100% {
-        color: var(--gold);
-        text-shadow: 0 0 0 rgba(244, 199, 107, 0);
-      }
-
-      50% {
-        color: var(--gold-bright);
-
-        text-shadow:
-          0 0 16px rgba(244, 199, 107, 0.28),
-          0 0 34px rgba(244, 199, 107, 0.1);
-      }
-    }
+    /* ========================================
+       MOBILE
+    ======================================== */
 
     @media (max-width: 650px) {
 
       html {
-        scroll-padding-top: 155px;
+        scroll-padding-top: 135px;
+      }
+
+      body {
+        font-size: 1rem;
       }
 
       .container {
-        width: min(100% - 22px, 900px);
+        width:
+          min(
+            100% - 24px,
+            var(--max-width)
+          );
       }
 
       .header-inner {
-        min-height: 62px;
+        min-height: 60px;
       }
 
       .brand-small {
@@ -614,39 +815,39 @@
       }
 
       .brand-name {
-        font-size: 0.84rem;
+        font-size: 0.88rem;
       }
 
       .home-link {
-        font-size: 0.67rem;
-      }
-
-      .history-position {
-        top: 62px;
-      }
-
-      .position-label {
-        font-size: 0.55rem;
-      }
-
-      .current-date {
         font-size: 0.62rem;
       }
 
-      .rail-labels {
-        font-size: 0.52rem;
+      .chronology {
+        top: 60px;
       }
 
-      .position-context {
-        font-size: 0.65rem;
+      .chronology-label {
+        font-size: 0.53rem;
       }
 
-      .hero {
-        padding: 52px 0 44px;
+      .chronology-date {
+        font-size: 0.56rem;
       }
 
-      .hero-text {
-        font-size: 1rem;
+      .chronology-context {
+        font-size: 0.53rem;
+      }
+
+      .book-header {
+        padding: 58px 0 42px;
+      }
+
+      .author-card {
+        padding: 21px 14px;
+      }
+
+      .chapter {
+        padding: 40px 0;
       }
 
       .impact-grid {
@@ -680,14 +881,21 @@
 
 <body>
 
+  <!-- ========================================
+       HEADER
+  ========================================= -->
+
   <header class="site-header">
 
     <div class="container header-inner">
 
-      <a href="../index.html" class="brand">
+      <a
+        href="../index.html"
+        class="brand"
+      >
 
         <p class="brand-small">
-          QKommand Archive
+          The Historical Records of Commander Q
         </p>
 
         <p class="brand-name">
@@ -696,7 +904,10 @@
 
       </a>
 
-      <a href="../index.html" class="home-link">
+      <a
+        href="../index.html"
+        class="home-link"
+      >
         ← Road Through Time
       </a>
 
@@ -705,34 +916,32 @@
   </header>
 
 
-  <!-- =========================
-       HISTORICAL POSITION
-  ========================== -->
+  <!-- ========================================
+       CHRONOLOGY
+  ========================================= -->
 
-  <aside class="history-position">
+  <aside class="chronology">
 
-    <div class="container history-position-inner">
+    <div class="container chronology-inner">
 
-      <div class="position-top">
+      <div class="chronology-top">
 
-        <p class="position-label">
-          Tyrian Historical Position
+        <p class="chronology-label">
+          Historical Position
         </p>
 
-        <p class="current-date" id="currentDate">
+        <p
+          class="chronology-date"
+          id="currentDate"
+        >
           0 AE
         </p>
 
       </div>
 
-
       <div class="history-rail">
 
         <div class="history-line"></div>
-
-        <span class="history-point start"></span>
-        <span class="history-point middle"></span>
-        <span class="history-point end"></span>
 
         <span
           class="history-marker"
@@ -741,20 +950,11 @@
 
       </div>
 
-
-      <div class="rail-labels">
-
-        <span>Rebellion</span>
-
-        <span>Abaddon's Fall</span>
-
-        <span>Exodus</span>
-
-      </div>
-
-
-      <p class="position-context" id="positionContext">
-        YOU ARE HERE // Abaddon Rebels
+      <p
+        class="chronology-context"
+        id="positionContext"
+      >
+        ABADDON'S REBELLION
       </p>
 
     </div>
@@ -764,44 +964,28 @@
 
   <main>
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <!-- ========================================
+         BOOK HEADER
+    ========================================= -->
 
-    <section class="hero">
+    <section class="book-header">
 
       <div class="container">
 
-        <p class="hero-label">
-          Historical Archive // Record 05
+        <p class="volume">
+          Volume V // The Divine and Human Age
         </p>
 
         <h1>
           The Exodus of the Gods
         </h1>
 
-        <p class="hero-date">
-          0 AE
+        <p class="subtitle">
+          On Abaddon's Rebellion, the destruction left by
+          Divine war, and the departure of the Five from Tyria.
         </p>
 
-        <p class="hero-text">
-          The gods had already withdrawn
-          from everyday mortal life
-          and secluded themselves within Arah.
-        </p>
-
-        <p class="hero-text">
-          Then the crisis over magic
-          shattered even that distant balance.
-        </p>
-
-        <p class="hero-text">
-          Abaddon's rebellion scarred the world,
-          transformed his followers,
-          fractured the pantheon,
-          and ended with the remaining gods
-          leaving Tyria behind.
-        </p>
+        <hr class="ornament">
 
       </div>
 
@@ -810,312 +994,132 @@
 
     <div class="container">
 
-      <!-- =========================
-           ARCHIVE NOTE
-      ========================== -->
+      <!-- ========================================
+           AUTHOR
+      ========================================= -->
 
-      <div class="archive-note">
+      <section class="author-card">
 
-        <p class="archive-note-label">
-          Archive Context
+        <p class="author-label">
+          Compiled and Annotated By
+        </p>
+
+        <p class="author-name">
+          Commander Q
+        </p>
+
+        <p class="author-title">
+          Captain Commander of the Vanguard Knights
+          <br>
+          Researcher of Tyrian History and the Mists
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           PREFACE
+      ========================================= -->
+
+      <section class="preface">
+
+        <p class="section-kicker">
+          Author's Preface
+        </p>
+
+        <h2>
+          When disagreement became Divine war
+        </h2>
+
+        <p>
+          The previous record ended with Abaddon refusing to
+          accept the restriction of the Gift of Magic. His
+          opposition did not remain a dispute within the
+          pantheon. With the Margonites at his side, Abaddon
+          turned against the other Gods and brought Divine
+          conflict directly into the mortal world.
         </p>
 
         <p>
-          Before the events of <strong>1 BE</strong>,
-          the gods had already reduced
-          their direct contact with humanity
-          and withdrawn into <strong>Arah</strong>.
+          The consequences were greater than a change in
+          religion or political power. Seas disappeared,
+          landscapes were poisoned, boundaries between Tyria
+          and the Mists were damaged, and an entire Human
+          civilization was transformed by its allegiance to
+          a fallen God.
         </p>
 
         <p>
-          This earlier retreat
-          was not the Exodus.
-          The gods remained physically present
-          within Tyria.
+          When the war ended, the surviving Gods faced the
+          evidence of what beings like themselves could do
+          simply by fighting upon Tyria. Their answer was
+          departure.
         </p>
 
-        <p>
-          The later crisis over magic,
-          Abaddon's rebellion,
-          and the destruction caused by divine war
-          led to a second and far greater withdrawal:
-          the <strong>Exodus of the Gods</strong>
-          in <strong>0 AE</strong>.
+        <p class="signature">
+          — Commander Q
         </p>
 
-      </div>
+      </section>
 
 
-      <!-- =========================
-           RECORD 01
-      ========================== -->
+      <!-- ========================================
+           CHAPTER I
+      ========================================= -->
 
       <section
-        class="history-section"
+        class="chapter"
         data-position="5"
-        data-date="1 BE"
-        data-context="YOU ARE HERE // The Gods Remain Within Arah"
-      >
-
-        <p class="history-label">
-          Record 01 // Before the Rebellion
-        </p>
-
-        <h2>
-          The gods are distant, but still present
-        </h2>
-
-        <p>
-          By <strong>1 BE</strong>,
-          the gods no longer lived openly
-          among humanity as they once had.
-        </p>
-
-        <p>
-          They had gradually withdrawn
-          into <strong>Arah</strong>,
-          the divine city built above
-          the sacred
-          <strong>Artesian Waters</strong>.
-        </p>
-
-        <p>
-          Statues,
-          temples,
-          priests,
-          blessings,
-          and religious traditions
-          maintained the connection
-          between mortals and the pantheon.
-        </p>
-
-        <p>
-          But the gods themselves
-          had become increasingly secluded.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Earlier Retreat
-          </p>
-
-          <p>
-            This withdrawal into Arah
-            occurred before Abaddon's rebellion.
-          </p>
-
-          <p>
-            The gods had not yet left Tyria.
-            They remained within the physical world
-            when the crisis over magic began.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 02
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="13"
-        data-date="1 BE"
-        data-context="YOU ARE HERE // Magic Is Restricted"
-      >
-
-        <p class="history-label">
-          Record 02 // The Crisis of Magic
-        </p>
-
-        <h2>
-          The gods reverse Abaddon's gift
-        </h2>
-
-        <p>
-          In <strong>1 BE</strong>,
-          Abaddon had dramatically expanded
-          mortal access to magic.
-        </p>
-
-        <p>
-          The resulting wars
-          became so destructive
-          that <strong>King Doric</strong>
-          traveled to Arah
-          and begged the gods to intervene.
-        </p>
-
-        <p>
-          The gods agreed.
-        </p>
-
-        <p>
-          They gathered much
-          of the world's accessible magic
-          into the ancient
-          <strong>Bloodstone</strong>
-          and divided it into
-          five major pieces.
-        </p>
-
-        <p>
-          Mortal access to magic
-          was drastically reduced.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 03
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="21"
         data-date="0 AE"
-        data-context="YOU ARE HERE // Abaddon Rebels"
+        data-context="ABADDON DECLARES WAR"
       >
 
-        <p class="history-label">
-          Record 03 // The Rebellion
+        <p class="chapter-number">
+          I
         </p>
 
         <h2>
-          Abaddon rejects the restriction of magic
+          Abaddon turns against the Five
         </h2>
 
-        <p>
-          <strong>Abaddon</strong>
-          had overseen the distribution
-          of widespread magical power
-          to the mortal races.
-        </p>
-
-        <p>
-          When the other gods
-          chose to restrict that power,
-          he fiercely opposed them.
-        </p>
-
-        <p>
-          His protests failed.
-        </p>
-
-        <p>
-          The disagreement became
-          open rebellion
+        <p class="chapter-opening">
+          Abaddon's opposition to the restriction of magic
+          developed into open rebellion against the other
+          <strong>Five Gods</strong>. He gathered his followers,
+          including the increasingly transformed
+          <strong>Margonites</strong>, and prepared for war
           against the pantheon.
         </p>
 
-      </section>
-
-
-      <!-- =========================
-           RECORD 04
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="30"
-        data-date="1 BE – 0 AE"
-        data-context="YOU ARE HERE // The Margonites Are Transformed"
-      >
-
-        <p class="history-label">
-          Record 04 // The Margonites
-        </p>
-
-        <h2>
-          A human civilization becomes Abaddon's army
-        </h2>
-
         <p>
-          The
-          <strong>Margonites</strong>
-          did not begin
-          as demonic beings.
+          The Margonites had once been a Human maritime
+          civilization of the Crystal Sea. Their devotion to
+          Abaddon now carried them into a very different future.
+          Through his power, many were transformed into demonic
+          beings capable of serving as soldiers and servants
+          beyond the limits of ordinary Human life.
         </p>
 
         <p>
-          They were originally human,
-          and their maritime civilization
-          had already existed
-          for centuries.
+          Abaddon's forces eventually assaulted the
+          <strong>Gates of Heaven</strong>, bringing the
+          rebellion into direct conflict with the combined
+          power of the other Gods.
         </p>
 
-        <p>
-          By <strong>175 BE</strong>,
-          Margonite ships dominated
-          much of the
-          <strong>Unending Ocean</strong>.
-        </p>
+        <div class="research-note">
 
-        <p>
-          Over time,
-          they became increasingly devoted
-          to <strong>Abaddon</strong>.
-        </p>
-
-        <p>
-          In <strong>1 BE</strong>,
-          the Margonite lord
-          <strong>Jadoth</strong>
-          called upon Abaddon
-          while fleeing a pursuing
-          Forgotten fleet.
-        </p>
-
-        <p>
-          Abaddon answered him,
-          destroyed the pursuing ships,
-          and granted Jadoth
-          supernatural power.
-        </p>
-
-        <p>
-          Later accounts describe Jadoth
-          as the first
-          of the transformed Margonites.
-        </p>
-
-        <p>
-          Through Abaddon's influence,
-          other Margonite followers
-          were transformed
-          into powerful supernatural beings.
-        </p>
-
-        <p>
-          These transformed Margonites
-          became his servants
-          and soldiers
-          in the coming divine war.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Human Origins
+          <p class="research-note-label">
+            Research Note // The Margonites
           </p>
 
           <p>
-            Ancient references
-            to Margonites before
-            <strong>1 BE</strong>
-            describe the same civilization
-            before its transformation.
-          </p>
-
-          <p>
-            The name
-            <strong>Margonite</strong>
-            therefore predates
-            their demonic form.
+            Jadoth and the beginning of the Margonite
+            transformation were introduced in the previous
+            volume. By this stage of the record, the important
+            change is political as much as physical: a Human
+            civilization devoted to Abaddon had become the
+            military body of his rebellion.
           </p>
 
         </div>
@@ -1123,108 +1127,58 @@
       </section>
 
 
-      <!-- =========================
-           RECORD 05
-      ========================== -->
+      <!-- ========================================
+           CHAPTER II
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="39"
+        class="chapter"
+        data-position="21"
         data-date="0 AE"
-        data-context="YOU ARE HERE // War Among the Gods"
+        data-context="WAR AMONG THE GODS"
       >
 
-        <p class="history-label">
-          Record 05 // Divine War
+        <p class="chapter-number">
+          II
         </p>
 
         <h2>
-          Abaddon wages war against the pantheon
+          Divine war reaches the mortal world
         </h2>
 
-        <p>
-          Abaddon and his transformed
-          Margonite forces
-          rose against the other gods.
+        <p class="chapter-opening">
+          The struggle between Abaddon and the Five was unlike
+          the mortal wars that had followed the Gift of Magic.
+          These were beings capable of exerting extraordinary
+          magical power directly upon the world around them,
+          and the landscape became part of the battlefield.
         </p>
 
         <p>
-          Their rebellion became
-          a conflict between divine powers
-          capable of reshaping
-          the mortal world around them.
+          The conflict centered upon the region of the
+          <strong>Crystal Sea</strong> and the lands that
+          bordered it. What had been a great inland sea
+          surrounded by inhabited and fertile territory was
+          exposed to the destructive force of Divine warfare.
         </p>
 
         <p>
-          The war eventually reached
-          the region remembered
-          as the
-          <strong>Gates of Heaven</strong>.
+          Abaddon was ultimately forced toward the location
+          that would become known as the
+          <strong>Mouth of Torment</strong>, where the final
+          battle between the fallen God and the Five took place.
         </p>
 
-        <p>
-          There,
-          Abaddon faced
-          the combined power
-          of the other gods.
-        </p>
+        <div class="q-observation">
 
-      </section>
-
-
-      <!-- =========================
-           RECORD 06
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="48"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // Abaddon Falls"
-      >
-
-        <p class="history-label">
-          Record 06 // Abaddon's Defeat
-        </p>
-
-        <h2>
-          The fallen god is defeated
-        </h2>
-
-        <p>
-          Abaddon was defeated
-          by the other gods.
-        </p>
-
-        <p>
-          But defeating a god
-          did not end the catastrophe.
-        </p>
-
-        <p>
-          The force unleashed
-          during his fall
-          tore at the boundary
-          between Tyria and the Mists.
-        </p>
-
-        <p>
-          The place where that rupture formed
-          became known as the
-          <strong>Mouth of Torment</strong>.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            The Mouth of Torment
+          <p class="q-observation-label">
+            Commander Q // Observation
           </p>
 
           <p>
-            The Mouth of Torment
-            became a great breach
-            between the physical world
-            and the Realm of Torment.
+            Mortal wars can redraw a border. Divine war
+            redrew the map. That difference appears to have
+            mattered greatly to the Gods who survived it.
           </p>
 
         </div>
@@ -1232,476 +1186,54 @@
       </section>
 
 
-      <!-- =========================
-           RECORD 07
-      ========================== -->
+      <!-- ========================================
+           CHAPTER III
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="57"
+        class="chapter"
+        data-position="38"
         data-date="0 AE"
-        data-context="YOU ARE HERE // The Crystal Sea Is Destroyed"
+        data-context="ABADDON IS DEFEATED"
       >
 
-        <p class="history-label">
-          Record 07 // A World Scarred
+        <p class="chapter-number">
+          III
         </p>
 
         <h2>
-          The Crystal Sea becomes a desert
+          The Five defeat Abaddon
         </h2>
 
-        <p>
-          The divine conflict
-          permanently transformed
-          the surrounding region.
+        <p class="chapter-opening">
+          Abaddon was defeated by the combined strength of
+          the other Gods. His fall ended the immediate Divine
+          war, but the victory did not restore the region that
+          had become its battlefield.
         </p>
 
         <p>
-          The
-          <strong>Crystal Sea</strong>
-          and its verdant coastline
-          were devastated.
+          The destruction altered the landscape on an enormous
+          scale. The <strong>Crystal Sea</strong> was transformed
+          into the <strong>Crystal Desert</strong>, while the
+          lands farther south became the sulfurous region known
+          as <strong>the Desolation</strong>.
         </p>
 
         <p>
-          The former sea became
-          the vast
-          <strong>Crystal Desert</strong>.
+          At the site of Abaddon's defeat, the damage reached
+          beyond geography. A tear formed between the physical
+          world and the Mists, creating the
+          <strong>Mouth of Torment</strong> and connecting the
+          region to the <strong>Realm of Torment</strong>.
         </p>
-
-        <p>
-          Lands farther south
-          were transformed into
-          the sulfurous
-          <strong>Desolation</strong>.
-        </p>
-
-        <p>
-          More than a thousand years later,
-          the geography still carried
-          the physical scars
-          of the war among the gods.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 08
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="66"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // Abaddon Is Imprisoned"
-      >
-
-        <p class="history-label">
-          Record 08 // Realm of Torment
-        </p>
-
-        <h2>
-          Abaddon is imprisoned in the Mists
-        </h2>
-
-        <p>
-          Abaddon was not destroyed.
-        </p>
-
-        <p>
-          The fallen god
-          and his surviving followers
-          were imprisoned within the
-          <strong>Realm of Torment</strong>.
-        </p>
-
-        <p>
-          The fallen
-          <strong>Temple of the Six Gods</strong>
-          was pulled into the realm
-          along with him.
-        </p>
-
-        <p>
-          Forgotten guardians
-          would later watch
-          over his prison.
-        </p>
-
-        <p>
-          From the Realm of Torment,
-          Abaddon continued attempting
-          to influence Tyria
-          for more than a thousand years.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 09
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="75"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // Abaddon Is Erased"
-      >
-
-        <p class="history-label">
-          Record 09 // Divine Censorship
-        </p>
-
-        <h2>
-          The Five try to erase Abaddon from history
-        </h2>
-
-        <p>
-          Defeating and imprisoning Abaddon
-          was not the end
-          of the gods' response.
-        </p>
-
-        <p>
-          The remaining
-          <strong>Five Gods</strong>
-          attempted to erase
-          knowledge of the fallen god
-          from mortal civilization.
-        </p>
-
-        <p>
-          Records associated with him
-          were destroyed or suppressed.
-        </p>
-
-        <p>
-          His worship
-          was driven underground.
-        </p>
-
-        <p>
-          His temple in Orr
-          disappeared beneath the land
-          later known as
-          the <strong>Straits of Devastation</strong>.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 10
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="83"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // History Becomes Incomplete"
-      >
-
-        <p class="history-label">
-          Record 10 // What Mortals Remembered
-        </p>
-
-        <h2>
-          Later histories inherit an incomplete story
-        </h2>
-
-        <p>
-          The effort to erase Abaddon
-          left gaps
-          in the historical record.
-        </p>
-
-        <p>
-          Later accounts often described
-          the gift of magic
-          as an act of
-          <strong>"the gods"</strong>
-          rather than preserving
-          Abaddon's individual role.
-        </p>
-
-        <p>
-          His name survived
-          largely through forbidden worship,
-          hidden records,
-          ancient ruins,
-          and servants still working
-          toward his return.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 11
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="91"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // The Final Withdrawal"
-      >
-
-        <p class="history-label">
-          Record 11 // The Final Withdrawal
-        </p>
-
-        <h2>
-          The gods prepare to leave Tyria
-        </h2>
-
-        <p>
-          The gods had withdrawn
-          from everyday mortal life
-          long before the rebellion.
-        </p>
-
-        <p>
-          But they had still remained
-          physically present
-          within <strong>Arah</strong>.
-        </p>
-
-        <p>
-          Abaddon's rebellion
-          demonstrated how catastrophic
-          direct conflict between gods
-          could become.
-        </p>
-
-        <p>
-          The pantheon now faced
-          a larger question:
-          whether gods could remain
-          physically present in Tyria
-          without placing the mortal world
-          at risk.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Two Withdrawals
-          </p>
-
-          <p>
-            First,
-            the gods withdrew
-            from public mortal life
-            into Arah.
-          </p>
-
-          <p>
-            Then,
-            after Abaddon's rebellion,
-            they withdrew
-            from Tyria itself.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 12
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="97"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // The Gods Leave Tyria"
-      >
-
-        <p class="history-label">
-          Record 12 // The Exodus
-        </p>
-
-        <h2>
-          The Five leave the physical world
-        </h2>
-
-        <p>
-          The remaining
-          <strong>Five Gods</strong>
-          departed Tyria
-          and withdrew into
-          the <strong>Mists</strong>.
-        </p>
-
-        <p>
-          This was fundamentally different
-          from their earlier retreat
-          into Arah.
-        </p>
-
-        <p>
-          They were no longer merely
-          secluded from humanity.
-        </p>
-
-        <p>
-          They had left
-          the physical world itself.
-        </p>
-
-        <p>
-          Their departure became known
-          as the
-          <strong>Exodus of the Gods</strong>.
-        </p>
-
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Not Complete Silence
-          </p>
-
-          <p>
-            The Exodus did not mean
-            all divine influence vanished.
-          </p>
-
-          <p>
-            Blessings,
-            avatars,
-            temples,
-            divine realms,
-            and occasional communication
-            continued after the gods
-            left Tyria.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 13
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="100"
-        data-date="0 AE"
-        data-context="YOU ARE HERE // A New Calendar Begins"
-      >
-
-        <p class="history-label">
-          Record 13 // Year Zero
-        </p>
-
-        <h2>
-          History begins counting from the Exodus
-        </h2>
-
-        <p>
-          The Exodus became
-          one of the great dividing lines
-          of Tyrian history.
-        </p>
-
-        <p>
-          The event established
-          <strong>Year 0</strong>
-          of the Mouvelian calendar.
-        </p>
-
-        <p>
-          Years before it became
-          <strong>BE — Before the Exodus</strong>.
-        </p>
-
-        <p>
-          Years following it became
-          <strong>AE — After the Exodus</strong>.
-        </p>
-
-        <p>
-          The age when gods
-          physically lived within Tyria
-          had ended.
-        </p>
-
-        <p>
-          Mortal civilizations
-          now inherited the world
-          and everything
-          the gods had left behind.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           IMPACT INDEX
-      ========================== -->
-
-      <section class="history-section">
-
-        <p class="history-label">
-          Exodus Index
-        </p>
-
-        <h2>
-          What Changed in 0 AE
-        </h2>
-
 
         <div class="impact-grid">
 
           <div class="impact-card">
 
             <p class="impact-card-label">
-              Divine War
-            </p>
-
-            <h3>
-              Abaddon's Rebellion
-            </h3>
-
-            <p>
-              The dispute over restricting magic
-              becomes open war
-              among the gods.
-            </p>
-
-          </div>
-
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              Civilization
-            </p>
-
-            <h3>
-              Margonites
-            </h3>
-
-            <p>
-              A human maritime civilization
-              becomes transformed
-              through Abaddon's corruption.
-            </p>
-
-          </div>
-
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              Geography
+              Former Sea
             </p>
 
             <h3>
@@ -1709,9 +1241,8 @@
             </h3>
 
             <p>
-              The Crystal Sea
-              is destroyed
-              during the divine conflict.
+              The Crystal Sea was destroyed and its former
+              region became the vast Crystal Desert.
             </p>
 
           </div>
@@ -1720,7 +1251,7 @@
           <div class="impact-card">
 
             <p class="impact-card-label">
-              Geography
+              Southern Lands
             </p>
 
             <h3>
@@ -1728,9 +1259,8 @@
             </h3>
 
             <p>
-              Verdant lands
-              south of the former sea
-              become a sulfurous wasteland.
+              Abaddon's influence and defeat left the lands
+              south of the Desert poisoned by sulfurous wastes.
             </p>
 
           </div>
@@ -1739,36 +1269,16 @@
           <div class="impact-card">
 
             <p class="impact-card-label">
-              The Mists
+              Breach
             </p>
 
             <h3>
-              Realm of Torment
+              Mouth of Torment
             </h3>
 
             <p>
-              Abaddon
-              and his followers
-              are imprisoned beyond Tyria.
-            </p>
-
-          </div>
-
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              Divine Presence
-            </p>
-
-            <h3>
-              The Exodus
-            </h3>
-
-            <p>
-              The Five leave
-              the physical world
-              and withdraw into the Mists.
+              The site of the final battle became a rupture
+              connecting Tyria with the Realm of Torment.
             </p>
 
           </div>
@@ -1778,52 +1288,268 @@
       </section>
 
 
-      <!-- =========================
-           NEXT ENTRY
-      ========================== -->
+      <!-- ========================================
+           CHAPTER IV
+      ========================================= -->
 
-      <section class="page-navigation">
+      <section
+        class="chapter"
+        data-position="55"
+        data-date="0 AE"
+        data-context="THE REALM OF TORMENT"
+      >
 
-        <p class="navigation-label">
-          Continue the Road Through Time
+        <p class="chapter-number">
+          IV
         </p>
 
         <h2>
-          Kingdoms and Guild Wars
+          Abaddon is imprisoned beyond Tyria
+        </h2>
+
+        <p class="chapter-opening">
+          The Five did not destroy Abaddon. Instead, they
+          imprisoned the fallen God and his surviving followers
+          within the <strong>Realm of Torment</strong>, where
+          Divine restraints were created to prevent him from
+          returning to the mortal world.
+        </p>
+
+        <p>
+          <strong>Balthazar</strong> forged the chains used
+          to bind Abaddon, while many of the
+          <strong>Forgotten</strong> were given responsibility
+          for guarding the prison and the passages associated
+          with it.
+        </p>
+
+        <p>
+          The conflict also carried pieces of the mortal world
+          into the Mists. The <strong>Temple of the Six Gods</strong>
+          was pulled into the Realm of Torment as Abaddon and
+          his followers were imprisoned.
+        </p>
+
+        <p>
+          Imprisonment ended Abaddon's freedom, but it did not
+          end his ability to influence events. From within the
+          Realm of Torment, he would spend more than a thousand
+          years working through followers and servants in
+          preparation for another attempt to escape.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER V
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="70"
+        data-date="0 AE"
+        data-context="ABADDON IS ERASED FROM HISTORY"
+      >
+
+        <p class="chapter-number">
+          V
+        </p>
+
+        <h2>
+          The Five bury the memory of Abaddon
+        </h2>
+
+        <p class="chapter-opening">
+          Imprisoning Abaddon addressed the physical danger he
+          posed, but the Five also acted against his influence
+          upon mortal civilization. They attempted to remove
+          knowledge of the fallen God from the historical and
+          religious record.
+        </p>
+
+        <p>
+          Abaddon's worship was suppressed, records associated
+          with him were destroyed or sealed, and his great
+          temple in <strong>Orr</strong> was sunk beneath the
+          region now known as the
+          <strong>Straits of Devastation</strong>.
+        </p>
+
+        <p>
+          The result was an unusual historical gap. Later
+          generations could remember the actions of
+          <strong>the Gods</strong> without necessarily knowing
+          that Abaddon had once stood among them or understanding
+          his individual role in events such as the Gift of Magic.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            Destroying a record does not undo the event recorded
+            within it. It only changes which generation has to
+            rediscover the truth later.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER VI
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="84"
+        data-date="0 AE"
+        data-context="THE FIVE LEAVE TYRIA"
+      >
+
+        <p class="chapter-number">
+          VI
+        </p>
+
+        <h2>
+          The Five leave the physical world
+        </h2>
+
+        <p class="chapter-opening">
+          The war against Abaddon demonstrated the danger
+          created when Gods intervened directly in Tyria.
+          The Five had defeated the rebellion, but the scars
+          across the Crystal Desert and the Desolation remained
+          as evidence of the cost.
+        </p>
+
+        <p>
+          The surviving Gods chose to leave Tyria and entered
+          the <strong>Mists</strong>, allowing Humanity and the
+          other mortal peoples of the world to continue without
+          the same degree of direct Divine intervention.
+        </p>
+
+        <p>
+          Their departure became known as the
+          <strong>Exodus of the Gods</strong>.
+        </p>
+
+        <p>
+          The Exodus did not sever every connection between
+          Tyria and the Divine. The Gods continued to govern
+          their realms within the Mists, while blessings,
+          avatars, temples, and other forms of Divine influence
+          remained part of mortal life for centuries afterward.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Historical Distinction
+          </p>
+
+          <p>
+            The Exodus describes the Gods leaving Tyria itself.
+            It should not be confused with any earlier reduction
+            in their day-to-day involvement with mortal affairs.
+            After 0 AE, the Five were no longer physically
+            resident in the world.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER VII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="100"
+        data-date="0 AE"
+        data-context="THE AFTER EXODUS ERA BEGINS"
+      >
+
+        <p class="chapter-number">
+          VII
+        </p>
+
+        <h2>
+          The Exodus becomes Year Zero
+        </h2>
+
+        <p class="chapter-opening">
+          The departure of the Gods became one of the defining
+          chronological boundaries in Tyrian history. The
+          <strong>Mouvelian Calendar</strong> placed the Exodus
+          at <strong>0 AE</strong>, dividing history into the
+          eras Before the Exodus and After the Exodus.
+        </p>
+
+        <p>
+          The change represented more than a calendar. Humanity
+          had entered Tyria under the guidance of the Gods,
+          developed kingdoms beneath their influence, received
+          widespread magic from them, and survived a war among
+          them. Now mortal civilizations would increasingly
+          determine their own political futures.
+        </p>
+
+        <p>
+          The Gods left behind temples, religions, magical
+          traditions, the divided Bloodstones, and unresolved
+          conflicts that would continue long after their
+          departure.
+        </p>
+
+        <p>
+          The age of direct Divine rule had ended. The age of
+          mortal kingdoms was already beginning.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           NEXT VOLUME
+      ========================================= -->
+
+      <section class="transition">
+
+        <p class="transition-label">
+          End of Volume V
+        </p>
+
+        <h2>
+          The road continues
         </h2>
 
         <p>
-          The gods were gone
-          from the physical world.
+          The Gods had left the physical world, but the nations
+          they helped shape remained. Human kingdoms expanded,
+          borders hardened, and Guilds accumulated influence
+          that increasingly rivaled the authority of kings.
+        </p>
+
+        <p class="next-title">
+          Volume VI // Kingdoms and Guild Wars
         </p>
 
         <p>
-          Mortals were left
-          with kingdoms,
-          magical traditions,
-          old rivalries,
-          and the Bloodstones
-          hidden within the Ring of Fire.
+          The next archive follows the growth of the Human
+          kingdoms after the Exodus, the scattering of the
+          Bloodstones, the rise of powerful Guilds, and the
+          conflicts that eventually became known as the
+          <strong>Guild Wars</strong>.
         </p>
-
-        <p>
-          Human nations
-          would grow increasingly independent.
-        </p>
-
-        <p>
-          Guilds would gain
-          political and military power.
-        </p>
-
-        <p>
-          And the struggles
-          of the next thousand years
-          would eventually give
-          the <strong>Guild Wars</strong>
-          their name.
-        </p>
-
 
         <div class="navigation-actions">
 
@@ -1831,7 +1557,7 @@
             href="../gift-of-magic/index.html"
             class="button"
           >
-            ← The Gift of Magic
+            ← Volume IV
           </a>
 
           <a
@@ -1845,7 +1571,7 @@
             href="../kingdoms-and-guild-wars/index.html"
             class="button button-primary"
           >
-            Kingdoms and Guild Wars →
+            Read Volume VI →
           </a>
 
         </div>
@@ -1857,18 +1583,32 @@
   </main>
 
 
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
+
   <footer>
 
     <div class="container">
 
-      Guild Wars Living Lore Library is an unofficial fan lore project.
-      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
-      belong to their respective owners.
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
 
     </div>
 
   </footer>
 
+
+  <!-- ========================================
+       CHRONOLOGY SCRIPT
+  ========================================= -->
 
   <script>
     (() => {
@@ -1876,37 +1616,47 @@
 
       const sections =
         document.querySelectorAll(
-          ".history-section[data-position]"
+          ".chapter[data-position]"
         );
 
       const marker =
-        document.getElementById("historyMarker");
+        document.getElementById(
+          "historyMarker"
+        );
 
       const currentDate =
-        document.getElementById("currentDate");
+        document.getElementById(
+          "currentDate"
+        );
 
       const positionContext =
-        document.getElementById("positionContext");
+        document.getElementById(
+          "positionContext"
+        );
 
+      const updatePosition =
+        (section) => {
 
-      const updatePosition = (section) => {
+          const position =
+            section.dataset.position || "5";
 
-        const position =
-          section.dataset.position || "5";
+          const date =
+            section.dataset.date ||
+            "0 AE";
 
-        const date =
-          section.dataset.date || "0 AE";
+          const context =
+            section.dataset.context ||
+            "HISTORICAL RECORD";
 
-        const context =
-          section.dataset.context || "YOU ARE HERE";
+          marker.style.left =
+            `${position}%`;
 
-        marker.style.left = `${position}%`;
+          currentDate.textContent =
+            date;
 
-        currentDate.textContent = date;
-
-        positionContext.textContent = context;
-      };
-
+          positionContext.textContent =
+            context;
+        };
 
       const observer =
         new IntersectionObserver(
@@ -1925,13 +1675,10 @@
                 );
 
             if (visible.length > 0) {
-
               updatePosition(
                 visible[0].target
               );
-
             }
-
           },
           {
             rootMargin:
@@ -1947,13 +1694,11 @@
           }
         );
 
-
       sections.forEach(
         (section) => {
           observer.observe(section);
         }
       );
-
     })();
   </script>
 
