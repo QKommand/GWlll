@@ -10,26 +10,37 @@
 
   <meta
     name="description"
-    content="The Guild Wars Era archive entry in the Guild Wars Living Lore Library."
+    content="Commander Q's historical record of the Guild Wars Era, from the Third Guild War through the events of Guild Wars: Prophecies, Factions, Nightfall, Eye of the North, and Guild Wars Beyond."
   >
 
-  <meta name="theme-color" content="#020617">
+  <meta name="theme-color" content="#070b14">
 
-  <title>The Guild Wars Era // GWlll</title>
+  <title>The Guild Wars Era // The Records of Commander Q</title>
 
   <style>
     :root {
       color-scheme: dark;
 
-      --background: #020617;
-      --panel: #0f172a;
-      --border: #374151;
+      --background: #070b14;
+      --background-deep: #03060c;
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
 
-      --gold: #f4c76b;
-      --gold-bright: #ffe3a3;
-      --gold-muted: #c99b45;
+      --border: #334155;
+      --border-soft: rgba(148, 163, 184, 0.18);
 
-      --white: #ffffff;
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
+
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
+
+      --quote: #c7d2e0;
+
+      --max-width: 820px;
     }
 
     * {
@@ -38,7 +49,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 175px;
+      scroll-padding-top: 150px;
     }
 
     body {
@@ -48,23 +59,24 @@
       background:
         radial-gradient(
           circle at top,
-          rgba(244, 199, 107, 0.08),
-          transparent 34rem
+          rgba(214, 179, 106, 0.07),
+          transparent 32rem
         ),
-        var(--background);
+        linear-gradient(
+          to bottom,
+          #090e18,
+          var(--background) 30rem
+        );
 
-      color: var(--white);
+      color: var(--ink);
 
       font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
+        Georgia,
+        "Times New Roman",
+        serif;
 
-      line-height: 1.75;
+      font-size: 1.05rem;
+      line-height: 1.85;
     }
 
     a {
@@ -72,27 +84,34 @@
     }
 
     .container {
-      width: min(900px, calc(100% - 32px));
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
+
       margin-inline: auto;
     }
 
-    /* =========================
+    /* ========================================
        HEADER
-    ========================= */
+    ======================================== */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border-soft);
 
-      background: rgba(2, 6, 23, 0.94);
+      background:
+        rgba(3, 6, 12, 0.95);
+
       backdrop-filter: blur(14px);
     }
 
     .header-inner {
-      min-height: 68px;
+      min-height: 66px;
 
       display: flex;
       align-items: center;
@@ -108,12 +127,17 @@
     .brand-small {
       margin: 0;
 
-      color: var(--white);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.65rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      letter-spacing: 0.17em;
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
@@ -129,8 +153,14 @@
     .home-link {
       color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.75rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.7rem;
       font-weight: 700;
 
       text-decoration: none;
@@ -145,60 +175,66 @@
       transform: translateX(-3px);
     }
 
-    /* =========================
-       HISTORICAL POSITION
-    ========================= */
+    /* ========================================
+       CHRONOLOGY
+    ======================================== */
 
-    .history-position {
+    .chronology {
       position: sticky;
-      top: 68px;
+      top: 66px;
       z-index: 40;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border-soft);
 
-      background: rgba(2, 6, 23, 0.96);
+      background:
+        rgba(7, 11, 20, 0.96);
+
       backdrop-filter: blur(12px);
     }
 
-    .history-position-inner {
-      padding: 13px 0 15px;
+    .chronology-inner {
+      padding: 11px 0 13px;
     }
 
-    .position-top {
+    .chronology-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      gap: 12px;
+      gap: 15px;
 
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    .position-label {
+    .chronology-label,
+    .chronology-date {
       margin: 0;
 
-      color: var(--white);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      font-family: monospace;
       font-size: 0.62rem;
-
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .current-date {
-      margin: 0;
+    .chronology-label {
+      color: var(--ink-faint);
+    }
 
+    .chronology-date {
       color: var(--gold-bright);
-
-      font-family: monospace;
-      font-size: 0.7rem;
       font-weight: 700;
     }
 
     .history-rail {
       position: relative;
-      height: 26px;
+      height: 17px;
     }
 
     .history-line {
@@ -213,48 +249,20 @@
       background:
         linear-gradient(
           to right,
-          rgba(244, 199, 107, 0.25),
-          rgba(244, 199, 107, 0.9),
-          rgba(244, 199, 107, 0.25)
+          rgba(214, 179, 106, 0.18),
+          rgba(214, 179, 106, 0.85),
+          rgba(214, 179, 106, 0.18)
         );
-    }
-
-    .history-point {
-      position: absolute;
-
-      top: 2px;
-
-      width: 11px;
-      height: 11px;
-
-      border: 1px solid var(--gold-muted);
-      border-radius: 50%;
-
-      background: var(--background);
-
-      transform: translateX(-50%);
-    }
-
-    .history-point.start {
-      left: 5%;
-    }
-
-    .history-point.middle {
-      left: 50%;
-    }
-
-    .history-point.end {
-      left: 95%;
     }
 
     .history-marker {
       position: absolute;
 
-      top: -1px;
+      top: 1px;
       left: 5%;
 
-      width: 17px;
-      height: 17px;
+      width: 13px;
+      height: 13px;
 
       border: 2px solid var(--gold-bright);
       border-radius: 50%;
@@ -262,267 +270,436 @@
       background: var(--gold);
 
       box-shadow:
-        0 0 15px rgba(244, 199, 107, 0.5);
+        0 0 12px
+        rgba(214, 179, 106, 0.38);
 
       transform: translateX(-50%);
 
-      transition: left 450ms ease;
+      transition: left 400ms ease;
     }
 
-    .rail-labels {
-      display: flex;
-      justify-content: space-between;
+    .chronology-context {
+      margin: 4px 0 0;
 
-      margin-top: 2px;
+      color: var(--ink-muted);
 
-      color: var(--white);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      font-family: monospace;
-      font-size: 0.58rem;
-    }
-
-    .position-context {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: 0.72rem;
+      font-size: 0.59rem;
       text-align: center;
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    /* ========================================
+       BOOK HEADER
+    ======================================== */
 
-    .hero {
-      padding: 72px 0 56px;
+    .book-header {
+      padding: 80px 0 52px;
       text-align: center;
     }
 
-    .hero-label {
+    .volume {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold-muted);
 
-      font-family: monospace;
-      font-size: 0.7rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.67rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    .hero h1 {
-      margin: 16px 0 0;
-
-      color: var(--gold);
-
-      font-size: clamp(2.7rem, 8vw, 5.2rem);
-      line-height: 1.03;
-
-      letter-spacing: -0.045em;
-
-      animation: goldPulse 4s ease-in-out infinite;
-    }
-
-    .hero-date {
-      margin: 16px 0 0;
+    .book-header h1 {
+      margin: 17px 0 0;
 
       color: var(--gold-bright);
 
-      font-family: monospace;
-      font-size: 0.8rem;
+      font-size:
+        clamp(
+          2.6rem,
+          8vw,
+          4.8rem
+        );
 
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
     }
 
-    .hero-text {
-      max-width: 760px;
+    .subtitle {
+      max-width: 680px;
 
-      margin: 24px auto 0;
+      margin: 18px auto 0;
 
-      font-size: 1.06rem;
-      line-height: 1.9;
+      color: var(--ink-muted);
+
+      font-style: italic;
+      font-size: 1.08rem;
     }
 
-    /* =========================
-       ARCHIVE NOTE
-    ========================= */
+    .ornament {
+      width: 120px;
 
-    .archive-note {
-      margin-bottom: 55px;
-      padding: 24px;
+      margin: 32px auto 0;
 
-      border: 1px solid rgba(244, 199, 107, 0.35);
-      border-radius: 12px;
-
-      background: rgba(244, 199, 107, 0.045);
+      border: 0;
+      border-top: 1px solid var(--gold-muted);
     }
 
-    .archive-note-label {
+    /* ========================================
+       AUTHOR
+    ======================================== */
+
+    .author-card {
+      margin-bottom: 60px;
+
+      padding: 24px 26px;
+
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+
+      text-align: center;
+    }
+
+    .author-label {
       margin: 0;
 
-      color: var(--gold);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.68rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.62rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .archive-note p:last-child {
-      margin: 12px 0 0;
+    .author-name {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.2rem;
+      font-weight: 700;
     }
 
-    /* =========================
-       HISTORY
-    ========================= */
+    .author-title {
+      margin: 5px 0 0;
 
-    .history-section {
-      padding: 36px 0;
+      color: var(--ink-muted);
 
-      border-top: 1px solid var(--border);
+      font-size: 0.91rem;
+      font-style: italic;
+      line-height: 1.65;
     }
 
-    .history-label {
+    /* ========================================
+       PREFACE
+    ======================================== */
+
+    .preface {
+      margin-bottom: 68px;
+    }
+
+    .section-kicker {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold-muted);
 
-      font-family: monospace;
-      font-size: 0.66rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.64rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .preface h2,
+    .chapter h2 {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size:
+        clamp(
+          1.65rem,
+          5vw,
+          2.25rem
+        );
+
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .preface p {
+      margin: 18px 0 0;
+    }
+
+    .signature {
+      margin-top: 28px;
+
+      color: var(--gold-bright);
+      font-style: italic;
+    }
+
+    /* ========================================
+       RESEARCH NOTE
+    ======================================== */
+
+    .research-note {
+      margin: 28px 0;
+
+      padding: 20px 22px;
+
+      border-left: 2px solid var(--gold-muted);
+
+      background:
+        rgba(214, 179, 106, 0.045);
+    }
+
+    .research-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .research-note p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
+      font-size: 0.96rem;
+    }
+
+    /* ========================================
+       CHAPTERS
+    ======================================== */
+
+    .chapter {
+      padding: 48px 0;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .chapter-number {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .history-section h2 {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: clamp(1.6rem, 5vw, 2.35rem);
-      line-height: 1.2;
+    .chapter p {
+      margin: 18px 0 0;
     }
 
-    .history-section p {
-      margin: 16px 0 0;
-    }
-
-    .history-section strong {
+    .chapter strong {
       color: var(--gold-bright);
+      font-weight: 600;
     }
 
-    .record-box {
-      margin-top: 22px;
-      padding: 20px;
+    .chapter-opening::first-letter {
+      float: left;
 
-      border-left: 2px solid var(--gold);
-
-      background: rgba(15, 23, 42, 0.8);
-    }
-
-    .record-box-label {
-      margin: 0;
+      margin: 7px 8px 0 0;
 
       color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.65rem;
-
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      font-size: 3.6rem;
+      line-height: 0.75;
     }
 
-    .record-box p:last-child {
-      margin: 8px 0 0;
-    }
-
-    /* =========================
+    /* ========================================
        CAMPAIGN GRID
-    ========================= */
+    ======================================== */
 
     .campaign-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
       gap: 14px;
 
-      margin-top: 24px;
+      margin-top: 28px;
     }
 
     .campaign-card {
-      padding: 20px;
+      padding: 19px 20px;
 
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      border: 1px solid var(--border-soft);
 
-      background: rgba(15, 23, 42, 0.76);
+      background:
+        rgba(15, 23, 42, 0.58);
     }
 
     .campaign-card-label {
       margin: 0;
 
-      color: var(--white);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.62rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.59rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
     .campaign-card h3 {
-      margin: 7px 0 0;
+      margin: 6px 0 0;
 
       color: var(--gold);
 
-      font-size: 1.05rem;
+      font-size: 1.06rem;
+      font-weight: 600;
     }
 
     .campaign-card p:last-child {
       margin: 8px 0 0;
 
+      color: var(--ink-muted);
+
       font-size: 0.9rem;
+      line-height: 1.65;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
+    /* ========================================
+       COMMANDER Q OBSERVATION
+    ======================================== */
 
-    .page-navigation {
-      padding: 45px 0 80px;
+    .q-observation {
+      margin: 30px 0 6px;
 
-      border-top: 1px solid var(--border);
+      padding: 21px 23px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(214, 179, 106, 0.05),
+          rgba(15, 23, 42, 0.45)
+        );
     }
 
-    .navigation-label {
+    .q-observation-label {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.67rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.61rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .q-observation p:last-child {
+      margin: 9px 0 0;
+
+      color: var(--quote);
+      font-style: italic;
+    }
+
+    /* ========================================
+       TRANSITION
+    ======================================== */
+
+    .transition {
+      padding: 58px 0 70px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .transition-label {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.63rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .page-navigation h2 {
-      margin: 8px 0 0;
+    .transition h2 {
+      margin: 10px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .transition p {
+      margin: 16px 0 0;
+    }
+
+    .next-title {
+      margin-top: 30px !important;
 
       color: var(--gold);
 
-      font-size: 1.7rem;
-    }
-
-    .page-navigation p {
-      margin: 13px 0 0;
+      font-size: 1.15rem;
+      font-weight: 700;
     }
 
     .navigation-actions {
-      margin-top: 24px;
+      margin-top: 28px;
 
       display: flex;
       flex-wrap: wrap;
@@ -540,12 +717,23 @@
       padding: 0 20px;
 
       border: 1px solid var(--border);
-      border-radius: 9px;
+      border-radius: 5px;
 
-      background: var(--panel);
+      background:
+        rgba(15, 23, 42, 0.7);
+
       color: var(--gold);
 
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.75rem;
       font-weight: 700;
+
       text-decoration: none;
 
       transition:
@@ -557,68 +745,69 @@
     .button:hover {
       transform: translateY(-2px);
 
-      border-color: rgba(244, 199, 107, 0.6);
+      border-color:
+        rgba(214, 179, 106, 0.6);
 
       color: var(--gold-bright);
     }
 
     .button-primary {
-      border-color: rgba(244, 199, 107, 0.45);
+      border-color:
+        rgba(214, 179, 106, 0.45);
 
-      background: rgba(244, 199, 107, 0.1);
+      background:
+        rgba(214, 179, 106, 0.08);
     }
 
-    /* =========================
+    /* ========================================
        FOOTER
-    ========================= */
+    ======================================== */
 
     footer {
-      padding: 30px 0;
+      padding: 34px 0;
 
-      border-top: 1px solid var(--border);
+      border-top:
+        1px solid var(--border-soft);
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.65rem;
+      line-height: 1.7;
 
       text-align: center;
-      font-size: 0.75rem;
     }
 
-    /* =========================
-       ANIMATION
-    ========================= */
-
-    @keyframes goldPulse {
-      0%,
-      100% {
-        color: var(--gold);
-
-        text-shadow:
-          0 0 0 rgba(244, 199, 107, 0);
-      }
-
-      50% {
-        color: var(--gold-bright);
-
-        text-shadow:
-          0 0 16px rgba(244, 199, 107, 0.28),
-          0 0 34px rgba(244, 199, 107, 0.1);
-      }
-    }
-
-    /* =========================
+    /* ========================================
        MOBILE
-    ========================= */
+    ======================================== */
 
     @media (max-width: 650px) {
 
       html {
-        scroll-padding-top: 155px;
+        scroll-padding-top: 135px;
+      }
+
+      body {
+        font-size: 1rem;
       }
 
       .container {
-        width: min(100% - 22px, 900px);
+        width:
+          min(
+            100% - 24px,
+            var(--max-width)
+          );
       }
 
       .header-inner {
-        min-height: 62px;
+        min-height: 60px;
       }
 
       .brand-small {
@@ -626,39 +815,39 @@
       }
 
       .brand-name {
-        font-size: 0.84rem;
+        font-size: 0.88rem;
       }
 
       .home-link {
-        font-size: 0.67rem;
-      }
-
-      .history-position {
-        top: 62px;
-      }
-
-      .position-label {
-        font-size: 0.55rem;
-      }
-
-      .current-date {
         font-size: 0.62rem;
       }
 
-      .rail-labels {
-        font-size: 0.52rem;
+      .chronology {
+        top: 60px;
       }
 
-      .position-context {
-        font-size: 0.65rem;
+      .chronology-label {
+        font-size: 0.53rem;
       }
 
-      .hero {
-        padding: 52px 0 44px;
+      .chronology-date {
+        font-size: 0.56rem;
       }
 
-      .hero-text {
-        font-size: 1rem;
+      .chronology-context {
+        font-size: 0.53rem;
+      }
+
+      .book-header {
+        padding: 58px 0 42px;
+      }
+
+      .author-card {
+        padding: 21px 14px;
+      }
+
+      .chapter {
+        padding: 40px 0;
       }
 
       .campaign-grid {
@@ -692,18 +881,21 @@
 
 <body>
 
-  <!-- =========================
+  <!-- ========================================
        HEADER
-  ========================== -->
+  ========================================= -->
 
   <header class="site-header">
 
     <div class="container header-inner">
 
-      <a href="../index.html" class="brand">
+      <a
+        href="../index.html"
+        class="brand"
+      >
 
         <p class="brand-small">
-          QKommand Archive
+          The Historical Records of Commander Q
         </p>
 
         <p class="brand-name">
@@ -712,7 +904,10 @@
 
       </a>
 
-      <a href="../index.html" class="home-link">
+      <a
+        href="../index.html"
+        class="home-link"
+      >
         ← Road Through Time
       </a>
 
@@ -721,34 +916,32 @@
   </header>
 
 
-  <!-- =========================
-       HISTORICAL POSITION
-  ========================== -->
+  <!-- ========================================
+       CHRONOLOGY
+  ========================================= -->
 
-  <aside class="history-position">
+  <aside class="chronology">
 
-    <div class="container history-position-inner">
+    <div class="container chronology-inner">
 
-      <div class="position-top">
+      <div class="chronology-top">
 
-        <p class="position-label">
-          Tyrian Historical Position
+        <p class="chronology-label">
+          Historical Position
         </p>
 
-        <p class="current-date" id="currentDate">
+        <p
+          class="chronology-date"
+          id="currentDate"
+        >
           1013 AE
         </p>
 
       </div>
 
-
       <div class="history-rail">
 
         <div class="history-line"></div>
-
-        <span class="history-point start"></span>
-        <span class="history-point middle"></span>
-        <span class="history-point end"></span>
 
         <span
           class="history-marker"
@@ -757,20 +950,11 @@
 
       </div>
 
-
-      <div class="rail-labels">
-
-        <span>1013 AE</span>
-
-        <span>1072 AE</span>
-
-        <span>1080 AE</span>
-
-      </div>
-
-
-      <p class="position-context" id="positionContext">
-        YOU ARE HERE // The Third Guild War
+      <p
+        class="chronology-context"
+        id="positionContext"
+      >
+        THE THIRD GUILD WAR
       </p>
 
     </div>
@@ -780,40 +964,29 @@
 
   <main>
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <!-- ========================================
+         BOOK HEADER
+    ========================================= -->
 
-    <section class="hero">
+    <section class="book-header">
 
       <div class="container">
 
-        <p class="hero-label">
-          Historical Archive // Record 07
+        <p class="volume">
+          Volume VII // The Guild Wars Era
         </p>
 
         <h1>
           The Guild Wars Era
         </h1>
 
-        <p class="hero-date">
-          1013 AE – 1080 AE
+        <p class="subtitle">
+          On the fall of kingdoms, the fulfillment of old
+          prophecies, the death of a God, and the first warning
+          that the Elder Dragon Cycle was beginning again.
         </p>
 
-        <p class="hero-text">
-          The age began with humans fighting humans.
-        </p>
-
-        <p class="hero-text">
-          It ended with fallen kingdoms, a dead god,
-          shattered faiths, transformed dwarves,
-          and the first warning that something far older
-          was waking beneath Tyria.
-        </p>
-
-        <p class="hero-text">
-          These are the events of the original Guild Wars.
-        </p>
+        <hr class="ornament">
 
       </div>
 
@@ -822,171 +995,196 @@
 
     <div class="container">
 
-      <!-- =========================
-           ARCHIVE NOTE
-      ========================== -->
+      <!-- ========================================
+           AUTHOR
+      ========================================= -->
 
-      <div class="archive-note">
+      <section class="author-card">
 
-        <p class="archive-note-label">
-          Archive Context
+        <p class="author-label">
+          Compiled and Annotated By
+        </p>
+
+        <p class="author-name">
+          Commander Q
+        </p>
+
+        <p class="author-title">
+          Captain Commander of the Vanguard Knights
+          <br>
+          Researcher of Tyrian History and the Mists
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           PREFACE
+      ========================================= -->
+
+      <section class="preface">
+
+        <p class="section-kicker">
+          Author's Preface
+        </p>
+
+        <h2>
+          The world changes very quickly
+        </h2>
+
+        <p>
+          The previous volume ended in 1013 AE with the beginning
+          of the Third Guild War. For decades, the Human kingdoms
+          of continental Tyria remained consumed by a conflict
+          whose origins reached back through generations of Guild
+          rivalry.
         </p>
 
         <p>
-          The Third Guild War began in 1013 AE,
-          but the major campaigns of the original Guild Wars
-          games occur primarily between 1067 and 1080 AE.
-          The opening records preserve the final decades
-          of conflict so the historical road remains continuous.
+          Then the scale of history changed. The Charr invaded
+          Ascalon, Orr disappeared beneath the sea, an ancient
+          prophecy reached fulfillment, Shiro Tagachi returned
+          to Cantha, and Abaddon's thousand-year struggle against
+          his imprisonment finally came to an end.
         </p>
 
-      </div>
+        <p>
+          By 1078 AE, even those events began to look smaller.
+          Creatures were emerging from beneath the earth, ancient
+          civilizations were being driven from their homes, and
+          the Dwarves transformed themselves to fight an enemy
+          connected to something much older than the kingdoms
+          above them.
+        </p>
+
+        <p>
+          This is the period remembered through the original
+          Guild Wars campaigns. More importantly for this archive,
+          it is the bridge between the age of Human kingdoms and
+          the return of the Elder Dragons.
+        </p>
+
+        <p class="signature">
+          — Commander Q
+        </p>
+
+      </section>
 
 
-      <!-- =========================
-           RECORD 01
-      ========================== -->
+      <!-- ========================================
+           CHAPTER I
+      ========================================= -->
 
       <section
-        class="history-section"
+        class="chapter"
         data-position="5"
-        data-date="1013 AE"
-        data-context="YOU ARE HERE // The Third Guild War Begins"
+        data-date="1013–1069 AE"
+        data-context="THE THIRD GUILD WAR CONTINUES"
       >
 
-        <p class="history-label">
-          Record 01 // The Third Guild War
+        <p class="chapter-number">
+          I
         </p>
 
         <h2>
-          The human kingdoms turn on one another
+          The old war continues
         </h2>
 
-        <p>
-          In <strong>1013 AE</strong>,
-          the Third Guild War began.
+        <p class="chapter-opening">
+          The <strong>Third Guild War</strong> continued for more
+          than half a century after its beginning in 1013 AE.
+          Ascalon and Kryta remained bitter rivals, while Orr
+          eventually entered the conflict in a failed attempt
+          to bring the fighting to an end.
         </p>
 
         <p>
-          The conflict drew the human kingdoms of continental Tyria
-          into another generation of warfare.
+          Elsewhere, events were already creating the political
+          order that would shape the coming crisis. In
+          <strong>1067 AE</strong>, the exiled
+          <strong>Saul D'Alessio</strong> encountered the
+          <strong>Mursaat</strong> and came to worship them
+          as the <strong>Unseen Ones</strong>.
         </p>
 
         <p>
-          Ascalon and Kryta fought for power.
-          Orr eventually entered the conflict as well.
+          The faith Saul founded became the
+          <strong>White Mantle</strong>. His followers later
+          traveled to Janthir, deepening their connection to
+          the Mursaat and the mysterious
+          <strong>Eye of Janthir</strong>.
         </p>
 
         <p>
-          The fighting weakened the kingdoms at exactly
-          the wrong moment in history.
+          Human kingdoms remained focused upon one another,
+          unaware that another army was preparing beyond their
+          northern frontier.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 02
-      ========================== -->
+      <!-- ========================================
+           CHAPTER II
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="12"
-        data-date="1067 AE"
-        data-context="YOU ARE HERE // Saul Meets the Mursaat"
-      >
-
-        <p class="history-label">
-          Record 02 // Saul D'Alessio
-        </p>
-
-        <h2>
-          A new faith appears in Kryta
-        </h2>
-
-        <p>
-          In <strong>1067 AE</strong>,
-          the exiled <strong>Saul D'Alessio</strong>
-          encountered the mursaat.
-        </p>
-
-        <p>
-          He came to worship them as divine beings
-          known as the <strong>Unseen Ones</strong>.
-        </p>
-
-        <p>
-          From this faith grew the
-          <strong>White Mantle</strong>.
-        </p>
-
-        <p>
-          In <strong>1069 AE</strong>,
-          Saul brought the White Mantle to Janthir,
-          strengthening the order's connection to
-          the mursaat and the Eye of Janthir.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 03
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="19"
+        class="chapter"
+        data-position="17"
         data-date="1070 AE"
-        data-context="YOU ARE HERE // The Searing"
+        data-context="THE SEARING"
       >
 
-        <p class="history-label">
-          Record 03 // The Charr Invasion
+        <p class="chapter-number">
+          II
         </p>
 
         <h2>
-          A greater war ends the Guild Wars
+          The Charr end the Guild War
         </h2>
 
-        <p>
-          In <strong>1070 AE</strong>,
-          charr armies descended upon Ascalon.
+        <p class="chapter-opening">
+          In <strong>1070 AE</strong>, the
+          <strong>Charr</strong> launched a massive invasion
+          southward. At the Great Northern Wall, their forces
+          performed the <strong>Ritual of the Searing</strong>,
+          using magical Cauldrons to call fire down across
+          Ascalon.
         </p>
 
         <p>
-          At the Great Northern Wall,
-          they performed the
-          <strong>Ritual of the Searing</strong>.
+          The devastation transformed the kingdom. Settlements
+          burned, farmland became wasteland, and the Great
+          Northern Wall that had defended Human Ascalon for
+          generations was breached.
         </p>
 
         <p>
-          Searing Cauldrons summoned magical fire
-          across the kingdom.
+          The invasion also accomplished something decades of
+          diplomacy had failed to do. The
+          <strong>Third Guild War ended</strong> as Ascalon,
+          Kryta, and Orr were forced to defend themselves
+          against the Charr rather than continue fighting
+          one another.
         </p>
 
         <p>
-          Cities burned.
-          The countryside was devastated.
-          The Great Northern Wall was breached.
+          Kryta survived through the intervention of the
+          <strong>White Mantle</strong> and their Mursaat
+          allies. With King Jadon gone, the order that had
+          saved Kryta increasingly became the power governing it.
         </p>
 
-        <p>
-          The charr invasion abruptly ended
-          the Third Guild War.
-        </p>
+        <div class="q-observation">
 
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Turning Point
+          <p class="q-observation-label">
+            Commander Q // Observation
           </p>
 
           <p>
-            Ascalon, Kryta, and Orr had spent decades
-            weakening one another. The charr invasion forced
-            the kingdoms to abandon their war against each other
-            and defend themselves.
+            The Third Guild War did not end because anyone
+            finally won. It ended because the kingdoms suddenly
+            had a larger problem.
           </p>
 
         </div>
@@ -994,116 +1192,67 @@
       </section>
 
 
-      <!-- =========================
-           RECORD 04
-      ========================== -->
+      <!-- ========================================
+           CHAPTER III
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="25"
-        data-date="1070 AE"
-        data-context="YOU ARE HERE // Kryta Turns to the White Mantle"
-      >
-
-        <p class="history-label">
-          Record 04 // Kryta
-        </p>
-
-        <h2>
-          The Unseen Ones save a kingdom
-        </h2>
-
-        <p>
-          Kryta lacked the strength to defeat
-          the charr invasion on its own.
-        </p>
-
-        <p>
-          Saul D'Alessio returned with the
-          <strong>White Mantle</strong>.
-        </p>
-
-        <p>
-          Backed by the
-          <strong>mursaat</strong>,
-          they defeated the invading charr.
-        </p>
-
-        <p>
-          King Jadon fled.
-        </p>
-
-        <p>
-          With the monarchy absent,
-          the White Mantle eventually took control
-          of Kryta's government.
-        </p>
-
-        <p>
-          The people initially remembered them as saviors.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 05
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="31"
+        class="chapter"
+        data-position="27"
         data-date="1071 AE"
-        data-context="YOU ARE HERE // The Cataclysm of Orr"
+        data-context="THE CATACLYSM OF ORR"
       >
 
-        <p class="history-label">
-          Record 05 // Orr
+        <p class="chapter-number">
+          III
         </p>
 
         <h2>
-          A kingdom sinks beneath the sea
+          Orr disappears beneath the sea
         </h2>
 
-        <p>
-          In <strong>1071 AE</strong>,
-          the charr invaded Orr while much of its army
-          was still away from home.
+        <p class="chapter-opening">
+          In <strong>1071 AE</strong>, the Charr invaded
+          <strong>Orr</strong> while much of the kingdom's
+          military strength was still away from home. Their
+          advance threatened the heart of the most magically
+          sophisticated Human kingdom on the Tyrian continent.
         </p>
 
         <p>
-          They advanced deep into the kingdom
-          but never reached Arah.
+          <strong>Vizier Khilbron</strong> turned to forbidden
+          magic in an attempt to stop the invasion. The spell
+          unleashed the <strong>Cataclysm of Orr</strong>,
+          destroying the kingdom and sinking most of the land
+          beneath the sea.
         </p>
 
         <p>
-          <strong>Vizier Khilbron</strong>
-          invoked forbidden magic.
+          Nearly the entire population died. Khilbron survived,
+          but not as the man he had been. He became the
+          <strong>Undead Lich</strong>, carrying Orr's tragedy
+          into the events that followed.
         </p>
 
         <p>
-          The resulting
-          <strong>Cataclysm</strong>
-          sank Orr beneath the sea.
+          The same year also brought renewed contact between
+          distant Human societies. The
+          <strong>Second Treaty of Lion's Arch</strong>
+          formalized resurgent trade between Cantha and the
+          devastated Tyrian kingdoms.
         </p>
 
-        <p>
-          Nearly everyone within the kingdom died.
-          Khilbron survived as the
-          <strong>Undead Lich</strong>.
-        </p>
+        <div class="research-note">
 
-        <div class="record-box">
-
-          <p class="record-box-label">
-            Historical Uncertainty
+          <p class="research-note-label">
+            Historical Caution
           </p>
 
           <p>
-            Surviving accounts disagree on whether Khilbron
-            intended to destroy Orr, acted desperately to stop
-            the charr, or understood the full consequences
-            of the magic he unleashed.
+            Accounts of Khilbron's motives are not entirely
+            consistent. The destruction of Orr is certain.
+            Whether he fully understood what his spell would
+            do is much less secure.
           </p>
 
         </div>
@@ -1111,929 +1260,538 @@
       </section>
 
 
-      <!-- =========================
-           RECORD 06
-      ========================== -->
+      <!-- ========================================
+           CHAPTER IV
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="36"
-        data-date="1071 AE"
-        data-context="YOU ARE HERE // Old Wars End"
-      >
-
-        <p class="history-label">
-          Record 06 // A Changing World
-        </p>
-
-        <h2>
-          Other long conflicts finally close
-        </h2>
-
-        <p>
-          The same year saw several major changes
-          beyond continental Tyria.
-        </p>
-
-        <p>
-          After <strong>191 years</strong>,
-          the Tengu Wars in Cantha ended.
-        </p>
-
-        <p>
-          Formal trade between Cantha and the Tyrian kingdoms
-          was restored through the
-          <strong>Second Treaty of Lion's Arch</strong>.
-        </p>
-
-        <p>
-          The Bay of Sirens increasingly became known as
-          the <strong>Sea of Sorrows</strong>.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 07
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="42"
+        class="chapter"
+        data-position="39"
         data-date="1072 AE"
-        data-context="YOU ARE HERE // Prophecies"
+        data-context="THE FLAMESEEKER PROPHECIES"
       >
 
-        <p class="history-label">
-          Record 07 // Guild Wars Prophecies
+        <p class="chapter-number">
+          IV
         </p>
 
         <h2>
-          Ascalon's survivors leave home
+          Glint's prophecy reaches fulfillment
         </h2>
 
-        <p>
-          By <strong>1072 AE</strong>,
-          Ascalon's position had become desperate.
+        <p class="chapter-opening">
+          By <strong>1072 AE</strong>, Ascalon's survivors were
+          fighting simply to endure. Prince
+          <strong>Rurik</strong> led refugees west across the
+          Shiverpeaks toward Kryta after disagreeing with
+          King Adelbern over the future of the kingdom.
+          Rurik died during the crossing, but the refugees
+          continued.
         </p>
 
         <p>
-          Prince <strong>Rurik</strong> believed
-          the surviving population should flee west,
-          rebuild, and someday return.
+          Kryta offered safety only on the surface. The
+          <strong>White Mantle</strong> had been sacrificing
+          Humans identified as <strong>Chosen</strong>, using
+          their souls to power devices that protected the
+          <strong>Mursaat</strong> from the prophecy that
+          foretold their destruction.
         </p>
 
         <p>
-          King Adelbern rejected the plan.
+          The resistance of the <strong>Shining Blade</strong>
+          exposed the truth behind the Mantle's rule. The road
+          eventually led through the Crystal Desert, to
+          <strong>Glint</strong>, and finally to the
+          <strong>Door of Komalie</strong>.
         </p>
 
         <p>
-          After Rin fell,
-          Rurik led refugees across the Shiverpeaks
-          toward Kryta.
+          The <strong>Flameseeker Prophecies</strong>,
+          recorded eight centuries earlier, were fulfilled.
+          The Mursaat were devastated and the Door opened,
+          releasing the <strong>Titans</strong> into Tyria.
         </p>
 
         <p>
-          He died protecting them during the crossing.
+          The Undead Lich was defeated, and the Titan threat
+          was eventually contained. One prophecy had ended,
+          but Tyria had little time to recover.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 08
-      ========================== -->
+      <!-- ========================================
+           CHAPTER V
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="48"
+        class="chapter"
+        data-position="51"
         data-date="1072 AE"
-        data-context="YOU ARE HERE // Flameseeker Prophecies"
+        data-context="SHIRO RETURNS TO CANTHA"
       >
 
-        <p class="history-label">
-          Record 08 // The Flameseeker Prophecies
+        <p class="chapter-number">
+          V
         </p>
 
         <h2>
-          Glint's centuries-old prophecy comes due
+          Shiro Tagachi returns
         </h2>
 
-        <p>
-          The Undead Lich sought the
-          <strong>Scepter of Orr</strong>
-          while events moved toward fulfillment
-          of the Flameseeker Prophecies.
+        <p class="chapter-opening">
+          In Cantha, another piece of ancient history returned
+          to the present. <strong>Shiro Tagachi</strong>, whose
+          death had unleashed the Jade Wind two centuries earlier,
+          returned and spread a supernatural plague known as the
+          <strong>Affliction</strong>.
         </p>
 
         <p>
-          The White Mantle had been sacrificing
-          <strong>Chosen</strong> humans
-          to power soul batteries.
+          Victims were transformed into violent creatures as the
+          disease spread from Shing Jea through Kaineng City and
+          into the <strong>Echovald Forest</strong> and
+          <strong>Jade Sea</strong>.
         </p>
 
         <p>
-          Resistance from the
-          <strong>Shining Blade</strong>
-          grew into open rebellion.
+          Shiro also corrupted the dragon
+          <strong>Kuunavang</strong>. She was eventually freed
+          from his influence and joined the forces opposing him.
         </p>
 
         <p>
-          The prophecy was ultimately fulfilled.
-        </p>
-
-        <p>
-          The mursaat were nearly destroyed,
-          White Mantle power was broken,
-          and the Door of Komalie opened.
+          Shiro was defeated again in
+          <strong>1072 AE</strong>, ending his immediate threat.
+          The Afflicted, however, remained throughout Cantha and
+          created a political problem that survived the man who
+          had caused it.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 09
-      ========================== -->
+      <!-- ========================================
+           CHAPTER VI
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="53"
-        data-date="1072 AE"
-        data-context="YOU ARE HERE // The Titans"
-      >
-
-        <p class="history-label">
-          Record 09 // The Door of Komalie
-        </p>
-
-        <h2>
-          The prophecy releases another threat
-        </h2>
-
-        <p>
-          Opening the Door of Komalie released
-          <strong>Titans</strong> into Tyria.
-        </p>
-
-        <p>
-          The Titans were the same type of beings
-          that portions of charr society had once
-          worshiped as gods.
-        </p>
-
-        <p>
-          The Undead Lich was defeated,
-          and the Titan threat was eventually contained.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 10
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="59"
-        data-date="1072 AE"
-        data-context="YOU ARE HERE // Factions"
-      >
-
-        <p class="history-label">
-          Record 10 // Guild Wars Factions
-        </p>
-
-        <h2>
-          Shiro returns to Cantha
-        </h2>
-
-        <p>
-          Across the ocean,
-          another old catastrophe returned.
-        </p>
-
-        <p>
-          In <strong>1072 AE</strong>,
-          <strong>Shiro Tagachi</strong>
-          returned after two centuries.
-        </p>
-
-        <p>
-          He unleashed the
-          <strong>Affliction</strong>,
-          a plague that transformed its victims
-          into grotesque creatures.
-        </p>
-
-        <p>
-          The disease spread from Shing Jea
-          through Kaineng City and into
-          the Echovald Forest and Jade Sea.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 11
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="64"
-        data-date="1072 AE"
-        data-context="YOU ARE HERE // Shiro Falls Again"
-      >
-
-        <p class="history-label">
-          Record 11 // Cantha Fights Back
-        </p>
-
-        <h2>
-          Kuunavang joins the mortal resistance
-        </h2>
-
-        <p>
-          The dragon
-          <strong>Kuunavang</strong>
-          was freed from Shiro's corruption
-          and allied with mortal heroes.
-        </p>
-
-        <p>
-          Shiro was eventually defeated again.
-        </p>
-
-        <p>
-          His death ended the immediate crisis,
-          but the Afflicted remained throughout Cantha.
-        </p>
-
-        <p>
-          Their presence would shape Canthan politics
-          for years afterward.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 12
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="69"
+        class="chapter"
+        data-position="61"
         data-date="1073–1077 AE"
-        data-context="YOU ARE HERE // Ministry of Purity Rises"
+        data-context="THE MINISTRY OF PURITY"
       >
 
-        <p class="history-label">
-          Record 12 // Ministry of Purity
+        <p class="chapter-number">
+          VI
         </p>
 
         <h2>
-          The fight against the Afflicted becomes political
+          Cantha turns recovery into politics
         </h2>
 
-        <p>
+        <p class="chapter-opening">
+          The Afflicted remained a threat after Shiro's defeat.
           In <strong>1073 AE</strong>,
-          Reiko Murakami began rallying Canthans
-          against the Afflicted.
+          <strong>Reiko Murakami</strong> began organizing
+          Canthans around the goal of removing them from the
+          Empire.
         </p>
 
         <p>
-          By <strong>1077 AE</strong>,
-          she formally established the
-          <strong>Ministry of Purity</strong>.
+          By <strong>1077 AE</strong>, her movement had become
+          the <strong>Ministry of Purity</strong>. Its campaign
+          promised security, order, and the final elimination
+          of the Afflicted.
         </p>
 
         <p>
-          What began as a movement against a plague
-          would grow into a powerful political force.
+          The Ministry's rise mattered because the struggle
+          against the Afflicted was no longer only a response
+          to Shiro. It was becoming a source of political power
+          in its own right.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 13
-      ========================== -->
+      <!-- ========================================
+           CHAPTER VII
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="75"
+        class="chapter"
+        data-position="70"
         data-date="1075 AE"
-        data-context="YOU ARE HERE // Nightfall"
+        data-context="NIGHTFALL"
       >
 
-        <p class="history-label">
-          Record 13 // Guild Wars Nightfall
+        <p class="chapter-number">
+          VII
         </p>
 
         <h2>
-          Abaddon's thousand-year plan reaches its end
+          Abaddon's rebellion reaches its final chapter
         </h2>
 
-        <p>
+        <p class="chapter-opening">
           In <strong>1075 AE</strong>,
-          Warmarshal <strong>Varesh Ossa</strong>
-          attempted to bring about
-          <strong>Nightfall</strong>.
+          <strong>Varesh Ossa</strong> attempted to bring about
+          <strong>Nightfall</strong>, weakening the barriers
+          between Tyria and the <strong>Realm of Torment</strong>
+          so that <strong>Abaddon</strong> could escape his
+          thousand-year imprisonment.
         </p>
 
         <p>
-          The barriers between Tyria
-          and the Realm of Torment weakened.
+          Demons entered Elona and portions of the landscape
+          began changing under Abaddon's influence. During the
+          struggle, the long-imprisoned
+          <strong>Palawa Joko</strong> was also freed, creating
+          consequences that would extend far beyond the immediate
+          crisis.
         </p>
 
         <p>
-          Demons entered Elona,
-          while the land itself began changing
-          under Abaddon's influence.
+          Abaddon was eventually confronted within the Realm of
+          Torment and killed. His Divine power could not simply
+          vanish, however, without catastrophic consequences.
         </p>
 
         <p>
-          During the campaign,
-          <strong>Palawa Joko</strong>
-          was freed from his ancient imprisonment.
+          <strong>Kormir</strong> absorbed the released power
+          and ascended into the pantheon as the
+          <strong>Goddess of Truth</strong>, inheriting much of
+          the Divine authority once held by Abaddon.
         </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            The Gods had imprisoned Abaddon because destroying
+            him was not a simple solution. More than a thousand
+            years later, mortals discovered why. A God's power
+            does not politely disappear when its owner dies.
+          </p>
+
+        </div>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 14
-      ========================== -->
+      <!-- ========================================
+           CHAPTER VIII
+      ========================================= -->
 
       <section
-        class="history-section"
+        class="chapter"
         data-position="80"
-        data-date="1075 AE"
-        data-context="YOU ARE HERE // Abaddon Dies"
+        data-date="1076–1078 AE"
+        data-context="REBELLION AND THE DESTROYERS"
       >
 
-        <p class="history-label">
-          Record 14 // A God Falls
+        <p class="chapter-number">
+          VIII
         </p>
 
         <h2>
-          Kormir inherits Abaddon's power
+          Old orders begin to break
         </h2>
 
-        <p>
-          Abaddon was finally confronted
-          within the Realm of Torment.
-        </p>
-
-        <p>
-          The fallen god was killed.
-        </p>
-
-        <p>
-          His divine power could not simply disappear.
-        </p>
-
-        <p>
-          <strong>Kormir</strong>
-          absorbed the released energy
-          and ascended into the pantheon
-          as the <strong>Goddess of Truth and Knowledge</strong>.
-        </p>
-
-        <p>
-          More than a thousand years after the Exodus,
-          Abaddon's rebellion had finally ended.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 15
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="84"
-        data-date="1076 AE"
-        data-context="YOU ARE HERE // Pyre Fierceshot Rebels"
-      >
-
-        <p class="history-label">
-          Record 15 // Charr Rebellion
-        </p>
-
-        <h2>
-          The Flame Legion's religious order begins to fracture
-        </h2>
-
-        <p>
+        <p class="chapter-opening">
           In <strong>1076 AE</strong>,
-          <strong>Pyre Fierceshot</strong>
-          led his warband in rebellion
-          against the Flame Legion's shaman caste.
+          <strong>Pyre Fierceshot</strong> led his Warband
+          against the Flame Legion's Shaman caste. The Titans
+          once presented to the Charr as Gods had already been
+          exposed as false, and opposition to the religious
+          order built around them was becoming organized.
         </p>
 
         <p>
-          The Titans worshiped as charr gods
-          had already been revealed as false.
+          Two years later, earthquakes began spreading across
+          Tyria. Underground passages opened, and creatures
+          known as <strong>Destroyers</strong> attacked
+          settlements beneath the surface.
         </p>
 
         <p>
-          Resistance to the shaman caste
-          was becoming organized.
+          The crisis forced the <strong>Asura</strong> from
+          parts of their subterranean civilization and brought
+          Humans into much greater contact with both the
+          <strong>Asura</strong> and the <strong>Norn</strong>.
+          Charr rebels, Human forces, Asura, Norn, and Dwarves
+          became part of the wider resistance against the
+          Destroyers.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 16
-      ========================== -->
+      <!-- ========================================
+           CHAPTER IX
+      ========================================= -->
 
       <section
-        class="history-section"
+        class="chapter"
         data-position="88"
         data-date="1078 AE"
-        data-context="YOU ARE HERE // Eye of the North"
+        data-context="THE GREAT DESTROYER"
       >
 
-        <p class="history-label">
-          Record 16 // Eye of the North
+        <p class="chapter-number">
+          IX
         </p>
 
         <h2>
-          The ground begins to move
+          The Dwarves make their final choice
         </h2>
 
-        <p>
-          In <strong>1078 AE</strong>,
-          earthquakes spread across Tyria.
+        <p class="chapter-opening">
+          The Destroyer invasion brought the ancient
+          <strong>Dwarves</strong> to a turning point.
+          Through the <strong>Rite of the Great Dwarf</strong>,
+          the Dwarven people underwent the
+          <strong>Transformation</strong>, becoming beings
+          of living stone.
         </p>
 
         <p>
-          The source was the
-          <strong>Great Destroyer</strong>
-          and its armies.
+          Their purpose was to fight the Destroyers in a war
+          that would continue beneath Tyria long after most
+          surface civilizations had lost sight of it.
         </p>
 
         <p>
-          The crisis exposed forgotten underground passages
-          and brought several peoples into much closer contact.
+          The <strong>Great Destroyer</strong> was eventually
+          defeated in 1078 AE. Its destruction halted the
+          immediate invasion, but investigation of the threat
+          revealed something far more important.
         </p>
 
+        <p>
+          The Destroyers were servants of
+          <strong>Primordus</strong>.
+        </p>
 
-        <div class="campaign-grid">
+        <div class="research-note">
 
-          <div class="campaign-card">
+          <p class="research-note-label">
+            Historical Correction
+          </p>
 
-            <p class="campaign-card-label">
-              Asura
-            </p>
-
-            <h3>
-              Driven to the Surface
-            </h3>
-
-            <p>
-              Destroyer attacks forced asuran populations
-              out of their underground civilization.
-            </p>
-
-          </div>
-
-
-          <div class="campaign-card">
-
-            <p class="campaign-card-label">
-              Norn
-            </p>
-
-            <h3>
-              Southern Contact
-            </h3>
-
-            <p>
-              The norn became increasingly involved
-              with the peoples farther south.
-            </p>
-
-          </div>
-
-
-          <div class="campaign-card">
-
-            <p class="campaign-card-label">
-              Charr
-            </p>
-
-            <h3>
-              Rebellion
-            </h3>
-
-            <p>
-              Pyre Fierceshot's resistance developed
-              into open conflict with the shaman caste.
-            </p>
-
-          </div>
-
-
-          <div class="campaign-card">
-
-            <p class="campaign-card-label">
-              Dwarves
-            </p>
-
-            <h3>
-              Transformation
-            </h3>
-
-            <p>
-              The dwarves underwent the Transformation
-              to fight the Destroyers as living stone.
-            </p>
-
-          </div>
+          <p>
+            Primordus did not fully awaken in 1078 AE.
+            The Elder Dragon was beginning to stir, and the
+            Great Destroyer acted as its Champion. The Great
+            Destroyer's defeat delayed the greater awakening,
+            but it did not prevent it.
+          </p>
 
         </div>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 17
-      ========================== -->
+      <!-- ========================================
+           CHAPTER X
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="92"
-        data-date="1078 AE"
-        data-context="YOU ARE HERE // Primordus Stirs"
-      >
-
-        <p class="history-label">
-          Record 17 // Beneath the Destroyers
-        </p>
-
-        <h2>
-          A far older enemy is revealed
-        </h2>
-
-        <p>
-          The Great Destroyer was defeated.
-        </p>
-
-        <p>
-          But it had not been the true source
-          of the crisis.
-        </p>
-
-        <p>
-          Beneath Tyria,
-          <strong>Primordus</strong>
-          was beginning to stir.
-        </p>
-
-        <p>
-          The Elder Dragon did
-          <strong>not fully awaken in 1078 AE</strong>.
-        </p>
-
-        <p>
-          The world had only been given a warning
-          of what was coming.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 18
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="96"
+        class="chapter"
+        data-position="94"
         data-date="1079 AE"
-        data-context="YOU ARE HERE // War in Kryta"
+        data-context="THE WAR IN KRYTA"
       >
 
-        <p class="history-label">
-          Record 18 // Guild Wars Beyond
+        <p class="chapter-number">
+          X
         </p>
 
         <h2>
-          Kryta finally breaks the White Mantle
+          Kryta ends White Mantle rule
         </h2>
 
-        <p>
-          In <strong>1079 AE</strong>,
-          the Krytan civil war reached its conclusion.
+        <p class="chapter-opening">
+          In <strong>1079 AE</strong>, the long conflict over
+          Kryta's government reached its conclusion. Forces
+          loyal to <strong>Salma</strong> and the
+          <strong>Shining Blade</strong> confronted the
+          <strong>White Mantle</strong> and their remaining
+          Mursaat allies.
         </p>
 
         <p>
-          <strong>Salma</strong>
-          reclaimed Kryta.
+          Salma emerged victorious and claimed the Krytan throne,
+          ending the White Mantle's open control of the kingdom.
+          The Mursaat, already devastated during the Flameseeker
+          Prophecies, were reduced even further.
         </p>
 
         <p>
-          The White Mantle's open rule ended.
-        </p>
-
-        <p>
-          The last known living
-          <strong>Seer</strong> died during this period
-          after providing the Shining Blade
-          with the weapon that gave the order its name.
-        </p>
-
-        <p>
-          Events surrounding
-          Gwen, Keiran Thackeray,
-          and the Ebon Vanguard also unfolded
-          during <strong>Hearts of the North</strong>.
+          Events surrounding <strong>Gwen</strong>,
+          <strong>Keiran Thackeray</strong>, and the
+          <strong>Ebon Vanguard</strong> also unfolded during
+          this period, connecting the recovering Human kingdoms
+          to the next generation of Tyrian history.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 19
-      ========================== -->
+      <!-- ========================================
+           CHAPTER XI
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="98"
+        class="chapter"
+        data-position="97"
         data-date="1079–1080 AE"
-        data-context="YOU ARE HERE // Winds of Change"
+        data-context="WINDS OF CHANGE"
       >
 
-        <p class="history-label">
-          Record 19 // Cantha
+        <p class="chapter-number">
+          XI
         </p>
 
         <h2>
-          The Ministry of Purity moves against the Afflicted
+          Cantha changes after the Afflicted
         </h2>
 
-        <p>
-          In Cantha,
-          the Ministry of Purity began the final stage
-          of eliminating the Afflicted.
+        <p class="chapter-opening">
+          In Cantha, the <strong>Ministry of Purity</strong>
+          entered the final stage of its campaign against the
+          Afflicted. The movement had grown considerably since
+          Reiko Murakami first began organizing it.
         </p>
 
         <p>
-          Their campaign brought increasing influence
-          and authority to the Ministry.
+          The campaign succeeded in reducing the Afflicted threat,
+          but the Ministry's expanding definition of "purity"
+          increasingly placed political opponents and other
+          groups within its sights.
         </p>
 
         <p>
-          The later events of
-          <strong>Winds of Change</strong>
-          continued into 1080 AE.
-        </p>
-
-        <p>
-          <strong>Ashu</strong>
-          eventually assumed leadership of
-          the Ministry of Purity.
+          Reiko was eventually defeated, while
+          <strong>Ashu</strong> assumed leadership of the
+          Ministry. The events remembered as
+          <strong>Winds of Change</strong> therefore ended one
+          crisis while leaving Cantha with a powerful institution
+          that would continue shaping its future.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 20
-      ========================== -->
+      <!-- ========================================
+           CHAPTER XII
+      ========================================= -->
 
       <section
-        class="history-section"
+        class="chapter"
         data-position="100"
         data-date="1080 AE"
-        data-context="YOU ARE HERE // Ebonhawke"
+        data-context="EBONHAWKE AND THE END OF THE ERA"
       >
 
-        <p class="history-label">
-          Record 20 // End of an Era
+        <p class="chapter-number">
+          XII
         </p>
 
         <h2>
-          The Ebon Vanguard falls back to Ebonhawke
+          The world reaches another threshold
         </h2>
 
-        <p>
-          In <strong>1080 AE</strong>,
-          the Ebon Vanguard withdrew from the north
-          and fortified <strong>Ebonhawke</strong>.
+        <p class="chapter-opening">
+          In <strong>1080 AE</strong>, the
+          <strong>Ebon Vanguard</strong> withdrew from the north
+          and fortified <strong>Ebonhawke</strong>. The fortress
+          became one of the last great centers of Human resistance
+          in the lands once belonging to Ascalon.
         </p>
 
         <p>
-          The great campaigns of the Guild Wars era
-          were coming to an end.
+          By this point, the campaigns that defined the original
+          Guild Wars era were largely over. The Flameseeker
+          Prophecies had been fulfilled, Shiro was gone,
+          Abaddon was dead, Kryta had reclaimed its monarchy,
+          and the Destroyers had been forced back.
         </p>
 
         <p>
-          Tyria had survived the Searing,
-          the Cataclysm,
-          the Flameseeker Prophecies,
-          Shiro,
-          Nightfall,
-          and the Destroyers.
+          None of those victories changed what had been discovered
+          beneath Tyria.
         </p>
 
         <p>
-          But the warning from beneath the earth remained.
+          <strong>Primordus was stirring.</strong>
         </p>
 
         <p>
-          Primordus had stirred.
+          The same Dragon Cycle that had shaped the earliest
+          volumes of this archive was beginning again.
         </p>
 
-        <p>
-          The age of the Elder Dragons was returning.
-        </p>
+        <div class="q-observation">
 
-      </section>
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
 
-
-      <!-- =========================
-           CAMPAIGN INDEX
-      ========================== -->
-
-      <section class="history-section">
-
-        <p class="history-label">
-          Campaign Index
-        </p>
-
-        <h2>
-          The Original Guild Wars
-        </h2>
-
-
-        <div class="campaign-grid">
-
-          <div class="campaign-card">
-
-            <p class="campaign-card-label">
-              1070–1072 AE
-            </p>
-
-            <h3>
-              Prophecies
-            </h3>
-
-            <p>
-              Searing, Ascalonian Exodus,
-              White Mantle, mursaat,
-              Flameseeker Prophecies,
-              and the Titans.
-            </p>
-
-          </div>
-
-
-          <div class="campaign-card">
-
-            <p class="campaign-card-label">
-              1072 AE
-            </p>
-
-            <h3>
-              Factions
-            </h3>
-
-            <p>
-              Shiro's return,
-              the Affliction,
-              Kuunavang,
-              and the beginning of the
-              Ministry of Purity story.
-            </p>
-
-          </div>
-
-
-          <div class="campaign-card">
-
-            <p class="campaign-card-label">
-              1075 AE
-            </p>
-
-            <h3>
-              Nightfall
-            </h3>
-
-            <p>
-              Varesh Ossa,
-              Palawa Joko,
-              Abaddon's death,
-              and Kormir's ascension.
-            </p>
-
-          </div>
-
-
-          <div class="campaign-card">
-
-            <p class="campaign-card-label">
-              1078 AE
-            </p>
-
-            <h3>
-              Eye of the North
-            </h3>
-
-            <p>
-              Destroyers,
-              asura,
-              norn,
-              the Transformation of the dwarves,
-              and Primordus stirring.
-            </p>
-
-          </div>
-
-
-          <div class="campaign-card">
-
-            <p class="campaign-card-label">
-              1079 AE
-            </p>
-
-            <h3>
-              War in Kryta
-            </h3>
-
-            <p>
-              Salma retakes Kryta
-              and White Mantle rule collapses.
-            </p>
-
-          </div>
-
-
-          <div class="campaign-card">
-
-            <p class="campaign-card-label">
-              1079–1080 AE
-            </p>
-
-            <h3>
-              Winds of Change
-            </h3>
-
-            <p>
-              Cantha's struggle against the Afflicted
-              gives rise to an increasingly powerful
-              Ministry of Purity.
-            </p>
-
-          </div>
+          <p>
+            This is where the road begins to turn back toward
+            its beginning. For thousands of years, civilizations
+            built their histories over the memory of sleeping
+            Dragons. By 1080 AE, the warning had arrived that
+            those histories were about to meet the Dragons again.
+          </p>
 
         </div>
 
       </section>
 
 
-      <!-- =========================
-           NEXT ENTRY
-      ========================== -->
+      <!-- ========================================
+           NEXT VOLUME
+      ========================================= -->
 
-      <section class="page-navigation">
+      <section class="transition">
 
-        <p class="navigation-label">
-          Continue the Road Through Time
+        <p class="transition-label">
+          End of Volume VII
         </p>
 
         <h2>
-          The Dragons Awaken
+          The road continues
         </h2>
 
         <p>
-          The heroes of the Guild Wars era defeated
-          a fallen god, ancient prophecies,
-          undead armies, Titans,
-          and the Great Destroyer.
+          The heroes of the Guild Wars era had faced fallen Gods,
+          Undead armies, ancient prophecies, Titans, the Afflicted,
+          and the Destroyers. The greater threat was still beneath
+          their feet.
+        </p>
+
+        <p class="next-title">
+          Volume VIII // The Dragons Awaken
         </p>
 
         <p>
-          They could not stop the larger cycle.
+          The next archive follows the two and a half centuries
+          between the original Guild Wars and Guild Wars 2:
+          the awakening of <strong>Primordus</strong>,
+          <strong>Jormag</strong>, <strong>Zhaitan</strong>,
+          and <strong>Kralkatorrik</strong>, the displacement
+          of entire peoples, the rise of new political powers,
+          and the transformation of Tyria into the world of
+          1325 AE.
         </p>
-
-        <p>
-          Over the next two and a half centuries,
-          Elder Dragons would awaken one by one,
-          entire peoples would be displaced,
-          kingdoms would change,
-          and Tyria would become the world
-          encountered at the beginning of Guild Wars 2.
-        </p>
-
 
         <div class="navigation-actions">
 
@@ -2041,7 +1799,7 @@
             href="../kingdoms-and-guild-wars/index.html"
             class="button"
           >
-            ← Kingdoms and Guild Wars
+            ← Volume VI
           </a>
 
           <a
@@ -2055,7 +1813,7 @@
             href="../dragons-awaken/index.html"
             class="button button-primary"
           >
-            The Dragons Awaken →
+            Read Volume VIII →
           </a>
 
         </div>
@@ -2067,26 +1825,32 @@
   </main>
 
 
-  <!-- =========================
+  <!-- ========================================
        FOOTER
-  ========================== -->
+  ========================================= -->
 
   <footer>
 
     <div class="container">
 
-      Guild Wars Living Lore Library is an unofficial fan lore project.
-      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
-      belong to their respective owners.
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
 
     </div>
 
   </footer>
 
 
-  <!-- =========================
-       HISTORICAL POSITION SCRIPT
-  ========================== -->
+  <!-- ========================================
+       CHRONOLOGY SCRIPT
+  ========================================= -->
 
   <script>
     (() => {
@@ -2094,37 +1858,47 @@
 
       const sections =
         document.querySelectorAll(
-          ".history-section[data-position]"
+          ".chapter[data-position]"
         );
 
       const marker =
-        document.getElementById("historyMarker");
+        document.getElementById(
+          "historyMarker"
+        );
 
       const currentDate =
-        document.getElementById("currentDate");
+        document.getElementById(
+          "currentDate"
+        );
 
       const positionContext =
-        document.getElementById("positionContext");
+        document.getElementById(
+          "positionContext"
+        );
 
+      const updatePosition =
+        (section) => {
 
-      const updatePosition = (section) => {
+          const position =
+            section.dataset.position || "5";
 
-        const position =
-          section.dataset.position || "5";
+          const date =
+            section.dataset.date ||
+            "1013 AE";
 
-        const date =
-          section.dataset.date || "1013 AE";
+          const context =
+            section.dataset.context ||
+            "HISTORICAL RECORD";
 
-        const context =
-          section.dataset.context || "YOU ARE HERE";
+          marker.style.left =
+            `${position}%`;
 
-        marker.style.left = `${position}%`;
+          currentDate.textContent =
+            date;
 
-        currentDate.textContent = date;
-
-        positionContext.textContent = context;
-      };
-
+          positionContext.textContent =
+            context;
+        };
 
       const observer =
         new IntersectionObserver(
@@ -2143,13 +1917,10 @@
                 );
 
             if (visible.length > 0) {
-
               updatePosition(
                 visible[0].target
               );
-
             }
-
           },
           {
             rootMargin:
@@ -2165,13 +1936,11 @@
           }
         );
 
-
       sections.forEach(
         (section) => {
           observer.observe(section);
         }
       );
-
     })();
   </script>
 
