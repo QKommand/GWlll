@@ -10,26 +10,37 @@
 
   <meta
     name="description"
-    content="The Dragons Awaken archive entry in the Guild Wars Living Lore Library."
+    content="Commander Q's historical record of the Elder Dragon awakenings and the transformation of Tyria between the original Guild Wars and Guild Wars 2."
   >
 
-  <meta name="theme-color" content="#020617">
+  <meta name="theme-color" content="#070b14">
 
-  <title>The Dragons Awaken // GWlll</title>
+  <title>The Dragons Awaken // The Records of Commander Q</title>
 
   <style>
     :root {
       color-scheme: dark;
 
-      --background: #020617;
-      --panel: #0f172a;
-      --border: #374151;
+      --background: #070b14;
+      --background-deep: #03060c;
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
 
-      --gold: #f4c76b;
-      --gold-bright: #ffe3a3;
-      --gold-muted: #c99b45;
+      --border: #334155;
+      --border-soft: rgba(148, 163, 184, 0.18);
 
-      --white: #ffffff;
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
+
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
+
+      --quote: #c7d2e0;
+
+      --max-width: 820px;
     }
 
     * {
@@ -38,7 +49,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 170px;
+      scroll-padding-top: 150px;
     }
 
     body {
@@ -48,23 +59,24 @@
       background:
         radial-gradient(
           circle at top,
-          rgba(244, 199, 107, 0.08),
-          transparent 34rem
+          rgba(214, 179, 106, 0.07),
+          transparent 32rem
         ),
-        var(--background);
+        linear-gradient(
+          to bottom,
+          #090e18,
+          var(--background) 30rem
+        );
 
-      color: var(--white);
+      color: var(--ink);
 
       font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
+        Georgia,
+        "Times New Roman",
+        serif;
 
-      line-height: 1.75;
+      font-size: 1.05rem;
+      line-height: 1.85;
     }
 
     a {
@@ -72,27 +84,34 @@
     }
 
     .container {
-      width: min(900px, calc(100% - 32px));
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
+
       margin-inline: auto;
     }
 
-    /* =========================
+    /* ========================================
        HEADER
-    ========================= */
+    ======================================== */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border-soft);
 
-      background: rgba(2, 6, 23, 0.94);
+      background:
+        rgba(3, 6, 12, 0.95);
+
       backdrop-filter: blur(14px);
     }
 
     .header-inner {
-      min-height: 68px;
+      min-height: 66px;
 
       display: flex;
       align-items: center;
@@ -108,12 +127,17 @@
     .brand-small {
       margin: 0;
 
-      color: var(--white);
+      color: var(--ink-faint);
 
-      font-family: monospace;
-      font-size: 0.65rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      letter-spacing: 0.17em;
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
@@ -129,8 +153,14 @@
     .home-link {
       color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.75rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.7rem;
       font-weight: 700;
 
       text-decoration: none;
@@ -145,62 +175,66 @@
       transform: translateX(-3px);
     }
 
-    /* =========================
-       HISTORICAL POSITION
-    ========================= */
+    /* ========================================
+       CHRONOLOGY
+    ======================================== */
 
-    .history-position {
+    .chronology {
       position: sticky;
-      top: 68px;
+      top: 66px;
       z-index: 40;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border-soft);
 
-      background: rgba(2, 6, 23, 0.96);
+      background:
+        rgba(7, 11, 20, 0.96);
+
       backdrop-filter: blur(12px);
     }
 
-    .history-position-inner {
-      padding: 13px 0 15px;
+    .chronology-inner {
+      padding: 11px 0 13px;
     }
 
-    .position-top {
+    .chronology-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      gap: 12px;
+      gap: 15px;
 
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    .position-label {
+    .chronology-label,
+    .chronology-date {
       margin: 0;
 
-      color: var(--white);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      font-family: monospace;
       font-size: 0.62rem;
-
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .current-date {
-      margin: 0;
+    .chronology-label {
+      color: var(--ink-faint);
+    }
 
+    .chronology-date {
       color: var(--gold-bright);
-
-      font-family: monospace;
-      font-size: 0.7rem;
       font-weight: 700;
-
-      letter-spacing: 0.08em;
     }
 
     .history-rail {
       position: relative;
-      height: 26px;
+      height: 17px;
     }
 
     .history-line {
@@ -215,48 +249,20 @@
       background:
         linear-gradient(
           to right,
-          rgba(244, 199, 107, 0.25),
-          rgba(244, 199, 107, 0.9),
-          rgba(244, 199, 107, 0.25)
+          rgba(214, 179, 106, 0.18),
+          rgba(214, 179, 106, 0.85),
+          rgba(214, 179, 106, 0.18)
         );
-    }
-
-    .history-point {
-      position: absolute;
-
-      top: 2px;
-
-      width: 11px;
-      height: 11px;
-
-      border: 1px solid var(--gold-muted);
-      border-radius: 50%;
-
-      background: var(--background);
-
-      transform: translateX(-50%);
-    }
-
-    .history-point.start {
-      left: 5%;
-    }
-
-    .history-point.middle {
-      left: 50%;
-    }
-
-    .history-point.end {
-      left: 95%;
     }
 
     .history-marker {
       position: absolute;
 
-      top: -1px;
+      top: 1px;
       left: 5%;
 
-      width: 17px;
-      height: 17px;
+      width: 13px;
+      height: 13px;
 
       border: 2px solid var(--gold-bright);
       border-radius: 50%;
@@ -264,272 +270,377 @@
       background: var(--gold);
 
       box-shadow:
-        0 0 15px rgba(244, 199, 107, 0.5);
+        0 0 12px
+        rgba(214, 179, 106, 0.38);
 
       transform: translateX(-50%);
 
-      transition: left 450ms ease;
+      transition: left 400ms ease;
     }
 
-    .rail-labels {
-      display: flex;
-      justify-content: space-between;
+    .chronology-context {
+      margin: 4px 0 0;
 
-      margin-top: 2px;
+      color: var(--ink-muted);
 
-      color: var(--white);
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      font-family: monospace;
-      font-size: 0.58rem;
-    }
-
-    .position-context {
-      margin: 8px 0 0;
-
-      color: var(--gold);
-
-      font-size: 0.72rem;
+      font-size: 0.59rem;
       text-align: center;
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    /* ========================================
+       BOOK HEADER
+    ======================================== */
 
-    .hero {
-      padding: 72px 0 56px;
-
+    .book-header {
+      padding: 80px 0 52px;
       text-align: center;
     }
 
-    .hero-label {
+    .volume {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold-muted);
 
-      font-family: monospace;
-      font-size: 0.7rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.67rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    .hero h1 {
-      margin: 16px 0 0;
-
-      color: var(--gold);
-
-      font-size: clamp(2.7rem, 8vw, 5.2rem);
-      line-height: 1.03;
-
-      letter-spacing: -0.045em;
-
-      animation: goldPulse 4s ease-in-out infinite;
-    }
-
-    .hero-date {
-      margin: 16px 0 0;
+    .book-header h1 {
+      margin: 17px 0 0;
 
       color: var(--gold-bright);
 
-      font-family: monospace;
-      font-size: 0.8rem;
+      font-size:
+        clamp(
+          2.6rem,
+          8vw,
+          4.8rem
+        );
 
-      letter-spacing: 0.12em;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      max-width: 680px;
+
+      margin: 18px auto 0;
+
+      color: var(--ink-muted);
+
+      font-style: italic;
+      font-size: 1.08rem;
+    }
+
+    .ornament {
+      width: 120px;
+
+      margin: 32px auto 0;
+
+      border: 0;
+      border-top: 1px solid var(--gold-muted);
+    }
+
+    /* ========================================
+       AUTHOR
+    ======================================== */
+
+    .author-card {
+      margin-bottom: 60px;
+
+      padding: 24px 26px;
+
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+
+      text-align: center;
+    }
+
+    .author-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .hero-text {
-      max-width: 760px;
+    .author-name {
+      margin: 9px 0 0;
 
-      margin: 24px auto 0;
+      color: var(--gold);
 
-      color: var(--white);
-
-      font-size: 1.06rem;
-      line-height: 1.9;
+      font-size: 1.2rem;
+      font-weight: 700;
     }
 
-    /* =========================
-       ARCHIVE NOTE
-    ========================= */
+    .author-title {
+      margin: 5px 0 0;
 
-    .archive-note {
-      margin-bottom: 55px;
-      padding: 24px;
+      color: var(--ink-muted);
 
-      border: 1px solid rgba(244, 199, 107, 0.35);
-      border-radius: 12px;
-
-      background: rgba(244, 199, 107, 0.045);
+      font-size: 0.91rem;
+      font-style: italic;
+      line-height: 1.65;
     }
 
-    .archive-note-label {
+    /* ========================================
+       PREFACE
+    ======================================== */
+
+    .preface {
+      margin-bottom: 68px;
+    }
+
+    .section-kicker {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.64rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .preface h2,
+    .chapter h2 {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size:
+        clamp(
+          1.65rem,
+          5vw,
+          2.25rem
+        );
+
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .preface p {
+      margin: 18px 0 0;
+    }
+
+    .signature {
+      margin-top: 28px;
+
+      color: var(--gold-bright);
+      font-style: italic;
+    }
+
+    /* ========================================
+       RESEARCH NOTE
+    ======================================== */
+
+    .research-note {
+      margin: 28px 0;
+
+      padding: 20px 22px;
+
+      border-left: 2px solid var(--gold-muted);
+
+      background:
+        rgba(214, 179, 106, 0.045);
+    }
+
+    .research-note-label {
       margin: 0;
 
       color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.68rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      letter-spacing: 0.16em;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
-    .archive-note p:last-child {
-      margin: 12px 0 0;
-    }
-
-    /* =========================
-       HISTORY
-    ========================= */
-
-    .history-section {
-      padding: 36px 0;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .history-label {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.66rem;
-
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .history-section h2 {
+    .research-note p:last-child {
       margin: 8px 0 0;
 
+      color: var(--ink-muted);
+      font-size: 0.96rem;
+    }
+
+    /* ========================================
+       CHAPTERS
+    ======================================== */
+
+    .chapter {
+      padding: 48px 0;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .chapter-number {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .chapter p {
+      margin: 18px 0 0;
+    }
+
+    .chapter strong {
+      color: var(--gold-bright);
+      font-weight: 600;
+    }
+
+    .chapter-opening::first-letter {
+      float: left;
+
+      margin: 7px 8px 0 0;
+
       color: var(--gold);
 
-      font-size: clamp(1.6rem, 5vw, 2.35rem);
-      line-height: 1.2;
+      font-size: 3.6rem;
+      line-height: 0.75;
     }
 
-    .history-section p {
-      margin: 16px 0 0;
+    /* ========================================
+       COMMANDER Q OBSERVATION
+    ======================================== */
 
-      color: var(--white);
+    .q-observation {
+      margin: 30px 0 6px;
+
+      padding: 21px 23px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(214, 179, 106, 0.05),
+          rgba(15, 23, 42, 0.45)
+        );
     }
 
-    .history-section strong {
-      color: var(--gold-bright);
-    }
-
-    .record-box {
-      margin-top: 22px;
-      padding: 20px;
-
-      border-left: 2px solid var(--gold);
-
-      background: rgba(15, 23, 42, 0.8);
-    }
-
-    .record-box-label {
+    .q-observation-label {
       margin: 0;
 
       color: var(--gold);
 
-      font-family: monospace;
-      font-size: 0.65rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
+      font-size: 0.61rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
-    .record-box p:last-child {
-      margin: 8px 0 0;
+    .q-observation p:last-child {
+      margin: 9px 0 0;
+
+      color: var(--quote);
+      font-style: italic;
     }
 
-    /* =========================
-       IMPACT GRID
-    ========================= */
+    /* ========================================
+       TRANSITION
+    ======================================== */
 
-    .impact-grid {
-      margin-top: 24px;
+    .transition {
+      padding: 58px 0 70px;
 
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-
-      gap: 14px;
+      border-top: 1px solid var(--border-soft);
     }
 
-    .impact-card {
-      padding: 20px;
-
-      border: 1px solid var(--border);
-      border-radius: 10px;
-
-      background: rgba(15, 23, 42, 0.76);
-    }
-
-    .impact-card-label {
+    .transition-label {
       margin: 0;
 
-      color: var(--white);
+      color: var(--gold-muted);
 
-      font-family: monospace;
-      font-size: 0.62rem;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
 
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .impact-card h3 {
-      margin: 7px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.05rem;
-    }
-
-    .impact-card p:last-child {
-      margin: 8px 0 0;
-
-      font-size: 0.9rem;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    .page-navigation {
-      padding: 45px 0 80px;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .navigation-label {
-      margin: 0;
-
-      color: var(--white);
-
-      font-family: monospace;
-      font-size: 0.67rem;
-
+      font-size: 0.63rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .page-navigation h2 {
-      margin: 8px 0 0;
+    .transition h2 {
+      margin: 10px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .transition p {
+      margin: 16px 0 0;
+    }
+
+    .next-title {
+      margin-top: 30px !important;
 
       color: var(--gold);
 
-      font-size: 1.7rem;
-    }
-
-    .page-navigation p {
-      margin: 13px 0 0;
+      font-size: 1.15rem;
+      font-weight: 700;
     }
 
     .navigation-actions {
-      margin-top: 24px;
+      margin-top: 28px;
 
       display: flex;
       flex-wrap: wrap;
@@ -547,12 +658,23 @@
       padding: 0 20px;
 
       border: 1px solid var(--border);
-      border-radius: 9px;
+      border-radius: 5px;
 
-      background: var(--panel);
+      background:
+        rgba(15, 23, 42, 0.7);
+
       color: var(--gold);
 
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.75rem;
       font-weight: 700;
+
       text-decoration: none;
 
       transition:
@@ -565,71 +687,68 @@
       transform: translateY(-2px);
 
       border-color:
-        rgba(244, 199, 107, 0.6);
+        rgba(214, 179, 106, 0.6);
 
       color: var(--gold-bright);
     }
 
     .button-primary {
       border-color:
-        rgba(244, 199, 107, 0.45);
+        rgba(214, 179, 106, 0.45);
 
       background:
-        rgba(244, 199, 107, 0.1);
+        rgba(214, 179, 106, 0.08);
     }
 
-    /* =========================
+    /* ========================================
        FOOTER
-    ========================= */
+    ======================================== */
 
     footer {
-      padding: 30px 0;
+      padding: 34px 0;
 
-      border-top: 1px solid var(--border);
+      border-top:
+        1px solid var(--border-soft);
 
-      color: var(--white);
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.65rem;
+      line-height: 1.7;
 
       text-align: center;
-      font-size: 0.75rem;
     }
 
-    /* =========================
-       ANIMATION
-    ========================= */
-
-    @keyframes goldPulse {
-      0%,
-      100% {
-        color: var(--gold);
-
-        text-shadow:
-          0 0 0 rgba(244, 199, 107, 0);
-      }
-
-      50% {
-        color: var(--gold-bright);
-
-        text-shadow:
-          0 0 16px rgba(244, 199, 107, 0.28),
-          0 0 34px rgba(244, 199, 107, 0.1);
-      }
-    }
-
-    /* =========================
+    /* ========================================
        MOBILE
-    ========================= */
+    ======================================== */
 
     @media (max-width: 650px) {
+
       html {
-        scroll-padding-top: 155px;
+        scroll-padding-top: 135px;
+      }
+
+      body {
+        font-size: 1rem;
       }
 
       .container {
-        width: min(100% - 22px, 900px);
+        width:
+          min(
+            100% - 24px,
+            var(--max-width)
+          );
       }
 
       .header-inner {
-        min-height: 62px;
+        min-height: 60px;
       }
 
       .brand-small {
@@ -637,43 +756,39 @@
       }
 
       .brand-name {
-        font-size: 0.84rem;
+        font-size: 0.88rem;
       }
 
       .home-link {
-        font-size: 0.67rem;
-      }
-
-      .history-position {
-        top: 62px;
-      }
-
-      .position-label {
-        font-size: 0.55rem;
-      }
-
-      .current-date {
         font-size: 0.62rem;
       }
 
-      .rail-labels {
-        font-size: 0.52rem;
+      .chronology {
+        top: 60px;
       }
 
-      .position-context {
-        font-size: 0.65rem;
+      .chronology-label {
+        font-size: 0.53rem;
       }
 
-      .hero {
-        padding: 52px 0 44px;
+      .chronology-date {
+        font-size: 0.56rem;
       }
 
-      .hero-text {
-        font-size: 1rem;
+      .chronology-context {
+        font-size: 0.53rem;
       }
 
-      .impact-grid {
-        grid-template-columns: 1fr;
+      .book-header {
+        padding: 58px 0 42px;
+      }
+
+      .author-card {
+        padding: 21px 14px;
+      }
+
+      .chapter {
+        padding: 40px 0;
       }
 
       .navigation-actions {
@@ -686,6 +801,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       html {
         scroll-behavior: auto;
       }
@@ -702,9 +818,9 @@
 
 <body>
 
-  <!-- =========================
+  <!-- ========================================
        HEADER
-  ========================== -->
+  ========================================= -->
 
   <header class="site-header">
 
@@ -716,7 +832,7 @@
       >
 
         <p class="brand-small">
-          QKommand Archive
+          The Historical Records of Commander Q
         </p>
 
         <p class="brand-name">
@@ -737,22 +853,22 @@
   </header>
 
 
-  <!-- =========================
-       HISTORICAL POSITION
-  ========================== -->
+  <!-- ========================================
+       CHRONOLOGY
+  ========================================= -->
 
-  <aside class="history-position">
+  <aside class="chronology">
 
-    <div class="container history-position-inner">
+    <div class="container chronology-inner">
 
-      <div class="position-top">
+      <div class="chronology-top">
 
-        <p class="position-label">
-          Tyrian Historical Position
+        <p class="chronology-label">
+          Historical Position
         </p>
 
         <p
-          class="current-date"
+          class="chronology-date"
           id="currentDate"
         >
           1080 AE
@@ -760,14 +876,9 @@
 
       </div>
 
-
       <div class="history-rail">
 
         <div class="history-line"></div>
-
-        <span class="history-point start"></span>
-        <span class="history-point middle"></span>
-        <span class="history-point end"></span>
 
         <span
           class="history-marker"
@@ -776,23 +887,11 @@
 
       </div>
 
-
-      <div class="rail-labels">
-
-        <span>1080 AE</span>
-
-        <span>1219 AE</span>
-
-        <span>1325 AE</span>
-
-      </div>
-
-
       <p
-        class="position-context"
+        class="chronology-context"
         id="positionContext"
       >
-        YOU ARE HERE // The Old World Begins to Change
+        THE OLD WORLD BEGINS TO CHANGE
       </p>
 
     </div>
@@ -802,41 +901,29 @@
 
   <main>
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <!-- ========================================
+         BOOK HEADER
+    ========================================= -->
 
-    <section class="hero">
+    <section class="book-header">
 
       <div class="container">
 
-        <p class="hero-label">
-          Historical Archive // Record 08
+        <p class="volume">
+          Volume VIII // The New Dragonrise
         </p>
 
         <h1>
           The Dragons Awaken
         </h1>
 
-        <p class="hero-date">
-          1080 AE – 1325 AE
+        <p class="subtitle">
+          On the return of the Elder Dragon Cycle and the
+          two and a half centuries that transformed the world
+          of Guild Wars into the Tyria of Guild Wars 2.
         </p>
 
-        <p class="hero-text">
-          The Guild Wars era ended with Primordus stirring beneath Tyria.
-        </p>
-
-        <p class="hero-text">
-          Over the next two and a half centuries, that warning became
-          a new age.
-        </p>
-
-        <p class="hero-text">
-          Elder Dragons awakened, civilizations were displaced,
-          old kingdoms disappeared, new cities rose, and the world
-          slowly became the Tyria encountered at the beginning
-          of Guild Wars 2.
-        </p>
+        <hr class="ornament">
 
       </div>
 
@@ -845,195 +932,252 @@
 
     <div class="container">
 
-      <!-- =========================
-           ARCHIVE NOTE
-      ========================== -->
+      <!-- ========================================
+           AUTHOR
+      ========================================= -->
 
-      <div class="archive-note">
+      <section class="author-card">
 
-        <p class="archive-note-label">
-          Archive Context
+        <p class="author-label">
+          Compiled and Annotated By
         </p>
 
-        <p>
-          Eye of the North already revealed the Destroyers and Primordus
-          beginning to stir. This archive begins after that warning and
-          follows the transition from the old Guild Wars world into the
-          political, cultural, and geographical landscape of 1325 AE.
+        <p class="author-name">
+          Commander Q
         </p>
 
-      </div>
+        <p class="author-title">
+          Captain Commander of the Vanguard Knights
+          <br>
+          Researcher of Tyrian History and the Mists
+        </p>
+
+      </section>
 
 
-      <!-- =========================
-           RECORD 01
-      ========================== -->
+      <!-- ========================================
+           PREFACE
+      ========================================= -->
 
-      <section
-        class="history-section"
-        data-position="5"
-        data-date="1080 AE"
-        data-context="YOU ARE HERE // Ebonhawke Is Fortified"
-      >
+      <section class="preface">
 
-        <p class="history-label">
-          Record 01 // After the Guild Wars
+        <p class="section-kicker">
+          Author's Preface
         </p>
 
         <h2>
-          The old conflicts continue
+          The ancient cycle returns
         </h2>
 
         <p>
-          The great campaigns of the Guild Wars era had ended,
-          but many mortal conflicts remained unresolved.
+          The previous record ended with Primordus stirring
+          beneath Tyria. The Great Destroyer had been defeated,
+          but the discovery behind it was far more important
+          than the victory itself. The Elder Dragons were not
+          merely creatures remembered from an ancient world.
+          Their cycle had begun again.
         </p>
 
         <p>
+          Over the next two and a half centuries, that cycle
+          reshaped nearly every major civilization. The Asura
+          were driven toward the surface, the Norn lost their
+          northern homeland, Orr rose from the sea, the Charr
+          consolidated their control of Ascalon, and entirely
+          new centers of civilization appeared.
+        </p>
+
+        <p>
+          This period should not be read as a list of Dragon
+          attacks. The awakenings changed migration, politics,
+          trade, borders, cities, and the relationships between
+          peoples. The Tyria of 1325 AE was built as much by
+          displacement and adaptation as it was by war.
+        </p>
+
+        <p class="signature">
+          — Commander Q
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER I
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="5"
+        data-date="1080–1090 AE"
+        data-context="THE END OF HUMAN ASCALON"
+      >
+
+        <p class="chapter-number">
+          I
+        </p>
+
+        <h2>
+          Ascalon reaches the end of its Human kingdom
+        </h2>
+
+        <p class="chapter-opening">
           In <strong>1080 AE</strong>, the
           <strong>Ebon Vanguard</strong> withdrew from the north
-          and fortified <strong>Ebonhawke</strong>.
+          and fortified <strong>Ebonhawke</strong>, creating one
+          of the last great Human strongholds in Ascalon.
         </p>
 
         <p>
-          The fortress became one of humanity's last major footholds
-          in Ascalon.
+          Ten years later, the Charr finally captured
+          <strong>Ascalon City</strong>. Facing the destruction
+          of his kingdom, <strong>King Adelbern</strong>
+          unleashed the <strong>Foefire</strong>.
+        </p>
+
+        <p>
+          The spell killed many of the Humans who remained
+          within the city and surrounding lands, binding their
+          spirits to Ascalon as spectral defenders who continued
+          fighting the Charr long after death.
+        </p>
+
+        <p>
+          Human rule over most of Ascalon had ended, but the war
+          itself did not disappear. Ebonhawke remained, the
+          Foefire ghosts remained, and both Humans and Charr
+          carried centuries of memory into the generations
+          that followed.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 02
-      ========================== -->
+      <!-- ========================================
+           CHAPTER II
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="10"
-        data-date="1090 AE"
-        data-context="YOU ARE HERE // The Foefire"
-      >
-
-        <p class="history-label">
-          Record 02 // The Foefire
-        </p>
-
-        <h2>
-          Human Ascalon ends in fire and ghosts
-        </h2>
-
-        <p>
-          In <strong>1090 AE</strong>, the charr finally took
-          Ascalon City.
-        </p>
-
-        <p>
-          Facing defeat, <strong>King Adelbern</strong> unleashed
-          the <strong>Foefire</strong>.
-        </p>
-
-        <p>
-          The spell killed many of the remaining humans and transformed
-          them into spectral defenders bound to Ascalon.
-        </p>
-
-        <p>
-          Human rule over most of Ascalon was effectively over.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 03
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="15"
+        class="chapter"
+        data-position="14"
         data-date="1105–1116 AE"
-        data-context="YOU ARE HERE // New Institutions Rise"
+        data-context="NEW INSTITUTIONS RISE"
       >
 
-        <p class="history-label">
-          Record 03 // A Changing Civilization
+        <p class="chapter-number">
+          II
         </p>
 
         <h2>
-          New powers replace the old world
+          A different political world takes shape
         </h2>
+
+        <p class="chapter-opening">
+          The early twelfth century saw institutions rise that
+          belonged much more clearly to the world of Guild Wars 2
+          than to the kingdoms of the previous age.
+        </p>
 
         <p>
           In <strong>1105 AE</strong>, the
-          <strong>Durmand Priory</strong> was established in the Shiverpeaks.
+          <strong>Durmand Priory</strong> was established in
+          the Shiverpeaks. Its scholars dedicated themselves
+          to recovering and preserving knowledge from the ruins
+          and cultures of Tyria.
         </p>
 
         <p>
-          New Krytan became a widely used written language.
+          The Charr were changing as well. In
+          <strong>1112 AE</strong>, they constructed the
+          <strong>Black Citadel</strong> over the ruins of
+          <strong>Rin</strong>, creating a new center for the
+          High Legions in territory once ruled by Humans.
         </p>
 
         <p>
-          In <strong>1112 AE</strong>, the charr constructed the
-          <strong>Black Citadel</strong> over the ruins of Rin.
+          Resistance to the <strong>Flame Legion</strong> also
+          grew into a wider revolution. The struggle associated
+          with <strong>Kalla Scorchrazor</strong> helped break
+          the power of the Shaman caste and reshape Charr society
+          around the High Legions.
         </p>
 
-        <p>
-          By <strong>1116 AE</strong>,
-          <strong>Kalla Scorchrazor</strong> was leading the rebellion
-          that would help break the Flame Legion's control over charr society.
-        </p>
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            The ruins of one age frequently become the
+            foundations of the next. The Black Citadel standing
+            over Rin makes that unusually literal.
+          </p>
+
+        </div>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 04
-      ========================== -->
+      <!-- ========================================
+           CHAPTER III
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="22"
+        class="chapter"
+        data-position="23"
         data-date="1120 AE"
-        data-context="YOU ARE HERE // Primordus Awakens"
+        data-context="PRIMORDUS AWAKENS"
       >
 
-        <p class="history-label">
-          Record 04 // Primordus
+        <p class="chapter-number">
+          III
         </p>
 
         <h2>
-          The warning beneath Tyria becomes an awakening
+          Primordus becomes the first Dragon to awaken
         </h2>
 
-        <p>
-          Primordus had stirred during the events of Eye of the North.
+        <p class="chapter-opening">
+          In <strong>1120 AE</strong>,
+          <strong>Primordus</strong> fully awakened. The
+          Destroyers that had appeared during the events of
+          1078 AE were no longer the warning signs of a sleeping
+          power. They were the servants of an active Elder Dragon.
         </p>
 
         <p>
-          By <strong>1120 AE</strong>, the Elder Dragon's activity
-          had transformed the underground world.
+          Primordus devastated the subterranean regions of Tyria.
+          Ancient tunnels, settlements, and underground cities
+          became battlefields as Destroyer armies spread through
+          the depths.
         </p>
 
         <p>
-          Destroyers overran subterranean settlements.
+          The <strong>Asura</strong>, whose civilization had
+          flourished beneath the surface, were driven upward.
+          The <strong>Skritt</strong> and other subterranean
+          peoples were displaced as well.
         </p>
 
         <p>
-          The great underground cities of the
-          <strong>asura</strong> fell, forcing asura and skritt
-          populations toward the surface.
+          The Dwarves, already transformed into living stone
+          during the earlier Destroyer crisis, continued their
+          war against Primordus below the surface.
         </p>
 
-        <div class="record-box">
+        <div class="research-note">
 
-          <p class="record-box-label">
+          <p class="research-note-label">
             Timeline Note
           </p>
 
           <p>
-            Primordus stirring in 1078 AE and the major awakening period
-            beginning around 1120 AE are separate points in the same
-            developing Dragonrise.
+            Primordus stirred in 1078 AE but did not fully
+            awaken until 1120 AE. The distinction matters:
+            the first event warned Tyria that the Dragon Cycle
+            was returning, while the second marked the beginning
+            of the modern Dragonrise itself.
           </p>
 
         </div>
@@ -1041,827 +1185,589 @@
       </section>
 
 
-      <!-- =========================
-           RECORD 05
-      ========================== -->
+      <!-- ========================================
+           CHAPTER IV
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="27"
-        data-date="1125 AE"
-        data-context="YOU ARE HERE // The Dwarves Become Stone"
+        class="chapter"
+        data-position="32"
+        data-date="1127–1175 AE"
+        data-context="CANTHA AND ELONA TURN INWARD"
       >
 
-        <p class="history-label">
-          Record 05 // The Dwarves
+        <p class="chapter-number">
+          IV
         </p>
 
         <h2>
-          An ancient civilization leaves the surface
+          Old Human civilizations change direction
         </h2>
 
-        <p>
-          The transformation begun during the Destroyer crisis
-          eventually reached the remaining dwarves.
+        <p class="chapter-opening">
+          While Primordus transformed the underground world,
+          the great Human civilizations beyond Central Tyria
+          were undergoing political changes of their own.
         </p>
-
-        <p>
-          By <strong>1125 AE</strong>, the last known dwarves
-          had become stone.
-        </p>
-
-        <p>
-          They continued fighting Primordus and the Destroyers below Tyria,
-          but dwarven civilization largely disappeared from the surface.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 06
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="31"
-        data-date="1127–1128 AE"
-        data-context="YOU ARE HERE // Cantha Is Unified"
-      >
-
-        <p class="history-label">
-          Record 06 // Cantha
-        </p>
-
-        <h2>
-          The Empire turns inward
-        </h2>
 
         <p>
           In <strong>1127 AE</strong>,
-          <strong>Emperor Usoku</strong> began his campaign against
-          the Luxons and Kurzicks.
+          <strong>Emperor Usoku</strong> began campaigns against
+          the <strong>Luxons</strong> and
+          <strong>Kurzicks</strong>, eventually bringing their
+          territories under stronger Imperial control. Cantha
+          increasingly turned inward as the Empire tightened its
+          authority and reduced contact with the outside world.
         </p>
 
         <p>
-          Cantha was forcibly reunified.
+          Elona followed an even darker path. Beginning in the
+          twelfth century, <strong>Palawa Joko</strong> renewed
+          his campaigns against the living kingdoms. He altered
+          the flow of the <strong>River Elon</strong>, using
+          control of water and his Awakened armies to weaken
+          resistance.
         </p>
 
         <p>
-          Political enemies and non-human populations were increasingly
-          targeted as imperial control strengthened.
-        </p>
-
-        <p>
-          The empire became progressively isolated from the wider world.
+          By <strong>1175 AE</strong>, Elona had fallen under
+          Joko's rule. The <strong>Sunspears</strong> were hunted,
+          destroyed, converted, or forced into hiding as the
+          Undead king consolidated his power.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 07
-      ========================== -->
+      <!-- ========================================
+           CHAPTER V
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="37"
-        data-date="1135–1175 AE"
-        data-context="YOU ARE HERE // Palawa Joko Conquers Elona"
-      >
-
-        <p class="history-label">
-          Record 07 // Joko's Return
-        </p>
-
-        <h2>
-          Elona falls to the Scourge of Vabbi
-        </h2>
-
-        <p>
-          In <strong>1135 AE</strong>, Palawa Joko began a renewed
-          invasion of Elona.
-        </p>
-
-        <p>
-          He redirected the
-          <strong>River Elon</strong>, dramatically changing the landscape
-          and controlling access to water.
-        </p>
-
-        <p>
-          By <strong>1175 AE</strong>, Elona had fallen under Joko's rule.
-        </p>
-
-        <p>
-          The Sunspears were hunted down, destroyed, converted,
-          or forced into hiding.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 08
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="43"
+        class="chapter"
+        data-position="41"
         data-date="1165–1169 AE"
-        data-context="YOU ARE HERE // Jormag Awakens"
+        data-context="JORMAG AWAKENS"
       >
 
-        <p class="history-label">
-          Record 08 // Jormag
+        <p class="chapter-number">
+          V
         </p>
 
         <h2>
-          The north freezes
+          Jormag drives the Norn south
         </h2>
 
-        <p>
+        <p class="chapter-opening">
           In <strong>1165 AE</strong>,
-          <strong>Jormag</strong> awakened in the Far Shiverpeaks.
+          <strong>Jormag</strong> awakened in the
+          <strong>Far Shiverpeaks</strong>. The Ice Dragon's
+          rise brought years of unnatural winter and the growing
+          presence of the <strong>Icebrood</strong>.
         </p>
 
         <p>
-          A massive snowstorm lasted for years.
+          Norn settlements that had endured the northern climate
+          for generations were overwhelmed. Jormag's influence
+          also affected the spiritual world of the Norn, while
+          several <strong>Spirits of the Wild</strong> were lost
+          or disappeared during the migration that followed.
         </p>
 
         <p>
-          Norn settlements were overwhelmed and several Spirits
-          of the Wild disappeared.
+          The Norn moved south into the Shiverpeaks. By
+          <strong>1169 AE</strong>, they had established
+          <strong>Hoelbrak</strong> around the lodge of
+          <strong>Bear</strong>.
         </p>
 
         <p>
-          By <strong>1169 AE</strong>, surviving norn had migrated
-          south and established <strong>Hoelbrak</strong>.
+          Like the Asura before them, an entire people had been
+          forced into a new homeland by an Elder Dragon.
         </p>
 
       </section>
 
 
-      <!-- =========================
-           RECORD 09
-      ========================== -->
+      <!-- ========================================
+           CHAPTER VI
+      ========================================= -->
 
       <section
-        class="history-section"
-        data-position="49"
-        data-date="1180–1304 AE"
-        data-context="YOU ARE HERE // New Peoples Emerge"
-      >
-
-        <p class="history-label">
-          Record 09 // New Generations
-        </p>
-
-        <h2>
-          Tyria changes between the disasters
-        </h2>
-
-        <p>
-          Not every transformation of this age came from destruction.
-        </p>
-
-        <p>
-          The Pale Tree continued growing on the Tarnished Coast.
-        </p>
-
-        <p>
-          In <strong>1302 AE</strong>, the first
-          <strong>sylvari</strong> awakened.
-        </p>
-
-        <p>
-          The Secondborn followed in <strong>1304 AE</strong>.
-        </p>
-
-        <p>
-          A completely new people had entered the historical record.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 10
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="56"
+        class="chapter"
+        data-position="51"
         data-date="1219 AE"
-        data-context="YOU ARE HERE // Zhaitan Awakens"
+        data-context="ZHAITAN AWAKENS"
       >
 
-        <p class="history-label">
-          Record 10 // Zhaitan
+        <p class="chapter-number">
+          VI
         </p>
 
         <h2>
-          Orr rises from the sea
+          Zhaitan raises Orr from the sea
         </h2>
 
-        <p>
+        <p class="chapter-opening">
           In <strong>1219 AE</strong>,
-          <strong>Zhaitan</strong> awakened beneath Orr.
+          <strong>Zhaitan</strong> awakened beneath the ruins
+          of Orr. The peninsula that had lain beneath the sea
+          since the Cataclysm rose once again.
         </p>
 
         <p>
-          The sunken peninsula rose from the
-          <strong>Sea of Sorrows</strong>.
+          Orr did not return as the kingdom that had vanished
+          in 1071 AE. The dead of the region became
+          <strong>Risen</strong>, bound to the Elder Dragon and
+          organized into armies that spread across the surrounding
+          waters and coastline.
         </p>
 
         <p>
-          The event caused enormous waves that destroyed
+          Orr's rising displaced enormous quantities of water.
+          The resulting floods and waves devastated coastal
+          settlements throughout the region and destroyed
           <strong>old Lion's Arch</strong>.
         </p>
 
         <p>
-          Zhaitan's Risen spread through nearby waters and coastlines,
-          making travel increasingly dangerous.
+          The effects reached much farther than Central Tyria.
+          Coastal regions across the ocean were struck as well,
+          while Risen ships and other Dragon forces made maritime
+          travel increasingly dangerous.
         </p>
 
-      </section>
-
-
-      <!-- =========================
-           RECORD 11
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="61"
-        data-date="1219 AE"
-        data-context="YOU ARE HERE // The Great Tsunami"
-      >
-
-        <p class="history-label">
-          Record 11 // Across the Ocean
-        </p>
-
-        <h2>
-          Zhaitan's awakening reaches Cantha
-        </h2>
-
-        <p>
-          The tsunami caused by Orr's rising crossed the ocean.
-        </p>
-
-        <p>
-          <strong>Old Kaineng</strong> was devastated.
-        </p>
-
-        <p>
-          Maritime routes became more dangerous as dragon activity
-          spread through the seas.
-        </p>
-
-        <p>
-          Political isolation and physical danger increasingly separated
-          the continents.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 12
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="67"
-        data-date="1220–1230 AE"
-        data-context="YOU ARE HERE // New Cities Rise"
-      >
-
-        <p class="history-label">
-          Record 12 // Rebuilding
-        </p>
-
-        <h2>
-          Civilization adapts to the new world
-        </h2>
-
-        <p>
-          In <strong>1220 AE</strong>,
-          <strong>Divinity's Reach</strong> was founded in Kryta.
-        </p>
-
-        <p>
-          Pirates and sailors later occupied the drying ruins around
-          old Lion's Arch.
-        </p>
-
-        <p>
-          <strong>Cobiah Marriner</strong> helped transform the settlement
-          into a new multiracial city.
-        </p>
-
-        <p>
-          The modern Lion's Arch began taking shape.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 13
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="72"
-        data-date="1270–1275 AE"
-        data-context="YOU ARE HERE // Refugees Reshape Central Tyria"
-      >
-
-        <p class="history-label">
-          Record 13 // Displacement
-        </p>
-
-        <h2>
-          Entire peoples are forced into new homes
-        </h2>
-
-        <p>
-          Dangers in the Unending Ocean pushed
-          <strong>quaggans</strong> and <strong>krait</strong>
-          toward the shores of Central Tyria.
-        </p>
-
-        <p>
-          Refugees fleeing Joko's Elona settled in Kryta,
-          including Divinity's Reach.
-        </p>
-
-        <p>
-          Modern Tyria was increasingly becoming a world shaped
-          by migration.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 14
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="78"
-        data-date="1310–1319 AE"
-        data-context="YOU ARE HERE // New Technologies and Heroes Rise"
-      >
-
-        <p class="history-label">
-          Record 14 // A New Generation
-        </p>
-
-        <h2>
-          The modern world begins to take shape
-        </h2>
-
-        <p>
-          In Cantha, <strong>Yu Joon</strong> began experimenting
-          with dragonjade around <strong>1310 AE</strong>.
-        </p>
-
-        <p>
-          Those experiments became the foundation of later
-          jade technology.
-        </p>
-
-        <p>
-          Meanwhile, heroes from several races were beginning
-          to cooperate against Elder Dragon champions.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 15
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="83"
-        data-date="1319 AE"
-        data-context="YOU ARE HERE // Destiny's Edge Forms"
-      >
-
-        <p class="history-label">
-          Record 15 // Destiny's Edge
-        </p>
-
-        <h2>
-          Champions from different peoples fight together
-        </h2>
-
-        <p>
-          In <strong>1319 AE</strong>,
-          <strong>Destiny's Edge</strong> formed.
-        </p>
-
-        <p>
-          The group defeated several powerful dragon champions,
-          including Jormag's Dragonspawn.
-        </p>
-
-        <p>
-          Their victories suggested that Elder Dragon forces
-          could be confronted directly rather than merely endured.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 16
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="88"
-        data-date="1320 AE"
-        data-context="YOU ARE HERE // Kralkatorrik Awakens"
-      >
-
-        <p class="history-label">
-          Record 16 // Kralkatorrik
-        </p>
-
-        <h2>
-          The Crystal Dragon crosses Ascalon
-        </h2>
-
-        <p>
-          In <strong>1320 AE</strong>,
-          <strong>Kralkatorrik</strong> awakened.
-        </p>
-
-        <p>
-          Its flight south carved the
-          <strong>Dragonbrand</strong> across Ascalon toward
-          the Crystal Desert.
-        </p>
-
-        <p>
-          Creatures and landscapes caught within the Brand
-          were transformed into crystalline servants.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 17
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="91"
-        data-date="1320 AE"
-        data-context="YOU ARE HERE // Glint Falls"
-      >
-
-        <p class="history-label">
-          Record 17 // The Breaking of Destiny's Edge
-        </p>
-
-        <h2>
-          Glint dies fighting her former master
-        </h2>
-
-        <p>
-          Destiny's Edge confronted Kralkatorrik with the help of
-          <strong>Glint</strong>.
-        </p>
-
-        <p>
-          The plan failed.
-        </p>
-
-        <p>
-          Glint was killed.
-        </p>
-
-        <p>
-          Destiny's Edge fractured in the aftermath.
-        </p>
-
-        <p>
-          Tyria lost one of its greatest potential weapons
-          against the Elder Dragons.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 18
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="94"
-        data-date="1321–1324 AE"
-        data-context="YOU ARE HERE // The World Before the Commander"
-      >
-
-        <p class="history-label">
-          Record 18 // The Last Quiet Years
-        </p>
-
-        <h2>
-          Tyria prepares without knowing what comes next
-        </h2>
-
-        <p>
-          The years after Glint's death did not bring another immediate
-          Elder Dragon victory.
-        </p>
-
-        <p>
-          Instead, the peoples of Tyria continued adapting to a world
-          already surrounded by dragon threats.
-        </p>
-
-        <p>
-          Lion's Arch expanded its role as a multiracial center,
-          while travel and infrastructure increasingly connected
-          the major peoples of Central Tyria.
-        </p>
-
-        <p>
-          Between <strong>1320 and 1325 AE</strong>, five asura gates
-          were established at Fort Marriner, creating fixed access points
-          connected to travel into the Mists.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 19
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="97"
-        data-date="1324 AE"
-        data-context="YOU ARE HERE // Old Enemies Begin Talking"
-      >
-
-        <p class="history-label">
-          Record 19 // Human and Charr Relations
-        </p>
-
-        <h2>
-          Centuries of war begin bending toward diplomacy
-        </h2>
-
-        <p>
-          The conflict between humans and charr had defined Ascalon
-          for generations.
-        </p>
-
-        <p>
-          By the years immediately before 1325 AE,
-          cooperation against common threats had created opportunities
-          for diplomacy.
-        </p>
-
-        <p>
-          The retrieval of the
-          <strong>Claw of the Khan-Ur</strong> helped support peace
-          negotiations between Kryta and the charr High Legions.
-        </p>
-
-        <p>
-          One of Tyria's oldest mortal wars was beginning to cool
-          just as a much larger war approached.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           RECORD 20
-      ========================== -->
-
-      <section
-        class="history-section"
-        data-position="100"
-        data-date="1325 AE"
-        data-context="YOU ARE HERE // The Personal Story Begins"
-      >
-
-        <p class="history-label">
-          Record 20 // The Edge of the Commander Era
-        </p>
-
-        <h2>
-          The world reaches 1325 AE
-        </h2>
-
-        <p>
-          By <strong>1325 AE</strong>, Tyria had become a world
-          fundamentally different from the one left behind by Guild Wars.
-        </p>
-
-        <p>
-          The charr controlled most of Ascalon.
-          Humans had consolidated around Divinity's Reach.
-          The norn lived around Hoelbrak.
-          The asura had rebuilt on the surface.
-          The sylvari were entering the world for the first time.
-        </p>
-
-        <p>
-          Lion's Arch stood as a multiracial city connecting them.
-        </p>
-
-        <p>
-          Around them, Elder Dragons and their minions threatened
-          nearly every region.
-        </p>
-
-        <p>
-          The events of the
-          <strong>Guild Wars 2 Personal Story</strong> now begin.
-        </p>
-
-        <p>
-          The next age belongs to the Commander.
-        </p>
-
-      </section>
-
-
-      <!-- =========================
-           IMPACT INDEX
-      ========================== -->
-
-      <section class="history-section">
-
-        <p class="history-label">
-          Dragonrise Index
-        </p>
-
-        <h2>
-          The World Created by This Era
-        </h2>
-
-
-        <div class="impact-grid">
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              1120 AE
-            </p>
-
-            <h3>
-              Primordus
-            </h3>
-
-            <p>
-              Destroyer activity devastates the underground world
-              and forces subterranean peoples toward the surface.
-            </p>
-
-          </div>
-
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              1165 AE
-            </p>
-
-            <h3>
-              Jormag
-            </h3>
-
-            <p>
-              The Far Shiverpeaks are devastated and the norn
-              migrate south.
-            </p>
-
-          </div>
-
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              1219 AE
-            </p>
-
-            <h3>
-              Zhaitan
-            </h3>
-
-            <p>
-              Orr rises, old Lion's Arch is destroyed,
-              and Risen dominate surrounding waters.
-            </p>
-
-          </div>
-
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              1320 AE
-            </p>
-
-            <h3>
-              Kralkatorrik
-            </h3>
-
-            <p>
-              The Dragonbrand scars Ascalon and Glint is killed.
-            </p>
-
-          </div>
-
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              Civilization
-            </p>
-
-            <h3>
-              New Centers of Power
-            </h3>
-
-            <p>
-              Divinity's Reach, Hoelbrak, Rata Sum, the Grove,
-              Black Citadel, and modern Lion's Arch define the new age.
-            </p>
-
-          </div>
-
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              1325 AE
-            </p>
-
-            <h3>
-              The Modern World
-            </h3>
-
-            <p>
-              Tyria reaches the political and geographical state
-              encountered at the beginning of Guild Wars 2.
-            </p>
-
-          </div>
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            Orr had already died once. Zhaitan's awakening did
+            something worse than bring it back. The Dragon turned
+            the ruins, the dead, and the memory of the kingdom
+            into weapons.
+          </p>
 
         </div>
 
       </section>
 
 
-      <!-- =========================
-           NEXT ERA
-      ========================== -->
+      <!-- ========================================
+           CHAPTER VII
+      ========================================= -->
 
-      <section class="page-navigation">
+      <section
+        class="chapter"
+        data-position="61"
+        data-date="1220s AE"
+        data-context="TYRIA REBUILDS"
+      >
 
-        <p class="navigation-label">
-          Continue the Road Through Time
+        <p class="chapter-number">
+          VII
         </p>
 
         <h2>
-          The Age of the Commander
+          New cities rise from displacement
+        </h2>
+
+        <p class="chapter-opening">
+          Zhaitan's awakening destroyed settlements, trade routes,
+          and political centers, but the response was not simply
+          retreat. The peoples of Tyria began building new places
+          suited to the world that now existed.
+        </p>
+
+        <p>
+          <strong>Divinity's Reach</strong> became the principal
+          Human city of Kryta, sheltering a population that
+          increasingly included refugees from territories lost
+          beyond the kingdom's borders.
+        </p>
+
+        <p>
+          The flooded remains surrounding old Lion's Arch were
+          eventually occupied by sailors, pirates, merchants,
+          and other survivors. Under figures such as
+          <strong>Cobiah Marriner</strong>, a new settlement
+          emerged from the wreckage.
+        </p>
+
+        <p>
+          The new <strong>Lion's Arch</strong> developed not as
+          the capital of a single race, but as a maritime city
+          shared by many peoples.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER VIII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="69"
+        data-date="13th Century AE"
+        data-context="MIGRATION RESHAPES CENTRAL TYRIA"
+      >
+
+        <p class="chapter-number">
+          VIII
+        </p>
+
+        <h2>
+          The new Tyria is built by refugees
+        </h2>
+
+        <p class="chapter-opening">
+          The Dragonrise and the political upheavals surrounding
+          it pushed entire populations across borders that had
+          once separated distant cultures.
+        </p>
+
+        <p>
+          Elonian refugees fleeing <strong>Palawa Joko</strong>
+          settled in Kryta. <strong>Quaggans</strong> moved
+          toward the shores of Central Tyria as dangers increased
+          in the deeper ocean, while hostile
+          <strong>Krait</strong> migrations placed additional
+          pressure on coastal populations.
+        </p>
+
+        <p>
+          Asura built a new civilization upon the surface.
+          Norn settled the southern Shiverpeaks. Humans from
+          several former kingdoms increasingly shared Kryta.
+          Lion's Arch became a place where populations displaced
+          from very different histories encountered one another.
+        </p>
+
+        <p>
+          The five great peoples of the coming age were not
+          originally gathered together by diplomacy. Much of
+          their proximity was created by survival.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER IX
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="76"
+        data-date="1302–1304 AE"
+        data-context="THE SYLVARI AWAKEN"
+      >
+
+        <p class="chapter-number">
+          IX
+        </p>
+
+        <h2>
+          A new people enters the world
+        </h2>
+
+        <p class="chapter-opening">
+          The changes of this era were not limited to ancient
+          peoples losing their homes. In
+          <strong>1302 AE</strong>, the first
+          <strong>Sylvari</strong> awakened beneath the
+          <strong>Pale Tree</strong> on the Tarnished Coast.
+        </p>
+
+        <p>
+          These first Sylvari became known as the
+          <strong>Firstborn</strong>. The
+          <strong>Secondborn</strong> followed in
+          <strong>1304 AE</strong>, and later generations
+          continued emerging from the Tree.
+        </p>
+
+        <p>
+          Unlike the Humans, Norn, Charr, or Asura, the Sylvari
+          had no ancient kingdom behind them and no ancestral
+          homeland they remembered losing. They entered history
+          as a young people trying to understand a world that
+          was already in crisis.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER X
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="83"
+        data-date="1319 AE"
+        data-context="DESTINY'S EDGE FORMS"
+      >
+
+        <p class="chapter-number">
+          X
+        </p>
+
+        <h2>
+          Heroes begin crossing racial boundaries
+        </h2>
+
+        <p class="chapter-opening">
+          By <strong>1319 AE</strong>, Elder Dragon forces
+          threatened several parts of Tyria at once. The response
+          increasingly required cooperation between peoples whose
+          histories had rarely prepared them to trust one another.
+        </p>
+
+        <p>
+          The adventuring group later known as
+          <strong>Destiny's Edge</strong> brought together
+          champions from several races. They confronted powerful
+          Dragon minions and defeated enemies that individual
+          nations had struggled to overcome.
+        </p>
+
+        <p>
+          Their victories suggested that Dragon Champions were
+          not invincible. More importantly, they demonstrated
+          that coordinated forces from different societies could
+          achieve what isolated kingdoms could not.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER XI
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="90"
+        data-date="1320 AE"
+        data-context="KRALKATORRIK AWAKENS"
+      >
+
+        <p class="chapter-number">
+          XI
+        </p>
+
+        <h2>
+          Kralkatorrik scars the land
+        </h2>
+
+        <p class="chapter-opening">
+          In <strong>1320 AE</strong>,
+          <strong>Kralkatorrik</strong> awakened and flew south
+          from the Charr lands toward the Crystal Desert.
+        </p>
+
+        <p>
+          The Elder Dragon's passage created the
+          <strong>Dragonbrand</strong>, a vast scar of corrupted
+          crystal stretching across Ascalon. Creatures and
+          landscapes caught within it were transformed into
+          <strong>Branded</strong>.
+        </p>
+
+        <p>
+          Destiny's Edge attempted to confront Kralkatorrik with
+          the aid of <strong>Glint</strong>, the former Champion
+          who had resisted the Elder Dragon since the ancient age.
+        </p>
+
+        <p>
+          The plan failed. Glint was killed, and Destiny's Edge
+          fractured in the aftermath.
+        </p>
+
+        <p>
+          One of Tyria's greatest sources of knowledge about the
+          Dragon Cycle was gone just as the need for that knowledge
+          was becoming impossible to ignore.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER XII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="95"
+        data-date="1320–1324 AE"
+        data-context="THE WORLD BEFORE THE COMMANDER"
+      >
+
+        <p class="chapter-number">
+          XII
+        </p>
+
+        <h2>
+          Tyria learns to live between Dragons
+        </h2>
+
+        <p class="chapter-opening">
+          Kralkatorrik's awakening did not produce an immediate
+          collapse of Central Tyria. Instead, the major peoples
+          continued adapting to a world in which several Elder
+          Dragons were simultaneously active.
+        </p>
+
+        <p>
+          Lion's Arch expanded as a multiracial trading center.
+          The Asura connected distant settlements through their
+          gate network. The Durmand Priory gathered ancient
+          knowledge, while the <strong>Vigil</strong> and
+          <strong>Order of Whispers</strong> pursued very
+          different strategies for confronting the growing
+          Dragon threat.
+        </p>
+
+        <p>
+          Old enemies were also beginning to reconsider their
+          wars. Cooperation between Humans and Charr against
+          common threats created openings for diplomacy, while
+          the return of the <strong>Claw of the Khan-Ur</strong>
+          helped support negotiations between Kryta and the
+          High Legions.
+        </p>
+
+        <p>
+          One of Tyria's longest mortal conflicts was beginning
+          to bend toward peace because both sides were learning
+          that the world contained enemies far larger than either
+          of them.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER XIII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="100"
+        data-date="1325 AE"
+        data-context="THE COMMANDER ERA BEGINS"
+      >
+
+        <p class="chapter-number">
+          XIII
+        </p>
+
+        <h2>
+          Tyria reaches the beginning of Guild Wars 2
+        </h2>
+
+        <p class="chapter-opening">
+          By <strong>1325 AE</strong>, nearly every major people
+          of Central Tyria inhabited a world shaped by the modern
+          Dragonrise.
+        </p>
+
+        <p>
+          The <strong>Charr</strong> controlled most of Ascalon
+          from the Black Citadel, while Humans had consolidated
+          much of their surviving power around
+          <strong>Divinity's Reach</strong>. The
+          <strong>Norn</strong> lived throughout the southern
+          Shiverpeaks around Hoelbrak, and the
+          <strong>Asura</strong> had rebuilt their civilization
+          upon the surface.
+        </p>
+
+        <p>
+          The young <strong>Sylvari</strong> were entering a
+          history that had begun long before their awakening.
+          Between them all stood <strong>Lion's Arch</strong>,
+          increasingly important as a multiracial city connecting
+          societies that had once developed largely apart.
+        </p>
+
+        <p>
+          Around these civilizations were active Elder Dragons,
+          their Champions, and their armies. Tyria had spent
+          centuries responding to each crisis separately.
+        </p>
+
+        <p>
+          That approach was about to fail.
+        </p>
+
+        <p>
+          The next chapter of the historical record begins with
+          the rise of the individual who would eventually be
+          known simply as <strong>the Commander</strong>.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            Volume I began with civilizations trying to survive
+            a Dragonrise they could not stop. Thousands of years
+            later, Tyria has reached the same problem again.
+            The difference is that this time the peoples of the
+            world are close enough to one another that they may
+            finally have a chance to face it together.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           NEXT VOLUME
+      ========================================= -->
+
+      <section class="transition">
+
+        <p class="transition-label">
+          End of Volume VIII
+        </p>
+
+        <h2>
+          The road continues
         </h2>
 
         <p>
-          By 1325 AE, the Dragonrise had transformed nearly every
-          major civilization.
+          Four Elder Dragons were awake. The peoples of Central
+          Tyria had been scattered, rebuilt, and pushed into a
+          world where isolation was becoming increasingly
+          impossible.
+        </p>
+
+        <p class="next-title">
+          Volume IX // The Age of the Commander
         </p>
 
         <p>
-          The world had spent generations responding to each Elder Dragon
-          separately.
+          The next archive begins in <strong>1325 AE</strong>
+          with the Personal Story and follows the convergence of
+          the <strong>Durmand Priory</strong>,
+          <strong>Vigil</strong>, and
+          <strong>Order of Whispers</strong>, the creation of
+          the <strong>Pact</strong>, the campaign into Orr, and
+          Tyria's first modern attempt to kill an Elder Dragon.
         </p>
-
-        <p>
-          The next archive begins when the Durmand Priory,
-          Vigil, and Order of Whispers are forced toward something
-          Tyria had rarely managed before:
-          a unified response.
-        </p>
-
 
         <div class="navigation-actions">
 
@@ -1869,7 +1775,7 @@
             href="../guild-wars-era/index.html"
             class="button"
           >
-            ← The Guild Wars Era
+            ← Volume VII
           </a>
 
           <a
@@ -1883,7 +1789,7 @@
             href="../age-of-the-commander/index.html"
             class="button button-primary"
           >
-            The Age of the Commander →
+            Read Volume IX →
           </a>
 
         </div>
@@ -1895,26 +1801,32 @@
   </main>
 
 
-  <!-- =========================
+  <!-- ========================================
        FOOTER
-  ========================== -->
+  ========================================= -->
 
   <footer>
 
     <div class="container">
 
-      Guild Wars Living Lore Library is an unofficial fan lore project.
-      Guild Wars, Guild Wars 2, ArenaNet, NCSOFT, and related properties
-      belong to their respective owners.
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
 
     </div>
 
   </footer>
 
 
-  <!-- =========================
-       HISTORY POSITION SCRIPT
-  ========================== -->
+  <!-- ========================================
+       CHRONOLOGY SCRIPT
+  ========================================= -->
 
   <script>
     (() => {
@@ -1922,40 +1834,47 @@
 
       const sections =
         document.querySelectorAll(
-          ".history-section[data-position]"
+          ".chapter[data-position]"
         );
 
       const marker =
-        document.getElementById("historyMarker");
+        document.getElementById(
+          "historyMarker"
+        );
 
       const currentDate =
-        document.getElementById("currentDate");
+        document.getElementById(
+          "currentDate"
+        );
 
       const positionContext =
-        document.getElementById("positionContext");
+        document.getElementById(
+          "positionContext"
+        );
 
+      const updatePosition =
+        (section) => {
 
-      const updatePosition = (section) => {
+          const position =
+            section.dataset.position || "5";
 
-        const position =
-          section.dataset.position || "5";
+          const date =
+            section.dataset.date ||
+            "1080 AE";
 
-        const date =
-          section.dataset.date || "1080 AE";
+          const context =
+            section.dataset.context ||
+            "HISTORICAL RECORD";
 
-        const context =
-          section.dataset.context || "YOU ARE HERE";
+          marker.style.left =
+            `${position}%`;
 
-        marker.style.left =
-          `${position}%`;
+          currentDate.textContent =
+            date;
 
-        currentDate.textContent =
-          date;
-
-        positionContext.textContent =
-          context;
-      };
-
+          positionContext.textContent =
+            context;
+        };
 
       const observer =
         new IntersectionObserver(
@@ -1974,13 +1893,10 @@
                 );
 
             if (visible.length > 0) {
-
               updatePosition(
                 visible[0].target
               );
-
             }
-
           },
           {
             rootMargin:
@@ -1996,13 +1912,11 @@
           }
         );
 
-
       sections.forEach(
         (section) => {
           observer.observe(section);
         }
       );
-
     })();
   </script>
 
