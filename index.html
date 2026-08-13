@@ -1361,8 +1361,6 @@
           <div class="timeline-line"></div>
 
 
-          <!-- VOLUME I -->
-
           <a
             href="ancient-dragonrises/index.html"
             class="volume-entry"
@@ -1398,8 +1396,6 @@
 
           </a>
 
-
-          <!-- VOLUME II -->
 
           <a
             href="elder-races/index.html"
@@ -1437,8 +1433,6 @@
           </a>
 
 
-          <!-- VOLUME III -->
-
           <a
             href="gods-and-humanity/index.html"
             class="volume-entry"
@@ -1474,8 +1468,6 @@
 
           </a>
 
-
-          <!-- VOLUME IV -->
 
           <a
             href="gift-of-magic/index.html"
@@ -1513,8 +1505,6 @@
           </a>
 
 
-          <!-- VOLUME V -->
-
           <a
             href="exodus-of-gods/index.html"
             class="volume-entry"
@@ -1550,8 +1540,6 @@
 
           </a>
 
-
-          <!-- VOLUME VI -->
 
           <a
             href="kingdoms-and-guild-wars/index.html"
@@ -1589,8 +1577,6 @@
           </a>
 
 
-          <!-- VOLUME VII -->
-
           <a
             href="guild-wars-era/index.html"
             class="volume-entry"
@@ -1627,8 +1613,6 @@
           </a>
 
 
-          <!-- VOLUME VIII -->
-
           <a
             href="dragons-awaken/index.html"
             class="volume-entry"
@@ -1664,8 +1648,6 @@
 
           </a>
 
-
-          <!-- VOLUME IX -->
 
           <a
             href="age-of-the-commander/index.html"
@@ -1704,8 +1686,6 @@
           </a>
 
 
-          <!-- VOLUME X -->
-
           <a
             href="beyond-the-dragon-cycle/index.html"
             class="volume-entry"
@@ -1741,8 +1721,6 @@
 
           </a>
 
-
-          <!-- VOLUME XI -->
 
           <a
             href="current-era/index.html"
@@ -1781,8 +1759,6 @@
 
         </div>
 
-
-        <!-- PRESENT MARKER -->
 
         <section class="present-marker">
 
@@ -1833,8 +1809,6 @@
         </div>
 
 
-        <!-- SEARCH -->
-
         <div class="archive-search">
 
           <label
@@ -1859,12 +1833,8 @@
         </div>
 
 
-        <!-- ARCHIVE CATEGORIES -->
-
         <div class="archive-grid">
 
-
-          <!-- EVENTS -->
 
           <a
             href="events/index.html"
@@ -1907,8 +1877,6 @@
 
           </a>
 
-
-          <!-- PEOPLE -->
 
           <a
             href="people/index.html"
@@ -1953,8 +1921,6 @@
           </a>
 
 
-          <!-- ITEMS -->
-
           <a
             href="items/index.html"
             class="archive-card"
@@ -1996,8 +1962,6 @@
 
           </a>
 
-
-          <!-- ORGANIZATIONS -->
 
           <a
             href="organizations/index.html"
@@ -2041,8 +2005,6 @@
 
           </a>
 
-
-          <!-- LOCATIONS -->
 
           <a
             href="locations/index.html"
@@ -2210,6 +2172,111 @@
 
 
       /* ========================================
+         SCROLL POSITION MEMORY
+      ======================================== */
+
+      if (
+        "scrollRestoration" in history
+      ) {
+        history.scrollRestoration =
+          "manual";
+      }
+
+
+      const scrollStorageKey =
+        `gwlllScrollPosition:${window.location.pathname}`;
+
+
+      const savedScrollPosition =
+        sessionStorage.getItem(
+          scrollStorageKey
+        );
+
+
+      if (
+        savedScrollPosition !== null
+      ) {
+
+        requestAnimationFrame(
+          () => {
+
+            requestAnimationFrame(
+              () => {
+
+                window.scrollTo({
+                  top:
+                    Number(
+                      savedScrollPosition
+                    ),
+                  left: 0,
+                  behavior: "auto"
+                });
+
+              }
+            );
+
+          }
+        );
+
+      }
+
+
+      let scrollSaveQueued =
+        false;
+
+
+      function saveScrollPosition() {
+
+        sessionStorage.setItem(
+          scrollStorageKey,
+          String(
+            window.scrollY
+          )
+        );
+
+      }
+
+
+      window.addEventListener(
+        "scroll",
+        () => {
+
+          if (
+            scrollSaveQueued
+          ) {
+            return;
+          }
+
+
+          scrollSaveQueued =
+            true;
+
+
+          requestAnimationFrame(
+            () => {
+
+              saveScrollPosition();
+
+              scrollSaveQueued =
+                false;
+
+            }
+          );
+
+        },
+        {
+          passive: true
+        }
+      );
+
+
+      window.addEventListener(
+        "pagehide",
+        saveScrollPosition
+      );
+
+
+      /* ========================================
          SPOILER NOTICE
       ======================================== */
 
@@ -2226,18 +2293,24 @@
       const storageKey =
         "gwlllSpoilerAcknowledged";
 
+
       const spoilerAcknowledged =
         localStorage.getItem(
           storageKey
         );
 
+
       if (
-        spoilerAcknowledged === "true"
+        spoilerAcknowledged ===
+        "true"
       ) {
+
         spoilerOverlay.classList.add(
           "hidden"
         );
+
       }
+
 
       acknowledgeButton.addEventListener(
         "click",
@@ -2251,6 +2324,7 @@
           spoilerOverlay.classList.add(
             "hidden"
           );
+
         }
       );
 
@@ -2264,10 +2338,12 @@
           "archiveSearch"
         );
 
+
       const archiveCards =
         document.querySelectorAll(
           ".archive-card"
         );
+
 
       archiveSearch.addEventListener(
         "input",
@@ -2277,6 +2353,7 @@
             archiveSearch.value
               .toLowerCase()
               .trim();
+
 
           archiveCards.forEach(
             (card) => {
@@ -2289,17 +2366,21 @@
                 )
                   .toLowerCase();
 
+
               const matches =
                 searchableText.includes(
                   query
                 );
 
+
               card.style.display =
                 matches
                   ? ""
                   : "none";
+
             }
           );
+
         }
       );
 
