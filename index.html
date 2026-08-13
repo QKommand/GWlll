@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="The Historical Records of Commander Q. Follow the history of Tyria from the Ancient Dragonrises to the Current Era."
+    content="The Historical Records of Commander Q. Follow the history of Tyria from the Ancient Dragonrises to the Current Era, or search the Living Lore Archives by subject."
   >
 
   <meta name="theme-color" content="#070b14">
@@ -358,7 +358,8 @@
     }
 
     .intro h2,
-    .road-header h2 {
+    .road-header h2,
+    .archive-header h2 {
       margin: 9px 0 0;
 
       color: var(--gold);
@@ -655,34 +656,49 @@
     }
 
     /* ========================================
-       ARCHIVE METHOD
+       RESEARCH ARCHIVES
     ======================================== */
 
-    .archive-method {
-      padding: 58px 0 72px;
+    .archive-section {
+      padding: 72px 0 84px;
 
       border-top:
         1px solid var(--border-soft);
-    }
-
-    .archive-method-inner {
-      max-width: 760px;
-
-      margin-inline: auto;
-
-      padding: 26px;
-
-      border-left:
-        2px solid var(--gold-muted);
 
       background:
-        rgba(214, 179, 106, 0.035);
+        linear-gradient(
+          to bottom,
+          rgba(214, 179, 106, 0.018),
+          transparent
+        );
     }
 
-    .archive-method-label {
-      margin: 0;
+    .archive-header {
+      max-width: 760px;
 
-      color: var(--gold);
+      margin: 0 auto 38px;
+
+      text-align: center;
+    }
+
+    .archive-header p:last-child {
+      margin: 14px auto 0;
+
+      color: var(--ink-muted);
+    }
+
+    .archive-search {
+      width: min(760px, 100%);
+
+      margin: 0 auto 34px;
+    }
+
+    .archive-search-label {
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: var(--ink-faint);
 
       font-family:
         ui-monospace,
@@ -691,24 +707,198 @@
         Consolas,
         monospace;
 
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
-    .archive-method-inner h2 {
+    .archive-search input {
+      width: 100%;
+      min-height: 52px;
+
+      padding: 0 17px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 4px;
+
+      outline: none;
+
+      background:
+        rgba(9, 14, 24, 0.85);
+
+      color: var(--ink);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.82rem;
+
+      transition:
+        border-color 180ms ease,
+        background 180ms ease;
+    }
+
+    .archive-search input::placeholder {
+      color: var(--ink-faint);
+    }
+
+    .archive-search input:focus {
+      border-color:
+        rgba(214, 179, 106, 0.65);
+
+      background:
+        rgba(13, 20, 34, 0.95);
+    }
+
+    .archive-search-note {
+      margin: 9px 0 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+      line-height: 1.6;
+    }
+
+    .archive-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 16px;
+
+      width: min(820px, 100%);
+
+      margin: 0 auto;
+    }
+
+    .archive-card {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      min-height: 220px;
+
+      padding: 24px;
+
+      border:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(15, 23, 42, 0.52);
+
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
+    }
+
+    .archive-card:hover {
+      transform: translateY(-4px);
+
+      border-color:
+        rgba(214, 179, 106, 0.5);
+
+      background:
+        rgba(19, 29, 48, 0.78);
+    }
+
+    .archive-card-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .archive-card h3 {
       margin: 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .archive-card-description {
+      margin: 12px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .archive-card-examples {
+      margin: 15px 0 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+      line-height: 1.6;
+    }
+
+    .archive-card-link {
+      display: inline-block;
+
+      margin-top: auto;
+      padding-top: 18px;
 
       color: var(--gold-bright);
 
-      font-size: 1.6rem;
-      font-weight: 500;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.66rem;
+      font-weight: 700;
+
+      transition:
+        transform 180ms ease;
     }
 
-    .archive-method-inner p {
-      margin: 14px 0 0;
+    .archive-card:hover .archive-card-link {
+      transform: translateX(4px);
+    }
 
-      color: var(--ink-muted);
+    .archive-card-wide {
+      grid-column: 1 / -1;
     }
 
     /* ========================================
@@ -734,6 +924,27 @@
       line-height: 1.7;
 
       text-align: center;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+
+      border-bottom:
+        1px solid rgba(214, 179, 106, 0.35);
+
+      transition:
+        color 180ms ease,
+        border-color 180ms ease;
+    }
+
+    footer a:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+    }
+
+    .footer-credits {
+      margin-top: 18px;
     }
 
     /* ========================================
@@ -942,6 +1153,22 @@
         transform: translateY(-2px);
       }
 
+      .archive-section {
+        padding: 58px 0 66px;
+      }
+
+      .archive-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .archive-card-wide {
+        grid-column: auto;
+      }
+
+      .archive-card {
+        min-height: auto;
+      }
+
       .spoiler-window {
         padding: 24px 22px;
       }
@@ -1087,15 +1314,15 @@
         </p>
 
         <p>
-          The records below are arranged chronologically.
-          Beginning with the oldest surviving histories,
-          each volume follows naturally into the next until
-          the archive reaches the present era.
+          The Road Through Time follows that history
+          chronologically. Each volume continues into the next
+          until the record reaches the present era.
         </p>
 
         <p>
-          You can read the entire road from beginning to end
-          or enter at whichever period you wish to study.
+          Readers looking for a particular person, artifact,
+          location, organization, or historical event can instead
+          use the Research Archives below.
         </p>
 
       </section>
@@ -1134,9 +1361,7 @@
           <div class="timeline-line"></div>
 
 
-          <!-- ====================================
-               VOLUME I
-          ===================================== -->
+          <!-- VOLUME I -->
 
           <a
             href="ancient-dragonrises/index.html"
@@ -1174,9 +1399,7 @@
           </a>
 
 
-          <!-- ====================================
-               VOLUME II
-          ===================================== -->
+          <!-- VOLUME II -->
 
           <a
             href="elder-races/index.html"
@@ -1214,9 +1437,7 @@
           </a>
 
 
-          <!-- ====================================
-               VOLUME III
-          ===================================== -->
+          <!-- VOLUME III -->
 
           <a
             href="gods-and-humanity/index.html"
@@ -1254,9 +1475,7 @@
           </a>
 
 
-          <!-- ====================================
-               VOLUME IV
-          ===================================== -->
+          <!-- VOLUME IV -->
 
           <a
             href="gift-of-magic/index.html"
@@ -1294,9 +1513,7 @@
           </a>
 
 
-          <!-- ====================================
-               VOLUME V
-          ===================================== -->
+          <!-- VOLUME V -->
 
           <a
             href="exodus-of-gods/index.html"
@@ -1334,9 +1551,7 @@
           </a>
 
 
-          <!-- ====================================
-               VOLUME VI
-          ===================================== -->
+          <!-- VOLUME VI -->
 
           <a
             href="kingdoms-and-guild-wars/index.html"
@@ -1374,9 +1589,7 @@
           </a>
 
 
-          <!-- ====================================
-               VOLUME VII
-          ===================================== -->
+          <!-- VOLUME VII -->
 
           <a
             href="guild-wars-era/index.html"
@@ -1414,9 +1627,7 @@
           </a>
 
 
-          <!-- ====================================
-               VOLUME VIII
-          ===================================== -->
+          <!-- VOLUME VIII -->
 
           <a
             href="dragons-awaken/index.html"
@@ -1454,9 +1665,7 @@
           </a>
 
 
-          <!-- ====================================
-               VOLUME IX
-          ===================================== -->
+          <!-- VOLUME IX -->
 
           <a
             href="age-of-the-commander/index.html"
@@ -1495,9 +1704,7 @@
           </a>
 
 
-          <!-- ====================================
-               VOLUME X
-          ===================================== -->
+          <!-- VOLUME X -->
 
           <a
             href="beyond-the-dragon-cycle/index.html"
@@ -1535,9 +1742,7 @@
           </a>
 
 
-          <!-- ====================================
-               VOLUME XI
-          ===================================== -->
+          <!-- VOLUME XI -->
 
           <a
             href="current-era/index.html"
@@ -1577,9 +1782,7 @@
         </div>
 
 
-        <!-- ========================================
-             PRESENT MARKER
-        ========================================= -->
+        <!-- PRESENT MARKER -->
 
         <section class="present-marker">
 
@@ -1602,36 +1805,290 @@
 
 
     <!-- ========================================
-         ARCHIVE METHOD
+         RESEARCH ARCHIVES
     ========================================= -->
 
-    <section class="archive-method">
+    <section class="archive-section">
 
       <div class="container">
 
-        <div class="archive-method-inner">
+        <div class="archive-header">
 
-          <p class="archive-method-label">
-            Archive Method
+          <p class="section-kicker">
+            Living Lore Archives
           </p>
 
           <h2>
-            Following the surviving record
+            Search the historical records
           </h2>
 
           <p>
-            Tyrian history is assembled from surviving records,
-            ruins, dialogue, artifacts, chronicles, and events
-            witnessed throughout Guild Wars and Guild Wars 2.
-            Some ancient dates and sequences remain approximate.
+            The Road Through Time follows Tyria chronologically.
+            The Research Archives organize individual records
+            by subject, allowing people, places, artifacts,
+            organizations, and events to be studied independently
+            and connected across different eras.
           </p>
 
-          <p>
-            When the historical record is uncertain,
-            the individual volumes preserve that uncertainty
-            rather than assigning details the surviving sources
-            do not establish.
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="archive-search">
+
+          <label
+            class="archive-search-label"
+            for="archiveSearch"
+          >
+            Search All Records
+          </label>
+
+          <input
+            type="search"
+            id="archiveSearch"
+            placeholder="Search people, artifacts, locations, organizations, events..."
+            autocomplete="off"
+          >
+
+          <p class="archive-search-note">
+            Search the archive by subject or browse
+            the record categories below.
           </p>
+
+        </div>
+
+
+        <!-- ARCHIVE CATEGORIES -->
+
+        <div class="archive-grid">
+
+
+          <!-- EVENTS -->
+
+          <a
+            href="archive/events/index.html"
+            class="archive-card"
+            data-search="
+              events
+              battles
+              wars
+              disasters
+              discoveries
+              historical moments
+              dragonrise
+              guild wars
+              campaigns
+            "
+          >
+
+            <p class="archive-card-label">
+              Archive Category
+            </p>
+
+            <h3>
+              Events
+            </h3>
+
+            <p class="archive-card-description">
+              Battles, disasters, discoveries, campaigns,
+              political changes, magical events, and other
+              moments that altered the course of Tyrian history.
+            </p>
+
+            <p class="archive-card-examples">
+              BATTLES // CAMPAIGNS // DRAGONRISES //
+              DISASTERS // DISCOVERIES
+            </p>
+
+            <span class="archive-card-link">
+              Search Event Records →
+            </span>
+
+          </a>
+
+
+          <!-- PEOPLE -->
+
+          <a
+            href="archive/people/index.html"
+            class="archive-card"
+            data-search="
+              people
+              persons
+              characters
+              heroes
+              villains
+              commanders
+              kings
+              queens
+              gods
+              historical figures
+            "
+          >
+
+            <p class="archive-card-label">
+              Archive Category
+            </p>
+
+            <h3>
+              People
+            </h3>
+
+            <p class="archive-card-description">
+              Heroes, rulers, villains, scholars, military
+              leaders, Gods, and other individuals whose actions
+              shaped the historical record.
+            </p>
+
+            <p class="archive-card-examples">
+              HEROES // RULERS // SCHOLARS //
+              COMMANDERS // HISTORICAL FIGURES
+            </p>
+
+            <span class="archive-card-link">
+              Search People Records →
+            </span>
+
+          </a>
+
+
+          <!-- ITEMS -->
+
+          <a
+            href="archive/items/index.html"
+            class="archive-card"
+            data-search="
+              items
+              artifacts
+              weapons
+              relics
+              magical objects
+              swords
+              bloodstone
+              caladbolg
+              sohothin
+            "
+          >
+
+            <p class="archive-card-label">
+              Archive Category
+            </p>
+
+            <h3>
+              Items &amp; Artifacts
+            </h3>
+
+            <p class="archive-card-description">
+              Weapons, relics, magical devices, ancient objects,
+              and historically significant possessions connected
+              to important events and individuals.
+            </p>
+
+            <p class="archive-card-examples">
+              WEAPONS // RELICS // MAGICAL OBJECTS //
+              ANCIENT ARTIFACTS
+            </p>
+
+            <span class="archive-card-link">
+              Search Artifact Records →
+            </span>
+
+          </a>
+
+
+          <!-- ORGANIZATIONS -->
+
+          <a
+            href="archive/organizations/index.html"
+            class="archive-card"
+            data-search="
+              organizations
+              factions
+              guilds
+              armies
+              orders
+              governments
+              pact
+              vigil
+              priory
+              whispers
+            "
+          >
+
+            <p class="archive-card-label">
+              Archive Category
+            </p>
+
+            <h3>
+              Organizations
+            </h3>
+
+            <p class="archive-card-description">
+              Guilds, military forces, governments, secret
+              societies, religious groups, orders, and factions
+              that influenced events across Tyria.
+            </p>
+
+            <p class="archive-card-examples">
+              GUILDS // ORDERS // GOVERNMENTS //
+              ARMIES // FACTIONS
+            </p>
+
+            <span class="archive-card-link">
+              Search Organization Records →
+            </span>
+
+          </a>
+
+
+          <!-- LOCATIONS -->
+
+          <a
+            href="archive/locations/index.html"
+            class="archive-card archive-card-wide"
+            data-search="
+              locations
+              places
+              cities
+              regions
+              ruins
+              landmarks
+              kingdoms
+              continents
+              lions arch
+              arah
+              ascalon
+              kryta
+              cantha
+              elona
+            "
+          >
+
+            <p class="archive-card-label">
+              Archive Category
+            </p>
+
+            <h3>
+              Locations
+            </h3>
+
+            <p class="archive-card-description">
+              Cities, kingdoms, ruins, battlefields, regions,
+              landmarks, and other places connected to the
+              major histories recorded throughout the library.
+            </p>
+
+            <p class="archive-card-examples">
+              CITIES // RUINS // REGIONS //
+              BATTLEFIELDS // LANDMARKS
+            </p>
+
+            <span class="archive-card-link">
+              Search Location Records →
+            </span>
+
+          </a>
 
         </div>
 
@@ -1659,6 +2116,30 @@
       ArenaNet, NCSOFT,
       and related properties belong
       to their respective owners.
+
+      <div class="footer-credits">
+
+        Written with contributions by members of
+        <a
+          href="https://liar.fyi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          [Liar]
+        </a>.
+
+        <br>
+
+        Site built by
+        <a
+          href="https://vng.quest"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Commander Q
+        </a>.
+
+      </div>
 
     </div>
 
@@ -1725,6 +2206,11 @@
     (() => {
       "use strict";
 
+
+      /* ========================================
+         SPOILER NOTICE
+      ======================================== */
+
       const spoilerOverlay =
         document.getElementById(
           "spoilerOverlay"
@@ -1762,6 +2248,55 @@
 
           spoilerOverlay.classList.add(
             "hidden"
+          );
+        }
+      );
+
+
+      /* ========================================
+         ARCHIVE CATEGORY SEARCH
+      ======================================== */
+
+      const archiveSearch =
+        document.getElementById(
+          "archiveSearch"
+        );
+
+      const archiveCards =
+        document.querySelectorAll(
+          ".archive-card"
+        );
+
+      archiveSearch.addEventListener(
+        "input",
+        () => {
+
+          const query =
+            archiveSearch.value
+              .toLowerCase()
+              .trim();
+
+          archiveCards.forEach(
+            (card) => {
+
+              const searchableText =
+                (
+                  card.textContent +
+                  " " +
+                  card.dataset.search
+                )
+                  .toLowerCase();
+
+              const matches =
+                searchableText.includes(
+                  query
+                );
+
+              card.style.display =
+                matches
+                  ? ""
+                  : "none";
+            }
           );
         }
       );
