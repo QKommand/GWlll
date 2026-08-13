@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Search the Living Lore Library event records of Tyrian history."
+  >
+
+  <meta name="theme-color" content="#070b14">
+
+  <title>
+    Event Records // Guild Wars Living Lore Library
+  </title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #070b14;
+      --background-deep: #03060c;
+
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
+
+      --border: #334155;
+      --border-soft: rgba(148, 163, 184, 0.18);
+
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
+
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
+
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(214, 179, 106, 0.07),
+          transparent 34rem
+        ),
+        linear-gradient(
+          to bottom,
+          #090e18,
+          var(--background) 34rem
+        );
+
+      color: var(--ink);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
+
+      margin-inline: auto;
+    }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(3, 6, 12, 0.95);
+
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 66px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-small {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .header-position {
+      text-align: right;
+    }
+
+    .header-position-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.56rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .header-position-date {
+      margin: 3px 0 0;
+
+      color: var(--gold-bright);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    /* ========================================
+       EVENTS PAGE
+    ======================================== */
+
+    .events-page {
+      padding: 70px 0 84px;
+    }
+
+    .events-heading {
+      max-width: 780px;
+
+      margin: 0 auto 34px;
+
+      text-align: center;
+    }
+
+    .section-kicker {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.63rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .events-heading h1 {
+      margin: 13px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size:
+        clamp(
+          2.8rem,
+          8vw,
+          5rem
+        );
+
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .events-heading p:last-child {
+      max-width: 700px;
+
+      margin: 20px auto 0;
+
+      color: var(--ink-muted);
+
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .ornament {
+      width: 100px;
+
+      margin: 30px auto 0;
+
+      border: 0;
+      border-top:
+        1px solid var(--gold-muted);
+    }
+
+    /* ========================================
+       SEARCH
+    ======================================== */
+
+    .wiki-search-panel {
+      width: min(820px, 100%);
+
+      margin: 0 auto 42px;
+      padding: 22px;
+
+      border:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(15, 23, 42, 0.55);
+    }
+
+    .wiki-search-label {
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .wiki-search-input {
+      width: 100%;
+      min-height: 54px;
+
+      padding: 0 16px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 4px;
+
+      outline: none;
+
+      background:
+        rgba(3, 6, 12, 0.75);
+
+      color: var(--ink);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.82rem;
+
+      transition:
+        border-color 180ms ease,
+        background 180ms ease;
+    }
+
+    .wiki-search-input::placeholder {
+      color: var(--ink-faint);
+    }
+
+    .wiki-search-input:focus {
+      border-color:
+        rgba(214, 179, 106, 0.68);
+
+      background:
+        rgba(7, 11, 20, 0.95);
+    }
+
+    .wiki-search-meta {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 14px;
+
+      margin-top: 11px;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+    }
+
+    /* ========================================
+       RECORDS
+    ======================================== */
+
+    .wiki-records {
+      width: min(820px, 100%);
+
+      margin: 0 auto;
+    }
+
+    .wiki-record {
+      display: block;
+
+      margin-bottom: 16px;
+      padding: 23px 24px;
+
+      border:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(15, 23, 42, 0.5);
+
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
+    }
+
+    .wiki-record:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(214, 179, 106, 0.48);
+
+      background:
+        rgba(19, 29, 48, 0.76);
+    }
+
+    .wiki-record[hidden] {
+      display: none;
+    }
+
+    .wiki-record-topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      gap: 16px;
+    }
+
+    .wiki-record-type,
+    .wiki-record-date {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .wiki-record h2 {
+      margin: 7px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .wiki-record-summary {
+      margin: 10px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.93rem;
+      line-height: 1.65;
+    }
+
+    .wiki-record-tags {
+      margin: 13px 0 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+      line-height: 1.6;
+    }
+
+    .wiki-record-link {
+      display: inline-block;
+
+      margin-top: 13px;
+
+      color: var(--gold-bright);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.64rem;
+      font-weight: 700;
+    }
+
+    /* ========================================
+       EMPTY / NO RESULTS
+    ======================================== */
+
+    .wiki-empty,
+    .wiki-no-results {
+      width: min(820px, 100%);
+
+      margin: 0 auto;
+      padding: 30px 22px;
+
+      border:
+        1px dashed var(--border);
+
+      background:
+        rgba(15, 23, 42, 0.25);
+
+      color: var(--ink-muted);
+
+      text-align: center;
+    }
+
+    .wiki-empty strong {
+      color: var(--gold);
+    }
+
+    .wiki-no-results {
+      display: none;
+    }
+
+    /* ========================================
+       RETURN LINK
+    ======================================== */
+
+    .wiki-back {
+      width: min(820px, 100%);
+
+      margin: 38px auto 0;
+
+      text-align: center;
+    }
+
+    .wiki-back a {
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.68rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 180ms ease;
+    }
+
+    .wiki-back a:hover {
+      color: var(--gold-bright);
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    footer {
+      padding: 34px 0;
+
+      border-top:
+        1px solid var(--border-soft);
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.65rem;
+      line-height: 1.7;
+
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--gold);
+
+      text-decoration: none;
+
+      border-bottom:
+        1px solid
+        rgba(214, 179, 106, 0.35);
+
+      transition:
+        color 180ms ease,
+        border-color 180ms ease;
+    }
+
+    footer a:hover {
+      color: var(--gold-bright);
+      border-color: var(--gold-bright);
+    }
+
+    .footer-credits {
+      margin-top: 18px;
+    }
+
+    /* ========================================
+       MOBILE
+    ======================================== */
+
+    @media (max-width: 650px) {
+
+      body {
+        font-size: 1rem;
+      }
+
+      .container {
+        width:
+          min(
+            100% - 24px,
+            var(--max-width)
+          );
+      }
+
+      .header-inner {
+        min-height: 60px;
+      }
+
+      .brand-small {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 0.88rem;
+      }
+
+      .header-position-label {
+        font-size: 0.49rem;
+      }
+
+      .header-position-date {
+        font-size: 0.61rem;
+      }
+
+      .events-page {
+        padding: 52px 0 66px;
+      }
+
+      .events-heading p:last-child {
+        font-size: 0.96rem;
+      }
+
+      .wiki-search-panel {
+        padding: 18px;
+      }
+
+      .wiki-search-meta {
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .wiki-record {
+        padding: 20px 18px;
+      }
+
+      .wiki-record-topline {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 3px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ========================================
+       HEADER
+  ========================================= -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="../index.html"
+        class="brand"
+        aria-label="Return to The Road Through Time"
+      >
+
+        <p class="brand-small">
+          The Historical Records of Commander Q
+        </p>
+
+        <p class="brand-name">
+          GWlll
+        </p>
+
+      </a>
+
+
+      <div class="header-position">
+
+        <p class="header-position-label">
+          Archive Category
+        </p>
+
+        <p class="header-position-date">
+          Event Records
+        </p>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ========================================
+       MAIN
+  ========================================= -->
+
+  <main class="events-page">
+
+    <div class="container">
+
+
+      <!-- ========================================
+           INTRODUCTION
+      ========================================= -->
+
+      <section class="events-heading">
+
+        <p class="section-kicker">
+          Living Lore Archives
+        </p>
+
+        <h1>
+          Event Records
+        </h1>
+
+        <p>
+          Search battles, campaigns, disasters,
+          discoveries, political changes, magical incidents,
+          and other events recorded throughout Tyrian history.
+        </p>
+
+        <hr class="ornament">
+
+      </section>
+
+
+      <!-- ========================================
+           SEARCH
+      ========================================= -->
+
+      <section
+        class="wiki-search-panel"
+        aria-label="Search event records"
+      >
+
+        <label
+          class="wiki-search-label"
+          for="eventSearch"
+        >
+          Search Event Records
+        </label>
+
+        <input
+          class="wiki-search-input"
+          type="search"
+          id="eventSearch"
+          placeholder="Search by event, date, place, person, faction, or keyword..."
+          autocomplete="off"
+        >
+
+        <div class="wiki-search-meta">
+
+          <span>
+            Search all indexed event records
+          </span>
+
+          <span id="eventResultCount">
+            0 records
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           EVENT RECORDS
+      ========================================= -->
+
+      <section
+        class="wiki-records"
+        id="eventRecords"
+      >
+
+        <!--
+        ==========================================
+        EVENT RECORD TEMPLATE
+        ==========================================
+
+        Copy this entire <a> block whenever you add
+        another event to the archive.
+
+        data-search can contain:
+        alternate names
+        characters
+        organizations
+        locations
+        dates
+        eras
+        related events
+        keywords
+
+        Example:
+
+        <a
+          href="battle-of-claw-island/index.html"
+          class="wiki-record"
+          data-search="
+            battle of claw island
+            claw island
+            1325 ae
+            zhaitan
+            risen
+            pact
+            trahearne
+            lion's arch
+            order of whispers
+            vigil
+            durmand priory
+          "
+        >
+
+          <div class="wiki-record-topline">
+
+            <p class="wiki-record-type">
+              Event Record
+            </p>
+
+            <p class="wiki-record-date">
+              1325 AE
+            </p>
+
+          </div>
+
+          <h2>
+            Battle of Claw Island
+          </h2>
+
+          <p class="wiki-record-summary">
+            Pact forces and the Orders of Tyria fought
+            against Zhaitan's Risen for control of the
+            strategically important fortress at Claw Island.
+          </p>
+
+          <p class="wiki-record-tags">
+            CLAW ISLAND // RISEN // ZHAITAN //
+            ORDERS OF TYRIA
+          </p>
+
+          <span class="wiki-record-link">
+            Open Record →
+          </span>
+
+        </a>
+
+        ==========================================
+        END TEMPLATE
+        ==========================================
+        -->
+
+
+        <div
+          class="wiki-empty"
+          id="eventEmpty"
+        >
+
+          <strong>
+            The Event Archive is being assembled.
+          </strong>
+
+          <br>
+
+          Historical records will appear here as they
+          are added to the Living Lore Library.
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           NO RESULTS
+      ========================================= -->
+
+      <div
+        class="wiki-no-results"
+        id="eventNoResults"
+      >
+        No event records match that search.
+      </div>
+
+
+      <!-- ========================================
+           RETURN TO ROOT
+      ========================================= -->
+
+      <div class="wiki-back">
+
+        <a href="../index.html">
+          ← Return to The Road Through Time
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
+
+  <footer>
+
+    <div class="container">
+
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
+
+
+      <div class="footer-credits">
+
+        Written with contributions by members of
+
+        <a
+          href="https://liar.fyi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          [Liar]
+        </a>.
+
+        <br>
+
+        Site built by
+
+        <a
+          href="https://vng.quest"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Commander Q
+        </a>.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ========================================
+       SEARCH SCRIPT
+  ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      const search =
+        document.getElementById(
+          "eventSearch"
+        );
+
+      const count =
+        document.getElementById(
+          "eventResultCount"
+        );
+
+      const empty =
+        document.getElementById(
+          "eventEmpty"
+        );
+
+      const noResults =
+        document.getElementById(
+          "eventNoResults"
+        );
+
+
+      function getRecords() {
+
+        return Array.from(
+          document.querySelectorAll(
+            ".wiki-record"
+          )
+        );
+
+      }
+
+
+      function updateRecords() {
+
+        const records =
+          getRecords();
+
+        const query =
+          search.value
+            .toLowerCase()
+            .trim();
+
+        let visible = 0;
+
+
+        records.forEach(
+          (record) => {
+
+            const searchableText =
+              (
+                record.textContent +
+                " " +
+                (
+                  record.dataset.search ||
+                  ""
+                )
+              )
+              .toLowerCase();
+
+
+            const matches =
+              !query ||
+              searchableText.includes(
+                query
+              );
+
+
+            record.hidden =
+              !matches;
+
+
+            if (matches) {
+              visible++;
+            }
+
+          }
+        );
+
+
+        count.textContent =
+          `${visible} ${
+            visible === 1
+              ? "record"
+              : "records"
+          }`;
+
+
+        if (records.length === 0) {
+
+          empty.style.display =
+            "block";
+
+          noResults.style.display =
+            "none";
+
+          return;
+
+        }
+
+
+        empty.style.display =
+          "none";
+
+
+        if (
+          query &&
+          visible === 0
+        ) {
+
+          noResults.style.display =
+            "block";
+
+        } else {
+
+          noResults.style.display =
+            "none";
+
+        }
+
+      }
+
+
+      search.addEventListener(
+        "input",
+        updateRecords
+      );
+
+
+      updateRecords();
+
+    })();
+  </script>
+
+</body>
+</html>
