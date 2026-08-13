@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Commander Q's historical record of the Bloodstone, from its creation by the Seers during the previous Dragonrise to its later division, scattering, study, and destruction."
+  >
+
+  <meta name="theme-color" content="#070b14">
+
+  <title>
+    Bloodstone // The Records of Commander Q
+  </title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #070b14;
+      --background-deep: #03060c;
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
+
+      --border: #334155;
+      --border-soft: rgba(148, 163, 184, 0.18);
+
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
+
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
+
+      --quote: #c7d2e0;
+
+      --max-width: 820px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 150px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(214, 179, 106, 0.07),
+          transparent 32rem
+        ),
+        linear-gradient(
+          to bottom,
+          #090e18,
+          var(--background) 30rem
+        );
+
+      color: var(--ink);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
+
+      margin-inline: auto;
+    }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(3, 6, 12, 0.95);
+
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 66px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-small {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .home-link:hover {
+      color: var(--gold-bright);
+      transform: translateX(-3px);
+    }
+
+    /* ========================================
+       CHRONOLOGY
+    ======================================== */
+
+    .chronology {
+      position: sticky;
+      top: 66px;
+      z-index: 40;
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(7, 11, 20, 0.96);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .chronology-inner {
+      padding: 11px 0 13px;
+    }
+
+    .chronology-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+
+      margin-bottom: 8px;
+    }
+
+    .chronology-label,
+    .chronology-date {
+      margin: 0;
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .chronology-label {
+      color: var(--ink-faint);
+    }
+
+    .chronology-date {
+      color: var(--gold-bright);
+      font-weight: 700;
+    }
+
+    .history-rail {
+      position: relative;
+      height: 17px;
+    }
+
+    .history-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          to right,
+          rgba(214, 179, 106, 0.18),
+          rgba(214, 179, 106, 0.85),
+          rgba(214, 179, 106, 0.18)
+        );
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: 1px;
+      left: 5%;
+
+      width: 13px;
+      height: 13px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 12px
+        rgba(214, 179, 106, 0.38);
+
+      transform: translateX(-50%);
+
+      transition: left 400ms ease;
+    }
+
+    .chronology-context {
+      margin: 4px 0 0;
+
+      color: var(--ink-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+      text-align: center;
+    }
+
+    /* ========================================
+       BOOK HEADER
+    ======================================== */
+
+    .book-header {
+      padding: 80px 0 52px;
+      text-align: center;
+    }
+
+    .volume {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.67rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .book-header h1 {
+      margin: 17px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size:
+        clamp(
+          2.6rem,
+          8vw,
+          4.8rem
+        );
+
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      max-width: 650px;
+
+      margin: 18px auto 0;
+
+      color: var(--ink-muted);
+
+      font-style: italic;
+      font-size: 1.08rem;
+    }
+
+    .ornament {
+      width: 120px;
+
+      margin: 32px auto 0;
+
+      border: 0;
+      border-top: 1px solid var(--gold-muted);
+    }
+
+    /* ========================================
+       AUTHOR
+    ======================================== */
+
+    .author-card {
+      margin-bottom: 60px;
+
+      padding: 24px 26px;
+
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+
+      text-align: center;
+    }
+
+    .author-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .author-name {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .author-title {
+      margin: 5px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.91rem;
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       RECORD SUMMARY
+    ======================================== */
+
+    .record-summary {
+      margin-bottom: 68px;
+    }
+
+    .section-kicker {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.64rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .record-summary h2,
+    .chapter h2 {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size:
+        clamp(
+          1.65rem,
+          5vw,
+          2.25rem
+        );
+
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .record-summary p {
+      margin: 18px 0 0;
+    }
+
+    .signature {
+      margin-top: 28px;
+
+      color: var(--gold-bright);
+      font-style: italic;
+    }
+
+    /* ========================================
+       FACT GRID
+    ======================================== */
+
+    .fact-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+
+      margin-top: 28px;
+    }
+
+    .fact-card {
+      padding: 18px 20px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        rgba(15, 23, 42, 0.58);
+    }
+
+    .fact-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .fact-card p:last-child {
+      margin: 7px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 0.97rem;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    /* ========================================
+       RESEARCH NOTE
+    ======================================== */
+
+    .research-note {
+      margin: 28px 0;
+
+      padding: 20px 22px;
+
+      border-left: 2px solid var(--gold-muted);
+
+      background:
+        rgba(214, 179, 106, 0.045);
+    }
+
+    .research-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .research-note p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
+      font-size: 0.96rem;
+    }
+
+    /* ========================================
+       CHAPTERS
+    ======================================== */
+
+    .chapter {
+      padding: 48px 0;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .chapter-number {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .chapter p {
+      margin: 18px 0 0;
+    }
+
+    .chapter strong {
+      color: var(--gold-bright);
+      font-weight: 600;
+    }
+
+    .chapter-opening::first-letter {
+      float: left;
+
+      margin: 7px 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 3.6rem;
+      line-height: 0.75;
+    }
+
+    /* ========================================
+       LOCATION GRID
+    ======================================== */
+
+    .location-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+
+      margin-top: 28px;
+    }
+
+    .location-card {
+      padding: 19px 20px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        rgba(15, 23, 42, 0.58);
+    }
+
+    .location-card-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .location-card h3 {
+      margin: 6px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.06rem;
+      font-weight: 600;
+    }
+
+    .location-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       COMMANDER Q OBSERVATION
+    ======================================== */
+
+    .q-observation {
+      margin: 30px 0 6px;
+
+      padding: 21px 23px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(214, 179, 106, 0.05),
+          rgba(15, 23, 42, 0.45)
+        );
+    }
+
+    .q-observation-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .q-observation p:last-child {
+      margin: 9px 0 0;
+
+      color: var(--quote);
+      font-style: italic;
+    }
+
+    /* ========================================
+       QUESTION LIST
+    ======================================== */
+
+    .question {
+      margin-top: 28px;
+    }
+
+    .question h3 {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .question p {
+      margin: 8px 0 0;
+    }
+
+    /* ========================================
+       TRANSITION
+    ======================================== */
+
+    .transition {
+      padding: 58px 0 70px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .transition-label {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.63rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .transition h2 {
+      margin: 10px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .transition p {
+      margin: 16px 0 0;
+    }
+
+    .navigation-actions {
+      margin-top: 28px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 5px;
+
+      background:
+        rgba(15, 23, 42, 0.7);
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+
+      border-color:
+        rgba(214, 179, 106, 0.6);
+
+      color: var(--gold-bright);
+    }
+
+    .button-primary {
+      border-color:
+        rgba(214, 179, 106, 0.45);
+
+      background:
+        rgba(214, 179, 106, 0.08);
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    footer {
+      padding: 34px 0;
+
+      border-top:
+        1px solid var(--border-soft);
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.65rem;
+      line-height: 1.7;
+
+      text-align: center;
+    }
+
+    /* ========================================
+       MOBILE
+    ======================================== */
+
+    @media (max-width: 650px) {
+
+      html {
+        scroll-padding-top: 135px;
+      }
+
+      body {
+        font-size: 1rem;
+      }
+
+      .container {
+        width:
+          min(
+            100% - 24px,
+            var(--max-width)
+          );
+      }
+
+      .header-inner {
+        min-height: 60px;
+      }
+
+      .brand-small {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 0.88rem;
+      }
+
+      .home-link {
+        font-size: 0.62rem;
+      }
+
+      .chronology {
+        top: 60px;
+      }
+
+      .chronology-label {
+        font-size: 0.53rem;
+      }
+
+      .chronology-date {
+        font-size: 0.56rem;
+      }
+
+      .chronology-context {
+        font-size: 0.53rem;
+      }
+
+      .book-header {
+        padding: 58px 0 42px;
+      }
+
+      .author-card {
+        padding: 21px 14px;
+      }
+
+      .chapter {
+        padding: 40px 0;
+      }
+
+      .fact-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================
+       HEADER
+  ========================================= -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="../index.html"
+        class="brand"
+      >
+
+        <p class="brand-small">
+          The Historical Records of Commander Q
+        </p>
+
+        <p class="brand-name">
+          GWlll
+        </p>
+
+      </a>
+
+      <a
+        href="index.html"
+        class="home-link"
+      >
+        ← Items & Artifacts
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- ========================================
+       CHRONOLOGY
+  ========================================= -->
+
+  <aside class="chronology">
+
+    <div class="container chronology-inner">
+
+      <div class="chronology-top">
+
+        <p class="chronology-label">
+          Historical Position
+        </p>
+
+        <p
+          class="chronology-date"
+          id="currentDate"
+        >
+          Previous Dragonrise
+        </p>
+
+      </div>
+
+      <div class="history-rail">
+
+        <div class="history-line"></div>
+
+        <span
+          class="history-marker"
+          id="historyMarker"
+        ></span>
+
+      </div>
+
+      <p
+        class="chronology-context"
+        id="positionContext"
+      >
+        THE SEERS CREATE THE BLOODSTONE
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <main>
+
+    <!-- ========================================
+         BOOK HEADER
+    ========================================= -->
+
+    <section class="book-header">
+
+      <div class="container">
+
+        <p class="volume">
+          Items & Artifacts // Ancient Magical Record
+        </p>
+
+        <h1>
+          Bloodstone
+        </h1>
+
+        <p class="subtitle">
+          An ancient store of magic created by the Seers,
+          later divided by the Gods and scattered across Tyria.
+        </p>
+
+        <hr class="ornament">
+
+      </div>
+
+    </section>
+
+
+    <div class="container">
+
+      <!-- ========================================
+           AUTHOR
+      ========================================= -->
+
+      <section class="author-card">
+
+        <p class="author-label">
+          Compiled and Annotated By
+        </p>
+
+        <p class="author-name">
+          Commander Q
+        </p>
+
+        <p class="author-title">
+          Captain Commander of the Vanguard Knights
+          <br>
+          Researcher of Tyrian History and the Mists
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           OVERVIEW
+      ========================================= -->
+
+      <section class="record-summary">
+
+        <p class="section-kicker">
+          Overview
+        </p>
+
+        <h2>
+          An artifact older than Human history
+        </h2>
+
+        <p>
+          The <strong>Bloodstone</strong> is one of the oldest
+          known magical artifacts in Tyria. It was created by the
+          <strong>Seers</strong> during the previous rise of the
+          Elder Dragons, when those Dragons were consuming the
+          world's magic. The Seers gathered uncorrupted magic and
+          placed it within the Bloodstone so that the Dragons could
+          not reach it.
+        </p>
+
+        <p>
+          Thousands of years later, the <strong>Six Gods</strong>
+          came into possession of the artifact. Following the
+          spread of magic among the mortal races and the conflicts
+          that followed, the Gods divided the original Bloodstone
+          into five pieces. Four were tied to the schools of
+          Aggression, Destruction, Preservation, and Denial, while
+          the fifth became the <strong>Keystone</strong>.
+        </p>
+
+        <p>
+          The divided stones were sealed with the blood of
+          <strong>King Doric</strong> and placed within
+          <strong>Abaddon's Mouth</strong>. A later eruption
+          scattered them across Tyria. From that point forward,
+          the Bloodstones became part of the histories of guilds,
+          the Mursaat, the White Mantle, the Asura, the Elder
+          Dragons, and Balthazar.
+        </p>
+
+        <div class="fact-grid">
+
+          <div class="fact-card">
+            <p class="fact-label">
+              Creators
+            </p>
+            <p>
+              The Seers
+            </p>
+          </div>
+
+          <div class="fact-card">
+            <p class="fact-label">
+              Origin
+            </p>
+            <p>
+              Previous Dragonrise
+            </p>
+          </div>
+
+          <div class="fact-card">
+            <p class="fact-label">
+              Original Purpose
+            </p>
+            <p>
+              Preserve uncorrupted magic
+            </p>
+          </div>
+
+          <div class="fact-card">
+            <p class="fact-label">
+              Major Fragments
+            </p>
+            <p>
+              Five
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           HISTORICAL RECORD I
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="5"
+        data-date="Previous Dragonrise"
+        data-context="THE SEERS CREATE THE BLOODSTONE"
+      >
+
+        <p class="chapter-number">
+          Historical Record // I
+        </p>
+
+        <h2>
+          The Seers and the first Bloodstone
+        </h2>
+
+        <p class="chapter-opening">
+          During the previous Dragonrise, the Elder Dragons fed on
+          the magic of Tyria. The Seers were among the ancient
+          peoples attempting to survive that age, alongside races
+          such as the Mursaat, Forgotten, Dwarves, and Jotun.
+        </p>
+
+        <p>
+          The Seers began searching for a way to keep uncorrupted
+          magic away from the Dragons. Their earlier work produced
+          the <strong>Shadowstone</strong>, an artifact that could
+          increase the magical strength of a Seer. Their research
+          eventually led to the creation of the much greater
+          Bloodstone.
+        </p>
+
+        <p>
+          The Seers gathered a large amount of Tyria's remaining
+          uncorrupted magic and stored it within the stone. The
+          Mursaat refused to surrender their own magic to this plan
+          and instead used their Shadowcraft to remove themselves
+          from ordinary Tyria until the Dragonrise had passed.
+        </p>
+
+        <p>
+          The Elder Dragons eventually returned to sleep, and the
+          Bloodstone survived the age that had led to its creation.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            The first purpose of the Bloodstone was simple. The
+            Dragons were consuming magic, and the Seers needed
+            somewhere safe to put it. Nearly every later use of
+            the artifact came from people finding a new purpose
+            for something that had originally been built as a
+            place of protection.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           HISTORICAL RECORD II
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="17"
+        data-date="Ancient Human Era"
+        data-context="THE GODS ACQUIRE THE BLOODSTONE"
+      >
+
+        <p class="chapter-number">
+          Historical Record // II
+        </p>
+
+        <h2>
+          The Gods inherit an older artifact
+        </h2>
+
+        <p class="chapter-opening">
+          Thousands of years later, the Six Gods came to Tyria
+          and eventually established <strong>Arah</strong> in Orr.
+          They gathered many powerful magical artifacts there,
+          including the Bloodstone.
+        </p>
+
+        <p>
+          The surviving record does not explain exactly where the
+          Gods found the Bloodstone or how much they understood
+          about the Seers who created it. What is clear is that
+          the artifact was already ancient when it entered their
+          possession.
+        </p>
+
+        <p>
+          This is important because older Human accounts later
+          described the Gods as the creators of the Bloodstones.
+          That version of history remembered what the Gods did
+          with the artifact, but not the much older history that
+          came before them.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           HISTORICAL RECORD III
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="29"
+        data-date="1 BE"
+        data-context="THE GIFT OF MAGIC"
+      >
+
+        <p class="chapter-number">
+          Historical Record // III
+        </p>
+
+        <h2>
+          The Gift of Magic
+        </h2>
+
+        <p class="chapter-opening">
+          In <strong>1 BE</strong>, Abaddon helped give the mortal
+          races of Tyria much greater access to magic. Magic itself
+          was not new, since the Elder Races had used it long before
+          Humanity entered the historical record, but its wider
+          distribution changed how mortal civilizations used it.
+        </p>
+
+        <p>
+          Conflict grew as magical power became part of existing
+          rivalries. The fighting became dangerous enough that
+          <strong>King Doric</strong> traveled to Arah and asked
+          the Gods to intervene.
+        </p>
+
+        <p>
+          The Gods agreed that unrestricted access to magic could
+          not continue. Their answer was to change the Bloodstone
+          itself.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           HISTORICAL RECORD IV
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="38"
+        data-date="1 BE"
+        data-context="THE BLOODSTONES' UNMAKING"
+      >
+
+        <p class="chapter-number">
+          Historical Record // IV
+        </p>
+
+        <h2>
+          The Bloodstones' Unmaking
+        </h2>
+
+        <p class="chapter-opening">
+          The Gods divided the original Bloodstone into
+          <strong>five major pieces</strong>. Four were tied to
+          the recognized schools of magic: Aggression,
+          Destruction, Preservation, and Denial.
+        </p>
+
+        <p>
+          The fifth piece became the <strong>Keystone</strong>.
+          Unlike the four stones connected to the schools of
+          magic, the Keystone could bring the divided system
+          together again.
+        </p>
+
+        <p>
+          The Bloodstones were sealed with the blood of King
+          Doric, and his descendants were given responsibility
+          for protecting them. The five stones were then placed
+          within <strong>Abaddon's Mouth</strong>, the great
+          volcano in the Ring of Fire Islands.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Historical Accounts
+          </p>
+
+          <p>
+            Early Human histories said that the Gods created the
+            Bloodstones. Later discoveries showed that the Seers
+            created the original artifact during the previous
+            Dragonrise. The Gods were responsible for dividing
+            that older Bloodstone into the five stones remembered
+            by Human history.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           HISTORICAL RECORD V
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="47"
+        data-date="After the Exodus"
+        data-context="THE BLOODSTONES ARE SCATTERED"
+      >
+
+        <p class="chapter-number">
+          Historical Record // V
+        </p>
+
+        <h2>
+          The scattering of the Bloodstones
+        </h2>
+
+        <p class="chapter-opening">
+          The Bloodstones did not remain together in Abaddon's
+          Mouth. The volcano later erupted and scattered the
+          fragments across Tyria.
+        </p>
+
+        <p>
+          One Bloodstone remained within the Ring of Fire region.
+          Another reached the Maguuma Jungle. A third crashed
+          through the Shiverpeak Mountains and came to rest deep
+          underground. Other fragments eventually became connected
+          to the lands of Janthir.
+        </p>
+
+        <p>
+          Once separated, the stones became independent sources
+          of magical power. They were no longer hidden together
+          under the protection established by the Gods, and their
+          presence began to shape later conflicts.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           HISTORICAL RECORD VI
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="56"
+        data-date="Guild Wars Era"
+        data-context="MORTALS SEEK THE BLOODSTONES"
+      >
+
+        <p class="chapter-number">
+          Historical Record // VI
+        </p>
+
+        <h2>
+          The Bloodstones and the Guild Wars
+        </h2>
+
+        <p class="chapter-opening">
+          Human guilds began seeking control of the scattered
+          Bloodstones and other sources of magical power.
+          Competition between those guilds helped fuel the wars
+          that eventually drew Ascalon, Kryta, and Orr into a
+          larger conflict.
+        </p>
+
+        <p>
+          By this period, the original purpose of the Bloodstone
+          had largely disappeared from Human knowledge. What the
+          Seers had created to keep magic away from the Elder
+          Dragons had become something people sought for the power
+          it could provide.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           HISTORICAL RECORD VII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="66"
+        data-date="1072 AE"
+        data-context="THE WHITE MANTLE AND THE CHOSEN"
+      >
+
+        <p class="chapter-number">
+          Historical Record // VII
+        </p>
+
+        <h2>
+          The Maguuma Bloodstone
+        </h2>
+
+        <p class="chapter-opening">
+          By <strong>1072 AE</strong>, the Mursaat and their White
+          Mantle servants had learned to use Bloodstone as part of
+          a system involving magical sacrifice. The Eye of Janthir
+          identified magically gifted Humans known as the
+          <strong>Chosen</strong>, who were then taken by the
+          White Mantle.
+        </p>
+
+        <p>
+          The Chosen were told that their selection was an honor,
+          but they were instead being prepared for sacrifice.
+          Their souls could be captured within Mursaat
+          <strong>soul batteries</strong>, which were used to help
+          maintain the seals surrounding the Door of Komalie.
+        </p>
+
+        <p>
+          This use of the Bloodstone showed that the artifact
+          could be part of magic involving death and souls, though
+          the surviving evidence does not show that the Bloodstone
+          automatically consumed souls on its own. The Mursaat
+          combined it with their own ritual methods and magical
+          technology.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           HISTORICAL RECORD VIII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="75"
+        data-date="1078 AE"
+        data-context="THE BLOODSTONE CAVES EXPEDITION"
+      >
+
+        <p class="chapter-number">
+          Historical Record // VIII
+        </p>
+
+        <h2>
+          The Bloodstone Caves
+        </h2>
+
+        <p class="chapter-opening">
+          In <strong>1078 AE</strong>, the Asuran researcher
+          <strong>Gadd</strong> searched for another Bloodstone
+          beneath the Shiverpeak Mountains. This fragment had
+          crashed through the mountains after the eruption of
+          Abaddon's Mouth and eventually came to rest within the
+          underground region known as the
+          <strong>Bloodstone Caves</strong>.
+        </p>
+
+        <p>
+          The caves contained more than natural tunnels. Gadd's
+          expedition encountered ruins, magical defenses,
+          inscriptions, enchanted weapons, and a sealed entrance.
+          The party had to recover magical inscriptions before
+          it could proceed deeper into the complex.
+        </p>
+
+        <p>
+          The Bloodstone itself rested on the deepest known level.
+          Gadd studied the stone and attempted to extract its
+          magical essence, making the expedition one of the clearest
+          examples of Bloodstone being treated as something that
+          could be examined and used through research.
+        </p>
+
+        <p>
+          The entire area was also affected by an
+          <strong>Aura of the Bloodstone</strong>. Deaths within
+          the affected region could heal nearby creatures,
+          showing that a Bloodstone could change the magical
+          conditions around it even when no one was directly
+          using the stone.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            The Bloodstone itself is only part of the mystery.
+            The caves contain doors, inscriptions, wards, ruins,
+            and other signs that someone deliberately built or
+            changed the site. We know the Bloodstone crashed into
+            these mountains. We do not know whether the complex
+            was already there or whether someone built it around
+            the stone afterward.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           HISTORICAL RECORD IX
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="86"
+        data-date="1328–1329 AE"
+        data-context="THE MAGUUMA BLOODSTONE DESTABILIZES"
+      >
+
+        <p class="chapter-number">
+          Historical Record // IX
+        </p>
+
+        <h2>
+          The modern Dragonrise
+        </h2>
+
+        <p class="chapter-opening">
+          The return of the Elder Dragons again changed the flow
+          of magic across Tyria. As Dragons died, the magic they
+          had consumed returned to the world and moved through
+          Tyria's larger magical network.
+        </p>
+
+        <p>
+          After <strong>Mordremoth</strong> died in 1328 AE, the
+          Maguuma Bloodstone absorbed a large amount of released
+          magic. At the same time, the White Mantle had been
+          carrying out experiments around the artifact.
+        </p>
+
+        <p>
+          In <strong>1329 AE</strong>, the Bloodstone became
+          unstable and exploded. The blast transformed the
+          surrounding region into what is now known as
+          <strong>Bloodstone Fen</strong>.
+        </p>
+
+        <p>
+          Creatures exposed to large amounts of Bloodstone magic
+          became physically changed, aggressive, and increasingly
+          hungry for more magic. Spirits connected to the old
+          sacrifices also appeared around the shattered site.
+        </p>
+
+        <p>
+          Much of the magical power released by the explosion was
+          then absorbed by <strong>Balthazar</strong>, who used
+          that power during his later campaign against the Elder
+          Dragons.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           KNOWN LOCATIONS
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="93"
+        data-date="Modern Era"
+        data-context="KNOWN BLOODSTONE SITES"
+      >
+
+        <p class="chapter-number">
+          Known Locations
+        </p>
+
+        <h2>
+          Where the Bloodstones have been found
+        </h2>
+
+        <p class="chapter-opening">
+          The five Bloodstones were scattered across different
+          parts of Tyria, but the full path of every fragment has
+          not been reconstructed. Several major sites are known
+          with confidence.
+        </p>
+
+        <div class="location-grid">
+
+          <div class="location-card">
+
+            <p class="location-card-label">
+              Known Site
+            </p>
+
+            <h3>
+              Ring of Fire
+            </h3>
+
+            <p>
+              A Bloodstone remained within the Ring of Fire
+              Islands and was encountered during the events of
+              the Flameseeker Prophecies. Its modern condition
+              is uncertain.
+            </p>
+
+          </div>
+
+          <div class="location-card">
+
+            <p class="location-card-label">
+              Known Site
+            </p>
+
+            <h3>
+              Bloodstone Fen
+            </h3>
+
+            <p>
+              The Maguuma Bloodstone was used by the Mursaat and
+              White Mantle before exploding in 1329 AE. Its
+              destruction reshaped the surrounding region.
+            </p>
+
+          </div>
+
+          <div class="location-card">
+
+            <p class="location-card-label">
+              Known Site
+            </p>
+
+            <h3>
+              Bloodstone Caves
+            </h3>
+
+            <p>
+              The Shiverpeak Bloodstone rests somewhere beyond
+              the sealed caves near modern Bramble Pass. Its
+              present condition has not been confirmed.
+            </p>
+
+          </div>
+
+          <div class="location-card">
+
+            <p class="location-card-label">
+              Known Site
+            </p>
+
+            <h3>
+              Janthir
+            </h3>
+
+            <p>
+              Bloodstone material and major Bloodstone sites are
+              known from Janthir. The Mursaat also carried the
+              Keystone to Bava Nisos.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           PROPERTIES
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="96"
+        data-date="Historical Study"
+        data-context="KNOWN BLOODSTONE PROPERTIES"
+      >
+
+        <p class="chapter-number">
+          Properties
+        </p>
+
+        <h2>
+          What Bloodstone can do
+        </h2>
+
+        <p class="chapter-opening">
+          The main known property of Bloodstone is its ability to
+          store enormous amounts of magic. The original artifact
+          preserved uncorrupted magic through the previous
+          Dragonrise, and the divided stones continued to act as
+          major magical reservoirs.
+        </p>
+
+        <p>
+          Bloodstone can also affect the environment around it.
+          The Shiverpeak Bloodstone altered the effect of deaths
+          inside its caves, while the shattered Maguuma Bloodstone
+          flooded the surrounding area with unstable magic.
+        </p>
+
+        <p>
+          Bloodstone energy can be removed from the stone and used
+          separately. Gadd attempted to extract Bloodstone essence,
+          and later groups developed their own methods of using
+          Bloodstone fragments and concentrated Bloodstone magic.
+        </p>
+
+        <p>
+          Heavy exposure can also affect living creatures.
+          Bloodstone-crazed creatures have shown physical changes,
+          violent behavior, and a strong need to consume additional
+          magic.
+        </p>
+
+        <p>
+          The Mursaat also used Bloodstones as part of rituals
+          involving captured souls. It remains uncertain which of
+          these later uses were understood by the Seers when they
+          created the original artifact.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           HISTORICAL ACCOUNTS
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="97"
+        data-date="Historical Study"
+        data-context="RECONCILING THE OLD RECORDS"
+      >
+
+        <p class="chapter-number">
+          Historical Accounts
+        </p>
+
+        <h2>
+          Why older records name the Gods
+        </h2>
+
+        <p class="chapter-opening">
+          For much of recorded Human history, the Gods were
+          believed to have created the Bloodstones. This account
+          came from a time when knowledge of the Seers and the
+          previous Dragonrise was much more limited.
+        </p>
+
+        <p>
+          Later discoveries established that the original
+          Bloodstone was created by the Seers thousands of years
+          earlier. The Gods later found the artifact, used it in
+          their dealings with magic, and divided it into the five
+          stones known to later civilizations.
+        </p>
+
+        <p>
+          The older record was therefore not describing the
+          beginning of the artifact. It was describing the point
+          when the Bloodstone entered Human history.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           UNRESOLVED QUESTIONS
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="98"
+        data-date="Modern Study"
+        data-context="UNRESOLVED QUESTIONS"
+      >
+
+        <p class="chapter-number">
+          Unresolved Questions
+        </p>
+
+        <h2>
+          What the record still cannot answer
+        </h2>
+
+        <div class="question">
+
+          <h3>
+            Who built Bloodstone Caves?
+          </h3>
+
+          <p>
+            The caves contain doors, ruins, inscriptions, wards,
+            and other constructed features, but no surviving
+            record clearly identifies their builders.
+          </p>
+
+        </div>
+
+        <div class="question">
+
+          <h3>
+            Did the caves exist before the Bloodstone arrived?
+          </h3>
+
+          <p>
+            The Bloodstone is said to have crashed through the
+            mountains. It is not known whether it entered an older
+            underground complex or whether the site was built
+            around the stone later.
+          </p>
+
+        </div>
+
+        <div class="question">
+
+          <h3>
+            Who created the inscriptions?
+          </h3>
+
+          <p>
+            Similar markings appear around Bloodstones and within
+            Bloodstone Caves. Their origin has not been securely
+            tied to the Seers, Gods, Mursaat, or another people.
+          </p>
+
+        </div>
+
+        <div class="question">
+
+          <h3>
+            Which stone belonged to each school of magic?
+          </h3>
+
+          <p>
+            Four Bloodstones were tied to Aggression, Destruction,
+            Preservation, and Denial, but the known physical
+            stones have not been matched to those schools with
+            certainty.
+          </p>
+
+        </div>
+
+        <div class="question">
+
+          <h3>
+            What remains inside Bloodstone Caves?
+          </h3>
+
+          <p>
+            The ancient entrance still exists near Bramble Pass,
+            but the deeper complex and the current state of the
+            Shiverpeak Bloodstone remain unknown.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           COMMANDER Q NOTES
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="99"
+        data-date="Modern Study"
+        data-context="COMMANDER Q'S NOTES"
+      >
+
+        <p class="chapter-number">
+          Commander Q's Notes
+        </p>
+
+        <h2>
+          The history people kept adding to
+        </h2>
+
+        <p class="chapter-opening">
+          The Bloodstone has passed through so many hands that
+          almost every age understood it differently. The guilds
+          saw a source of power, the Mursaat found a tool they
+          could use in their rituals, the White Mantle built
+          belief around it, and Gadd approached it as something
+          that could be studied.
+        </p>
+
+        <p>
+          Even the oldest Human histories began too late. They
+          remembered the Gods dividing the Bloodstone and assumed
+          that was where the story started. Only later did we
+          learn that the artifact had already survived an entire
+          Dragonrise before Humanity knew it existed.
+        </p>
+
+        <p>
+          The part of the record I find most difficult to leave
+          alone is Bloodstone Caves. We know that a fragment
+          crashed through the mountains and ended up deep below
+          the surface, but there is an ancient sealed door leading
+          toward it. Beyond that door are ruins, inscriptions,
+          wards, and defenses.
+        </p>
+
+        <p>
+          The same entrance can still be found near Bramble Pass
+          centuries later. Orr sank and later rose again, the
+          coastline changed, and modern maps no longer resemble
+          the old ones perfectly, but the entrance remained in
+          place.
+        </p>
+
+        <p>
+          That gives us a useful historical anchor. What it does
+          not give us is an answer. Someone built that complex,
+          but the record does not yet tell us whether they built
+          it because the Bloodstone arrived or whether the stone
+          crashed into a place that was already there.
+        </p>
+
+        <p>
+          Until stronger evidence appears, that question belongs
+          in the archive exactly as it is: unanswered.
+        </p>
+
+        <p class="signature">
+          — Commander Q
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           RELATED RECORDS
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="100"
+        data-date="Archive Record"
+        data-context="RELATED HISTORICAL RECORDS"
+      >
+
+        <p class="chapter-number">
+          Related Records
+        </p>
+
+        <h2>
+          Follow the record further
+        </h2>
+
+        <p class="chapter-opening">
+          The history of the Bloodstone overlaps several larger
+          subjects within the archive. These records provide the
+          wider history surrounding its creation, later use, and
+          rediscovery.
+        </p>
+
+        <div class="location-grid">
+
+          <div class="location-card">
+            <p class="location-card-label">
+              Related Subject
+            </p>
+            <h3>
+              The Seers
+            </h3>
+            <p>
+              The ancient race responsible for the Shadowstone
+              and the original Bloodstone.
+            </p>
+          </div>
+
+          <div class="location-card">
+            <p class="location-card-label">
+              Related Subject
+            </p>
+            <h3>
+              Shadowstone
+            </h3>
+            <p>
+              An earlier Seer artifact tied to the research that
+              eventually produced the Bloodstone.
+            </p>
+          </div>
+
+          <div class="location-card">
+            <p class="location-card-label">
+              Related Event
+            </p>
+            <h3>
+              The Gift of Magic
+            </h3>
+            <p>
+              The period in which greater magical power was made
+              available to the mortal races of Tyria.
+            </p>
+          </div>
+
+          <div class="location-card">
+            <p class="location-card-label">
+              Related Location
+            </p>
+            <h3>
+              Bloodstone Caves
+            </h3>
+            <p>
+              The underground site containing the Shiverpeak
+              Bloodstone and several unresolved pieces of its
+              history.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           RETURN TO ARCHIVE
+      ========================================= -->
+
+      <section class="transition">
+
+        <p class="transition-label">
+          End of Record
+        </p>
+
+        <h2>
+          Return to the archive
+        </h2>
+
+        <p>
+          Continue through the Items & Artifacts archive to study
+          the objects that shaped the history, magic, and
+          civilizations of Tyria.
+        </p>
+
+        <div class="navigation-actions">
+
+          <a
+            href="index.html"
+            class="button button-primary"
+          >
+            ← Items & Artifacts
+          </a>
+
+          <a
+            href="../index.html"
+            class="button"
+          >
+            Living Lore Archives
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
+
+  <footer>
+
+    <div class="container">
+
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
+
+    </div>
+
+  </footer>
+
+
+  <!-- ========================================
+       CHRONOLOGY SCRIPT
+  ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      const sections =
+        document.querySelectorAll(
+          ".chapter[data-position]"
+        );
+
+      const marker =
+        document.getElementById(
+          "historyMarker"
+        );
+
+      const currentDate =
+        document.getElementById(
+          "currentDate"
+        );
+
+      const positionContext =
+        document.getElementById(
+          "positionContext"
+        );
+
+      const updatePosition =
+        (section) => {
+
+          const position =
+            section.dataset.position || "5";
+
+          const date =
+            section.dataset.date ||
+            "Historical Record";
+
+          const context =
+            section.dataset.context ||
+            "BLOODSTONE";
+
+          marker.style.left =
+            `${position}%`;
+
+          currentDate.textContent =
+            date;
+
+          positionContext.textContent =
+            context;
+        };
+
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+
+            const visible =
+              entries
+                .filter(
+                  (entry) =>
+                    entry.isIntersecting
+                )
+                .sort(
+                  (a, b) =>
+                    b.intersectionRatio -
+                    a.intersectionRatio
+                );
+
+            if (visible.length > 0) {
+              updatePosition(
+                visible[0].target
+              );
+            }
+          },
+          {
+            rootMargin:
+              "-35% 0px -45% 0px",
+
+            threshold: [
+              0,
+              0.15,
+              0.3,
+              0.5,
+              0.75
+            ]
+          }
+        );
+
+      sections.forEach(
+        (section) => {
+          observer.observe(section);
+        }
+      );
+    })();
+  </script>
+
+</body>
+</html>
