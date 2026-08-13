@@ -489,11 +489,12 @@
     }
 
     /* ========================================
-       EMPTY / NO RESULTS
+       NO RESULTS
     ======================================== */
 
-    .wiki-empty,
     .wiki-no-results {
+      display: none;
+
       width: min(820px, 100%);
 
       margin: 0 auto;
@@ -508,14 +509,6 @@
       color: var(--ink-muted);
 
       text-align: center;
-    }
-
-    .wiki-empty strong {
-      color: var(--gold);
-    }
-
-    .wiki-no-results {
-      display: none;
     }
 
     /* ========================================
@@ -794,7 +787,7 @@
           </span>
 
           <span id="itemResultCount">
-            0 records
+            1 record
           </span>
 
         </div>
@@ -811,46 +804,42 @@
         id="itemRecords"
       >
 
-        <!--
-        ==========================================
-        ITEM RECORD TEMPLATE
-        ==========================================
 
-        Copy this entire <a> block whenever you add
-        another item to the archive.
-
-        data-search can contain:
-        alternate names
-        item type
-        owners
-        creators
-        organizations
-        locations
-        eras
-        related events
-        magical properties
-        keywords
-
-        Example:
+        <!-- ========================================
+             BLOODSTONES
+        ========================================= -->
 
         <a
-          href="caladbolg/index.html"
+          href="bloodstone.html"
           class="wiki-record"
           data-search="
-            caladbolg
-            greatsword
-            sword
+            bloodstone
+            bloodstones
+            first bloodstone
+            seers
+            mursaat
+            king doric
+            human gods
+            magic
+            schools of magic
+            preservation
+            aggression
+            destruction
+            denial
+            keystone
+            bloodstone fen
+            maguuma
+            ring of fire
+            shiverpeaks
+            abaddon
+            white mantle
+            jade constructs
+            magic storage
+            elder dragons
+            dragonrise
             artifact
-            riannoc
-            trahearne
-            pact commander
-            pale tree
-            sylvari
-            the grove
-            orr
-            mordremoth
-            wyld hunt
-            1325 ae
+            magical artifact
+            ancient artifact
           "
         >
 
@@ -861,26 +850,32 @@
             </p>
 
             <p class="wiki-record-date">
-              1325 AE – Present
+              Ancient Past – Present
             </p>
 
           </div>
 
+
           <h2>
-            Caladbolg
+            The Bloodstones
           </h2>
 
+
           <p class="wiki-record-summary">
-            A powerful sylvari greatsword connected to
-            Riannoc, Trahearne, the Pale Tree, and the
-            Pact Commander across several major periods
-            of modern Tyrian history.
+            Ancient magical artifacts originating with the
+            Seers' efforts to preserve magic from the Elder
+            Dragons. The Bloodstone later became central to
+            Humanity's use of magic, King Doric, the division
+            of the schools of magic, and conflicts spanning
+            thousands of years of Tyrian history.
           </p>
 
+
           <p class="wiki-record-tags">
-            GREATSWORD // SYLVARI // PALE TREE //
-            TRAHEARNE // PACT COMMANDER
+            SEERS // MAGIC // KING DORIC //
+            SCHOOLS OF MAGIC // MURSAAT // BLOODSTONE
           </p>
+
 
           <span class="wiki-record-link">
             Open Record →
@@ -888,27 +883,6 @@
 
         </a>
 
-        ==========================================
-        END TEMPLATE
-        ==========================================
-        -->
-
-
-        <div
-          class="wiki-empty"
-          id="itemEmpty"
-        >
-
-          <strong>
-            The Item Archive is being assembled.
-          </strong>
-
-          <br>
-
-          Artifact and item records will appear here
-          as they are added to the Living Lore Library.
-
-        </div>
 
       </section>
 
@@ -1010,11 +984,6 @@
           "itemResultCount"
         );
 
-      const empty =
-        document.getElementById(
-          "itemEmpty"
-        );
-
       const noResults =
         document.getElementById(
           "itemNoResults"
@@ -1085,23 +1054,6 @@
               ? "record"
               : "records"
           }`;
-
-
-        if (records.length === 0) {
-
-          empty.style.display =
-            "block";
-
-          noResults.style.display =
-            "none";
-
-          return;
-
-        }
-
-
-        empty.style.display =
-          "none";
 
 
         if (
