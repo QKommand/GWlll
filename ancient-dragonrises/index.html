@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Commander Q's historical record of the ancient Dragonrises and the earliest known ages of Tyria."
+    content="Commander Q's historical record of the ancient Dragonrises, the Elder Dragons, the elder races, and the earliest surviving ages of Tyria."
   >
 
   <meta name="theme-color" content="#070b14">
@@ -435,7 +435,8 @@
     }
 
     .preface h2,
-    .chapter h2 {
+    .chapter h2,
+    .archive-note h2 {
       margin: 9px 0 0;
 
       color: var(--gold);
@@ -590,6 +591,44 @@
 
       color: var(--quote);
       font-style: italic;
+    }
+
+    /* ========================================
+       ARCHIVE NOTE
+    ======================================== */
+
+    .archive-note {
+      padding: 48px 0 54px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .archive-note p {
+      margin: 18px 0 0;
+    }
+
+    .archive-note strong {
+      color: var(--gold-bright);
+      font-weight: 600;
+    }
+
+    .uncertainty-item {
+      margin-top: 28px;
+    }
+
+    .uncertainty-item h3 {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .uncertainty-item p {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
     }
 
     /* ========================================
@@ -788,7 +827,8 @@
         padding: 21px 14px;
       }
 
-      .chapter {
+      .chapter,
+      .archive-note {
         padding: 40px 0;
       }
 
@@ -948,18 +988,29 @@
           Every historian eventually reaches a point where
           the road becomes difficult to follow. Written
           accounts disappear, dates become estimates, and
-          the surviving evidence is reduced to ruins, fossils,
-          magical artifacts, and the memories of peoples old
-          enough to remember a world that no longer exists.
+          what remains must be reconstructed from ruins,
+          fossils, magical artifacts, surviving testimony,
+          and records written thousands of years after the
+          events they describe.
         </p>
 
         <p>
           That is where this history begins. It does not begin
-          with humanity, the kingdoms of Ascalon and Kryta, or
-          even the arrival of the Six Gods. It begins much
-          earlier, with Tyria enduring one of the forces that
-          shaped nearly every age that came after: the awakening
-          of the Elder Dragons.
+          with humanity, the kingdoms of Ascalon and Kryta,
+          or even the arrival of the Human Gods. Tyria was
+          already ancient by then. Civilizations had risen,
+          fought, built, and disappeared long before humanity
+          entered the surviving record.
+        </p>
+
+        <p>
+          Among the greatest forces shaping that forgotten
+          world were the Elder Dragons. Their awakenings
+          consumed enormous amounts of magic and devastated
+          civilizations across Tyria. Those who survived the
+          last ancient Dragonrise did so through very different
+          choices, and many of those decisions would continue
+          shaping the world thousands of years later.
         </p>
 
         <div class="research-note">
@@ -969,12 +1020,13 @@
           </p>
 
           <p>
-            The earliest recorded Dragonrise is placed at
-            approximately 20,000 BE. A later and better
-            documented Dragonrise appears around 10,000 BE.
-            Because the evidence from these periods is incomplete,
-            events from the ancient past should not be treated
-            as one continuous awakening.
+            The oldest surviving chronological references place
+            an ancient Dragonrise around 20,000 BE, while the
+            better documented previous Dragonrise occurred roughly
+            10,000 years before the modern era. The surviving
+            evidence does not support treating every ancient
+            reference to the Elder Dragons as part of one
+            continuous awakening.
           </p>
 
         </div>
@@ -1004,34 +1056,51 @@
         <p class="chapter-opening">
           Around 20,000 BE, the surviving historical record
           places one of the earliest known awakenings of the
-          Elder Dragons. Very little is known about the
-          civilizations that witnessed it, which makes this
-          period one of the most difficult parts of Tyrian
-          history to reconstruct.
+          Elder Dragons. Little is known about the peoples who
+          witnessed this age, and even less survives concerning
+          the individual events of the Dragonrise itself.
         </p>
 
         <p>
-          What can be established is that the Elder Dragons were
-          already part of Tyria's history long before the nations
-          familiar to modern scholars existed. Their awakenings
-          were tied to enormous concentrations of magic, and
-          their presence could alter both the land and the
-          creatures living upon it.
+          What can be established is that the Elder Dragons
+          were already part of Tyria's history long before the
+          nations familiar to modern scholars existed. Their
+          awakenings were connected to the accumulation and
+          consumption of magic, and their influence could
+          transform both living creatures and the lands around
+          them.
         </p>
 
         <p>
-          Eventually, as the available magic of the world
-          diminished, the dragons returned to slumber. The cycle
-          did not end there, however, and later civilizations
-          would be forced to confront the same threat again.
+          Eventually the dragons returned to slumber. Whatever
+          civilizations survived were left to rebuild in a world
+          whose earliest history is now largely lost.
         </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Research Note // Ancient Evidence
+          </p>
+
+          <p>
+            The earliest portions of Tyrian history are
+            reconstructed from later accounts, archaeological
+            remains, ancient magical records, and the testimony
+            of long-lived peoples. The evidence establishes the
+            antiquity of the Dragon Cycle more clearly than it
+            establishes the exact sequence of events within each
+            awakening.
+          </p>
+
+        </div>
 
       </section>
 
 
       <section
         class="chapter"
-        data-position="22"
+        data-position="13"
         data-date="Ancient Ages"
         data-context="THE DRAGON CYCLE"
       >
@@ -1046,25 +1115,31 @@
 
         <p class="chapter-opening">
           The Elder Dragons did not remain active indefinitely.
-          Their awakenings followed a larger cycle connected to
-          the amount of magic available in the world.
+          Their awakenings formed part of a larger cycle tied to
+          the amount of magic available in Tyria.
         </p>
 
         <p>
-          When magic was abundant, the dragons could awaken,
-          consume it, and spread their corruption through both
-          living creatures and the regions surrounding them.
-          Their minions extended that influence even farther,
-          turning an individual dragon into the center of a much
-          larger ecological and magical disaster.
+          When magic accumulated in sufficient quantities, the
+          dragons awakened and began consuming it. Their influence
+          extended far beyond their own bodies through champions,
+          corrupted creatures, and other specialized minions.
+          Entire regions could be transformed as a dragon's
+          corruption spread through the surrounding environment.
         </p>
 
         <p>
-          As accessible magic became scarce, the Elder Dragons
-          gradually returned to slumber. Centuries or even
-          millennia could pass before another awakening, giving
-          new civilizations enough time to rise in a world that
-          might no longer remember what had come before.
+          As the world's accessible magic diminished, the dragons
+          eventually returned to dormancy. Thousands of years
+          could pass before another awakening, giving civilizations
+          time to rise in a world that might no longer remember
+          the previous one.
+        </p>
+
+        <p>
+          The cycle was therefore larger than any single kingdom
+          or people. Nations could rise and disappear entirely
+          between one awakening and the next.
         </p>
 
         <div class="q-observation">
@@ -1074,11 +1149,10 @@
           </p>
 
           <p>
-            Most histories are organized around kingdoms,
-            dynasties, and wars. The Elder Dragons require a
-            larger scale. Civilizations rose and fell within the
-            boundaries of a cycle that was older than any nation
-            that tried to understand it.
+            Most histories are measured through kings, dynasties,
+            and wars. The Elder Dragons require another scale
+            entirely. Civilizations existed inside a cycle older
+            than any nation that eventually tried to understand it.
           </p>
 
         </div>
@@ -1088,9 +1162,9 @@
 
       <section
         class="chapter"
-        data-position="42"
-        data-date="c. 10,000 BE"
-        data-context="THE PREVIOUS DRAGONRISE"
+        data-position="21"
+        data-date="Before c. 10,000 BE"
+        data-context="THE ANCIENT WORLD"
       >
 
         <p class="chapter-number">
@@ -1098,33 +1172,44 @@
         </p>
 
         <h2>
-          The previous Dragonrise
+          The world before the previous Dragonrise
         </h2>
 
         <p class="chapter-opening">
-          By approximately 10,000 BE, another Dragonrise appears
-          in the surviving record. Although the chronology remains
-          incomplete, this period is better understood than the
-          far older awakening that preceded it.
+          By the time of the previous Dragonrise, Tyria was
+          already home to powerful civilizations and ancient
+          peoples whose histories began long before humanity.
         </p>
 
         <p>
-          Enormous creatures known as the
-          <strong>Giganticus Lupicus</strong> still inhabited the
-          ancient world, but by around this period the last known
-          members had disappeared. Their remains endured long
-          after the creatures themselves, leaving behind physical
-          evidence of a world far older than the civilizations
-          known to modern Tyrians.
+          Among the creatures inhabiting this world were the
+          enormous <strong>Giganticus Lupicus</strong>, whose
+          skeletal remains can still be found across Tyria and
+          Elona. Their disappearance belongs to this remote period,
+          although the surviving evidence does not clearly
+          establish what caused their extinction.
         </p>
 
         <p>
-          Other peoples survived the same age. Among them were the
-          <strong>Seers</strong>, <strong>Mursaat</strong>,
-          <strong>Forgotten</strong>, <strong>Dwarves</strong>,
-          and <strong>Jotun</strong>. Their attempts to survive
-          the Dragonrise would shape much of the history that
-          followed.
+          Other peoples endured. The <strong>Seers</strong>,
+          <strong>Mursaat</strong>, <strong>Forgotten</strong>,
+          <strong>Dwarves</strong>, and <strong>Jotun</strong>
+          all existed before humanity became part of Tyria's
+          recorded history. These civilizations possessed magic,
+          settlements, artifacts, and traditions of their own.
+        </p>
+
+        <p>
+          Magic itself therefore predates the arrival of the
+          Human Gods and their later involvement with mortal
+          civilization.
+        </p>
+
+        <p>
+          When the Elder Dragons awakened again, these peoples
+          faced the same problem every later civilization would
+          eventually confront: how to survive enemies that fed
+          upon the very magic powering the world around them.
         </p>
 
       </section>
@@ -1132,9 +1217,9 @@
 
       <section
         class="chapter"
-        data-position="61"
+        data-position="30"
         data-date="Previous Dragonrise"
-        data-context="THE ELDER RACES RESIST"
+        data-context="THE ELDER RACES UNITE"
       >
 
         <p class="chapter-number">
@@ -1142,31 +1227,43 @@
         </p>
 
         <h2>
-          Resistance among the elder races
+          The elder races unite
         </h2>
 
         <p class="chapter-opening">
-          The civilizations of this age did not simply wait for
-          the dragons to destroy them. Several attempted to
-          organize resistance, preserve what they could, and find
-          ways to survive a threat that ordinary warfare could
-          not overcome.
+          Surviving Mursaat records describe an alliance formed
+          among several of the ancient races during the previous
+          Dragonrise.
         </p>
 
         <p>
-          The surviving record describes efforts at cooperation
-          among several elder races, although those alliances were
-          neither permanent nor free from conflict. The Forgotten
-          and Mursaat, for example, took part in efforts against
-          <strong>Zhaitan</strong>, but those efforts ultimately
-          failed to produce a military victory.
+          The alliance included the Seers, Mursaat, Forgotten,
+          Dwarves, and Jotun, but the races did not remain united
+          in how they believed the dragons should be confronted.
         </p>
 
         <p>
-          The deeper problem was the nature of the dragons
-          themselves. They were feeding on the same force that
-          powered the civilizations attempting to stop them:
-          <strong>magic</strong>.
+          The Mursaat account states that the
+          <strong>Mursaat and Forgotten</strong> favored direct
+          resistance, while the Seers focused on preserving magic
+          for the world that might exist after the dragons
+          returned to sleep. The same records accuse the Dwarves
+          and Jotun of withdrawing rather than joining the coming
+          assault.
+        </p>
+
+        <p>
+          These tablets preserve the Mursaat perspective, including
+          their resentment toward the other elder races. Their
+          accusation of betrayal should therefore be read as part
+          of that surviving account rather than as an impartial
+          judgment of the alliance.
+        </p>
+
+        <p>
+          What is clear is that cooperation failed. The elder
+          races had identified a common enemy, but they could not
+          agree on how Tyria should survive it.
         </p>
 
       </section>
@@ -1174,9 +1271,9 @@
 
       <section
         class="chapter"
-        data-position="77"
+        data-position="39"
         data-date="Previous Dragonrise"
-        data-context="THE FIRST BLOODSTONE"
+        data-context="THE ASSAULT ON ZHAITAN"
       >
 
         <p class="chapter-number">
@@ -1184,52 +1281,156 @@
         </p>
 
         <h2>
-          The first Bloodstone
+          The assault on Zhaitan
         </h2>
 
         <p class="chapter-opening">
-          When direct resistance failed, the Seers pursued a
-          different solution. Rather than defeat the Elder Dragons
-          through force, they sought a way to deny them access to
-          the uncorrupted magic that remained in the world.
+          The Mursaat and Forgotten eventually attempted direct
+          war against <strong>Zhaitan</strong>.
         </p>
 
         <p>
-          Their experiments included the
-          <strong>Shadowstone</strong>, an artifact connected to
-          the Seers' attempts to preserve magic beyond the reach
-          of the dragons. Those efforts eventually led to the
-          creation of the original <strong>Bloodstone</strong>,
-          one of the most consequential magical artifacts in
-          Tyrian history.
+          According to surviving Mursaat tablets, the two peoples
+          assembled armies that included
+          <strong>Jade Constructs</strong> and
+          <strong>Enchanted Armors</strong> and launched an
+          assault against the Elder Dragon.
         </p>
 
         <p>
-          The Seers gathered much of the world's remaining
-          uncorrupted magic and sealed it within the great
-          repository. By removing that magic from the open world,
-          they denied the Elder Dragons access to a significant
-          source of power.
+          The attack failed. Large numbers of Mursaat and
+          Forgotten were lost, and the surviving Mursaat blamed
+          the other elder races for refusing to join them.
         </p>
 
         <p>
-          At this point in history, the Bloodstone was not the
-          collection of separate stones known to later
-          civilizations. It existed as a single great artifact,
-          created for survival rather than conquest.
+          The failed campaign became one of the foundations of
+          their later hostility toward the Seers, Dwarves, and
+          Jotun. The Forgotten followed a different path afterward,
+          while the Mursaat increasingly turned toward preserving
+          themselves.
+        </p>
+
+        <p>
+          The dragons had proven that even the magical armies
+          of the ancient world could not easily destroy them.
+        </p>
+
+      </section>
+
+
+      <section
+        class="chapter"
+        data-position="47"
+        data-date="Previous Dragonrise"
+        data-context="GLINT AND THE FORGOTTEN"
+      >
+
+        <p class="chapter-number">
+          VI
+        </p>
+
+        <h2>
+          Glint and the Forgotten
+        </h2>
+
+        <p class="chapter-opening">
+          Direct war was not the only attempt to resist the Elder
+          Dragons. During the same ancient cycle, the Forgotten
+          developed magic capable of breaking
+          <strong>Glint</strong> free from Kralkatorrik's
+          corruption and control.
+        </p>
+
+        <p>
+          Glint had served as Kralkatorrik's champion, but the
+          Forgotten ritual restored her independent will. In
+          gratitude, she later sheltered the Forgotten while the
+          Elder Dragons remained active.
+        </p>
+
+        <p>
+          This stands as one of the clearest surviving examples
+          from the ancient world that an Elder Dragon's corruption
+          could be broken.
+        </p>
+
+        <p>
+          The Forgotten would remain connected to Glint long
+          after the dragons returned to sleep, and that
+          relationship would eventually become central to the
+          history of the Crystal Desert.
+        </p>
+
+      </section>
+
+
+      <section
+        class="chapter"
+        data-position="56"
+        data-date="Previous Dragonrise"
+        data-context="THE SEERS PRESERVE MAGIC"
+      >
+
+        <p class="chapter-number">
+          VII
+        </p>
+
+        <h2>
+          The Seers preserve magic
+        </h2>
+
+        <p class="chapter-opening">
+          The Seers pursued another solution. Rather than attempt
+          to defeat every Elder Dragon through force, they sought
+          to preserve magic itself beyond the dragons' reach.
+        </p>
+
+        <p>
+          Their research included the
+          <strong>Shadowstone</strong>, an artifact created
+          before the Bloodstone and connected to the Seers'
+          developing methods of containing and manipulating
+          magical power.
+        </p>
+
+        <p>
+          Those efforts eventually led to the creation of the
+          original <strong>Bloodstone</strong>.
+        </p>
+
+        <p>
+          The Bloodstone was not originally several separate
+          stones, nor was it created by the Human Gods. It began
+          as a single Seer artifact made during an age when the
+          Elder Dragons were consuming the magic of the world.
+        </p>
+
+        <p>
+          The Seers gathered and stored enormous amounts of
+          uncorrupted magic within it, keeping that power beyond
+          the dragons' reach until the cycle ended.
+        </p>
+
+        <p>
+          It was one of the most consequential acts of magical
+          preservation in Tyrian history.
         </p>
 
         <div class="research-note">
 
           <p class="research-note-label">
-            Research Note // Bloodstone
+            Research Note // Shadowstone and Bloodstone
           </p>
 
           <p>
-            Surviving accounts connect the Shadowstone to the
-            Seers' work on the Bloodstone, while other records
-            describe additional resources involved in its
-            creation. The exact process is not fully documented.
+            The Shadowstone predates the Bloodstone and represents
+            an earlier stage of Seer magical research. Surviving
+            records establish that sequence more clearly than they
+            establish every material, ritual, or process used in
+            the Bloodstone's creation. Later civilizations would
+            radically change its purpose, but its first known role
+            was preservation.
           </p>
 
         </div>
@@ -1241,11 +1442,12 @@
           </p>
 
           <p>
-            The later history of the Bloodstone makes it easy to
-            think of it as a source of conflict, but its origin
-            was very different. It was first created as a
-            survival measure by a civilization trying to keep
-            magic away from the Elder Dragons.
+            The Bloodstone is remembered most often for the wars,
+            sacrifices, and magical disasters connected to it in
+            later ages. Its beginning was almost the opposite. It
+            was created because the Seers were trying to leave
+            something behind for a world they were not certain
+            would survive.
           </p>
 
         </div>
@@ -1255,13 +1457,118 @@
 
       <section
         class="chapter"
-        data-position="90"
+        data-position="65"
+        data-date="Previous Dragonrise"
+        data-context="THE MURSAAT WITHDRAW"
+      >
+
+        <p class="chapter-number">
+          VIII
+        </p>
+
+        <h2>
+          The Mursaat disappear from the world
+        </h2>
+
+        <p class="chapter-opening">
+          After the failure against Zhaitan, the Mursaat adopted
+          a different strategy for surviving the remaining
+          Dragonrise.
+        </p>
+
+        <p>
+          Their own records state that they
+          <strong>"slid sideways into another layer of awareness"</strong>,
+          removing themselves from ordinary perception so that
+          the Elder Dragons could not consume their magic.
+        </p>
+
+        <p>
+          The Mursaat therefore survived not by defeating the
+          dragons, but by placing themselves outside the world
+          as most creatures perceived it.
+        </p>
+
+        <p>
+          This ability would remain central to their identity
+          thousands of years later, when humans encountered them
+          as the beings called the <strong>Unseen Ones</strong>.
+        </p>
+
+        <p>
+          Much later, magical artifacts such as the Orrian
+          <strong>Veil of Ilya</strong> would demonstrate that
+          this state of existence could be perceived or exposed
+          under the right conditions.
+        </p>
+
+        <p>
+          For now, however, the Mursaat withdrew and waited.
+        </p>
+
+      </section>
+
+
+      <section
+        class="chapter"
+        data-position="74"
         data-date="Late Previous Dragonrise"
+        data-context="THE WORLD WITHOUT MAGIC"
+      >
+
+        <p class="chapter-number">
+          IX
+        </p>
+
+        <h2>
+          The world without magic
+        </h2>
+
+        <p class="chapter-opening">
+          The Elder Dragons continued consuming Tyria's
+          accessible magic.
+        </p>
+
+        <p>
+          Mursaat records describe prosperous cities falling into
+          ruin while civilizations weakened or disappeared. As
+          magic became scarce, society across much of the world
+          entered a diminished age.
+        </p>
+
+        <p>
+          The exact experience of every surviving people is not
+          known. The Dwarves relied heavily upon their strongholds.
+          The Jotun survived but would never fully recover the
+          civilization or magical knowledge of their distant
+          ancestors. The Seers had hidden enormous reserves of
+          magic. The Mursaat had removed themselves from ordinary
+          reality.
+        </p>
+
+        <p>
+          Each civilization endured the same catastrophe
+          differently.
+        </p>
+
+        <p>
+          When the dragons finally returned to sleep, the world
+          they left behind was no longer the world that had faced
+          them.
+        </p>
+
+      </section>
+
+
+      <section
+        class="chapter"
+        data-position="82"
+        data-date="End of the Previous Dragonrise"
         data-context="THE DRAGONS RETURN TO SLUMBER"
       >
 
         <p class="chapter-number">
-          VI
+          X
         </p>
 
         <h2>
@@ -1269,27 +1576,83 @@
         </h2>
 
         <p class="chapter-opening">
-          The sealing of so much uncorrupted magic helped deny the
-          Elder Dragons the energy they sought, but it was only
-          one part of the struggle to survive the Dragonrise.
-          Different civilizations relied on different strategies,
-          including concealment, retreat, sacrifice, and the
-          preservation of knowledge.
+          Eventually, the available magic of Tyria became too
+          scarce to sustain the Elder Dragons' continued activity.
         </p>
 
         <p>
-          As accessible magic became increasingly scarce, the
-          Elder Dragons gradually returned to slumber. Tyria
-          survived another cycle, but the world that emerged from
-          it was different from the one that had entered it.
+          One by one, they returned to dormancy.
         </p>
 
         <p>
-          Entire species had disappeared, ancient civilizations
-          had been weakened or divided, and much of the world's
-          magic had been placed beyond ordinary reach. The dragons
-          were sleeping again, but the choices made during their
-          awakening would continue to shape the ages that followed.
+          Tyria survived another Dragonrise, but survival had
+          carried a cost. Ancient populations had been devastated,
+          cities had disappeared, alliances had collapsed, and
+          much of the world's remaining magical power had been
+          deliberately hidden away.
+        </p>
+
+        <p>
+          The Elder Dragons were sleeping again.
+        </p>
+
+        <p>
+          Their absence did not restore what had been lost.
+          The surviving civilizations now had to decide what
+          came next.
+        </p>
+
+      </section>
+
+
+      <section
+        class="chapter"
+        data-position="91"
+        data-date="After the Dragonrise"
+        data-context="MAGIC RETURNS TO TYRIA"
+      >
+
+        <p class="chapter-number">
+          XI
+        </p>
+
+        <h2>
+          Magic returns to Tyria
+        </h2>
+
+        <p class="chapter-opening">
+          With the dragons dormant, the Seers began releasing
+          the magic they had preserved.
+        </p>
+
+        <p>
+          The world receiving that magic was fragmented and very
+          different from the one that had existed before the
+          Dragonrise.
+        </p>
+
+        <p>
+          Mursaat accounts describe societies divided into
+          competing peoples and tribes, with conflict erupting
+          over control of the returning magical power.
+        </p>
+
+        <p>
+          The surviving elder races also carried old disagreements
+          into the new age. The Mursaat had not forgotten what
+          they considered the abandonment of their assault against
+          Zhaitan. The Seers had followed a strategy the Mursaat
+          despised. The Forgotten increasingly pursued their
+          relationship with Glint, while the Dwarves and Jotun
+          followed their own paths.
+        </p>
+
+        <p>
+          The common enemy was sleeping.
+        </p>
+
+        <p>
+          The alliance created to survive it was finished.
         </p>
 
       </section>
@@ -1298,44 +1661,156 @@
       <section
         class="chapter"
         data-position="100"
-        data-date="After the Dragonrise"
-        data-context="THE SURVIVORS INHERIT TYRIA"
+        data-date="Legacy of the Dragonrise"
+        data-context="WHAT SURVIVED THE ANCIENT WORLD"
       >
 
         <p class="chapter-number">
-          VII
+          XII
         </p>
 
         <h2>
-          The world left behind
+          What survived the ancient world
         </h2>
 
         <p class="chapter-opening">
-          When the Dragonrise ended, the civilizations that
-          remained inherited both a damaged world and the
-          consequences of the choices they had made to survive it.
+          The previous Dragonrise left behind more than ruins.
+          Many of the choices made during this age survived the
+          civilizations that first made them.
         </p>
 
         <p>
-          The Seers still had enemies. The Nursaat carried their
-          own memories of betrayal. The Forgotten preserved
-          knowledge that would become important thousands of years
-          later, while the Dwarves and jJotun followed very
-          different paths through the ages that came after.
+          The <strong>Bloodstone</strong> remained as a vast
+          reservoir of Seer-preserved magic, while the
+          <strong>Shadowstone</strong> survived as evidence of
+          the magical research that preceded it.
         </p>
 
         <p>
-          The Bloodstone also remained, still holding the magic
-          that had once been hidden from the Elder Dragons. Its
-          purpose would eventually change, and future civilizations
-          would use it in ways its creators could never have
-          intended.
+          The Mursaat retained their ability to exist beyond
+          ordinary perception and continued using powerful
+          constructs and magical weapons.
         </p>
 
         <p>
-          The next part of the record follows the peoples who
-          survived this ancient age and examines what became of
-          them after the dragons returned to sleep.
+          The Forgotten preserved knowledge capable of breaking
+          Elder Dragon corruption and maintained their
+          relationship with Glint.
+        </p>
+
+        <p>
+          Dwarven fortifications and magical safeguards survived
+          long beyond the people who first constructed them, while
+          the Jotun endured as descendants of a civilization whose
+          ancient magical achievements greatly exceeded those
+          known to later generations.
+        </p>
+
+        <p>
+          These remnants became part of the foundation upon which
+          later peoples would build their own histories.
+        </p>
+
+        <p>
+          Humanity had not yet entered this story. The gods
+          worshiped by later human civilizations had not yet
+          become part of Tyria's recorded affairs.
+        </p>
+
+        <p>
+          The world was already old.
+        </p>
+
+      </section>
+
+
+      <section class="archive-note">
+
+        <p class="section-kicker">
+          Archive Note
+        </p>
+
+        <h2>
+          Where the record remains uncertain
+        </h2>
+
+        <p>
+          Ancient history rarely leaves one clean account.
+          Some events are supported by physical remains and
+          surviving records, while others reach us through the
+          histories of peoples who had their own loyalties,
+          enemies, and interpretations of what happened.
+        </p>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            Giganticus Lupicus
+          </h3>
+
+          <p>
+            Their existence in the ancient world is established
+            through widespread remains, but the surviving evidence
+            does not clearly explain the circumstances of their
+            disappearance.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            The Mursaat account
+          </h3>
+
+          <p>
+            Much of what is known about the failed alliance
+            against the Elder Dragons survives through Mursaat
+            tablets. Their descriptions of the Seers, Dwarves,
+            and Jotun preserve Mursaat grievances and should not
+            automatically be treated as a neutral account.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            The Forgotten chronology
+          </h3>
+
+          <p>
+            Ancient Mursaat records place the Forgotten beside
+            them during the previous Dragonrise and describe
+            their later movement toward the Crystal Desert.
+            Other surviving chronologies place the departure of
+            the beings called the Serpents from human lands much
+            later. The surviving records do not align cleanly.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            Creation traditions
+          </h3>
+
+          <p>
+            Accounts concerning the creation of Tyria, the
+            earliest origins of the Elder Dragons, or events
+            beyond the oldest surviving historical evidence
+            should be treated as ancient traditions unless
+            stronger evidence independently confirms them.
+          </p>
+
+        </div>
+
+        <p>
+          The absence of certainty is not a reason to discard
+          these accounts. It is simply part of studying a period
+          whose witnesses lived thousands of years before modern
+          history began.
         </p>
 
       </section>
@@ -1348,14 +1823,24 @@
         </p>
 
         <h2>
-          The road continues
+          The world after the dragons
         </h2>
 
         <p>
-          The Dragonrise explains how the ancient world was
-          transformed, but the history of that world cannot be
-          understood without following the civilizations that
-          survived it.
+          The Dragonrise ended, but its consequences did not.
+          The Seers had preserved the world's magic. The Mursaat
+          had survived by abandoning ordinary reality. The
+          Forgotten had freed Glint. The Dwarves had endured in
+          their strongholds, and the Jotun survived the collapse
+          of a civilization whose former achievements would
+          increasingly become legend.
+        </p>
+
+        <p>
+          With the Elder Dragons sleeping, these peoples entered
+          a new age. Their old alliance was gone, their
+          disagreements remained, and control of magic would soon
+          create new conflicts among the survivors.
         </p>
 
         <p class="next-title">
@@ -1363,10 +1848,11 @@
         </p>
 
         <p>
-          The next archive follows the Seers, mursaat, Forgotten,
-          Dwarves, and Jotun as they emerged from the Dragonrise
-          and began shaping the world that would eventually be
-          inherited by later civilizations.
+          The next archive follows the Seers, Mursaat, Forgotten,
+          Dwarves, and Jotun after the Dragonrise, including the
+          return of magic, the decline of ancient alliances, the
+          Seer–Mursaat conflict, and the civilizations whose
+          remains would survive into the modern age.
         </p>
 
         <div class="navigation-actions">
