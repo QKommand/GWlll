@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Commander Q's historical record of Abaddon's Rebellion, his imprisonment, and the Exodus of the Human Gods."
+    content="Commander Q's historical record of the Exodus of the Gods, their departure from Arah, the beginning of the Mouvelian Era, and the world left behind after direct Divine rule ended."
   >
 
   <meta name="theme-color" content="#070b14">
@@ -434,7 +434,8 @@
     }
 
     .preface h2,
-    .chapter h2 {
+    .chapter h2,
+    .archive-note h2 {
       margin: 9px 0 0;
 
       color: var(--gold);
@@ -450,7 +451,8 @@
       line-height: 1.25;
     }
 
-    .preface p {
+    .preface p,
+    .archive-note p {
       margin: 18px 0 0;
     }
 
@@ -548,65 +550,6 @@
     }
 
     /* ========================================
-       IMPACT GRID
-    ======================================== */
-
-    .impact-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-      gap: 14px;
-
-      margin-top: 28px;
-    }
-
-    .impact-card {
-      padding: 19px 20px;
-
-      border: 1px solid var(--border-soft);
-
-      background:
-        rgba(15, 23, 42, 0.58);
-    }
-
-    .impact-card-label {
-      margin: 0;
-
-      color: var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.59rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .impact-card h3 {
-      margin: 6px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.06rem;
-      font-weight: 600;
-    }
-
-    .impact-card p:last-child {
-      margin: 8px 0 0;
-
-      color: var(--ink-muted);
-
-      font-size: 0.9rem;
-      line-height: 1.65;
-    }
-
-    /* ========================================
        COMMANDER Q OBSERVATION
     ======================================== */
 
@@ -647,6 +590,35 @@
 
       color: var(--quote);
       font-style: italic;
+    }
+
+    /* ========================================
+       ARCHIVE NOTE
+    ======================================== */
+
+    .archive-note {
+      padding: 48px 0 54px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .uncertainty-item {
+      margin-top: 28px;
+    }
+
+    .uncertainty-item h3 {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .uncertainty-item p {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
     }
 
     /* ========================================
@@ -846,12 +818,9 @@
         padding: 21px 14px;
       }
 
-      .chapter {
+      .chapter,
+      .archive-note {
         padding: 40px 0;
-      }
-
-      .impact-grid {
-        grid-template-columns: 1fr;
       }
 
       .navigation-actions {
@@ -954,7 +923,7 @@
         class="chronology-context"
         id="positionContext"
       >
-        ABADDON'S REBELLION
+        THE EXODUS OF THE GODS
       </p>
 
     </div>
@@ -966,7 +935,7 @@
 
     <!-- ========================================
          BOOK HEADER
-    ========================================= -->
+    ======================================== -->
 
     <section class="book-header">
 
@@ -981,8 +950,10 @@
         </h1>
 
         <p class="subtitle">
-          On Abaddon's Rebellion, the destruction left by
-          Divine war, and the departure of the Five from Tyria.
+          On the final withdrawal from Arah,
+          the end of direct Divine rule, and the
+          beginning of a world left increasingly
+          in mortal hands.
         </p>
 
         <hr class="ornament">
@@ -1028,33 +999,60 @@
         </p>
 
         <h2>
-          When disagreement became Divine war
+          The second withdrawal
         </h2>
 
         <p>
-          The previous record ended with Abaddon refusing to
-          accept the restriction of the Gift of Magic. His
-          opposition did not remain a dispute within the
-          pantheon. With the Margonites at his side, Abaddon
-          turned against the other Gods and brought Divine
-          conflict directly into the mortal world.
+          The Gods had withdrawn once before.
         </p>
 
         <p>
-          The consequences were greater than a change in
-          religion or political power. Seas disappeared,
-          landscapes were poisoned, boundaries between Tyria
-          and the Mists were damaged, and an entire Human
-          civilization was transformed by its allegiance to
-          a fallen God.
+          During the height of the Divine Age, their radiance
+          made prolonged contact dangerous to mortals. They
+          gradually stopped appearing openly and retreated into
+          Arah, where they continued to govern, preserve
+          artifacts, receive petitions, and influence the world
+          around them.
         </p>
 
         <p>
-          When the war ended, the surviving Gods faced the
-          evidence of what beings like themselves could do
-          simply by fighting upon Tyria. Their answer was
-          departure.
+          That was not the Exodus.
         </p>
+
+        <p>
+          The Exodus came only after the Gift of Magic, the
+          division of the Bloodstone, Abaddon's rebellion, and a
+          Divine war severe enough to turn the Crystal Sea into
+          desert.
+        </p>
+
+        <p>
+          In <strong>0 AE</strong>, the remaining Gods made a
+          different choice. This time they did not withdraw
+          behind the walls of their city.
+        </p>
+
+        <p>
+          They left physical Tyria.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Historical Caution // Why They Left
+          </p>
+
+          <p>
+            Later Human religious traditions describe the
+            withdrawal as an act of restraint: direct Divine
+            intervention had repeatedly produced consequences
+            that endangered the world the Gods intended to
+            protect. This interpretation is important, but it
+            survives through religious testimony rather than a
+            complete record of the deliberations among the Five.
+          </p>
+
+        </div>
 
         <p class="signature">
           — Commander Q
@@ -1071,7 +1069,7 @@
         class="chapter"
         data-position="5"
         data-date="0 AE"
-        data-context="ABADDON DECLARES WAR"
+        data-context="AFTER THE WAR WITH ABADDON"
       >
 
         <p class="chapter-number">
@@ -1079,47 +1077,51 @@
         </p>
 
         <h2>
-          Abaddon turns against the Five
+          A pantheon changed by war
         </h2>
 
         <p class="chapter-opening">
-          Abaddon's opposition to the restriction of magic
-          developed into open rebellion against the other
-          <strong>Five Gods</strong>. He gathered his followers,
-          including the increasingly transformed
-          <strong>Margonites</strong>, and prepared for war
-          against the pantheon.
+          Abaddon's defeat left the Divine order fundamentally
+          changed.
         </p>
 
         <p>
-          The Margonites had once been a Human maritime
-          civilization of the Crystal Sea. Their devotion to
-          Abaddon now carried them into a very different future.
-          Through his power, many were transformed into demonic
-          beings capable of serving as soldiers and servants
-          beyond the limits of ordinary Human life.
+          The God who had once governed knowledge, secrets, and
+          water alongside the rest of the pantheon was now
+          imprisoned within the <strong>Realm of Torment</strong>.
+          His worship was suppressed, his name removed from
+          accepted religious life, and the surviving pantheon
+          continued as Five.
         </p>
 
         <p>
-          Abaddon's forces eventually assaulted the
-          <strong>Gates of Heaven</strong>, bringing the
-          rebellion into direct conflict with the combined
-          power of the other Gods.
+          The world around them had also changed.
         </p>
 
-        <div class="research-note">
+        <p>
+          The Crystal Sea had been devastated during the war.
+          The <strong>Crystal Desert</strong> and
+          <strong>Desolation</strong> remained as permanent
+          evidence of what Divine conflict could do to the
+          physical world.
+        </p>
 
-          <p class="research-note-label">
-            Research Note // The Margonites
+        <p>
+          The magical crisis that began among mortals had ended
+          with Gods fighting one another.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
           </p>
 
           <p>
-            Jadoth and the beginning of the Margonite
-            transformation were introduced in the previous
-            volume. By this stage of the record, the important
-            change is political as much as physical: a Human
-            civilization devoted to Abaddon had become the
-            military body of his rebellion.
+            The lesson of the war was larger than Abaddon.
+            If Gods could destroy landscapes while settling
+            their own disputes, then victory did not remove the
+            danger of Divine intervention. It proved it.
           </p>
 
         </div>
@@ -1133,9 +1135,9 @@
 
       <section
         class="chapter"
-        data-position="21"
+        data-position="14"
         data-date="0 AE"
-        data-context="WAR AMONG THE GODS"
+        data-context="ARAH AFTER THE DIVINE WAR"
       >
 
         <p class="chapter-number">
@@ -1143,45 +1145,42 @@
         </p>
 
         <h2>
-          Divine war reaches the mortal world
+          The Five remain in Arah
         </h2>
 
         <p class="chapter-opening">
-          The struggle between Abaddon and the Five was unlike
-          the mortal wars that had followed the Gift of Magic.
-          These were beings capable of exerting extraordinary
-          magical power directly upon the world around them,
-          and the landscape became part of the battlefield.
+          Abaddon's defeat did not instantly empty Arah.
         </p>
 
         <p>
-          The conflict centered upon the region of the
-          <strong>Crystal Sea</strong> and the lands that
-          bordered it. What had been a great inland sea
-          surrounded by inhabited and fertile territory was
-          exposed to the destructive force of Divine warfare.
+          The remaining Gods still possessed the city that had
+          served as the center of Divine life for generations.
+          Its temples, reliquaries, vaults, palaces, gardens,
+          arsenals, and collections remained around them.
         </p>
 
         <p>
-          Abaddon was ultimately forced toward the location
-          that would become known as the
-          <strong>Mouth of Torment</strong>, where the final
-          battle between the fallen God and the Five took place.
+          The original Bloodstone was no longer among those
+          treasures. It had been divided and removed from the
+          city as part of the response to the magical wars.
         </p>
 
-        <div class="q-observation">
+        <p>
+          Abaddon's reliquary remained, though later hidden and
+          removed from accepted worship.
+        </p>
 
-          <p class="q-observation-label">
-            Commander Q // Observation
-          </p>
+        <p>
+          Other collections continued to preserve artifacts and
+          knowledge gathered during the Divine Age, including
+          works inherited from civilizations far older than Arah
+          itself.
+        </p>
 
-          <p>
-            Mortal wars can redraw a border. Divine war
-            redrew the map. That difference appears to have
-            mattered greatly to the Gods who survived it.
-          </p>
-
-        </div>
+        <p>
+          For a brief final period, the city still housed the
+          Gods who had survived the conflict.
+        </p>
 
       </section>
 
@@ -1192,9 +1191,9 @@
 
       <section
         class="chapter"
-        data-position="38"
+        data-position="23"
         data-date="0 AE"
-        data-context="ABADDON IS DEFEATED"
+        data-context="THE DECISION TO WITHDRAW"
       >
 
         <p class="chapter-number">
@@ -1202,86 +1201,59 @@
         </p>
 
         <h2>
-          The Five defeat Abaddon
+          The decision to leave Tyria
         </h2>
 
         <p class="chapter-opening">
-          Abaddon was defeated by the combined strength of
-          the other Gods. His fall ended the immediate Divine
-          war, but the victory did not restore the region that
-          had become its battlefield.
+          The remaining Gods eventually decided that they would
+          no longer rule the physical world through direct
+          presence.
         </p>
 
         <p>
-          The destruction altered the landscape on an enormous
-          scale. The <strong>Crystal Sea</strong> was transformed
-          into the <strong>Crystal Desert</strong>, while the
-          lands farther south became the sulfurous region known
-          as <strong>the Desolation</strong>.
+          Later religious accounts explain this choice through
+          the consequences of Divine intervention. The Gods had
+          attempted to guide mortal civilizations, regulate
+          magic, answer appeals, and reshape the world when they
+          believed intervention necessary.
         </p>
 
         <p>
-          At the site of Abaddon's defeat, the damage reached
-          beyond geography. A tear formed between the physical
-          world and the Mists, creating the
-          <strong>Mouth of Torment</strong> and connecting the
-          region to the <strong>Realm of Torment</strong>.
+          Those actions had accomplished extraordinary things.
+          They had also produced extraordinary damage.
         </p>
 
-        <div class="impact-grid">
+        <p>
+          The Gift of Magic had been followed by destructive
+          wars. Restricting that Gift helped provoke Abaddon's
+          rebellion. The resulting Divine conflict destroyed a
+          sea and scarred entire regions.
+        </p>
 
-          <div class="impact-card">
+        <p>
+          Withdrawal offered another path.
+        </p>
 
-            <p class="impact-card-label">
-              Former Sea
-            </p>
+        <p>
+          Instead of remaining physical rulers who could be
+          drawn repeatedly into the struggles of the world, the
+          Gods would place distance between themselves and
+          Tyria.
+        </p>
 
-            <h3>
-              Crystal Desert
-            </h3>
+        <div class="research-note">
 
-            <p>
-              The Crystal Sea was destroyed and its former
-              region became the vast Crystal Desert.
-            </p>
+          <p class="research-note-label">
+            Research Note // Motive
+          </p>
 
-          </div>
-
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              Southern Lands
-            </p>
-
-            <h3>
-              The Desolation
-            </h3>
-
-            <p>
-              Abaddon's influence and defeat left the lands
-              south of the Desert poisoned by sulfurous wastes.
-            </p>
-
-          </div>
-
-
-          <div class="impact-card">
-
-            <p class="impact-card-label">
-              Breach
-            </p>
-
-            <h3>
-              Mouth of Torment
-            </h3>
-
-            <p>
-              The site of the final battle became a rupture
-              connecting Tyria with the Realm of Torment.
-            </p>
-
-          </div>
+          <p>
+            The broad decision to withdraw is established.
+            Claims about the individual motives of Dwayna,
+            Balthazar, Melandru, Lyssa, or Grenth should remain
+            separate from the historical narrative unless a
+            surviving source records them directly.
+          </p>
 
         </div>
 
@@ -1294,9 +1266,9 @@
 
       <section
         class="chapter"
-        data-position="55"
+        data-position="33"
         data-date="0 AE"
-        data-context="THE REALM OF TORMENT"
+        data-context="THE EXODUS"
       >
 
         <p class="chapter-number">
@@ -1304,39 +1276,54 @@
         </p>
 
         <h2>
-          Abaddon is imprisoned beyond Tyria
+          The Exodus
         </h2>
 
         <p class="chapter-opening">
-          The Five did not destroy Abaddon. Instead, they
-          imprisoned the fallen God and his surviving followers
-          within the <strong>Realm of Torment</strong>, where
-          Divine restraints were created to prevent him from
-          returning to the mortal world.
+          In <strong>0 AE</strong>, the remaining Gods departed
+          physical Tyria and withdrew into the
+          <strong>Mists</strong>.
         </p>
 
         <p>
-          <strong>Balthazar</strong> forged the chains used
-          to bind Abaddon, while many of the
-          <strong>Forgotten</strong> were given responsibility
-          for guarding the prison and the passages associated
-          with it.
+          The event became known as the
+          <strong>Exodus of the Gods</strong>.
         </p>
 
         <p>
-          The conflict also carried pieces of the mortal world
-          into the Mists. The <strong>Temple of the Six Gods</strong>
-          was pulled into the Realm of Torment as Abaddon and
-          his followers were imprisoned.
+          Unlike the earlier retreat recorded through Malchor's
+          statues, this was not simply the end of public
+          appearances.
         </p>
 
         <p>
-          Imprisonment ended Abaddon's freedom, but it did not
-          end his ability to influence events. From within the
-          Realm of Torment, he would spend more than a thousand
-          years working through followers and servants in
-          preparation for another attempt to escape.
+          Arah itself was left behind.
         </p>
+
+        <p>
+          The Gods no longer lived behind its walls, received
+          mortal visitors in the city, or governed Tyria from a
+          physical Divine capital.
+        </p>
+
+        <p>
+          The age in which mortals and Gods occupied the same
+          city had ended.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            The first retreat changed how mortals could see
+            their Gods. The Exodus changed where the Gods
+            existed.
+          </p>
+
+        </div>
 
       </section>
 
@@ -1347,9 +1334,9 @@
 
       <section
         class="chapter"
-        data-position="70"
+        data-position="43"
         data-date="0 AE"
-        data-context="ABADDON IS ERASED FROM HISTORY"
+        data-context="THE GODS ENTER THE MISTS"
       >
 
         <p class="chapter-number">
@@ -1357,46 +1344,44 @@
         </p>
 
         <h2>
-          The Five bury the memory of Abaddon
+          Beyond the physical world
         </h2>
 
         <p class="chapter-opening">
-          Imprisoning Abaddon addressed the physical danger he
-          posed, but the Five also acted against his influence
-          upon mortal civilization. They attempted to remove
-          knowledge of the fallen God from the historical and
-          religious record.
+          Departure from Tyria did not mean that the Gods ceased
+          to exist.
         </p>
 
         <p>
-          Abaddon's worship was suppressed, records associated
-          with him were destroyed or sealed, and his great
-          temple in <strong>Orr</strong> was sunk beneath the
-          region now known as the
-          <strong>Straits of Devastation</strong>.
+          They entered the Mists, where Divine realms and
+          domains continued beyond the physical world.
         </p>
 
         <p>
-          The result was an unusual historical gap. Later
-          generations could remember the actions of
-          <strong>the Gods</strong> without necessarily knowing
-          that Abaddon had once stood among them or understanding
-          his individual role in events such as the Gift of Magic.
+          <strong>Grenth</strong> remained connected with the
+          Underworld and the judgment of the dead.
+          Other Gods likewise continued to possess realms,
+          servants, temples, and spiritual influence beyond
+          Tyria.
         </p>
 
-        <div class="q-observation">
+        <p>
+          Abaddon remained imprisoned within the Realm of
+          Torment rather than joining the Five in their new
+          relationship with the world.
+        </p>
 
-          <p class="q-observation-label">
-            Commander Q // Observation
-          </p>
+        <p>
+          The Exodus therefore created distance rather than
+          disappearance.
+        </p>
 
-          <p>
-            Destroying a record does not undo the event recorded
-            within it. It only changes which generation has to
-            rediscover the truth later.
-          </p>
-
-        </div>
+        <p>
+          Mortals could no longer travel to Arah and expect to
+          find the pantheon physically waiting there, but the
+          Mists remained connected to mortal religion, death,
+          prophecy, and magic.
+        </p>
 
       </section>
 
@@ -1407,9 +1392,9 @@
 
       <section
         class="chapter"
-        data-position="84"
-        data-date="0 AE"
-        data-context="THE FIVE LEAVE TYRIA"
+        data-position="52"
+        data-date="Early AE"
+        data-context="DIVINE CONNECTIONS REMAIN"
       >
 
         <p class="chapter-number">
@@ -1417,52 +1402,41 @@
         </p>
 
         <h2>
-          The Five leave the physical world
+          The Gods were distant, not silent
         </h2>
 
         <p class="chapter-opening">
-          The war against Abaddon demonstrated the danger
-          created when Gods intervened directly in Tyria.
-          The Five had defeated the rebellion, but the scars
-          across the Crystal Desert and the Desolation remained
-          as evidence of the cost.
+          The Exodus did not immediately sever every connection
+          between the Gods and their followers.
         </p>
 
         <p>
-          The surviving Gods chose to leave Tyria and entered
-          the <strong>Mists</strong>, allowing Humanity and the
-          other mortal peoples of the world to continue without
-          the same degree of direct Divine intervention.
+          Priests continued to worship them. Temples remained
+          active. Divine blessings could still be sought, and
+          visions, miracles, spiritual encounters, and other
+          signs of Divine power continued to appear throughout
+          later Human history.
         </p>
 
         <p>
-          Their departure became known as the
-          <strong>Exodus of the Gods</strong>.
+          The Gods could still act through servants and powers
+          associated with their realms.
         </p>
 
         <p>
-          The Exodus did not sever every connection between
-          Tyria and the Divine. The Gods continued to govern
-          their realms within the Mists, while blessings,
-          avatars, temples, and other forms of Divine influence
-          remained part of mortal life for centuries afterward.
+          What had ended was the ordinary physical arrangement
+          of the Divine Age.
         </p>
 
-        <div class="research-note">
+        <p>
+          No longer did the pantheon live in a city where mortal
+          rulers could simply cross the world and petition them
+          face to face.
+        </p>
 
-          <p class="research-note-label">
-            Historical Distinction
-          </p>
-
-          <p>
-            The Exodus describes the Gods leaving Tyria itself.
-            It should not be confused with any earlier reduction
-            in their day-to-day involvement with mortal affairs.
-            After 0 AE, the Five were no longer physically
-            resident in the world.
-          </p>
-
-        </div>
+        <p>
+          Faith now had to cross a greater distance.
+        </p>
 
       </section>
 
@@ -1473,9 +1447,9 @@
 
       <section
         class="chapter"
-        data-position="100"
-        data-date="0 AE"
-        data-context="THE AFTER EXODUS ERA BEGINS"
+        data-position="61"
+        data-date="Early AE"
+        data-context="ARAH BECOMES AN ORRIAN CAPITAL"
       >
 
         <p class="chapter-number">
@@ -1483,36 +1457,436 @@
         </p>
 
         <h2>
-          The Exodus becomes Year Zero
+          Arah after the Gods
         </h2>
 
         <p class="chapter-opening">
-          The departure of the Gods became one of the defining
-          chronological boundaries in Tyrian history. The
-          <strong>Mouvelian Calendar</strong> placed the Exodus
-          at <strong>0 AE</strong>, dividing history into the
-          eras Before the Exodus and After the Exodus.
+          The departure of the Gods did not end the importance
+          of Arah.
         </p>
 
         <p>
-          The change represented more than a calendar. Humanity
-          had entered Tyria under the guidance of the Gods,
-          developed kingdoms beneath their influence, received
-          widespread magic from them, and survived a war among
-          them. Now mortal civilizations would increasingly
-          determine their own political futures.
+          The city became the capital of
+          <strong>Orr</strong>, and the Orrians continued living
+          among the temples, monuments, vaults, gardens, palaces,
+          and sacred places left behind by the pantheon.
         </p>
 
         <p>
-          The Gods left behind temples, religions, magical
-          traditions, the divided Bloodstones, and unresolved
-          conflicts that would continue long after their
-          departure.
+          Few civilizations inherited anything comparable.
         </p>
 
         <p>
-          The age of direct Divine rule had ended. The age of
-          mortal kingdoms was already beginning.
+          Their capital had once housed the Gods themselves.
+          Ancient artifacts remained within its vaults.
+          Divine structures still shaped its streets.
+          Temples preserved the worship of beings who had once
+          physically occupied the same city.
+        </p>
+
+        <p>
+          Arah therefore became both a functioning Human capital
+          and a monument to an age its inhabitants believed
+          might not be permanently over.
+        </p>
+
+        <p>
+          Orrian tradition continued to preserve the hope that
+          the Gods might one day return.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            Orr did not inherit the ruins of the Gods.
+            It inherited their home.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER VIII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="69"
+        data-date="0 AE"
+        data-context="A NEW CALENDAR"
+      >
+
+        <p class="chapter-number">
+          VIII
+        </p>
+
+        <h2>
+          History is divided by the Exodus
+        </h2>
+
+        <p class="chapter-opening">
+          The departure of the Gods became important enough that
+          later Human chronology measured history around it.
+        </p>
+
+        <p>
+          The year of the Exodus became
+          <strong>0 AE</strong> —
+          <strong>After the Exodus</strong>.
+        </p>
+
+        <p>
+          Events before it could be measured backward as
+          <strong>BE</strong>, while the years that followed
+          counted forward through a world in which the Gods no
+          longer lived physically among their followers.
+        </p>
+
+        <p>
+          The calendar makes the scale of the transition clear.
+        </p>
+
+        <p>
+          This was not remembered as another royal succession,
+          another war, or another migration.
+        </p>
+
+        <p>
+          It became one of the boundaries by which an entire
+          civilization understood time.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER IX
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="77"
+        data-date="Early Post-Exodus Era"
+        data-context="HUMANITY WITHOUT DIRECT DIVINE RULE"
+      >
+
+        <p class="chapter-number">
+          IX
+        </p>
+
+        <h2>
+          Mortal kingdoms inherit their future
+        </h2>
+
+        <p class="chapter-opening">
+          Humanity did not lose its Gods, but it lost the form
+          of Divine government that had defined the previous
+          age.
+        </p>
+
+        <p>
+          Cantha, Elona, Orr, Ascalon, and the other Human
+          societies that developed across the world increasingly
+          faced their political futures through mortal rulers,
+          institutions, armies, guilds, and religious orders.
+        </p>
+
+        <p>
+          The Gods remained objects of devotion and sources of
+          spiritual authority, but kings could no longer rely on
+          a Divine court physically ruling from Arah.
+        </p>
+
+        <p>
+          Human civilizations would now rise, divide, conquer,
+          ally, and collapse beneath Gods who were worshiped from
+          afar.
+        </p>
+
+        <p>
+          The problems of the world had become increasingly the
+          responsibility of the people living within it.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER X
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="85"
+        data-date="Post-Exodus Era"
+        data-context="THE BLOODSTONES REMAIN"
+      >
+
+        <p class="chapter-number">
+          X
+        </p>
+
+        <h2>
+          Divine decisions remain in the world
+        </h2>
+
+        <p class="chapter-opening">
+          The Gods left Tyria, but the consequences of their
+          actions did not leave with them.
+        </p>
+
+        <p>
+          The divided <strong>Bloodstones</strong> remained
+          scattered through the world, continuing to influence
+          the movement and use of magic.
+        </p>
+
+        <p>
+          The ruins created during the war against Abaddon
+          remained.
+        </p>
+
+        <p>
+          The Crystal Desert remained.
+        </p>
+
+        <p>
+          The Desolation remained.
+        </p>
+
+        <p>
+          Arah remained filled with Divine and ancient relics.
+        </p>
+
+        <p>
+          Abaddon remained alive within his prison.
+        </p>
+
+        <p>
+          Withdrawal prevented new direct rule, but it did not
+          erase the structures, artifacts, enemies, and magical
+          systems created during the Divine Age.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            The Gods removed themselves from Tyria.
+            They could not remove their history from it.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER XI
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="93"
+        data-date="Post-Exodus Era"
+        data-context="THE MEMORY OF ABADDON"
+      >
+
+        <p class="chapter-number">
+          XI
+        </p>
+
+        <h2>
+          The God who was removed from memory
+        </h2>
+
+        <p class="chapter-opening">
+          The accepted pantheon that emerged from the Exodus was
+          not the same pantheon that had once governed from Arah.
+        </p>
+
+        <p>
+          Abaddon's name was removed from public worship.
+          His imagery was suppressed, and later Human traditions
+          increasingly remembered him as a fallen enemy rather
+          than one of the Gods who had helped shape Divine Orr.
+        </p>
+
+        <p>
+          Yet physical evidence survived.
+        </p>
+
+        <p>
+          His hidden reliquary remained in Siren's Landing.
+          Forgotten monuments and buried symbols preserved traces
+          of his place among the Six.
+        </p>
+
+        <p>
+          Arah itself had been built during an age when he was
+          still part of the pantheon.
+        </p>
+
+        <p>
+          The religious memory of the post-Exodus world could
+          therefore be changed more easily than the stones
+          beneath it.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER XII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="100"
+        data-date="Beginning of the Mouvelian Era"
+        data-context="THE POST-EXODUS WORLD"
+      >
+
+        <p class="chapter-number">
+          XII
+        </p>
+
+        <h2>
+          The age after the Gods
+        </h2>
+
+        <p class="chapter-opening">
+          The Exodus ended the age of direct Divine rule, but
+          it did not begin an age without religion, magic, or
+          the influence of the Gods.
+        </p>
+
+        <p>
+          It began something more complicated.
+        </p>
+
+        <p>
+          Humanity inherited temples built while the Gods were
+          physically present, magical systems shaped by their
+          decisions, kingdoms founded beneath their influence,
+          and histories written by people who still remembered
+          a world in which Divine beings could be encountered
+          face to face.
+        </p>
+
+        <p>
+          The Gods remained beyond the world.
+        </p>
+
+        <p>
+          Their followers remained within it.
+        </p>
+
+        <p>
+          From this point forward, the history of Humanity would
+          increasingly become the history of what mortals chose
+          to do with the world the Gods had left behind.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           ARCHIVE NOTE
+      ========================================= -->
+
+      <section class="archive-note">
+
+        <p class="section-kicker">
+          Archive Note
+        </p>
+
+        <h2>
+          What the Exodus does not tell us
+        </h2>
+
+        <p>
+          The Exodus is one of the defining events of Human
+          history, yet the surviving record preserves its
+          consequences more clearly than the private decisions
+          that caused it.
+        </p>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            The individual decisions of the Five
+          </h3>
+
+          <p>
+            The surviving histories establish a collective
+            withdrawal. They do not preserve a complete account
+            of what each God argued, feared, regretted, or hoped
+            would follow.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            The manner of departure
+          </h3>
+
+          <p>
+            The Gods departed Tyria for the Mists, but the
+            surviving record does not provide a detailed account
+            of the physical ceremony or exact process by which
+            the Five left Arah.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            What remained in Arah
+          </h3>
+
+          <p>
+            Arah retained extensive Divine and ancient
+            collections after the Exodus, but there is no
+            complete surviving inventory of what the Gods took
+            with them and what they intentionally left behind.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            The limits of non-intervention
+          </h3>
+
+          <p>
+            The Gods ceased living physically in Tyria, but
+            Divine influence continued through worship, realms,
+            servants, blessings, visions, and other connections
+            with the Mists. The Exodus should therefore not be
+            described as complete silence.
+          </p>
+
+        </div>
+
+        <p>
+          The safest distinction is also the most important:
+          the Gods stopped ruling Tyria through physical
+          presence. They did not cease to exist, and mortals did
+          not cease reaching toward them.
         </p>
 
       </section>
@@ -1529,26 +1903,43 @@
         </p>
 
         <h2>
-          The road continues
+          The world belongs to those who remain
         </h2>
 
         <p>
-          The Gods had left the physical world, but the nations
-          they helped shape remained. Human kingdoms expanded,
-          borders hardened, and Guilds accumulated influence
-          that increasingly rivaled the authority of kings.
-        </p>
-
-        <p class="next-title">
-          Volume VI // Kingdoms and Guild Wars
+          The Gods had arrived from the Mists, lived among their
+          followers, gathered the relics of older civilizations,
+          governed from Arah, expanded and restricted mortal
+          magic, fought one of their own, and finally withdrawn
+          from the physical world.
         </p>
 
         <p>
-          The next archive follows the growth of the Human
-          kingdoms after the Exodus, the scattering of the
-          Bloodstones, the rise of powerful Guilds, and the
-          conflicts that eventually became known as the
-          <strong>Guild Wars</strong>.
+          Their departure did not bring peace.
+        </p>
+
+        <p>
+          It removed one of the powers that had previously stood
+          above mortal kingdoms.
+        </p>
+
+        <p>
+          Human civilizations would now contend increasingly
+          with one another, with neighboring peoples, and with
+          the consequences of the Divine Age without the Gods
+          physically present to settle those conflicts.
+        </p>
+
+        <p class="next-title">
+          Volume VI // The Age of Kingdoms
+        </p>
+
+        <p>
+          The next archive follows the post-Exodus world as
+          Human kingdoms consolidate, dynasties rise, conflicts
+          spread across Tyria, and the political history leading
+          toward the Guild Wars begins to take recognizable
+          shape.
         </p>
 
         <div class="navigation-actions">
@@ -1568,7 +1959,7 @@
           </a>
 
           <a
-            href="../kingdoms-and-guild-wars/index.html"
+            href="../age-of-kingdoms/index.html"
             class="button button-primary"
           >
             Read Volume VI →
