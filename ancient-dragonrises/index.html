@@ -1,60 +1,2009 @@
-<section class="preface">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-  <p class="section-kicker">
-    Author's Preface
-  </p>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <h2>
-    Where Tyrian history begins
-  </h2>
+  <meta
+    name="description"
+    content="Commander Q's historical record of the ancient Dragonrises, the Elder Dragons, and the civilizations that survived the previous cycle."
+  >
 
-  <p>
-    Every historian eventually reaches a point where
-    the road becomes difficult to follow. Written
-    accounts disappear, dates become estimates, and
-    what remains must be reconstructed from ruins,
-    fossils, magical artifacts, surviving testimony,
-    and records written thousands of years after the
-    events they describe.
-  </p>
+  <meta name="theme-color" content="#070b14">
 
-  <p>
-    That is where this history begins. Tyria was
-    already old, shaped by cycles of magic, ancient
-    peoples, and forces powerful enough to erase
-    entire ages from the record. Among the greatest
-    of those forces were the Elder Dragons.
-  </p>
+  <title>Ancient Dragonrises // The Records of Commander Q</title>
 
-  <p>
-    Their awakenings consumed enormous quantities
-    of magic and devastated the world around them.
-    The peoples who endured the last ancient
-    Dragonrise survived through very different
-    choices, and those choices would shape much of
-    the history that followed.
-  </p>
+  <style>
+    :root {
+      color-scheme: dark;
 
-  <div class="research-note">
+      --background: #070b14;
+      --background-deep: #03060c;
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
 
-    <p class="research-note-label">
-      Note on Dating
-    </p>
+      --border: #334155;
+      --border-soft: rgba(148, 163, 184, 0.18);
 
-    <p>
-      The oldest surviving chronological references place
-      an ancient Dragonrise around 20,000 BE, while the
-      better documented previous Dragonrise occurred roughly
-      10,000 years before the modern era. The surviving
-      evidence does not support treating every ancient
-      reference to the Elder Dragons as part of one
-      continuous awakening.
-    </p>
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
 
-  </div>
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
 
-  <p class="signature">
-    — Commander Q
-  </p>
+      --quote: #c7d2e0;
 
-</section>
+      --max-width: 820px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 150px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(214, 179, 106, 0.07),
+          transparent 32rem
+        ),
+        linear-gradient(
+          to bottom,
+          #090e18,
+          var(--background) 30rem
+        );
+
+      color: var(--ink);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
+
+      margin-inline: auto;
+    }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(3, 6, 12, 0.95);
+
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 66px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-small {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .home-link:hover {
+      color: var(--gold-bright);
+      transform: translateX(-3px);
+    }
+
+    /* ========================================
+       CHRONOLOGY
+    ======================================== */
+
+    .chronology {
+      position: sticky;
+      top: 66px;
+      z-index: 40;
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(7, 11, 20, 0.96);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .chronology-inner {
+      padding: 11px 0 13px;
+    }
+
+    .chronology-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+
+      margin-bottom: 8px;
+    }
+
+    .chronology-label,
+    .chronology-date {
+      margin: 0;
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .chronology-label {
+      color: var(--ink-faint);
+    }
+
+    .chronology-date {
+      color: var(--gold-bright);
+      font-weight: 700;
+    }
+
+    .history-rail {
+      position: relative;
+      height: 17px;
+    }
+
+    .history-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 7px;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          to right,
+          rgba(214, 179, 106, 0.18),
+          rgba(214, 179, 106, 0.85),
+          rgba(214, 179, 106, 0.18)
+        );
+    }
+
+    .history-marker {
+      position: absolute;
+
+      top: 1px;
+      left: 5%;
+
+      width: 13px;
+      height: 13px;
+
+      border: 2px solid var(--gold-bright);
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 12px
+        rgba(214, 179, 106, 0.38);
+
+      transform: translateX(-50%);
+
+      transition: left 400ms ease;
+    }
+
+    .chronology-context {
+      margin: 4px 0 0;
+
+      color: var(--ink-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+      text-align: center;
+    }
+
+    /* ========================================
+       BOOK HEADER
+    ======================================== */
+
+    .book-header {
+      padding: 80px 0 52px;
+      text-align: center;
+    }
+
+    .volume {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.67rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .book-header h1 {
+      margin: 17px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size:
+        clamp(
+          2.6rem,
+          8vw,
+          4.8rem
+        );
+
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      max-width: 650px;
+
+      margin: 18px auto 0;
+
+      color: var(--ink-muted);
+
+      font-style: italic;
+      font-size: 1.08rem;
+    }
+
+    .ornament {
+      width: 120px;
+
+      margin: 32px auto 0;
+
+      border: 0;
+      border-top: 1px solid var(--gold-muted);
+    }
+
+    /* ========================================
+       AUTHOR
+    ======================================== */
+
+    .author-card {
+      margin-bottom: 60px;
+
+      padding: 24px 26px;
+
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+
+      text-align: center;
+    }
+
+    .author-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .author-name {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .author-title {
+      margin: 5px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.91rem;
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       PREFACE
+    ======================================== */
+
+    .preface {
+      margin-bottom: 68px;
+    }
+
+    .section-kicker {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.64rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .preface h2,
+    .chapter h2,
+    .archive-note h2 {
+      margin: 9px 0 0;
+
+      color: var(--gold);
+
+      font-size:
+        clamp(
+          1.65rem,
+          5vw,
+          2.25rem
+        );
+
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .preface p,
+    .archive-note p {
+      margin: 18px 0 0;
+    }
+
+    .signature {
+      margin-top: 28px;
+
+      color: var(--gold-bright);
+      font-style: italic;
+    }
+
+    /* ========================================
+       RESEARCH NOTE
+    ======================================== */
+
+    .research-note {
+      margin: 28px 0;
+
+      padding: 20px 22px;
+
+      border-left: 2px solid var(--gold-muted);
+
+      background:
+        rgba(214, 179, 106, 0.045);
+    }
+
+    .research-note-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .research-note p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
+      font-size: 0.96rem;
+    }
+
+    /* ========================================
+       CHAPTERS
+    ======================================== */
+
+    .chapter {
+      padding: 48px 0;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .chapter-number {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .chapter p {
+      margin: 18px 0 0;
+    }
+
+    .chapter strong {
+      color: var(--gold-bright);
+      font-weight: 600;
+    }
+
+    .chapter-opening::first-letter {
+      float: left;
+
+      margin: 7px 8px 0 0;
+
+      color: var(--gold);
+
+      font-size: 3.6rem;
+      line-height: 0.75;
+    }
+
+    /* ========================================
+       COMMANDER Q OBSERVATION
+    ======================================== */
+
+    .q-observation {
+      margin: 30px 0 6px;
+
+      padding: 21px 23px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(214, 179, 106, 0.05),
+          rgba(15, 23, 42, 0.45)
+        );
+    }
+
+    .q-observation-label {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .q-observation p:last-child {
+      margin: 9px 0 0;
+
+      color: var(--quote);
+      font-style: italic;
+    }
+
+    /* ========================================
+       ARCHIVE NOTE
+    ======================================== */
+
+    .archive-note {
+      padding: 48px 0 54px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .uncertainty-item {
+      margin-top: 28px;
+    }
+
+    .uncertainty-item h3 {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .uncertainty-item p {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
+    }
+
+    /* ========================================
+       TRANSITION
+    ======================================== */
+
+    .transition {
+      padding: 58px 0 70px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .transition-label {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.63rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .transition h2 {
+      margin: 10px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .transition p {
+      margin: 16px 0 0;
+    }
+
+    .next-title {
+      margin-top: 30px !important;
+
+      color: var(--gold);
+
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .navigation-actions {
+      margin-top: 28px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 5px;
+
+      background:
+        rgba(15, 23, 42, 0.7);
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+
+      border-color:
+        rgba(214, 179, 106, 0.6);
+
+      color: var(--gold-bright);
+    }
+
+    .button-primary {
+      border-color:
+        rgba(214, 179, 106, 0.45);
+
+      background:
+        rgba(214, 179, 106, 0.08);
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    footer {
+      padding: 34px 0;
+
+      border-top:
+        1px solid var(--border-soft);
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.65rem;
+      line-height: 1.7;
+
+      text-align: center;
+    }
+
+    /* ========================================
+       MOBILE
+    ======================================== */
+
+    @media (max-width: 650px) {
+
+      html {
+        scroll-padding-top: 135px;
+      }
+
+      body {
+        font-size: 1rem;
+      }
+
+      .container {
+        width:
+          min(
+            100% - 24px,
+            var(--max-width)
+          );
+      }
+
+      .header-inner {
+        min-height: 60px;
+      }
+
+      .brand-small {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 0.88rem;
+      }
+
+      .home-link {
+        font-size: 0.62rem;
+      }
+
+      .chronology {
+        top: 60px;
+      }
+
+      .chronology-label {
+        font-size: 0.53rem;
+      }
+
+      .chronology-date {
+        font-size: 0.56rem;
+      }
+
+      .chronology-context {
+        font-size: 0.53rem;
+      }
+
+      .book-header {
+        padding: 58px 0 42px;
+      }
+
+      .author-card {
+        padding: 21px 14px;
+      }
+
+      .chapter,
+      .archive-note {
+        padding: 40px 0;
+      }
+
+      .navigation-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================
+       HEADER
+  ========================================= -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="../index.html"
+        class="brand"
+      >
+
+        <p class="brand-small">
+          The Historical Records of Commander Q
+        </p>
+
+        <p class="brand-name">
+          GWlll
+        </p>
+
+      </a>
+
+      <a
+        href="../index.html"
+        class="home-link"
+      >
+        ← Road Through Time
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- ========================================
+       CHRONOLOGY
+  ========================================= -->
+
+  <aside class="chronology">
+
+    <div class="container chronology-inner">
+
+      <div class="chronology-top">
+
+        <p class="chronology-label">
+          Historical Position
+        </p>
+
+        <p
+          class="chronology-date"
+          id="currentDate"
+        >
+          c. 20,000 BE
+        </p>
+
+      </div>
+
+      <div class="history-rail">
+
+        <div class="history-line"></div>
+
+        <span
+          class="history-marker"
+          id="historyMarker"
+        ></span>
+
+      </div>
+
+      <p
+        class="chronology-context"
+        id="positionContext"
+      >
+        EARLIEST RECORDED DRAGONRISE
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <main>
+
+    <!-- ========================================
+         BOOK HEADER
+    ======================================== -->
+
+    <section class="book-header">
+
+      <div class="container">
+
+        <p class="volume">
+          Volume I // The Ancient World
+        </p>
+
+        <h1>
+          Ancient Dragonrises
+        </h1>
+
+        <p class="subtitle">
+          On the Elder Dragons, the cycles of magic
+          that shaped ancient Tyria, and the peoples
+          who survived the previous Dragonrise.
+        </p>
+
+        <hr class="ornament">
+
+      </div>
+
+    </section>
+
+
+    <div class="container">
+
+      <!-- ========================================
+           AUTHOR
+      ========================================= -->
+
+      <section class="author-card">
+
+        <p class="author-label">
+          Compiled and Annotated By
+        </p>
+
+        <p class="author-name">
+          Commander Q
+        </p>
+
+        <p class="author-title">
+          Captain Commander of the Vanguard Knights
+          <br>
+          Researcher of Tyrian History and the Mists
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           PREFACE
+      ========================================= -->
+
+      <section class="preface">
+
+        <p class="section-kicker">
+          Author's Preface
+        </p>
+
+        <h2>
+          Where the road becomes uncertain
+        </h2>
+
+        <p>
+          There is a point in every history where written
+          records give way to fragments. Dates become
+          approximations, civilizations are known through
+          ruins rather than chronicles, and events must be
+          reconstructed from the accounts of peoples who
+          survived long enough to remember them.
+        </p>
+
+        <p>
+          That is where this record begins.
+        </p>
+
+        <p>
+          Ancient Tyria was repeatedly transformed by the
+          awakening of the Elder Dragons. These creatures
+          consumed vast quantities of magic, corrupted living
+          beings and entire landscapes, and forced the peoples
+          of their age to choose between resistance, retreat,
+          concealment, and preservation.
+        </p>
+
+        <p>
+          The oldest Dragonrises remain poorly documented.
+          The previous Dragonrise, however, left enough evidence
+          for us to begin following the choices made by the
+          civilizations that endured it.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Note on Dating
+          </p>
+
+          <p>
+            The oldest chronological references place an
+            ancient Dragonrise around 20,000 BE. The previous
+            Dragonrise is generally placed more than ten
+            thousand years before the modern age. These periods
+            are separated by enormous spans of time and should
+            not be treated as one continuous awakening.
+          </p>
+
+        </div>
+
+        <p class="signature">
+          — Commander Q
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER I
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="5"
+        data-date="c. 20,000 BE"
+        data-context="EARLIEST RECORDED DRAGONRISE"
+      >
+
+        <p class="chapter-number">
+          I
+        </p>
+
+        <h2>
+          The earliest Dragonrise
+        </h2>
+
+        <p class="chapter-opening">
+          Around 20,000 BE, the surviving chronology places
+          one of the earliest known awakenings of the Elder
+          Dragons. Little remains from the peoples who witnessed
+          it, and the individual events of that age are almost
+          entirely lost.
+        </p>
+
+        <p>
+          What survives more clearly is the pattern itself.
+          The Elder Dragons awakened during periods when magic
+          had accumulated across Tyria, consumed that power, and
+          extended their influence through corrupted creatures,
+          champions, and transformed environments.
+        </p>
+
+        <p>
+          Eventually the dragons returned to dormancy.
+          Whatever survived the awakening was left to recover
+          while magic gradually accumulated once again.
+        </p>
+
+        <p>
+          The cycle would repeat.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Research Note // Ancient Evidence
+          </p>
+
+          <p>
+            The earliest Dragonrises are known more securely as
+            part of a repeating pattern than as detailed
+            historical narratives. Their existence is clearer
+            than the exact order of events within them.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER II
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="16"
+        data-date="Ancient Ages"
+        data-context="THE DRAGON CYCLE"
+      >
+
+        <p class="chapter-number">
+          II
+        </p>
+
+        <h2>
+          The Dragon Cycle
+        </h2>
+
+        <p class="chapter-opening">
+          The Elder Dragons did not remain awake forever.
+          Their activity followed a larger relationship with
+          the amount of magic available in the world.
+        </p>
+
+        <p>
+          When magic accumulated, the dragons could awaken and
+          begin feeding upon it. Their champions and minions
+          extended their influence far beyond the dragons
+          themselves, allowing corruption to spread through
+          regions, creatures, and entire ecosystems.
+        </p>
+
+        <p>
+          Different dragons expressed this power in different
+          ways. Some relied upon corrupted armies. Others used
+          specialized champions or magical structures that
+          gathered, carried, amplified, or redirected their
+          influence.
+        </p>
+
+        <p>
+          As accessible magic diminished, the Elder Dragons
+          eventually returned to dormancy. During the long ages
+          that followed, magic gathered again and civilizations
+          rebuilt without knowing exactly when the next
+          awakening would begin.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            The Dragon Cycle is difficult to fit inside the
+            ordinary scale of history. Kingdoms can rise,
+            disappear, and become archaeological mysteries
+            during the sleep of a single Elder Dragon.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER III
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="27"
+        data-date="Before the Previous Dragonrise"
+        data-context="THE ANCIENT WORLD"
+      >
+
+        <p class="chapter-number">
+          III
+        </p>
+
+        <h2>
+          The world before the previous Dragonrise
+        </h2>
+
+        <p class="chapter-opening">
+          By the time the Elder Dragons awakened again,
+          Tyria was home to several powerful civilizations
+          and creatures whose surviving remains reveal a
+          complex ancient world.
+        </p>
+
+        <p>
+          Among the largest creatures known from this age were
+          the <strong>Giganticus Lupicus</strong>. Their enormous
+          skeletons remain scattered across Tyria and Elona,
+          although the cause and exact timing of their
+          disappearance remain uncertain.
+        </p>
+
+        <p>
+          The <strong>Seers</strong>,
+          <strong>Mursaat</strong>,
+          <strong>Forgotten</strong>,
+          <strong>Dwarves</strong>, and
+          <strong>Jotun</strong> also belonged to this period.
+          Each possessed its own traditions, settlements,
+          magical practices, and political interests.
+        </p>
+
+        <p>
+          They were not one civilization, nor did they approach
+          magic in the same way. The Dragonrise would force them
+          into cooperation, but it would never erase the
+          differences between them.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER IV
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="38"
+        data-date="Previous Dragonrise"
+        data-context="THE ELDER RACES UNITE"
+      >
+
+        <p class="chapter-number">
+          IV
+        </p>
+
+        <h2>
+          An alliance against the dragons
+        </h2>
+
+        <p class="chapter-opening">
+          Surviving Mursaat tablets describe an alliance formed
+          among the Seers, Mursaat, Forgotten, Dwarves, and
+          Jotun during the previous Dragonrise.
+        </p>
+
+        <p>
+          The alliance brought together peoples with very
+          different ideas about how the crisis should be faced.
+          According to the Mursaat account, the Jotun concealed
+          themselves, the Dwarves withdrew into fortified
+          strongholds, and the Seers turned their efforts toward
+          preserving magic for the world that might remain after
+          the dragons slept.
+        </p>
+
+        <p>
+          The Mursaat and Forgotten instead attempted direct
+          resistance.
+        </p>
+
+        <p>
+          The account is important, but so is its author.
+          The Mursaat remembered these choices through the anger
+          of a people who believed their allies had abandoned
+          them. Their descriptions preserve both historical
+          information and the grievances that followed.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Research Note // Mursaat Testimony
+          </p>
+
+          <p>
+            The Mursaat tablets are among the most detailed
+            surviving accounts of the previous Dragonrise.
+            Their descriptions of events are valuable, while
+            their accusations of betrayal reflect the Mursaat
+            interpretation of those events.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER V
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="49"
+        data-date="Previous Dragonrise"
+        data-context="THE ASSAULT ON ZHAITAN"
+      >
+
+        <p class="chapter-number">
+          V
+        </p>
+
+        <h2>
+          The assault on Zhaitan
+        </h2>
+
+        <p class="chapter-opening">
+          The Mursaat and Forgotten eventually launched a direct
+          assault against the Elder Dragon
+          <strong>Zhaitan</strong>.
+        </p>
+
+        <p>
+          Mursaat records describe armies that included
+          <strong>Jade Constructs</strong> and
+          <strong>Enchanted Armors</strong>. Despite the magical
+          strength assembled against Zhaitan, the attack failed.
+        </p>
+
+        <p>
+          Many Mursaat and Forgotten were lost.
+        </p>
+
+        <p>
+          The Mursaat never forgot that the Seers, Dwarves, and
+          Jotun had not joined the battle. Their resentment over
+          the failed assault would survive long after the Elder
+          Dragons returned to sleep.
+        </p>
+
+        <p>
+          The Forgotten took another path after the disaster,
+          eventually withdrawing toward the lands now associated
+          with the Crystal Desert.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            The alliance did not collapse because its members
+            failed to recognize the danger. It collapsed because
+            they disagreed about what survival required.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER VI
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="59"
+        data-date="Previous Dragonrise"
+        data-context="GLINT AND THE FORGOTTEN"
+      >
+
+        <p class="chapter-number">
+          VI
+        </p>
+
+        <h2>
+          Glint and the Forgotten
+        </h2>
+
+        <p class="chapter-opening">
+          The Forgotten also achieved something direct warfare
+          had failed to accomplish: they broke an Elder Dragon's
+          control over one of its champions.
+        </p>
+
+        <p>
+          During the previous Dragonrise, the Forgotten performed
+          a ritual upon <strong>Glint</strong>, then a champion
+          of <strong>Kralkatorrik</strong>, and freed her from
+          the Elder Dragon's corruption and control.
+        </p>
+
+        <p>
+          Glint became independent of her former master and later
+          helped shelter the Forgotten from the Elder Dragons
+          until the cycle ended.
+        </p>
+
+        <p>
+          Their relationship endured long after the Dragonrise.
+          The Forgotten remained closely connected to Glint,
+          preserving knowledge and traditions that would continue
+          influencing the Crystal Desert for ages.
+        </p>
+
+        <p>
+          The event also provides one of the clearest surviving
+          examples from the ancient world that Elder Dragon
+          corruption was not always irreversible.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER VII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="69"
+        data-date="Previous Dragonrise"
+        data-context="THE SEERS PRESERVE MAGIC"
+      >
+
+        <p class="chapter-number">
+          VII
+        </p>
+
+        <h2>
+          The Seers preserve magic
+        </h2>
+
+        <p class="chapter-opening">
+          The Seers chose a strategy built around preservation
+          rather than direct victory.
+        </p>
+
+        <p>
+          A surviving history of the Bloodstones states that
+          during the previous Elder Dragon awakening, the Seers
+          placed magic within a great stone so that the dragons
+          could not consume it.
+        </p>
+
+        <p>
+          The plan worked.
+        </p>
+
+        <p>
+          The original <strong>Bloodstone</strong> was therefore
+          not created as a weapon, a source of sacrifice, or a
+          means of regulating mortal spellcraft. Those purposes
+          belonged to much later periods.
+        </p>
+
+        <p>
+          Its first known purpose was to keep magic out of the
+          Elder Dragons' reach and preserve that power for the
+          world that would remain after they returned to sleep.
+        </p>
+
+        <p>
+          The Seers also possessed other ancient magical works.
+          Among them was the <strong>Shadowstone</strong>, which
+          predates the Bloodstone and demonstrates that the Seers
+          were already developing sophisticated methods of
+          manipulating magical power.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Research Note // Bloodstone
+          </p>
+
+          <p>
+            The surviving evidence establishes that the
+            Shadowstone predates the Bloodstone, but it does not
+            securely document every step between the two
+            artifacts. Their exact technological relationship
+            should therefore remain open.
+          </p>
+
+        </div>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            Later history remembers the Bloodstone through war,
+            sacrifice, and catastrophe. Its beginning was much
+            simpler: hide the magic, survive the dragons, and
+            leave something for the world that came afterward.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER VIII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="78"
+        data-date="Previous Dragonrise"
+        data-context="THE MURSAAT WITHDRAW"
+      >
+
+        <p class="chapter-number">
+          VIII
+        </p>
+
+        <h2>
+          The Mursaat withdraw
+        </h2>
+
+        <p class="chapter-opening">
+          After the failed assault against Zhaitan, the Mursaat
+          abandoned direct resistance and turned instead toward
+          preserving themselves.
+        </p>
+
+        <p>
+          Their tablets state that they
+          <strong>"slid sideways into another layer of awareness"</strong>,
+          placing themselves beyond ordinary perception so that
+          the Elder Dragons could not consume their magic.
+        </p>
+
+        <p>
+          Their survival therefore depended neither upon
+          defeating the dragons nor surrendering their power.
+          They removed themselves from the world as most
+          creatures experienced it and waited.
+        </p>
+
+        <p>
+          This ability to exist outside ordinary perception
+          remained one of the defining traits of Mursaat magic
+          throughout their later history.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER IX
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="86"
+        data-date="Late Previous Dragonrise"
+        data-context="THE WORLD DIMINISHES"
+      >
+
+        <p class="chapter-number">
+          IX
+        </p>
+
+        <h2>
+          A world without its former magic
+        </h2>
+
+        <p class="chapter-opening">
+          As the Dragonrise continued, enormous quantities of
+          Tyria's accessible magic disappeared.
+        </p>
+
+        <p>
+          The Mursaat tablets describe cities falling into ruin
+          and civilization entering a diminished age as the
+          dragons consumed what remained.
+        </p>
+
+        <p>
+          Different peoples endured that collapse in different
+          ways. The Seers had preserved magic. The Mursaat had
+          concealed themselves. The Forgotten remained under
+          Glint's protection. The Dwarves relied upon fortified
+          refuges, while the Jotun survived through methods that
+          are less clearly preserved.
+        </p>
+
+        <p>
+          Much of what existed before the Dragonrise did not
+          survive it intact.
+        </p>
+
+        <p>
+          Settlements disappeared. Knowledge was lost. Populations
+          were reduced. Even civilizations that endured would
+          emerge changed.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER X
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="93"
+        data-date="End of the Previous Dragonrise"
+        data-context="THE DRAGONS RETURN TO SLUMBER"
+      >
+
+        <p class="chapter-number">
+          X
+        </p>
+
+        <h2>
+          The dragons return to sleep
+        </h2>
+
+        <p class="chapter-opening">
+          Eventually the Elder Dragons' great consumption of
+          magic could no longer continue.
+        </p>
+
+        <p>
+          As accessible magic became scarce, the dragons returned
+          to dormancy.
+        </p>
+
+        <p>
+          Tyria had survived another cycle, but not by defeating
+          the Elder Dragons in one decisive war. Survival came
+          through a collection of imperfect solutions:
+          resistance, concealment, retreat, magical preservation,
+          fortified refuges, and the protection of knowledge.
+        </p>
+
+        <p>
+          The dragons were sleeping again.
+        </p>
+
+        <p>
+          The peoples that remained now had to determine what
+          to do with the world they had inherited.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER XI
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="100"
+        data-date="After the Dragonrise"
+        data-context="MAGIC RETURNS"
+      >
+
+        <p class="chapter-number">
+          XI
+        </p>
+
+        <h2>
+          Magic returns to the world
+        </h2>
+
+        <p class="chapter-opening">
+          Once the Elder Dragons were dormant, the Seers began
+          releasing the magic they had preserved.
+        </p>
+
+        <p>
+          That magic returned to a world that no longer shared
+          the unity forced upon it by the Dragonrise.
+        </p>
+
+        <p>
+          Mursaat accounts describe competing peoples fighting
+          over access to the returning power. The old alliance
+          had disappeared, while resentment between its former
+          members remained.
+        </p>
+
+        <p>
+          The Forgotten continued their relationship with Glint.
+          The Mursaat emerged carrying memories of betrayal.
+          The Seers remained custodians of knowledge and magic,
+          while the Dwarves and Jotun followed paths of their own.
+        </p>
+
+        <p>
+          The end of the Dragonrise therefore did not restore
+          the ancient world.
+        </p>
+
+        <p>
+          It began another one.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           ARCHIVE NOTE
+      ========================================= -->
+
+      <section class="archive-note">
+
+        <p class="section-kicker">
+          Archive Note
+        </p>
+
+        <h2>
+          What remains uncertain
+        </h2>
+
+        <p>
+          The previous Dragonrise is one of the earliest periods
+          for which recognizable historical narratives survive,
+          but those narratives remain incomplete.
+        </p>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            The Giganticus Lupicus
+          </h3>
+
+          <p>
+            Their remains establish that they inhabited the
+            ancient world, but no surviving account securely
+            explains why they disappeared.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            The Mursaat account
+          </h3>
+
+          <p>
+            Much of the alliance's history survives through
+            Mursaat tablets. Their account preserves important
+            events, but their descriptions of the Seers, Jotun,
+            and Dwarves also reflect longstanding Mursaat
+            grievances.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            The Forgotten chronology
+          </h3>
+
+          <p>
+            The Forgotten are firmly connected to the previous
+            Dragonrise, yet later traditions place other events
+            in their history at dates that do not always align
+            cleanly with the older record.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            Ancient magical works
+          </h3>
+
+          <p>
+            Ruins throughout Tyria preserve long-lasting magical
+            defenses, guardians, enchanted weapons, seals, and
+            other systems whose creators are not always known.
+            Their survival demonstrates how much ancient magical
+            infrastructure can outlast the societies that built
+            it, but individual sites should not be assigned to a
+            particular civilization without evidence.
+          </p>
+
+        </div>
+
+        <p>
+          These uncertainties are part of the record rather than
+          problems to be hidden. Ancient history survives through
+          fragments, and some questions remain open because the
+          people who could have answered them are gone.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           NEXT VOLUME
+      ========================================= -->
+
+      <section class="transition">
+
+        <p class="transition-label">
+          End of Volume I
+        </p>
+
+        <h2>
+          The survivors inherit Tyria
+        </h2>
+
+        <p>
+          The Elder Dragons returned to sleep, but the choices
+          made during the Dragonrise survived them.
+        </p>
+
+        <p>
+          The Seers had preserved magic. The Mursaat had
+          withdrawn beyond ordinary perception. The Forgotten
+          had freed Glint. The Dwarves had endured in their
+          strongholds, while the Jotun carried forward what
+          remained of a once sophisticated magical culture.
+        </p>
+
+        <p>
+          Their alliance was over.
+        </p>
+
+        <p>
+          What followed was not another shared history, but five
+          increasingly different ones.
+        </p>
+
+        <p class="next-title">
+          Volume II // The Elder Races
+        </p>
+
+        <p>
+          The next archive follows the Seers, Mursaat, Forgotten,
+          Dwarves, and Jotun after the Dragonrise: the return of
+          magic, the Seer–Mursaat conflict, the abandonment of
+          ancient settlements, and the different ways these
+          civilizations endured, declined, or disappeared.
+        </p>
+
+        <div class="navigation-actions">
+
+          <a
+            href="../index.html"
+            class="button"
+          >
+            ← Road Through Time
+          </a>
+
+          <a
+            href="../elder-races/index.html"
+            class="button button-primary"
+          >
+            Read Volume II →
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
+
+  <footer>
+
+    <div class="container">
+
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
+
+    </div>
+
+  </footer>
+
+
+  <!-- ========================================
+       CHRONOLOGY SCRIPT
+  ========================================= -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      const sections =
+        document.querySelectorAll(
+          ".chapter[data-position]"
+        );
+
+      const marker =
+        document.getElementById(
+          "historyMarker"
+        );
+
+      const currentDate =
+        document.getElementById(
+          "currentDate"
+        );
+
+      const positionContext =
+        document.getElementById(
+          "positionContext"
+        );
+
+      const updatePosition =
+        (section) => {
+
+          const position =
+            section.dataset.position || "5";
+
+          const date =
+            section.dataset.date ||
+            "Ancient Era";
+
+          const context =
+            section.dataset.context ||
+            "HISTORICAL RECORD";
+
+          marker.style.left =
+            `${position}%`;
+
+          currentDate.textContent =
+            date;
+
+          positionContext.textContent =
+            context;
+        };
+
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+
+            const visible =
+              entries
+                .filter(
+                  (entry) =>
+                    entry.isIntersecting
+                )
+                .sort(
+                  (a, b) =>
+                    b.intersectionRatio -
+                    a.intersectionRatio
+                );
+
+            if (visible.length > 0) {
+              updatePosition(
+                visible[0].target
+              );
+            }
+          },
+          {
+            rootMargin:
+              "-35% 0px -45% 0px",
+
+            threshold: [
+              0,
+              0.15,
+              0.3,
+              0.5,
+              0.75
+            ]
+          }
+        );
+
+      sections.forEach(
+        (section) => {
+          observer.observe(section);
+        }
+      );
+    })();
+  </script>
+
+</body>
+</html>
