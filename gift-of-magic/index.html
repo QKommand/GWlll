@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Commander Q's historical record of the Gift of Magic, King Doric, and the division of the ancient Bloodstone."
+    content="Commander Q's historical record of Abaddon's Gift of Magic, the wars that followed, King Doric's appeal to the Gods, the division of the Bloodstone, and Abaddon's rebellion."
   >
 
   <meta name="theme-color" content="#070b14">
@@ -434,7 +434,8 @@
     }
 
     .preface h2,
-    .chapter h2 {
+    .chapter h2,
+    .archive-note h2 {
       margin: 9px 0 0;
 
       color: var(--gold);
@@ -450,7 +451,8 @@
       line-height: 1.25;
     }
 
-    .preface p {
+    .preface p,
+    .archive-note p {
       margin: 18px 0 0;
     }
 
@@ -548,10 +550,10 @@
     }
 
     /* ========================================
-       MAGIC GRID
+       HISTORY GRID
     ======================================== */
 
-    .magic-grid {
+    .history-grid {
       display: grid;
 
       grid-template-columns:
@@ -562,7 +564,7 @@
       margin-top: 28px;
     }
 
-    .magic-card {
+    .history-card {
       padding: 19px 20px;
 
       border: 1px solid var(--border-soft);
@@ -571,7 +573,7 @@
         rgba(15, 23, 42, 0.58);
     }
 
-    .magic-card-label {
+    .history-card-label {
       margin: 0;
 
       color: var(--ink-faint);
@@ -588,7 +590,7 @@
       text-transform: uppercase;
     }
 
-    .magic-card h3 {
+    .history-card h3 {
       margin: 6px 0 0;
 
       color: var(--gold);
@@ -597,7 +599,7 @@
       font-weight: 600;
     }
 
-    .magic-card p:last-child {
+    .history-card p:last-child {
       margin: 8px 0 0;
 
       color: var(--ink-muted);
@@ -647,6 +649,35 @@
 
       color: var(--quote);
       font-style: italic;
+    }
+
+    /* ========================================
+       ARCHIVE NOTE
+    ======================================== */
+
+    .archive-note {
+      padding: 48px 0 54px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .uncertainty-item {
+      margin-top: 28px;
+    }
+
+    .uncertainty-item h3 {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .uncertainty-item p {
+      margin: 8px 0 0;
+
+      color: var(--ink-muted);
     }
 
     /* ========================================
@@ -846,11 +877,12 @@
         padding: 21px 14px;
       }
 
-      .chapter {
+      .chapter,
+      .archive-note {
         padding: 40px 0;
       }
 
-      .magic-grid {
+      .history-grid {
         grid-template-columns: 1fr;
       }
 
@@ -934,7 +966,7 @@
           class="chronology-date"
           id="currentDate"
         >
-          Before 1 BE
+          1 BE
         </p>
 
       </div>
@@ -954,7 +986,7 @@
         class="chronology-context"
         id="positionContext"
       >
-        MAGIC BEFORE THE GIFT
+        THE GIFT OF MAGIC
       </p>
 
     </div>
@@ -981,9 +1013,10 @@
         </h1>
 
         <p class="subtitle">
-          On the spread of mortal magic, Abaddon's Gift,
-          King Doric's appeal to the Gods, and the division
-          of the ancient Bloodstone.
+          On Abaddon's expansion of mortal magic,
+          the wars that followed, King Doric's appeal,
+          the division of the Bloodstone, and the
+          rebellion that broke the Divine order.
         </p>
 
         <hr class="ornament">
@@ -1029,39 +1062,43 @@
         </p>
 
         <h2>
-          The Gift was not the beginning of magic
+          Magic was not new
         </h2>
 
         <p>
-          Magic was already ancient when Humanity came to
-          Tyria. The Seers, Mursaat, Forgotten, and other
-          Elder Races had used it thousands of years earlier,
-          and the Bloodstone itself had been created during
-          the previous Dragonrise to protect uncorrupted magic
-          from the Elder Dragons.
+          The phrase "Gift of Magic" can be misleading if it is
+          read as the moment magic first entered mortal life.
+          Magic had existed in Tyria for ages. Ancient peoples
+          had built civilizations around it, and Human societies
+          had already learned to study, regulate, craft, and use
+          magical power.
         </p>
 
         <p>
-          For most early Humans, however, that power remained
-          beyond reach. The first known mortal access came in
-          Orr, where Dwayna and Melandru granted the newly
-          formed Order of the Vael the knowledge needed to
-          create and refine magical signets. Other Orrian
-          guilds later gained access to the same craft, and
-          signets became valuable objects traded across Tyria.
+          Orr provides one of the clearest examples. By the age
+          of King Doric, magic could support ordinary work,
+          communication, commerce, entertainment, and defense,
+          while more powerful forms were entrusted to guilds
+          chosen by the High Council and the Six Gods.
         </p>
 
         <p>
-          The Gift of Magic therefore belongs to a later stage
-          of the story. In 1 BE, magical power moved far beyond
-          the controlled access of a few sanctioned guilds.
-          Abaddon's Gift opened magic to the mortal races on a
-          much greater scale, and that sudden change altered
-          the balance of power across Tyria.
+          What changed under <strong>Abaddon</strong> was the
+          scale of access.
         </p>
 
         <p>
-          The consequences came quickly.
+          Greater magical power became available to mortals,
+          upsetting a system that had previously placed stronger
+          limits upon who could wield it. The result was not one
+          war or one kingdom's collapse, but a magical crisis
+          severe enough to bring King Doric to Arah in search of
+          Divine intervention.
+        </p>
+
+        <p>
+          The solution the Gods chose would reach back thousands
+          of years into Tyrian history.
         </p>
 
         <p class="signature">
@@ -1078,8 +1115,8 @@
       <section
         class="chapter"
         data-position="5"
-        data-date="Before 1 BE"
-        data-context="MAGIC BEFORE THE GIFT"
+        data-date="1 BE"
+        data-context="THE GIFT OF MAGIC"
       >
 
         <p class="chapter-number">
@@ -1087,57 +1124,50 @@
         </p>
 
         <h2>
-          The first mortal magic
+          Abaddon's Gift
         </h2>
 
         <p class="chapter-opening">
-          Years before the Gift of Magic, the
-          <strong>Vaelwardens</strong> of Orr became the first
-          known mortals to receive magical power. Their order
-          had been formed with the support of
-          <strong>Dwayna</strong> and
-          <strong>Melandru</strong> to protect the Vael and
-          the magical wilds where those spirits lived.
+          In the final year before the Exodus calendar began,
+          <strong>Abaddon</strong> dramatically expanded mortal
+          access to magic.
         </p>
 
         <p>
-          To help the order fulfill that duty, the two Goddesses
-          gave the Vaelwardens the ability to create and refine
-          <strong>signets</strong>. These small gems held fixed
-          expressions of magical power and allowed their users
-          to call upon abilities that had previously remained in
-          the hands of the Gods and Tyria's older magical races.
+          Abaddon was then one of the Six Gods, associated with
+          knowledge, secrets, water, and the deeper mysteries of
+          magical power. He had lived and governed alongside the
+          rest of the pantheon in Arah, designed the Divine
+          reliquaries, and participated in a civilization where
+          magical knowledge was already carefully preserved.
         </p>
 
         <p>
-          The Vaelwardens did not keep this distinction forever.
-          As Orr grew, other guilds were also allowed to make
-          signets. Over the following decades, the objects spread
-          through trade, theft, and black markets reaching far
-          beyond Orr.
+          Surviving histories remember his Gift as a major change
+          in the relationship between mortals and magic. Power
+          that had previously been more restricted became
+          available on a far greater scale.
         </p>
 
         <p>
-          Mortal magic therefore existed before 1 BE, but access
-          remained limited. Knowledge of signet-making rested
-          with chosen guilds, and the power contained within a
-          signet was fixed rather than freely shaped by every
-          person who possessed one.
+          The change affected more than one kingdom or one
+          profession. Magic became a force capable of shifting
+          the balance between peoples who already possessed old
+          rivalries, ambitions, and territorial disputes.
         </p>
 
-        <div class="q-observation">
+        <div class="research-note">
 
-          <p class="q-observation-label">
-            Commander Q // Observation
+          <p class="research-note-label">
+            Research Note // The Gift
           </p>
 
           <p>
-            This changes the way the Gift of Magic should be
-            understood. Abaddon was not placing magic into
-            mortal hands for the first time. The Vaelwardens
-            had crossed that line generations earlier. What
-            happened in 1 BE was much larger: the old limits
-            on who could reach magic began to fall away.
+            Surviving accounts differ in how they describe the
+            mechanics of Abaddon's Gift. What remains consistent
+            is the larger change: mortal access to magical power
+            increased dramatically. The Gift should therefore
+            not be described as the creation of magic itself.
           </p>
 
         </div>
@@ -1151,9 +1181,9 @@
 
       <section
         class="chapter"
-        data-position="17"
+        data-position="14"
         data-date="1 BE"
-        data-context="ABADDON DISTRIBUTES MAGIC"
+        data-context="MAGICAL WARFARE"
       >
 
         <p class="chapter-number">
@@ -1161,46 +1191,49 @@
         </p>
 
         <h2>
-          Abaddon distributes the Gift
+          Power spreads faster than restraint
         </h2>
 
         <p class="chapter-opening">
-          In <strong>1 BE</strong>, access to magic changed on
-          a scale far beyond the signet traditions of Orr.
-          <strong>Abaddon</strong>, then the God of Knowledge
-          and Water, became the central figure in distributing
-          magical power among the mortal races of Tyria.
+          Greater access to magic did not create peace.
         </p>
 
         <p>
-          The change allowed mortals to wield magic with far
-          greater freedom than the earlier system of sanctioned
-          guilds and crafted signets had allowed. What had been
-          guarded knowledge became a force capable of reshaping
-          entire societies.
+          Mortal conflicts intensified as peoples gained the
+          ability to wield destructive magical power on a scale
+          that had previously been harder to reach.
         </p>
 
         <p>
-          The ancient <strong>Bloodstone</strong>, created by
-          the Seers during the previous Dragonrise, was already
-          in the possession of the Gods during this period. It
-          would soon become central to their attempt to control
-          the consequences of the Gift.
+          Old disputes became magical wars. Spellcraft that could
+          enrich cities, protect settlements, and transform
+          everyday life could also destroy armies, fortifications,
+          and entire communities.
         </p>
 
-        <div class="research-note">
+        <p>
+          The surviving histories describe the violence growing
+          severe enough that the benefits of greater magical
+          freedom could no longer be separated from its cost.
+        </p>
 
-          <p class="research-note-label">
-            Research Note // What Changed
+        <p>
+          The crisis eventually reached the point where mortal
+          rulers looked again toward the Gods who had expanded,
+          taught, and regulated magic in the first place.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
           </p>
 
           <p>
-            Older histories often describe 1 BE as the moment
-            when the Gods gave magic to the world. The surviving
-            record is now more precise. Magic had always existed,
-            and some mortals had already received limited access
-            through signets. The Gift marks a much broader
-            distribution of magical power among the mortal races.
+            Magic was not the cause of every rivalry. It changed
+            what those rivalries could do. Conflicts that once
+            had limits suddenly possessed weapons capable of
+            breaking those limits.
           </p>
 
         </div>
@@ -1214,9 +1247,9 @@
 
       <section
         class="chapter"
-        data-position="30"
+        data-position="23"
         data-date="1 BE"
-        data-context="THE WARS OF MAGIC"
+        data-context="KING DORIC JOURNEYS TO ARAH"
       >
 
         <p class="chapter-number">
@@ -1224,36 +1257,40 @@
         </p>
 
         <h2>
-          The Gift becomes a weapon
+          King Doric goes to Arah
         </h2>
 
         <p class="chapter-opening">
-          The wider spread of magic quickly changed existing
-          rivalries between the peoples of Tyria. Disputes that
-          had once been fought with armies, wealth, and political
-          influence could now be carried out with powers capable
-          of causing destruction on a much greater scale.
+          As the magical wars worsened,
+          <strong>King Doric</strong> traveled to
+          <strong>Arah</strong> and appealed directly to the
+          Gods for an end to the destruction.
         </p>
 
         <p>
-          The problem was not that every mortal who received
-          magic immediately turned to war. Magic also offered
-          new ways to heal, protect, build, travel, and understand
-          the world. The danger came from how quickly that power
-          entered societies that already had borders, ambitions,
-          enemies, and old grievances.
+          The journey is important because it shows that the
+          earlier retreat of the Gods into Arah had not removed
+          them from Tyria.
         </p>
 
         <p>
-          As conflicts grew more destructive, the cost became
-          difficult to ignore. The Gods had greatly expanded
-          mortal power, but they had not removed the reasons
-          mortals fought one another.
+          Doric did not petition distant beings who had already
+          vanished into the Mists. He went to their city.
         </p>
 
         <p>
-          Eventually, a Human king traveled to Arah and asked
-          them to intervene.
+          The Gods were still present, still capable of receiving
+          mortal appeals, and still able to intervene in the
+          magical order they had helped shape.
+        </p>
+
+        <p>
+          Doric's request forced the pantheon to confront the
+          consequences of expanded magical access.
+        </p>
+
+        <p>
+          Their answer was already inside Arah.
         </p>
 
       </section>
@@ -1265,9 +1302,9 @@
 
       <section
         class="chapter"
-        data-position="42"
+        data-position="32"
         data-date="1 BE"
-        data-context="KING DORIC PETITIONS THE GODS"
+        data-context="THE ORIGINAL BLOODSTONE"
       >
 
         <p class="chapter-number">
@@ -1275,39 +1312,57 @@
         </p>
 
         <h2>
-          King Doric travels to Arah
+          The Seer solution returns
         </h2>
 
         <p class="chapter-opening">
-          <strong>King Doric</strong>, ruler of the united
-          Human kingdoms of the Tyrian continent, witnessed
-          the growing damage caused by the wars of magic.
-          Seeking an end to the bloodshed, he traveled to
-          <strong>Arah</strong> and appealed directly to the
-          Gods.
+          Among the treasures gathered within Arah was the
+          original <strong>Bloodstone</strong>.
         </p>
 
         <p>
-          Doric asked them to reduce the magical power that had
-          been released into the world. The request placed the
-          pantheon in a difficult position. Greater access to
-          magic had changed mortal civilization, but the same
-          power was now making old conflicts far more dangerous.
+          The artifact had been created by the Seers during the
+          previous Dragonrise to preserve magic beyond the reach
+          of the Elder Dragons.
         </p>
 
         <p>
-          Most of the Gods agreed that the situation could not
-          continue. Their answer was not to remove magic from
-          Tyria, which would have been impossible and contrary
-          to the nature of the world itself. Instead, they
-          sought to restrict how much of that power mortals
-          could freely reach.
+          Thousands of years later, the problem facing the Gods
+          was different. Elder Dragons were not consuming the
+          world's power. Mortals were using increasingly
+          destructive magic against one another.
         </p>
 
         <p>
-          To do so, they returned to an artifact far older than
-          any Human kingdom.
+          Yet the ancient principle remained useful.
         </p>
+
+        <p>
+          Magic could be removed from unrestricted circulation,
+          placed within the Bloodstone, and made more difficult
+          to access.
+        </p>
+
+        <p>
+          The Gods therefore turned an ancient Seer instrument
+          of preservation toward a new purpose: the regulation
+          of mortal magic.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            The Seers had hidden magic because dragons were
+            consuming it. The Gods used the same artifact because
+            mortals were destroying one another with it. The
+            threat had changed. The principle had not.
+          </p>
+
+        </div>
 
       </section>
 
@@ -1318,9 +1373,9 @@
 
       <section
         class="chapter"
-        data-position="54"
+        data-position="42"
         data-date="1 BE"
-        data-context="MAGIC RETURNS TO THE BLOODSTONE"
+        data-context="THE BLOODSTONE IS DIVIDED"
       >
 
         <p class="chapter-number">
@@ -1328,46 +1383,55 @@
         </p>
 
         <h2>
-          The Bloodstone becomes a restraint
+          The Bloodstone is divided
         </h2>
 
         <p class="chapter-opening">
-          The Gods turned to the original
-          <strong>Bloodstone</strong>, the great magical
-          repository created by the Seers during the previous
-          Dragonrise. The Seers had used the artifact to keep
-          uncorrupted magic away from the Elder Dragons. The
-          Gods now used the same ability for a different purpose.
+          The Gods did more than reuse the original Bloodstone.
+          They transformed its structure.
         </p>
 
         <p>
-          Much of the widely available magic was drawn back
-          into the Bloodstone, reducing the amount of power
-          that mortals could freely command. The artifact again
-          became a place where magic could be concentrated and
-          kept apart from the wider world.
+          Using <strong>King Doric's blood</strong> as part of
+          the sealing process, the great stone was divided into
+          <strong>five pieces</strong>.
         </p>
 
         <p>
-          The Gods did not stop there. An intact Bloodstone
-          containing such a large concentration of magic would
-          itself be dangerous if someone gained control of it,
-          so they changed the artifact more deeply.
+          Four of the Bloodstones became associated with
+          different aspects of magic:
+          <strong>Aggression</strong>,
+          <strong>Destruction</strong>,
+          <strong>Preservation</strong>, and
+          <strong>Denial</strong>.
+        </p>
+
+        <p>
+          The fifth served as a
+          <strong>keystone</strong> capable of bringing the
+          divided powers together.
+        </p>
+
+        <p>
+          The original Seer repository had therefore become
+          something new: a system through which the flow and use
+          of magic could be divided and controlled.
         </p>
 
         <div class="research-note">
 
           <p class="research-note-label">
-            Research Note // The Original Bloodstone
+            Research Note // Bloodstones' Unmaking
           </p>
 
           <p>
-            The Bloodstone used here was not created by the
-            Gods. It was the ancient Seer artifact that had
-            survived from the previous Dragonrise. Human
-            histories later remembered the Gods' work upon the
-            Bloodstone more clearly than the much older history
-            of its creation.
+            Arah contained specialized Bloodstone-related
+            equipment within Heavencrystal Palace, known as the
+            Bloodstones' Unmaking. Its presence demonstrates that
+            the Gods possessed equipment capable of working with
+            Bloodstone material. The surviving record does not
+            securely identify every step or device used in the
+            division itself.
           </p>
 
         </div>
@@ -1381,9 +1445,9 @@
 
       <section
         class="chapter"
-        data-position="67"
+        data-position="51"
         data-date="1 BE"
-        data-context="THE BLOODSTONES' UNMAKING"
+        data-context="THE BLOODSTONES ARE SCATTERED"
       >
 
         <p class="chapter-number">
@@ -1391,123 +1455,37 @@
         </p>
 
         <h2>
-          One Bloodstone becomes five
+          The stones are placed beyond easy reach
         </h2>
 
         <p class="chapter-opening">
-          At Arah, the Gods divided the original Bloodstone
-          into <strong>five major pieces</strong>. Four became
-          connected to the traditional schools of magic, while
-          the fifth became the <strong>Keystone</strong> needed
-          to bring the divided system together again.
-        </p>
-
-        <div class="magic-grid">
-
-          <div class="magic-card">
-
-            <p class="magic-card-label">
-              School of Magic
-            </p>
-
-            <h3>
-              Preservation
-            </h3>
-
-            <p>
-              One of the four divisions created when the Gods
-              separated the magical power of the original
-              Bloodstone.
-            </p>
-
-          </div>
-
-
-          <div class="magic-card">
-
-            <p class="magic-card-label">
-              School of Magic
-            </p>
-
-            <h3>
-              Aggression
-            </h3>
-
-            <p>
-              One of the four traditional schools represented
-              by a major Bloodstone after the division.
-            </p>
-
-          </div>
-
-
-          <div class="magic-card">
-
-            <p class="magic-card-label">
-              School of Magic
-            </p>
-
-            <h3>
-              Denial
-            </h3>
-
-            <p>
-              One of the four traditional schools represented
-              by a major Bloodstone after the division.
-            </p>
-
-          </div>
-
-
-          <div class="magic-card">
-
-            <p class="magic-card-label">
-              School of Magic
-            </p>
-
-            <h3>
-              Destruction
-            </h3>
-
-            <p>
-              One of the four traditional schools represented
-              by a major Bloodstone after the division.
-            </p>
-
-          </div>
-
-
-          <div class="magic-card">
-
-            <p class="magic-card-label">
-              Fifth Piece
-            </p>
-
-            <h3>
-              The Keystone
-            </h3>
-
-            <p>
-              The fifth major piece was needed to reconnect
-              the four school-aligned Bloodstones.
-            </p>
-
-          </div>
-
-        </div>
-
-        <p>
-          Dividing the Bloodstone created another layer of
-          protection. The great concentration of magic no
-          longer rested within one complete artifact, and
-          restoring the original system required the Keystone.
+          After the division, the Bloodstones were carried away
+          from Arah.
         </p>
 
         <p>
-          The four magical schools would remain part of how
-          later generations understood and organized magic,
-          even as magical practice continued to change over
-          the centuries.
+          Surviving histories state that the Gods cast the
+          divided stones into a great volcano. An eruption later
+          scattered them across the surrounding world.
+        </p>
+
+        <p>
+          The stones were no longer gathered in one Divine
+          repository where a single power might easily control
+          them.
+        </p>
+
+        <p>
+          Their influence, however, did not disappear.
+          Bloodstone magic continued to affect the regions around
+          the fragments, and pieces broken from the greater stones
+          retained traces of that power.
+        </p>
+
+        <p>
+          The artifact created to preserve magic during the
+          Dragonrise had now become permanently embedded in the
+          geography and magical history of Tyria.
         </p>
 
       </section>
@@ -1519,9 +1497,9 @@
 
       <section
         class="chapter"
-        data-position="80"
+        data-position="60"
         data-date="1 BE"
-        data-context="DORIC'S BLOOD SEALS THE STONES"
+        data-context="MAGIC IS RESTRICTED"
       >
 
         <p class="chapter-number">
@@ -1529,35 +1507,54 @@
         </p>
 
         <h2>
-          Doric's blood seals the Stones
+          The Gods restrict magic
         </h2>
 
         <p class="chapter-opening">
-          King Doric's role did not end with his appeal to the
-          Gods. His blood was used to seal the divided
-          <strong>Bloodstones</strong>, tying the Human king
-          directly to the protections placed around them.
+          The division of the Bloodstone represented a reversal
+          of the direction established by Abaddon's Gift.
         </p>
 
         <p>
-          Doric and his descendants were given responsibility
-          for guarding the Stones. The five pieces were then
-          removed from Arah and placed within the great volcano
-          of the <strong>Ring of Fire Islands</strong> known as
-          <strong>Abaddon's Mouth</strong>.
+          Mortal access to magic was reduced and divided.
+          The power that had spread so widely was placed once
+          again behind limits.
         </p>
 
         <p>
-          There they were meant to remain beyond easy mortal
-          reach. The great reserve of magic had been restricted,
-          separated, sealed, and hidden.
+          For the Gods who supported the decision, the magical
+          wars had demonstrated that unrestricted access could
+          destroy the societies it was meant to empower.
         </p>
 
         <p>
-          For most of the pantheon, the immediate crisis had
-          been answered. For Abaddon, the decision had created
-          a new grievance.
+          Abaddon did not accept that conclusion.
         </p>
+
+        <p>
+          The disagreement was no longer only about how magic
+          should be used.
+        </p>
+
+        <p>
+          It became a conflict over whether the other Gods had
+          the right to take that power back.
+        </p>
+
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            This is the point where the Gift stops being only a
+            history of magic. The argument becomes political and
+            Divine: who decides how much power another people is
+            allowed to possess?
+          </p>
+
+        </div>
 
       </section>
 
@@ -1568,9 +1565,9 @@
 
       <section
         class="chapter"
-        data-position="92"
+        data-position="69"
         data-date="1 BE"
-        data-context="ABADDON AND THE MARGONITES"
+        data-context="ABADDON DEFIES THE PANTHEON"
       >
 
         <p class="chapter-number">
@@ -1578,40 +1575,37 @@
         </p>
 
         <h2>
-          Abaddon refuses the new limits
+          Abaddon refuses the decision
         </h2>
 
         <p class="chapter-opening">
-          <strong>Abaddon</strong> opposed the decision to
-          restrict the magical power he had helped spread.
-          The dispute added to the growing division between
-          Abaddon and the other members of the pantheon.
+          Abaddon's disagreement with the other Gods became open
+          defiance.
         </p>
 
         <p>
-          He was not without followers. The
-          <strong>Margonites</strong>, the Human maritime
-          civilization that ruled the Crystal Sea and much of
-          its surrounding coastline, had long been devoted to
-          him. Their relationship with Abaddon would now pull
-          them into the conflict between the Gods.
+          The God of Knowledge had supported greater mortal
+          access to magic. When the rest of the pantheon acted
+          to restrict that power, he opposed them rather than
+          accept the new order.
         </p>
 
         <p>
-          The Margonites were still a Human people at the
-          beginning of this period. Their cities, ships, and
-          coastal holdings belonged to a civilization that had
-          existed before Abaddon's fall. Only as the rebellion
-          deepened did some of his followers begin the
-          transformation into the beings remembered by later
-          history.
+          Surviving Human traditions remember Abaddon afterward
+          as the Betrayer, but that title belongs to the history
+          written after his defeat.
         </p>
 
         <p>
-          <strong>Jadoth</strong> became one of the most famous
-          of those followers. His story would become closely
-          tied to Abaddon's rebellion and the fate of the
-          Margonites themselves.
+          Before the rebellion, he had been one of the Six:
+          keeper of knowledge, designer of the Divine
+          reliquaries, patron of the Margonites, and a member of
+          the same pantheon he was now prepared to fight.
+        </p>
+
+        <p>
+          What had begun as a disagreement over magic had become
+          a fracture within the Gods themselves.
         </p>
 
       </section>
@@ -1623,9 +1617,9 @@
 
       <section
         class="chapter"
-        data-position="100"
+        data-position="77"
         data-date="1 BE"
-        data-context="ABADDON REBELS"
+        data-context="THE MARGONITES FOLLOW ABADDON"
       >
 
         <p class="chapter-number">
@@ -1633,35 +1627,108 @@
         </p>
 
         <h2>
-          The dispute becomes a Divine war
+          The Margonites choose their God
         </h2>
 
         <p class="chapter-opening">
-          The conflict over magic did not remain an argument
-          within the pantheon. <strong>Abaddon</strong>
-          eventually turned against the other Gods, while his
-          Margonite followers rallied around him.
+          Abaddon did not enter the coming conflict alone.
         </p>
 
         <p>
-          What followed became one of the great disasters of
-          early Human history. Abaddon's rebellion brought
-          Divine power into direct conflict and carried the
-          fighting into the lands surrounding the Crystal Sea.
+          The <strong>Margonites</strong> had worshiped him
+          during their long history as a maritime people of the
+          Crystal Sea. When Abaddon turned against the other
+          Gods, many of his followers remained loyal to him.
         </p>
 
         <p>
-          The Gift of Magic had therefore led to consequences
-          far beyond the mortal wars that first brought King
-          Doric to Arah. The effort to restrict magic had opened
-          a deeper division among the Gods themselves.
+          Their devotion tied the fate of their civilization to
+          his rebellion.
         </p>
 
         <p>
-          The next record follows that war, the destruction of
-          the Crystal Sea, the fall of Abaddon, and the event
-          from which later Human calendars would count their
-          years.
+          The Margonites would eventually be transformed into
+          the demonic beings remembered from later ages, but
+          their earlier history should not be erased by what
+          they became.
+        </p>
+
+        <p>
+          They entered the crisis as a Human people whose
+          religious loyalty placed them on the side of a God
+          now at war with the rest of his pantheon.
+        </p>
+
+        <div class="research-note">
+
+          <p class="research-note-label">
+            Research Note // Margonite Transformation
+          </p>
+
+          <p>
+            The surviving record clearly establishes the later
+            demonic transformation of Abaddon's Margonite
+            followers, but the exact sequence and timing of every
+            stage should be distinguished from the earlier Human
+            maritime civilization described in the previous
+            volume.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER X
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="85"
+        data-date="1 BE – 0 AE"
+        data-context="THE WAR OF THE GODS"
+      >
+
+        <p class="chapter-number">
+          X
+        </p>
+
+        <h2>
+          The war of the Gods
+        </h2>
+
+        <p class="chapter-opening">
+          The conflict eventually became a Divine war.
+        </p>
+
+        <p>
+          Abaddon and his followers fought against the other
+          Gods and the forces aligned with them.
+        </p>
+
+        <p>
+          The scale of that fighting permanently transformed the
+          southern world.
+        </p>
+
+        <p>
+          The <strong>Crystal Sea</strong>, once crossed by
+          Margonite ships, was devastated during the conflict.
+          What remained became the
+          <strong>Crystal Desert</strong>.
+        </p>
+
+        <p>
+          Other lands were left scarred by sulfur and Divine
+          destruction, creating the region later known as the
+          <strong>Desolation</strong>.
+        </p>
+
+        <p>
+          The war demonstrated a danger beyond anything seen in
+          the earlier mortal magical conflicts. Gods fighting
+          Gods could remake the geography of Tyria itself.
         </p>
 
         <div class="q-observation">
@@ -1671,18 +1738,232 @@
           </p>
 
           <p>
-            The history is clearer now than the old phrase
-            "the Gods gave magic to mortals" ever suggested.
-            The Vaelwardens received the first controlled access.
-            Other guilds followed. Abaddon's Gift then opened
-            the door much wider, and the Gods eventually tried
-            to close it again. The war that followed was not
-            really about whether magic should exist. It was
-            about who should be allowed to reach it, and how
-            much power anyone should be trusted to hold.
+            The magical wars had convinced the Gods that mortal
+            power needed limits. Their own war demonstrated that
+            Divine power could be even harder for the world to
+            survive.
           </p>
 
         </div>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER XI
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="93"
+        data-date="0 AE"
+        data-context="ABADDON IS DEFEATED"
+      >
+
+        <p class="chapter-number">
+          XI
+        </p>
+
+        <h2>
+          The fall of Abaddon
+        </h2>
+
+        <p class="chapter-opening">
+          Abaddon was eventually defeated by the other Gods.
+        </p>
+
+        <p>
+          He was not destroyed.
+        </p>
+
+        <p>
+          Instead, the fallen God was imprisoned within the
+          <strong>Realm of Torment</strong>, separated from
+          physical Tyria but still alive.
+        </p>
+
+        <p>
+          His followers were driven with him into a new age of
+          exile, while the accepted Human pantheon was reduced
+          from Six to Five.
+        </p>
+
+        <p>
+          Abaddon's name and symbols were suppressed. His place
+          in public worship disappeared, monuments associated
+          with him were hidden or forgotten, and later
+          generations increasingly remembered him through the
+          title of the fallen God rather than as one of the
+          Divine rulers who had once lived in Arah.
+        </p>
+
+        <p>
+          Yet the erasure was never complete.
+        </p>
+
+        <p>
+          His hidden reliquary remained in Orr, and traces of his
+          earlier place within the pantheon survived beneath the
+          religious landscape that replaced him.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           CHAPTER XII
+      ========================================= -->
+
+      <section
+        class="chapter"
+        data-position="100"
+        data-date="0 AE"
+        data-context="THE DIVINE AGE ENDS"
+      >
+
+        <p class="chapter-number">
+          XII
+        </p>
+
+        <h2>
+          The world after the Divine war
+        </h2>
+
+        <p class="chapter-opening">
+          Abaddon's defeat solved the immediate crisis, but the
+          Gods could not undo what their conflict had done to
+          Tyria.
+        </p>
+
+        <p>
+          The Crystal Sea was gone.
+        </p>
+
+        <p>
+          The Margonite civilization that had ruled its waters
+          had fallen with the God it followed.
+        </p>
+
+        <p>
+          The Bloodstone had been divided and scattered.
+          Mortal magic now existed under new limits.
+        </p>
+
+        <p>
+          The pantheon itself had been broken by war between its
+          members.
+        </p>
+
+        <p>
+          And the remaining Gods had witnessed what happened
+          when Divine power was brought fully into conflict on
+          the physical world.
+        </p>
+
+        <p>
+          They had already withdrawn once before, leaving public
+          life for the protection of Arah while remaining inside
+          Tyria.
+        </p>
+
+        <p>
+          Their next withdrawal would be far greater.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           ARCHIVE NOTE
+      ========================================= -->
+
+      <section class="archive-note">
+
+        <p class="section-kicker">
+          Archive Note
+        </p>
+
+        <h2>
+          Where the record remains contested
+        </h2>
+
+        <p>
+          The Gift of Magic and Abaddon's rebellion survive
+          through histories written largely by cultures that
+          accepted the victorious pantheon. The broad events are
+          well established, but motive is more difficult to
+          recover.
+        </p>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            Abaddon's intent
+          </h3>
+
+          <p>
+            Surviving sources establish that Abaddon expanded
+            mortal access to magic and later opposed the other
+            Gods when that access was restricted. They do not
+            provide a neutral record of every argument within
+            the pantheon or allow us to reconstruct Abaddon's
+            complete original motives.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            The mechanics of the Gift
+          </h3>
+
+          <p>
+            Different accounts describe the Gift through the
+            language of Divine power, magical access, and the
+            Bloodstone. The historical effect is clearer than
+            every mechanism involved.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            The Bloodstones' Unmaking
+          </h3>
+
+          <p>
+            A Bloodstone-related apparatus existed within
+            Heavencrystal Palace in Arah. Its exact role in the
+            division of the original Bloodstone has not been
+            securely established.
+          </p>
+
+        </div>
+
+        <div class="uncertainty-item">
+
+          <h3>
+            Abaddon's erasure
+          </h3>
+
+          <p>
+            Later Human religion deliberately suppressed
+            Abaddon's place among the Six. Hidden statues,
+            reliquaries, and surviving records therefore provide
+            evidence of a history that later generations were
+            encouraged to forget.
+          </p>
+
+        </div>
+
+        <p>
+          The difference between event and motive matters
+          especially here. We can follow what happened without
+          pretending that the victors preserved every side of
+          the argument that caused it.
+        </p>
 
       </section>
 
@@ -1698,14 +1979,25 @@
         </p>
 
         <h2>
-          The road continues
+          The Gods prepare to leave
         </h2>
 
         <p>
-          The Gift had been restricted and the Bloodstone
-          divided, but the argument over magic had become part
-          of a larger conflict. Abaddon had turned against the
-          pantheon, and the Margonites stood with him.
+          The Gift of Magic had exposed the danger of mortal
+          power without restraint. The war against Abaddon
+          revealed something more troubling: the Gods themselves
+          could devastate the world when their disagreements
+          became physical conflict.
+        </p>
+
+        <p>
+          The remaining Five still possessed Arah, their
+          temples, reliquaries, knowledge, and connection to
+          Humanity.
+        </p>
+
+        <p>
+          But their age of physical rule was ending.
         </p>
 
         <p class="next-title">
@@ -1713,10 +2005,11 @@
         </p>
 
         <p>
-          The next archive follows Abaddon's rebellion, the war
-          that transformed the Crystal Sea, his imprisonment in
-          the Realm of Torment, and the departure of the remaining
-          Gods from Tyria in <strong>0 AE</strong>.
+          The next archive follows the decision of the remaining
+          Gods to withdraw from physical Tyria, the abandonment
+          of their direct rule from Arah, the world left behind
+          in 0 AE, and the beginning of an age in which mortals
+          would increasingly have to govern themselves.
         </p>
 
         <div class="navigation-actions">
@@ -1736,7 +2029,7 @@
           </a>
 
           <a
-            href="../exodus-of-gods/index.html"
+            href="../exodus-of-the-gods/index.html"
             class="button button-primary"
           >
             Read Volume V →
@@ -1753,7 +2046,7 @@
 
   <!-- ========================================
        FOOTER
-  ========================================= -->
+  ======================================== -->
 
   <footer>
 
@@ -1776,7 +2069,7 @@
 
   <!-- ========================================
        CHRONOLOGY SCRIPT
-  ========================================= -->
+  ======================================== -->
 
   <script>
     (() => {
