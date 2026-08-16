@@ -28,7 +28,6 @@
   <style>
 
     :root {
-
       color-scheme: dark;
 
       --background: #070b14;
@@ -39,8 +38,7 @@
       --panel: #0d1422;
 
       --border: #334155;
-      --border-soft:
-        rgba(148, 163, 184, 0.18);
+      --border-soft: rgba(148, 163, 184, 0.18);
 
       --gold: #d6b36a;
       --gold-bright: #f1d79a;
@@ -53,7 +51,6 @@
       --quote: #c7d2e0;
 
       --max-width: 980px;
-
     }
 
 
@@ -63,28 +60,21 @@
 
 
     html {
-
       scroll-behavior: smooth;
-
       scroll-padding-top: 90px;
-
     }
 
 
     body {
-
       margin: 0;
-
       min-width: 320px;
 
       background:
-
         radial-gradient(
           circle at top,
           rgba(214, 179, 106, 0.07),
           transparent 34rem
         ),
-
         linear-gradient(
           to bottom,
           #090e18,
@@ -99,9 +89,7 @@
         serif;
 
       font-size: 1.04rem;
-
       line-height: 1.8;
-
     }
 
 
@@ -112,8 +100,7 @@
 
     button,
     a {
-      -webkit-tap-highlight-color:
-        transparent;
+      -webkit-tap-highlight-color: transparent;
     }
 
 
@@ -126,30 +113,22 @@
 
 
     .container {
-
-      width:
-        min(
-          var(--max-width),
-          calc(100% - 34px)
-        );
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
 
       margin-inline: auto;
-
     }
-
 
 
     /* ========================================
        HEADER
     ======================================== */
 
-
     .site-header {
-
       position: sticky;
-
       top: 0;
-
       z-index: 50;
 
       border-bottom:
@@ -158,25 +137,18 @@
       background:
         rgba(3, 6, 12, 0.95);
 
-      backdrop-filter:
-        blur(14px);
-
+      backdrop-filter: blur(14px);
     }
 
 
     .header-inner {
-
       min-height: 66px;
 
       display: flex;
-
       align-items: center;
-
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       gap: 20px;
-
     }
 
 
@@ -186,7 +158,6 @@
 
 
     .brand-small {
-
       margin: 0;
 
       color: var(--ink-faint);
@@ -199,24 +170,18 @@
         monospace;
 
       font-size: 0.61rem;
-
       letter-spacing: 0.16em;
-
       text-transform: uppercase;
-
     }
 
 
     .brand-name {
-
       margin: 2px 0 0;
 
       color: var(--gold);
 
       font-size: 1rem;
-
       font-weight: 700;
-
     }
 
 
@@ -226,7 +191,6 @@
 
 
     .header-position-label {
-
       margin: 0;
 
       color: var(--ink-faint);
@@ -239,16 +203,12 @@
         monospace;
 
       font-size: 0.56rem;
-
       letter-spacing: 0.13em;
-
       text-transform: uppercase;
-
     }
 
 
     .header-position-date {
-
       margin: 3px 0 0;
 
       color: var(--gold-bright);
@@ -261,30 +221,21 @@
         monospace;
 
       font-size: 0.7rem;
-
       font-weight: 700;
-
     }
-
 
 
     /* ========================================
        HERO
     ======================================== */
 
-
     .hero {
-
-      padding:
-        82px 0 64px;
-
+      padding: 82px 0 64px;
       text-align: center;
-
     }
 
 
     .hero-kicker {
-
       margin: 0;
 
       color: var(--gold-muted);
@@ -297,18 +248,13 @@
         monospace;
 
       font-size: 0.66rem;
-
       letter-spacing: 0.2em;
-
       text-transform: uppercase;
-
     }
 
 
     .hero h1 {
-
-      margin:
-        17px 0 0;
+      margin: 17px 0 0;
 
       color: var(--gold-bright);
 
@@ -320,37 +266,26 @@
         );
 
       font-weight: 500;
-
       line-height: 1;
-
-      letter-spacing:
-        -0.045em;
-
+      letter-spacing: -0.045em;
     }
 
 
     .hero-subtitle {
-
       max-width: 720px;
 
-      margin:
-        22px auto 0;
+      margin: 22px auto 0;
 
       color: var(--ink-muted);
 
       font-size: 1.08rem;
-
       font-style: italic;
-
       line-height: 1.8;
-
     }
 
 
     .hero-range {
-
-      margin:
-        24px 0 0;
+      margin: 24px 0 0;
 
       color: var(--gold);
 
@@ -362,41 +297,28 @@
         monospace;
 
       font-size: 0.7rem;
-
       letter-spacing: 0.13em;
-
       text-transform: uppercase;
-
     }
 
 
     .ornament {
-
       width: 120px;
 
-      margin:
-        34px auto 0;
+      margin: 34px auto 0;
 
       border: 0;
-
-      border-top:
-        1px solid var(--gold-muted);
-
+      border-top: 1px solid var(--gold-muted);
     }
-
 
 
     /* ========================================
        AUTHOR
     ======================================== */
 
-
     .author-card {
-
       margin-bottom: 64px;
-
-      padding:
-        23px 26px;
+      padding: 23px 26px;
 
       border-top:
         1px solid var(--border-soft);
@@ -405,12 +327,10 @@
         1px solid var(--border-soft);
 
       text-align: center;
-
     }
 
 
     .author-label {
-
       margin: 0;
 
       color: var(--ink-faint);
@@ -423,62 +343,44 @@
         monospace;
 
       font-size: 0.61rem;
-
       letter-spacing: 0.15em;
-
       text-transform: uppercase;
-
     }
 
 
     .author-name {
-
-      margin:
-        8px 0 0;
+      margin: 8px 0 0;
 
       color: var(--gold);
 
       font-size: 1.2rem;
-
       font-weight: 700;
-
     }
 
 
     .author-title {
-
-      margin:
-        5px 0 0;
+      margin: 5px 0 0;
 
       color: var(--ink-muted);
 
       font-size: 0.9rem;
-
       font-style: italic;
-
       line-height: 1.65;
-
     }
-
 
 
     /* ========================================
        INTRO
     ======================================== */
 
-
     .intro {
-
       max-width: 780px;
 
-      margin:
-        0 auto 58px;
-
+      margin: 0 auto 58px;
     }
 
 
     .section-kicker {
-
       margin: 0;
 
       color: var(--gold-muted);
@@ -491,11 +393,8 @@
         monospace;
 
       font-size: 0.63rem;
-
       letter-spacing: 0.17em;
-
       text-transform: uppercase;
-
     }
 
 
@@ -503,9 +402,7 @@
     .road-header h2,
     .archive-header h2,
     .support-block h2 {
-
-      margin:
-        9px 0 0;
+      margin: 9px 0 0;
 
       color: var(--gold);
 
@@ -517,121 +414,72 @@
         );
 
       font-weight: 500;
-
       line-height: 1.25;
-
     }
 
 
     .intro p {
-
-      margin:
-        17px 0 0;
-
+      margin: 17px 0 0;
     }
-
 
 
     /* ========================================
        SUPPORT THE ARCHIVE
     ======================================== */
 
-
     .support-section {
-      padding:
-        0 0 78px;
+      padding: 0 0 78px;
     }
 
 
     .support-block {
-
-      width:
-        min(
-          780px,
-          100%
-        );
+      width: min(780px, 100%);
 
       margin: 0 auto;
-
       padding: 32px;
 
       border:
         1px solid
-        rgba(
-          214,
-          179,
-          106,
-          0.28
-        );
+        rgba(214, 179, 106, 0.28);
 
       background:
-
         linear-gradient(
           135deg,
-          rgba(
-            214,
-            179,
-            106,
-            0.055
-          ),
-          rgba(
-            15,
-            23,
-            42,
-            0.58
-          )
+          rgba(214, 179, 106, 0.055),
+          rgba(15, 23, 42, 0.58)
         );
 
       text-align: center;
-
     }
 
 
     .support-block p {
-
       max-width: 660px;
 
-      margin:
-        16px auto 0;
+      margin: 16px auto 0;
 
       color: var(--ink-muted);
-
     }
 
 
     .support-button {
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
 
       min-height: 48px;
 
       margin-top: 24px;
-
-      padding:
-        0 22px;
+      padding: 0 22px;
 
       border:
         1px solid
-        rgba(
-          214,
-          179,
-          106,
-          0.48
-        );
+        rgba(214, 179, 106, 0.48);
 
       border-radius: 4px;
 
       background:
-        rgba(
-          214,
-          179,
-          106,
-          0.08
-        );
+        rgba(214, 179, 106, 0.08);
 
       color: var(--gold-bright);
 
@@ -643,7 +491,6 @@
         monospace;
 
       font-size: 0.72rem;
-
       font-weight: 700;
 
       text-decoration: none;
@@ -652,41 +499,24 @@
         transform 180ms ease,
         border-color 180ms ease,
         background 180ms ease;
-
     }
 
 
     .support-button:hover {
-
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
 
       border-color:
-        rgba(
-          214,
-          179,
-          106,
-          0.72
-        );
+        rgba(214, 179, 106, 0.72);
 
       background:
-        rgba(
-          214,
-          179,
-          106,
-          0.13
-        );
-
+        rgba(214, 179, 106, 0.13);
     }
 
 
     .support-note {
+      margin-top: 14px !important;
 
-      margin-top:
-        14px !important;
-
-      color:
-        var(--ink-faint) !important;
+      color: var(--ink-faint) !important;
 
       font-family:
         ui-monospace,
@@ -696,139 +526,83 @@
         monospace;
 
       font-size: 0.59rem;
-
       line-height: 1.6;
-
     }
-
 
 
     /* ========================================
        ROAD
     ======================================== */
 
-
     .road-section {
-
-      padding:
-        66px 0 82px;
+      padding: 66px 0 82px;
 
       border-top:
         1px solid var(--border-soft);
-
     }
 
 
     .road-header {
-
       margin-bottom: 40px;
-
       text-align: center;
-
     }
 
 
     .road-header p {
-
       max-width: 700px;
 
-      margin:
-        13px auto 0;
+      margin: 13px auto 0;
 
       color: var(--ink-muted);
-
     }
-
 
 
     /* ========================================
        TIMELINE
     ======================================== */
 
-
     .timeline {
-
       position: relative;
 
-      width:
-        min(
-          820px,
-          100%
-        );
+      width: min(820px, 100%);
 
       margin: 0 auto;
-
     }
 
 
     .timeline-line {
-
       position: absolute;
 
       top: 0;
-
       bottom: 0;
-
       left: 20px;
 
       width: 1px;
 
       background:
-
         linear-gradient(
           to bottom,
-          rgba(
-            214,
-            179,
-            106,
-            0.18
-          ),
-          rgba(
-            214,
-            179,
-            106,
-            0.85
-          ) 8%,
-          rgba(
-            214,
-            179,
-            106,
-            0.85
-          ) 92%,
-          rgba(
-            214,
-            179,
-            106,
-            0.18
-          )
+          rgba(214, 179, 106, 0.18),
+          rgba(214, 179, 106, 0.85) 8%,
+          rgba(214, 179, 106, 0.85) 92%,
+          rgba(214, 179, 106, 0.18)
         );
-
     }
 
 
     .volume-entry {
-
       position: relative;
 
       display: block;
 
-      margin:
-        0 0 18px;
-
-      padding:
-        24px 24px 24px 58px;
+      margin: 0 0 18px;
+      padding: 24px 24px 24px 58px;
 
       border:
-        1px solid
-        var(--border-soft);
+        1px solid var(--border-soft);
 
       background:
-        rgba(
-          15,
-          23,
-          42,
-          0.55
-        );
+        rgba(15, 23, 42, 0.55);
 
       text-decoration: none;
 
@@ -836,51 +610,33 @@
         transform 180ms ease,
         border-color 180ms ease,
         background 180ms ease;
-
     }
 
 
     .volume-entry:hover {
-
-      transform:
-        translateX(5px);
+      transform: translateX(5px);
 
       border-color:
-        rgba(
-          214,
-          179,
-          106,
-          0.5
-        );
+        rgba(214, 179, 106, 0.5);
 
       background:
-        rgba(
-          19,
-          29,
-          48,
-          0.78
-        );
-
+        rgba(19, 29, 48, 0.78);
     }
 
 
     .volume-entry::before {
-
       content: "";
 
       position: absolute;
 
       top: 28px;
-
       left: 14px;
 
       width: 13px;
-
       height: 13px;
 
       border:
-        2px solid
-        var(--gold-bright);
+        2px solid var(--gold-bright);
 
       border-radius: 50%;
 
@@ -889,74 +645,38 @@
 
       box-shadow:
         0 0 10px
-        rgba(
-          214,
-          179,
-          106,
-          0.26
-        );
-
+        rgba(214, 179, 106, 0.26);
     }
 
 
     .volume-entry:hover::before {
-
-      background:
-        var(--gold);
-
+      background: var(--gold);
     }
 
 
     .volume-entry.current {
-
       border-color:
-        rgba(
-          214,
-          179,
-          106,
-          0.5
-        );
+        rgba(214, 179, 106, 0.5);
 
       background:
-
         linear-gradient(
           135deg,
-          rgba(
-            214,
-            179,
-            106,
-            0.07
-          ),
-          rgba(
-            15,
-            23,
-            42,
-            0.58
-          )
+          rgba(214, 179, 106, 0.07),
+          rgba(15, 23, 42, 0.58)
         );
-
     }
 
 
     .volume-entry.current::before {
-
-      background:
-        var(--gold);
+      background: var(--gold);
 
       box-shadow:
         0 0 16px
-        rgba(
-          214,
-          179,
-          106,
-          0.45
-        );
-
+        rgba(214, 179, 106, 0.45);
     }
 
 
     .volume-number {
-
       margin: 0;
 
       color: var(--ink-faint);
@@ -969,34 +689,24 @@
         monospace;
 
       font-size: 0.59rem;
-
       letter-spacing: 0.15em;
-
       text-transform: uppercase;
-
     }
 
 
     .volume-entry h3 {
-
-      margin:
-        6px 0 0;
+      margin: 6px 0 0;
 
       color: var(--gold);
 
       font-size: 1.35rem;
-
       font-weight: 600;
-
       line-height: 1.3;
-
     }
 
 
     .volume-date {
-
-      margin:
-        6px 0 0;
+      margin: 6px 0 0;
 
       color: var(--gold-bright);
 
@@ -1008,30 +718,22 @@
         monospace;
 
       font-size: 0.67rem;
-
       letter-spacing: 0.07em;
-
     }
 
 
     .volume-description {
-
-      margin:
-        12px 0 0;
+      margin: 12px 0 0;
 
       color: var(--ink-muted);
 
       font-size: 0.94rem;
-
       line-height: 1.68;
-
     }
 
 
     .volume-events {
-
-      margin:
-        14px 0 0;
+      margin: 14px 0 0;
 
       color: var(--ink-faint);
 
@@ -1043,16 +745,12 @@
         monospace;
 
       font-size: 0.62rem;
-
       line-height: 1.65;
-
       letter-spacing: 0.03em;
-
     }
 
 
     .volume-arrow {
-
       display: inline-block;
 
       margin-top: 14px;
@@ -1067,67 +765,40 @@
         monospace;
 
       font-size: 0.68rem;
-
       font-weight: 700;
 
       transition:
         transform 180ms ease;
-
     }
 
 
-    .volume-entry:hover
-    .volume-arrow {
-
-      transform:
-        translateX(4px);
-
+    .volume-entry:hover .volume-arrow {
+      transform: translateX(4px);
     }
-
 
 
     /* ========================================
        PRESENT MARKER
     ======================================== */
 
-
     .present-marker {
+      width: min(820px, 100%);
 
-      width:
-        min(
-          820px,
-          100%
-        );
-
-      margin:
-        32px auto 0;
-
+      margin: 32px auto 0;
       padding: 25px;
 
       border:
         1px solid
-        rgba(
-          214,
-          179,
-          106,
-          0.34
-        );
+        rgba(214, 179, 106, 0.34);
 
       background:
-        rgba(
-          214,
-          179,
-          106,
-          0.04
-        );
+        rgba(214, 179, 106, 0.04);
 
       text-align: center;
-
     }
 
 
     .present-label {
-
       margin: 0;
 
       color: var(--gold);
@@ -1140,65 +811,41 @@
         monospace;
 
       font-size: 0.62rem;
-
       letter-spacing: 0.15em;
-
       text-transform: uppercase;
-
     }
 
 
     .present-marker p:last-of-type {
-
-      margin:
-        10px 0 0;
+      margin: 10px 0 0;
 
       color: var(--ink-muted);
-
     }
 
 
     .present-marker strong {
-
-      color:
-        var(--gold-bright);
-
+      color: var(--gold-bright);
     }
 
 
     .feedback-open-button {
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
 
       min-height: 45px;
 
       margin-top: 21px;
-
-      padding:
-        0 21px;
+      padding: 0 21px;
 
       border:
         1px solid
-        rgba(
-          214,
-          179,
-          106,
-          0.46
-        );
+        rgba(214, 179, 106, 0.46);
 
       border-radius: 4px;
 
       background:
-        rgba(
-          214,
-          179,
-          106,
-          0.07
-        );
+        rgba(214, 179, 106, 0.07);
 
       color:
         var(--gold-bright);
@@ -1211,7 +858,6 @@
         monospace;
 
       font-size: 0.68rem;
-
       font-weight: 700;
 
       cursor: pointer;
@@ -1220,104 +866,64 @@
         transform 180ms ease,
         border-color 180ms ease,
         background 180ms ease;
-
     }
 
 
     .feedback-open-button:hover {
-
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
 
       border-color:
-        rgba(
-          214,
-          179,
-          106,
-          0.72
-        );
+        rgba(214, 179, 106, 0.72);
 
       background:
-        rgba(
-          214,
-          179,
-          106,
-          0.12
-        );
-
+        rgba(214, 179, 106, 0.12);
     }
-
 
 
     /* ========================================
        RESEARCH ARCHIVES
     ======================================== */
 
-
     .archive-section {
-
-      padding:
-        72px 0 84px;
+      padding: 72px 0 84px;
 
       border-top:
-        1px solid
-        var(--border-soft);
+        1px solid var(--border-soft);
 
       background:
-
         linear-gradient(
           to bottom,
-          rgba(
-            214,
-            179,
-            106,
-            0.018
-          ),
+          rgba(214, 179, 106, 0.018),
           transparent
         );
-
     }
 
 
     .archive-header {
-
       max-width: 760px;
 
-      margin:
-        0 auto 38px;
+      margin: 0 auto 38px;
 
       text-align: center;
-
     }
 
 
     .archive-header p:last-child {
-
-      margin:
-        14px auto 0;
+      margin: 14px auto 0;
 
       color:
         var(--ink-muted);
-
     }
 
 
     .archive-search {
+      width: min(760px, 100%);
 
-      width:
-        min(
-          760px,
-          100%
-        );
-
-      margin:
-        0 auto 34px;
-
+      margin: 0 auto 34px;
     }
 
 
     .archive-search-label {
-
       display: block;
 
       margin-bottom: 9px;
@@ -1333,22 +939,16 @@
         monospace;
 
       font-size: 0.6rem;
-
       letter-spacing: 0.14em;
-
       text-transform: uppercase;
-
     }
 
 
     .archive-search input {
-
       width: 100%;
-
       min-height: 52px;
 
-      padding:
-        0 17px;
+      padding: 0 17px;
 
       border:
         1px solid
@@ -1359,12 +959,7 @@
       outline: none;
 
       background:
-        rgba(
-          9,
-          14,
-          24,
-          0.85
-        );
+        rgba(9, 14, 24, 0.85);
 
       color:
         var(--ink);
@@ -1381,7 +976,6 @@
       transition:
         border-color 180ms ease,
         background 180ms ease;
-
     }
 
 
@@ -1391,30 +985,16 @@
 
 
     .archive-search input:focus {
-
       border-color:
-        rgba(
-          214,
-          179,
-          106,
-          0.65
-        );
+        rgba(214, 179, 106, 0.65);
 
       background:
-        rgba(
-          13,
-          20,
-          34,
-          0.95
-        );
-
+        rgba(13, 20, 34, 0.95);
     }
 
 
     .archive-search-note {
-
-      margin:
-        9px 0 0;
+      margin: 9px 0 0;
 
       color:
         var(--ink-faint);
@@ -1427,42 +1007,28 @@
         monospace;
 
       font-size: 0.59rem;
-
       line-height: 1.6;
-
     }
 
 
     .archive-grid {
-
       display: grid;
 
       grid-template-columns:
-        repeat(
-          2,
-          minmax(0, 1fr)
-        );
+        repeat(2, minmax(0, 1fr));
 
       gap: 16px;
 
-      width:
-        min(
-          820px,
-          100%
-        );
+      width: min(820px, 100%);
 
-      margin:
-        0 auto;
-
+      margin: 0 auto;
     }
 
 
     .archive-card {
-
       position: relative;
 
       display: flex;
-
       flex-direction: column;
 
       min-height: 220px;
@@ -1470,16 +1036,10 @@
       padding: 24px;
 
       border:
-        1px solid
-        var(--border-soft);
+        1px solid var(--border-soft);
 
       background:
-        rgba(
-          15,
-          23,
-          42,
-          0.52
-        );
+        rgba(15, 23, 42, 0.52);
 
       text-decoration: none;
 
@@ -1487,36 +1047,21 @@
         transform 180ms ease,
         border-color 180ms ease,
         background 180ms ease;
-
     }
 
 
     .archive-card:hover {
-
-      transform:
-        translateY(-4px);
+      transform: translateY(-4px);
 
       border-color:
-        rgba(
-          214,
-          179,
-          106,
-          0.5
-        );
+        rgba(214, 179, 106, 0.5);
 
       background:
-        rgba(
-          19,
-          29,
-          48,
-          0.78
-        );
-
+        rgba(19, 29, 48, 0.78);
     }
 
 
     .archive-card-label {
-
       margin: 0;
 
       color: var(--ink-faint);
@@ -1529,50 +1074,36 @@
         monospace;
 
       font-size: 0.58rem;
-
       letter-spacing: 0.14em;
-
       text-transform: uppercase;
-
     }
 
 
     .archive-card h3 {
-
-      margin:
-        8px 0 0;
+      margin: 8px 0 0;
 
       color:
         var(--gold);
 
       font-size: 1.35rem;
-
       font-weight: 600;
-
       line-height: 1.25;
-
     }
 
 
     .archive-card-description {
-
-      margin:
-        12px 0 0;
+      margin: 12px 0 0;
 
       color:
         var(--ink-muted);
 
       font-size: 0.92rem;
-
       line-height: 1.65;
-
     }
 
 
     .archive-card-examples {
-
-      margin:
-        15px 0 0;
+      margin: 15px 0 0;
 
       color:
         var(--ink-faint);
@@ -1585,18 +1116,14 @@
         monospace;
 
       font-size: 0.59rem;
-
       line-height: 1.6;
-
     }
 
 
     .archive-card-link {
-
       display: inline-block;
 
       margin-top: auto;
-
       padding-top: 18px;
 
       color:
@@ -1610,38 +1137,28 @@
         monospace;
 
       font-size: 0.66rem;
-
       font-weight: 700;
 
       transition:
         transform 180ms ease;
-
     }
 
 
-    .archive-card:hover
-    .archive-card-link {
-
-      transform:
-        translateX(4px);
-
+    .archive-card:hover .archive-card-link {
+      transform: translateX(4px);
     }
 
 
     .archive-card-wide {
-      grid-column:
-        1 / -1;
+      grid-column: 1 / -1;
     }
-
 
 
     /* ========================================
        FEEDBACK MODAL
     ======================================== */
 
-
     .feedback-overlay {
-
       position: fixed;
 
       inset: 0;
@@ -1649,62 +1166,41 @@
       z-index: 120;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       padding: 20px;
 
       background:
-        rgba(
-          3,
-          6,
-          12,
-          0.9
-        );
+        rgba(3, 6, 12, 0.9);
 
       backdrop-filter:
         blur(12px);
 
       opacity: 0;
-
       visibility: hidden;
-
       pointer-events: none;
 
       transition:
         opacity 200ms ease,
         visibility 200ms ease;
-
     }
 
 
     .feedback-overlay.open {
-
       opacity: 1;
-
       visibility: visible;
-
       pointer-events: auto;
-
     }
 
 
     .feedback-window {
-
       position: relative;
 
-      width:
-        min(
-          600px,
-          100%
-        );
+      width: min(600px, 100%);
 
       max-height:
-        calc(
-          100vh - 40px
-        );
+        calc(100vh - 40px);
 
       overflow-y: auto;
 
@@ -1712,49 +1208,25 @@
 
       border:
         1px solid
-        rgba(
-          214,
-          179,
-          106,
-          0.42
-        );
+        rgba(214, 179, 106, 0.42);
 
       background:
-
         linear-gradient(
           145deg,
-          rgba(
-            17,
-            24,
-            39,
-            0.99
-          ),
-          rgba(
-            5,
-            9,
-            17,
-            0.99
-          )
+          rgba(17, 24, 39, 0.99),
+          rgba(5, 9, 17, 0.99)
         );
 
       box-shadow:
         0 26px 80px
-        rgba(
-          0,
-          0,
-          0,
-          0.52
-        );
-
+        rgba(0, 0, 0, 0.52);
     }
 
 
     .feedback-close {
-
       position: absolute;
 
       top: 14px;
-
       right: 18px;
 
       border: 0;
@@ -1766,24 +1238,19 @@
         var(--ink-faint);
 
       font-size: 1.5rem;
-
       line-height: 1;
 
       cursor: pointer;
-
     }
 
 
     .feedback-close:hover {
-
       color:
         var(--gold-bright);
-
     }
 
 
     .feedback-label {
-
       margin: 0;
 
       color:
@@ -1797,53 +1264,39 @@
         monospace;
 
       font-size: 0.62rem;
-
       letter-spacing: 0.16em;
-
       text-transform: uppercase;
-
     }
 
 
     .feedback-window h2 {
-
-      margin:
-        10px 0 0;
+      margin: 10px 0 0;
 
       color:
         var(--gold-bright);
 
       font-size: 1.8rem;
-
       font-weight: 500;
-
       line-height: 1.25;
-
     }
 
 
     .feedback-intro {
-
-      margin:
-        15px 0 24px;
+      margin: 15px 0 24px;
 
       color:
         var(--ink-muted);
-
     }
 
 
     .feedback-field {
-
       margin-top: 18px;
 
       text-align: left;
-
     }
 
 
     .feedback-field label {
-
       display: block;
 
       margin-bottom: 7px;
@@ -1859,18 +1312,14 @@
         monospace;
 
       font-size: 0.59rem;
-
       letter-spacing: 0.12em;
-
       text-transform: uppercase;
-
     }
 
 
     .feedback-field input,
     .feedback-field select,
     .feedback-field textarea {
-
       width: 100%;
 
       padding:
@@ -1885,48 +1334,32 @@
       outline: none;
 
       background:
-        rgba(
-          9,
-          14,
-          24,
-          0.88
-        );
+        rgba(9, 14, 24, 0.88);
 
       color:
         var(--ink);
 
       font:
         inherit;
-
     }
 
 
     .feedback-field textarea {
-
       min-height: 150px;
 
       resize: vertical;
-
     }
 
 
     .feedback-field input:focus,
     .feedback-field select:focus,
     .feedback-field textarea:focus {
-
       border-color:
-        rgba(
-          214,
-          179,
-          106,
-          0.68
-        );
-
+        rgba(214, 179, 106, 0.68);
     }
 
 
     .feedback-actions {
-
       display: grid;
 
       grid-template-columns:
@@ -1935,42 +1368,27 @@
       gap: 12px;
 
       margin-top: 24px;
-
     }
 
 
     .feedback-submit,
     .feedback-discord {
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       min-height: 48px;
 
-      padding:
-        0 15px;
+      padding: 0 15px;
 
       border:
         1px solid
-        rgba(
-          214,
-          179,
-          106,
-          0.48
-        );
+        rgba(214, 179, 106, 0.48);
 
       border-radius: 4px;
 
       background:
-        rgba(
-          214,
-          179,
-          106,
-          0.08
-        );
+        rgba(214, 179, 106, 0.08);
 
       color:
         var(--gold-bright);
@@ -1983,7 +1401,6 @@
         monospace;
 
       font-size: 0.67rem;
-
       font-weight: 700;
 
       text-decoration: none;
@@ -1994,37 +1411,23 @@
         transform 180ms ease,
         border-color 180ms ease,
         background 180ms ease;
-
     }
 
 
     .feedback-submit:hover,
     .feedback-discord:hover {
-
       transform:
         translateY(-2px);
 
       border-color:
-        rgba(
-          214,
-          179,
-          106,
-          0.7
-        );
+        rgba(214, 179, 106, 0.7);
 
       background:
-        rgba(
-          214,
-          179,
-          106,
-          0.14
-        );
-
+        rgba(214, 179, 106, 0.14);
     }
 
 
     .feedback-note {
-
       margin:
         17px 0 0;
 
@@ -2039,22 +1442,17 @@
         monospace;
 
       font-size: 0.58rem;
-
       line-height: 1.6;
 
       text-align: center;
-
     }
-
 
 
     /* ========================================
        FOOTER
     ======================================== */
 
-
     footer {
-
       padding:
         34px 0;
 
@@ -2073,16 +1471,13 @@
         monospace;
 
       font-size: 0.65rem;
-
       line-height: 1.7;
 
       text-align: center;
-
     }
 
 
     footer a {
-
       color:
         var(--gold);
 
@@ -2090,28 +1485,20 @@
 
       border-bottom:
         1px solid
-        rgba(
-          214,
-          179,
-          106,
-          0.35
-        );
+        rgba(214, 179, 106, 0.35);
 
       transition:
         color 180ms ease,
         border-color 180ms ease;
-
     }
 
 
     footer a:hover {
-
       color:
         var(--gold-bright);
 
       border-color:
         var(--gold-bright);
-
     }
 
 
@@ -2120,14 +1507,11 @@
     }
 
 
-
     /* ========================================
        SPOILER NOTICE
     ======================================== */
 
-
     .spoiler-overlay {
-
       position: fixed;
 
       inset: 0;
@@ -2135,97 +1519,56 @@
       z-index: 100;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       padding: 20px;
 
       background:
-        rgba(
-          3,
-          6,
-          12,
-          0.88
-        );
+        rgba(3, 6, 12, 0.88);
 
       backdrop-filter:
         blur(12px);
 
       opacity: 1;
-
       visibility: visible;
 
       transition:
         opacity 220ms ease,
         visibility 220ms ease;
-
     }
 
 
     .spoiler-overlay.hidden {
-
       opacity: 0;
-
       visibility: hidden;
-
       pointer-events: none;
-
     }
 
 
     .spoiler-window {
-
-      width:
-        min(
-          540px,
-          100%
-        );
+      width: min(540px, 100%);
 
       padding: 30px;
 
       border:
         1px solid
-        rgba(
-          214,
-          179,
-          106,
-          0.42
-        );
+        rgba(214, 179, 106, 0.42);
 
       background:
-
         linear-gradient(
           145deg,
-          rgba(
-            17,
-            24,
-            39,
-            0.99
-          ),
-          rgba(
-            5,
-            9,
-            17,
-            0.99
-          )
+          rgba(17, 24, 39, 0.99),
+          rgba(5, 9, 17, 0.99)
         );
 
       box-shadow:
         0 26px 80px
-        rgba(
-          0,
-          0,
-          0,
-          0.52
-        );
-
+        rgba(0, 0, 0, 0.52);
     }
 
 
     .spoiler-label {
-
       margin: 0;
 
       color:
@@ -2239,16 +1582,12 @@
         monospace;
 
       font-size: 0.62rem;
-
       letter-spacing: 0.16em;
-
       text-transform: uppercase;
-
     }
 
 
     .spoiler-window h2 {
-
       margin:
         10px 0 0;
 
@@ -2256,51 +1595,34 @@
         var(--gold-bright);
 
       font-size: 1.8rem;
-
       font-weight: 500;
-
       line-height: 1.25;
-
     }
 
 
     .spoiler-window p {
-
       margin:
         16px 0 0;
 
       color:
         var(--ink-muted);
-
     }
 
 
     .acknowledge-button {
-
       width: 100%;
-
       min-height: 48px;
 
       margin-top: 24px;
 
       border:
         1px solid
-        rgba(
-          214,
-          179,
-          106,
-          0.5
-        );
+        rgba(214, 179, 106, 0.5);
 
       border-radius: 4px;
 
       background:
-        rgba(
-          214,
-          179,
-          106,
-          0.08
-        );
+        rgba(214, 179, 106, 0.08);
 
       color:
         var(--gold-bright);
@@ -2318,36 +1640,23 @@
       transition:
         transform 180ms ease,
         background 180ms ease;
-
     }
 
 
     .acknowledge-button:hover {
-
       transform:
         translateY(-2px);
 
       background:
-        rgba(
-          214,
-          179,
-          106,
-          0.13
-        );
-
+        rgba(214, 179, 106, 0.13);
     }
-
 
 
     /* ========================================
        MOBILE
     ======================================== */
 
-
-    @media (
-      max-width: 650px
-    ) {
-
+    @media (max-width: 650px) {
 
       body {
         font-size: 1rem;
@@ -2355,13 +1664,11 @@
 
 
       .container {
-
         width:
           min(
             100% - 24px,
             var(--max-width)
           );
-
       }
 
 
@@ -2391,10 +1698,8 @@
 
 
       .hero {
-
         padding:
           58px 0 48px;
-
       }
 
 
@@ -2404,10 +1709,8 @@
 
 
       .author-card {
-
         padding:
           21px 14px;
-
       }
 
 
@@ -2422,10 +1725,8 @@
 
 
       .support-block {
-
         padding:
           26px 20px;
-
       }
 
 
@@ -2435,10 +1736,8 @@
 
 
       .road-section {
-
         padding:
           54px 0 66px;
-
       }
 
 
@@ -2448,30 +1747,23 @@
 
 
       .volume-entry {
-
         padding:
           21px
           17px
           21px
           48px;
-
       }
 
 
       .volume-entry::before {
-
         left: 10px;
-
         top: 26px;
-
       }
 
 
       .volume-entry:hover {
-
         transform:
           translateY(-2px);
-
       }
 
 
@@ -2481,34 +1773,26 @@
 
 
       .feedback-window {
-
         padding:
           27px 20px;
-
       }
 
 
       .feedback-actions {
-
         grid-template-columns:
           1fr;
-
       }
 
 
       .archive-section {
-
         padding:
           58px 0 66px;
-
       }
 
 
       .archive-grid {
-
         grid-template-columns:
           1fr;
-
       }
 
 
@@ -2523,20 +1807,13 @@
 
 
       .spoiler-window {
-
         padding:
           24px 22px;
-
       }
-
     }
 
 
-
-    @media (
-      prefers-reduced-motion: reduce
-    ) {
-
+    @media (prefers-reduced-motion: reduce) {
 
       html {
         scroll-behavior: auto;
@@ -2546,21 +1823,17 @@
       *,
       *::before,
       *::after {
-
         animation-duration:
           0.01ms !important;
 
         transition-duration:
           0.01ms !important;
-
       }
-
     }
 
   </style>
 
 </head>
-
 
 
 <body>
@@ -2570,11 +1843,9 @@
        HEADER
   ======================================== -->
 
-
   <header class="site-header">
 
     <div class="container header-inner">
-
 
       <a
         href="index.html"
@@ -2604,11 +1875,9 @@
 
       </div>
 
-
     </div>
 
   </header>
-
 
 
   <main>
@@ -2618,11 +1887,9 @@
          HERO
     ======================================== -->
 
-
     <section class="hero">
 
       <div class="container">
-
 
         <p class="hero-kicker">
           Guild Wars Living Lore Library
@@ -2648,11 +1915,9 @@
 
         <hr class="ornament">
 
-
       </div>
 
     </section>
-
 
 
     <div class="container">
@@ -2662,9 +1927,7 @@
            AUTHOR
       ======================================== -->
 
-
       <section class="author-card">
-
 
         <p class="author-label">
           Compiled and Annotated By
@@ -2677,27 +1940,19 @@
 
 
         <p class="author-title">
-
           Captain Commander of the Vanguard Knights
-
           <br>
-
           Researcher of Tyrian History and the Mists
-
         </p>
 
-
       </section>
-
 
 
       <!-- ========================================
            INTRO
       ======================================== -->
 
-
       <section class="intro">
-
 
         <p class="section-kicker">
           Archive Guide
@@ -2730,20 +1985,16 @@
           use the Research Archives below.
         </p>
 
-
       </section>
-
 
 
       <!-- ========================================
            SUPPORT THE ARCHIVE
       ======================================== -->
 
-
       <section class="support-section">
 
         <div class="support-block">
-
 
           <p class="section-kicker">
             Support the Project
@@ -2793,28 +2044,22 @@
             Optional support // The archive remains free to explore
           </p>
 
-
         </div>
 
       </section>
 
-
     </div>
-
 
 
     <!-- ========================================
          COMPLETE ROAD
     ======================================== -->
 
-
     <section class="road-section">
 
       <div class="container">
 
-
         <div class="road-header">
-
 
           <p class="section-kicker">
             Complete Historical Record
@@ -2831,16 +2076,12 @@
             to the current historical record.
           </p>
 
-
         </div>
-
 
 
         <div class="timeline">
 
-
           <div class="timeline-line"></div>
-
 
 
           <a
@@ -2879,7 +2120,6 @@
           </a>
 
 
-
           <a
             href="elder-races/index.html"
             class="volume-entry"
@@ -2914,7 +2154,6 @@
             </span>
 
           </a>
-
 
 
           <a
@@ -2953,7 +2192,6 @@
           </a>
 
 
-
           <a
             href="gift-of-magic/index.html"
             class="volume-entry"
@@ -2988,7 +2226,6 @@
             </span>
 
           </a>
-
 
 
           <a
@@ -3027,7 +2264,6 @@
           </a>
 
 
-
           <a
             href="kingdoms-and-guild-wars/index.html"
             class="volume-entry"
@@ -3062,7 +2298,6 @@
             </span>
 
           </a>
-
 
 
           <a
@@ -3101,7 +2336,6 @@
           </a>
 
 
-
           <a
             href="dragons-awaken/index.html"
             class="volume-entry"
@@ -3136,7 +2370,6 @@
             </span>
 
           </a>
-
 
 
           <a
@@ -3176,7 +2409,6 @@
           </a>
 
 
-
           <a
             href="beyond-the-dragon-cycle/index.html"
             class="volume-entry"
@@ -3211,7 +2443,6 @@
             </span>
 
           </a>
-
 
 
           <a
@@ -3249,18 +2480,14 @@
 
           </a>
 
-
         </div>
-
 
 
         <!-- ========================================
              PRESENT HISTORICAL POSITION
         ======================================== -->
 
-
         <section class="present-marker">
-
 
           <p class="present-label">
             Present Historical Position
@@ -3283,28 +2510,22 @@
             Need Something? Send a Note
           </button>
 
-
         </section>
-
 
       </div>
 
     </section>
 
 
-
     <!-- ========================================
          RESEARCH ARCHIVES
     ======================================== -->
-
 
     <section class="archive-section">
 
       <div class="container">
 
-
         <div class="archive-header">
-
 
           <p class="section-kicker">
             Living Lore Archives
@@ -3324,13 +2545,10 @@
             and connected across different eras.
           </p>
 
-
         </div>
 
 
-
         <div class="archive-search">
-
 
           <label
             class="archive-search-label"
@@ -3353,9 +2571,7 @@
             the record categories below.
           </p>
 
-
         </div>
-
 
 
         <div class="archive-grid">
@@ -3401,7 +2617,6 @@
             </span>
 
           </a>
-
 
 
           <a
@@ -3451,7 +2666,6 @@
           </a>
 
 
-
           <a
             href="items/index.html"
             class="archive-card"
@@ -3496,7 +2710,6 @@
           </a>
 
 
-
           <a
             href="organizations/index.html"
             class="archive-card"
@@ -3538,7 +2751,6 @@
             </span>
 
           </a>
-
 
 
           <a
@@ -3589,28 +2801,22 @@
 
           </a>
 
-
         </div>
-
 
       </div>
 
     </section>
 
-
   </main>
-
 
 
   <!-- ========================================
        FOOTER
   ======================================== -->
 
-
   <footer>
 
     <div class="container">
-
 
       The Historical Records of Commander Q
       are an unofficial Guild Wars fan project.
@@ -3649,17 +2855,14 @@
 
       </div>
 
-
     </div>
 
   </footer>
 
 
-
   <!-- ========================================
        ARCHIVE FEEDBACK WINDOW
   ======================================== -->
-
 
   <div
     class="feedback-overlay"
@@ -3670,9 +2873,7 @@
     aria-hidden="true"
   >
 
-
     <div class="feedback-window">
-
 
       <button
         type="button"
@@ -3682,7 +2883,6 @@
       >
         ×
       </button>
-
 
 
       <p class="feedback-label">
@@ -3704,12 +2904,10 @@
       </p>
 
 
-
       <form id="feedbackForm">
 
 
         <div class="feedback-field">
-
 
           <label for="feedbackName">
             Name or Handle
@@ -3724,13 +2922,10 @@
             autocomplete="name"
           >
 
-
         </div>
 
 
-
         <div class="feedback-field">
-
 
           <label for="feedbackType">
             Type of Field Note
@@ -3764,13 +2959,10 @@
 
           </select>
 
-
         </div>
 
 
-
         <div class="feedback-field">
-
 
           <label for="feedbackMessage">
             Your Field Note
@@ -3784,13 +2976,10 @@
             placeholder="What did you discover?"
           ></textarea>
 
-
         </div>
 
 
-
         <div class="feedback-actions">
-
 
           <button
             type="submit"
@@ -3800,7 +2989,6 @@
           </button>
 
 
-
           <a
             href="discord://-/users/580454323927121920"
             class="feedback-discord"
@@ -3808,9 +2996,7 @@
             Message on Discord
           </a>
 
-
         </div>
-
 
 
         <p class="feedback-note">
@@ -3819,21 +3005,16 @@
           automatically.
         </p>
 
-
       </form>
-
 
     </div>
 
-
   </div>
-
 
 
   <!-- ========================================
        FIRST-VISIT SPOILER DISCLAIMER
   ======================================== -->
-
 
   <div
     class="spoiler-overlay"
@@ -3843,9 +3024,7 @@
     aria-labelledby="spoilerTitle"
   >
 
-
     <div class="spoiler-window">
-
 
       <p class="spoiler-label">
         Archive Notice
@@ -3885,18 +3064,14 @@
         Enter the Archive
       </button>
 
-
     </div>
 
-
   </div>
-
 
 
   <!-- ========================================
        SCRIPT
   ======================================== -->
-
 
   <script>
 
@@ -3905,26 +3080,20 @@
       "use strict";
 
 
-
       /* ========================================
          SCROLL POSITION MEMORY
       ======================================== */
 
-
       if (
         "scrollRestoration" in history
       ) {
-
         history.scrollRestoration =
           "manual";
-
       }
-
 
 
       const scrollStorageKey =
         `gwlllScrollPosition:${window.location.pathname}`;
-
 
 
       const savedScrollPosition =
@@ -3933,75 +3102,53 @@
         );
 
 
-
       if (
         savedScrollPosition !== null
       ) {
 
-
         requestAnimationFrame(
           () => {
-
 
             requestAnimationFrame(
               () => {
 
-
                 window.scrollTo({
-
                   top:
                     Number(
                       savedScrollPosition
                     ),
-
                   left: 0,
-
                   behavior: "auto"
-
                 });
-
 
               }
             );
 
-
           }
         );
 
-
       }
-
 
 
       let scrollSaveQueued =
         false;
 
 
-
       function saveScrollPosition() {
 
-
         sessionStorage.setItem(
-
           scrollStorageKey,
-
           String(
             window.scrollY
           )
-
         );
-
 
       }
 
 
-
       window.addEventListener(
-
         "scroll",
-
         () => {
-
 
           if (
             scrollSaveQueued
@@ -4010,51 +3157,37 @@
           }
 
 
-
           scrollSaveQueued =
             true;
-
 
 
           requestAnimationFrame(
             () => {
 
-
               saveScrollPosition();
-
 
               scrollSaveQueued =
                 false;
 
-
             }
           );
 
-
         },
-
         {
           passive: true
         }
-
       );
-
 
 
       window.addEventListener(
-
         "pagehide",
-
         saveScrollPosition
-
       );
-
 
 
       /* ========================================
          SPOILER NOTICE
       ======================================== */
-
 
       const spoilerOverlay =
         document.getElementById(
@@ -4078,28 +3211,21 @@
         );
 
 
-
       if (
         spoilerAcknowledged ===
         "true"
       ) {
 
-
         spoilerOverlay.classList.add(
           "hidden"
         );
 
-
       }
 
 
-
       acknowledgeButton.addEventListener(
-
         "click",
-
         () => {
-
 
           localStorage.setItem(
             spoilerStorageKey,
@@ -4111,17 +3237,13 @@
             "hidden"
           );
 
-
         }
-
       );
-
 
 
       /* ========================================
          ARCHIVE CATEGORY SEARCH
       ======================================== */
-
 
       const archiveSearch =
         document.getElementById(
@@ -4135,13 +3257,9 @@
         );
 
 
-
       archiveSearch.addEventListener(
-
         "input",
-
         () => {
-
 
           const query =
             archiveSearch.value
@@ -4149,10 +3267,8 @@
               .trim();
 
 
-
           archiveCards.forEach(
             (card) => {
-
 
               const searchableText =
                 (
@@ -4163,12 +3279,10 @@
                   .toLowerCase();
 
 
-
               const matches =
                 searchableText.includes(
                   query
                 );
-
 
 
               card.style.display =
@@ -4176,21 +3290,16 @@
                   ? ""
                   : "none";
 
-
             }
           );
 
-
         }
-
       );
-
 
 
       /* ========================================
          ARCHIVE FEEDBACK
       ======================================== */
-
 
       const feedbackOverlay =
         document.getElementById(
@@ -4222,9 +3331,7 @@
         );
 
 
-
       function openFeedbackWindow() {
-
 
         feedbackOverlay.classList.add(
           "open"
@@ -4247,17 +3354,13 @@
             feedbackMessage.focus();
 
           },
-
           100
         );
-
 
       }
 
 
-
       function closeFeedbackWindow() {
-
 
         feedbackOverlay.classList.remove(
           "open"
@@ -4276,62 +3379,41 @@
 
         openFeedbackButton.focus();
 
-
       }
 
 
-
       openFeedbackButton.addEventListener(
-
         "click",
-
         openFeedbackWindow
-
       );
-
 
 
       closeFeedbackButton.addEventListener(
-
         "click",
-
         closeFeedbackWindow
-
       );
 
 
-
       feedbackOverlay.addEventListener(
-
         "click",
-
         (event) => {
-
 
           if (
             event.target ===
             feedbackOverlay
           ) {
 
-
             closeFeedbackWindow();
-
 
           }
 
-
         }
-
       );
 
 
-
       document.addEventListener(
-
         "keydown",
-
         (event) => {
-
 
           if (
             event.key === "Escape" &&
@@ -4340,33 +3422,23 @@
             )
           ) {
 
-
             closeFeedbackWindow();
-
 
           }
 
-
         }
-
       );
-
 
 
       /* ========================================
          EMAIL FIELD NOTE
       ======================================== */
 
-
       feedbackForm.addEventListener(
-
         "submit",
-
         (event) => {
 
-
           event.preventDefault();
-
 
 
           const name =
@@ -4378,14 +3450,12 @@
               .trim();
 
 
-
           const type =
             document
               .getElementById(
                 "feedbackType"
               )
               .value;
-
 
 
           const message =
@@ -4397,36 +3467,21 @@
               .trim();
 
 
-
           if (
             message.length === 0
           ) {
-
             return;
-
           }
 
 
-
-          const archivePage =
-            window.location.href;
-
-
-
-          /*
-             CHANGE THIS TO YOUR EMAIL ADDRESS
-          */
-
           const feedbackEmail =
             "commanderq@tuta.com";
-
 
 
           const subject =
             encodeURIComponent(
               `GWlll Field Note // ${type}`
             );
-
 
 
           const body =
@@ -4444,10 +3499,6 @@ Submitted By:
 ${name || "Anonymous"}
 
 
-Archive Page:
-${archivePage}
-
-
 Field Note:
 
 ${message}
@@ -4460,20 +3511,15 @@ The Historical Records of Commander Q`
             );
 
 
-
           const mailtoURL =
             `mailto:${feedbackEmail}?subject=${subject}&body=${body}`;
-
 
 
           window.location.href =
             mailtoURL;
 
-
         }
-
       );
-
 
     })();
 
