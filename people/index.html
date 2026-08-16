@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Search the Living Lore Library people records of Tyrian history."
+    content="Search the Living Lore Library people and civilization records of Tyrian history."
   >
 
   <meta name="theme-color" content="#070b14">
@@ -311,7 +311,6 @@
         1px solid var(--border);
 
       border-radius: 4px;
-
       outline: none;
 
       background:
@@ -452,22 +451,6 @@
 
       font-size: 0.93rem;
       line-height: 1.65;
-    }
-
-    .wiki-record-tags {
-      margin: 13px 0 0;
-
-      color: var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.59rem;
-      line-height: 1.6;
     }
 
     .wiki-record-link {
@@ -753,8 +736,9 @@
         </h1>
 
         <p>
-          Search peoples, civilizations, cultures, races,
-          nations, and societies whose histories shaped Tyria.
+          Explore the peoples, civilizations, cultures,
+          rulers, scholars, leaders, and other figures
+          whose lives and histories shaped Tyria.
         </p>
 
         <hr class="ornament">
@@ -782,14 +766,14 @@
           class="wiki-search-input"
           type="search"
           id="peopleSearch"
-          placeholder="Search by people, race, culture, nation, region, era, organization, or keyword..."
+          placeholder="Search the people archive..."
           autocomplete="off"
         >
 
         <div class="wiki-search-meta">
 
           <span>
-            Search all indexed people records
+            Search all people records
           </span>
 
           <span id="peopleResultCount">
@@ -810,43 +794,13 @@
         id="peopleRecords"
       >
 
-        <!--
-        ==========================================
-        PEOPLE RECORD TEMPLATE
-        ==========================================
-
-        Copy this entire <a> block whenever you add
-        another people, civilization, race, culture,
-        or society to the archive.
-
-        data-search can contain:
-        alternate names
-        race
-        culture
-        civilization
-        leaders
-        organizations
-        allies
-        enemies
-        locations
-        eras
-        events
-        items
-        keywords
-
-        Example:
+        <!-- ========================================
+             THE SEERS
+        ========================================= -->
 
         <a
-          href="margonites.html"
+          href="seers.html"
           class="wiki-record"
-          data-search="
-            margonites
-            margonite
-            human
-            abaddon
-            crystal sea
-            elona
-          "
         >
 
           <div class="wiki-record-topline">
@@ -856,21 +810,21 @@
             </p>
 
             <p class="wiki-record-date">
-              Ancient Human Civilization
+              Elder Race
             </p>
 
           </div>
 
           <h2>
-            The Margonites
+            The Seers
           </h2>
 
           <p class="wiki-record-summary">
-            Summary goes here.
-          </p>
-
-          <p class="wiki-record-tags">
-            HUMAN // CRYSTAL SEA // ABADDON
+            An ancient magical civilization that survived
+            the previous Dragonrise, created the original
+            Bloodstone, fought a centuries-long war with the
+            Mursaat, and left magical works whose influence
+            still reaches modern Tyria.
           </p>
 
           <span class="wiki-record-link">
@@ -879,56 +833,14 @@
 
         </a>
 
-        ==========================================
-        END TEMPLATE
-        ==========================================
-        -->
-
 
         <!-- ========================================
-             MARGONITES
+             THE MARGONITES
         ========================================= -->
 
         <a
           href="margonites.html"
           class="wiki-record"
-          data-search="
-            margonites
-            margonite
-            human
-            humans
-            human civilization
-            ancient human civilization
-            abaddon
-            god of water
-            god of knowledge
-            god of water and knowledge
-            fallen god
-            crystal sea
-            unending ocean
-            elona
-            jadoth
-            king khimaar
-            khimaar
-            forgotten
-            ascension
-            temple of the six
-            temple of the six gods
-            realm of torment
-            nightfall
-            transformed margonites
-            demonic margonites
-            maritime civilization
-            maritime power
-            seafaring
-            sailors
-            ancient human era
-            crystal desert
-            desolation
-            apostate
-            the apostate
-            the lost
-          "
         >
 
           <div class="wiki-record-topline">
@@ -948,15 +860,10 @@
           </h2>
 
           <p class="wiki-record-summary">
-            An ancient Human maritime civilization that ruled
-            the Crystal Sea and its surrounding coastlines before
-            following Abaddon into rebellion, transformation,
-            and exile within the Realm of Torment.
-          </p>
-
-          <p class="wiki-record-tags">
-            HUMAN // CRYSTAL SEA // ABADDON //
-            JADOTH // FORGOTTEN // NIGHTFALL
+            An ancient Human maritime civilization centered
+            upon the Crystal Sea whose devotion to Abaddon
+            eventually drew many of its people into rebellion,
+            transformation, and exile within the Realm of Torment.
           </p>
 
           <span class="wiki-record-link">
@@ -967,7 +874,7 @@
 
 
         <!-- ========================================
-             EMPTY MESSAGE
+             EMPTY STATE
         ========================================= -->
 
         <div
@@ -976,14 +883,13 @@
         >
 
           <strong>
-            The Peoples Archive is being assembled.
+            The People Archive is being assembled.
           </strong>
 
           <br>
 
-          Civilizations, races, cultures, and peoples
-          will appear here as they are added to the
-          Living Lore Library.
+          People and civilization records will appear here
+          as they are added to the Living Lore Library.
 
         </div>
 
@@ -1126,16 +1032,8 @@
           (record) => {
 
             const searchableText =
-              (
-                record.textContent +
-                " " +
-                (
-                  record.dataset.search ||
-                  ""
-                )
-              )
-              .toLowerCase();
-
+              record.textContent
+                .toLowerCase();
 
             const matches =
               !query ||
@@ -1143,10 +1041,8 @@
                 query
               );
 
-
             record.hidden =
               !matches;
-
 
             if (matches) {
               visible++;
