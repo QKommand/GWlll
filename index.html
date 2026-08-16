@@ -337,7 +337,7 @@
     .intro {
       max-width: 780px;
 
-      margin: 0 auto 78px;
+      margin: 0 auto 58px;
     }
 
     .section-kicker {
@@ -359,7 +359,8 @@
 
     .intro h2,
     .road-header h2,
-    .archive-header h2 {
+    .archive-header h2,
+    .support-block h2 {
       margin: 9px 0 0;
 
       color: var(--gold);
@@ -377,6 +378,107 @@
 
     .intro p {
       margin: 17px 0 0;
+    }
+
+    /* ========================================
+       SUPPORT THE ARCHIVE
+    ======================================== */
+
+    .support-section {
+      padding: 0 0 78px;
+    }
+
+    .support-block {
+      width: min(780px, 100%);
+
+      margin: 0 auto;
+      padding: 32px;
+
+      border:
+        1px solid
+        rgba(214, 179, 106, 0.28);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(214, 179, 106, 0.055),
+          rgba(15, 23, 42, 0.58)
+        );
+
+      text-align: center;
+    }
+
+    .support-block p {
+      max-width: 660px;
+
+      margin: 16px auto 0;
+
+      color: var(--ink-muted);
+    }
+
+    .support-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 48px;
+
+      margin-top: 24px;
+      padding: 0 22px;
+
+      border:
+        1px solid
+        rgba(214, 179, 106, 0.48);
+
+      border-radius: 4px;
+
+      background:
+        rgba(214, 179, 106, 0.08);
+
+      color: var(--gold-bright);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.72rem;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
+    }
+
+    .support-button:hover {
+      transform: translateY(-2px);
+
+      border-color:
+        rgba(214, 179, 106, 0.72);
+
+      background:
+        rgba(214, 179, 106, 0.13);
+    }
+
+    .support-note {
+      margin-top: 14px !important;
+
+      color: var(--ink-faint) !important;
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.59rem;
+      line-height: 1.6;
     }
 
     /* ========================================
@@ -1125,7 +1227,19 @@
       }
 
       .intro {
-        margin-bottom: 62px;
+        margin-bottom: 46px;
+      }
+
+      .support-section {
+        padding-bottom: 62px;
+      }
+
+      .support-block {
+        padding: 26px 20px;
+      }
+
+      .support-button {
+        width: 100%;
       }
 
       .road-section {
@@ -1194,7 +1308,7 @@
 
   <!-- ========================================
        HEADER
-  ========================================= -->
+  ======================================== -->
 
   <header class="site-header">
 
@@ -1236,7 +1350,7 @@
 
     <!-- ========================================
          HERO
-    ========================================= -->
+    ======================================== -->
 
     <section class="hero">
 
@@ -1324,6 +1438,61 @@
           location, organization, or historical event can instead
           use the Research Archives below.
         </p>
+
+      </section>
+
+
+      <!-- ========================================
+           SUPPORT THE ARCHIVE
+      ========================================= -->
+
+      <section class="support-section">
+
+        <div class="support-block">
+
+          <p class="section-kicker">
+            Support the Project
+          </p>
+
+          <h2>
+            Support the Archive
+          </h2>
+
+          <p>
+            If you've enjoyed digging through the Living Lore
+            Library, chasing ancient mysteries, or falling down
+            a lore rabbit hole with me, you can toss a little
+            support toward the archive.
+          </p>
+
+          <p>
+            Every bit helps me keep researching, writing,
+            updating old records, building new entries, and
+            probably asking way too many questions about ruins
+            nobody else is thinking about. ^_^
+          </p>
+
+          <p>
+            No pressure at all. Just being here and reading
+            means a lot. But if you'd like to help keep the
+            archive growing, you can support the project
+            through Gumroad.
+          </p>
+
+          <a
+            href="https://vcsstore.gumroad.com/coffee"
+            class="support-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Support the Archive ^_^
+          </a>
+
+          <p class="support-note">
+            Optional support // The archive remains free to explore
+          </p>
+
+        </div>
 
       </section>
 
@@ -1740,15 +1909,15 @@
             </p>
 
             <p class="volume-description">
-              The road reaches Castora, where the search
-              for Ancora and renewed study of Seer ruins
-              and magical traditions reconnect the present
-              with Tyria's oldest recorded civilizations.
+              The road reaches Castora, where ancient Seer
+              history returns to the present through Ancora,
+              Divitium Nava, Isgarren's past, and Vloxx's
+              pursuit of a power created thousands of years ago.
             </p>
 
             <p class="volume-events">
-              CASTORA // DIRECTOR VLOXX //
-              ANCORA // SEERS // RITE OF DIVINITY
+              CASTORA // VLOXX // ANCORA //
+              DIVITIUM NAVA // ISGARREN // SEERS
             </p>
 
             <span class="volume-arrow">
@@ -1769,8 +1938,8 @@
           <p>
             The archive currently reaches
             <strong>1339 AE</strong>.
-            New chapters can be added to the Current Era
-            as the chronology advances.
+            Volume XI remains an open record and can continue
+            forward as later events become part of Tyrian history.
           </p>
 
         </section>
@@ -1892,6 +2061,10 @@
               queens
               gods
               historical figures
+              seers
+              mursaat
+              margonites
+              forgotten
             "
           >
 
@@ -1904,14 +2077,14 @@
             </h3>
 
             <p class="archive-card-description">
-              Heroes, rulers, villains, scholars, military
-              leaders, Gods, and other individuals whose actions
-              shaped the historical record.
+              Peoples, civilizations, rulers, heroes, scholars,
+              leaders, Gods, and other figures whose histories
+              shaped Tyria.
             </p>
 
             <p class="archive-card-examples">
-              HEROES // RULERS // SCHOLARS //
-              COMMANDERS // HISTORICAL FIGURES
+              CIVILIZATIONS // RULERS // SCHOLARS //
+              HEROES // HISTORICAL FIGURES
             </p>
 
             <span class="archive-card-link">
@@ -1932,6 +2105,8 @@
               magical objects
               swords
               bloodstone
+              shadowstone
+              ancora
               caladbolg
               sohothin
             "
@@ -1948,7 +2123,7 @@
             <p class="archive-card-description">
               Weapons, relics, magical devices, ancient objects,
               and historically significant possessions connected
-              to important events and individuals.
+              to important events and civilizations.
             </p>
 
             <p class="archive-card-examples">
@@ -2024,6 +2199,8 @@
               kryta
               cantha
               elona
+              castora
+              janthir
             "
           >
 
