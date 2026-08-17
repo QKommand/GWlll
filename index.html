@@ -12,7 +12,7 @@
 
   <meta
     name="description"
-    content="The Historical Records of Commander Q. Follow the history of Tyria from the Ancient Dragonrises to the Current Era, or search the Living Lore Archives by subject."
+    content="The Guild Wars Living Lore Library. Browse Commander Q's chronological history of Tyria, reference shelves, and active historical investigations."
   >
 
   <meta
@@ -21,7 +21,7 @@
   >
 
   <title>
-    The Road Through Time // The Records of Commander Q
+    Guild Wars Living Lore Library // The Records of Commander Q
   </title>
 
 
@@ -47,8 +47,6 @@
       --ink: #e8e5dc;
       --ink-muted: #b9b8b2;
       --ink-faint: #8f949e;
-
-      --quote: #c7d2e0;
 
       --max-width: 980px;
     }
@@ -113,10 +111,11 @@
 
 
     .container {
-      width: min(
-        var(--max-width),
-        calc(100% - 34px)
-      );
+      width:
+        min(
+          var(--max-width),
+          calc(100% - 34px)
+        );
 
       margin-inline: auto;
     }
@@ -202,7 +201,7 @@
         Consolas,
         monospace;
 
-      font-size: 0.56rem;
+      font-size: 0.55rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
@@ -220,7 +219,7 @@
         Consolas,
         monospace;
 
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 700;
     }
 
@@ -230,7 +229,8 @@
     ======================================== */
 
     .hero {
-      padding: 82px 0 64px;
+      padding: 84px 0 58px;
+
       text-align: center;
     }
 
@@ -247,7 +247,7 @@
         Consolas,
         monospace;
 
-      font-size: 0.66rem;
+      font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
@@ -260,9 +260,9 @@
 
       font-size:
         clamp(
-          3rem,
+          2.8rem,
           9vw,
-          5.5rem
+          5.3rem
         );
 
       font-weight: 500;
@@ -272,43 +272,25 @@
 
 
     .hero-subtitle {
-      max-width: 720px;
+      max-width: 660px;
 
       margin: 22px auto 0;
 
       color: var(--ink-muted);
 
-      font-size: 1.08rem;
+      font-size: 1.06rem;
       font-style: italic;
-      line-height: 1.8;
-    }
-
-
-    .hero-range {
-      margin: 24px 0 0;
-
-      color: var(--gold);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.7rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
     }
 
 
     .ornament {
-      width: 120px;
+      width: 110px;
 
-      margin: 34px auto 0;
+      margin: 32px auto 0;
 
       border: 0;
-      border-top: 1px solid var(--gold-muted);
+      border-top:
+        1px solid var(--gold-muted);
     }
 
 
@@ -316,9 +298,10 @@
        AUTHOR
     ======================================== */
 
-    .author-card {
-      margin-bottom: 64px;
-      padding: 23px 26px;
+    .author {
+      margin-bottom: 66px;
+
+      padding: 20px 0;
 
       border-top:
         1px solid var(--border-soft);
@@ -342,41 +325,50 @@
         Consolas,
         monospace;
 
-      font-size: 0.61rem;
-      letter-spacing: 0.15em;
+      font-size: 0.59rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
 
     .author-name {
-      margin: 8px 0 0;
+      margin: 7px 0 0;
 
       color: var(--gold);
 
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 700;
     }
 
 
     .author-title {
-      margin: 5px 0 0;
+      margin: 4px 0 0;
 
       color: var(--ink-muted);
 
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-style: italic;
-      line-height: 1.65;
     }
 
 
     /* ========================================
-       INTRO
+       SECTION HEADERS
     ======================================== */
 
-    .intro {
-      max-width: 780px;
+    .library-section {
+      padding: 70px 0;
 
-      margin: 0 auto 58px;
+      border-top:
+        1px solid var(--border-soft);
+    }
+
+
+    .section-header {
+      max-width: 690px;
+
+      margin: 0 auto 38px;
+
+      text-align: center;
     }
 
 
@@ -392,25 +384,22 @@
         Consolas,
         monospace;
 
-      font-size: 0.63rem;
-      letter-spacing: 0.17em;
+      font-size: 0.61rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
 
-    .intro h2,
-    .road-header h2,
-    .archive-header h2,
-    .support-block h2 {
-      margin: 9px 0 0;
+    .section-header h2 {
+      margin: 8px 0 0;
 
       color: var(--gold);
 
       font-size:
         clamp(
-          1.7rem,
+          1.8rem,
           5vw,
-          2.35rem
+          2.4rem
         );
 
       font-weight: 500;
@@ -418,139 +407,7 @@
     }
 
 
-    .intro p {
-      margin: 17px 0 0;
-    }
-
-
-    /* ========================================
-       SUPPORT THE ARCHIVE
-    ======================================== */
-
-    .support-section {
-      padding: 0 0 78px;
-    }
-
-
-    .support-block {
-      width: min(780px, 100%);
-
-      margin: 0 auto;
-      padding: 32px;
-
-      border:
-        1px solid
-        rgba(214, 179, 106, 0.28);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(214, 179, 106, 0.055),
-          rgba(15, 23, 42, 0.58)
-        );
-
-      text-align: center;
-    }
-
-
-    .support-block p {
-      max-width: 660px;
-
-      margin: 16px auto 0;
-
-      color: var(--ink-muted);
-    }
-
-
-    .support-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 48px;
-
-      margin-top: 24px;
-      padding: 0 22px;
-
-      border:
-        1px solid
-        rgba(214, 179, 106, 0.48);
-
-      border-radius: 4px;
-
-      background:
-        rgba(214, 179, 106, 0.08);
-
-      color: var(--gold-bright);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.72rem;
-      font-weight: 700;
-
-      text-decoration: none;
-
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        background 180ms ease;
-    }
-
-
-    .support-button:hover {
-      transform: translateY(-2px);
-
-      border-color:
-        rgba(214, 179, 106, 0.72);
-
-      background:
-        rgba(214, 179, 106, 0.13);
-    }
-
-
-    .support-note {
-      margin-top: 14px !important;
-
-      color: var(--ink-faint) !important;
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.59rem;
-      line-height: 1.6;
-    }
-
-
-    /* ========================================
-       ROAD
-    ======================================== */
-
-    .road-section {
-      padding: 66px 0 82px;
-
-      border-top:
-        1px solid var(--border-soft);
-    }
-
-
-    .road-header {
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-
-    .road-header p {
-      max-width: 700px;
-
+    .section-header p {
       margin: 13px auto 0;
 
       color: var(--ink-muted);
@@ -558,51 +415,38 @@
 
 
     /* ========================================
-       TIMELINE
+       COLLECTION
     ======================================== */
 
-    .timeline {
-      position: relative;
-
+    .collection {
       width: min(820px, 100%);
 
       margin: 0 auto;
     }
 
 
-    .timeline-line {
-      position: absolute;
-
-      top: 0;
-      bottom: 0;
-      left: 20px;
-
-      width: 1px;
-
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(214, 179, 106, 0.18),
-          rgba(214, 179, 106, 0.85) 8%,
-          rgba(214, 179, 106, 0.85) 92%,
-          rgba(214, 179, 106, 0.18)
-        );
-    }
-
-
-    .volume-entry {
+    .book {
       position: relative;
 
-      display: block;
+      display: grid;
 
-      margin: 0 0 18px;
-      padding: 24px 24px 24px 58px;
+      grid-template-columns:
+        88px minmax(0, 1fr) auto;
+
+      align-items: center;
+
+      gap: 22px;
+
+      min-height: 98px;
+
+      margin-bottom: 10px;
+      padding: 18px 20px;
 
       border:
         1px solid var(--border-soft);
 
       background:
-        rgba(15, 23, 42, 0.55);
+        rgba(15, 23, 42, 0.48);
 
       text-decoration: none;
 
@@ -613,70 +457,31 @@
     }
 
 
-    .volume-entry:hover {
-      transform: translateX(5px);
+    .book:hover {
+      transform: translateX(4px);
 
       border-color:
-        rgba(214, 179, 106, 0.5);
+        rgba(214, 179, 106, 0.46);
 
       background:
-        rgba(19, 29, 48, 0.78);
+        rgba(19, 29, 48, 0.72);
     }
 
 
-    .volume-entry::before {
-      content: "";
-
-      position: absolute;
-
-      top: 28px;
-      left: 14px;
-
-      width: 13px;
-      height: 13px;
-
-      border:
-        2px solid var(--gold-bright);
-
-      border-radius: 50%;
-
-      background:
-        var(--background);
-
-      box-shadow:
-        0 0 10px
-        rgba(214, 179, 106, 0.26);
-    }
-
-
-    .volume-entry:hover::before {
-      background: var(--gold);
-    }
-
-
-    .volume-entry.current {
+    .book.current {
       border-color:
-        rgba(214, 179, 106, 0.5);
+        rgba(214, 179, 106, 0.4);
 
       background:
         linear-gradient(
           135deg,
-          rgba(214, 179, 106, 0.07),
-          rgba(15, 23, 42, 0.58)
+          rgba(214, 179, 106, 0.06),
+          rgba(15, 23, 42, 0.52)
         );
     }
 
 
-    .volume-entry.current::before {
-      background: var(--gold);
-
-      box-shadow:
-        0 0 16px
-        rgba(214, 179, 106, 0.45);
-    }
-
-
-    .volume-number {
+    .book-number {
       margin: 0;
 
       color: var(--ink-faint);
@@ -689,53 +494,26 @@
         monospace;
 
       font-size: 0.59rem;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
 
-    .volume-entry h3 {
-      margin: 6px 0 0;
+    .book h3 {
+      margin: 0;
 
       color: var(--gold);
 
-      font-size: 1.35rem;
+      font-size: 1.22rem;
       font-weight: 600;
       line-height: 1.3;
     }
 
 
-    .volume-date {
-      margin: 6px 0 0;
-
-      color: var(--gold-bright);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.67rem;
-      letter-spacing: 0.07em;
-    }
-
-
-    .volume-description {
-      margin: 12px 0 0;
+    .book-date {
+      margin: 5px 0 0;
 
       color: var(--ink-muted);
-
-      font-size: 0.94rem;
-      line-height: 1.68;
-    }
-
-
-    .volume-events {
-      margin: 14px 0 0;
-
-      color: var(--ink-faint);
 
       font-family:
         ui-monospace,
@@ -745,17 +523,11 @@
         monospace;
 
       font-size: 0.62rem;
-      line-height: 1.65;
-      letter-spacing: 0.03em;
     }
 
 
-    .volume-arrow {
-      display: inline-block;
-
-      margin-top: 14px;
-
-      color: var(--gold);
+    .book-arrow {
+      color: var(--gold-muted);
 
       font-family:
         ui-monospace,
@@ -764,260 +536,32 @@
         Consolas,
         monospace;
 
-      font-size: 0.68rem;
-      font-weight: 700;
-
-      transition:
-        transform 180ms ease;
-    }
-
-
-    .volume-entry:hover .volume-arrow {
-      transform: translateX(4px);
-    }
-
-
-    /* ========================================
-       PRESENT MARKER
-    ======================================== */
-
-    .present-marker {
-      width: min(820px, 100%);
-
-      margin: 32px auto 0;
-      padding: 25px;
-
-      border:
-        1px solid
-        rgba(214, 179, 106, 0.34);
-
-      background:
-        rgba(214, 179, 106, 0.04);
-
-      text-align: center;
-    }
-
-
-    .present-label {
-      margin: 0;
-
-      color: var(--gold);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-
-    .present-marker p:last-of-type {
-      margin: 10px 0 0;
-
-      color: var(--ink-muted);
-    }
-
-
-    .present-marker strong {
-      color: var(--gold-bright);
-    }
-
-
-    .feedback-open-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 45px;
-
-      margin-top: 21px;
-      padding: 0 21px;
-
-      border:
-        1px solid
-        rgba(214, 179, 106, 0.46);
-
-      border-radius: 4px;
-
-      background:
-        rgba(214, 179, 106, 0.07);
-
-      color:
-        var(--gold-bright);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.68rem;
-      font-weight: 700;
-
-      cursor: pointer;
+      font-size: 0.8rem;
 
       transition:
         transform 180ms ease,
-        border-color 180ms ease,
-        background 180ms ease;
+        color 180ms ease;
     }
 
 
-    .feedback-open-button:hover {
-      transform: translateY(-2px);
+    .book:hover .book-arrow {
+      transform: translateX(3px);
 
-      border-color:
-        rgba(214, 179, 106, 0.72);
-
-      background:
-        rgba(214, 179, 106, 0.12);
+      color: var(--gold-bright);
     }
 
 
     /* ========================================
-       RESEARCH ARCHIVES
+       REFERENCE SHELVES
     ======================================== */
 
-    .archive-section {
-      padding: 72px 0 84px;
-
-      border-top:
-        1px solid var(--border-soft);
-
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(214, 179, 106, 0.018),
-          transparent
-        );
-    }
-
-
-    .archive-header {
-      max-width: 760px;
-
-      margin: 0 auto 38px;
-
-      text-align: center;
-    }
-
-
-    .archive-header p:last-child {
-      margin: 14px auto 0;
-
-      color:
-        var(--ink-muted);
-    }
-
-
-    .archive-search {
-      width: min(760px, 100%);
-
-      margin: 0 auto 34px;
-    }
-
-
-    .archive-search-label {
-      display: block;
-
-      margin-bottom: 9px;
-
-      color:
-        var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-
-    .archive-search input {
-      width: 100%;
-      min-height: 52px;
-
-      padding: 0 17px;
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius: 4px;
-
-      outline: none;
-
-      background:
-        rgba(9, 14, 24, 0.85);
-
-      color:
-        var(--ink);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.82rem;
-
-      transition:
-        border-color 180ms ease,
-        background 180ms ease;
-    }
-
-
-    .archive-search input::placeholder {
-      color: var(--ink-faint);
-    }
-
-
-    .archive-search input:focus {
-      border-color:
-        rgba(214, 179, 106, 0.65);
-
-      background:
-        rgba(13, 20, 34, 0.95);
-    }
-
-
-    .archive-search-note {
-      margin: 9px 0 0;
-
-      color:
-        var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.59rem;
-      line-height: 1.6;
-    }
-
-
-    .archive-grid {
+    .shelf-grid {
       display: grid;
 
       grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-      gap: 16px;
+      gap: 14px;
 
       width: min(820px, 100%);
 
@@ -1025,21 +569,20 @@
     }
 
 
-    .archive-card {
-      position: relative;
+    .shelf {
+      min-height: 132px;
 
       display: flex;
       flex-direction: column;
+      justify-content: center;
 
-      min-height: 220px;
-
-      padding: 24px;
+      padding: 22px;
 
       border:
         1px solid var(--border-soft);
 
       background:
-        rgba(15, 23, 42, 0.52);
+        rgba(15, 23, 42, 0.48);
 
       text-decoration: none;
 
@@ -1050,21 +593,91 @@
     }
 
 
-    .archive-card:hover {
-      transform: translateY(-4px);
+    .shelf:hover {
+      transform: translateY(-3px);
 
       border-color:
-        rgba(214, 179, 106, 0.5);
+        rgba(214, 179, 106, 0.48);
 
       background:
-        rgba(19, 29, 48, 0.78);
+        rgba(19, 29, 48, 0.72);
     }
 
 
-    .archive-card-label {
+    .shelf h3 {
       margin: 0;
 
-      color: var(--ink-faint);
+      color: var(--gold);
+
+      font-size: 1.24rem;
+      font-weight: 600;
+    }
+
+
+    .shelf p {
+      margin: 7px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+
+    .shelf-wide {
+      grid-column: 1 / -1;
+    }
+
+
+    /* ========================================
+       ACTIVE INVESTIGATIONS
+    ======================================== */
+
+    .investigation-section {
+      padding: 68px 0;
+
+      border-top:
+        1px solid var(--border-soft);
+    }
+
+
+    .investigation {
+      display: block;
+
+      width: min(760px, 100%);
+
+      margin: 0 auto;
+      padding: 28px 30px;
+
+      border-left:
+        2px solid var(--gold-muted);
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(214, 179, 106, 0.05),
+          transparent
+        );
+
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease;
+    }
+
+
+    .investigation:hover {
+      transform: translateX(4px);
+
+      border-color: var(--gold-bright);
+    }
+
+
+    .investigation-label {
+      margin: 0;
+
+      color: var(--gold-muted);
 
       font-family:
         ui-monospace,
@@ -1079,55 +692,31 @@
     }
 
 
-    .archive-card h3 {
+    .investigation h3 {
       margin: 8px 0 0;
 
-      color:
-        var(--gold);
+      color: var(--gold);
 
-      font-size: 1.35rem;
-      font-weight: 600;
-      line-height: 1.25;
+      font-size: 1.45rem;
+      font-weight: 500;
     }
 
 
-    .archive-card-description {
-      margin: 12px 0 0;
+    .investigation p {
+      max-width: 620px;
 
-      color:
-        var(--ink-muted);
+      margin: 11px 0 0;
 
-      font-size: 0.92rem;
-      line-height: 1.65;
+      color: var(--ink-muted);
     }
 
 
-    .archive-card-examples {
-      margin: 15px 0 0;
-
-      color:
-        var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.59rem;
-      line-height: 1.6;
-    }
-
-
-    .archive-card-link {
+    .investigation-link {
       display: inline-block;
 
-      margin-top: auto;
-      padding-top: 18px;
+      margin-top: 15px;
 
-      color:
-        var(--gold-bright);
+      color: var(--gold-bright);
 
       font-family:
         ui-monospace,
@@ -1136,21 +725,100 @@
         Consolas,
         monospace;
 
-      font-size: 0.66rem;
+      font-size: 0.67rem;
+      font-weight: 700;
+    }
+
+
+    /* ========================================
+       PRESENT / FEEDBACK
+    ======================================== */
+
+    .library-end {
+      padding: 62px 0 72px;
+
+      border-top:
+        1px solid var(--border-soft);
+
+      text-align: center;
+    }
+
+
+    .library-end p {
+      max-width: 660px;
+
+      margin: 0 auto;
+
+      color: var(--ink-muted);
+    }
+
+
+    .library-end strong {
+      color: var(--gold-bright);
+    }
+
+
+    .feedback-open-button {
+      min-height: 44px;
+
+      margin-top: 22px;
+      padding: 0 19px;
+
+      border:
+        1px solid
+        rgba(214, 179, 106, 0.44);
+
+      border-radius: 4px;
+
+      background:
+        rgba(214, 179, 106, 0.07);
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.67rem;
       font-weight: 700;
 
-      transition:
-        transform 180ms ease;
+      cursor: pointer;
     }
 
 
-    .archive-card:hover .archive-card-link {
-      transform: translateX(4px);
+    .feedback-open-button:hover {
+      border-color:
+        rgba(214, 179, 106, 0.7);
+
+      color: var(--gold-bright);
     }
 
 
-    .archive-card-wide {
-      grid-column: 1 / -1;
+    /* ========================================
+       SUPPORT
+    ======================================== */
+
+    .support-line {
+      margin-top: 30px !important;
+
+      color: var(--ink-faint) !important;
+
+      font-size: 0.82rem;
+    }
+
+
+    .support-line a {
+      color: var(--gold);
+
+      text-decoration: none;
+    }
+
+
+    .support-line a:hover {
+      color: var(--gold-bright);
     }
 
 
@@ -1231,30 +899,25 @@
 
       border: 0;
 
-      background:
-        transparent;
+      background: transparent;
 
-      color:
-        var(--ink-faint);
+      color: var(--ink-faint);
 
       font-size: 1.5rem;
-      line-height: 1;
 
       cursor: pointer;
     }
 
 
     .feedback-close:hover {
-      color:
-        var(--gold-bright);
+      color: var(--gold-bright);
     }
 
 
     .feedback-label {
       margin: 0;
 
-      color:
-        var(--gold-muted);
+      color: var(--gold-muted);
 
       font-family:
         ui-monospace,
@@ -1272,27 +935,22 @@
     .feedback-window h2 {
       margin: 10px 0 0;
 
-      color:
-        var(--gold-bright);
+      color: var(--gold-bright);
 
       font-size: 1.8rem;
       font-weight: 500;
-      line-height: 1.25;
     }
 
 
     .feedback-intro {
       margin: 15px 0 24px;
 
-      color:
-        var(--ink-muted);
+      color: var(--ink-muted);
     }
 
 
     .feedback-field {
       margin-top: 18px;
-
-      text-align: left;
     }
 
 
@@ -1301,8 +959,7 @@
 
       margin-bottom: 7px;
 
-      color:
-        var(--ink-faint);
+      color: var(--ink-faint);
 
       font-family:
         ui-monospace,
@@ -1322,12 +979,10 @@
     .feedback-field textarea {
       width: 100%;
 
-      padding:
-        13px 14px;
+      padding: 13px 14px;
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
 
       border-radius: 4px;
 
@@ -1336,11 +991,9 @@
       background:
         rgba(9, 14, 24, 0.88);
 
-      color:
-        var(--ink);
+      color: var(--ink);
 
-      font:
-        inherit;
+      font: inherit;
     }
 
 
@@ -1390,8 +1043,7 @@
       background:
         rgba(214, 179, 106, 0.08);
 
-      color:
-        var(--gold-bright);
+      color: var(--gold-bright);
 
       font-family:
         ui-monospace,
@@ -1406,33 +1058,13 @@
       text-decoration: none;
 
       cursor: pointer;
-
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        background 180ms ease;
-    }
-
-
-    .feedback-submit:hover,
-    .feedback-discord:hover {
-      transform:
-        translateY(-2px);
-
-      border-color:
-        rgba(214, 179, 106, 0.7);
-
-      background:
-        rgba(214, 179, 106, 0.14);
     }
 
 
     .feedback-note {
-      margin:
-        17px 0 0;
+      margin: 17px 0 0;
 
-      color:
-        var(--ink-faint);
+      color: var(--ink-faint);
 
       font-family:
         ui-monospace,
@@ -1442,7 +1074,6 @@
         monospace;
 
       font-size: 0.58rem;
-      line-height: 1.6;
 
       text-align: center;
     }
@@ -1453,15 +1084,12 @@
     ======================================== */
 
     footer {
-      padding:
-        34px 0;
+      padding: 34px 0;
 
       border-top:
-        1px solid
-        var(--border-soft);
+        1px solid var(--border-soft);
 
-      color:
-        var(--ink-faint);
+      color: var(--ink-faint);
 
       font-family:
         ui-monospace,
@@ -1478,27 +1106,14 @@
 
 
     footer a {
-      color:
-        var(--gold);
+      color: var(--gold);
 
       text-decoration: none;
-
-      border-bottom:
-        1px solid
-        rgba(214, 179, 106, 0.35);
-
-      transition:
-        color 180ms ease,
-        border-color 180ms ease;
     }
 
 
     footer a:hover {
-      color:
-        var(--gold-bright);
-
-      border-color:
-        var(--gold-bright);
+      color: var(--gold-bright);
     }
 
 
@@ -1571,8 +1186,7 @@
     .spoiler-label {
       margin: 0;
 
-      color:
-        var(--gold-muted);
+      color: var(--gold-muted);
 
       font-family:
         ui-monospace,
@@ -1588,24 +1202,19 @@
 
 
     .spoiler-window h2 {
-      margin:
-        10px 0 0;
+      margin: 10px 0 0;
 
-      color:
-        var(--gold-bright);
+      color: var(--gold-bright);
 
       font-size: 1.8rem;
       font-weight: 500;
-      line-height: 1.25;
     }
 
 
     .spoiler-window p {
-      margin:
-        16px 0 0;
+      margin: 16px 0 0;
 
-      color:
-        var(--ink-muted);
+      color: var(--ink-muted);
     }
 
 
@@ -1624,8 +1233,7 @@
       background:
         rgba(214, 179, 106, 0.08);
 
-      color:
-        var(--gold-bright);
+      color: var(--gold-bright);
 
       font:
         700 0.75rem
@@ -1636,19 +1244,6 @@
         monospace;
 
       cursor: pointer;
-
-      transition:
-        transform 180ms ease,
-        background 180ms ease;
-    }
-
-
-    .acknowledge-button:hover {
-      transform:
-        translateY(-2px);
-
-      background:
-        rgba(214, 179, 106, 0.13);
     }
 
 
@@ -1688,128 +1283,82 @@
 
 
       .header-position-label {
-        font-size: 0.49rem;
+        font-size: 0.48rem;
       }
 
 
       .header-position-date {
-        font-size: 0.61rem;
+        font-size: 0.59rem;
       }
 
 
       .hero {
-        padding:
-          58px 0 48px;
+        padding: 58px 0 46px;
       }
 
 
-      .hero-subtitle {
-        font-size: 1rem;
+      .author {
+        margin-bottom: 54px;
       }
 
 
-      .author-card {
-        padding:
-          21px 14px;
+      .library-section,
+      .investigation-section {
+        padding: 56px 0;
       }
 
 
-      .intro {
-        margin-bottom: 46px;
-      }
-
-
-      .support-section {
-        padding-bottom: 62px;
-      }
-
-
-      .support-block {
-        padding:
-          26px 20px;
-      }
-
-
-      .support-button {
-        width: 100%;
-      }
-
-
-      .road-section {
-        padding:
-          54px 0 66px;
-      }
-
-
-      .timeline-line {
-        left: 16px;
-      }
-
-
-      .volume-entry {
-        padding:
-          21px
-          17px
-          21px
-          48px;
-      }
-
-
-      .volume-entry::before {
-        left: 10px;
-        top: 26px;
-      }
-
-
-      .volume-entry:hover {
-        transform:
-          translateY(-2px);
-      }
-
-
-      .feedback-open-button {
-        width: 100%;
-      }
-
-
-      .feedback-window {
-        padding:
-          27px 20px;
-      }
-
-
-      .feedback-actions {
+      .book {
         grid-template-columns:
-          1fr;
+          64px minmax(0, 1fr) auto;
+
+        gap: 12px;
+
+        min-height: 88px;
+
+        padding: 16px;
       }
 
 
-      .archive-section {
-        padding:
-          58px 0 66px;
+      .book h3 {
+        font-size: 1.08rem;
       }
 
 
-      .archive-grid {
-        grid-template-columns:
-          1fr;
+      .book-date {
+        font-size: 0.56rem;
       }
 
 
-      .archive-card-wide {
+      .shelf-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .shelf-wide {
         grid-column: auto;
       }
 
 
-      .archive-card {
-        min-height: auto;
+      .investigation {
+        padding: 24px 20px;
+      }
+
+
+      .feedback-window {
+        padding: 27px 20px;
+      }
+
+
+      .feedback-actions {
+        grid-template-columns: 1fr;
       }
 
 
       .spoiler-window {
-        padding:
-          24px 22px;
+        padding: 24px 22px;
       }
+
     }
 
 
@@ -1829,6 +1378,7 @@
         transition-duration:
           0.01ms !important;
       }
+
     }
 
   </style>
@@ -1866,7 +1416,7 @@
       <div class="header-position">
 
         <p class="header-position-label">
-          Historical Range
+          Historical Record
         </p>
 
         <p class="header-position-date">
@@ -1902,14 +1452,9 @@
 
 
         <p class="hero-subtitle">
-          A chronological record of Tyria,
-          from the earliest known Dragonrises
-          to the histories still shaping the present.
-        </p>
-
-
-        <p class="hero-range">
-          Eleven Volumes // Ancient Past to 1339 AE
+          A collection of Tyrian history,
+          gathered from the ancient past
+          to the present record.
         </p>
 
 
@@ -1927,7 +1472,7 @@
            AUTHOR
       ======================================== -->
 
-      <section class="author-card">
+      <section class="author">
 
         <p class="author-label">
           Compiled and Annotated By
@@ -1947,122 +1492,21 @@
 
       </section>
 
-
-      <!-- ========================================
-           INTRO
-      ======================================== -->
-
-      <section class="intro">
-
-        <p class="section-kicker">
-          Archive Guide
-        </p>
-
-
-        <h2>
-          One history, divided into readable volumes
-        </h2>
-
-
-        <p>
-          Tyria's history stretches across thousands of years,
-          several continents, the Mists, lost civilizations,
-          Human kingdoms, the Guild Wars, and repeated
-          awakenings of the Elder Dragons.
-        </p>
-
-
-        <p>
-          The Road Through Time follows that history
-          chronologically. Each volume continues into the next
-          until the record reaches the present era.
-        </p>
-
-
-        <p>
-          Readers looking for a particular person, artifact,
-          location, organization, or historical event can instead
-          use the Research Archives below.
-        </p>
-
-      </section>
-
-
-      <!-- ========================================
-           SUPPORT THE ARCHIVE
-      ======================================== -->
-
-      <section class="support-section">
-
-        <div class="support-block">
-
-          <p class="section-kicker">
-            Support the Project
-          </p>
-
-
-          <h2>
-            Support the Archive
-          </h2>
-
-
-          <p>
-            If you've enjoyed digging through the Living Lore
-            Library, chasing ancient mysteries, or falling down
-            a lore rabbit hole with me, you can toss a little
-            support toward the archive.
-          </p>
-
-
-          <p>
-            Every bit helps me keep researching, writing,
-            updating old records, building new entries, and
-            probably asking way too many questions about ruins
-            nobody else is thinking about. ^_^
-          </p>
-
-
-          <p>
-            No pressure at all. Just being here and reading
-            means a lot. But if you'd like to help keep the
-            archive growing, you can support the project
-            through Gumroad.
-          </p>
-
-
-          <a
-            href="https://vcsstore.gumroad.com/coffee"
-            class="support-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Support the Archive ^_^
-          </a>
-
-
-          <p class="support-note">
-            Optional support // The archive remains free to explore
-          </p>
-
-        </div>
-
-      </section>
-
     </div>
 
 
     <!-- ========================================
-         COMPLETE ROAD
+         THE COLLECTION
     ======================================== -->
 
-    <section class="road-section">
+    <section class="library-section">
 
       <div class="container">
 
-        <div class="road-header">
+        <div class="section-header">
 
           <p class="section-kicker">
-            Complete Historical Record
+            The Collection
           </p>
 
 
@@ -2072,49 +1516,38 @@
 
 
           <p>
-            Eleven volumes arranged from the ancient past
-            to the current historical record.
+            Eleven volumes arranged in chronological order.
           </p>
 
         </div>
 
 
-        <div class="timeline">
-
-          <div class="timeline-line"></div>
+        <div class="collection">
 
 
           <a
             href="ancient-dragonrises/index.html"
-            class="volume-entry"
+            class="book"
           >
 
-            <p class="volume-number">
+            <p class="book-number">
               Volume I
             </p>
 
-            <h3>
-              Ancient Dragonrises
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              Ancient Past // c. 20,000 BE onward
-            </p>
+              <h3>
+                Ancient Dragonrises
+              </h3>
 
-            <p class="volume-description">
-              The earliest surviving record of the Elder Dragon
-              Cycle, the ancient world, the Giganticus Lupicus,
-              and the Seers' attempt to place magic beyond
-              the Dragons' reach.
-            </p>
+              <p class="book-date">
+                Ancient Past // c. 20,000 BE onward
+              </p>
 
-            <p class="volume-events">
-              ELDER DRAGONS // GIGANTICUS LUPICUS //
-              FIRST BLOODSTONE
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume I →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
@@ -2122,35 +1555,27 @@
 
           <a
             href="elder-races/index.html"
-            class="volume-entry"
+            class="book"
           >
 
-            <p class="volume-number">
+            <p class="book-number">
               Volume II
             </p>
 
-            <h3>
-              The Elder Races
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              Ancient Dragonrise – Before 786 BE
-            </p>
+              <h3>
+                The Elder Races
+              </h3>
 
-            <p class="volume-description">
-              The Seers, Mursaat, Forgotten, Dwarves,
-              and Jotun survive the ancient Dragonrise
-              through different choices that shape
-              thousands of years of later history.
-            </p>
+              <p class="book-date">
+                Ancient Dragonrise – Before 786 BE
+              </p>
 
-            <p class="volume-events">
-              SEERS // MURSAAT // FORGOTTEN //
-              DWARVES // JOTUN // GLINT
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume II →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
@@ -2158,35 +1583,27 @@
 
           <a
             href="gods-and-humanity/index.html"
-            class="volume-entry"
+            class="book"
           >
 
-            <p class="volume-number">
+            <p class="book-number">
               Volume III
             </p>
 
-            <h3>
-              Gods and Humanity
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              Before 786 BE – 1 BE
-            </p>
+              <h3>
+                Gods and Humanity
+              </h3>
 
-            <p class="volume-description">
-              The Human Gods enter an already ancient Tyria,
-              Humanity appears in the historical record,
-              and Human civilizations rise across Cantha,
-              Elona, Orr, Kryta, and Ascalon.
-            </p>
+              <p class="book-date">
+                Before 786 BE – 1 BE
+              </p>
 
-            <p class="volume-events">
-              ARAH // HUMANITY // CANTHA //
-              ELONA // ORR // ASCALON
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume III →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
@@ -2194,35 +1611,27 @@
 
           <a
             href="gift-of-magic/index.html"
-            class="volume-entry"
+            class="book"
           >
 
-            <p class="volume-number">
+            <p class="book-number">
               Volume IV
             </p>
 
-            <h3>
-              The Gift of Magic
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              1 BE
-            </p>
+              <h3>
+                The Gift of Magic
+              </h3>
 
-            <p class="volume-description">
-              Abaddon expands mortal access to magic.
-              The resulting wars bring King Doric to Arah,
-              where the Gods turn once again to the
-              ancient Bloodstone.
-            </p>
+              <p class="book-date">
+                1 BE
+              </p>
 
-            <p class="volume-events">
-              ABADDON // KING DORIC //
-              BLOODSTONE // SCHOOLS OF MAGIC
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume IV →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
@@ -2230,35 +1639,27 @@
 
           <a
             href="exodus-of-gods/index.html"
-            class="volume-entry"
+            class="book"
           >
 
-            <p class="volume-number">
+            <p class="book-number">
               Volume V
             </p>
 
-            <h3>
-              The Exodus of the Gods
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              0 AE
-            </p>
+              <h3>
+                The Exodus of the Gods
+              </h3>
 
-            <p class="volume-description">
-              Abaddon's rebellion becomes a Divine war,
-              the Crystal Sea is destroyed, the fallen God
-              is imprisoned, and the Five withdraw
-              from Tyria into the Mists.
-            </p>
+              <p class="book-date">
+                0 AE
+              </p>
 
-            <p class="volume-events">
-              ABADDON // MARGONITES //
-              CRYSTAL DESERT // REALM OF TORMENT // EXODUS
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume V →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
@@ -2266,35 +1667,27 @@
 
           <a
             href="kingdoms-and-guild-wars/index.html"
-            class="volume-entry"
+            class="book"
           >
 
-            <p class="volume-number">
+            <p class="book-number">
               Volume VI
             </p>
 
-            <h3>
-              Kingdoms and Guild Wars
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              2 AE – 1013 AE
-            </p>
+              <h3>
+                Kingdoms and Guild Wars
+              </h3>
 
-            <p class="volume-description">
-              Mortal kingdoms inherit the world.
-              Guilds gain political power, the Bloodstones
-              scatter, international trade grows and weakens,
-              and three generations of Guild Wars begin.
-            </p>
+              <p class="book-date">
+                2 AE – 1013 AE
+              </p>
 
-            <p class="volume-events">
-              BLOODSTONES // GUILDS // JADE WIND //
-              PALAWA JOKO // LORD ODRAN // THIRD GUILD WAR
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume VI →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
@@ -2302,35 +1695,27 @@
 
           <a
             href="guild-wars-era/index.html"
-            class="volume-entry"
+            class="book"
           >
 
-            <p class="volume-number">
+            <p class="book-number">
               Volume VII
             </p>
 
-            <h3>
-              The Guild Wars Era
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              1013 AE – 1080 AE
-            </p>
+              <h3>
+                The Guild Wars Era
+              </h3>
 
-            <p class="volume-description">
-              The original Guild Wars campaigns unfold
-              across Tyria, Cantha, Elona, and the north,
-              ending with the first warning of a returning
-              Elder Dragon Cycle.
-            </p>
+              <p class="book-date">
+                1013 AE – 1080 AE
+              </p>
 
-            <p class="volume-events">
-              SEARING // PROPHECIES // FACTIONS //
-              NIGHTFALL // EYE OF THE NORTH // BEYOND
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume VII →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
@@ -2338,35 +1723,27 @@
 
           <a
             href="dragons-awaken/index.html"
-            class="volume-entry"
+            class="book"
           >
 
-            <p class="volume-number">
+            <p class="book-number">
               Volume VIII
             </p>
 
-            <h3>
-              The Dragons Awaken
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              1080 AE – 1325 AE
-            </p>
+              <h3>
+                The Dragons Awaken
+              </h3>
 
-            <p class="volume-description">
-              Primordus, Jormag, Zhaitan, and Kralkatorrik
-              awaken while migrations, wars, new cities,
-              and new peoples reshape Tyria into the world
-              encountered at the beginning of Guild Wars 2.
-            </p>
+              <p class="book-date">
+                1080 AE – 1325 AE
+              </p>
 
-            <p class="volume-events">
-              FOEFIRE // PRIMORDUS // JORMAG //
-              ZHAITAN // SYLVARI // KRALKATORRIK
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume VIII →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
@@ -2374,36 +1751,27 @@
 
           <a
             href="age-of-the-commander/index.html"
-            class="volume-entry"
+            class="book"
           >
 
-            <p class="volume-number">
+            <p class="book-number">
               Volume IX
             </p>
 
-            <h3>
-              The Age of the Commander
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              1325 AE – 1335 AE
-            </p>
+              <h3>
+                The Age of the Commander
+              </h3>
 
-            <p class="volume-description">
-              The Pact rises, Elder Dragons begin to fall,
-              Scarlet awakens Mordremoth, Aurene ascends,
-              and the traditional Elder Dragon Cycle
-              finally reaches its end.
-            </p>
+              <p class="book-date">
+                1325 AE – 1335 AE
+              </p>
 
-            <p class="volume-events">
-              PACT // ZHAITAN // SCARLET //
-              MORDREMOTH // BALTHAZAR // AURENE //
-              END OF DRAGONS
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume IX →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
@@ -2411,35 +1779,27 @@
 
           <a
             href="beyond-the-dragon-cycle/index.html"
-            class="volume-entry"
+            class="book"
           >
 
-            <p class="volume-number">
+            <p class="book-number">
               Volume X
             </p>
 
-            <h3>
-              Beyond the Dragon Cycle
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              1336 AE – 1338 AE
-            </p>
+              <h3>
+                Beyond the Dragon Cycle
+              </h3>
 
-            <p class="volume-description">
-              With the Elder Dragon Cycle ended,
-              hidden defenders, the Kryptis, Nayos,
-              Janthir, Titans, and ancient Mursaat
-              and Seer history move into the foreground.
-            </p>
+              <p class="book-date">
+                1336 AE – 1338 AE
+              </p>
 
-            <p class="volume-events">
-              ASTRAL WARD // KRYPTIS // NAYOS //
-              TYRIAN ALLIANCE // JANTHIR // TITANS
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume X →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
@@ -2447,70 +1807,32 @@
 
           <a
             href="current-era/index.html"
-            class="volume-entry current"
+            class="book current"
           >
 
-            <p class="volume-number">
-              Volume XI // Current Record
+            <p class="book-number">
+              Volume XI
             </p>
 
-            <h3>
-              The Current Era
-            </h3>
+            <div>
 
-            <p class="volume-date">
-              1338 AE – 1339 AE
-            </p>
+              <h3>
+                The Current Era
+              </h3>
 
-            <p class="volume-description">
-              The road reaches Castora, where ancient Seer
-              history returns to the present through Ancora,
-              Divitium Nava, Isgarren's past, and Vloxx's
-              pursuit of a power created thousands of years ago.
-            </p>
+              <p class="book-date">
+                1338 AE – 1339 AE
+              </p>
 
-            <p class="volume-events">
-              CASTORA // VLOXX // ANCORA //
-              DIVITIUM NAVA // ISGARREN // SEERS
-            </p>
+            </div>
 
-            <span class="volume-arrow">
-              Read Volume XI →
+            <span class="book-arrow">
+              →
             </span>
 
           </a>
 
         </div>
-
-
-        <!-- ========================================
-             PRESENT HISTORICAL POSITION
-        ======================================== -->
-
-        <section class="present-marker">
-
-          <p class="present-label">
-            Present Historical Position
-          </p>
-
-
-          <p>
-            The archive currently reaches
-            <strong>1339 AE</strong>.
-            Volume XI remains an open record and can continue
-            forward as later events become part of Tyrian history.
-          </p>
-
-
-          <button
-            type="button"
-            class="feedback-open-button"
-            id="openFeedback"
-          >
-            Need Something? Send a Note
-          </button>
-
-        </section>
 
       </div>
 
@@ -2518,290 +1840,212 @@
 
 
     <!-- ========================================
-         RESEARCH ARCHIVES
+         REFERENCE SHELVES
     ======================================== -->
 
-    <section class="archive-section">
+    <section class="library-section">
 
       <div class="container">
 
-        <div class="archive-header">
+        <div class="section-header">
 
           <p class="section-kicker">
-            Living Lore Archives
+            Reference Shelves
           </p>
 
 
           <h2>
-            Search the historical records
+            Browse the Library
           </h2>
 
-
-          <p>
-            The Road Through Time follows Tyria chronologically.
-            The Research Archives organize individual records
-            by subject, allowing people, places, artifacts,
-            organizations, and events to be studied independently
-            and connected across different eras.
-          </p>
-
         </div>
 
 
-        <div class="archive-search">
-
-          <label
-            class="archive-search-label"
-            for="archiveSearch"
-          >
-            Search All Records
-          </label>
-
-
-          <input
-            type="search"
-            id="archiveSearch"
-            placeholder="Search people, artifacts, locations, organizations, events..."
-            autocomplete="off"
-          >
-
-
-          <p class="archive-search-note">
-            Search the archive by subject or browse
-            the record categories below.
-          </p>
-
-        </div>
-
-
-        <div class="archive-grid">
+        <div class="shelf-grid">
 
 
           <a
             href="events/index.html"
-            class="archive-card"
-            data-search="
-              events
-              battles
-              wars
-              disasters
-              discoveries
-              historical moments
-              dragonrise
-              guild wars
-              campaigns
-            "
+            class="shelf"
           >
-
-            <p class="archive-card-label">
-              Archive Category
-            </p>
 
             <h3>
               Events
             </h3>
 
-            <p class="archive-card-description">
-              Battles, disasters, discoveries, campaigns,
-              political changes, magical events, and other
-              moments that altered the course of Tyrian history.
+            <p>
+              Wars, discoveries, disasters, and turning points.
             </p>
-
-            <p class="archive-card-examples">
-              BATTLES // CAMPAIGNS // DRAGONRISES //
-              DISASTERS // DISCOVERIES
-            </p>
-
-            <span class="archive-card-link">
-              Search Event Records →
-            </span>
 
           </a>
 
 
           <a
             href="people/index.html"
-            class="archive-card"
-            data-search="
-              people
-              persons
-              characters
-              heroes
-              villains
-              commanders
-              kings
-              queens
-              gods
-              historical figures
-              seers
-              mursaat
-              margonites
-              forgotten
-            "
+            class="shelf"
           >
-
-            <p class="archive-card-label">
-              Archive Category
-            </p>
 
             <h3>
               People
             </h3>
 
-            <p class="archive-card-description">
-              Peoples, civilizations, rulers, heroes, scholars,
-              leaders, Gods, and other figures whose histories
-              shaped Tyria.
+            <p>
+              Peoples, rulers, Gods, scholars, and historical figures.
             </p>
-
-            <p class="archive-card-examples">
-              CIVILIZATIONS // RULERS // SCHOLARS //
-              HEROES // HISTORICAL FIGURES
-            </p>
-
-            <span class="archive-card-link">
-              Search People Records →
-            </span>
 
           </a>
 
 
           <a
             href="items/index.html"
-            class="archive-card"
-            data-search="
-              items
-              artifacts
-              weapons
-              relics
-              magical objects
-              swords
-              bloodstone
-              shadowstone
-              ancora
-              caladbolg
-              sohothin
-            "
+            class="shelf"
           >
-
-            <p class="archive-card-label">
-              Archive Category
-            </p>
 
             <h3>
               Items &amp; Artifacts
             </h3>
 
-            <p class="archive-card-description">
-              Weapons, relics, magical devices, ancient objects,
-              and historically significant possessions connected
-              to important events and civilizations.
+            <p>
+              Weapons, relics, magical objects, and ancient artifacts.
             </p>
-
-            <p class="archive-card-examples">
-              WEAPONS // RELICS // MAGICAL OBJECTS //
-              ANCIENT ARTIFACTS
-            </p>
-
-            <span class="archive-card-link">
-              Search Artifact Records →
-            </span>
 
           </a>
 
 
           <a
             href="organizations/index.html"
-            class="archive-card"
-            data-search="
-              organizations
-              factions
-              guilds
-              armies
-              orders
-              governments
-              pact
-              vigil
-              priory
-              whispers
-            "
+            class="shelf"
           >
-
-            <p class="archive-card-label">
-              Archive Category
-            </p>
 
             <h3>
               Organizations
             </h3>
 
-            <p class="archive-card-description">
-              Guilds, military forces, governments, secret
-              societies, religious groups, orders, and factions
-              that influenced events across Tyria.
+            <p>
+              Guilds, orders, armies, factions, and governments.
             </p>
-
-            <p class="archive-card-examples">
-              GUILDS // ORDERS // GOVERNMENTS //
-              ARMIES // FACTIONS
-            </p>
-
-            <span class="archive-card-link">
-              Search Organization Records →
-            </span>
 
           </a>
 
 
           <a
             href="locations/index.html"
-            class="archive-card archive-card-wide"
-            data-search="
-              locations
-              places
-              cities
-              regions
-              ruins
-              landmarks
-              kingdoms
-              continents
-              lions arch
-              arah
-              ascalon
-              kryta
-              cantha
-              elona
-              castora
-              janthir
-            "
+            class="shelf shelf-wide"
           >
-
-            <p class="archive-card-label">
-              Archive Category
-            </p>
 
             <h3>
               Locations
             </h3>
 
-            <p class="archive-card-description">
-              Cities, kingdoms, ruins, battlefields, regions,
-              landmarks, and other places connected to the
-              major histories recorded throughout the library.
+            <p>
+              Cities, kingdoms, ruins, regions, and landmarks.
             </p>
-
-            <p class="archive-card-examples">
-              CITIES // RUINS // REGIONS //
-              BATTLEFIELDS // LANDMARKS
-            </p>
-
-            <span class="archive-card-link">
-              Search Location Records →
-            </span>
 
           </a>
 
         </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         ACTIVE INVESTIGATIONS
+    ======================================== -->
+
+    <section class="investigation-section">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <p class="section-kicker">
+            On the Desk
+          </p>
+
+
+          <h2>
+            Active Investigations
+          </h2>
+
+
+          <p>
+            Notes, loose threads, and bits of lore
+            I am still trying to place.
+          </p>
+
+        </div>
+
+
+        <a
+          href="active-investigations/index.html"
+          class="investigation"
+        >
+
+          <p class="investigation-label">
+            Open Notebook
+          </p>
+
+
+          <h3>
+            See what I am working on
+          </h3>
+
+
+          <p>
+            Follow the questions, timeline changes,
+            new discoveries, and theories that have
+            not made it into the main shelves yet.
+          </p>
+
+
+          <span class="investigation-link">
+            Open the notebook →
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         END OF LIBRARY
+    ======================================== -->
+
+    <section class="library-end">
+
+      <div class="container">
+
+        <p>
+          The collection currently reaches
+          <strong>1339 AE</strong>.
+          New histories and investigations are added
+          as the record grows.
+        </p>
+
+
+        <button
+          type="button"
+          class="feedback-open-button"
+          id="openFeedback"
+        >
+          Send a Field Note
+        </button>
+
+
+        <p class="support-line">
+          Want to help support the Library?
+          <a
+            href="https://vcsstore.gumroad.com/coffee"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Buy Commander Q a pizza.
+          </a>
+        </p>
 
       </div>
 
@@ -2823,7 +2067,7 @@
 
       <br>
 
-      Guild Wars, Guild Wars 2,
+      Guild Wars, Guild Wars 2, Guild Wars 3,
       ArenaNet, NCSOFT,
       and related properties belong
       to their respective owners.
@@ -2861,7 +2105,7 @@
 
 
   <!-- ========================================
-       ARCHIVE FEEDBACK WINDOW
+       FEEDBACK WINDOW
   ======================================== -->
 
   <div
@@ -2886,7 +2130,7 @@
 
 
       <p class="feedback-label">
-        Living Lore Archive
+        Living Lore Library
       </p>
 
 
@@ -2896,11 +2140,9 @@
 
 
       <p class="feedback-intro">
-        Found something that doesn't look right,
+        Found something that needs another look,
         have a source worth investigating,
-        noticed a problem with the archive,
-        or simply want to share a thought?
-        Leave me a field note.
+        or want to share a thought?
       </p>
 
 
@@ -2928,7 +2170,7 @@
         <div class="feedback-field">
 
           <label for="feedbackType">
-            Type of Field Note
+            Field Note
           </label>
 
 
@@ -2965,7 +2207,7 @@
         <div class="feedback-field">
 
           <label for="feedbackMessage">
-            Your Field Note
+            Note
           </label>
 
 
@@ -2973,7 +2215,7 @@
             id="feedbackMessage"
             name="message"
             required
-            placeholder="What did you discover?"
+            placeholder="What did you find?"
           ></textarea>
 
         </div>
@@ -3000,9 +2242,8 @@
 
 
         <p class="feedback-note">
-          Email opens your device's mail application with
-          the field note already prepared. Nothing is sent
-          automatically.
+          Email opens your mail application.
+          Nothing is sent automatically.
         </p>
 
       </form>
@@ -3013,7 +2254,7 @@
 
 
   <!-- ========================================
-       FIRST-VISIT SPOILER DISCLAIMER
+       SPOILER NOTICE
   ======================================== -->
 
   <div
@@ -3037,22 +2278,9 @@
 
 
       <p>
-        The Road Through Time follows the history of Tyria
-        across Guild Wars, Guild Wars 2, expansions,
-        Living World releases, and the current story.
-      </p>
-
-
-      <p>
-        Major characters, deaths, locations, historical
-        revelations, campaign outcomes, and later discoveries
-        are discussed openly.
-      </p>
-
-
-      <p>
-        This notice will not appear again on this browser
-        after you acknowledge it.
+        The Library discusses events from Guild Wars,
+        Guild Wars 2, expansions, Living World releases,
+        and the current story.
       </p>
 
 
@@ -3061,7 +2289,7 @@
         id="acknowledgeButton"
         type="button"
       >
-        Enter the Archive
+        Enter the Library
       </button>
 
     </div>
@@ -3081,7 +2309,7 @@
 
 
       /* ========================================
-         SCROLL POSITION MEMORY
+         SCROLL MEMORY
       ======================================== */
 
       if (
@@ -3242,63 +2470,7 @@
 
 
       /* ========================================
-         ARCHIVE CATEGORY SEARCH
-      ======================================== */
-
-      const archiveSearch =
-        document.getElementById(
-          "archiveSearch"
-        );
-
-
-      const archiveCards =
-        document.querySelectorAll(
-          ".archive-card"
-        );
-
-
-      archiveSearch.addEventListener(
-        "input",
-        () => {
-
-          const query =
-            archiveSearch.value
-              .toLowerCase()
-              .trim();
-
-
-          archiveCards.forEach(
-            (card) => {
-
-              const searchableText =
-                (
-                  card.textContent +
-                  " " +
-                  card.dataset.search
-                )
-                  .toLowerCase();
-
-
-              const matches =
-                searchableText.includes(
-                  query
-                );
-
-
-              card.style.display =
-                matches
-                  ? ""
-                  : "none";
-
-            }
-          );
-
-        }
-      );
-
-
-      /* ========================================
-         ARCHIVE FEEDBACK
+         FEEDBACK
       ======================================== */
 
       const feedbackOverlay =
@@ -3430,10 +2602,6 @@
       );
 
 
-      /* ========================================
-         EMAIL FIELD NOTE
-      ======================================== */
-
       feedbackForm.addEventListener(
         "submit",
         (event) => {
@@ -3510,12 +2678,8 @@ Sent to the Guild Wars Living Lore Library`
             );
 
 
-          const mailtoURL =
-            `mailto:${feedbackEmail}?subject=${subject}&body=${body}`;
-
-
           window.location.href =
-            mailtoURL;
+            `mailto:${feedbackEmail}?subject=${subject}&body=${body}`;
 
         }
       );
