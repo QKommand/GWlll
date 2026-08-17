@@ -798,31 +798,6 @@
 
 
     /* ========================================
-       SUPPORT
-    ======================================== */
-
-    .support-line {
-      margin-top: 30px !important;
-
-      color: var(--ink-faint) !important;
-
-      font-size: 0.82rem;
-    }
-
-
-    .support-line a {
-      color: var(--gold);
-
-      text-decoration: none;
-    }
-
-
-    .support-line a:hover {
-      color: var(--gold-bright);
-    }
-
-
-    /* ========================================
        FEEDBACK MODAL
     ======================================== */
 
@@ -1106,19 +1081,29 @@
 
 
     footer a {
-      color: var(--gold);
+      color: var(--gold-muted);
 
       text-decoration: none;
+
+      border-bottom:
+        1px solid
+        rgba(214, 179, 106, 0.25);
     }
 
 
     footer a:hover {
       color: var(--gold-bright);
+
+      border-color: var(--gold-bright);
     }
 
 
-    .footer-credits {
+    .footer-support {
       margin-top: 18px;
+
+      color: var(--ink-faint);
+
+      font-size: 0.62rem;
     }
 
 
@@ -2035,18 +2020,6 @@
           Send a Field Note
         </button>
 
-
-        <p class="support-line">
-          Want to help support the Library?
-          <a
-            href="https://vcsstore.gumroad.com/coffee"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Buy Commander Q a pizza.
-          </a>
-        </p>
-
       </div>
 
     </section>
@@ -2073,28 +2046,16 @@
       to their respective owners.
 
 
-      <div class="footer-credits">
+      <div class="footer-support">
 
-        Written with contributions by members of
-
+        If you enjoy the Library and would like to support
+        its upkeep,
         <a
-          href="https://liar.fyi"
+          href="https://vcsstore.gumroad.com/coffee"
           target="_blank"
           rel="noopener noreferrer"
         >
-          [Liar]
-        </a>.
-
-        <br>
-
-        Site built by
-
-        <a
-          href="https://vng.quest"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Commander Q
+          you can support the project here
         </a>.
 
       </div>
