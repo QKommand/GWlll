@@ -10,12 +10,14 @@
 
   <meta
     name="description"
-    content="Commander Q's historical record of the rise of mortal kingdoms, the Guilds, and the conflicts leading to the Third Guild War."
+    content="Commander Q's historical record of the rise of mortal kingdoms, the growing power of Guilds, and the conflicts leading to the Third Guild War."
   >
 
   <meta name="theme-color" content="#070b14">
 
-  <title>Kingdoms and Guild Wars // The Records of Commander Q</title>
+  <title>
+    Kingdoms and Guild Wars // The Records of Commander Q
+  </title>
 
   <style>
     :root {
@@ -548,66 +550,7 @@
     }
 
     /* ========================================
-       HISTORY GRID
-    ======================================== */
-
-    .history-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-      gap: 14px;
-
-      margin-top: 28px;
-    }
-
-    .history-card {
-      padding: 19px 20px;
-
-      border: 1px solid var(--border-soft);
-
-      background:
-        rgba(15, 23, 42, 0.58);
-    }
-
-    .history-card-label {
-      margin: 0;
-
-      color: var(--ink-faint);
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace;
-
-      font-size: 0.59rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .history-card h3 {
-      margin: 6px 0 0;
-
-      color: var(--gold);
-
-      font-size: 1.06rem;
-      font-weight: 600;
-    }
-
-    .history-card p:last-child {
-      margin: 8px 0 0;
-
-      color: var(--ink-muted);
-
-      font-size: 0.9rem;
-      line-height: 1.65;
-    }
-
-    /* ========================================
-       COMMANDER Q OBSERVATION
+       OBSERVATION
     ======================================== */
 
     .q-observation {
@@ -850,10 +793,6 @@
         padding: 40px 0;
       }
 
-      .history-grid {
-        grid-template-columns: 1fr;
-      }
-
       .navigation-actions {
         flex-direction: column;
       }
@@ -880,10 +819,6 @@
 </head>
 
 <body>
-
-  <!-- ========================================
-       HEADER
-  ========================================= -->
 
   <header class="site-header">
 
@@ -915,10 +850,6 @@
 
   </header>
 
-
-  <!-- ========================================
-       CHRONOLOGY
-  ========================================= -->
 
   <aside class="chronology">
 
@@ -954,7 +885,7 @@
         class="chronology-context"
         id="positionContext"
       >
-        THE MORTAL AGE EXPANDS
+        THE AGE OF KINGDOMS
       </p>
 
     </div>
@@ -963,10 +894,6 @@
 
 
   <main>
-
-    <!-- ========================================
-         BOOK HEADER
-    ======================================== -->
 
     <section class="book-header">
 
@@ -981,10 +908,9 @@
         </h1>
 
         <p class="subtitle">
-          On the kingdoms that inherited the post-Exodus world,
-          the growing power of Guilds, and the wars, catastrophes,
-          discoveries, and rivalries that shaped the centuries
-          before the Searing.
+          The rise of mortal kingdoms, the growing power
+          of Guilds, and the centuries leading to the
+          Third Guild War.
         </p>
 
         <hr class="ornament">
@@ -995,10 +921,6 @@
 
 
     <div class="container">
-
-      <!-- ========================================
-           AUTHOR
-      ========================================= -->
 
       <section class="author-card">
 
@@ -1019,10 +941,6 @@
       </section>
 
 
-      <!-- ========================================
-           PREFACE
-      ========================================= -->
-
       <section class="preface">
 
         <p class="section-kicker">
@@ -1030,57 +948,27 @@
         </p>
 
         <h2>
-          The world after the Gods
+          The age belongs to mortal powers
         </h2>
 
         <p>
-          The Exodus ended direct Divine rule, but it did not
-          empty the world of everything the Gods had touched.
-          Arah remained in Orr. The Human kingdoms continued to
-          grow. Magic remained part of mortal life, and the
-          divided Bloodstones still carried the consequences of
-          decisions made during the final years of the Divine Age.
+          After the Exodus, Human civilizations continued
+          without a Divine court ruling from Arah.
         </p>
 
         <p>
-          What changed most was responsibility. Kings, councils,
-          Guilds, priesthoods, armies, merchants, and scholars
-          increasingly shaped the course of history without a
-          pantheon physically ruling from Arah. Over the centuries
-          that followed, Human civilizations became wealthier,
-          more interconnected, and more politically complex, but
-          they also became capable of sustaining conflicts on a
-          scale that no single ruler could easily contain.
+          Kings, dynasties, Guilds, merchants, armies, and
+          religious institutions increasingly shaped the
+          political world. Trade connected distant civilizations,
+          while wars, plague, magical catastrophes, and old
+          rivalries repeatedly changed them.
         </p>
 
         <p>
-          Guilds became part of that transformation. Some remained
-          professional, religious, mercantile, or social
-          organizations, while others accumulated wealth,
-          territory, soldiers, and influence that crossed the
-          boundaries of kingdoms. When those organizations turned
-          against one another, their disputes could become wars
-          large enough to pull nations into them.
-        </p>
-
-        <p>
-          Yet the Guild Wars were only one part of this age.
-          Elona endured plague, dynastic collapse, and the rise of
-          Palawa Joko. Cantha survived the Jade Wind. Lord Odran
-          forced passages into the Mists. Glint recorded a prophecy
-          whose meaning would remain uncertain for centuries.
-          Trade drew distant Human civilizations together even as
-          political change later began pulling some of them apart.
-        </p>
-
-        <p>
-          By 1013 AE, these histories converged upon the beginning
-          of the Third Guild War. The kingdoms believed they were
-          entering another Human conflict.
-        </p>
-
-        <p>
-          They were approaching the end of an age.
+          Among the most important new powers were the
+          <strong>Guilds</strong>. Some accumulated enough
+          wealth, influence, and military strength that their
+          disputes could draw entire kingdoms into war.
         </p>
 
         <p class="signature">
@@ -1090,15 +978,11 @@
       </section>
 
 
-      <!-- ========================================
-           CHAPTER I
-      ========================================= -->
-
       <section
         class="chapter"
-        data-position="5"
-        data-date="2 AE"
-        data-context="THE POST-EXODUS KINGDOMS"
+        data-position="6"
+        data-date="2–358 AE"
+        data-context="THE HUMAN KINGDOMS"
       >
 
         <p class="chapter-number">
@@ -1106,57 +990,44 @@
         </p>
 
         <h2>
-          The kingdoms inherit the post-Exodus world
+          The Human kingdoms take shape
         </h2>
 
         <p class="chapter-opening">
-          In the first years after the Exodus, Human civilization
-          did not have to rebuild from nothing. The Gods had left,
-          but the kingdoms, cities, temples, institutions, and
-          magical traditions that had developed during the Divine
-          Age remained.
+          The early post-Exodus centuries strengthened the
+          political identities of the Human world.
         </p>
 
         <p>
-          <strong>Orr</strong> stood apart because its capital,
-          <strong>Arah</strong>, had once housed the Gods
-          themselves. In <strong>2 AE</strong>, Orr emerged as an
-          independent Human nation and inherited not only the City
-          of the Gods, but the religious and magical traditions
-          that had grown around it.
+          <strong>Orr</strong> inherited Arah and its Divine
+          traditions. <strong>Ascalon</strong> remained a major
+          eastern kingdom, while <strong>Cantha</strong> and
+          <strong>Elona</strong> continued along their own
+          Imperial and dynastic paths.
         </p>
 
         <p>
-          <strong>Ascalon</strong> continued developing in the
-          east, while the western Human territories that would
-          eventually become <strong>Kryta</strong> followed their
-          own political path. Beyond continental Tyria,
-          <strong>Cantha</strong> and <strong>Elona</strong>
-          remained powerful Human civilizations with separate
-          rulers, calendars, traditions, and interests.
+          In <strong>300 AE</strong>,
+          <strong>Kryta</strong> was established as an Elonian
+          colony. It became independent in
+          <strong>358 AE</strong>, creating another major Human
+          power on continental Tyria.
         </p>
 
         <p>
-          The Exodus had removed the Gods from physical rule.
-          It had not created a single Human world.
-        </p>
-
-        <p>
-          What followed was an age of kingdoms.
+          Ascalon, Kryta, and Orr would become the principal
+          northern kingdoms caught in the conflicts later known
+          as the Guild Wars.
         </p>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER II
-      ========================================= -->
-
       <section
         class="chapter"
-        data-position="13"
-        data-date="c. 100 AE"
-        data-context="THE BLOODSTONES RETURN TO THE WORLD"
+        data-position="19"
+        data-date="Early Centuries AE"
+        data-context="THE BLOODSTONES AND GUILDS"
       >
 
         <p class="chapter-number">
@@ -1164,55 +1035,45 @@
         </p>
 
         <h2>
-          Abaddon's Mouth erupts
+          Guilds compete for power
         </h2>
 
         <p class="chapter-opening">
-          For roughly a century after the Exodus, the largest
-          pieces of the divided Bloodstone remained concealed
-          within the volcano known as
-          <strong>Abaddon's Mouth</strong> in the Ring of Fire.
+          The scattered <strong>Bloodstones</strong> eventually
+          became objects of mortal ambition.
         </p>
 
         <p>
-          Then the volcano erupted.
+          Powerful Guilds competed for access to the Stones and
+          the magical power associated with them. Their struggles
+          drew Human nations into larger conflicts remembered as
+          the <strong>Guild Wars</strong>.
         </p>
 
         <p>
-          The five great Bloodstone pieces were scattered from the
-          place where the Gods had attempted to keep them beyond
-          easy mortal reach. The magic contained within them could
-          influence whatever lay around them, and the Stones once
-          again became objects that ambitious mortals could seek,
-          study, and fight over.
+          Guilds were not simply military companies.
+          They could represent trade, professions, religion,
+          scholarship, magic, and political interests.
+          The strongest possessed resources and loyalties that
+          crossed national borders.
         </p>
 
         <p>
-          Their return to the wider world helped ignite the first
-          conflict remembered collectively as one of the
-          <strong>Guild Wars</strong>.
-        </p>
-
-        <p>
-          Guilds competed for control of the Bloodstones and the
-          magical power associated with them. As those struggles
-          expanded, the fighting eventually drew
-          <strong>Ascalon</strong> and <strong>Kryta</strong> into
-          the conflict.
+          This allowed a dispute between Guilds to become a war
+          between kingdoms.
         </p>
 
         <div class="research-note">
 
           <p class="research-note-label">
-            Research Note // First Guild War
+            Historical Caution // Early Guild Wars
           </p>
 
           <p>
-            The eruption of Abaddon's Mouth and competition over
-            the scattered Bloodstones are securely associated with
-            the First Guild War, but the surviving chronology does
-            not preserve an exact beginning or ending year for the
-            conflict.
+            The First and Second Guild Wars are securely part of
+            the historical sequence, but their complete dates and
+            campaigns are not preserved well enough to construct
+            a precise year-by-year chronology.
           </p>
 
         </div>
@@ -1224,10 +1085,9 @@
           </p>
 
           <p>
-            The Gods scattered the Bloodstones to prevent magical
-            power from being gathered too easily in one place.
-            Once the Stones returned to the world, mortals began
-            fighting over who would gather that power anyway.
+            Kings ruled land. Guilds could carry money,
+            influence, soldiers, and loyalty across the borders
+            those kings controlled.
           </p>
 
         </div>
@@ -1235,15 +1095,11 @@
       </section>
 
 
-      <!-- ========================================
-           CHAPTER III
-      ========================================= -->
-
       <section
         class="chapter"
-        data-position="21"
-        data-date="Early Centuries AE"
-        data-context="THE POWER OF THE GUILDS"
+        data-position="32"
+        data-date="221–272 AE"
+        data-context="TRADE AND PROPHECY"
       >
 
         <p class="chapter-number">
@@ -1251,69 +1107,40 @@
         </p>
 
         <h2>
-          Guilds become powers beyond borders
+          A more connected Human world
         </h2>
 
         <p class="chapter-opening">
-          Guilds were not created by the wars that carried their
-          name. They had long served as organizations built around
-          professions, commerce, religion, magic, military service,
-          scholarship, and other shared interests.
+          Maritime trade continued linking distant Human
+          civilizations even while political rivalries grew.
         </p>
 
         <p>
-          What changed was their scale.
+          Cantha traded with Tyria and Elona, carrying goods,
+          knowledge, customs, and travelers between continents.
         </p>
 
         <p>
-          Wealthy and militarized Guilds could operate across the
-          territories of several rulers at once. They could move
-          goods, information, influence, and armed forces through
-          networks that did not necessarily end at a national
-          border. Some became powerful enough that disputes
-          between Guilds could destabilize the kingdoms in which
-          they operated.
+          In <strong>272 AE</strong>,
+          <strong>Glint</strong> recorded the visions later known
+          as the <strong>Flameseeker Prophecies</strong>.
         </p>
 
         <p>
-          This made the Guild Wars different from ordinary wars
-          between kings. Ascalon and Kryta could become
-          participants in conflicts whose origins did not begin
-          with either throne.
+          Their meaning would remain uncertain for centuries,
+          until events surrounding the Mursaat and the Door of
+          Komalie brought the prophecy into the center of recorded
+          history.
         </p>
-
-        <p>
-          A rivalry between organizations could become a rivalry
-          between cities, then territories, then armies, and
-          eventually kingdoms.
-        </p>
-
-        <div class="q-observation">
-
-          <p class="q-observation-label">
-            Commander Q // Observation
-          </p>
-
-          <p>
-            Kings ruled territory. Guilds could rule loyalty.
-            Once a Guild possessed enough wealth and soldiers,
-            that distinction mattered.
-          </p>
-
-        </div>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER IV
-      ========================================= -->
-
       <section
         class="chapter"
-        data-position="29"
-        data-date="221–272 AE"
-        data-context="TRADE AND PROPHECY"
+        data-position="45"
+        data-date="452–868 AE"
+        data-context="ELONA"
       >
 
         <p class="chapter-number">
@@ -1321,72 +1148,49 @@
         </p>
 
         <h2>
-          The continents grow closer
+          Elona survives plague and conquest
         </h2>
 
         <p class="chapter-opening">
-          War did not prevent the Human world from becoming more
-          connected. During the third century AE, maritime trade
-          strengthened links between civilizations separated by
-          enormous distances.
+          In <strong>452 AE</strong>, the
+          <strong>Scarab Plague</strong> devastated Elona and
+          destroyed the ruling family of the
+          <strong>Primeval Dynasty</strong>.
         </p>
 
         <p>
-          In <strong>221 AE</strong>, Cantha entered the
-          <strong>Age of the Hedgehog</strong>. Trade expanded
-          between Cantha, the kingdoms of Tyria, Elona, and lands
-          farther north. Merchants and sailors carried more than
-          cargo between ports. Languages, fashions, religious
-          practices, technologies, stories, and political ideas
-          traveled with them.
+          Fahranur was abandoned, and the collapse of the dynasty
+          began a long period of political change from which
+          Istan, Kourna, and Vabbi emerged as distinct powers.
         </p>
 
         <p>
-          The kingdoms remained distinct, but distance no longer
-          meant isolation.
+          Centuries later,
+          <strong>Palawa Joko</strong> invaded Elona from the
+          Desolation and conquered much of the north.
         </p>
 
         <p>
-          In <strong>272 AE</strong>, another connection was made,
-          though not through trade. <strong>Glint</strong>
-          recorded the visions later known as the
-          <strong>Flameseeker Prophecies</strong>.
+          In <strong>862 AE</strong>,
+          <strong>Turai Ossa</strong> defeated Joko at the
+          Battle of Jahai. Joko was imprisoned rather than
+          destroyed.
         </p>
 
         <p>
-          The prophecy described events far beyond the lifetime of
-          anyone then living. For centuries its meaning remained
-          uncertain. Only much later would its words become tied to
-          the Mursaat, the Door of Komalie, the Titans, and the
-          events of 1072 AE.
+          In <strong>868 AE</strong>, Turai led the
+          <strong>Great Pilgrimage</strong> into the Crystal
+          Desert in search of Ascension.
         </p>
-
-        <div class="q-observation">
-
-          <p class="q-observation-label">
-            Commander Q // Observation
-          </p>
-
-          <p>
-            A prophecy can exist for centuries before anyone knows
-            which generation will be unfortunate enough to
-            understand it.
-          </p>
-
-        </div>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER V
-      ========================================= -->
-
       <section
         class="chapter"
-        data-position="37"
-        data-date="300–358 AE"
-        data-context="THE RISE OF KRYTA"
+        data-position="58"
+        data-date="851–872 AE"
+        data-context="MAGIC CHANGES THE WORLD"
       >
 
         <p class="chapter-number">
@@ -1394,56 +1198,58 @@
         </p>
 
         <h2>
-          Kryta becomes a kingdom
+          Mortals push magic beyond old boundaries
         </h2>
 
         <p class="chapter-opening">
-          In <strong>300 AE</strong>, Kryta was established as an
-          Elonian colony on the western coast of continental
-          Tyria.
+          The ninth century AE produced two events that revealed
+          how much magical power mortals could command.
         </p>
 
         <p>
-          Settlement expanded through lands already inhabited by
-          other peoples, including <strong>Centaurs</strong>.
-          The growth of the colony therefore became part of a
-          longer contest over territory rather than the settlement
-          of an empty frontier.
+          In <strong>851 AE</strong>,
+          <strong>Lord Odran</strong> used powerful magic and
+          sacrifice to open passages into the
+          <strong>Mists</strong>, eventually reaching the
+          Hall of Heroes and creating hidden routes between
+          worlds.
         </p>
 
         <p>
-          Over the following decades, the colony developed its own
-          political identity. By <strong>358 AE</strong>, Kryta
-          had separated from Elona and become an independent
-          kingdom.
+          In <strong>872 AE</strong>,
+          <strong>Shiro Tagachi</strong> assassinated
+          Emperor Angsiyan during Cantha's Harvest Ceremony.
+          Shiro's death released the
+          <strong>Jade Wind</strong>.
         </p>
 
         <p>
-          The political landscape of continental Tyria now
-          included three major Human powers:
-          <strong>Ascalon</strong>,
-          <strong>Kryta</strong>, and
-          <strong>Orr</strong>.
+          The Jade Sea hardened and the Echovald Forest was
+          petrified, permanently transforming southern Cantha.
         </p>
 
-        <p>
-          Their proximity ensured that the conflicts of the Guilds
-          would rarely remain separate from the interests of the
-          kingdoms themselves.
-        </p>
+        <div class="q-observation">
+
+          <p class="q-observation-label">
+            Commander Q // Observation
+          </p>
+
+          <p>
+            By this age, mortals were no longer merely inheriting
+            ancient magic. They were producing events capable of
+            changing worlds and landscapes themselves.
+          </p>
+
+        </div>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER VI
-      ========================================= -->
-
       <section
         class="chapter"
-        data-position="45"
-        data-date="452–456 AE"
-        data-context="THE SCARAB PLAGUE"
+        data-position="71"
+        data-date="902–940 AE"
+        data-context="CANTHA TURNS INWARD"
       >
 
         <p class="chapter-number">
@@ -1451,71 +1257,38 @@
         </p>
 
         <h2>
-          The Scarab Plague breaks the Primeval Dynasty
+          Cantha's northern ties weaken
         </h2>
 
         <p class="chapter-opening">
-          Elona's political order was transformed by a disaster
-          that no invading army had caused.
+          The trade networks linking Cantha to the northern Human
+          kingdoms gradually weakened under Imperial policy.
         </p>
 
         <p>
-          In <strong>452 AE</strong>, the
-          <strong>Scarab Plague</strong> spread through Elona and
-          devastated <strong>Istan</strong>. The disease killed
-          enormous numbers of people and wiped out the ruling
-          family of the <strong>Primeval Dynasty</strong>.
+          In <strong>902 AE</strong>, long-standing trade
+          agreements with the Tyrian kingdoms were dissolved.
         </p>
 
         <p>
-          <strong>Fahranur</strong>, the First City, was
-          abandoned along with other affected settlements as
-          survivors fled the outbreak. By
-          <strong>456 AE</strong>, the worst years of the plague
-          had passed, but the dynasty that had ruled for centuries
-          was gone.
+          By <strong>940 AE</strong>, Canthan embassies in
+          Ascalon and Elona had formally closed, while growing
+          Corsair activity made travel more dangerous.
         </p>
 
         <p>
-          The disappearance of that authority opened a long period
-          of political change. New rulers and competing dynasties
-          attempted to control Elona, while regional differences
-          became increasingly important.
+          Cantha was not yet completely isolated, but official
+          contact with the wider Human world had sharply declined.
         </p>
-
-        <p>
-          Over time, <strong>Istan</strong>,
-          <strong>Kourna</strong>, and
-          <strong>Vabbi</strong> emerged as distinct centers of
-          Elonian political life.
-        </p>
-
-        <div class="q-observation">
-
-          <p class="q-observation-label">
-            Commander Q // Observation
-          </p>
-
-          <p>
-            Kingdoms often write their histories around battles.
-            Sometimes a dynasty ends because an enemy never needed
-            to raise a sword.
-          </p>
-
-        </div>
 
       </section>
 
 
-      <!-- ========================================
-           CHAPTER VII
-      ========================================= -->
-
       <section
         class="chapter"
-        data-position="55"
-        data-date="757–868 AE"
-        data-context="PALAWA JOKO AND TURAI OSSA"
+        data-position="84"
+        data-date="Before 1013 AE"
+        data-context="THE GUILD WARS CONTINUE"
       >
 
         <p class="chapter-number">
@@ -1523,340 +1296,36 @@
         </p>
 
         <h2>
-          Palawa Joko rises in the Desolation
+          The first wars fail to settle the rivalry
         </h2>
 
         <p class="chapter-opening">
-          The lands scarred during the ancient war against Abaddon
-          eventually became the stronghold of another threat.
-        </p>
-
-        <p>
-          By <strong>757 AE</strong>,
-          <strong>Palawa Joko</strong> had established the
-          <strong>Bone Palace</strong> within the Desolation.
-          The Undead lord remained there for generations before
-          turning his attention toward the living kingdoms of
-          Elona.
-        </p>
-
-        <p>
-          In <strong>860 AE</strong>, Joko launched a major
-          invasion and seized much of northern Elona. His conquest
-          of Vabbi earned him the name
-          <strong>Scourge of Vabbi</strong>.
-        </p>
-
-        <p>
-          His advance ended two years later when
-          <strong>Turai Ossa</strong> defeated him at the
-          <strong>Battle of Jahai</strong> in
-          <strong>862 AE</strong>.
-        </p>
-
-        <p>
-          Joko was defeated, but killing him proved another matter.
-          He was instead imprisoned, leaving the threat contained
-          rather than destroyed.
-        </p>
-
-        <p>
-          Turai's victory made him one of the great figures of
-          Elonian history, but military triumph did not satisfy
-          him. In <strong>868 AE</strong>, he led the
-          <strong>Great Pilgrimage</strong> into the Crystal
-          Desert, seeking the Ascension once associated with the
-          trials of the Forgotten.
-        </p>
-
-        <p>
-          Once again, the history of the mortal kingdoms crossed
-          paths with something much older.
-        </p>
-
-      </section>
-
-
-      <!-- ========================================
-           CHAPTER VIII
-      ========================================= -->
-
-      <section
-        class="chapter"
-        data-position="64"
-        data-date="851 AE"
-        data-context="LORD ODRAN ENTERS THE MISTS"
-      >
-
-        <p class="chapter-number">
-          VIII
-        </p>
-
-        <h2>
-          Lord Odran forces open the Mists
-        </h2>
-
-        <p class="chapter-opening">
-          In <strong>851 AE</strong>, the Human arcanist
-          <strong>Lord Odran</strong> crossed a boundary that had
-          once seemed to belong only to Gods, spirits, and the dead.
-        </p>
-
-        <p>
-          Through powerful magic and the sacrifice of lives, Odran
-          learned to open portals into the
-          <strong>Mists</strong>. His experiments eventually
-          carried him through the <strong>Rift</strong> and into
-          the <strong>Hall of Heroes</strong>.
-        </p>
-
-        <p>
-          From there, he established hidden portals connecting
-          different worlds through the Mists. Odran concealed these
-          passages behind enchantments, allowing him to move through
-          a network that few mortals even knew existed.
-        </p>
-
-        <p>
-          His control did not last.
-        </p>
-
-        <p>
-          The spirits of the Hall eventually killed him. After
-          Odran's death, the magic hiding his portals failed and
-          the routes he had created became accessible to others.
-        </p>
-
-        <p>
-          The Mists had always surrounded Tyria.
-          Odran's achievement was proving that mortal magic could
-          forcibly open a road into them.
-        </p>
-
-        <div class="q-observation">
-
-          <p class="q-observation-label">
-            Commander Q // Observation
-          </p>
-
-          <p>
-            The Gods left Tyria through the Mists.
-            Eight centuries later, a mortal decided that the same
-            boundary looked more like a locked door than a warning.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- ========================================
-           CHAPTER IX
-      ========================================= -->
-
-      <section
-        class="chapter"
-        data-position="73"
-        data-date="872 AE"
-        data-context="THE JADE WIND"
-      >
-
-        <p class="chapter-number">
-          IX
-        </p>
-
-        <h2>
-          The Jade Wind transforms Cantha
-        </h2>
-
-        <p class="chapter-opening">
-          In <strong>872 AE</strong>, a single assassination
-          transformed the geography of southern Cantha.
-        </p>
-
-        <p>
-          During the Harvest Ceremony at the
-          <strong>Harvest Temple</strong>, Imperial bodyguard
-          <strong>Shiro Tagachi</strong> betrayed and killed
-          <strong>Emperor Angsiyan</strong>.
-        </p>
-
-        <p>
-          Shiro was confronted and slain by
-          <strong>Saint Viktor</strong>,
-          <strong>Archemorus</strong>, and
-          <strong>Vizu</strong>, but his death released an
-          extraordinary wave of magical energy.
-        </p>
-
-        <p>
-          The event became known as the
-          <strong>Jade Wind</strong>.
-        </p>
-
-        <p>
-          Across the south, seawater hardened into the vast
-          expanse later called the <strong>Jade Sea</strong>,
-          while the <strong>Echovald Forest</strong> was
-          petrified. Communities survived, but the landscapes that
-          had supported them were permanently altered.
-        </p>
-
-        <p>
-          The Kurzicks and Luxons would spend centuries adapting
-          to a world shaped by the aftermath of that single day.
-        </p>
-
-        <div class="q-observation">
-
-          <p class="q-observation-label">
-            Commander Q // Observation
-          </p>
-
-          <p>
-            The ancient Dragonrises transformed landscapes over
-            ages. The Jade Wind is a reminder that enough magic
-            concentrated in one mortal event could do something
-            horrifyingly similar in moments.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- ========================================
-           CHAPTER X
-      ========================================= -->
-
-      <section
-        class="chapter"
-        data-position="81"
-        data-date="902–940 AE"
-        data-context="CANTHA TURNS INWARD"
-      >
-
-        <p class="chapter-number">
-          X
-        </p>
-
-        <h2>
-          Old connections begin to weaken
-        </h2>
-
-        <p class="chapter-opening">
-          The maritime networks that had connected distant Human
-          societies for centuries did not disappear all at once,
-          but political decisions increasingly placed strain upon
+          The First Guild War did not resolve the competition
+          between powerful Guilds and the kingdoms drawn behind
           them.
         </p>
 
         <p>
-          In <strong>902 AE</strong>, Cantha ended long-standing
-          trade arrangements with the northern Human kingdoms by
-          Imperial decree.
+          A Second Guild War followed, again involving
+          <strong>Ascalon</strong> and
+          <strong>Kryta</strong>.
         </p>
 
         <p>
-          During the decades that followed, formal connections
-          weakened further. By <strong>940 AE</strong>, Canthan
-          diplomatic establishments in Ascalon and Elona had
-          closed, while piracy and regional instability made
-          long-distance travel less dependable.
+          The exact chronology remains incomplete, but the
+          pattern is clear. Guild rivalries had become a lasting
+          part of northern Tyrian politics, repeatedly turning
+          institutional disputes into national conflicts.
         </p>
 
         <p>
-          Cantha was not yet completely cut off from the outside
-          world, but the direction of Imperial policy had changed.
-          The age in which greater trade continually pulled the
-          Human continents closer together had begun to reverse.
-        </p>
-
-        <p>
-          At the same time, the northern kingdoms were becoming
-          increasingly absorbed in conflicts of their own.
+          By the beginning of the eleventh century AE, the old
+          hostility between Ascalon and Kryta had never truly
+          disappeared.
         </p>
 
       </section>
 
-
-      <!-- ========================================
-           CHAPTER XI
-      ========================================= -->
-
-      <section
-        class="chapter"
-        data-position="90"
-        data-date="Dates Uncertain"
-        data-context="THE SECOND GUILD WAR"
-      >
-
-        <p class="chapter-number">
-          XI
-        </p>
-
-        <h2>
-          The Guild Wars return
-        </h2>
-
-        <p class="chapter-opening">
-          The First Guild War did not settle the rivalries that
-          had allowed Guilds to drag kingdoms into conflict.
-          At some later point, fighting erupted again in what
-          became known as the <strong>Second Guild War</strong>.
-        </p>
-
-        <p>
-          Once more, <strong>Ascalon</strong> and
-          <strong>Kryta</strong> became deeply involved.
-          The surviving chronology does not preserve enough detail
-          to reconstruct the conflict year by year, and even its
-          exact beginning and ending remain uncertain.
-        </p>
-
-        <p>
-          That uncertainty should not obscure what the first two
-          Guild Wars demonstrate. Powerful Guilds had become a
-          permanent feature of Tyrian politics, and their disputes
-          could repeatedly become problems for entire nations.
-        </p>
-
-        <p>
-          The wars also changed the relationship between the
-          kingdoms themselves. Repeated intervention in Guild
-          conflicts gave Ascalon and Kryta reasons to see one
-          another not simply as neighboring Human powers, but as
-          enemies associated with rival factions and interests.
-        </p>
-
-        <p>
-          By the beginning of the eleventh century AE, another
-          Guild War was approaching.
-        </p>
-
-        <div class="research-note">
-
-          <p class="research-note-label">
-            Historical Caution // First and Second Guild Wars
-          </p>
-
-          <p>
-            The surviving record establishes the order of the
-            first two Guild Wars and their connection to Ascalon,
-            Kryta, and powerful Guild organizations, but it does
-            not provide secure dates for their complete duration.
-            This archive therefore preserves the uncertainty
-            rather than assigning unsupported years.
-          </p>
-
-        </div>
-
-      </section>
-
-
-      <!-- ========================================
-           CHAPTER XII
-      ========================================= -->
 
       <section
         class="chapter"
@@ -1866,7 +1335,7 @@
       >
 
         <p class="chapter-number">
-          XII
+          VIII
         </p>
 
         <h2>
@@ -1874,52 +1343,32 @@
         </h2>
 
         <p class="chapter-opening">
-          In <strong>1013 AE</strong>, conflict erupted again.
-          The <strong>Third Guild War</strong> would become the
-          longest and bloodiest of the struggles that carried the
-          name.
+          In <strong>1013 AE</strong>, war erupted again between
+          Guilds aligned with the northern Human kingdoms.
         </p>
 
         <p>
           <strong>Ascalon</strong> and
-          <strong>Kryta</strong> were once more drawn deeply into
-          the fighting. Guild rivalries, national interests, and
-          decades of accumulated hostility became increasingly
-          difficult to separate from one another.
+          <strong>Kryta</strong> became the first major kingdoms
+          drawn into the conflict.
         </p>
 
         <p>
-          <strong>Orr</strong> initially remained outside the war.
-          Its position changed when <strong>King Reza</strong>
-          attempted to intervene and restore peace between the
-          other Human kingdoms. Orrian forces entered the conflict,
-          but intervention did not bring the fighting to an end.
+          The Third Guild War would outlast the previous wars and
+          become the bloodiest conflict to carry the name.
         </p>
 
         <p>
-          Instead, the Third Guild War continued for decades.
+          Orr would eventually be pulled into the fighting as
+          well, but those later decades belong to the next
+          record.
         </p>
 
         <p>
-          Human kingdoms committed soldiers, resources, and
-          attention to fighting one another while another power
-          watched from beyond their northern borders.
-        </p>
-
-        <p>
-          The <strong>Charr</strong> had not forgotten the lands
-          lost during the expansion of Ascalon. Their own society
-          had changed, and new forces were preparing them for war.
-        </p>
-
-        <p>
-          The Human kingdoms did not yet understand that the Third
-          Guild War would not end because one Guild defeated
-          another or one king finally imposed peace.
-        </p>
-
-        <p>
-          It would end because the Charr invaded.
+          In 1013 AE, the important change was simpler:
+          another Guild War had begun, and this one would still
+          be raging when the Charr invaded more than half a
+          century later.
         </p>
 
         <div class="q-observation">
@@ -1929,21 +1378,15 @@
           </p>
 
           <p>
-            For nearly a thousand years after the Exodus, mortals
-            inherited the freedom to shape their own kingdoms.
-            By 1013 AE, they had also inherited the ability to
-            become so absorbed in fighting one another that they
-            failed to see the next war approaching.
+            The Third Guild War began as another Human conflict.
+            It would end only when something larger forced the
+            kingdoms to stop fighting one another.
           </p>
 
         </div>
 
       </section>
 
-
-      <!-- ========================================
-           NEXT VOLUME
-      ========================================= -->
 
       <section class="transition">
 
@@ -1952,32 +1395,16 @@
         </p>
 
         <h2>
-          The wars of Guilds meet a different kind of war
+          The longest Guild War has begun
         </h2>
 
         <p>
-          The centuries after the Exodus had produced kingdoms,
-          trade networks, Guilds, magical discoveries, dynasties,
-          prophecies, and catastrophes. Human civilizations had
-          survived plague, Undead conquest, political division,
-          and landscapes transformed by magic.
+          By 1013 AE, Human kingdoms had spent centuries building
+          political, commercial, and magical power.
         </p>
 
         <p>
-          Yet the Third Guild War left the northern kingdoms
-          looking inward at the moment danger was gathering
-          beyond them.
-        </p>
-
-        <p>
-          The Charr were preparing to cross into Ascalon.
-        </p>
-
-        <p>
-          Their invasion would shatter the balance between the
-          Human kingdoms, end the Third Guild War, and begin the
-          chain of events that led directly into the first
-          <strong>Guild Wars</strong> campaign.
+          Now Ascalon and Kryta were at war again.
         </p>
 
         <p class="next-title">
@@ -1985,11 +1412,10 @@
         </p>
 
         <p>
-          The next archive follows the final years of the
-          Third Guild War, the Charr invasion of Ascalon,
-          the <strong>Searing</strong> of 1070 AE, the
-          destruction of Orr, and the events that lead directly
-          into <strong>Guild Wars: Prophecies</strong>.
+          The next record follows the Third Guild War through its
+          final decades, the Charr invasion, the Searing of
+          Ascalon, the destruction of Orr, and the events that
+          lead directly into Guild Wars.
         </p>
 
         <div class="navigation-actions">
@@ -2024,10 +1450,6 @@
   </main>
 
 
-  <!-- ========================================
-       FOOTER
-  ========================================= -->
-
   <footer>
 
     <div class="container">
@@ -2046,10 +1468,6 @@
 
   </footer>
 
-
-  <!-- ========================================
-       CHRONOLOGY SCRIPT
-  ========================================= -->
 
   <script>
     (() => {
