@@ -10,13 +10,13 @@
 
   <meta
     name="description"
-    content="Commander Q's notes on Guild Wars 3, ancient Orr, and the developing historical timeline of the Orrian Golden Age."
+    content="Commander Q's dated research journal tracking Guild Wars 3 lore, ancient Orr, historical developments, and changing theories about the game's place in the Tyrian timeline."
   >
 
   <meta name="theme-color" content="#070b14">
 
   <title>
-    Notes on Guild Wars 3 // The Records of Commander Q
+    Guild Wars 3 Journal // The Records of Commander Q
   </title>
 
   <style>
@@ -27,7 +27,6 @@
       --background-deep: #03060c;
 
       --paper: #111827;
-      --paper-light: #172033;
 
       --border: #334155;
       --border-soft: rgba(148, 163, 184, 0.18);
@@ -41,7 +40,6 @@
       --ink-faint: #8f949e;
 
       --note: #c7d2e0;
-      --question: #d4aaa0;
 
       --max-width: 820px;
     }
@@ -222,7 +220,7 @@
     }
 
     .subtitle {
-      max-width: 660px;
+      max-width: 680px;
 
       margin: 18px 0 0;
 
@@ -255,7 +253,7 @@
     }
 
     /* ========================================
-       PAGE INTRO
+       INTRO
     ======================================== */
 
     .opening-note {
@@ -275,13 +273,11 @@
     }
 
     /* ========================================
-       JOURNAL ENTRY
+       JOURNAL ENTRIES
     ======================================== */
 
     .journal-entry {
-      position: relative;
-
-      padding: 48px 0;
+      padding: 52px 0;
 
       border-top: 1px solid var(--border-soft);
     }
@@ -298,7 +294,8 @@
         Consolas,
         monospace;
 
-      font-size: 0.62rem;
+      font-size: 0.64rem;
+      font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
@@ -320,20 +317,20 @@
     }
 
     .journal-entry h3 {
-      margin: 28px 0 0;
+      margin: 27px 0 0;
 
       color: var(--gold-bright);
 
-      font-size: 1.08rem;
+      font-size: 1.04rem;
       font-weight: 600;
     }
 
     .journal-entry p {
-      margin: 17px 0 0;
+      margin: 16px 0 0;
     }
 
     /* ========================================
-       QUOTED CLIPPING
+       SOURCE CLIPPING
     ======================================== */
 
     .clipping {
@@ -350,7 +347,7 @@
     }
 
     .clipping-label {
-      margin: 0;
+      margin: 0 !important;
 
       color: var(--gold-muted);
 
@@ -375,26 +372,26 @@
     }
 
     /* ========================================
-       MARGIN NOTES
+       DEVELOPMENT BLOCK
     ======================================== */
 
-    .margin-note {
-      margin: 27px 0;
+    .development {
+      margin-top: 28px;
 
-      padding: 18px 21px;
+      padding: 20px 22px;
 
-      border-left: 2px solid var(--gold);
+      border-left: 2px solid var(--gold-muted);
 
       background:
         linear-gradient(
           90deg,
-          rgba(214, 179, 106, 0.055),
+          rgba(214, 179, 106, 0.045),
           transparent
         );
     }
 
-    .margin-note-label {
-      margin: 0 !important;
+    .development h3 {
+      margin: 0;
 
       color: var(--gold);
 
@@ -405,16 +402,13 @@
         Consolas,
         monospace;
 
-      font-size: 0.58rem;
-      letter-spacing: 0.13em;
+      font-size: 0.64rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
-    .margin-note p:last-child {
-      margin: 7px 0 0;
-
-      color: var(--note);
-      font-style: italic;
+    .development p {
+      margin: 9px 0 0;
     }
 
     /* ========================================
@@ -422,7 +416,7 @@
     ======================================== */
 
     .timeline {
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
     .timeline-line {
@@ -487,10 +481,10 @@
     }
 
     /* ========================================
-       WORKING RANGE
+       CURRENT PLACEMENT
     ======================================== */
 
-    .working-range {
+    .placement {
       margin: 30px 0;
 
       padding: 24px;
@@ -507,32 +501,45 @@
         );
     }
 
-    .working-range p {
-      margin: 0;
+    .placement-label {
+      margin: 0 !important;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
     }
 
-    .range-big {
-      margin-top: 8px !important;
+    .placement-main {
+      margin-top: 9px !important;
 
       color: var(--gold-bright);
 
       font-size:
         clamp(
-          1.5rem,
+          1.35rem,
           5vw,
-          2rem
+          1.85rem
         );
 
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
-    .range-small {
+    .placement-note {
       margin-top: 12px !important;
 
       color: var(--ink-muted);
 
-      font-size: 0.92rem;
-      font-style: italic;
+      font-size: 0.93rem;
     }
 
     /* ========================================
@@ -540,13 +547,14 @@
     ======================================== */
 
     .questions {
-      margin-top: 25px;
+      margin-top: 24px;
     }
 
     .question {
       padding: 15px 0;
 
-      border-bottom: 1px dashed var(--border-soft);
+      border-bottom:
+        1px dashed var(--border-soft);
     }
 
     .question:last-child {
@@ -557,32 +565,28 @@
       margin: 0;
     }
 
-    .question strong {
-      color: var(--question);
-    }
-
     /* ========================================
-       NEXT NOTE
+       NEXT ENTRY
     ======================================== */
 
-    .blank-entry {
-      margin-top: 30px;
+    .next-entry {
+      margin-top: 28px;
 
-      padding: 24px;
+      padding: 22px;
 
       border:
         1px dashed
-        rgba(214, 179, 106, 0.38);
+        rgba(214, 179, 106, 0.34);
 
       color: var(--ink-faint);
     }
 
-    .blank-entry p {
+    .next-entry p {
       margin: 0;
     }
 
-    .blank-entry p + p {
-      margin-top: 11px;
+    .next-entry p + p {
+      margin-top: 10px;
     }
 
     /* ========================================
@@ -808,16 +812,17 @@
       <div class="container">
 
         <p class="journal-label">
-          Commander Q's Notebook
+          Commander Q's Journal
         </p>
 
         <h1>
-          Notes on Guild Wars 3
+          Guild Wars 3
         </h1>
 
         <p class="subtitle">
-          Notes from the Orrian Golden Age as new pieces
-          of the Guild Wars 3 timeline come into view.
+          A dated record of new lore, changing historical
+          placement, and the theories forming around the
+          Orrian Golden Age.
         </p>
 
       </div>
@@ -841,37 +846,95 @@
 
 
       <!-- ========================================
-           OPENING NOTE
+           INTRO
       ======================================== -->
 
       <section class="opening-note">
 
         <p>
-          Guild Wars 3 is giving us a closer look at an age that
-          has mostly existed as ancient history until now.
+          Guild Wars 3 is filling in a period of Tyrian history
+          that we previously knew mostly through scattered
+          accounts and events that happened much later.
         </p>
 
         <p>
-          I am keeping my notes here as new details appear,
-          comparing them with the older record and trying to
-          place the pieces in order.
+          These entries follow that information as it appears,
+          recording what it adds to the timeline and how it
+          changes the way I currently understand the era.
         </p>
 
       </section>
 
 
       <!-- ========================================
-           ENTRY: STARTING POINT
+           13 AUGUST 2026
       ======================================== -->
 
       <article class="journal-entry">
 
         <p class="entry-date">
-          Starting Point
+          13 August 2026
         </p>
 
         <h2>
-          So where exactly are we?
+          Humanity gives us the wider world
+        </h2>
+
+        <p>
+          ArenaNet's look at Humans establishes that Humanity
+          has already been in Tyria for more than seven hundred
+          years by the opening of Guild Wars 3.
+        </p>
+
+        <p>
+          Cantha is the oldest Human civilization.
+          Elona is prosperous. Ascalon remains Humanity's
+          youngest major holding. The Margonites still occupy
+          the Crystal Sea and its surrounding coasts.
+        </p>
+
+        <p>
+          Orr sits in the middle of this Human world rather
+          than at the end of its history. It is still a living
+          kingdom and one of the places where Human expansion,
+          Divine influence, magic, and guild power are meeting.
+        </p>
+
+        <div class="development">
+
+          <h3>
+            What this changes
+          </h3>
+
+          <p>
+            Guild Wars 3 is not taking place in an isolated
+            ancient Orr. Cantha, Elona, Ascalon, the Margonites,
+            and Orr already form a broad Human world around it.
+          </p>
+
+          <p>
+            The destruction of the Crystal Sea, the fall of
+            Abaddon, the Exodus, the Guild Wars, the Cataclysm,
+            and Orr's later sinking all remain ahead.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- ========================================
+           16 AUGUST 2026
+      ======================================== -->
+
+      <article class="journal-entry">
+
+        <p class="entry-date">
+          16 August 2026
+        </p>
+
+        <h2>
+          ArenaNet gives us the first real boundaries
         </h2>
 
         <div class="clipping">
@@ -885,7 +948,7 @@
             over a thousand years before the events of
             Guild Wars Reforged, in a period before the
             Human Gods left this world. The former God of
-            Death has recently been usurped. It is a time
+            Death has been recently usurped. It is a time
             before the First Guild War, when hostilities
             between rival guilds are rising and the Order
             of the Vael is on the back foot.
@@ -894,27 +957,39 @@
         </div>
 
         <p>
-          That gives us a surprisingly useful stretch of
-          history to work with.
+          This gives us several separate anchors.
         </p>
 
         <p>
-          Orr is alive. The Gods are still in Tyria.
-          The old God of Death has only recently fallen.
-          Guilds already have enough power and influence for
-          their rivalries to become dangerous, but the First
-          Guild War has not started.
+          The Gods have not yet left Tyria.
+          The First Guild War has not yet begun.
+          Dhuum has already lost his place as God of Death.
+          The Order of the Vael has already existed long enough
+          to rise and begin declining.
         </p>
 
-        <div class="margin-note">
+        <p>
+          ArenaNet also says this is more than a thousand years
+          before Guild Wars Reforged, but that description
+          should be treated as a broad distance rather than an
+          exact calculation.
+        </p>
 
-          <p class="margin-note-label">
-            Commander Q
+        <div class="development">
+
+          <h3>
+            Current placement
+          </h3>
+
+          <p>
+            This firmly places Guild Wars 3 in the
+            <strong>pre-Exodus Divine age</strong>.
           </p>
 
           <p>
-            We are not visiting ancient Orr.
-            We are visiting Orr before it became ancient.
+            That immediately rules out any placement after
+            <strong>0 AE</strong>, when the Gods leave physical
+            Tyria.
           </p>
 
         </div>
@@ -923,75 +998,74 @@
 
 
       <!-- ========================================
-           ENTRY: DATING
+           16 AUGUST 2026 — DHUUM
       ======================================== -->
 
       <article class="journal-entry">
 
         <p class="entry-date">
-          Dating the Game
+          16 August 2026
         </p>
 
         <h2>
-          Grenth gives us our best clue so far
+          Grenth may narrow the date further
         </h2>
 
         <p>
-          The phrase that keeps catching my attention is
+          The most useful phrase in ArenaNet's description may
+          be that the former God of Death was
           <strong>recently usurped</strong>.
         </p>
 
         <p>
-          The older historical record places the rise of
-          Grenth over Dhuum around <strong>48 BE</strong>.
+          Older chronology places Grenth's rise over Dhuum
+          around <strong>48 BE</strong>.
         </p>
 
         <p>
-          If that chronology still holds, Guild Wars 3 should
-          sit somewhere reasonably close to that event.
-          "Recently" does not give us an exact number of years,
-          but it narrows the picture considerably.
+          If Guild Wars 3 continues to use that chronology,
+          then the playable period should sit somewhere
+          reasonably close to 48 BE.
         </p>
 
-        <div class="working-range">
+        <p>
+          We cannot assign a number to "recently," but this is
+          a stronger clue than simply counting backward from
+          Guild Wars.
+        </p>
 
-          <p class="entry-date">
-            Current Timeline
+        <div class="placement">
+
+          <p class="placement-label">
+            Current Working Range
           </p>
 
-          <p class="range-big">
+          <p class="placement-main">
             ~48 BE → Guild Wars 3 → 1 BE → 0 AE
           </p>
 
-          <p class="range-small">
-            Grenth rises → GW3 → Gift of Magic and the
-            Abaddon crisis → Exodus of the Gods
+          <p class="placement-note">
+            Grenth rises over Dhuum → Guild Wars 3 →
+            Gift of Magic and Abaddon's crisis →
+            Exodus of the Gods
           </p>
 
         </div>
 
-        <p>
-          The other hard boundary is the Exodus.
-          ArenaNet tells us directly that Guild Wars 3 takes
-          place before the Gods leave the world.
-        </p>
+        <div class="development">
 
-        <p>
-          The Exodus happens in <strong>0 AE</strong>.
-          Whatever the exact opening year turns out to be,
-          it must fall before that.
-        </p>
+          <h3>
+            Theory at this point
+          </h3>
 
-        <div class="margin-note">
-
-          <p class="margin-note-label">
-            Commander Q
+          <p>
+            Guild Wars 3 may take place sometime during the
+            final decades before the Exodus rather than more
+            than a century before it.
           </p>
 
           <p>
-            Right now, the period around 48 BE interests me
-            more than trying to force an exact date from the
-            phrase "over a thousand years."
+            The exact year remains unknown.
           </p>
 
         </div>
@@ -1000,22 +1074,199 @@
 
 
       <!-- ========================================
-           ENTRY: TIMELINE
+           16 AUGUST 2026 — VAEL
       ======================================== -->
 
       <article class="journal-entry">
 
         <p class="entry-date">
-          Timeline
+          16 August 2026
         </p>
 
         <h2>
-          What I can line up so far
+          The Order of the Vael gives us another clock
         </h2>
 
         <p>
-          Several pieces still lack exact dates, but their
-          order is becoming clearer.
+          The Vaelwardens have already existed for more than
+          one hundred and fifty years when Guild Wars 3 begins.
+        </p>
+
+        <p>
+          Their origins connect them directly to Dwayna and
+          Melandru, who sanctioned their work protecting the
+          Vael and their lands and enabled their use of signets.
+        </p>
+
+        <p>
+          By the opening of the game, the Order is described as
+          being on the back foot while other guilds are growing
+          in influence.
+        </p>
+
+        <div class="development">
+
+          <h3>
+            What this adds
+          </h3>
+
+          <p>
+            Guild organizations were already important long
+            before the First Guild War.
+          </p>
+
+          <p>
+            They were trusted with protection, land, magical
+            practices, and responsibilities that could outlast
+            generations.
+          </p>
+
+          <p>
+            This makes the rising hostility between guilds less
+            like the sudden beginning of a conflict and more
+            like tension within a system that has existed for
+            a long time.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- ========================================
+           16 AUGUST 2026 — GODS
+      ======================================== -->
+
+      <article class="journal-entry">
+
+        <p class="entry-date">
+          16 August 2026
+        </p>
+
+        <h2>
+          The Gods may already be withdrawing
+        </h2>
+
+        <p>
+          The Gods are still physically present in Tyria when
+          Guild Wars 3 begins.
+        </p>
+
+        <p>
+          At the same time, mortal guilds are carrying
+          responsibilities associated with protection,
+          stewardship, magical resources, and settlement.
+        </p>
+
+        <p>
+          Meetings between the Gods and guild representatives
+          have also become less frequent.
+        </p>
+
+        <div class="development">
+
+          <h3>
+            Current theory
+          </h3>
+
+          <p>
+            The Divine withdrawal may have begun before the
+            Exodus itself.
+          </p>
+
+          <p>
+            The Exodus in 0 AE may eventually prove to be the
+            final stage of a longer transition in which the
+            Gods gradually leave more of Tyria's affairs to
+            mortals.
+          </p>
+
+          <p>
+            More information about Arah and the Gods'
+            relationship with the guilds will determine whether
+            that interpretation holds.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- ========================================
+           16 AUGUST 2026 — FIRST GUILD WAR
+      ======================================== -->
+
+      <article class="journal-entry">
+
+        <p class="entry-date">
+          16 August 2026
+        </p>
+
+        <h2>
+          The First Guild War is still ahead
+        </h2>
+
+        <p>
+          ArenaNet explicitly places Guild Wars 3 before the
+          First Guild War.
+        </p>
+
+        <p>
+          The older record does not give us useful exact dates
+          for the First Guild War, so it cannot yet provide a
+          numerical boundary for the game.
+        </p>
+
+        <p>
+          What matters is that guild hostility is already
+          rising when the game begins.
+        </p>
+
+        <div class="development">
+
+          <h3>
+            What this changes
+          </h3>
+
+          <p>
+            The Guild Wars themselves are not the beginning of
+            guild power.
+          </p>
+
+          <p>
+            By the time of Guild Wars 3, guilds already have
+            territory, influence, resources, responsibilities,
+            and rivalries worth fighting over.
+          </p>
+
+          <p>
+            The game may therefore show the conditions that
+            eventually produce the First Guild War rather than
+            the war itself.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- ========================================
+           16 AUGUST 2026 — CURRENT TIMELINE
+      ======================================== -->
+
+      <article class="journal-entry">
+
+        <p class="entry-date">
+          16 August 2026
+        </p>
+
+        <h2>
+          Timeline as it currently stands
+        </h2>
+
+        <p>
+          This is the order I can defend from the information
+          available so far.
         </p>
 
         <div class="timeline">
@@ -1027,14 +1278,12 @@
             </p>
 
             <h3>
-              Humanity has already been in Tyria for centuries
+              Humanity is already established in Tyria
             </h3>
 
             <p>
-              By the time Guild Wars 3 begins, Humans have
-              lived in Tyria for more than seven hundred years.
-              Cantha is old, Elona is prosperous, and Ascalon
-              remains Humanity's youngest major holding.
+              Cantha, Elona, Ascalon, Orr, and the Margonite
+              world all exist by the playable period.
             </p>
 
           </div>
@@ -1047,14 +1296,12 @@
             </p>
 
             <h3>
-              The Order of the Vael is established
+              Order of the Vael established
             </h3>
 
             <p>
               Dwayna and Melandru sanction the Order and its
-              use of signets. By the opening of Guild Wars 3,
-              the Vaelwardens have already been protecting Orr
-              for more than a century and a half.
+              signet traditions.
             </p>
 
           </div>
@@ -1071,10 +1318,8 @@
             </h3>
 
             <p>
-              The surviving chronology places Grenth's rise
-              around this period. ArenaNet describes the former
-              God of Death as having been recently usurped when
-              Guild Wars 3 begins.
+              The older chronology places the change in the
+              God of Death around this point.
             </p>
 
           </div>
@@ -1091,9 +1336,9 @@
             </h3>
 
             <p>
-              Orr is in its Golden Age. The Human Gods remain
-              in the world, guild hostilities are increasing,
-              and the Order of the Vael is losing ground.
+              Orr is in its Golden Age, the Gods remain in
+              Tyria, the Vaelwardens are declining, and rival
+              guilds are becoming openly hostile.
             </p>
 
           </div>
@@ -1110,10 +1355,8 @@
             </h3>
 
             <p>
-              The First Guild War has not happened when
-              Guild Wars 3 begins. Its exact dates remain
-              unclear, but the rivalries that will feed it
-              are already present.
+              The conflict remains ahead when Guild Wars 3
+              begins.
             </p>
 
           </div>
@@ -1126,35 +1369,14 @@
             </p>
 
             <h3>
-              Gift of Magic
+              Gift of Magic and Abaddon's crisis
             </h3>
 
             <p>
-              The Gods broaden Humanity's access to magic.
-              King Doric later appeals to them as magical
-              conflict spreads, leading to the repurposing
-              and division of the Bloodstone.
-            </p>
-
-          </div>
-
-
-          <div class="timeline-line">
-
-            <p class="timeline-year">
-              1 BE
-            </p>
-
-            <h3>
-              Abaddon's rebellion
-            </h3>
-
-            <p>
-              Abaddon rejects the restriction of magic and
-              eventually turns against the other Gods.
-              The conflict destroys the Crystal Sea and
-              reshapes the region into the Crystal Desert
-              and Desolation.
+              The Gods broaden access to magic, King Doric
+              appeals for intervention, the Bloodstone is
+              repurposed and divided, and Abaddon's conflict
+              with the other Gods follows.
             </p>
 
           </div>
@@ -1171,9 +1393,7 @@
             </h3>
 
             <p>
-              After Abaddon's defeat and imprisonment,
-              the Gods withdraw from physical Tyria into
-              the Mists.
+              The Gods leave physical Tyria for the Mists.
             </p>
 
           </div>
@@ -1190,9 +1410,8 @@
             </h3>
 
             <p>
-              The events of the original Guild Wars begin
-              more than a thousand years after the world
-              shown in Guild Wars 3.
+              The original Guild Wars era begins more than a
+              thousand years later.
             </p>
 
           </div>
@@ -1209,8 +1428,8 @@
             </h3>
 
             <p>
-              The Commander enters the historical record
-              and begins the campaign against Zhaitan.
+              The Commander begins the campaign against
+              Zhaitan.
             </p>
 
           </div>
@@ -1221,225 +1440,17 @@
 
 
       <!-- ========================================
-           ENTRY: ORR
+           16 AUGUST 2026 — QUESTIONS
       ======================================== -->
 
       <article class="journal-entry">
 
         <p class="entry-date">
-          Orr
+          16 August 2026
         </p>
 
         <h2>
-          I have to stop picturing the ruins
-        </h2>
-
-        <p>
-          Most of what we have known about Orr comes from
-          looking backward at something already lost.
-        </p>
-
-        <p>
-          Guild Wars 3 turns that around.
-        </p>
-
-        <p>
-          Arah still stands as the City of the Gods.
-          Orr is populated, wealthy, magically rich, and
-          politically active. Guilds compete for influence.
-          Settlements continue to spread. The Vael still
-          inhabit the land.
-        </p>
-
-        <p>
-          The Cataclysm is not the defining feature of Orr yet.
-          It has not happened.
-        </p>
-
-        <div class="margin-note">
-
-          <p class="margin-note-label">
-            Commander Q
-          </p>
-
-          <p>
-            We have spent years knowing Orr mainly through
-            the manner of its death. Now we get to meet the
-            civilization first.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- ========================================
-           ENTRY: GODS
-      ======================================== -->
-
-      <article class="journal-entry">
-
-        <p class="entry-date">
-          The Gods
-        </p>
-
-        <h2>
-          Still here, but something is changing
-        </h2>
-
-        <p>
-          The Human Gods have not yet left Tyria.
-        </p>
-
-        <p>
-          They are still part of the political and religious
-          world surrounding Orr, yet mortal guilds are carrying
-          responsibilities that once sat much closer to Divine
-          authority.
-        </p>
-
-        <p>
-          The Order of the Vael is a good example.
-          Dwayna and Melandru sanction the Order to protect the
-          Vael and their lands, giving mortals the means to
-          carry out that work themselves.
-        </p>
-
-        <p>
-          We also know meetings between the Gods and guild
-          representatives have become less common.
-        </p>
-
-        <div class="margin-note">
-
-          <p class="margin-note-label">
-            Commander Q
-          </p>
-
-          <p>
-            I keep wondering whether the Exodus was the end
-            of Divine withdrawal rather than the beginning
-            of it.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- ========================================
-           ENTRY: GUILDS
-      ======================================== -->
-
-      <article class="journal-entry">
-
-        <p class="entry-date">
-          Guilds
-        </p>
-
-        <h2>
-          They already matter before the Guild Wars
-        </h2>
-
-        <p>
-          The guilds of this period are much more than
-          adventuring groups.
-        </p>
-
-        <p>
-          They protect land, manage resources, influence
-          settlement, work with magic, and compete for
-          political and economic power.
-        </p>
-
-        <p>
-          By the opening of Guild Wars 3, those rivalries
-          are becoming openly hostile.
-        </p>
-
-        <p>
-          The First Guild War is still ahead, but the world
-          capable of producing it already exists.
-        </p>
-
-        <div class="margin-note">
-
-          <p class="margin-note-label">
-            Commander Q
-          </p>
-
-          <p>
-            I want to keep watching whether the story is
-            really about guilds inheriting more responsibility
-            from the Gods and then disagreeing over what to
-            do with it.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- ========================================
-           ENTRY: CRYSTAL SEA
-      ======================================== -->
-
-      <article class="journal-entry">
-
-        <p class="entry-date">
-          Crystal Sea
-        </p>
-
-        <h2>
-          The Margonites still have a homeland
-        </h2>
-
-        <p>
-          The Crystal Desert does not exist yet.
-        </p>
-
-        <p>
-          The Crystal Sea remains a living body of water,
-          and the Margonites are still a Human maritime
-          civilization associated with its waters and
-          surrounding coast.
-        </p>
-
-        <p>
-          Abaddon's rebellion, the destruction of the sea,
-          and the later transformation of his followers
-          remain ahead.
-        </p>
-
-        <div class="margin-note">
-
-          <p class="margin-note-label">
-            Commander Q
-          </p>
-
-          <p>
-            Like Orr, this may be another place where we
-            finally get the civilization before we get
-            the tragedy.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- ========================================
-           QUESTIONS
-      ======================================== -->
-
-      <article class="journal-entry">
-
-        <p class="entry-date">
-          Questions
-        </p>
-
-        <h2>
-          Things I am watching
+          Questions left by the current picture
         </h2>
 
         <div class="questions">
@@ -1455,8 +1466,8 @@
           <div class="question">
             <p>
               <strong>
-                How close is "recently usurped" to the
-                traditional 48 BE dating of Grenth's rise?
+                How much time separates Grenth's rise from
+                the opening of Guild Wars 3?
               </strong>
             </p>
           </div>
@@ -1465,7 +1476,7 @@
             <p>
               <strong>
                 Have the Gods already withdrawn from ordinary
-                Human life into Arah?
+                life into Arah?
               </strong>
             </p>
           </div>
@@ -1490,17 +1501,8 @@
           <div class="question">
             <p>
               <strong>
-                What did the Order of the Vael look like
-                when it was still at full strength?
-              </strong>
-            </p>
-          </div>
-
-          <div class="question">
-            <p>
-              <strong>
-                How much authority did the Gods deliberately
-                hand to guilds?
+                How much authority did the Gods intentionally
+                transfer to guilds?
               </strong>
             </p>
           </div>
@@ -1514,30 +1516,35 @@
             </p>
           </div>
 
+          <div class="question">
+            <p>
+              <strong>
+                Does the traditional 48 BE dating for Grenth
+                still hold in Guild Wars 3?
+              </strong>
+            </p>
+          </div>
+
         </div>
 
       </article>
 
 
       <!-- ========================================
-           NEXT NOTE
+           NEXT ENTRY
       ======================================== -->
 
       <article class="journal-entry">
 
         <p class="entry-date">
-          Next Note
+          Next Development
         </p>
 
         <h2>
-          What comes next
+          New entry
         </h2>
 
-        <p>
-          New details can be added here as they appear.
-        </p>
-
-        <div class="blank-entry">
+        <div class="next-entry">
 
           <p>
             <strong>Date:</strong>
@@ -1545,7 +1552,7 @@
           </p>
 
           <p>
-            <strong>What we learned:</strong>
+            <strong>New information:</strong>
             ____________________
           </p>
 
@@ -1555,7 +1562,7 @@
           </p>
 
           <p>
-            <strong>Commander Q:</strong>
+            <strong>Current theory:</strong>
             ____________________
           </p>
 
@@ -1571,32 +1578,29 @@
       <section class="transition">
 
         <p class="transition-label">
-          Current Notes
+          Current Position // 16 August 2026
         </p>
 
         <h2>
-          Where the trail leads so far
+          Where the timeline stands
         </h2>
 
         <p>
-          Guild Wars 3 appears to sit somewhere in the final
-          stretch of the age when the Human Gods still
-          inhabited Tyria.
+          Guild Wars 3 takes place before the Exodus of the
+          Gods and before the First Guild War.
         </p>
 
         <p>
-          Grenth has recently risen over Dhuum.
-          Orr is alive and flourishing.
-          Guild power is growing.
-          The First Guild War has not yet begun.
-          The Gift of Magic and Abaddon's fall remain ahead,
-          and the Gods have not yet departed for the Mists.
+          Grenth has recently replaced Dhuum, which may place
+          the game somewhere near the traditional
+          <strong>48 BE</strong> dating of his rise.
         </p>
 
         <p>
-          The exact year can wait.
-          For now, the shape of the age is beginning to
-          come into view.
+          Orr is still alive, the Gods remain in Tyria, guild
+          power is growing, and the major events surrounding
+          the Gift of Magic, Abaddon's fall, and the Exodus
+          remain ahead.
         </p>
 
         <div class="navigation-actions">
