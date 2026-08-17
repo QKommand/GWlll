@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Commander Q's active Guild Wars 3 research workspace, tracking confirmed lore, historical anchors, working theories, questions, and revisions as new information about ancient Orr is revealed."
+  >
+
+  <meta name="theme-color" content="#070b14">
+
+  <title>
+    GW3 Research Desk // The Records of Commander Q
+  </title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #070b14;
+      --background-deep: #03060c;
+
+      --paper: #111827;
+      --paper-light: #172033;
+      --panel: #0d1422;
+      --panel-warm: rgba(214, 179, 106, 0.045);
+
+      --border: #334155;
+      --border-soft: rgba(148, 163, 184, 0.18);
+
+      --gold: #d6b36a;
+      --gold-bright: #f1d79a;
+      --gold-muted: #9f8148;
+
+      --ink: #e8e5dc;
+      --ink-muted: #b9b8b2;
+      --ink-faint: #8f949e;
+
+      --quote: #c7d2e0;
+
+      --confirmed: #9fc7a8;
+      --legacy: #b5add8;
+      --working: #d9ba78;
+      --theory: #c6a7d6;
+      --question: #d2a0a0;
+      --changed: #9eb9d3;
+
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+
+      background:
+        radial-gradient(
+          circle at 50% -10rem,
+          rgba(214, 179, 106, 0.08),
+          transparent 38rem
+        ),
+        linear-gradient(
+          to bottom,
+          #090e18,
+          var(--background) 28rem
+        );
+
+      color: var(--ink);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    strong {
+      color: var(--gold-bright);
+      font-weight: 600;
+    }
+
+    .container {
+      width: min(
+        var(--max-width),
+        calc(100% - 34px)
+      );
+
+      margin-inline: auto;
+    }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      border-bottom:
+        1px solid var(--border-soft);
+
+      background:
+        rgba(3, 6, 12, 0.96);
+
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 66px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-small {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      margin: 2px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.69rem;
+      font-weight: 700;
+
+      text-decoration: none;
+    }
+
+    .home-link:hover {
+      color: var(--gold-bright);
+    }
+
+    /* ========================================
+       WORKSPACE HEADER
+    ======================================== */
+
+    .workspace-header {
+      padding: 68px 0 34px;
+    }
+
+    .workspace-kicker {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.66rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .workspace-title-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      gap: 24px;
+
+      margin-top: 12px;
+    }
+
+    .workspace-header h1 {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-size:
+        clamp(
+          2.4rem,
+          7vw,
+          4.6rem
+        );
+
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+    }
+
+    .live-badge {
+      flex: 0 0 auto;
+
+      margin-bottom: 7px;
+
+      padding: 6px 10px;
+
+      border:
+        1px solid
+        rgba(159, 199, 168, 0.45);
+
+      border-radius: 999px;
+
+      color: var(--confirmed);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .workspace-subtitle {
+      max-width: 760px;
+
+      margin: 18px 0 0;
+
+      color: var(--ink-muted);
+
+      font-style: italic;
+      font-size: 1.05rem;
+    }
+
+    /* ========================================
+       TOP STATUS BAR
+    ======================================== */
+
+    .workspace-status {
+      margin-bottom: 26px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      border:
+        1px solid
+        rgba(214, 179, 106, 0.24);
+
+      background:
+        rgba(214, 179, 106, 0.035);
+    }
+
+    .status-cell {
+      padding: 17px 18px;
+
+      border-right:
+        1px solid var(--border-soft);
+    }
+
+    .status-cell:last-child {
+      border-right: 0;
+    }
+
+    .status-label {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .status-value {
+      margin: 5px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 0.93rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    /* ========================================
+       NAV TABS
+    ======================================== */
+
+    .workspace-nav {
+      position: sticky;
+      top: 66px;
+      z-index: 80;
+
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+
+      background:
+        rgba(7, 11, 20, 0.95);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .workspace-nav-inner {
+      display: flex;
+
+      gap: 18px;
+
+      overflow-x: auto;
+
+      padding: 10px 0;
+
+      scrollbar-width: thin;
+    }
+
+    .workspace-nav a {
+      flex: 0 0 auto;
+
+      color: var(--ink-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .workspace-nav a:hover {
+      color: var(--gold-bright);
+    }
+
+    /* ========================================
+       MAIN WORKSPACE GRID
+    ======================================== */
+
+    .workspace-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.7fr)
+        minmax(280px, 0.8fr);
+
+      gap: 24px;
+
+      padding: 34px 0 70px;
+    }
+
+    .workspace-main,
+    .workspace-sidebar {
+      min-width: 0;
+    }
+
+    /* ========================================
+       SECTIONS
+    ======================================== */
+
+    .workspace-section {
+      margin-bottom: 26px;
+
+      padding: 24px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        rgba(15, 23, 42, 0.45);
+    }
+
+    .section-topline {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+
+      gap: 16px;
+    }
+
+    .section-kicker {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .workspace-section h2 {
+      margin: 6px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.55rem;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .section-description {
+      margin: 12px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.94rem;
+    }
+
+    /* ========================================
+       STATUS TAGS
+    ======================================== */
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+
+      min-height: 25px;
+
+      padding: 2px 8px;
+
+      border: 1px solid currentColor;
+      border-radius: 999px;
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .tag-confirmed {
+      color: var(--confirmed);
+    }
+
+    .tag-legacy {
+      color: var(--legacy);
+    }
+
+    .tag-working {
+      color: var(--working);
+    }
+
+    .tag-theory {
+      color: var(--theory);
+    }
+
+    .tag-question {
+      color: var(--question);
+    }
+
+    .tag-changed {
+      color: var(--changed);
+    }
+
+    /* ========================================
+       CURRENT POSITION
+    ======================================== */
+
+    .position-callout {
+      margin-top: 20px;
+
+      padding: 22px;
+
+      border-left: 3px solid var(--gold);
+
+      background:
+        var(--panel-warm);
+    }
+
+    .position-callout p {
+      margin: 0;
+    }
+
+    .position-callout p + p {
+      margin-top: 12px;
+    }
+
+    .working-statement {
+      color: var(--gold-bright);
+
+      font-size: 1.13rem;
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       EVIDENCE CARDS
+    ======================================== */
+
+    .evidence-list {
+      display: grid;
+
+      gap: 14px;
+
+      margin-top: 22px;
+    }
+
+    .evidence-card {
+      padding: 18px 19px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        rgba(3, 6, 12, 0.28);
+    }
+
+    .evidence-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+    }
+
+    .evidence-date {
+      margin: 0;
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.57rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .evidence-card h3 {
+      margin: 10px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 1.08rem;
+      font-weight: 600;
+    }
+
+    .evidence-card p {
+      margin: 9px 0 0;
+    }
+
+    .evidence-impact {
+      margin-top: 13px !important;
+
+      padding-top: 12px;
+
+      border-top: 1px solid var(--border-soft);
+
+      color: var(--ink-muted);
+
+      font-size: 0.91rem;
+    }
+
+    .evidence-impact strong {
+      color: var(--gold);
+    }
+
+    /* ========================================
+       TIMELINE
+    ======================================== */
+
+    .timeline {
+      position: relative;
+
+      margin-top: 24px;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+
+      left: 6px;
+      top: 6px;
+      bottom: 8px;
+
+      width: 1px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(214, 179, 106, 0.2),
+          rgba(214, 179, 106, 0.8),
+          rgba(214, 179, 106, 0.2)
+        );
+    }
+
+    .timeline-item {
+      position: relative;
+
+      padding-bottom: 26px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+
+      position: absolute;
+
+      left: -30px;
+      top: 8px;
+
+      width: 11px;
+      height: 11px;
+
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+
+      background: var(--background);
+    }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      align-items: center;
+    }
+
+    .timeline-date {
+      margin: 0;
+
+      color: var(--gold-bright);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.61rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .timeline-item h3 {
+      margin: 7px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.03rem;
+      font-weight: 600;
+    }
+
+    .timeline-item p {
+      margin: 7px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.92rem;
+    }
+
+    /* ========================================
+       NOTES
+    ======================================== */
+
+    .note-card {
+      margin-top: 15px;
+
+      padding: 18px;
+
+      border:
+        1px solid
+        rgba(214, 179, 106, 0.24);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(214, 179, 106, 0.055),
+          rgba(15, 23, 42, 0.38)
+        );
+    }
+
+    .note-date {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .note-card p:last-child {
+      margin: 8px 0 0;
+
+      color: var(--quote);
+      font-style: italic;
+    }
+
+    /* ========================================
+       THEORIES
+    ======================================== */
+
+    .theory-card {
+      margin-top: 14px;
+
+      padding: 18px 19px;
+
+      border-left: 2px solid var(--theory);
+
+      background:
+        rgba(198, 167, 214, 0.045);
+    }
+
+    .theory-card h3 {
+      margin: 8px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 1.04rem;
+      font-weight: 600;
+    }
+
+    .theory-card p {
+      margin: 8px 0 0;
+    }
+
+    /* ========================================
+       QUESTIONS
+    ======================================== */
+
+    .question-card {
+      margin-top: 14px;
+
+      padding: 17px 18px;
+
+      border:
+        1px solid
+        rgba(210, 160, 160, 0.24);
+
+      background:
+        rgba(210, 160, 160, 0.025);
+    }
+
+    .question-card h3 {
+      margin: 8px 0 0;
+
+      color: var(--gold-bright);
+
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .question-card p {
+      margin: 7px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.91rem;
+    }
+
+    /* ========================================
+       ADD FINDING TEMPLATE
+    ======================================== */
+
+    .template-box {
+      margin-top: 20px;
+
+      padding: 20px;
+
+      border: 1px dashed var(--gold-muted);
+
+      background:
+        rgba(214, 179, 106, 0.025);
+    }
+
+    .template-row {
+      padding: 9px 0;
+
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .template-row:last-child {
+      border-bottom: 0;
+    }
+
+    .template-label {
+      margin: 0;
+
+      color: var(--gold-muted);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.55rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .template-placeholder {
+      margin: 4px 0 0;
+
+      color: var(--ink-faint);
+
+      font-style: italic;
+      font-size: 0.91rem;
+    }
+
+    /* ========================================
+       SIDEBAR
+    ======================================== */
+
+    .sidebar-panel {
+      margin-bottom: 18px;
+
+      padding: 20px;
+
+      border: 1px solid var(--border-soft);
+
+      background:
+        rgba(15, 23, 42, 0.48);
+    }
+
+    .sidebar-panel h2 {
+      margin: 6px 0 0;
+
+      color: var(--gold);
+
+      font-size: 1.14rem;
+      font-weight: 600;
+    }
+
+    .sidebar-panel p {
+      margin: 10px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.9rem;
+    }
+
+    .sidebar-list {
+      margin: 16px 0 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .sidebar-list li {
+      padding: 10px 0;
+
+      border-top: 1px solid var(--border-soft);
+
+      color: var(--ink-muted);
+
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .sidebar-list strong {
+      display: block;
+
+      margin-bottom: 2px;
+
+      color: var(--gold-bright);
+    }
+
+    /* ========================================
+       REVISION LOG
+    ======================================== */
+
+    .revision-entry {
+      padding: 13px 0;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .revision-entry:first-of-type {
+      margin-top: 14px;
+    }
+
+    .revision-date {
+      margin: 0;
+
+      color: var(--changed);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.54rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .revision-entry p:last-child {
+      margin: 5px 0 0;
+
+      color: var(--ink-muted);
+
+      font-size: 0.87rem;
+    }
+
+    /* ========================================
+       FOOTER / NAVIGATION
+    ======================================== */
+
+    .workspace-footer-nav {
+      padding: 40px 0 60px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .workspace-footer-nav h2 {
+      margin: 0;
+
+      color: var(--gold);
+
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    .workspace-footer-nav p {
+      max-width: 720px;
+
+      margin: 12px 0 0;
+
+      color: var(--ink-muted);
+    }
+
+    .navigation-actions {
+      margin-top: 24px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 44px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 18px;
+
+      border: 1px solid var(--border);
+      border-radius: 5px;
+
+      background:
+        rgba(15, 23, 42, 0.7);
+
+      color: var(--gold);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.72rem;
+      font-weight: 700;
+
+      text-decoration: none;
+    }
+
+    .button-primary {
+      border-color:
+        rgba(214, 179, 106, 0.45);
+
+      background:
+        rgba(214, 179, 106, 0.08);
+    }
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid var(--border-soft);
+
+      color: var(--ink-faint);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Consolas,
+        monospace;
+
+      font-size: 0.63rem;
+      line-height: 1.7;
+
+      text-align: center;
+    }
+
+    /* ========================================
+       MOBILE
+    ======================================== */
+
+    @media (max-width: 850px) {
+
+      .workspace-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .workspace-sidebar {
+        order: -1;
+      }
+
+      .workspace-status {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .status-cell:nth-child(2) {
+        border-right: 0;
+      }
+
+      .status-cell:nth-child(-n+2) {
+        border-bottom:
+          1px solid var(--border-soft);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      body {
+        font-size: 0.98rem;
+      }
+
+      .container {
+        width:
+          min(
+            100% - 22px,
+            var(--max-width)
+          );
+      }
+
+      .brand-small {
+        display: none;
+      }
+
+      .workspace-title-row {
+        display: block;
+      }
+
+      .live-badge {
+        display: inline-flex;
+
+        margin: 14px 0 0;
+      }
+
+      .workspace-status {
+        grid-template-columns: 1fr;
+      }
+
+      .status-cell,
+      .status-cell:nth-child(2) {
+        border-right: 0;
+        border-bottom:
+          1px solid var(--border-soft);
+      }
+
+      .status-cell:last-child {
+        border-bottom: 0;
+      }
+
+      .workspace-section,
+      .sidebar-panel {
+        padding: 18px;
+      }
+
+      .navigation-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="../index.html"
+        class="brand"
+      >
+
+        <p class="brand-small">
+          The Historical Records of Commander Q
+        </p>
+
+        <p class="brand-name">
+          GWlll
+        </p>
+
+      </a>
+
+      <a
+        href="../index.html"
+        class="home-link"
+      >
+        ← Road Through Time
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- ========================================
+       WORKSPACE NAV
+  ======================================== -->
+
+  <nav class="workspace-nav">
+
+    <div class="container workspace-nav-inner">
+
+      <a href="#position">
+        Current Position
+      </a>
+
+      <a href="#evidence">
+        Evidence Board
+      </a>
+
+      <a href="#timeline">
+        Timeline
+      </a>
+
+      <a href="#notes">
+        Q's Notes
+      </a>
+
+      <a href="#theories">
+        Theories
+      </a>
+
+      <a href="#questions">
+        Open Questions
+      </a>
+
+      <a href="#add">
+        Add Finding
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <main>
+
+    <!-- ========================================
+         WORKSPACE HEADER
+    ======================================== -->
+
+    <section class="workspace-header">
+
+      <div class="container">
+
+        <p class="workspace-kicker">
+          Commander Q's Research Desk // Guild Wars 3
+        </p>
+
+        <div class="workspace-title-row">
+
+          <h1>
+            Ancient Orr
+          </h1>
+
+          <span class="live-badge">
+            Active File
+          </span>
+
+        </div>
+
+        <p class="workspace-subtitle">
+          A living workspace for tracking new Guild Wars 3 lore,
+          testing historical placement, recording theories, and
+          revising the archive as ArenaNet reveals more of the
+          Orrian Golden Age.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         STATUS STRIP
+    ======================================== -->
+
+    <div class="container">
+
+      <section class="workspace-status">
+
+        <div class="status-cell">
+
+          <p class="status-label">
+            Exact Year
+          </p>
+
+          <p class="status-value">
+            Unknown
+          </p>
+
+        </div>
+
+
+        <div class="status-cell">
+
+          <p class="status-label">
+            Historical Era
+          </p>
+
+          <p class="status-value">
+            Pre-Exodus
+          </p>
+
+        </div>
+
+
+        <div class="status-cell">
+
+          <p class="status-label">
+            Primary Region
+          </p>
+
+          <p class="status-value">
+            Orr
+          </p>
+
+        </div>
+
+
+        <div class="status-cell">
+
+          <p class="status-label">
+            File Status
+          </p>
+
+          <p class="status-value">
+            Ongoing Research
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           WORKSPACE
+      ======================================== -->
+
+      <div class="workspace-grid">
+
+
+        <!-- ========================================
+             MAIN COLUMN
+        ======================================== -->
+
+        <div class="workspace-main">
+
+
+          <!-- CURRENT POSITION -->
+
+          <section
+            class="workspace-section"
+            id="position"
+          >
+
+            <div class="section-topline">
+
+              <div>
+
+                <p class="section-kicker">
+                  Current Working Position
+                </p>
+
+                <h2>
+                  Where I currently place Guild Wars 3
+                </h2>
+
+              </div>
+
+              <span class="tag tag-working">
+                Working
+              </span>
+
+            </div>
+
+            <p class="section-description">
+              This is the current interpretation of the evidence.
+              It should change whenever stronger information
+              appears.
+            </p>
+
+            <div class="position-callout">
+
+              <p class="working-statement">
+                Guild Wars 3 begins during the
+                <strong>Orrian Golden Age</strong>, before the
+                Gods leave physical Tyria, after the rise of
+                Grenth, and before the later Gift of Magic and
+                the historical Guild Wars.
+              </p>
+
+              <p>
+                The exact BE year remains unknown.
+                "More than a thousand years before Guild Wars"
+                is useful context, but not enough to assign a
+                precise calendar date.
+              </p>
+
+            </div>
+
+          </section>
+
+
+          <!-- EVIDENCE BOARD -->
+
+          <section
+            class="workspace-section"
+            id="evidence"
+          >
+
+            <div class="section-topline">
+
+              <div>
+
+                <p class="section-kicker">
+                  Evidence Board
+                </p>
+
+                <h2>
+                  What we actually know
+                </h2>
+
+              </div>
+
+              <span class="tag tag-confirmed">
+                Sources First
+              </span>
+
+            </div>
+
+            <p class="section-description">
+              Each reveal gets recorded by what it establishes
+              and what part of the archive it changes.
+            </p>
+
+
+            <div class="evidence-list">
+
+
+              <article class="evidence-card">
+
+                <div class="evidence-topline">
+
+                  <p class="evidence-date">
+                    Official GW3 Reveal
+                  </p>
+
+                  <span class="tag tag-confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <h3>
+                  Orr is in its Golden Age
+                </h3>
+
+                <p>
+                  Orr is alive, populated, politically active,
+                  and rich in magic. The kingdom has not yet
+                  suffered the Cataclysm or Zhaitan's rise.
+                </p>
+
+                <p class="evidence-impact">
+                  <strong>Archive impact:</strong>
+                  Early Orr should be treated as a living
+                  civilization rather than primarily as the
+                  precursor to its destruction.
+                </p>
+
+              </article>
+
+
+              <article class="evidence-card">
+
+                <div class="evidence-topline">
+
+                  <p class="evidence-date">
+                    Official GW3 Reveal
+                  </p>
+
+                  <span class="tag tag-confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <h3>
+                  The Gods are still present in Tyria
+                </h3>
+
+                <p>
+                  The Human Gods remain associated with Arah and
+                  continue to interact with mortal institutions,
+                  although those interactions are becoming less
+                  frequent.
+                </p>
+
+                <p class="evidence-impact">
+                  <strong>Archive impact:</strong>
+                  GW3 must occur before the Exodus of the Gods.
+                </p>
+
+              </article>
+
+
+              <article class="evidence-card">
+
+                <div class="evidence-topline">
+
+                  <p class="evidence-date">
+                    Official GW3 Reveal
+                  </p>
+
+                  <span class="tag tag-confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <h3>
+                  The Vaelwardens are more than 150 years old
+                </h3>
+
+                <p>
+                  The Order of the Vael predates the opening
+                  story by more than a century and a half.
+                </p>
+
+                <p class="evidence-impact">
+                  <strong>Archive impact:</strong>
+                  This gives us an internal clock for early
+                  Orrian settlement and Divine involvement.
+                </p>
+
+              </article>
+
+
+              <article class="evidence-card">
+
+                <div class="evidence-topline">
+
+                  <p class="evidence-date">
+                    Official GW3 Reveal
+                  </p>
+
+                  <span class="tag tag-confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <h3>
+                  Grenth has recently replaced Dhuum
+                </h3>
+
+                <p>
+                  Dhuum's overthrow is recent enough to belong
+                  to the living religious context of the period,
+                  rather than distant myth.
+                </p>
+
+                <p class="evidence-impact">
+                  <strong>Archive impact:</strong>
+                  A future exact date for Grenth's rise could
+                  sharply narrow the GW3 calendar window.
+                </p>
+
+              </article>
+
+
+              <article class="evidence-card">
+
+                <div class="evidence-topline">
+
+                  <p class="evidence-date">
+                    Official GW3 Reveal
+                  </p>
+
+                  <span class="tag tag-confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <h3>
+                  Guilds already hold real power
+                </h3>
+
+                <p>
+                  Guilds are responsible for protection,
+                  magical resources, settlement, trade, and
+                  competing political interests across Orr.
+                </p>
+
+                <p class="evidence-impact">
+                  <strong>Archive impact:</strong>
+                  The system that eventually produces the
+                  Guild Wars already exists before the first
+                  historical Guild War.
+                </p>
+
+              </article>
+
+
+              <article class="evidence-card">
+
+                <div class="evidence-topline">
+
+                  <p class="evidence-date">
+                    Official GW3 Reveal
+                  </p>
+
+                  <span class="tag tag-confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <h3>
+                  The Crystal Sea still exists
+                </h3>
+
+                <p>
+                  The Margonites remain a Human maritime people
+                  associated with the Crystal Sea and its coasts.
+                </p>
+
+                <p class="evidence-impact">
+                  <strong>Archive impact:</strong>
+                  Abaddon's later rebellion and the destruction
+                  of the Crystal Sea remain in the future.
+                </p>
+
+              </article>
+
+            </div>
+
+          </section>
+
+
+          <!-- TIMELINE -->
+
+          <section
+            class="workspace-section"
+            id="timeline"
+          >
+
+            <div class="section-topline">
+
+              <div>
+
+                <p class="section-kicker">
+                  Timeline Under Construction
+                </p>
+
+                <h2>
+                  Historical anchors
+                </h2>
+
+              </div>
+
+              <span class="tag tag-working">
+                Updating
+              </span>
+
+            </div>
+
+            <p class="section-description">
+              Only events that help place the era belong here.
+              Exact dates remain separate from relative anchors.
+            </p>
+
+
+            <div class="timeline">
+
+
+              <article class="timeline-item">
+
+                <div class="timeline-meta">
+
+                  <p class="timeline-date">
+                    700+ years before GW3
+                  </p>
+
+                  <span class="tag tag-confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <h3>
+                  Humanity enters the long Orrian age
+                </h3>
+
+                <p>
+                  By GW3, Humans have lived in Tyria for more
+                  than seven centuries.
+                </p>
+
+              </article>
+
+
+              <article class="timeline-item">
+
+                <div class="timeline-meta">
+
+                  <p class="timeline-date">
+                    150+ years before GW3
+                  </p>
+
+                  <span class="tag tag-confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <h3>
+                  The Order of the Vael is founded
+                </h3>
+
+                <p>
+                  Dwayna and Melandru sanction the guild and its
+                  signet traditions.
+                </p>
+
+              </article>
+
+
+              <article class="timeline-item">
+
+                <div class="timeline-meta">
+
+                  <p class="timeline-date">
+                    Shortly before GW3
+                  </p>
+
+                  <span class="tag tag-confirmed">
+                    Confirmed
+                  </span>
+
+                </div>
+
+                <h3>
+                  Dhuum is overthrown
+                </h3>
+
+                <p>
+                  Grenth's rise belongs close to the playable
+                  period.
+                </p>
+
+              </article>
+
+
+              <article class="timeline-item">
+
+                <div class="timeline-meta">
+
+                  <p class="timeline-date">
+                    Guild Wars 3
+                  </p>
+
+                  <span class="tag tag-working">
+                    Exact Year Unknown
+                  </span>
+
+                </div>
+
+                <h3>
+                  The Orrian Golden Age
+                </h3>
+
+                <p>
+                  Guild rivalry is increasing while the Gods
+                  remain in Tyria and the Vaelwardens decline.
+                </p>
+
+              </article>
+
+
+              <article class="timeline-item">
+
+                <div class="timeline-meta">
+
+                  <p class="timeline-date">
+                    Future
+                  </p>
+
+                  <span class="tag tag-legacy">
+                    Legacy Anchor
+                  </span>
+
+                </div>
+
+                <h3>
+                  Gift of Magic
+                </h3>
+
+                <p>
+                  The broader Divine expansion of mortal magic
+                  remains ahead.
+                </p>
+
+              </article>
+
+
+              <article class="timeline-item">
+
+                <div class="timeline-meta">
+
+                  <p class="timeline-date">
+                    0 AE
+                  </p>
+
+                  <span class="tag tag-legacy">
+                    Legacy Anchor
+                  </span>
+
+                </div>
+
+                <h3>
+                  Exodus of the Gods
+                </h3>
+
+                <p>
+                  The Gods leave physical Tyria.
+                </p>
+
+              </article>
+
+
+              <article class="timeline-item">
+
+                <div class="timeline-meta">
+
+                  <p class="timeline-date">
+                    1072 AE
+                  </p>
+
+                  <span class="tag tag-legacy">
+                    Legacy Anchor
+                  </span>
+
+                </div>
+
+                <h3>
+                  Guild Wars
+                </h3>
+
+                <p>
+                  The original campaign begins more than a
+                  thousand years later.
+                </p>
+
+              </article>
+
+
+              <article class="timeline-item">
+
+                <div class="timeline-meta">
+
+                  <p class="timeline-date">
+                    1325 AE
+                  </p>
+
+                  <span class="tag tag-legacy">
+                    Legacy Anchor
+                  </span>
+
+                </div>
+
+                <h3>
+                  Guild Wars 2
+                </h3>
+
+                <p>
+                  The modern Commander enters the historical
+                  record.
+                </p>
+
+              </article>
+
+            </div>
+
+          </section>
+
+
+          <!-- COMMANDER Q NOTES -->
+
+          <section
+            class="workspace-section"
+            id="notes"
+          >
+
+            <div class="section-topline">
+
+              <div>
+
+                <p class="section-kicker">
+                  Commander Q's Notebook
+                </p>
+
+                <h2>
+                  Things I keep coming back to
+                </h2>
+
+              </div>
+
+            </div>
+
+
+            <div class="note-card">
+
+              <p class="note-date">
+                Working Note
+              </p>
+
+              <p>
+                We are not visiting ancient Orr.
+                We are visiting Orr before it became ancient.
+              </p>
+
+            </div>
+
+
+            <div class="note-card">
+
+              <p class="note-date">
+                Working Note
+              </p>
+
+              <p>
+                The guilds may be the real bridge between the
+                age of direct Divine stewardship and the later
+                Human political world. The Gods do not disappear
+                overnight. Responsibility seems to be moving
+                gradually into mortal institutions.
+              </p>
+
+            </div>
+
+
+            <div class="note-card">
+
+              <p class="note-date">
+                Working Note
+              </p>
+
+              <p>
+                Grenth being newly established changes how I
+                picture religion in this period. To us, the
+                pantheon looks ancient and fixed. To people
+                living here, one of the major Divine offices
+                may have changed within living memory.
+              </p>
+
+            </div>
+
+
+            <div class="note-card">
+
+              <p class="note-date">
+                Working Note
+              </p>
+
+              <p>
+                The Margonites matter more than I first thought.
+                The Crystal Sea is still a functioning Human
+                world while Orr is at its height. That means
+                Abaddon's later fall destroys an existing
+                international landscape, not merely a remote
+                religious faction.
+              </p>
+
+            </div>
+
+          </section>
+
+
+          <!-- THEORIES -->
+
+          <section
+            class="workspace-section"
+            id="theories"
+          >
+
+            <div class="section-topline">
+
+              <div>
+
+                <p class="section-kicker">
+                  Working Interpretations
+                </p>
+
+                <h2>
+                  Theories we are not calling canon
+                </h2>
+
+              </div>
+
+              <span class="tag tag-theory">
+                Theory
+              </span>
+
+            </div>
+
+            <p class="section-description">
+              These are useful ways of connecting evidence.
+              They stay here until something actually confirms
+              them.
+            </p>
+
+
+            <article class="theory-card">
+
+              <span class="tag tag-theory">
+                Theory
+              </span>
+
+              <h3>
+                GW3 may show the beginning of Divine withdrawal
+              </h3>
+
+              <p>
+                The Gods are still present, yet their direct
+                councils with guilds are becoming less common.
+                This may represent the gradual movement toward
+                their later seclusion in Arah.
+              </p>
+
+            </article>
+
+
+            <article class="theory-card">
+
+              <span class="tag tag-theory">
+                Theory
+              </span>
+
+              <h3>
+                Guild rivalry may become the political failure
+                that defines the era
+              </h3>
+
+              <p>
+                Guilds were entrusted with real responsibilities.
+                Their growing competition may show how a useful
+                institution evolves into the conflicts later
+                remembered as the Guild Wars.
+              </p>
+
+            </article>
+
+
+            <article class="theory-card">
+
+              <span class="tag tag-theory">
+                Theory
+              </span>
+
+              <h3>
+                Abaddon's story may already be beginning
+              </h3>
+
+              <p>
+                The Margonites already worship him and control
+                the Crystal Sea. Future reveals may show tensions
+                that eventually lead toward the Gift of Magic,
+                his rebellion, and the destruction of their
+                homeland.
+              </p>
+
+            </article>
+
+          </section>
+
+
+          <!-- QUESTIONS -->
+
+          <section
+            class="workspace-section"
+            id="questions"
+          >
+
+            <div class="section-topline">
+
+              <div>
+
+                <p class="section-kicker">
+                  Questions Board
+                </p>
+
+                <h2>
+                  What I want the next reveal to answer
+                </h2>
+
+              </div>
+
+              <span class="tag tag-question">
+                Open
+              </span>
+
+            </div>
+
+
+            <article class="question-card">
+
+              <span class="tag tag-question">
+                Open
+              </span>
+
+              <h3>
+                What exact year does Guild Wars 3 begin?
+              </h3>
+
+              <p>
+                The most obvious missing anchor.
+              </p>
+
+            </article>
+
+
+            <article class="question-card">
+
+              <span class="tag tag-question">
+                Open
+              </span>
+
+              <h3>
+                When exactly did Grenth replace Dhuum?
+              </h3>
+
+              <p>
+                An exact date could narrow the opening period
+                significantly.
+              </p>
+
+            </article>
+
+
+            <article class="question-card">
+
+              <span class="tag tag-question">
+                Open
+              </span>
+
+              <h3>
+                Have the Gods already withdrawn into Arah?
+              </h3>
+
+              <p>
+                They remain physically present, but the exact
+                stage of their retreat from everyday mortal life
+                remains unclear.
+              </p>
+
+            </article>
+
+
+            <article class="question-card">
+
+              <span class="tag tag-question">
+                Open
+              </span>
+
+              <h3>
+                Where is Abaddon politically?
+              </h3>
+
+              <p>
+                Is he still fully integrated with the other Gods,
+                or are the disagreements that lead to his fall
+                already visible?
+              </p>
+
+            </article>
+
+
+            <article class="question-card">
+
+              <span class="tag tag-question">
+                Open
+              </span>
+
+              <h3>
+                How close are we to the First Guild War?
+              </h3>
+
+              <p>
+                We know guild competition is already serious.
+                We do not yet know when that competition becomes
+                open historical war.
+              </p>
+
+            </article>
+
+          </section>
+
+
+          <!-- ADD FINDING -->
+
+          <section
+            class="workspace-section"
+            id="add"
+          >
+
+            <div class="section-topline">
+
+              <div>
+
+                <p class="section-kicker">
+                  Research Template
+                </p>
+
+                <h2>
+                  Add the next finding
+                </h2>
+
+              </div>
+
+            </div>
+
+            <p class="section-description">
+              Every new reveal can be dropped into this format
+              before we decide where it belongs in the Library.
+            </p>
+
+
+            <div class="template-box">
+
+              <div class="template-row">
+
+                <p class="template-label">
+                  Date Added
+                </p>
+
+                <p class="template-placeholder">
+                  YYYY-MM-DD
+                </p>
+
+              </div>
+
+
+              <div class="template-row">
+
+                <p class="template-label">
+                  Status
+                </p>
+
+                <p class="template-placeholder">
+                  Confirmed / Working / Theory / Question
+                </p>
+
+              </div>
+
+
+              <div class="template-row">
+
+                <p class="template-label">
+                  Subject
+                </p>
+
+                <p class="template-placeholder">
+                  Person, event, guild, place, artifact, date
+                </p>
+
+              </div>
+
+
+              <div class="template-row">
+
+                <p class="template-label">
+                  New Information
+                </p>
+
+                <p class="template-placeholder">
+                  What ArenaNet actually revealed
+                </p>
+
+              </div>
+
+
+              <div class="template-row">
+
+                <p class="template-label">
+                  Historical Position
+                </p>
+
+                <p class="template-placeholder">
+                  What this places before, after, or during
+                </p>
+
+              </div>
+
+
+              <div class="template-row">
+
+                <p class="template-label">
+                  Commander Q's Thought
+                </p>
+
+                <p class="template-placeholder">
+                  What this might mean without presenting it
+                  as established fact
+                </p>
+
+              </div>
+
+
+              <div class="template-row">
+
+                <p class="template-label">
+                  Archive Impact
+                </p>
+
+                <p class="template-placeholder">
+                  Which existing records need review
+                </p>
+
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <!-- ========================================
+             SIDEBAR
+        ======================================== -->
+
+        <aside class="workspace-sidebar">
+
+
+          <!-- WATCH LIST -->
+
+          <section class="sidebar-panel">
+
+            <p class="section-kicker">
+              Watch List
+            </p>
+
+            <h2>
+              Lore to watch closely
+            </h2>
+
+            <ul class="sidebar-list">
+
+              <li>
+                <strong>
+                  Grenth & Dhuum
+                </strong>
+                Exact chronology of the change in the God of
+                Death.
+              </li>
+
+              <li>
+                <strong>
+                  Abaddon
+                </strong>
+                His relationship with the pantheon and the
+                Margonites.
+              </li>
+
+              <li>
+                <strong>
+                  Arah
+                </strong>
+                Whether the Gods are already becoming secluded.
+              </li>
+
+              <li>
+                <strong>
+                  Guild Charters
+                </strong>
+                Who grants authority and how much autonomy guilds
+                actually possess.
+              </li>
+
+              <li>
+                <strong>
+                  Signets
+                </strong>
+                How early mortal magic differs from the later
+                Gift of Magic.
+              </li>
+
+              <li>
+                <strong>
+                  Crystal Sea
+                </strong>
+                Margonite society before the fall of Abaddon.
+              </li>
+
+              <li>
+                <strong>
+                  Early Orr
+                </strong>
+                Cities, settlements, political structure, and
+                Human expansion.
+              </li>
+
+            </ul>
+
+          </section>
+
+
+          <!-- STATUS KEY -->
+
+          <section class="sidebar-panel">
+
+            <p class="section-kicker">
+              Research Key
+            </p>
+
+            <h2>
+              How to read this desk
+            </h2>
+
+            <ul class="sidebar-list">
+
+              <li>
+                <strong>
+                  <span class="tag tag-confirmed">
+                    Confirmed
+                  </span>
+                </strong>
+                Explicitly established by current lore.
+              </li>
+
+              <li>
+                <strong>
+                  <span class="tag tag-legacy">
+                    Legacy Anchor
+                  </span>
+                </strong>
+                Established chronology inherited from earlier
+                Guild Wars records.
+              </li>
+
+              <li>
+                <strong>
+                  <span class="tag tag-working">
+                    Working
+                  </span>
+                </strong>
+                Current placement supported by several clues but
+                not yet exact.
+              </li>
+
+              <li>
+                <strong>
+                  <span class="tag tag-theory">
+                    Theory
+                  </span>
+                </strong>
+                Interpretation worth tracking but not canon.
+              </li>
+
+              <li>
+                <strong>
+                  <span class="tag tag-question">
+                    Open
+                  </span>
+                </strong>
+                Something future information could resolve.
+              </li>
+
+            </ul>
+
+          </section>
+
+
+          <!-- REVISION LOG -->
+
+          <section class="sidebar-panel">
+
+            <p class="section-kicker">
+              Revision Log
+            </p>
+
+            <h2>
+              What changed
+            </h2>
+
+
+            <div class="revision-entry">
+
+              <p class="revision-date">
+                Current Revision
+              </p>
+
+              <p>
+                Exact GW3 calendar placement removed.
+                File now records the era as
+                <strong>Pre-Exodus // Year Unknown</strong>.
+              </p>
+
+            </div>
+
+
+            <div class="revision-entry">
+
+              <p class="revision-date">
+                Current Revision
+              </p>
+
+              <p>
+                Added the Vaelwardens' 150+ year history as an
+                internal chronological anchor.
+              </p>
+
+            </div>
+
+
+            <div class="revision-entry">
+
+              <p class="revision-date">
+                Current Revision
+              </p>
+
+              <p>
+                Added Grenth's recent overthrow of Dhuum to the
+                active dating questions.
+              </p>
+
+            </div>
+
+
+            <div class="revision-entry">
+
+              <p class="revision-date">
+                Current Revision
+              </p>
+
+              <p>
+                Separated confirmed facts from Commander Q's
+                interpretations.
+              </p>
+
+            </div>
+
+          </section>
+
+
+          <!-- ARCHIVE IMPACT -->
+
+          <section class="sidebar-panel">
+
+            <p class="section-kicker">
+              Archive Impact
+            </p>
+
+            <h2>
+              Records likely to change
+            </h2>
+
+            <ul class="sidebar-list">
+
+              <li>
+                <strong>
+                  Gods and Humanity
+                </strong>
+                Early Divine presence and Human settlement.
+              </li>
+
+              <li>
+                <strong>
+                  Humans
+                </strong>
+                Early Orr and the chronology of Human expansion.
+              </li>
+
+              <li>
+                <strong>
+                  Margonites
+                </strong>
+                Crystal Sea society before Abaddon's fall.
+              </li>
+
+              <li>
+                <strong>
+                  Gift of Magic
+                </strong>
+                Difference between early signet access and the
+                later Divine event.
+              </li>
+
+              <li>
+                <strong>
+                  Kingdoms & Guild Wars
+                </strong>
+                Origins and early political power of guilds.
+              </li>
+
+              <li>
+                <strong>
+                  Exodus of the Gods
+                </strong>
+                The stages leading toward Divine withdrawal.
+              </li>
+
+            </ul>
+
+          </section>
+
+        </aside>
+
+      </div>
+
+
+      <!-- ========================================
+           FOOTER NAVIGATION
+      ======================================== -->
+
+      <section class="workspace-footer-nav">
+
+        <h2>
+          This file is supposed to stay unfinished
+        </h2>
+
+        <p>
+          New Guild Wars 3 information should first enter this
+          workspace as evidence, notes, or questions. Once the
+          evidence becomes stable, the appropriate Living Lore
+          records can be revised.
+        </p>
+
+        <div class="navigation-actions">
+
+          <a
+            href="../index.html"
+            class="button button-primary"
+          >
+            ← Road Through Time
+          </a>
+
+          <a
+            href="../gods-and-humanity/index.html"
+            class="button"
+          >
+            Gods and Humanity
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+
+      The Historical Records of Commander Q
+      are an unofficial Guild Wars fan project.
+
+      <br>
+
+      Guild Wars, Guild Wars 2, Guild Wars 3,
+      ArenaNet, NCSOFT,
+      and related properties belong
+      to their respective owners.
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
